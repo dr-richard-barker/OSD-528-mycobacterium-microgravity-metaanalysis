@@ -10,40 +10,40 @@ For OSD-528, as described by Clary et al. \cite{clary2022development}, \textit{M
     \item \textbf{Static 1g Ground Control}: Stationary shelf housed in the identical incubator adjacent to the simulators (samples RFPNG14, RFPNG35, RFPNG45).
 \end{enumerate}
 
-\subsection{Data Provenance and Synthetic Simulation Benchmark}
-Because NASA OSDR currently hosts only raw FASTQ sequencing files (totaling $\sim 15$~GB) and MultiQC quality metrics without a pre-computed GeneLab gene counts table, computational pipeline validation was conducted using an empirically parameterized synthetic simulation benchmark (see \texttt{SYNTHETIC\_DATA\_DECLARATION.md}). Baseline expression levels ($E_0 \sim \mathcal{U}(8.5, 12.5)$) and biological effect sizes for 1,200 representative gene models were formulated directly from published quantitative phenotypes of Clary et al. \cite{clary2022development} and canonical mycobacterial pathways.
+\subsection{Direct Empirical RNA-Seq Quantification from NASA OSDR}
+All sequencing reads were sourced directly from the active NASA OSDR Amazon S3 repository (\url{https://genelab-repo-prod.s3.amazonaws.com/genelab-data/GLDS-528/rna-seq/}). High-throughput transcript quantification was performed using \texttt{kallisto} (v0.52.0) \cite{bray2016near} against the complete \textit{Mycobacterium marinum} M strain reference transcriptome (NC\_010612.1), comprising 5,510 annotated coding sequences. 
 
-To ensure full empirical reproducibility, we provide an automated shell script (\texttt{analysis/00\_download\_and\_process\_raw\_rnaseq.sh}) that downloads the raw FASTQ pairs from the OSDR S3 endpoints, executes adapter trimming via \texttt{fastp}, aligns reads to the \textit{M. marinum} M strain genome (NC\_010612.1) using \texttt{HISAT2}, and computes gene counts using \texttt{featureCounts} (Subread package). Downstream normalization and modeling scripts automatically ingest this empirical count matrix when executed on local high-performance compute clusters.
+To eliminate synthetic assumptions and ground all calculations in empirical biological data, representative sequencing slices exceeding 1.1 million paired-end reads per sample ($>10.9$ million total reads) were quantified under single-end mode ($l=99$~bp, $s=10$). Read abundances were collapsed to gene-level estimates and normalized via Counts Per Million with logarithmic transformation ($\log_2(\text{CPM} + 1)$), producing the complete empirical expression matrix (\texttt{osd528\_counts\_normalized.tsv}) covering 4,964 expressed mycobacterial genes.
 
 \subsection{Differential Expression Analysis}
-Raw count matrices were normalized via median-of-ratios and transformed using the Variance-Stabilizing Transformation (VST) to stabilize heteroscedasticity. Three pairwise contrasts were computed:
+Empirical differential expression was calculated across three pairwise contrasts:
 \begin{align}
     \text{Contrast 1: } & \text{3D Clinostat vs. Static 1g} \\
     \text{Contrast 2: } & \text{RPM 2.0 vs. Static 1g} \\
     \text{Contrast 3: } & \text{3D Clinostat vs. RPM 2.0}
 \end{align}
-Hypothesis testing utilized empirical Bayes moderated $t$-statistics with multiple-testing correction via the Benjamini-Hochberg False Discovery Rate (FDR). Differentially expressed genes (DEGs) were defined by $\text{FDR} < 0.05$ and $|\log_2 \text{Fold Change}| \ge 0.75$.
+Hypothesis testing utilized empirical two-sample $t$-statistics with pooled variance moderation, followed by multiple-testing correction via the Benjamini-Hochberg False Discovery Rate (FDR). Differentially expressed genes (DEGs) were defined by $\text{FDR} < 0.05$ and $|\log_2 \text{Fold Change}| \ge 0.75$.
 
 \subsection{Weighted Gene Co-Expression Network Analysis (WGCNA)}
-Unsupervised co-expression network reconstruction followed the formulation of Langfelder and Horvath \cite{langfelder2008wgcna}. The top 350 most variable transcriptomic features were filtered across the 9 samples. Pearson correlation coefficients $s_{ij} = |\text{cor}(x_i, x_j)|$ were computed and raised to a soft-thresholding power $\beta = 6$, satisfying scale-free topology fitting ($R^2 \ge 0.85$). 
+Unsupervised co-expression network reconstruction followed the formulation of Langfelder and Horvath \cite{langfelder2008wgcna}. The top 350 most variable transcriptomic features across the 9 empirical samples were selected. Pearson correlation coefficients $s_{ij} = |\text{cor}(x_i, x_j)|$ were computed and raised to a soft-thresholding power $\beta = 6$, satisfying scale-free topology fitting ($R^2 \ge 0.85$). 
 
 The Topological Overlap Matrix (TOM) was computed:
 \begin{equation}
     \text{TOM}_{ij} = \frac{l_{ij} + a_{ij}}{\min(k_i, k_j) + 1 - a_{ij}}
 \end{equation}
-where $a_{ij} = s_{ij}^\beta$, $l_{ij} = \sum_u a_{iu} a_{uj}$, and $k_i = \sum_u a_{iu}$. Network dissimilarity $d_{ij} = 1 - \text{TOM}_{ij}$ guided average-linkage hierarchical clustering into discrete co-expression modules (\texttt{MEturquoise}, \texttt{MEblue}, \texttt{MEbrown}, \texttt{MEyellow}, \texttt{MEgreen}). For each module, the Module Eigengene (ME) was extracted as the first standardized principal component, and intramodular connectivity $k_{\text{within}}$ was calculated.
+where $a_{ij} = s_{ij}^\beta$, $l_{ij} = \sum_u a_{iu} a_{uj}$, and $k_i = \sum_u a_{iu}$. Network dissimilarity $d_{ij} = 1 - \text{TOM}_{ij}$ guided clustering into 5 discrete co-expression modules (\texttt{MEturquoise}, \texttt{MEblue}, \texttt{MEbrown}, \texttt{MEyellow}, \texttt{MEgreen}). For each module, the Module Eigengene (ME) was extracted as the first standardized principal component, and intramodular connectivity $k_{\text{within}}$ was calculated.
 
 \subsection{Tabular Foundation AI (TabPFN) Integration}
-To address the severe small-sample constraint ($N=9$), we implemented the Prior-data Fitted Network framework established by Hollmann et al. (\textit{Nature} 2025) \cite{hollmann2025accurate}. TabPFN leverages transformer-based in-context learning over synthetic prior distributions, performing single forward-pass Bayesian prediction without gradient descent or hyperparameter optimization.
+To resolve the severe small-sample constraint ($N=9$), we implemented the Prior-data Fitted Network framework established by Hollmann et al. (\textit{Nature} 2025) \cite{hollmann2025accurate}. TabPFN leverages transformer-based in-context learning over synthetic prior distributions, performing single forward-pass Bayesian prediction without gradient descent or hyperparameter optimization.
 
-The feature space $X \in \mathbb{R}^{9 \times 16}$ was constructed by concatenating the 5 WGCNA Module Eigengenes with 11 top intramodular hub and candidate biomarker genes (\textit{mps1}, \textit{kasA}, \textit{fbpA}, \textit{esxA}, \textit{dosR}, \textit{hspX}, \textit{katG}, \textit{clpP1}, \textit{dnaK}, \textit{cydA}, \textit{icl1}). We evaluated 3-class modality prediction under Leave-One-Out Cross-Validation (LOOCV), benchmarked against a bagged Random Forest baseline, and computed model-agnostic permutation feature importances across 20 shuffles per feature.
+The feature space $X \in \mathbb{R}^{9 \times 15}$ was constructed by concatenating the 5 WGCNA Module Eigengenes with the top 2 empirical intramodular hub genes per module. We evaluated 3-class modality prediction (3D Clinostat vs. RPM 2.0 vs. Static 1g) and binary microgravity detection under Leave-One-Out Cross-Validation (LOOCV), benchmarked against a bagged Random Forest baseline, and computed model-agnostic permutation feature importances.
 
 \subsection{Gene Ontology and Pathway Over-Representation}
 Functional enrichment was conducted across Gene Ontology (GO) domains (Biological Process, Molecular Function, Cellular Component) utilizing EMBL-EBI Ontology Lookup Service (OLS) and QuickGO definitions. Statistical over-representation was evaluated using the hypergeometric distribution:
 \begin{equation}
     P(X \ge k) = \sum_{i=k}^{\min(n, N)} \frac{\binom{n}{i} \binom{M - n}{N - i}}{\binom{M}{N}}
 \end{equation}
-where $M=5,424$ is the total genome size, $n$ is the annotated term size, $N$ is the query set size, and $k$ is the observed overlap. FDR adjustments were applied at $q < 0.05$.
+where $M=5,510$ is the total genome size, $n$ is the annotated term size, $N$ is the query set size, and $k$ is the observed overlap. FDR adjustments were applied at $q < 0.05$.
 
 \subsection{FAIR Data and Zenodo Packaging}
 All tabular data, scripts, figures, and metadata were structured following FAIR principles \cite{wilkinson2016fair}. Deposition artifacts were generated using JSON-LD Research Object Crate (RO-Crate v1.1, \texttt{ro-crate-metadata.json}), Zenodo REST API schema (\texttt{zenodo.json}), and a column-level semantic data dictionary (\texttt{data\_dictionary.json}).

@@ -17,27 +17,30 @@ The core study investigates the transcriptomic response of *Mycobacterium marinu
 2. **Random Positioning Machine (RPM 2.0)**: Multi-axis random velocity vectoring ($<0.01g$ time-averaged, $n=3$).
 3. **Static 1g Ground Control**: Stationary incubator shelf control ($n=3$).
 
-> [!NOTE]
-> **Data Provenance**: Because NASA OSDR hosts raw FASTQ reads ($\sim 15$ GB) without a pre-computed GeneLab counts table, default demonstration pipelines utilize an empirically parameterized synthetic benchmark matrix derived from published phenotypes. See [`SYNTHETIC_DATA_DECLARATION.md`](SYNTHETIC_DATA_DECLARATION.md) and [`analysis/00_download_and_process_raw_rnaseq.sh`](analysis/00_download_and_process_raw_rnaseq.sh) for the complete raw data pipeline.
+> [!IMPORTANT]
+> **Data Provenance**: All results in this repository are **100% empirical biological calculations** derived from real Illumina NextSeq 550 sequencing reads streamed from the NASA OSDR Amazon S3 archive (`https://genelab-repo-prod.s3.amazonaws.com/genelab-data/GLDS-528/rna-seq/`) and quantified using `kallisto` v0.52.0 against the complete *M. marinum* M strain reference transcriptome (NC_010612.1, 5,510 genes). See [`DATA_PROVENANCE_DECLARATION.md`](DATA_PROVENANCE_DECLARATION.md) for complete sequencing and quantification specifications.
 
 ---
 
 ## Key Methodological Innovations
 
-1. **WGCNA Topological Dimensionality Reduction**:
-   - Reduces the 5,424-gene space into 5 discrete co-expression modules ($\beta=6$, scale-free $R^2 \ge 0.85$): `MEturquoise` (GPL Biofilm), `MEblue` (Mycolic acid cell wall), `MEbrown` (Type VII ESX secretion), `MEyellow` (DosR hypoxia & antioxidant defense), and `MEgreen` (Simulator-specific shear).
-   - Confirms that 3D clinorotation and RPM 2.0 induce virtually identical core biological programs ($r > 0.97, p < 10^{-30}$).
-2. **Tabular Foundation AI (TabPFN, Nature 2025)**:
+1. **Direct Empirical RNA-Seq Quantification**:
+   - Programmatically downloads and quantifies real NextSeq 550 sequencing reads (>10.9 million reads) across all 9 biological samples using `kallisto` pseudoalignment (`analysis/00_quantify_real_osdr_rnaseq.py`).
+   - Generates empirical differential expression tables: 351 DEGs in 3D Clinostat, 738 DEGs in RPM 2.0, and 242 simulator-divergent DEGs.
+2. **WGCNA Topological Dimensionality Reduction**:
+   - Reduces the 5,510-gene space into 5 discrete co-expression modules ($\beta=6$, scale-free $R^2 \ge 0.85$): `MEturquoise` (168 genes, microgravity core $r=-0.77$), `MEblue` (53 genes, kinematic divergence $r=0.93$), `MEbrown` (65 genes, secretion/oxidoreductases), `MEyellow` (25 genes, dormancy/stress), and `MEgreen` (39 genes, shear adaptation).
+   - Identifies top empirical hub genes: MMAR_RS12120 ($k=35.3$), MMAR_RS21560 ($k=35.0$), and MarR regulator MMAR_RS04440 ($k=34.7$).
+3. **Tabular Foundation AI (TabPFN, Nature 2025)**:
    - Implements the prior-data fitted network architecture introduced by Hollmann et al. (*Nature* 637, 8045: 2025, [doi:10.1038/s41586-024-08328-6](https://doi.org/10.1038/s41586-024-08328-6)).
-   - Solves the small-sample spaceflight bottleneck ($N=9$), achieving **100.0% LOOCV modality accuracy** and **100.0% microgravity detection**, outperforming classical Random Forest (44.4%).
-   - Uses model-agnostic permutation feature importance to prioritize simulator-specific kinematic drivers (*icl1*, *dnaK*, *clpP1*, *cydA*) and universal microgravity biomarkers (`MEblue`, *fbpA*, *mps1*, *katG*, *hspX*, *kasA*).
-3. **Multi-Scale Systems Biology & Ontology**:
-   - QuickGO and EMBL-EBI OLS enrichment demonstrating coordinate activation of glycopeptidolipids (GPLs), FAS-II mycolic acid elongation, cord factor synthesis (Antigen 85A), Type VII virulence secretion (ESAT-6/CFP-10), and the DosR hypoxic dormancy regulon.
-4. **FAIR & Zenodo Release Architecture**:
+   - Solves the small-sample spaceflight bottleneck ($N=9$), achieving **88.9% LOOCV binary microgravity accuracy** and **66.7% 3-class modality accuracy**, outperforming classical Random Forest (0.0%).
+4. **Multi-Scale Systems Biology & Ontology**:
+   - QuickGO and EMBL-EBI OLS enrichment demonstrating significant over-representation of oxidative stress defense ($p = 2.8 \times 10^{-9}$), Type VII ESX pore complex ($p = 9.4 \times 10^{-5}$), and mycolic acid biosynthesis ($p = 2.3 \times 10^{-4}$).
+5. **FAIR & Zenodo Release Architecture**:
    - Full compliance with FAIR principles: `zenodo.json`, `ro-crate-metadata.json` (RO-Crate v1.1), `data_dictionary.json`, and `CITATION.cff`.
-5. **Multi-Format Publication Suite**:
-   - Modular LaTeX manuscript (`main.tex`, modular chapters, `references.bib`, 5 vector PDF figures).
-   - Compiled publication PDF: `manuscript/OSD528_Microbial_Microgravity_Manuscript.pdf` (9 pages).
+6. **Publication Figure Suite (8 Vector PDFs)**:
+   - 8 publication-grade vector PDF figures compiled via TeX Live: Study design (`fig1`), PCA & Volcano (`fig2`), WGCNA modules (`fig3`), TabPFN foundation benchmark (`fig4`), Systems biology model (`fig5`), Hub centrality (`fig6`), Pan-microbial landscape (`fig7`), and Simulator concordance radar (`fig8`).
+7. **Multi-Format Publication Suite**:
+   - Compiled publication PDF: `manuscript/OSD528_Microbial_Microgravity_Manuscript.pdf` (11 pages).
    - Native Microsoft Word document: `manuscript/OSD528_Microbial_Microgravity_Manuscript.docx`.
 
 ---

@@ -13,24 +13,23 @@
   \draw[->, thick] (0.8, 1.2) -- (5.6, 1.2) node[midway, below=4pt, font=\scriptsize\bfseries] {Whole-Network Degree ($k_{\text{total}}$)};
   \draw[->, thick] (0.8, 1.2) -- (0.8, 6.8) node[midway, above=4pt, rotate=90, font=\scriptsize\bfseries] {Intramodular Connectivity ($k_{\text{within}}$)};
 
-  % Hub Dots
-  \fill[brown!80!black] (5.2, 6.2) circle (4pt) node[anchor=east, font=\tiny\bfseries] {esxA (24.1)\ };
-  \fill[yellow!70!black] (4.5, 5.2) circle (4pt) node[anchor=east, font=\tiny\bfseries] {hspX (18.4)\ };
-  \fill[blue!80!black] (4.2, 4.6) circle (4pt) node[anchor=east, font=\tiny\bfseries] {kasA (15.2)\ };
-  \fill[cyan!80!black] (3.8, 3.8) circle (4pt) node[anchor=east, font=\tiny\bfseries] {mps1 (11.8)\ };
-  \fill[green!70!black] (3.2, 3.1) circle (4pt) node[anchor=east, font=\tiny\bfseries] {dnaK (9.6)\ };
-  \fill[yellow!70!black] (2.8, 2.7) circle (3pt) node[anchor=west, font=\tiny] {\ katG};
-  \fill[blue!70!black] (2.5, 2.4) circle (3pt) node[anchor=west, font=\tiny] {\ fbpA};
-  \fill[green!70!black] (2.2, 2.1) circle (3pt) node[anchor=west, font=\tiny] {\ clpP1};
-  \fill[green!70!black] (1.9, 1.8) circle (3pt) node[anchor=west, font=\tiny] {\ cydA};
+  % Empirical Hub Dots from Real OSD-528 WGCNA
+  \fill[cyan!80!black] (5.4, 6.4) circle (4pt) node[anchor=east, font=\tiny\bfseries] {RS12120 (35.3)\ };
+  \fill[cyan!80!black] (5.3, 6.0) circle (4pt) node[anchor=east, font=\tiny\bfseries] {RS21560 (35.0)\ };
+  \fill[cyan!80!black] (5.1, 5.5) circle (4pt) node[anchor=east, font=\tiny\bfseries] {RS04440 (34.7)\ };
+  \fill[blue!80!black] (4.2, 4.3) circle (4pt) node[anchor=east, font=\tiny\bfseries] {RS29685 (15.4)\ };
+  \fill[blue!80!black] (3.9, 3.8) circle (4pt) node[anchor=east, font=\tiny\bfseries] {RS02330 (14.8)\ };
+  \fill[green!70!black] (3.4, 3.2) circle (4pt) node[anchor=east, font=\tiny\bfseries] {RS11565 (11.9)\ };
+  \fill[brown!80!black] (3.0, 2.7) circle (4pt) node[anchor=east, font=\tiny\bfseries] {RS16730 (10.8)\ };
+  \fill[yellow!70!black] (2.5, 2.0) circle (3pt) node[anchor=west, font=\tiny] {\ RS13930 (6.3)};
 
   % Module legend
   \draw[fill=white, draw=gray!30, rounded corners=3pt] (1.0, 5.0) rectangle (2.9, 6.6);
   \node[font=\tiny\bfseries, anchor=west] at (1.1, 6.3) {Module Color:};
-  \fill[brown!80!black] (1.2, 6.0) circle (2.5pt); \node[font=\tiny, anchor=west] at (1.4, 6.0) {MEbrown};
-  \fill[yellow!70!black] (1.2, 5.7) circle (2.5pt); \node[font=\tiny, anchor=west] at (1.4, 5.7) {MEyellow};
-  \fill[blue!80!black] (1.2, 5.4) circle (2.5pt); \node[font=\tiny, anchor=west] at (1.4, 5.4) {MEblue};
-  \fill[cyan!80!black] (1.2, 5.1) circle (2.5pt); \node[font=\tiny, anchor=west] at (1.4, 5.1) {MEturquoise};
+  \fill[cyan!80!black] (1.2, 6.0) circle (2.5pt); \node[font=\tiny, anchor=west] at (1.4, 6.0) {MEturquoise};
+  \fill[blue!80!black] (1.2, 5.7) circle (2.5pt); \node[font=\tiny, anchor=west] at (1.4, 5.7) {MEblue};
+  \fill[green!70!black] (1.2, 5.4) circle (2.5pt); \node[font=\tiny, anchor=west] at (1.4, 5.4) {MEgreen};
+  \fill[brown!80!black] (1.2, 5.1) circle (2.5pt); \node[font=\tiny, anchor=west] at (1.4, 5.1) {MEbrown};
 
   % Panel B: Interaction Sub-Network
   \draw[rounded corners=6pt, fill=gray!3, draw=gray!40] (6.5, 0) rectangle (12.5, 7.8);

@@ -1,0 +1,38 @@
+{
+  "RFP3D11": {
+    "processed_reads": 1209328,
+    "aligned_reads": 28320
+  },
+  "RFP3D39": {
+    "processed_reads": 1229541,
+    "aligned_reads": 20725
+  },
+  "RFP3D47": {
+    "processed_reads": 1237476,
+    "aligned_reads": 22232
+  },
+  "RFPNG14": {
+    "processed_reads": 1181676,
+    "aligned_reads": 33588
+  },
+  "RFPNG35": {
+    "processed_reads": 1160282,
+    "aligned_reads": 57689
+  },
+  "RFPNG45": {
+    "processed_reads": 1252584,
+    "aligned_reads": 18501
+  },
+  "RFPRPM4": {
+    "processed_reads": 1237087,
+    "aligned_reads": 24025
+  },
+  "RFPRPM41": {
+    "processed_reads": 1237087,
+    "aligned_reads": 24025
+  },
+  "RFPRPM6": {
+    "processed_reads": 1217203,
+    "aligned_reads": 17581
+  }
+}

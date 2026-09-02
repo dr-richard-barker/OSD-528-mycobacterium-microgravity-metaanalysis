@@ -19,7 +19,7 @@
     },
     "osd528_counts_normalized.tsv": {
       "description": "Normalized transcript abundance values across all 9 samples",
-      "provenance": "Empirically parameterized synthetic simulation benchmark based on Clary et al. (2022) with automated fallback to empirical raw reads via analysis/00_download_and_process_raw_rnaseq.sh",
+      "provenance": "Empirical transcript quantification from raw NextSeq 550 sequencing reads streamed from NASA OSDR S3 using kallisto v0.52.0 against M. marinum NC_010612.1 reference transcriptome",
       "columns": {
         "gene_id": {"type": "string", "description": "M. marinum locus tag (e.g. MMAR_2313)"},
         "gene_symbol": {"type": "string", "description": "Standardized gene symbol (e.g. mps1, kasA, esxA)"},

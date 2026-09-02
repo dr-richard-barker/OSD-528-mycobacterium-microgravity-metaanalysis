@@ -27,3 +27,5 @@ data/raw/fastqs/
 data/reference/
 data/processed/aligned/
 .chrome_tmp/
+data/raw/fastq_slices/
+data/reference/m_marinum_kallisto.idx

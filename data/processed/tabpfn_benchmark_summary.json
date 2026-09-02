@@ -1,16 +1,21 @@
 {
-  "model": "TabPFN Tabular Foundation Model (Nature 2025)",
-  "n_samples": 9,
-  "n_features": 16,
-  "loocv_modality_accuracy": 1.0,
-  "loocv_random_forest_accuracy": 0.4444444444444444,
-  "loocv_microgravity_binary_accuracy": 1.0,
-  "osd90_harv_cross_study_transfer_accuracy": 0.4,
+  "dataset": "NASA OSDR OSD-528 (Empirical RNA-Seq)",
+  "samples": 9,
+  "features": 15,
+  "models": {
+    "TabPFN": {
+      "loocv_modality_accuracy": 0.6666666666666666,
+      "loocv_binary_accuracy": 0.8888888888888888
+    },
+    "RandomForest": {
+      "loocv_modality_accuracy": 0.0
+    }
+  },
   "top_features": [
-    "icl1",
-    "dnaK",
-    "clpP1",
-    "cydA",
-    "MEblue"
+    "MEturquoise",
+    "MEblue",
+    "MEbrown",
+    "MEyellow",
+    "MEgreen"
   ]
 }
