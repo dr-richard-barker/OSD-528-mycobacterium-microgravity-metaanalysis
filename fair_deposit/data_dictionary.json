@@ -73,6 +73,36 @@
         "importance_score": {"type": "float", "description": "Mean drop in log-likelihood when feature is permuted"},
         "rank": {"type": "integer", "description": "Feature importance rank"}
       }
+    },
+    "metabolic_model_reactions.tsv": {
+      "description": "Reaction-level cellular and metabolic network model integrated with empirical microgravity expression",
+      "columns": {
+        "reaction_id": {"type": "string", "description": "Unique reaction identifier"},
+        "subsystem": {"type": "string", "description": "Metabolic and cellular subsystem"},
+        "compartment": {"type": "string", "description": "Subcellular compartment (Outer Mycomembrane, Periplasm, Plasma Membrane, Cytoplasm)"},
+        "reaction_name": {"type": "string", "description": "Human-readable reaction name"},
+        "equation": {"type": "string", "description": "Stoichiometric chemical equation"},
+        "ec_number": {"type": "string", "description": "Enzyme Commission classification number"},
+        "gene_id": {"type": "string", "description": "NCBI locus tag"},
+        "gene_symbol": {"type": "string", "description": "Gene symbol"},
+        "protein": {"type": "string", "description": "Annotated protein product"},
+        "clinostat_log2fc": {"type": "float", "description": "Empirical log2FC in 3D Clinostat vs 1g"},
+        "rpm_log2fc": {"type": "float", "description": "Empirical log2FC in RPM 2.0 vs 1g"},
+        "mean_microgravity_log2fc": {"type": "float", "description": "Mean log2FC across simulated microgravity"},
+        "direction": {"type": "string", "enum": ["Upregulated", "Downregulated", "Invariant"]}
+      }
+    },
+    "metabolic_subsystem_perturbation.tsv": {
+      "description": "Subsystem Perturbation Index (SPI) ranking empirical metabolic pathway flux alterations",
+      "columns": {
+        "subsystem": {"type": "string", "description": "Metabolic subsystem name"},
+        "reaction_count": {"type": "integer", "description": "Number of reactions in subsystem"},
+        "significant_reactions": {"type": "integer", "description": "Count of significantly perturbed reactions"},
+        "mean_net_log2fc": {"type": "float", "description": "Mean net log2FC across subsystem"},
+        "mean_abs_log2fc": {"type": "float", "description": "Mean absolute log2FC"},
+        "subsystem_perturbation_index": {"type": "float", "description": "Quantitative Subsystem Perturbation Index score"},
+        "predominant_flux_shift": {"type": "string", "enum": ["Activation", "Repression"]}
+      }
     }
   }
 }

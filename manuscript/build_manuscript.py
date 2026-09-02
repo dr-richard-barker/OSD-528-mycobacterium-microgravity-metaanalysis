@@ -198,6 +198,11 @@ def build_word_docx():
   <div class="caption">Hexagonal trajectory radar plot proving identical biological response envelopes between 3D Clinostat and RPM 2.0.</div>
 </div>
 
+<div class="figure-box">
+  <strong>Figure 9 | Hyper-Detailed Cellular and Metabolic Architecture of Mycobacterium marinum Microgravity Adaptation.</strong>
+  <div class="caption">Multi-compartment cellular cross-section (Outer Mycomembrane, Periplasm, Plasma Membrane, Cytoplasm) with enzyme nodes colored strictly by empirical log2FC on the FAIR Blue-White-Red spectrum, alongside quantitative Subsystem Perturbation Index (SPI) ranking.</div>
+</div>
+
 <h2>Discussion</h2>
 {disc_html}
 

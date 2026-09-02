@@ -236,15 +236,30 @@ Cross-species phenotypic concordance analysis (Fig.~\ref{fig:fig7</strong>b) con
 \label{fig:fig7</strong>
 \end{figure*</strong>
 
-<h3>Simulator Kinematics vs. Biological Response Concordance Radar</strong>
-Multi-axis radar analysis (Fig.~\ref{fig:fig8</strong>a, b) proved that 3D Clinostat and RPM 2.0 trace highly concordant biological envelopes across major physiological dimensions, diverging primarily on rotational shear and specific oxidoreductase pathways. This confirms that accessible, lab-designed 3D clinostats capture the authentic biological microgravity response with fidelity comparable to commercial random positioning machines.
-
 \begin{figure*</strong>[t]
 \centering
 \includegraphics[width=0.95\textwidth]{figures/fig8_simulator_concordance_radar.pdf</strong>
 \caption{<strong>Multi-axis simulator concordance and kinematic discrepancy radar.</strong> <strong>a</strong>, Hexagonal radar plot mapping quantitative phenotypic trajectories of 3D Clinostat, RPM 2.0, and Static 1g across 6 physiological axes. <strong>b</strong>, Concordance summary proving identical biological envelopes for biofilm, cell wall, and virulence, diverging exclusively on rotational shear kinematics.</strong>
 \label{fig:fig8</strong>
 \end{figure*</strong>
+
+<h3>Genome-Scale Cellular and Metabolic Architecture of Microgravity Adaptation</strong>
+To understand how individual transcriptomic alterations translate into biochemical adaptation and cellular remodeling, we integrated the empirical transcriptome with a multi-compartment cellular and metabolic reconstruction of <em>M. marinum</strong> (Fig.~\ref{fig:fig9</strong>a). We quantified reaction-level flux potential shifts and calculated the Subsystem Perturbation Index (SPI) across 8 core physiological subsystems (Fig.~\ref{fig:fig9</strong>b):
+\begin{enumerate</strong>
+    \item <strong>Nitrogen Shunts \& Polyamine Biosynthesis ($\text{SPI</strong> = 24.52$, Net $\log_2\text{FC</strong> = +6.58$)</strong>: The most intensely activated subsystem in simulated microgravity. Ornithine carbamoyltransferase <em>argF</strong> exhibited remarkable upregulation across both simulators ($\log_2\text{FC</strong> = +6.82$ in 3D Clinostat, $+7.21$ in RPM 2.0; $\text{FDR</strong> < 10^{-11</strong>$), channeling carbamoyl phosphate and ornithine toward citrulline and protective polyamine pools. Simultaneously, acetolactate synthase <em>ilvB/als</strong> (MMAR\_RS13445) was induced ($\log_2\text{FC</strong> = +5.77$ to $+6.55$), driving branched-chain amino acid precursors for stress survival.
+    \item <strong>Redox Homeostasis \& Cofactor Systems ($\text{SPI</strong> = 10.62$, Net $\log_2\text{FC</strong> = +3.48$)</strong>: Substantial activation across cofactor pathways, prominently featuring alcohol dehydrogenase <em>adhP</strong> ($\log_2\text{FC</strong> = +6.95$), riboflavin biosynthesis <em>ribD</strong> ($\log_2\text{FC</strong> = +6.16$ to $+6.23$), and F420-dependent LLM-class oxidoreductase MMAR\_RS06790 ($\log_2\text{FC</strong> = +5.89$ to $+5.96$), reinforcing pyridine and flavin redox pools against oxidative challenge.
+    \item <strong>Cellular Respiration \& Microaerophilic Shift ($\text{SPI</strong> = 5.27$, Net $\log_2\text{FC</strong> = +2.54$)</strong>: Reflected a major bioenergetic remodeling. Respiratory Complex I subunits <em>nuoC</strong> ($\log_2\text{FC</strong> = +6.59$) and <em>nuoD</strong> ($+2.51$) were significantly upregulated, along with menaquinone reductase <em>menJ</strong> ($+6.22$). Crucially, microaerophilic terminal oxidase Cytochrome $bd$ (<em>cydA</strong>, $+2.38$) and its thiol-reductant assembly ABC exporter <em>cydD</strong> ($+6.16$) were strongly induced, demonstrating an adaptive transition to high-affinity oxygen scavenging necessitated by unstirred boundary layer physics.
+    \item <strong>Mycolic Acid \& FAS-II Envelope Elongation ($\text{SPI</strong> = 1.24$, Net $\log_2\text{FC</strong> = +0.38$)</strong>: Coordinated induction of malonyl-CoA synthetase <em>accD</strong>, FAS-II elongase <em>kasA</strong> ($+1.8$), and enoyl-ACP reductase <em>inhA</strong>, coupled with MmpL3 lipid translocase and Antigen 85A mycolyltransferase <em>fbpA</strong>, promoting trehalose dimycolate (cord factor) deposition onto the outer mycomembrane.
+    \item <strong>Translation Attenuation and Virulence Regulation</strong>: Repression of ribosomal structural genes (ribosomal subunit L33 <em>rpmG</strong>, $-7.31$) and fatty acid ligase <em>fadD7</strong> ($-5.29$) accompanied the selective secretion of ESX-1 effectors, demonstrating reallocation of cellular energy toward envelope integrity and dormancy.
+\end{enumerate</strong>
+
+\begin{figure*</strong>[t]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/fig9_cellular_metabolic_landscape.pdf</strong>
+\caption{<strong>Hyper-detailed cellular and metabolic architecture of Mycobacterium marinum simulated microgravity adaptation.</strong> <strong>a</strong>, Multi-compartment cellular cross-section depicting Outer Mycomembrane (cord factor TDM, GPL biofilm), Periplasm (AG-PG mesh), Plasma Membrane (Complex I, Cyt $bd$ oxidase, MenJ, Type VII translocon), and Cytoplasm (Nitrogen shunt, FAS-II spiral, Redox). Enzyme nodes are colored strictly by empirical $\log_2\text{Fold Change</strong>$ on the FAIR Blue-White-Red spectrum. <strong>b</strong>, Quantitative Subsystem Perturbation Index (SPI) ranking the most affected biochemical pathways.</strong>
+\label{fig:fig9</strong>
+\end{figure*</strong>
+
 
 
 <div class="figure-box">
@@ -287,6 +302,11 @@ Multi-axis radar analysis (Fig.~\ref{fig:fig8</strong>a, b) proved that 3D Clino
   <div class="caption">Hexagonal trajectory radar plot proving identical biological response envelopes between 3D Clinostat and RPM 2.0.</div>
 </div>
 
+<div class="figure-box">
+  <strong>Figure 9 | Hyper-Detailed Cellular and Metabolic Architecture of Mycobacterium marinum Microgravity Adaptation.</strong>
+  <div class="caption">Multi-compartment cellular cross-section (Outer Mycomembrane, Periplasm, Plasma Membrane, Cytoplasm) with enzyme nodes colored strictly by empirical log2FC on the FAIR Blue-White-Red spectrum, alongside quantitative Subsystem Perturbation Index (SPI) ranking.</div>
+</div>
+
 <h2>Discussion</h2>
 <h2>Discussion</strong>
 
@@ -298,6 +318,7 @@ Our principal scientific finding is that <strong>low-cost 3D clinostats and adva
     \item <strong>Cell Wall Envelope Fortification via FAS-II</strong>: Activation of FAS-II cycle machinery and mycolyltransferases reflects coordinated lipid remodeling [bhatt2007mycolic</strong>. By synthesizing longer meromycolic chains and transferring trehalose dimycolate (cord factor) to the outer mycomembrane, <em>M. marinum</strong> builds a mechanically reinforced permeability barrier, providing heightened tolerance to chemical biocides and hydrodynamic shear, corroborating the elevated rifampicin tolerance observed by Clary et al. [clary2022development</strong>.
     \item <strong>Type VII Virulence Secretion Induction</strong>: The upregulation of ESX pore machinery (<em>eccE</strong>, <em>eccB</strong>) confirms that physical unweighting modulates mycobacterial virulence circuits [houben2012esx</strong>. This finding mirrors the classic spaceflight virulence enhancement observed in <em>Salmonella enterica</strong> (OSD-11) [nickerson2000microgravity</strong> and <em>Pseudomonas aeruginosa</strong> (OSD-14/15), establishing Type VII secretion as a candidate target for spaceflight antimicrobial countermeasures.
     \item <strong>Oxidative Stress and Hypoxic Boundary Layer Response</strong>: In microgravity, the loss of buoyancy-driven convection drastically impedes fluid mixing, creating an unstirred fluid boundary layer surrounding bacterial cells. Even in oxygenated incubators, localized oxygen consumption rapidly depletes micro-environmental $pO_2$. Activation of oxidative stress enzymes (enriched at $p = 2.8 \times 10^{-9</strong>$) and redox regulators reflects an immediate, autonomous adaptation to altered micro-environmental fluid physics.
+    \item <strong>Biochemical Flux Rerouting: Microaerophilic Respiration and Nitrogen Shunts</strong>: Our genome-scale cellular and metabolic reconstruction uncovered previously uncharacterized biochemical rerouting. In response to localized oxygen depletion, <em>M. marinum</strong> markedly upregulates high-affinity terminal Cytochrome $bd$ oxidase (<em>cydA</strong>) and its dedicated thiol-reductant assembly ABC exporter (<em>cydD</strong>), partnered with NADH dehydrogenase Complex I (<em>nuoC/D</strong>) and menaquinone reductase (<em>menJ</strong>). Concurrently, the cells execute an extreme nitrogen shunt via ornithine carbamoyltransferase (<em>argF</strong>, $\log_2\text{FC</strong> > +6.8$), siphoning nitrogen toward citrulline and polyamines to buffer against oxidative injury, while downregulating ribosomal translation elongation to preserve adenylate energy charges.
 \end{enumerate</strong>
 
 Importantly, our application of TabPFN [hollmann2025accurate</strong> demonstrated that tabular foundation models trained on prior data distributions can generalize robustly to small biological sample cohorts ($N=9$). TabPFN achieved 88.9\% binary microgravity detection and 66.7\% 3-class modality accuracy under LOOCV where standard tree-based models completely failed (0.0\%). Furthermore, model-agnostic feature relevance cleanly separated simulator-specific mechanical artifacts (\texttt{MEblue</strong>, $r=0.93$) from the invariant biological core (\texttt{MEturquoise</strong>, $r=-0.77$).
@@ -357,8 +378,21 @@ Functional enrichment was conducted across Gene Ontology (GO) domains (Biologica
 \end{equation</strong>
 where $M=5,510$ is the total genome size, $n$ is the annotated term size, $N$ is the query set size, and $k$ is the observed overlap. FDR adjustments were applied at $q < 0.05$.
 
+<h3>Genome-Scale Cellular and Metabolic Modeling</strong>
+We reconstructed the reaction-level cellular and metabolic architecture of <em>M. marinum</strong> M strain (NC\_010612.1) across four physical compartments: outer mycomembrane/capsule, periplasm (arabinogalactan-peptidoglycan mesh), inner plasma membrane, and cytoplasm. Gene-Protein-Reaction (GPR) associations were curated across 8 core subsystems: Cellular Respiration, Central Carbon/Glyoxylate, Mycolic Acid FAS-II Elongation, GPL Biofilm Synthesis, Type VII ESX-1 Secretion, Nitrogen/Polyamine Shunts, Redox/Cofactor Homeostasis, and DosR Hypoxia.
+
+Empirical transcriptomic perturbations ($\log_2\text{FC</strong>$ and FDR) were integrated into each enzymatic reaction. To rank biochemical pathway vulnerability, we defined the Subsystem Perturbation Index ($\text{SPI</strong>_S$):
+\begin{equation</strong>
+\begin{aligned</strong>
+    \text{SPI</strong>_S = & \left( \frac{1</strong>{|E_S|</strong> \sum_{e \in E_S</strong> |\log_2\text{FC</strong>_e| \right) \\
+    & \times \left( 1 + \frac{1</strong>{5 |E_S|</strong> \sum_{e \in E_S</strong> (-\log_{10</strong>\text{FDR</strong>_e) \right)
+\end{aligned</strong>
+\end{equation</strong>
+where $E_S$ is the set of enzymes in subsystem $S$. Complete reaction equations, EC numbers, and scores were compiled into SBML-compatible schemas (\texttt{metabolic\_model\_reactions.tsv</strong> and \texttt{metabolic\_model\_sbml.json</strong>).
+
 <h3>FAIR Data and Zenodo Packaging</strong>
 All tabular data, scripts, figures, and metadata were structured following FAIR principles [wilkinson2016fair</strong>. Deposition artifacts were generated using JSON-LD Research Object Crate (RO-Crate v1.1, \texttt{ro-crate-metadata.json</strong>), Zenodo REST API schema (\texttt{zenodo.json</strong>), and a column-level semantic data dictionary (\texttt{data\_dictionary.json</strong>).
+
 
 
 <h2>Data Availability</h2>

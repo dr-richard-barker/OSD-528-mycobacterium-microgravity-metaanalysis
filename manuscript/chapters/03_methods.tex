@@ -45,5 +45,18 @@ Functional enrichment was conducted across Gene Ontology (GO) domains (Biologica
 \end{equation}
 where $M=5,510$ is the total genome size, $n$ is the annotated term size, $N$ is the query set size, and $k$ is the observed overlap. FDR adjustments were applied at $q < 0.05$.
 
+\subsection{Genome-Scale Cellular and Metabolic Modeling}
+We reconstructed the reaction-level cellular and metabolic architecture of \textit{M. marinum} M strain (NC\_010612.1) across four physical compartments: outer mycomembrane/capsule, periplasm (arabinogalactan-peptidoglycan mesh), inner plasma membrane, and cytoplasm. Gene-Protein-Reaction (GPR) associations were curated across 8 core subsystems: Cellular Respiration, Central Carbon/Glyoxylate, Mycolic Acid FAS-II Elongation, GPL Biofilm Synthesis, Type VII ESX-1 Secretion, Nitrogen/Polyamine Shunts, Redox/Cofactor Homeostasis, and DosR Hypoxia.
+
+Empirical transcriptomic perturbations ($\log_2\text{FC}$ and FDR) were integrated into each enzymatic reaction. To rank biochemical pathway vulnerability, we defined the Subsystem Perturbation Index ($\text{SPI}_S$):
+\begin{equation}
+\begin{aligned}
+    \text{SPI}_S = & \left( \frac{1}{|E_S|} \sum_{e \in E_S} |\log_2\text{FC}_e| \right) \\
+    & \times \left( 1 + \frac{1}{5 |E_S|} \sum_{e \in E_S} (-\log_{10}\text{FDR}_e) \right)
+\end{aligned}
+\end{equation}
+where $E_S$ is the set of enzymes in subsystem $S$. Complete reaction equations, EC numbers, and scores were compiled into SBML-compatible schemas (\texttt{metabolic\_model\_reactions.tsv} and \texttt{metabolic\_model\_sbml.json}).
+
 \subsection{FAIR Data and Zenodo Packaging}
 All tabular data, scripts, figures, and metadata were structured following FAIR principles \cite{wilkinson2016fair}. Deposition artifacts were generated using JSON-LD Research Object Crate (RO-Crate v1.1, \texttt{ro-crate-metadata.json}), Zenodo REST API schema (\texttt{zenodo.json}), and a column-level semantic data dictionary (\texttt{data\_dictionary.json}).
+

@@ -1,0 +1,9 @@
+subsystem	reaction_count	significant_reactions	mean_net_log2fc	mean_abs_log2fc	subsystem_perturbation_index	predominant_flux_shift
+Nitrogen Shunts & Polyamines	2	2	6.585	6.585	24.517	Activation
+Redox Homeostasis & Cofactors	4	3	3.484	4.313	10.619	Activation
+Cellular Respiration & Energy	6	3	2.537	3.277	5.266	Activation
+Type VII Secretion & Virulence	4	1	-0.544	1.688	2.869	Repression
+GPL Biofilm & Cell Surface	3	0	-0.948	2.435	2.685	Repression
+Mycolic Acid & FAS-II Envelope	7	1	0.378	0.851	1.237	Activation
+DosR Hypoxia & Dormancy	2	0	-0.645	0.931	0.967	Repression
+Central Carbon & Glyoxylate Shunt	4	0	-0.666	0.666	0.729	Repression
