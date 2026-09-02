@@ -11,106 +11,107 @@
 
 \begin{document}
 \begin{tikzpicture}[font=\sffamily]
-  % Panel a: Module Distribution with Proper Cartesian Axes
-  \node[font=\large\bfseries] at (0, 8.8) {a};
-  \node[anchor=west, font=\small\bfseries, text=darkgray] at (0.4, 8.8) {Empirical Co-Expression Modules and Standardized GOSlim Descriptors};
+  % Panel a: Module Distribution with Clean Y-Axis Clearance (x=3.6 cm)
+  \node[font=\large\bfseries] at (0.2, 8.8) {a};
+  \node[anchor=west, font=\small\bfseries, text=darkgray] at (0.6, 8.8) {Empirical Co-Expression Modules and Standardized GOSlim Descriptors};
 
-  % Axes for Panel a
-  \draw[->, thick] (1.4, 3.4) -- (1.4, 8.0) node[midway, left=24pt, rotate=90, font=\scriptsize\bfseries] {Co-Expression Module (GOSlim Name)};
-  \draw[->, thick] (1.4, 3.4) -- (7.0, 3.4) node[midway, below=18pt, font=\scriptsize\bfseries] {Number of Expressed Genes ($n$)};
+  % Axes for Panel a: Y-axis line placed at x=3.6 cm, title at x=0.35 cm
+  \draw[->, thick] (3.6, 3.4) -- (3.6, 8.0);
+  \node[font=\scriptsize\bfseries, rotate=90] at (0.35, 5.7) {Co-Expression Module (GOSlim Name)};
+  \draw[->, thick] (3.6, 3.4) -- (7.8, 3.4) node[midway, below=18pt, font=\scriptsize\bfseries] {Number of Expressed Genes ($n$)};
 
   % X-axis Ticks for Panel a
-  \foreach \x/\lbl in {1.4/0, 2.7/50, 4.0/100, 5.3/150, 6.6/200} {
-    \draw (\x, 3.3) -- (\x, 3.4) node[below=3pt, font=\tiny] {\lbl};
+  \foreach \x/\lbl in {3.6/0, 4.6/50, 5.6/100, 6.6/150, 7.6/200} {
+    \draw (\x, 3.3) -- (\x, 3.4) node[below=4pt, font=\tiny] {\lbl};
     \draw[dashed, draw=gray!20] (\x, 3.4) -- (\x, 8.0);
   }
 
-  % Horizontal Bars & Y-ticks
-  % 1. Cell Surface & Biofilm (168 genes -> x = 1.4 + 168/200 * 5.2 = 5.77)
-  \draw (1.3, 7.3) -- (1.4, 7.3);
-  \node[anchor=east, font=\tiny\bfseries, align=right] at (1.2, 7.3) {Cell Surface \& Biofilm};
-  \fill[fairblue!85!black] (1.4, 7.05) rectangle (5.77, 7.55);
-  \node[anchor=west, font=\tiny\bfseries, text=fairblue!85!black] at (5.85, 7.3) {168};
+  % Horizontal Bars & Y-ticks (Labels between x=0.6 and 3.5 with anchor=east)
+  % 1. Cell Surface & Biofilm (168 genes -> x = 3.6 + 168/200 * 4.0 = 6.96)
+  \draw (3.5, 7.3) -- (3.6, 7.3);
+  \node[anchor=east, font=\tiny\bfseries] at (3.4, 7.3) {Cell Surface \& Biofilm};
+  \fill[fairblue!85!black] (3.6, 7.05) rectangle (6.96, 7.55);
+  \node[anchor=west, font=\tiny\bfseries, text=fairblue!85!black] at (7.04, 7.3) {168};
 
-  % 2. Transmembrane Transport & Secretion (65 genes -> x = 1.4 + 65/200 * 5.2 = 3.09)
-  \draw (1.3, 6.4) -- (1.4, 6.4);
-  \node[anchor=east, font=\tiny\bfseries, align=right] at (1.2, 6.4) {Transport \& Secretion};
-  \fill[fairmidred] (1.4, 6.15) rectangle (3.09, 6.65);
-  \node[anchor=west, font=\tiny\bfseries, text=fairmidred] at (3.17, 6.4) {65};
+  % 2. Transmembrane Transport & Secretion (65 genes -> x = 3.6 + 65/200 * 4.0 = 4.90)
+  \draw (3.5, 6.4) -- (3.6, 6.4);
+  \node[anchor=east, font=\tiny\bfseries] at (3.4, 6.4) {Transport \& Secretion};
+  \fill[fairmidred] (3.6, 6.15) rectangle (4.90, 6.65);
+  \node[anchor=west, font=\tiny\bfseries, text=fairmidred] at (4.98, 6.4) {65};
 
-  % 3. Lipid & Fatty Acid Metabolism (53 genes -> x = 1.4 + 53/200 * 5.2 = 2.78)
-  \draw (1.3, 5.5) -- (1.4, 5.5);
-  \node[anchor=east, font=\tiny\bfseries, align=right] at (1.2, 5.5) {Lipid \& Fatty Acid};
-  \fill[fairred] (1.4, 5.25) rectangle (2.78, 5.75);
-  \node[anchor=west, font=\tiny\bfseries, text=fairred] at (2.86, 5.5) {53};
+  % 3. Lipid & Fatty Acid Metabolism (53 genes -> x = 3.6 + 53/200 * 4.0 = 4.66)
+  \draw (3.5, 5.5) -- (3.6, 5.5);
+  \node[anchor=east, font=\tiny\bfseries] at (3.4, 5.5) {Lipid \& Fatty Acid};
+  \fill[fairred] (3.6, 5.25) rectangle (4.66, 5.75);
+  \node[anchor=west, font=\tiny\bfseries, text=fairred] at (4.74, 5.5) {53};
 
-  % 4. Cellular Respiration & Shear Adaptation (39 genes -> x = 1.4 + 39/200 * 5.2 = 2.41)
-  \draw (1.3, 4.6) -- (1.4, 4.6);
-  \node[anchor=east, font=\tiny\bfseries, align=right] at (1.2, 4.6) {Respiration \& Shear};
-  \fill[fairmidblue] (1.4, 4.35) rectangle (2.41, 4.85);
-  \node[anchor=west, font=\tiny\bfseries, text=fairmidblue] at (2.49, 4.6) {39};
+  % 4. Cellular Respiration & Shear Adaptation (39 genes -> x = 3.6 + 39/200 * 4.0 = 4.38)
+  \draw (3.5, 4.6) -- (3.6, 4.6);
+  \node[anchor=east, font=\tiny\bfseries] at (3.4, 4.6) {Respiration \& Shear};
+  \fill[fairmidblue] (3.6, 4.35) rectangle (4.38, 4.85);
+  \node[anchor=west, font=\tiny\bfseries, text=fairmidblue] at (4.46, 4.6) {39};
 
-  % 5. Response to Stress & Redox Homeostasis (25 genes -> x = 1.4 + 25/200 * 5.2 = 2.05)
-  \draw (1.3, 3.8) -- (1.4, 3.8);
-  \node[anchor=east, font=\tiny\bfseries, align=right] at (1.2, 3.8) {Stress \& Redox};
-  \fill[fairred!60!white] (1.4, 3.55) rectangle (2.05, 4.05);
-  \node[anchor=west, font=\tiny\bfseries, text=fairred!80!black] at (2.13, 3.8) {25};
+  % 5. Response to Stress & Redox Homeostasis (25 genes -> x = 3.6 + 25/200 * 4.0 = 4.10)
+  \draw (3.5, 3.8) -- (3.6, 3.8);
+  \node[anchor=east, font=\tiny\bfseries] at (3.4, 3.8) {Stress \& Redox};
+  \fill[fairred!60!white] (3.6, 3.55) rectangle (4.10, 4.05);
+  \node[anchor=west, font=\tiny\bfseries, text=fairred!80!black] at (4.18, 3.8) {25};
 
   % Panel b: Module-Trait Correlation Heatmap with Explicit Axis Titles
-  \node[font=\large\bfseries] at (8.0, 8.8) {b};
-  \node[anchor=west, font=\small\bfseries, text=darkgray] at (8.4, 8.8) {Module-Trait Correlation Heatmap};
+  \node[font=\large\bfseries] at (8.4, 8.8) {b};
+  \node[anchor=west, font=\small\bfseries, text=darkgray] at (8.8, 8.8) {Module-Trait Correlation Heatmap};
 
   % Column Headers & X-axis Title
-  \node[font=\scriptsize\bfseries] at (10.2, 8.1) {Microgravity vs. 1g};
-  \node[font=\scriptsize\bfseries] at (12.3, 8.1) {Clinostat vs. RPM};
-  \node[font=\scriptsize\bfseries] at (14.4, 8.1) {Static 1g Earth};
-  \node[font=\scriptsize\bfseries] at (12.3, 4.3) {Experimental Trait Contrast};
+  \node[font=\scriptsize\bfseries] at (11.4, 8.1) {Microgravity vs. 1g};
+  \node[font=\scriptsize\bfseries] at (13.4, 8.1) {Clinostat vs. RPM};
+  \node[font=\scriptsize\bfseries] at (15.4, 8.1) {Static 1g Earth};
+  \node[font=\scriptsize\bfseries] at (13.4, 4.3) {Experimental Trait Contrast};
 
-  % Row Headers & Y-axis Title
-  \node[font=\scriptsize\bfseries, rotate=90] at (8.3, 6.2) {GOSlim Module};
-  \node[anchor=east, font=\tiny\bfseries] at (9.1, 7.3) {Cell Surface \& Biofilm};
-  \node[anchor=east, font=\tiny\bfseries] at (9.1, 6.3) {Transport \& Secretion};
-  \node[anchor=east, font=\tiny\bfseries] at (9.1, 5.3) {Lipid \& Fatty Acid};
+  % Row Headers & Y-axis Title (Zero overlap, title at x=8.0)
+  \node[font=\scriptsize\bfseries, rotate=90] at (8.0, 6.3) {GOSlim Module};
+  \node[anchor=east, font=\tiny\bfseries] at (10.2, 7.3) {Cell Surface \& Biofilm};
+  \node[anchor=east, font=\tiny\bfseries] at (10.2, 6.3) {Transport \& Secretion};
+  \node[anchor=east, font=\tiny\bfseries] at (10.2, 5.3) {Lipid \& Fatty Acid};
 
-  % Heatmap Cells (Width 2.0 cm, Height 0.8 cm)
+  % Heatmap Cells (Width 1.9 cm, Height 0.8 cm)
   % Row 1
-  \fill[fairblue!85!white] (9.2, 6.9) rectangle (11.2, 7.7);
-  \node[font=\tiny\bfseries, text=white] at (10.2, 7.3) {$r=-0.77$ ($p=1.6\times 10^{-3}$)};
+  \fill[fairblue!85!white] (10.45, 6.9) rectangle (12.35, 7.7);
+  \node[font=\tiny\bfseries, text=white] at (11.4, 7.3) {$r=-0.77$ ($p=1.6\times 10^{-3}$)};
   
-  \fill[gray!10] (11.3, 6.9) rectangle (13.3, 7.7);
-  \node[font=\tiny] at (12.3, 7.3) {$r=0.08$ ($p=0.83$)};
+  \fill[gray!10] (12.45, 6.9) rectangle (14.35, 7.7);
+  \node[font=\tiny] at (13.4, 7.3) {$r=0.08$ ($p=0.83$)};
   
-  \fill[fairred!80!white] (13.4, 6.9) rectangle (15.4, 7.7);
-  \node[font=\tiny\bfseries, text=white] at (14.4, 7.3) {$r=+0.77$ ($p=1.6\times 10^{-3}$)};
+  \fill[fairred!80!white] (14.45, 6.9) rectangle (16.35, 7.7);
+  \node[font=\tiny\bfseries, text=white] at (15.4, 7.3) {$r=+0.77$ ($p=1.6\times 10^{-3}$)};
 
   % Row 2
-  \fill[gray!10] (9.2, 5.9) rectangle (11.2, 6.7);
-  \node[font=\tiny] at (10.2, 6.3) {$r=-0.03$ ($p=0.95$)};
+  \fill[gray!10] (10.45, 5.9) rectangle (12.35, 6.7);
+  \node[font=\tiny] at (11.4, 6.3) {$r=-0.03$ ($p=0.95$)};
   
-  \fill[fairblue!40!white] (11.3, 5.9) rectangle (13.3, 6.7);
-  \node[font=\tiny] at (12.3, 6.3) {$r=-0.38$ ($p=0.31$)};
+  \fill[fairblue!40!white] (12.45, 5.9) rectangle (14.35, 6.7);
+  \node[font=\tiny] at (13.4, 6.3) {$r=-0.38$ ($p=0.31$)};
   
-  \fill[gray!10] (13.4, 5.9) rectangle (15.4, 6.7);
-  \node[font=\tiny] at (14.4, 6.3) {$r=0.03$ ($p=0.95$)};
+  \fill[gray!10] (14.45, 5.9) rectangle (16.35, 6.7);
+  \node[font=\tiny] at (15.4, 6.3) {$r=0.03$ ($p=0.95$)};
 
   % Row 3
-  \fill[gray!10] (9.2, 4.9) rectangle (11.2, 5.7);
-  \node[font=\tiny] at (10.2, 5.3) {$r=0.15$ ($p=0.70$)};
+  \fill[gray!10] (10.45, 4.9) rectangle (12.35, 5.7);
+  \node[font=\tiny] at (11.4, 5.3) {$r=0.15$ ($p=0.70$)};
   
-  \fill[fairred] (11.3, 4.9) rectangle (13.3, 5.7);
-  \node[font=\tiny\bfseries, text=white] at (12.3, 5.3) {$r=+0.93$ ($p=1.2\times 10^{-10}$)};
+  \fill[fairred] (12.45, 4.9) rectangle (14.35, 5.7);
+  \node[font=\tiny\bfseries, text=white] at (13.4, 5.3) {$r=+0.93$ ($p=1.2\times 10^{-10}$)};
   
-  \fill[gray!10] (13.4, 4.9) rectangle (15.4, 5.7);
-  \node[font=\tiny] at (14.4, 5.3) {$r=-0.15$ ($p=0.70$)};
+  \fill[gray!10] (14.45, 4.9) rectangle (16.35, 5.7);
+  \node[font=\tiny] at (15.4, 5.3) {$r=-0.15$ ($p=0.70$)};
 
   % Colorbar below
-  \node[font=\tiny\bfseries] at (10.5, 3.6) {Pearson $r$:};
-  \fill[fairblue] (11.5, 3.5) rectangle (12.5, 3.7);
-  \fill[fairlight] (12.5, 3.5) rectangle (13.5, 3.7);
-  \fill[fairred] (13.5, 3.5) rectangle (14.5, 3.7);
-  \draw[draw=gray!50] (11.5, 3.5) rectangle (14.5, 3.7);
-  \node[font=\tiny] at (11.5, 3.3) {-1.0};
-  \node[font=\tiny] at (13.0, 3.3) {0.0};
-  \node[font=\tiny] at (14.5, 3.3) {+1.0};
+  \node[font=\tiny\bfseries] at (11.6, 3.6) {Pearson $r$:};
+  \fill[fairblue] (12.6, 3.5) rectangle (13.6, 3.7);
+  \fill[fairlight] (13.6, 3.5) rectangle (14.6, 3.7);
+  \fill[fairred] (14.6, 3.5) rectangle (15.6, 3.7);
+  \draw[draw=gray!50] (12.6, 3.5) rectangle (15.6, 3.7);
+  \node[font=\tiny] at (12.6, 3.2) {-1.0};
+  \node[font=\tiny] at (14.1, 3.2) {0.0};
+  \node[font=\tiny] at (15.6, 3.2) {+1.0};
 \end{tikzpicture}
 \end{document}

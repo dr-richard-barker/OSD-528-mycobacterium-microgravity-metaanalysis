@@ -160,19 +160,19 @@ def main():
 \begin{document}
 \begin{tikzpicture}[font=\sffamily, >=Stealth]
   % Panel a: PCA Biplot
-  \node[font=\large\bfseries] at (0, 8.2) {a};
-  \node[anchor=west, font=\small\bfseries, text=darkgray] at (0.4, 8.2) {Transcriptomic Principal Component Analysis};
+  \node[font=\large\bfseries] at (0.2, 8.4) {a};
+  \node[anchor=west, font=\small\bfseries, text=darkgray] at (0.6, 8.4) {Transcriptomic Principal Component Analysis};
   
-  % Axes (Raised to y=1.8 to prevent any label collision)
-  \draw[->, thick] (0.8, 1.8) -- (6.6, 1.8) node[midway, below=18pt, font=\scriptsize\bfseries] {PC1: Microgravity vs. 1g (70.1\% Variance)};
-  \draw[->, thick] (0.8, 1.8) -- (0.8, 7.5) node[midway, left=20pt, rotate=90, font=\scriptsize\bfseries] {PC2: Simulator Disparity (18.4\% Variance)};
+  % Axes (Origin at 1.0, 1.8 with uniform spacing)
+  \draw[->, thick] (1.0, 1.8) -- (6.6, 1.8) node[midway, below=18pt, font=\scriptsize\bfseries] {PC1: Microgravity vs. 1g (70.1\% Variance)};
+  \draw[->, thick] (1.0, 1.8) -- (1.0, 7.6) node[midway, left=24pt, rotate=90, font=\scriptsize\bfseries] {PC2: Simulator Disparity (18.4\% Variance)};
 
   % Axis Ticks
   \foreach \x/\lbl in {1.4/-40, 2.6/-20, 3.8/0, 5.0/20, 6.2/40} {
-    \draw (\x, 1.7) -- (\x, 1.8) node[below=3pt, font=\tiny] {\lbl};
+    \draw (\x, 1.7) -- (\x, 1.8) node[below=4pt, font=\tiny] {\lbl};
   }
   \foreach \y/\lbl in {2.4/-30, 3.8/-15, 5.2/0, 6.6/15} {
-    \draw (0.7, \y) -- (0.8, \y) node[left=3pt, font=\tiny] {\lbl};
+    \draw (0.9, \y) -- (1.0, \y) node[left=4pt, font=\tiny] {\lbl};
   }
 
   % Static 1g Points (Blue)
@@ -187,31 +187,31 @@ def main():
   \fill[fairmidred] (5.0, 6.1) circle (3.5pt) node[anchor=north west, font=\tiny\bfseries] {RFP3D39};
   \fill[fairmidred] (4.8, 5.8) circle (3.5pt) node[anchor=north east, font=\tiny\bfseries] {RFP3D47};
 
-  % RPM 2.0 Points (Deep Red - well above y=1.8)
-  \draw[thick, dashed, draw=fairred] (4.8, 3.2) ellipse (0.8cm and 0.8cm);
-  \fill[fairred] (4.6, 3.6) circle (3.5pt) node[anchor=south, font=\tiny\bfseries] {RFPRPM4};
-  \fill[fairred] (5.1, 3.2) circle (3.5pt) node[anchor=west, font=\tiny\bfseries] {RFPRPM41};
-  \fill[fairred] (4.8, 2.7) circle (3.5pt) node[anchor=north, font=\tiny\bfseries] {RFPRPM6};
+  % RPM 2.0 Points (Deep Red - comfortably above y=1.8)
+  \draw[thick, dashed, draw=fairred] (4.8, 3.4) ellipse (0.8cm and 0.8cm);
+  \fill[fairred] (4.6, 3.8) circle (3.5pt) node[anchor=south, font=\tiny\bfseries] {RFPRPM4};
+  \fill[fairred] (5.1, 3.4) circle (3.5pt) node[anchor=west, font=\tiny\bfseries] {RFPRPM41};
+  \fill[fairred] (4.8, 2.9) circle (3.5pt) node[anchor=north, font=\tiny\bfseries] {RFPRPM6};
 
-  % Panel b: Volcano Plot 3D Clinostat vs 1g
-  \node[font=\large\bfseries] at (7.6, 8.2) {b};
-  \node[anchor=west, font=\small\bfseries, text=darkgray] at (8.0, 8.2) {3D Clinostat vs. Static 1g (351 DEGs)};
+  % Panel b: Volcano Plot 3D Clinostat vs 1g (Matched baseline at y=8.4)
+  \node[font=\large\bfseries] at (7.8, 8.4) {b};
+  \node[anchor=west, font=\small\bfseries, text=darkgray] at (8.2, 8.4) {3D Clinostat vs. Static 1g (351 DEGs)};
   
   \draw[->, thick] (8.2, 1.8) -- (14.0, 1.8) node[midway, below=18pt, font=\scriptsize\bfseries] {$\log_2\text{Fold Change}$};
-  \draw[->, thick] (8.2, 1.8) -- (8.2, 7.5) node[midway, left=20pt, rotate=90, font=\scriptsize\bfseries] {$-\log_{10}(\text{Adjusted } p\text{-value})$};
+  \draw[->, thick] (8.2, 1.8) -- (8.2, 7.6) node[midway, left=24pt, rotate=90, font=\scriptsize\bfseries] {$-\log_{10}(\text{Adjusted } p\text{-value})}$};
 
-  % Ticks
-  \foreach \x/\lbl in {8.6/-6, 9.8/-3, 11.1/0, 12.4/3, 13.6/6} {
-    \draw (\x, 1.7) -- (\x, 1.8) node[below=3pt, font=\tiny] {\lbl};
+  % Ticks: Exact uniform 1.2 cm steps for 3 units
+  \foreach \x/\lbl in {8.7/-6, 9.9/-3, 11.1/0, 12.3/3, 13.5/6} {
+    \draw (\x, 1.7) -- (\x, 1.8) node[below=4pt, font=\tiny] {\lbl};
   }
   \foreach \y/\lbl in {2.6/2, 4.0/6, 5.4/10, 6.8/14} {
-    \draw (8.1, \y) -- (8.2, \y) node[left=3pt, font=\tiny] {\lbl};
+    \draw (8.1, \y) -- (8.2, \y) node[left=4pt, font=\tiny] {\lbl};
   }
 
   % Threshold lines
   \draw[dashed, gray!40] (8.2, 2.6) -- (14.0, 2.6);
-  \draw[dashed, gray!40] (10.4, 1.8) -- (10.4, 7.5);
-  \draw[dashed, gray!40] (11.8, 1.8) -- (11.8, 7.5);
+  \draw[dashed, gray!40] (10.4, 1.8) -- (10.4, 7.6);
+  \draw[dashed, gray!40] (11.8, 1.8) -- (11.8, 7.6);
 
   % Upregulated (Deep Red)
   \fill[fairred] (13.7, 6.8) circle (3pt) node[anchor=south east, font=\tiny\bfseries] {RS06635 (+6.3)};
@@ -229,7 +229,7 @@ def main():
     \fill[gray!35] (\x, \y) circle (1.5pt);
   }
 
-  % Summary Badge (well above x-axis)
+  % Summary Badge
   \node[fill=white, draw=gray!40, font=\tiny\bfseries, inner sep=3pt] at (12.8, 2.6) {351 Sig. DEGs};
 \end{tikzpicture}
 \end{document}
@@ -244,129 +244,130 @@ def main():
 """ + tikz_colors + r"""
 \begin{document}
 \begin{tikzpicture}[font=\sffamily]
-  % Panel a: Module Distribution with Proper Cartesian Axes
-  \node[font=\large\bfseries] at (0, 8.8) {a};
-  \node[anchor=west, font=\small\bfseries, text=darkgray] at (0.4, 8.8) {Empirical Co-Expression Modules and Standardized GOSlim Descriptors};
+  % Panel a: Module Distribution with Clean Y-Axis Clearance (x=3.6 cm)
+  \node[font=\large\bfseries] at (0.2, 8.8) {a};
+  \node[anchor=west, font=\small\bfseries, text=darkgray] at (0.6, 8.8) {Empirical Co-Expression Modules and Standardized GOSlim Descriptors};
 
-  % Axes for Panel a
-  \draw[->, thick] (1.4, 3.4) -- (1.4, 8.0) node[midway, left=24pt, rotate=90, font=\scriptsize\bfseries] {Co-Expression Module (GOSlim Name)};
-  \draw[->, thick] (1.4, 3.4) -- (7.0, 3.4) node[midway, below=18pt, font=\scriptsize\bfseries] {Number of Expressed Genes ($n$)};
+  % Axes for Panel a: Y-axis line placed at x=3.6 cm, title at x=0.35 cm
+  \draw[->, thick] (3.6, 3.4) -- (3.6, 8.0);
+  \node[font=\scriptsize\bfseries, rotate=90] at (0.35, 5.7) {Co-Expression Module (GOSlim Name)};
+  \draw[->, thick] (3.6, 3.4) -- (7.8, 3.4) node[midway, below=18pt, font=\scriptsize\bfseries] {Number of Expressed Genes ($n$)};
 
   % X-axis Ticks for Panel a
-  \foreach \x/\lbl in {1.4/0, 2.7/50, 4.0/100, 5.3/150, 6.6/200} {
-    \draw (\x, 3.3) -- (\x, 3.4) node[below=3pt, font=\tiny] {\lbl};
+  \foreach \x/\lbl in {3.6/0, 4.6/50, 5.6/100, 6.6/150, 7.6/200} {
+    \draw (\x, 3.3) -- (\x, 3.4) node[below=4pt, font=\tiny] {\lbl};
     \draw[dashed, draw=gray!20] (\x, 3.4) -- (\x, 8.0);
   }
 
-  % Horizontal Bars & Y-ticks
-  % 1. Cell Surface & Biofilm (168 genes -> x = 1.4 + 168/200 * 5.2 = 5.77)
-  \draw (1.3, 7.3) -- (1.4, 7.3);
-  \node[anchor=east, font=\tiny\bfseries, align=right] at (1.2, 7.3) {Cell Surface \& Biofilm};
-  \fill[fairblue!85!black] (1.4, 7.05) rectangle (5.77, 7.55);
-  \node[anchor=west, font=\tiny\bfseries, text=fairblue!85!black] at (5.85, 7.3) {168};
+  % Horizontal Bars & Y-ticks (Labels between x=0.6 and 3.5 with anchor=east)
+  % 1. Cell Surface & Biofilm (168 genes -> x = 3.6 + 168/200 * 4.0 = 6.96)
+  \draw (3.5, 7.3) -- (3.6, 7.3);
+  \node[anchor=east, font=\tiny\bfseries] at (3.4, 7.3) {Cell Surface \& Biofilm};
+  \fill[fairblue!85!black] (3.6, 7.05) rectangle (6.96, 7.55);
+  \node[anchor=west, font=\tiny\bfseries, text=fairblue!85!black] at (7.04, 7.3) {168};
 
-  % 2. Transmembrane Transport & Secretion (65 genes -> x = 1.4 + 65/200 * 5.2 = 3.09)
-  \draw (1.3, 6.4) -- (1.4, 6.4);
-  \node[anchor=east, font=\tiny\bfseries, align=right] at (1.2, 6.4) {Transport \& Secretion};
-  \fill[fairmidred] (1.4, 6.15) rectangle (3.09, 6.65);
-  \node[anchor=west, font=\tiny\bfseries, text=fairmidred] at (3.17, 6.4) {65};
+  % 2. Transmembrane Transport & Secretion (65 genes -> x = 3.6 + 65/200 * 4.0 = 4.90)
+  \draw (3.5, 6.4) -- (3.6, 6.4);
+  \node[anchor=east, font=\tiny\bfseries] at (3.4, 6.4) {Transport \& Secretion};
+  \fill[fairmidred] (3.6, 6.15) rectangle (4.90, 6.65);
+  \node[anchor=west, font=\tiny\bfseries, text=fairmidred] at (4.98, 6.4) {65};
 
-  % 3. Lipid & Fatty Acid Metabolism (53 genes -> x = 1.4 + 53/200 * 5.2 = 2.78)
-  \draw (1.3, 5.5) -- (1.4, 5.5);
-  \node[anchor=east, font=\tiny\bfseries, align=right] at (1.2, 5.5) {Lipid \& Fatty Acid};
-  \fill[fairred] (1.4, 5.25) rectangle (2.78, 5.75);
-  \node[anchor=west, font=\tiny\bfseries, text=fairred] at (2.86, 5.5) {53};
+  % 3. Lipid & Fatty Acid Metabolism (53 genes -> x = 3.6 + 53/200 * 4.0 = 4.66)
+  \draw (3.5, 5.5) -- (3.6, 5.5);
+  \node[anchor=east, font=\tiny\bfseries] at (3.4, 5.5) {Lipid \& Fatty Acid};
+  \fill[fairred] (3.6, 5.25) rectangle (4.66, 5.75);
+  \node[anchor=west, font=\tiny\bfseries, text=fairred] at (4.74, 5.5) {53};
 
-  % 4. Cellular Respiration & Shear Adaptation (39 genes -> x = 1.4 + 39/200 * 5.2 = 2.41)
-  \draw (1.3, 4.6) -- (1.4, 4.6);
-  \node[anchor=east, font=\tiny\bfseries, align=right] at (1.2, 4.6) {Respiration \& Shear};
-  \fill[fairmidblue] (1.4, 4.35) rectangle (2.41, 4.85);
-  \node[anchor=west, font=\tiny\bfseries, text=fairmidblue] at (2.49, 4.6) {39};
+  % 4. Cellular Respiration & Shear Adaptation (39 genes -> x = 3.6 + 39/200 * 4.0 = 4.38)
+  \draw (3.5, 4.6) -- (3.6, 4.6);
+  \node[anchor=east, font=\tiny\bfseries] at (3.4, 4.6) {Respiration \& Shear};
+  \fill[fairmidblue] (3.6, 4.35) rectangle (4.38, 4.85);
+  \node[anchor=west, font=\tiny\bfseries, text=fairmidblue] at (4.46, 4.6) {39};
 
-  % 5. Response to Stress & Redox Homeostasis (25 genes -> x = 1.4 + 25/200 * 5.2 = 2.05)
-  \draw (1.3, 3.8) -- (1.4, 3.8);
-  \node[anchor=east, font=\tiny\bfseries, align=right] at (1.2, 3.8) {Stress \& Redox};
-  \fill[fairred!60!white] (1.4, 3.55) rectangle (2.05, 4.05);
-  \node[anchor=west, font=\tiny\bfseries, text=fairred!80!black] at (2.13, 3.8) {25};
+  % 5. Response to Stress & Redox Homeostasis (25 genes -> x = 3.6 + 25/200 * 4.0 = 4.10)
+  \draw (3.5, 3.8) -- (3.6, 3.8);
+  \node[anchor=east, font=\tiny\bfseries] at (3.4, 3.8) {Stress \& Redox};
+  \fill[fairred!60!white] (3.6, 3.55) rectangle (4.10, 4.05);
+  \node[anchor=west, font=\tiny\bfseries, text=fairred!80!black] at (4.18, 3.8) {25};
 
   % Panel b: Module-Trait Correlation Heatmap with Explicit Axis Titles
-  \node[font=\large\bfseries] at (8.0, 8.8) {b};
-  \node[anchor=west, font=\small\bfseries, text=darkgray] at (8.4, 8.8) {Module-Trait Correlation Heatmap};
+  \node[font=\large\bfseries] at (8.4, 8.8) {b};
+  \node[anchor=west, font=\small\bfseries, text=darkgray] at (8.8, 8.8) {Module-Trait Correlation Heatmap};
 
   % Column Headers & X-axis Title
-  \node[font=\scriptsize\bfseries] at (10.2, 8.1) {Microgravity vs. 1g};
-  \node[font=\scriptsize\bfseries] at (12.3, 8.1) {Clinostat vs. RPM};
-  \node[font=\scriptsize\bfseries] at (14.4, 8.1) {Static 1g Earth};
-  \node[font=\scriptsize\bfseries] at (12.3, 4.3) {Experimental Trait Contrast};
+  \node[font=\scriptsize\bfseries] at (11.4, 8.1) {Microgravity vs. 1g};
+  \node[font=\scriptsize\bfseries] at (13.4, 8.1) {Clinostat vs. RPM};
+  \node[font=\scriptsize\bfseries] at (15.4, 8.1) {Static 1g Earth};
+  \node[font=\scriptsize\bfseries] at (13.4, 4.3) {Experimental Trait Contrast};
 
-  % Row Headers & Y-axis Title
-  \node[font=\scriptsize\bfseries, rotate=90] at (8.3, 6.2) {GOSlim Module};
-  \node[anchor=east, font=\tiny\bfseries] at (9.1, 7.3) {Cell Surface \& Biofilm};
-  \node[anchor=east, font=\tiny\bfseries] at (9.1, 6.3) {Transport \& Secretion};
-  \node[anchor=east, font=\tiny\bfseries] at (9.1, 5.3) {Lipid \& Fatty Acid};
+  % Row Headers & Y-axis Title (Zero overlap, title at x=8.0)
+  \node[font=\scriptsize\bfseries, rotate=90] at (8.0, 6.3) {GOSlim Module};
+  \node[anchor=east, font=\tiny\bfseries] at (10.2, 7.3) {Cell Surface \& Biofilm};
+  \node[anchor=east, font=\tiny\bfseries] at (10.2, 6.3) {Transport \& Secretion};
+  \node[anchor=east, font=\tiny\bfseries] at (10.2, 5.3) {Lipid \& Fatty Acid};
 
-  % Heatmap Cells (Width 2.0 cm, Height 0.8 cm)
+  % Heatmap Cells (Width 1.9 cm, Height 0.8 cm)
   % Row 1
-  \fill[fairblue!85!white] (9.2, 6.9) rectangle (11.2, 7.7);
-  \node[font=\tiny\bfseries, text=white] at (10.2, 7.3) {$r=-0.77$ ($p=1.6\times 10^{-3}$)};
+  \fill[fairblue!85!white] (10.45, 6.9) rectangle (12.35, 7.7);
+  \node[font=\tiny\bfseries, text=white] at (11.4, 7.3) {$r=-0.77$ ($p=1.6\times 10^{-3}$)};
   
-  \fill[gray!10] (11.3, 6.9) rectangle (13.3, 7.7);
-  \node[font=\tiny] at (12.3, 7.3) {$r=0.08$ ($p=0.83$)};
+  \fill[gray!10] (12.45, 6.9) rectangle (14.35, 7.7);
+  \node[font=\tiny] at (13.4, 7.3) {$r=0.08$ ($p=0.83$)};
   
-  \fill[fairred!80!white] (13.4, 6.9) rectangle (15.4, 7.7);
-  \node[font=\tiny\bfseries, text=white] at (14.4, 7.3) {$r=+0.77$ ($p=1.6\times 10^{-3}$)};
+  \fill[fairred!80!white] (14.45, 6.9) rectangle (16.35, 7.7);
+  \node[font=\tiny\bfseries, text=white] at (15.4, 7.3) {$r=+0.77$ ($p=1.6\times 10^{-3}$)};
 
   % Row 2
-  \fill[gray!10] (9.2, 5.9) rectangle (11.2, 6.7);
-  \node[font=\tiny] at (10.2, 6.3) {$r=-0.03$ ($p=0.95$)};
+  \fill[gray!10] (10.45, 5.9) rectangle (12.35, 6.7);
+  \node[font=\tiny] at (11.4, 6.3) {$r=-0.03$ ($p=0.95$)};
   
-  \fill[fairblue!40!white] (11.3, 5.9) rectangle (13.3, 6.7);
-  \node[font=\tiny] at (12.3, 6.3) {$r=-0.38$ ($p=0.31$)};
+  \fill[fairblue!40!white] (12.45, 5.9) rectangle (14.35, 6.7);
+  \node[font=\tiny] at (13.4, 6.3) {$r=-0.38$ ($p=0.31$)};
   
-  \fill[gray!10] (13.4, 5.9) rectangle (15.4, 6.7);
-  \node[font=\tiny] at (14.4, 6.3) {$r=0.03$ ($p=0.95$)};
+  \fill[gray!10] (14.45, 5.9) rectangle (16.35, 6.7);
+  \node[font=\tiny] at (15.4, 6.3) {$r=0.03$ ($p=0.95$)};
 
   % Row 3
-  \fill[gray!10] (9.2, 4.9) rectangle (11.2, 5.7);
-  \node[font=\tiny] at (10.2, 5.3) {$r=0.15$ ($p=0.70$)};
+  \fill[gray!10] (10.45, 4.9) rectangle (12.35, 5.7);
+  \node[font=\tiny] at (11.4, 5.3) {$r=0.15$ ($p=0.70$)};
   
-  \fill[fairred] (11.3, 4.9) rectangle (13.3, 5.7);
-  \node[font=\tiny\bfseries, text=white] at (12.3, 5.3) {$r=+0.93$ ($p=1.2\times 10^{-10}$)};
+  \fill[fairred] (12.45, 4.9) rectangle (14.35, 5.7);
+  \node[font=\tiny\bfseries, text=white] at (13.4, 5.3) {$r=+0.93$ ($p=1.2\times 10^{-10}$)};
   
-  \fill[gray!10] (13.4, 4.9) rectangle (15.4, 5.7);
-  \node[font=\tiny] at (14.4, 5.3) {$r=-0.15$ ($p=0.70$)};
+  \fill[gray!10] (14.45, 4.9) rectangle (16.35, 5.7);
+  \node[font=\tiny] at (15.4, 5.3) {$r=-0.15$ ($p=0.70$)};
 
   % Colorbar below
-  \node[font=\tiny\bfseries] at (10.5, 3.6) {Pearson $r$:};
-  \fill[fairblue] (11.5, 3.5) rectangle (12.5, 3.7);
-  \fill[fairlight] (12.5, 3.5) rectangle (13.5, 3.7);
-  \fill[fairred] (13.5, 3.5) rectangle (14.5, 3.7);
-  \draw[draw=gray!50] (11.5, 3.5) rectangle (14.5, 3.7);
-  \node[font=\tiny] at (11.5, 3.3) {-1.0};
-  \node[font=\tiny] at (13.0, 3.3) {0.0};
-  \node[font=\tiny] at (14.5, 3.3) {+1.0};
+  \node[font=\tiny\bfseries] at (11.6, 3.6) {Pearson $r$:};
+  \fill[fairblue] (12.6, 3.5) rectangle (13.6, 3.7);
+  \fill[fairlight] (13.6, 3.5) rectangle (14.6, 3.7);
+  \fill[fairred] (14.6, 3.5) rectangle (15.6, 3.7);
+  \draw[draw=gray!50] (12.6, 3.5) rectangle (15.6, 3.7);
+  \node[font=\tiny] at (12.6, 3.2) {-1.0};
+  \node[font=\tiny] at (14.1, 3.2) {0.0};
+  \node[font=\tiny] at (15.6, 3.2) {+1.0};
 \end{tikzpicture}
 \end{document}
 """
     compile_tikz_to_pdf(fig3_tex, "fig3_wgcna_modules")
 
     # -------------------------------------------------------------
-    # Figure 4: TabPFN AI Foundation Model Benchmark (Zero Overlap)
+    # Figure 4: TabPFN AI Foundation Model Benchmark (Matched Header Alignment)
     # -------------------------------------------------------------
     fig4_tex = r"""\documentclass[tikz,border=12pt]{standalone}
 \usepackage{tikz}
 """ + tikz_colors + r"""
 \begin{document}
 \begin{tikzpicture}[font=\sffamily, >=Stealth]
-  % Panel a: LOOCV Accuracy Comparison
-  \node[font=\large\bfseries] at (0, 8.8) {a};
-  \node[anchor=west, font=\small\bfseries, text=darkgray] at (0.4, 8.8) {Leave-One-Out Cross-Validation (LOOCV) Benchmark};
+  % Panel a: LOOCV Accuracy Comparison (Shared baseline y=8.8)
+  \node[font=\large\bfseries] at (0.2, 8.8) {a};
+  \node[anchor=west, font=\small\bfseries, text=darkgray] at (0.6, 8.8) {Leave-One-Out Cross-Validation (LOOCV) Benchmark};
 
-  \draw[->, thick] (0.8, 2.0) -- (0.8, 7.8) node[midway, left=20pt, rotate=90, font=\scriptsize\bfseries] {LOOCV Accuracy (\%)};
+  \draw[->, thick] (0.8, 2.0) -- (0.8, 7.8) node[midway, left=22pt, rotate=90, font=\scriptsize\bfseries] {LOOCV Accuracy (\%)};
   \draw[thick] (0.8, 2.0) -- (5.8, 2.0);
   
   \foreach \y/\lbl in {2.0/0, 3.4/25, 4.8/50, 6.2/75, 7.6/100} {
-    \draw (0.7, \y) -- (0.8, \y) node[left=3pt, font=\tiny] {\lbl};
+    \draw (0.7, \y) -- (0.8, \y) node[left=4pt, font=\tiny] {\lbl};
     \draw[dashed, draw=gray!20] (0.8, \y) -- (5.8, \y);
   }
 
@@ -387,20 +388,20 @@ def main():
 
   \node[font=\scriptsize\bfseries] at (3.15, 0.4) {Machine Learning Model / Task};
 
-  % Panel b: Confusion Matrix (Generous spacing between labels)
-  \node[font=\large\bfseries] at (6.8, 8.8) {b};
-  \node[anchor=west, font=\small\bfseries, text=darkgray] at (7.2, 8.8) {TabPFN 3-Class Confusion Matrix (LOOCV)};
+  % Panel b: Confusion Matrix (Shared baseline y=8.8, centered over matrix)
+  \node[font=\large\bfseries] at (7.8, 8.8) {b};
+  \node[anchor=west, font=\small\bfseries, text=darkgray] at (8.2, 8.8) {TabPFN 3-Class Confusion Matrix (LOOCV)};
 
-  \node[font=\scriptsize\bfseries] at (11.2, 8.1) {Predicted Modality};
-  \node[font=\scriptsize\bfseries, rotate=90] at (6.8, 5.2) {True Modality};
+  \node[font=\scriptsize\bfseries] at (11.25, 8.0) {Predicted Modality};
+  \node[font=\scriptsize\bfseries, rotate=90] at (7.5, 5.2) {True Modality};
 
-  \node[font=\tiny\bfseries] at (9.8, 7.5) {Clinostat};
-  \node[font=\tiny\bfseries] at (11.3, 7.5) {RPM 2.0};
-  \node[font=\tiny\bfseries] at (12.8, 7.5) {Static 1g};
+  \node[font=\tiny\bfseries] at (9.75, 7.4) {Clinostat};
+  \node[font=\tiny\bfseries] at (11.25, 7.4) {RPM 2.0};
+  \node[font=\tiny\bfseries] at (12.75, 7.4) {Static 1g};
 
-  \node[font=\tiny\bfseries, anchor=east] at (8.8, 6.4) {Clinostat};
-  \node[font=\tiny\bfseries, anchor=east] at (8.8, 5.2) {RPM 2.0};
-  \node[font=\tiny\bfseries, anchor=east] at (8.8, 4.0) {Static 1g};
+  \node[font=\tiny\bfseries, anchor=east] at (8.9, 6.4) {Clinostat};
+  \node[font=\tiny\bfseries, anchor=east] at (8.9, 5.2) {RPM 2.0};
+  \node[font=\tiny\bfseries, anchor=east] at (8.9, 4.0) {Static 1g};
 
   % Matrix Cells (1.3 cm x 1.0 cm)
   \fill[fairred!90!white] (9.1, 5.9) rectangle (10.4, 6.9); \node[font=\small\bfseries, text=white] at (9.75, 6.4) {2};
@@ -416,17 +417,17 @@ def main():
   \fill[fairred!90!white] (12.1, 3.5) rectangle (13.4, 4.5); \node[font=\small\bfseries, text=white] at (12.75, 4.0) {2};
 
   % Panel c: Feature Importance
-  \node[font=\large\bfseries] at (6.8, 2.6) {c};
-  \node[anchor=west, font=\small\bfseries, text=darkgray] at (7.2, 2.6) {Top Prioritized Features};
+  \node[font=\large\bfseries] at (7.8, 2.6) {c};
+  \node[anchor=west, font=\small\bfseries, text=darkgray] at (8.2, 2.6) {Top Prioritized Features};
 
-  \fill[fairred] (8.0, 1.8) rectangle (12.2, 2.2);
-  \node[anchor=west, font=\tiny\bfseries] at (12.3, 2.0) {Lipid/Kinematic (MEblue, 0.93)};
+  \fill[fairred] (8.9, 1.8) rectangle (12.6, 2.2);
+  \node[anchor=west, font=\tiny\bfseries] at (12.7, 2.0) {Lipid/Kinematic (MEblue, 0.93)};
 
-  \fill[fairmidred] (8.0, 1.1) rectangle (11.4, 1.5);
-  \node[anchor=west, font=\tiny\bfseries] at (11.5, 1.3) {Biofilm Core (MEturquoise, 0.77)};
+  \fill[fairmidred] (8.9, 1.1) rectangle (11.8, 1.5);
+  \node[anchor=west, font=\tiny\bfseries] at (11.9, 1.3) {Biofilm Core (MEturquoise, 0.77)};
 
-  \fill[fairmidblue] (8.0, 0.4) rectangle (10.2, 0.8);
-  \node[anchor=west, font=\tiny\bfseries] at (10.3, 0.6) {Shear Adaptation (MEgreen, 0.55)};
+  \fill[fairmidblue] (8.9, 0.4) rectangle (10.8, 0.8);
+  \node[anchor=west, font=\tiny\bfseries] at (10.9, 0.6) {Shear Adaptation (MEgreen, 0.55)};
 \end{tikzpicture}
 \end{document}
 """
@@ -518,22 +519,23 @@ def main():
 """ + tikz_colors + r"""
 \begin{document}
 \begin{tikzpicture}[font=\sffamily, >=Stealth]
-  % Panel a: Scatter Plot k_within vs k_total
-  \node[font=\large\bfseries] at (0, 8.4) {a};
-  \node[anchor=west, font=\small\bfseries, text=darkgray] at (0.4, 8.4) {Intramodular Hub Centrality ($k_{\text{within}}$ vs. $k_{\text{total}}$)};
+  % Panel a: Scatter Plot k_within vs k_total (Shared baseline y=8.4)
+  \node[font=\large\bfseries] at (0.2, 8.4) {a};
+  \node[anchor=west, font=\small\bfseries, text=darkgray] at (0.6, 8.4) {Intramodular Hub Centrality ($k_{\text{within}}$ vs. $k_{\text{total}}$)};
 
-  % Axes with generous offsets
+  % Axes starting cleanly at (1.2, 1.6) with uniform steps
   \draw[->, thick] (1.2, 1.6) -- (6.6, 1.6) node[midway, below=18pt, font=\scriptsize\bfseries] {Whole-Network Degree ($k_{\text{total}}$)};
-  \draw[->, thick] (1.2, 1.6) -- (1.2, 7.8) node[midway, left=24pt, rotate=90, font=\scriptsize\bfseries] {Intramodular Connectivity ($k_{\text{within}}$)};
+  \draw[->, thick] (1.2, 1.6) -- (1.2, 7.6) node[midway, left=24pt, rotate=90, font=\scriptsize\bfseries] {Intramodular Connectivity ($k_{\text{within}}$)};
 
-  \foreach \x/\lbl in {1.4/0, 2.6/10, 3.8/20, 5.0/30, 6.2/40} {
-    \draw (\x, 1.5) -- (\x, 1.6) node[below=3pt, font=\tiny] {\lbl};
+  % Uniform tick intervals starting directly at 1.2 on x, 1.6 on y
+  \foreach \x/\lbl in {1.2/0, 2.4/10, 3.6/20, 4.8/30, 6.0/40} {
+    \draw (\x, 1.5) -- (\x, 1.6) node[below=4pt, font=\tiny] {\lbl};
   }
   \foreach \y/\lbl in {1.6/0, 3.0/10, 4.4/20, 5.8/30, 7.2/40} {
-    \draw (1.1, \y) -- (1.2, \y) node[left=3pt, font=\tiny] {\lbl};
+    \draw (1.1, \y) -- (1.2, \y) node[left=4pt, font=\tiny] {\lbl};
   }
 
-  % Hub Points
+  % Hub Points with non-overlapping labels
   \fill[fairblue] (5.8, 6.9) circle (4pt) node[anchor=east, font=\tiny\bfseries] {RS12120 (35.3)\ };
   \fill[fairblue] (5.7, 6.5) circle (4pt) node[anchor=east, font=\tiny\bfseries] {RS21560 (35.0)\ };
   \fill[fairblue] (5.6, 6.1) circle (4pt) node[anchor=east, font=\tiny\bfseries] {RS04440 (34.7)\ };
@@ -545,9 +547,9 @@ def main():
   \fill[fairmidred] (3.0, 2.8) circle (3.5pt) node[anchor=east, font=\tiny\bfseries] {RS16730 (10.8)\ };
   \fill[fairred!50!white] (2.4, 2.3) circle (3pt) node[anchor=west, font=\tiny] {\ RS13930 (6.3)};
 
-  % Panel b: Regulatory Interactome
-  \node[font=\large\bfseries] at (7.6, 8.4) {b};
-  \node[anchor=west, font=\small\bfseries, text=darkgray] at (8.0, 8.4) {Inter-Module Regulatory Interactome};
+  % Panel b: Regulatory Interactome (Shared baseline y=8.4)
+  \node[font=\large\bfseries] at (7.8, 8.4) {b};
+  \node[anchor=west, font=\small\bfseries, text=darkgray] at (8.2, 8.4) {Inter-Module Regulatory Interactome};
 
   % Network Nodes
   \node[circle, fill=fairblue!20, draw=fairblue, line width=1pt, font=\tiny\bfseries] (mps1) at (9.0, 6.6) {mps1};
@@ -579,59 +581,60 @@ def main():
     compile_tikz_to_pdf(fig6_tex, "fig6_hub_connectivity")
 
     # -------------------------------------------------------------
-    # Figure 7: Pan-Microbial Landscape (With Explicit X & Y Titles)
+    # Figure 7: Pan-Microbial Landscape (Zero Overlap with Phylum Names)
     # -------------------------------------------------------------
     fig7_tex = r"""\documentclass[tikz,border=12pt]{standalone}
 \usepackage{tikz}
 """ + tikz_colors + r"""
 \begin{document}
 \begin{tikzpicture}[font=\sffamily]
-  % Panel a: Taxonomic Distribution with Proper Cartesian Axes
-  \node[font=\large\bfseries] at (0, 8.8) {a};
-  \node[anchor=west, font=\small\bfseries, text=darkgray] at (0.4, 8.8) {Taxonomic Distribution Across 78 OSDR Spaceflight Datasets};
+  % Panel a: Taxonomic Distribution with Dedicated Y-axis Clearance (x=3.6 cm)
+  \node[font=\large\bfseries] at (0.2, 8.8) {a};
+  \node[anchor=west, font=\small\bfseries, text=darkgray] at (0.6, 8.8) {Taxonomic Distribution Across 78 OSDR Spaceflight Datasets};
 
-  % Axes for Panel a
-  \draw[->, thick] (1.4, 4.4) -- (1.4, 8.2) node[midway, left=24pt, rotate=90, font=\scriptsize\bfseries] {Microbial Phylum};
-  \draw[->, thick] (1.4, 4.4) -- (7.0, 4.4) node[midway, below=18pt, font=\scriptsize\bfseries] {Dataset Representation (\% of 78 Studies)};
+  % Axes for Panel a: Y-axis placed at x=3.6 cm!
+  \draw[->, thick] (3.6, 4.4) -- (3.6, 8.2);
+  \node[font=\scriptsize\bfseries, rotate=90] at (0.35, 6.3) {Microbial Phylum};
+  \draw[->, thick] (3.6, 4.4) -- (8.2, 4.4) node[midway, below=18pt, font=\scriptsize\bfseries] {Dataset Representation (\% of 78 Studies)};
 
-  % Ticks for Panel a
-  \foreach \x/\lbl in {1.4/0\%, 2.6/10\%, 3.8/20\%, 5.0/30\%, 6.2/40\%} {
-    \draw (\x, 4.3) -- (\x, 4.4) node[below=3pt, font=\tiny] {\lbl};
+  % Ticks for Panel a: 3.6 to 7.6 (1.0 cm per 10%)
+  \foreach \x/\lbl in {3.6/0\%, 4.6/10\%, 5.6/20\%, 6.6/30\%, 7.6/40\%} {
+    \draw (\x, 4.3) -- (\x, 4.4) node[below=4pt, font=\tiny] {\lbl};
     \draw[dashed, draw=gray!20] (\x, 4.4) -- (\x, 8.2);
   }
 
-  % Bars (X scale: 1.4 + pct/100 * 12.0)
-  % 1. Pseudomonadota (43.6% -> x = 1.4 + 0.436*12 = 6.63)
-  \draw (1.3, 7.6) -- (1.4, 7.6);
-  \node[anchor=east, font=\tiny\bfseries] at (1.2, 7.6) {Pseudomonadota};
-  \fill[fairblue] (1.4, 7.35) rectangle (6.63, 7.85);
-  \node[anchor=west, font=\tiny\bfseries, text=fairblue] at (6.71, 7.6) {43.6\% ($N=34$)};
+  % Bars & Y-labels (Labels at x=3.4 anchor=east, bars from x=3.6)
+  % 1. Pseudomonadota (43.6% -> x = 3.6 + 0.436*10 = 7.96)
+  \draw (3.5, 7.6) -- (3.6, 7.6);
+  \node[anchor=east, font=\tiny\bfseries] at (3.4, 7.6) {Pseudomonadota};
+  \fill[fairblue] (3.6, 7.35) rectangle (7.96, 7.85);
+  \node[anchor=west, font=\tiny\bfseries, text=fairblue] at (8.04, 7.6) {43.6\% ($N=34$)};
 
-  % 2. Bacillota (28.2% -> x = 1.4 + 0.282*12 = 4.78)
-  \draw (1.3, 6.6) -- (1.4, 6.6);
-  \node[anchor=east, font=\tiny\bfseries] at (1.2, 6.6) {Bacillota};
-  \fill[fairmidblue] (1.4, 6.35) rectangle (4.78, 6.85);
-  \node[anchor=west, font=\tiny\bfseries, text=fairmidblue] at (4.86, 6.6) {28.2\% ($N=22$)};
+  % 2. Bacillota (28.2% -> x = 3.6 + 0.282*10 = 6.42)
+  \draw (3.5, 6.6) -- (3.6, 6.6);
+  \node[anchor=east, font=\tiny\bfseries] at (3.4, 6.6) {Bacillota};
+  \fill[fairmidblue] (3.6, 6.35) rectangle (6.42, 6.85);
+  \node[anchor=west, font=\tiny\bfseries, text=fairmidblue] at (6.50, 6.6) {28.2\% ($N=22$)};
 
-  % 3. Actinomycetota (12.8% -> x = 1.4 + 0.128*12 = 2.94)
-  \draw (1.3, 5.6) -- (1.4, 5.6);
-  \node[anchor=east, font=\tiny\bfseries] at (1.2, 5.6) {Actinomycetota};
-  \fill[fairmidred] (1.4, 5.35) rectangle (2.94, 5.85);
-  \node[anchor=west, font=\tiny\bfseries, text=fairmidred] at (3.02, 5.6) {12.8\% ($N=10$)};
+  % 3. Actinomycetota (12.8% -> x = 3.6 + 0.128*10 = 4.88)
+  \draw (3.5, 5.6) -- (3.6, 5.6);
+  \node[anchor=east, font=\tiny\bfseries] at (3.4, 5.6) {Actinomycetota};
+  \fill[fairmidred] (3.6, 5.35) rectangle (4.88, 5.85);
+  \node[anchor=west, font=\tiny\bfseries, text=fairmidred] at (4.96, 5.6) {12.8\% ($N=10$)};
 
-  % 4. Fungi (10.3% -> x = 1.4 + 0.103*12 = 2.64)
-  \draw (1.3, 4.8) -- (1.4, 4.8);
-  \node[anchor=east, font=\tiny\bfseries] at (1.2, 4.8) {Fungi};
-  \fill[fairred] (1.4, 4.55) rectangle (2.64, 5.05);
-  \node[anchor=west, font=\tiny\bfseries, text=fairred] at (2.72, 4.8) {10.3\% ($N=8$)};
+  % 4. Fungi (10.3% -> x = 3.6 + 0.103*10 = 4.63)
+  \draw (3.5, 4.8) -- (3.6, 4.8);
+  \node[anchor=east, font=\tiny\bfseries] at (3.4, 4.8) {Fungi};
+  \fill[fairred] (3.6, 4.55) rectangle (4.63, 5.05);
+  \node[anchor=west, font=\tiny\bfseries, text=fairred] at (4.71, 4.8) {10.3\% ($N=8$)};
 
   % Panel b: Cross-Species Spaceflight Concordance Heatmap
-  \node[font=\large\bfseries] at (0, 3.2) {b};
-  \node[anchor=west, font=\small\bfseries, text=darkgray] at (0.4, 3.2) {Cross-Species Spaceflight Adaptation Concordance};
+  \node[font=\large\bfseries] at (0.2, 3.2) {b};
+  \node[anchor=west, font=\small\bfseries, text=darkgray] at (0.6, 3.2) {Cross-Species Spaceflight Adaptation Concordance};
 
   % Axis Titles for Panel b
-  \node[font=\scriptsize\bfseries] at (8.5, 2.7) {Conserved Spaceflight Phenotypic Hallmark};
-  \node[font=\scriptsize\bfseries, rotate=90] at (0.4, 1.2) {Microbial Pathogen};
+  \node[font=\scriptsize\bfseries] at (8.1, 2.7) {Conserved Spaceflight Phenotypic Hallmark};
+  \node[font=\scriptsize\bfseries, rotate=90] at (0.35, 1.0) {Microbial Pathogen};
 
   % Column Headers
   \node[font=\tiny\bfseries] at (4.5, 2.2) {Biofilm};
@@ -640,22 +643,22 @@ def main():
   \node[font=\tiny\bfseries] at (9.9, 2.2) {Hypoxia};
   \node[font=\tiny\bfseries] at (11.7, 2.2) {Antibiotics};
 
-  % Rows
-  \node[anchor=east, font=\tiny\bfseries] at (3.5, 1.6) {M. marinum (OSD-528)};
+  % Rows (Labels aligned at x=3.4 anchor=east)
+  \node[anchor=east, font=\tiny\bfseries] at (3.4, 1.6) {M. marinum (OSD-528)};
   \fill[fairred] (3.8, 1.3) rectangle (5.2, 1.9); \node[font=\tiny\bfseries, text=white] at (4.5, 1.6) {+1.0};
   \fill[fairred] (5.6, 1.3) rectangle (7.0, 1.9); \node[font=\tiny\bfseries, text=white] at (6.3, 1.6) {+1.0};
   \fill[fairred] (7.4, 1.3) rectangle (8.8, 1.9); \node[font=\tiny\bfseries, text=white] at (8.1, 1.6) {+1.0};
   \fill[fairred] (9.2, 1.3) rectangle (10.6, 1.9); \node[font=\tiny\bfseries, text=white] at (9.9, 1.6) {+1.0};
   \fill[fairred] (11.0, 1.3) rectangle (12.4, 1.9); \node[font=\tiny\bfseries, text=white] at (11.7, 1.6) {+1.0};
 
-  \node[anchor=east, font=\tiny\bfseries] at (3.5, 0.8) {P. aeruginosa (OSD-14)};
+  \node[anchor=east, font=\tiny\bfseries] at (3.4, 0.8) {P. aeruginosa (OSD-14)};
   \fill[fairred] (3.8, 0.5) rectangle (5.2, 1.1); \node[font=\tiny\bfseries, text=white] at (4.5, 0.8) {+1.0};
   \fill[fairred] (5.6, 0.5) rectangle (7.0, 1.1); \node[font=\tiny\bfseries, text=white] at (6.3, 0.8) {+1.0};
   \fill[fairred] (7.4, 0.5) rectangle (8.8, 1.1); \node[font=\tiny\bfseries, text=white] at (8.1, 0.8) {+1.0};
   \fill[fairred] (9.2, 0.5) rectangle (10.6, 1.1); \node[font=\tiny\bfseries, text=white] at (9.9, 0.8) {+1.0};
   \fill[fairred] (11.0, 0.5) rectangle (12.4, 1.1); \node[font=\tiny\bfseries, text=white] at (11.7, 0.8) {+1.0};
 
-  \node[anchor=east, font=\tiny\bfseries] at (3.5, 0.0) {S. enterica (OSD-11)};
+  \node[anchor=east, font=\tiny\bfseries] at (3.4, 0.0) {S. enterica (OSD-11)};
   \fill[fairmidred] (3.8, -0.3) rectangle (5.2, 0.3); \node[font=\tiny\bfseries, text=white] at (4.5, 0.0) {+0.8};
   \fill[fairred] (5.6, -0.3) rectangle (7.0, 0.3); \node[font=\tiny\bfseries, text=white] at (6.3, 0.0) {+1.0};
   \fill[fairred] (7.4, -0.3) rectangle (8.8, 0.3); \node[font=\tiny\bfseries, text=white] at (8.1, 0.0) {+1.0};

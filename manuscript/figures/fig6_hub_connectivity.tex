@@ -12,22 +12,23 @@
 
 \begin{document}
 \begin{tikzpicture}[font=\sffamily, >=Stealth]
-  % Panel a: Scatter Plot k_within vs k_total
-  \node[font=\large\bfseries] at (0, 8.4) {a};
-  \node[anchor=west, font=\small\bfseries, text=darkgray] at (0.4, 8.4) {Intramodular Hub Centrality ($k_{\text{within}}$ vs. $k_{\text{total}}$)};
+  % Panel a: Scatter Plot k_within vs k_total (Shared baseline y=8.4)
+  \node[font=\large\bfseries] at (0.2, 8.4) {a};
+  \node[anchor=west, font=\small\bfseries, text=darkgray] at (0.6, 8.4) {Intramodular Hub Centrality ($k_{\text{within}}$ vs. $k_{\text{total}}$)};
 
-  % Axes with generous offsets
+  % Axes starting cleanly at (1.2, 1.6) with uniform steps
   \draw[->, thick] (1.2, 1.6) -- (6.6, 1.6) node[midway, below=18pt, font=\scriptsize\bfseries] {Whole-Network Degree ($k_{\text{total}}$)};
-  \draw[->, thick] (1.2, 1.6) -- (1.2, 7.8) node[midway, left=24pt, rotate=90, font=\scriptsize\bfseries] {Intramodular Connectivity ($k_{\text{within}}$)};
+  \draw[->, thick] (1.2, 1.6) -- (1.2, 7.6) node[midway, left=24pt, rotate=90, font=\scriptsize\bfseries] {Intramodular Connectivity ($k_{\text{within}}$)};
 
-  \foreach \x/\lbl in {1.4/0, 2.6/10, 3.8/20, 5.0/30, 6.2/40} {
-    \draw (\x, 1.5) -- (\x, 1.6) node[below=3pt, font=\tiny] {\lbl};
+  % Uniform tick intervals starting directly at 1.2 on x, 1.6 on y
+  \foreach \x/\lbl in {1.2/0, 2.4/10, 3.6/20, 4.8/30, 6.0/40} {
+    \draw (\x, 1.5) -- (\x, 1.6) node[below=4pt, font=\tiny] {\lbl};
   }
   \foreach \y/\lbl in {1.6/0, 3.0/10, 4.4/20, 5.8/30, 7.2/40} {
-    \draw (1.1, \y) -- (1.2, \y) node[left=3pt, font=\tiny] {\lbl};
+    \draw (1.1, \y) -- (1.2, \y) node[left=4pt, font=\tiny] {\lbl};
   }
 
-  % Hub Points
+  % Hub Points with non-overlapping labels
   \fill[fairblue] (5.8, 6.9) circle (4pt) node[anchor=east, font=\tiny\bfseries] {RS12120 (35.3)\ };
   \fill[fairblue] (5.7, 6.5) circle (4pt) node[anchor=east, font=\tiny\bfseries] {RS21560 (35.0)\ };
   \fill[fairblue] (5.6, 6.1) circle (4pt) node[anchor=east, font=\tiny\bfseries] {RS04440 (34.7)\ };
@@ -39,9 +40,9 @@
   \fill[fairmidred] (3.0, 2.8) circle (3.5pt) node[anchor=east, font=\tiny\bfseries] {RS16730 (10.8)\ };
   \fill[fairred!50!white] (2.4, 2.3) circle (3pt) node[anchor=west, font=\tiny] {\ RS13930 (6.3)};
 
-  % Panel b: Regulatory Interactome
-  \node[font=\large\bfseries] at (7.6, 8.4) {b};
-  \node[anchor=west, font=\small\bfseries, text=darkgray] at (8.0, 8.4) {Inter-Module Regulatory Interactome};
+  % Panel b: Regulatory Interactome (Shared baseline y=8.4)
+  \node[font=\large\bfseries] at (7.8, 8.4) {b};
+  \node[anchor=west, font=\small\bfseries, text=darkgray] at (8.2, 8.4) {Inter-Module Regulatory Interactome};
 
   % Network Nodes
   \node[circle, fill=fairblue!20, draw=fairblue, line width=1pt, font=\tiny\bfseries] (mps1) at (9.0, 6.6) {mps1};
