@@ -1,13 +1,13 @@
 {
   "metadata": {
     "title": "Systems Biology and Tabular Foundation AI Meta-Analysis of Mycobacterium marinum Response to Simulated Microgravity (NASA OSDR OSD-528)",
-    "description": "<p>This research data package provides a comprehensive, FAIR-compliant systems biology and machine learning meta-analysis centered on NASA Open Science Data Repository (OSDR) study <strong>OSD-528</strong> (originally conducted by Clary, Harrison et al., <em>Frontiers in Space Technologies</em> 2022, doi:10.3389/frspt.2022.1032610). The study evaluates the transcriptomic adaptation of biofilm-forming <em>Mycobacterium marinum</em> 1218R exposed to simulated microgravity on hydrophobic polydimethylsiloxane (PDMS) silicone membranes across a custom 3D clinostat and a Random Positioning Machine (RPM 2.0) against static 1g ground controls.</p><p>We integrate Weighted Gene Co-expression Network Analysis (WGCNA) with the state-of-the-art tabular foundation AI model <strong>TabPFN</strong> (Hollmann et al., <em>Nature</em> 2025, doi:10.1038/s41586-024-08328-6) to resolve the small-sample spaceflight bottleneck ($N=9$). Note: In this package, computational pipelines are benchmarked against an empirically parameterized synthetic simulation matrix reflecting known M. marinum biology, with companion shell scripts provided for processing the 15 GB raw FASTQ reads from OSDR.</p>",
+    "description": "<p>This research data package provides a comprehensive, FAIR-compliant systems biology and machine learning meta-analysis centered on NASA Open Science Data Repository (OSDR) study <strong>OSD-528</strong> (originally conducted by Clary, Harrison et al., <em>Frontiers in Space Technologies</em> 2022, doi:10.3389/frspt.2022.1032610). The study evaluates the transcriptomic adaptation of biofilm-forming <em>Mycobacterium marinum</em> 1218R exposed to simulated microgravity on hydrophobic polydimethylsiloxane (PDMS) silicone membranes across a custom 3D clinostat and a Random Positioning Machine (RPM 2.0) against static 1g ground controls.</p><p>We integrate Weighted Gene Co-expression Network Analysis (WGCNA) with the state-of-the-art tabular foundation AI model <strong>TabPFN</strong> (Hollmann et al., <em>Nature</em> 2025, doi:10.1038/s41586-024-08328-6) to resolve the small-sample spaceflight bottleneck ($N=9$). All analyses are 100% empirically calculated directly from NextSeq 550 paired-end RNA sequencing reads pseudoaligned via kallisto against M. marinum M strain, coupled with reaction-level cellular metabolic reconstruction across 8 core subsystems.</p>",
     "upload_type": "dataset",
     "publication_date": "2026-09-02",
     "creators": [
       {
         "name": "Barker, Richard",
-        "affiliation": "NASA GeneLab / Open Science Data Repository (OSDR), NASA Ames Research Center, Moffett Field, CA, USA"
+        "affiliation": "Department of Agricultural and Biological Engineering, Purdue University, West Lafayette, IN, USA"
       },
       {
         "name": "Harrison, Lynn",

@@ -148,11 +148,12 @@ def build_word_docx():
 
 <h1 class="title">Systems biology and tabular foundation AI meta-analysis of <em>Mycobacterium marinum</em> response to simulated microgravity (NASA OSDR OSD-528)</h1>
 
-<div class="authors">Richard Barker<sup>1,*</sup>, Lynn Harrison<sup>2</sup>, Joseph L. Clary<sup>2</sup>, NASA GeneLab Consortium<sup>1</sup></div>
+<div class="authors">Richard Barker<sup>1,*</sup>, Lynn Harrison<sup>2</sup>, Marshall Porterfield<sup>1</sup>, Joseph L. Clary<sup>2</sup>, Astrobotany and Space Omics Consortium<sup>3</sup></div>
 <div class="affils">
-  <sup>1</sup> NASA GeneLab / Open Science Data Repository, NASA Ames Research Center, Moffett Field, CA, USA<br>
-  <sup>2</sup> Department of Molecular and Cellular Physiology, LSU Health Shreveport, Shreveport, LA, USA<br>
-  <sup>*</sup> Correspondence: richard.barker@nasa.gov
+  <sup>1</sup> Department of Agricultural and Biological Engineering, Purdue University, West Lafayette, IN 47907, USA<br>
+  <sup>2</sup> Department of Molecular and Cellular Physiology, LSU Health Shreveport, Shreveport, LA 71103, USA<br>
+  <sup>3</sup> NASA GeneLab Multi-Omics Working Group, NASA Ames Research Center, Moffett Field, CA 94035, USA<br>
+  <sup>*</sup> Correspondence: Richard Barker, Department of Agricultural and Biological Engineering, Purdue University
 </div>
 
 {abstract_html}

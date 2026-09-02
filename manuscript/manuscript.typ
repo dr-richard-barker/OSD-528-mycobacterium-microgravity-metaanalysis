@@ -83,7 +83,7 @@
   #super("1") Department of Agricultural and Biological Engineering, Purdue University, West Lafayette, IN 47907, USA\
   #super("2") Department of Molecular and Cellular Physiology, LSU Health Shreveport, Shreveport, LA 71103, USA\
   #super("3") NASA GeneLab Multi-Omics Working Group, NASA Ames Research Center, Moffett Field, CA 94035, USA\
-  #super("*") Corresponding author: #link("mailto:rbarker@purdue.edu")[rbarker\@purdue.edu]
+  #super("*") Correspondence: Richard Barker, Department of Agricultural and Biological Engineering, Purdue University
 ]
 
 #v(0.15cm)

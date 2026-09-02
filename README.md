@@ -37,8 +37,8 @@ The core study investigates the transcriptomic response of *Mycobacterium marinu
    - QuickGO and EMBL-EBI OLS enrichment demonstrating significant over-representation of oxidative stress defense ($p = 2.8 \times 10^{-9}$), Type VII ESX pore complex ($p = 9.4 \times 10^{-5}$), and mycolic acid biosynthesis ($p = 2.3 \times 10^{-4}$).
 5. **FAIR & Zenodo Release Architecture**:
    - Full compliance with FAIR principles: `zenodo.json`, `ro-crate-metadata.json` (RO-Crate v1.1), `data_dictionary.json`, and `CITATION.cff`.
-6. **Publication Figure Suite (8 Vector PDFs)**:
-   - 8 publication-grade vector PDF figures compiled via TeX Live: Study design (`fig1`), PCA & Volcano (`fig2`), WGCNA modules (`fig3`), TabPFN foundation benchmark (`fig4`), Systems biology model (`fig5`), Hub centrality (`fig6`), Pan-microbial landscape (`fig7`), and Simulator concordance radar (`fig8`).
+6. **Publication Figure Suite (9 Vector PDFs)**:
+   - 9 publication-grade vector PDF figures compiled via TeX Live: Study design (`fig1`), PCA & Volcano (`fig2`), WGCNA modules (`fig3`), TabPFN foundation benchmark (`fig4`), GOSlim pathway ontology (`fig5`), Hub centrality (`fig6`), Pan-microbial landscape (`fig7`), Simulator concordance radar (`fig8`), and Cellular metabolic landscape (`fig9`).
 7. **Multi-Format Publication Suite**:
    - Compiled publication PDF: `manuscript/OSD528_Microbial_Microgravity_Manuscript.pdf` (11 pages).
    - Native Microsoft Word document: `manuscript/OSD528_Microbial_Microgravity_Manuscript.docx`.

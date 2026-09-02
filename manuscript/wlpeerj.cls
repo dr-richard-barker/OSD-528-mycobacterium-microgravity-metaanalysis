@@ -98,8 +98,8 @@
       \vspace{0.3cm}%
       {\large\sffamily \@author \par}%
       \vspace{0.15cm}%
-      \ifdefined\@corremail
-        {\footnotesize\sffamily $^{*}$Corresponding author: \href{mailto:\@corremail}{\@corremail} \par}%
+      \ifdefined\@corrname
+        {\footnotesize\sffamily $^{*}$Correspondence: \@corrname\ifdefined\@corremail\ifx\@corremail\@empty\else\ (\href{mailto:\@corremail}{\@corremail})\fi\fi \par}%
       \fi
       \vspace{0.35cm}%
       \ifx\@abstract\@empty\else
