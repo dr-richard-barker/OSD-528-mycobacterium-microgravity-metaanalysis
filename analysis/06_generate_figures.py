@@ -165,7 +165,8 @@ def main():
   
   % Axes (Origin at 1.0, 1.8 with uniform spacing)
   \draw[->, thick] (1.0, 1.8) -- (6.6, 1.8) node[midway, below=18pt, font=\scriptsize\bfseries] {PC1: Microgravity vs. 1g (70.1\% Variance)};
-  \draw[->, thick] (1.0, 1.8) -- (1.0, 7.6) node[midway, left=24pt, rotate=90, font=\scriptsize\bfseries] {PC2: Simulator Disparity (18.4\% Variance)};
+  \draw[->, thick] (1.0, 1.8) -- (1.0, 7.6);
+  \node[font=\scriptsize\bfseries, rotate=90, anchor=center] at (0.3, 4.7) {PC2: Simulator Disparity (18.4\% Variance)};
 
   % Axis Ticks
   \foreach \x/\lbl in {1.4/-40, 2.6/-20, 3.8/0, 5.0/20, 6.2/40} {
@@ -198,7 +199,8 @@ def main():
   \node[anchor=west, font=\small\bfseries, text=darkgray] at (8.2, 8.4) {3D Clinostat vs. Static 1g (351 DEGs)};
   
   \draw[->, thick] (8.2, 1.8) -- (14.0, 1.8) node[midway, below=18pt, font=\scriptsize\bfseries] {$\log_2\text{Fold Change}$};
-  \draw[->, thick] (8.2, 1.8) -- (8.2, 7.6) node[midway, left=24pt, rotate=90, font=\scriptsize\bfseries] {$-\log_{10}(\text{Adjusted } p\text{-value})}$};
+  \draw[->, thick] (8.2, 1.8) -- (8.2, 7.6);
+  \node[font=\scriptsize\bfseries, rotate=90, anchor=center] at (7.5, 4.7) {$-\log_{10}(\text{Adjusted } p\text{-value})$};
 
   % Ticks: Exact uniform 1.2 cm steps for 3 units
   \foreach \x/\lbl in {8.7/-6, 9.9/-3, 11.1/0, 12.3/3, 13.5/6} {

@@ -75,14 +75,13 @@
 
 #v(0.15cm)
 #text(font: "Helvetica", weight: "bold", size: 9.0pt, fill: rgb("#333333"))[
-  Richard Barker#super("1,*"), Lynn Harrison#super("2"), Marshall Porterfield#super("1"), and Astrobotany and Space Omics Consortium#super("3")
+  Richard Barker#super("1,*"), Lynn Harrison#super("2"), and Joseph L. Clary#super("2")
 ]
 
 #v(0.08cm)
 #text(font: "Helvetica", size: 7.2pt, fill: rgb("#555555"))[
   #super("1") Department of Agricultural and Biological Engineering, Purdue University, West Lafayette, IN 47907, USA\
   #super("2") Department of Molecular and Cellular Physiology, LSU Health Shreveport, Shreveport, LA 71103, USA\
-  #super("3") NASA GeneLab Multi-Omics Working Group, NASA Ames Research Center, Moffett Field, CA 94035, USA\
   #super("*") Correspondence: Richard Barker, Department of Agricultural and Biological Engineering, Purdue University
 ]
 
