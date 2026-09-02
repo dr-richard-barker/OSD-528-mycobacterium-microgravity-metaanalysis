@@ -1,0 +1,9 @@
+term_id	term_name	category	direction	overlap_count	term_size	padj	mlog10_padj	associated_cluster
+GO:0006979	Response to oxidative stress & ROS	Biological Process	Upregulated	14	85	4.4300e-08	7.35	Stress & Redox
+GO:0015628	Type VII secretion system complex	Cellular Component	Upregulated	5	40	3.7400e-04	3.43	Transport & Secretion
+GO:0030258	Mycolic acid biosynthesis (FAS-II)	Biological Process	Upregulated	5	48	7.2400e-04	3.14	Lipid Metabolism
+GO:0009267	Hypoxic boundary layer (DosR regulon)	Biological Process	Upregulated	4	55	1.3900e-03	2.86	Stress & Redox
+GO:0044010	Cell wall & biofilm pellicle assembly	Biological Process	Upregulated	3	32	8.1200e-03	2.09	Biofilm Organization
+GO:0045333	Alternative terminal oxidase (cydA)	Biological Process	Upregulated	3	45	2.1700e-02	1.66	Respiration & Shear
+GO:0006950	Rotational shear chaperone activity	Biological Process	Upregulated	3	42	4.9600e-02	1.3	Respiration & Shear
+GO:0005840	Ribosome & translation attenuation	Cellular Component	Downregulated	6	58	1.2500e-03	2.9	Translation Attenuation

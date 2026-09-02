@@ -29,13 +29,29 @@
       }
     },
     "wgcna_module_assignments.tsv": {
-      "description": "WGCNA topological network co-expression module assignments and connectivity",
+      "description": "WGCNA topological network co-expression module assignments, GOSlim cluster descriptors, and connectivity",
       "columns": {
         "gene_id": {"type": "string", "description": "Locus tag"},
         "gene_symbol": {"type": "string", "description": "Gene symbol"},
         "module": {"type": "string", "enum": ["MEturquoise", "MEblue", "MEbrown", "MEyellow", "MEgreen"]},
+        "goslim_name": {"type": "string", "description": "Human-readable standardized GOSlim functional cluster name"},
+        "k_total": {"type": "float", "description": "Whole-network degree connectivity"},
         "k_within": {"type": "float", "description": "Intramodular connectivity score representing hub centrality"},
-        "k_total": {"type": "float", "description": "Whole-network degree connectivity"}
+        "protein": {"type": "string", "description": "Annotated protein product"}
+      }
+    },
+    "goslim_pathway_enrichment.tsv": {
+      "description": "Empirical GOSlim pathway over-representation data for publication bar plot (Figure 5)",
+      "columns": {
+        "term_id": {"type": "string", "description": "Gene Ontology identifier"},
+        "term_name": {"type": "string", "description": "Human-readable GOSlim term name"},
+        "category": {"type": "string", "enum": ["Biological Process", "Cellular Component", "Molecular Function"]},
+        "direction": {"type": "string", "enum": ["Upregulated", "Downregulated"]},
+        "overlap_count": {"type": "integer", "description": "Count of overlapping genes in term"},
+        "term_size": {"type": "integer", "description": "Total annotated genes in term"},
+        "padj": {"type": "float", "description": "Benjamini-Hochberg adjusted p-value (FDR)"},
+        "mlog10_padj": {"type": "float", "description": "Negative log10 of adjusted p-value"},
+        "associated_cluster": {"type": "string", "description": "GOSlim co-expression cluster association"}
       }
     },
     "tabpfn_predictions.tsv": {

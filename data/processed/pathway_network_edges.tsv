@@ -1,7 +1,10 @@
-source	source_type	target	target_type	interaction
+source_gene	source_module	target_gene	target_module	interaction_type
 MMAR_RS04440	MEturquoise	MMAR_RS12120	MEturquoise	CoExpression_IntraModule
 MMAR_RS02330	MEblue	MMAR_RS25100	MEblue	CoExpression_IntraModule
 MMAR_RS16730	MEbrown	MMAR_RS23800	MEbrown	CoExpression_IntraModule
+MMAR_RS13930	MEyellow	MMAR_RS09685	MEyellow	CoExpression_IntraModule
 MMAR_RS11565	MEgreen	MMAR_RS11250	MEgreen	CoExpression_IntraModule
-MEturquoise	Biofilm	MEblue	CellWall_FASII	Biological_Coupling
-MEyellow	DosR_Hypoxia	MEbrown	Virulence_ESX	Oxygen_Signaling
+eccE	MEbrown	eccB	MEbrown	TypeVII_Secretion_Pore
+kasA	MEblue	fbpA	MEblue	Mycolic_FASII_CordFactor
+mps1	MEturquoise	mps2	MEturquoise	GPL_Biofilm_Synthetase
+cydA	MEgreen	nuoD	MEturquoise	Respiratory_Chain

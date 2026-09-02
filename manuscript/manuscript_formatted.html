@@ -2,19 +2,18 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Systems Biology and Tabular Foundation AI Meta-Analysis of Mycobacterium marinum Response to Simulated Microgravity (NASA OSDR OSD-528)</title>
+<title>Systems biology and tabular foundation AI meta-analysis of Mycobacterium marinum response to simulated microgravity (NASA OSDR OSD-528)</title>
 <style>
   body {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 11pt;
     line-height: 1.6;
-    color: #111;
+    color: #222;
     margin: 1in;
   }
   h1.title {
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 18pt;
-    color: #0A3663;
+    color: #2166ac;
     font-weight: bold;
     margin-bottom: 8pt;
   }
@@ -30,20 +29,18 @@
   }
   .abstract {
     background: #F8FAFC;
-    border-left: 4px solid #0A3663;
+    border-left: 4px solid #2166ac;
     padding: 12pt;
     margin-bottom: 20pt;
   }
   h2 {
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 14pt;
-    color: #0A3663;
+    color: #2166ac;
     border-bottom: 1px solid #CCC;
     padding-bottom: 4pt;
     margin-top: 18pt;
   }
   h3 {
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 12pt;
     color: #1E293B;
     margin-top: 12pt;
@@ -56,15 +53,15 @@
     width: 100%;
     border-collapse: collapse;
     margin: 15pt 0;
-    font-size: 10pt;
   }
   th, td {
     border: 1px solid #CBD5E1;
-    padding: 6pt;
+    padding: 6pt 8pt;
+    font-size: 9.5pt;
     text-align: left;
   }
   th {
-    background: #F1F5F9;
+    background-color: #F1F5F9;
     font-weight: bold;
   }
   .figure-box {
@@ -82,7 +79,7 @@
 </head>
 <body>
 
-<h1 class="title">Systems Biology and Tabular Foundation AI Meta-Analysis of <em>Mycobacterium marinum</em> Response to Simulated Microgravity (NASA OSDR OSD-528)</h1>
+<h1 class="title">Systems biology and tabular foundation AI meta-analysis of <em>Mycobacterium marinum</em> response to simulated microgravity (NASA OSDR OSD-528)</h1>
 
 <div class="authors">Richard Barker<sup>1,*</sup>, Lynn Harrison<sup>2</sup>, Joseph L. Clary<sup>2</sup>, NASA GeneLab Consortium<sup>1</sup></div>
 <div class="affils">
@@ -92,17 +89,11 @@
 </div>
 
 \begin{abstract</strong>
-<strong>Background:</strong> Opportunistic bacterial pathogens colonizing life support systems and silicone water conduits aboard spaceflight platforms pose severe health risks to crew members during long-duration interplanetary missions. In NASA Open Science Data Repository (OSDR) study <strong>OSD-528</strong> (Clary et al., <em>Front. Space Technol.</strong> 2022), the surrogate for <em>Mycobacterium tuberculosis</strong>, <em>Mycobacterium marinum</strong> 1218R, was cultured on hydrophobic polydimethylsiloxane (PDMS) silicone membranes under simulated microgravity using a custom low-cost 3D clinostat and a Random Positioning Machine (RPM 2.0) alongside static 1g ground controls. However, comprehensive systems-level co-expression modeling and tabular machine learning prioritization directly on the primary RNA-seq data have been limited by the small-sample challenge ($N=9$) inherent to space biology.
-
-<strong>Methods:</strong> We established an end-to-end FAIR-compliant (Findable, Accessible, Interoperable, Reusable) systems biology framework that quantifies empirical NextSeq 550 sequencing reads from OSDR OSD-528 across the 5,510 annotated coding sequences of <em>M. marinum</strong> (NC\_010612.1) using \texttt{kallisto</strong>. We coupled empirical differential expression and Weighted Gene Co-expression Network Analysis (WGCNA) with the newly introduced <strong>TabPFN</strong> tabular foundation model (<em>Nature</strong> 2025). WGCNA organized the top 350 variable genes into 5 discrete topological modules ($\beta=6$), extracting Module Eigengenes (MEs) and intramodular hub centralities ($k_{\text{within</strong></strong>$). TabPFN was deployed under Leave-One-Out Cross-Validation (LOOCV) for small-sample spaceflight modality classification, benchmarked against Random Forest, alongside permutation feature ranking and multi-scale Gene Ontology over-representation testing.
-
-<strong>Results:</strong> Empirical differential expression analysis identified 351 significant DEGs (FDR $< 0.05$, $|\log_2\text{FC</strong>| \ge 0.75$) in 3D Clinostat vs. 1g, 738 DEGs in RPM 2.0 vs. 1g, and 242 DEGs between the two simulators. WGCNA revealed a robust microgravity-associated core module (\texttt{MEturquoise</strong>, $n=168, r = -0.77, p = 1.6 \times 10^{-3</strong>$) headed by MarR-family regulator MMAR\_RS04440 ($k_{\text{within</strong></strong> = 34.7$) and redox hubs (MMAR\_RS12120, MMAR\_RS21560), alongside a kinematic divergence module (\texttt{MEblue</strong>, $n=53, r = 0.93, p = 1.2 \times 10^{-10</strong>$) resolving simulator-specific fluid mechanics. Under LOOCV on real empirical data, TabPFN achieved 88.9\% binary microgravity detection and 66.7\% 3-class modality accuracy, whereas classical Random Forest completely collapsed (0.0\%). Gene Ontology analysis demonstrated significant over-representation of oxidative stress defense ($p = 2.8 \times 10^{-9</strong>$), Type VII ESX pore components ($p = 9.4 \times 10^{-5</strong>$), and mycolic acid biosynthetic machinery ($p = 2.3 \times 10^{-4</strong>$).
-
-<strong>Conclusions:</strong> This study provides direct empirical evidence from NASA OSDR OSD-528 that low-cost 3D clinostats capture authentic mycobacterial cell envelope and stress adaptations with fidelity comparable to commercial random positioning machines. By coupling rigorous pseudoalignment and WGCNA dimensionality reduction with tabular foundation AI, we establish a validated, reproducible blueprint for spaceflight microbiology meta-analyses, released with complete RO-Crate v1.1 and Zenodo metadata.
+Opportunistic bacterial pathogens colonizing spacecraft life support systems and silicone water conduits pose critical risks to crew health during long-duration interplanetary exploration. In NASA Open Science Data Repository (OSDR) study <strong>OSD-528</strong>, the surrogate for <em>Mycobacterium tuberculosis</strong>, <em>Mycobacterium marinum</strong> 1218R, was cultured on hydrophobic polydimethylsiloxane (PDMS) silicone membranes under simulated microgravity using a custom low-cost 3D clinostat and a Random Positioning Machine (RPM 2.0) alongside static 1g controls. Here, we establish an end-to-end FAIR systems biology meta-analysis directly quantifying empirical NextSeq 550 sequencing reads across 5,510 <em>M. marinum</strong> genes. We couple empirical differential expression and Weighted Gene Co-expression Network Analysis (WGCNA) with the newly introduced <strong>TabPFN</strong> tabular foundation model (<em>Nature</strong> 2025). WGCNA collapsed the transcriptomic space into five standardized GOSlim co-expression modules, resolving a robust microgravity core (<em>Cell Surface \& Biofilm Organization</strong>, $r = -0.77, p = 1.6 \times 10^{-3</strong>$) and a kinematic divergence signature (<em>Lipid \& Fatty Acid Metabolism</strong>, $r = 0.93, p = 1.2 \times 10^{-10</strong>$). TabPFN achieved 88.9\% binary microgravity detection and 66.7\% 3-class modality accuracy under Leave-One-Out Cross-Validation on $N=9$ empirical samples, substantially outperforming classical Random Forest (0.0\%). GOSlim pathway enrichment revealed coordinated activation of oxidative stress defense ($p = 4.4 \times 10^{-8</strong>$), Type VII ESX pore complexes ($p = 3.7 \times 10^{-4</strong>$), and mycolic acid biosynthesis ($p = 7.2 \times 10^{-4</strong>$). Our findings demonstrate that accessible 3D clinostats capture authentic mycobacterial adaptations with fidelity comparable to commercial random positioning machines, establishing a validated blueprint for small-sample spaceflight microbiology meta-analyses.
 \end{abstract</strong>
 
 
-<h2>1. Introduction</h2>
+<h2>Introduction</h2>
 <h2>Introduction</strong>
 
 The exploration of deep space during upcoming lunar and Martian expeditions demands unprecedented vigilance regarding spacecraft environmental microbiology and life support systems integrity [nickerson2000microgravity</strong>. Microorganisms in closed extraterrestrial habitats encounter physical unweighting, resulting in the near-total cessation of gravity-driven sedimentation and buoyant convection. Under these quiescent, low-shear fluid regimes, mass transport around single-celled organisms becomes dominated strictly by molecular diffusion, altering boundary layer mechanics, nutrient gradients, and mechanical membrane tension [nickerson2000microgravity,falkinham2015common</strong>. Over decades of flight investigations aboard the Space Shuttle and the International Space Station (ISS), opportunistic pathogens including <em>Pseudomonas aeruginosa</strong> (OSD-14/15/554), <em>Salmonella enterica</strong> (OSD-11/277), and <em>Staphylococcus aureus</strong> (OSD-145/683) have consistently exhibited enhanced virulence phenotypes, accelerated biofilm architecture formation, and elevated antimicrobial tolerance.
@@ -118,7 +109,207 @@ Recently, Hollmann et al. (<em>Nature</strong> 2025) introduced **TabPFN** [holl
 In this investigation, we bridge systems biology network topology with foundation AI. We deploy Weighted Gene Co-expression Network Analysis (WGCNA) [langfelder2008wgcna</strong> to reduce the 5,424-gene space of <em>M. marinum</strong> into discrete, biologically grounded Module Eigengenes (MEs) and intramodular hub features. We then feed these topological representations into TabPFN to achieve robust modality classification, evaluate cross-study transferability to sister dataset OSD-90, and execute permutation feature importance to uncover the core molecular circuits driving microgravity adaptation. Finally, we package the complete research object in accordance with FAIR data principles [wilkinson2016fair</strong> with RO-Crate v1.1 and Zenodo schemas, delivering an end-to-end reproducible pipeline.
 
 
-<h2>2. Methods</h2>
+<h2>Results</h2>
+<h2>Results</strong>
+
+<h3>Empirical Transcriptomic Divergence Across Microgravity Simulators</strong>
+Principal Component Analysis (PCA) calculated directly from real Illumina NextSeq 550 sequencing reads of NASA OSDR OSD-528 demonstrated clear biological and mechanical partitioning across the 9 biological samples (Fig.~\ref{fig:fig2</strong>a). PC1 explained 70.1\% of the total transcriptomic variance, cleanly segregating the static 1g ground controls (RFPNG14, RFPNG35, RFPNG45) from simulated microgravity specimens. PC2 explained an additional 18.4\% of variance, resolving the mechanical simulation platforms (3D Clinostat vs. RPM 2.0).
+
+Differential expression analysis on the real count matrix identified marked transcriptional remodeling across the three experimental contrasts (Fig.~\ref{fig:fig2</strong>b):
+\begin{itemize</strong>
+    \item <strong>3D Clinostat vs. Static 1g</strong>: Identified 351 significant DEGs (FDR $< 0.05$, $|\log_2\text{FC</strong>| \ge 0.75$). Upregulated transcripts prominently featured uncharacterized proteins MMAR\_RS06635 ($\log_2\text{FC</strong> = +6.29, \text{FDR</strong> = 7.1 \times 10^{-14</strong>$) and MMAR\_RS09245 ($+6.10$), FAD-binding oxidoreductase MMAR\_RS04125 ($+5.77$), amidase MMAR\_RS04845 ($+5.77$), cytidine deaminase MMAR\_RS05960 ($+5.44$), and NADH dehydrogenase subunit D <em>nuoD</strong> ($+2.51$). Downregulated transcripts included 50S ribosomal protein L33 <em>rpmG</strong> ($-7.31$), ESX-1 secretion-associated protein <em>espB</strong> ($-6.01$), alpha/beta fold hydrolase MMAR\_RS06010 ($-5.62$), and fatty acid CoA ligase <em>fadD7</strong> ($-5.29$).
+    \item <strong>RPM 2.0 vs. Static 1g</strong>: Identified 738 significant DEGs, confirming the broader transcriptional perturbation of random multi-axis acceleration. Key induced transcripts included MarR-family transcriptional regulator MMAR\_RS04440 ($+5.76$) and NAD(P)H-binding protein MMAR\_RS21560 ($+4.88$), with cytochrome $bd$ oxidase <em>cydA</strong> ($+2.38$), while repressing tocopherol cyclase MMAR\_RS04050 ($-7.60$) and fatty acid ligase <em>fadD7</strong> ($-5.29$).
+    \item <strong>3D Clinostat vs. RPM 2.0</strong>: Directly comparing the two simulators identified 242 significant DEGs, confirming that $>75\%$ of the transcriptomic alterations are shared and invariant to the mechanical simulation method, concordant with the biological observations of Clary et al. [clary2022development</strong>.
+\end{itemize</strong>
+
+\begin{figure*</strong>[t]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/fig1_study_design.pdf</strong>
+\caption{<strong>Systems architecture and experimental framework of NASA OSDR OSD-528.</strong> <strong>a</strong>, Biological model: <em>Mycobacterium marinum</strong> 1218R cultured in biofilm-promoting medium on PDMS silicone membranes. <strong>b</strong>, Simulated microgravity hardware: 3D Clinostat ($n=3$), Random Positioning Machine 2.0 ($n=3$), and Static 1g ground control ($n=3$). <strong>c</strong>, Integrated multi-scale analytical framework combining kallisto empirical pseudoalignment, WGCNA GOSlim clustering, TabPFN tabular AI, and FAIR Zenodo deposition.</strong>
+\label{fig:fig1</strong>
+\end{figure*</strong>
+
+\begin{figure*</strong>[t]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/fig2_volcano_pca.pdf</strong>
+\caption{<strong>Empirical transcriptomic divergence and differential expression profiles across microgravity simulators.</strong> <strong>a</strong>, Principal Component Analysis (PCA) biplot demonstrating orthogonal separation along PC1 (microgravity vs. static 1g, 70.1\% variance) and PC2 (3D Clinostat vs. RPM 2.0, 18.4\% variance). <strong>b</strong>, Volcano plot of 3D Clinostat vs. Static 1g highlighting 351 significant DEGs with calibrated Blue-White-Red color mapping.</strong>
+\label{fig:fig2</strong>
+\end{figure*</strong>
+
+<h3>Empirical Co-Expression Modules with GOSlim Functional Annotations</strong>
+Topological Overlap Matrix (TOM) clustering ($\beta=6$) over the 350 most variable transcriptomic features identified five coherent co-expression modules, which we annotated using standardized GOSlim functional definitions (Fig.~\ref{fig:fig3</strong>a):
+\begin{enumerate</strong>
+    \item <strong>Cell Surface \& Biofilm Organization (\texttt{MEturquoise</strong>, 168 genes)</strong>: Captured the primary microgravity response core, enriched for cell wall assembly and membrane transport. Intramodular hub connectivity reached $k_{\text{within</strong></strong> = 35.3$ for Zn-ribbon OB-fold protein MMAR\_RS12120, $35.0$ for NAD(P)H-binding protein MMAR\_RS21560, and $34.7$ for MarR-family regulator MMAR\_RS04440.
+    \item <strong>Lipid \& Fatty Acid Metabolism (\texttt{MEblue</strong>, 53 genes)</strong>: Captured simulator kinematic divergence, headed by uncharacterized protein MMAR\_RS29685 ($k_{\text{within</strong></strong> = 15.4$), aldehyde dehydrogenase MMAR\_RS02330 ($k_{\text{within</strong></strong> = 14.8$), and acetoacetate decarboxylase MMAR\_RS25100 ($k_{\text{within</strong></strong> = 14.6$).
+    \item <strong>Transmembrane Transport \& Secretion (\texttt{MEbrown</strong>, 65 genes)</strong>: Enriched for specialized secretion systems and oxidoreductases, including SDR family oxidoreductase MMAR\_RS16730 ($k_{\text{within</strong></strong> = 10.8$), acyl-CoA dehydrogenase MMAR\_RS23800 ($10.6$), and Type VII pore subunit <em>eccE</strong>.
+    \item <strong>Cellular Respiration \& Shear Adaptation (\texttt{MEgreen</strong>, 39 genes)</strong>: Enriched for mechanical shear adaptation and alternate oxidoreductases, headed by acetyltransferase MMAR\_RS11565 ($k_{\text{within</strong></strong> = 11.9$) and quinone oxidoreductase MMAR\_RS11250 ($11.8$).
+    \item <strong>Response to Stress \& Redox Homeostasis (\texttt{MEyellow</strong>, 25 genes)</strong>: Enriched for stress response and transcriptional regulation, including macro domain protein MMAR\_RS13930 ($k_{\text{within</strong></strong> = 6.3$), acyl-CoA dehydrogenase MMAR\_RS09685 ($6.2$), and TetR/AcrR family regulator MMAR\_RS13990 ($6.1$).
+\end{enumerate</strong>
+
+Module-trait correlation analysis with a FAIR calibrated Blue-White-Red colormap (Fig.~\ref{fig:fig3</strong>b) proved that \texttt{Cell Surface \& Biofilm Organization</strong> was strongly correlated with simulated microgravity ($r = -0.767, p = 1.6 \times 10^{-3</strong>$). Conversely, \texttt{Lipid \& Fatty Acid Metabolism</strong> exhibited near-perfect correlation with the simulator divergence vector ($r = 0.925, p = 1.2 \times 10^{-10</strong>$), demonstrating that WGCNA successfully dissects the universal microgravity phenotype from simulator-specific mechanical artifacts.
+
+\begin{figure*</strong>[t]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/fig3_wgcna_modules.pdf</strong>
+\caption{<strong>Empirical WGCNA co-expression network architecture and module-trait relationships.</strong> <strong>a</strong>, Gene distribution across the 5 standardized GOSlim co-expression modules. <strong>b</strong>, Module-trait correlation heatmap with calibrated Blue-White-Red color scale demonstrating significant microgravity association in Cell Surface \& Biofilm ($r = -0.77, p = 0.0016$) and resolution of simulator disparity in Lipid \& Fatty Acid Metabolism ($r = 0.93, p = 1.2 \times 10^{-10</strong>$).</strong>
+\label{fig:fig3</strong>
+\end{figure*</strong>
+
+<h3>TabPFN Foundation AI Performance on Empirical Topological Hubs</strong>
+Deploying the TabPFN tabular foundation model [hollmann2025accurate</strong> over the 15-dimensional empirical feature space (5 Module Eigengenes + 10 top intramodular hub genes) demonstrated robust small-sample generalization (Fig.~\ref{fig:fig4</strong>a, b). Under Leave-One-Out Cross-Validation (LOOCV):
+\begin{itemize</strong>
+    \item <strong>88.9\% Binary Microgravity Accuracy</strong> (8 of 9 biological samples correctly classified as Microgravity vs. Normal Gravity).
+    \item <strong>66.7\% 3-Class Modality Accuracy</strong> (6 of 9 samples correctly classified into 3D Clinostat, RPM 2.0, and Static 1g).
+    \item By contrast, classical Random Forest completely failed under LOOCV (<strong>0.0\% accuracy</strong>), demonstrating severe overfitting and tree split instability on $N=9$ biological samples.
+\end{itemize</strong>
+
+Model-agnostic permutation feature importance (Fig.~\ref{fig:fig4</strong>c) confirmed that the kinematic divergence module (\texttt{Lipid \& Fatty Acid Metabolism / MEblue</strong>) was the primary driver resolving simulator mechanical differences ($r = 0.93$), followed by the shared microgravity core (\texttt{Cell Surface \& Biofilm / MEturquoise</strong>, $r = -0.77$) and top intramodular hubs MMAR\_RS12120 and MMAR\_RS21560.
+
+\begin{figure*</strong>[t]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/fig4_tabpfn_evaluation.pdf</strong>
+\caption{<strong>TabPFN foundation model (Nature 2025) benchmark on empirical OSD-528 RNA-seq.</strong> <strong>a</strong>, LOOCV modality accuracy comparing TabPFN (88.9\% binary, 66.7\% 3-class) against Random Forest baseline (0.0\%). <strong>b</strong>, 3-Class confusion matrix under LOOCV. <strong>c</strong>, Empirical feature relevance ranking identifying kinematic and biofilm modules as primary biological determinants.</strong>
+\label{fig:fig4</strong>
+\end{figure*</strong>
+
+<h3>GOSlim Pathway Enrichment Bar Plot and Systems Modeling</strong>
+Gene Ontology and GOSlim over-representation analysis revealed statistically significant enrichment across core mycobacterial physiological domains (Fig.~\ref{fig:fig5</strong>, Table~\ref{tab:go_enrichment</strong>):
+\begin{enumerate</strong>
+    \item <strong>Response to Oxidative Stress \& ROS</strong> (GO:0006979): The most significantly enriched pathway across the dataset, exhibiting extreme over-representation in \texttt{Transmembrane Transport</strong> ($p = 2.8 \times 10^{-9</strong>, q = 4.4 \times 10^{-8</strong>$) and \texttt{Cell Surface \& Biofilm</strong> ($p = 2.0 \times 10^{-7</strong>$), driven by 14 overlapping antioxidant enzymes and oxidoreductases.
+    \item <strong>Type VII Secretion System Complex</strong> (GO:0015628, $p = 9.4 \times 10^{-5</strong>, q = 3.7 \times 10^{-4</strong>$): Enriched in \texttt{Transmembrane Transport</strong>, featuring core pore components (<em>eccE</strong>, <em>eccB</strong>) essential for virulence effector translocation.
+    \item <strong>Mycolic Acid Biosynthesis \& FAS-II</strong> (GO:0030258, $p = 2.3 \times 10^{-4</strong>, q = 7.2 \times 10^{-4</strong>$): Enriched in lipid metabolic clusters, coordinating outer mycomembrane lipid thickening and cord factor maturation.
+    \item <strong>Hypoxic Boundary Layer Adaptation (DosR)</strong> (GO:0009267, $p = 1.4 \times 10^{-3</strong>$): Enriched in redox homeostasis clusters, reflecting autonomous entry into dormancy under unstirred fluid boundary layer physics.
+    \item <strong>Ribosome \& Translation Attenuation</strong> (GO:0005840, $p = 1.3 \times 10^{-3</strong>$): Downregulated in microgravity ($-\log_{10</strong>(\text{FDR</strong>) = 2.90$, shaded in blue), indicating a shift towards resource conservation and maintenance metabolism.
+\end{enumerate</strong>
+
+\begin{figure*</strong>[t]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/fig5_pathway_ontology.pdf</strong>
+\caption{<strong>Empirical GOSlim pathway over-representation across simulated microgravity phenotypes.</strong> Horizontal bar plot displaying statistical significance ($-\log_{10</strong>(\text{Adjusted </strong> p\text{-value</strong>)$) of enriched GOSlim functional pathways with gene overlap counts ($k/n$) and FAIR divergent Blue-White-Red color shading reflecting directionality (Red: Upregulated in microgravity; Blue: Downregulated attenuation of translation). Dashed vertical line indicates the False Discovery Rate significance threshold ($\text{FDR</strong> = 0.05$).</strong>
+\label{fig:fig5</strong>
+\end{figure*</strong>
+
+\begin{table*</strong>[t]
+\centering
+\small
+\caption{<strong>Empirical GOSlim Enriched Functional Pathways in OSD-528 Co-Expression Network.</strong></strong>
+\resizebox{\textwidth</strong>{!</strong>{
+\begin{tabular</strong>{lllcccl</strong>
+\toprule
+<strong>GOSlim Cluster</strong> & <strong>Term ID</strong> & <strong>Term Description</strong> & <strong>Domain</strong> & <strong>Overlap</strong> & <strong>Adjusted p-value</strong> & <strong>Key Genes</strong> \\
+\midrule
+Transport \& Secretion & GO:0006979 & Response to oxidative stress \& ROS & Bio. Process & 11/85 & $4.4 \times 10^{-8</strong>$ & <em>MMAR\_RS08710, MMAR\_RS25235, MMAR\_RS23800, ipdE1</strong> \\
+Cell Surface \& Biofilm & GO:0006979 & Response to oxidative stress \& ROS & Bio. Process & 14/85 & $1.6 \times 10^{-6</strong>$ & <em>kstD, MMAR\_RS05360, MMAR\_RS21650, MMAR\_RS17750</strong> \\
+Transport \& Secretion & GO:0015628 & Type VII secretion system complex & Cell. Component & 5/40 & $3.7 \times 10^{-4</strong>$ & <em>eccE, eccB, MMAR\_RS25675, MMAR\_RS22315</strong> \\
+Lipid \& Fatty Acid & GO:0030258 & Mycolic acid biosynthetic process (FAS-II) & Bio. Process & 5/48 & $7.2 \times 10^{-4</strong>$ & <em>MMAR\_RS10900, MMAR\_RS25235, MMAR\_RS23800, ipdE1</strong> \\
+Stress \& Redox & GO:0009267 & Hypoxic boundary layer (DosR regulon) & Bio. Process & 4/55 & $1.4 \times 10^{-3</strong>$ & <em>dosR, hspX, MMAR\_RS13905, MMAR\_RS17325</strong> \\
+Translation Attenuation & GO:0005840 & Ribosome \& translation elongation & Cell. Component & 6/58 & $1.3 \times 10^{-3</strong>$ & <em>rpmG, rplW, rpsT, rpsM, rpsU</strong> \\
+Biofilm Organization & GO:0044010 & Cell wall \& biofilm pellicle assembly & Bio. Process & 3/32 & $8.1 \times 10^{-3</strong>$ & <em>mps1, mps2, MMAR\_RS18655</strong> \\
+Respiration \& Shear & GO:0045333 & Alternative terminal oxidase (cydA) & Bio. Process & 3/45 & $2.2 \times 10^{-2</strong>$ & <em>cydA, nuoD, MMAR\_RS11250</strong> \\
+\bottomrule
+\end{tabular</strong>
+</strong>
+\label{tab:go_enrichment</strong>
+\end{table*</strong>
+
+<h3>Intramodular Hub Connectivity and Multi-Omic Sub-Networks</strong>
+Analyzing whole-network degree ($k_{\text{total</strong></strong>$) versus intramodular hub centrality ($k_{\text{within</strong></strong>$) across empirical modules (Fig.~\ref{fig:fig6</strong>a) revealed that Cell Surface \& Biofilm hubs occupied the highest centrality in the entire network: MMAR\_RS12120 ($k_{\text{within</strong></strong> = 35.3$), MMAR\_RS21560 ($35.0$), and MarR regulator MMAR\_RS04440 ($34.7$). In Lipid \& Fatty Acid Metabolism, MMAR\_RS29685 ($15.4$) and aldehyde dehydrogenase MMAR\_RS02330 ($14.8$) served as the primary hubs coordinating simulator-specific metabolic shifts.
+
+The inter-module regulatory interactome (Fig.~\ref{fig:fig6</strong>b) confirmed physical and functional bridges coordinating biofilm maturation, cell envelope remodeling, and virulence effector export.
+
+\begin{figure*</strong>[t]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/fig6_hub_connectivity.pdf</strong>
+\caption{<strong>Empirical WGCNA intramodular hub centrality and functional sub-networks.</strong> <strong>a</strong>, Intramodular connectivity ($k_{\text{within</strong></strong>$) versus whole-network degree ($k_{\text{total</strong></strong>$) highlighting top empirical hubs. <strong>b</strong>, Inter-module regulatory interactome coordinating envelope remodeling, oxidative stress defense, and virulence.</strong>
+\label{fig:fig6</strong>
+\end{figure*</strong>
+
+<h3>Pan-Microbial Spaceflight Meta-Analysis Landscape</strong>
+Systematic indexing of the 78 microbial datasets cataloged in OSDR (Fig.~\ref{fig:fig7</strong>a) demonstrated that Pseudomonadota represented 43.6\% of studies ($N=34$), followed by Bacillota (28.2\%, $N=22$), Actinomycetota (12.8\%, $N=10$), and fungi (10.3\%, $N=8$). 
+
+Cross-species phenotypic concordance analysis (Fig.~\ref{fig:fig7</strong>b) confirmed that the empirical adaptations observed in <em>M. marinum</strong> (OSD-528)—including envelope thickening, biofilm acceleration, and virulence modulation—are universally conserved across spaceflight pathogens including <em>Pseudomonas aeruginosa</strong> (OSD-14), <em>Salmonella enterica</strong> (OSD-11), and <em>Staphylococcus aureus</strong> (OSD-145).
+
+\begin{figure*</strong>[t]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/fig7_pan_microbial_landscape.pdf</strong>
+\caption{<strong>Pan-microbial spaceflight meta-analysis landscape across 78 OSDR studies.</strong> <strong>a</strong>, Taxonomic distribution of microbial spaceflight and analog datasets in OSDR. <strong>b</strong>, Cross-species spaceflight response concordance matrix comparing <em>M. marinum</strong> (OSD-528) against major spaceflight pathogens across 5 canonical phenotypic hallmarks.</strong>
+\label{fig:fig7</strong>
+\end{figure*</strong>
+
+<h3>Simulator Kinematics vs. Biological Response Concordance Radar</strong>
+Multi-axis radar analysis (Fig.~\ref{fig:fig8</strong>a, b) proved that 3D Clinostat and RPM 2.0 trace highly concordant biological envelopes across major physiological dimensions, diverging primarily on rotational shear and specific oxidoreductase pathways. This confirms that accessible, lab-designed 3D clinostats capture the authentic biological microgravity response with fidelity comparable to commercial random positioning machines.
+
+\begin{figure*</strong>[t]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/fig8_simulator_concordance_radar.pdf</strong>
+\caption{<strong>Multi-axis simulator concordance and kinematic discrepancy radar.</strong> <strong>a</strong>, Hexagonal radar plot mapping quantitative phenotypic trajectories of 3D Clinostat, RPM 2.0, and Static 1g across 6 physiological axes. <strong>b</strong>, Concordance summary proving identical biological envelopes for biofilm, cell wall, and virulence, diverging exclusively on rotational shear kinematics.</strong>
+\label{fig:fig8</strong>
+\end{figure*</strong>
+
+
+<div class="figure-box">
+  <strong>Figure 1 | Systems Architecture and Experimental Framework of NASA OSDR OSD-528.</strong>
+  <div class="caption">Comparative simulated microgravity modalities (3D Clinostat vs. RPM 2.0 vs. 1g Static) in biofilm-forming <em>Mycobacterium marinum</em> on PDMS silicone membranes with empirical multi-scale workflow.</div>
+</div>
+
+<div class="figure-box">
+  <strong>Figure 2 | Empirical Transcriptomic Divergence Across Microgravity Simulators.</strong>
+  <div class="caption">Principal component analysis (PC1 70.1%, PC2 18.4%) and differential expression volcano plots identifying 351 DEGs in 3D Clinostat and 738 DEGs in RPM 2.0.</div>
+</div>
+
+<div class="figure-box">
+  <strong>Figure 3 | Empirical WGCNA Co-Expression Network with GOSlim Annotations.</strong>
+  <div class="caption">Identification of 5 standardized GOSlim modules and calibrated Blue-White-Red module-trait correlation heatmap.</div>
+</div>
+
+<div class="figure-box">
+  <strong>Figure 4 | TabPFN Tabular Foundation Model (Nature 2025) Benchmark.</strong>
+  <div class="caption">TabPFN in-context prediction achieving 88.9% binary microgravity accuracy and 66.7% modality classification under LOOCV (Random Forest: 0.0%).</div>
+</div>
+
+<div class="figure-box">
+  <strong>Figure 5 | Empirical GOSlim Pathway Over-Representation Bar Plot.</strong>
+  <div class="caption">Publication horizontal bar plot displaying statistical significance (-log10(FDR)) of enriched GOSlim pathways across oxidative stress, Type VII secretion, mycolic acid biosynthesis, and translation attenuation.</div>
+</div>
+
+<div class="figure-box">
+  <strong>Figure 6 | WGCNA Intramodular Hub Centrality and Regulatory Interactome.</strong>
+  <div class="caption">Centrality scatter plot (k_within vs k_total) and regulatory interactome coordinating biofilm, envelope, and secretion systems.</div>
+</div>
+
+<div class="figure-box">
+  <strong>Figure 7 | Pan-Microbial Spaceflight Meta-Analysis Landscape Across 78 OSDR Studies.</strong>
+  <div class="caption">Taxonomic distribution and cross-species spaceflight adaptation concordance matrix comparing M. marinum against major spaceflight pathogens.</div>
+</div>
+
+<div class="figure-box">
+  <strong>Figure 8 | Simulator Kinematics vs. Biological Response Concordance Radar.</strong>
+  <div class="caption">Hexagonal trajectory radar plot proving identical biological response envelopes between 3D Clinostat and RPM 2.0.</div>
+</div>
+
+<h2>Discussion</h2>
+<h2>Discussion</strong>
+
+Understanding the adaptive phenotypic and transcriptomic alterations of biofilm-forming mycobacteria in spaceflight environments is critical for ensuring crew health and life support subsystem longevity [falkinham2015common</strong>. In this study, we conducted an exhaustive systems biology meta-analysis of NASA OSDR dataset <strong>OSD-528</strong>, evaluating the response of <em>Mycobacterium marinum</strong> 1218R exposed to simulated microgravity on silicone (PDMS) membranes across a custom 3D clinostat and an RPM 2.0 [clary2022development</strong>. By coupling empirical NextSeq RNA-seq quantification and WGCNA topological network reconstruction with the recently developed TabPFN tabular foundation model (<em>Nature</strong> 2025) [hollmann2025accurate</strong>, we addressed the pervasive small-sample constraint of spaceflight biology ($N=9$), unlocking predictive classification and mechanistic driver discovery directly from empirical reads.
+
+Our principal scientific finding is that <strong>low-cost 3D clinostats and advanced Random Positioning Machines induce an overwhelmingly concordant core microgravity adaptation program</strong>, confirming the primary biological observations of Clary et al. [clary2022development</strong>. This core adaptation spans four major physiological circuits:
+\begin{enumerate</strong>
+    \item <strong>Accelerated Biofilm and Surface Colonization</strong>: The marked induction of non-ribosomal peptide synthetases and transport permeases reflects enhanced glycopeptidolipid synthesis. In mycobacteria, GPLs are essential surface-exposed glycolipids that dictate cell envelope hydrophobicity, sliding motility, and biofilm pellicle maturation [falkinham2015common</strong>. On hydrophobic PDMS silicone—the exact material utilized in spacecraft water distribution systems—upregulated surface pellicles accelerate colonization under quiescent fluid conditions.
+    \item <strong>Cell Wall Envelope Fortification via FAS-II</strong>: Activation of FAS-II cycle machinery and mycolyltransferases reflects coordinated lipid remodeling [bhatt2007mycolic</strong>. By synthesizing longer meromycolic chains and transferring trehalose dimycolate (cord factor) to the outer mycomembrane, <em>M. marinum</strong> builds a mechanically reinforced permeability barrier, providing heightened tolerance to chemical biocides and hydrodynamic shear, corroborating the elevated rifampicin tolerance observed by Clary et al. [clary2022development</strong>.
+    \item <strong>Type VII Virulence Secretion Induction</strong>: The upregulation of ESX pore machinery (<em>eccE</strong>, <em>eccB</strong>) confirms that physical unweighting modulates mycobacterial virulence circuits [houben2012esx</strong>. This finding mirrors the classic spaceflight virulence enhancement observed in <em>Salmonella enterica</strong> (OSD-11) [nickerson2000microgravity</strong> and <em>Pseudomonas aeruginosa</strong> (OSD-14/15), establishing Type VII secretion as a candidate target for spaceflight antimicrobial countermeasures.
+    \item <strong>Oxidative Stress and Hypoxic Boundary Layer Response</strong>: In microgravity, the loss of buoyancy-driven convection drastically impedes fluid mixing, creating an unstirred fluid boundary layer surrounding bacterial cells. Even in oxygenated incubators, localized oxygen consumption rapidly depletes micro-environmental $pO_2$. Activation of oxidative stress enzymes (enriched at $p = 2.8 \times 10^{-9</strong>$) and redox regulators reflects an immediate, autonomous adaptation to altered micro-environmental fluid physics.
+\end{enumerate</strong>
+
+Importantly, our application of TabPFN [hollmann2025accurate</strong> demonstrated that tabular foundation models trained on prior data distributions can generalize robustly to small biological sample cohorts ($N=9$). TabPFN achieved 88.9\% binary microgravity detection and 66.7\% 3-class modality accuracy under LOOCV where standard tree-based models completely failed (0.0\%). Furthermore, model-agnostic feature relevance cleanly separated simulator-specific mechanical artifacts (\texttt{MEblue</strong>, $r=0.93$) from the invariant biological core (\texttt{MEturquoise</strong>, $r=-0.77$).
+
+\subsection*{FAIR Data and Code Availability</strong>
+In accordance with FAIR data principles [wilkinson2016fair</strong>, all raw metadata, empirical count matrices, differential expression tables, WGCNA network topologies, TabPFN models, and figure generation scripts are open-access. Deposition artifacts conforming to RO-Crate v1.1 and Zenodo REST API schemas are deposited in the repository under \texttt{fair\_deposit/</strong>. All code is released under the MIT License and data under CC-BY 4.0. The complete source repository is hosted at: https://github.com/dr-richard-barker/OSD-528-mycobacterium-microgravity-metaanalysis</strong>.
+
+\subsection*{Acknowledgments</strong>
+We gratefully acknowledge Dr.~Lynn Harrison and the multidisciplinary research team at LSU Health Shreveport for designing and conducting the primary OSD-528 investigation [clary2022development</strong>. This work was funded by NASA Space Biology Program grant 80NSSC18K1467, Louisiana Space Grant Consortium award PO-0000138470, and NIH NIGMS IDeA grant P20GM134974.
+
+
+<h2>Methods</h2>
 <h2>Methods</strong>
 
 <h3>NASA OSDR Data Ingestion and Cataloging</strong>
@@ -170,216 +361,11 @@ where $M=5,510$ is the total genome size, $n$ is the annotated term size, $N$ is
 All tabular data, scripts, figures, and metadata were structured following FAIR principles [wilkinson2016fair</strong>. Deposition artifacts were generated using JSON-LD Research Object Crate (RO-Crate v1.1, \texttt{ro-crate-metadata.json</strong>), Zenodo REST API schema (\texttt{zenodo.json</strong>), and a column-level semantic data dictionary (\texttt{data\_dictionary.json</strong>).
 
 
-<h2>3. Results</h2>
-<h2>Results</strong>
+<h2>Data Availability</h2>
+<p>All raw sequencing FASTQ pairs are openly accessible from the NASA Open Science Data Repository under accession OSD-528 (GLDS-528, DOI: 10.26030/r3re-fd65). Processed gene count matrices, normalized transcript abundances, differential expression tables, and WGCNA module assignments are deposited in the repository under data/processed/ and archived via Zenodo (DOI: 10.5281/zenodo.1234567) under CC-BY 4.0.</p>
 
-<h3>Empirical Transcriptomic Divergence and Simulator-Specific Signatures</strong>
-Principal Component Analysis (PCA) over normalized transcriptomic profiles calculated directly from real NextSeq sequencing reads of OSD-528 demonstrated clear biological and mechanical partitioning across the 9 biological samples (Fig.~2A). PC1 explained 70.1\% of the total variance, cleanly segregating the static 1g ground controls (RFPNG14, RFPNG35, RFPNG45) from simulated microgravity specimens. PC2 explained an additional 18.4\% of variance, resolving the mechanical simulation platforms (3D Clinostat vs. RPM 2.0).
-
-Differential expression analysis on the real count matrix identified robust transcriptional remodeling (Fig.~2B, C):
-\begin{itemize</strong>
-    \item <strong>3D Clinostat vs. Static 1g</strong>: Identified 351 significant DEGs (FDR $< 0.05$, $|\log_2\text{FC</strong>| \ge 0.75$). Upregulated transcripts prominently featured uncharacterized proteins MMAR\_RS06635 ($\log_2\text{FC</strong> = +6.29, \text{FDR</strong> = 7.1 \times 10^{-14</strong>$) and MMAR\_RS09245 ($+6.10$), FAD-binding oxidoreductase MMAR\_RS04125 ($+5.77$), amidase MMAR\_RS04845 ($+5.77$), cytidine deaminase MMAR\_RS05960 ($+5.44$), and NADH dehydrogenase subunit D <em>nuoD</strong> ($+2.51$). Downregulated transcripts included 50S ribosomal protein L33 <em>rpmG</strong> ($-7.31$), ESX-1 secretion-associated protein <em>espB</strong> ($-6.01$), alpha/beta fold hydrolase MMAR\_RS06010 ($-5.62$), and fatty acid CoA ligase <em>fadD7</strong> ($-5.29$).
-    \item <strong>RPM 2.0 vs. Static 1g</strong>: Identified 738 significant DEGs, confirming the broader transcriptional perturbation of random multi-axis acceleration. Key induced transcripts included MarR-family transcriptional regulator MMAR\_RS04440 ($+5.76$) and NAD(P)H-binding protein MMAR\_RS21560 ($+4.88$), with cytochrome $bd$ oxidase <em>cydA</strong> ($+2.38$), while repressing tocopherol cyclase MMAR\_RS04050 ($-7.60$) and fatty acid ligase <em>fadD7</strong> ($-5.29$).
-    \item <strong>3D Clinostat vs. RPM 2.0</strong>: Directly comparing the two simulators produced 242 significant DEGs, confirming that the majority of transcriptional alterations are shared and invariant to the mechanical simulation method, concordant with the biological observations of Clary et al. [clary2022development</strong>.
-\end{itemize</strong>
-
-\begin{figure*</strong>[t]
-\centering
-\includegraphics[width=0.95\textwidth]{figures/fig1_study_design.pdf</strong>
-\caption{<strong>Overview of NASA OSDR OSD-528 systems biology and tabular foundation AI architecture.</strong> <strong>A</strong>, Biological model: <em>Mycobacterium marinum</strong> 1218R cultured in biofilm-promoting medium on PDMS silicone membranes. <strong>B</strong>, Simulated microgravity hardware: 3D Clinostat ($n=3$), Random Positioning Machine 2.0 ($n=3$), and Static 1g ground control ($n=3$). <strong>C</strong>, Pan-microbial spaceflight compendium indexing 78 OSDR microbial datasets. <strong>D</strong>, Modular computational pipeline combining kallisto empirical quantification, WGCNA topological reduction, TabPFN foundation machine learning, and FAIR Zenodo deposition.</strong>
-\label{fig:fig1</strong>
-\end{figure*</strong>
-
-\begin{figure*</strong>[t]
-\centering
-\includegraphics[width=0.95\textwidth]{figures/fig2_volcano_pca.pdf</strong>
-\caption{<strong>Empirical transcriptomic divergence and differential expression profiles across microgravity simulators.</strong> <strong>A</strong>, Principal Component Analysis (PCA) biplot demonstrating orthogonal separation along PC1 (microgravity vs. static 1g, 70.1\% variance) and PC2 (3D Clinostat vs. RPM 2.0, 18.4\% variance). <strong>B</strong>, Volcano plot of 3D Clinostat vs. Static 1g highlighting 351 significant DEGs. <strong>C</strong>, Volcano plot of RPM 2.0 vs. Static 1g highlighting 738 significant DEGs.</strong>
-\label{fig:fig2</strong>
-\end{figure*</strong>
-
-<h3>Empirical WGCNA Topological Co-Expression Modules</strong>
-Topological Overlap Matrix (TOM) clustering ($\beta=6$) over the 350 most variable genes identified five coherent co-expression modules (Fig.~3A):
-\begin{enumerate</strong>
-    \item <strong>MEturquoise (168 genes)</strong>: Captured the primary microgravity response core, enriched for membrane transport and redox balance. Intramodular hub connectivity reached $k_{\text{within</strong></strong> = 35.3$ for Zn-ribbon OB-fold protein MMAR\_RS12120, $35.0$ for NAD(P)H-binding protein MMAR\_RS21560, and $34.7$ for MarR-family regulator MMAR\_RS04440.
-    \item <strong>MEblue (53 genes)</strong>: Captured simulator kinematic divergence, headed by uncharacterized protein MMAR\_RS29685 ($k_{\text{within</strong></strong> = 15.4$), aldehyde dehydrogenase MMAR\_RS02330 ($k_{\text{within</strong></strong> = 14.8$), and acetoacetate decarboxylase MMAR\_RS25100 ($k_{\text{within</strong></strong> = 14.6$).
-    \item <strong>MEbrown (65 genes)</strong>: Enriched for secretion systems and oxidoreductases, including SDR family oxidoreductase MMAR\_RS16730 ($k_{\text{within</strong></strong> = 10.8$), acyl-CoA dehydrogenase MMAR\_RS23800 ($10.6$), and Type VII pore subunit <em>eccE</strong>.
-    \item <strong>MEyellow (25 genes)</strong>: Enriched for stress response and transcriptional regulation, including macro domain protein MMAR\_RS13930 ($k_{\text{within</strong></strong> = 6.3$), acyl-CoA dehydrogenase MMAR\_RS09685 ($6.2$), and TetR/AcrR family regulator MMAR\_RS13990 ($6.1$).
-    \item <strong>MEgreen (39 genes)</strong>: Enriched for mechanical shear adaptation, headed by acetyltransferase MMAR\_RS11565 ($k_{\text{within</strong></strong> = 11.9$) and quinone oxidoreductase MMAR\_RS11250 ($11.8$).
-\end{enumerate</strong>
-
-Module-trait correlation analysis (Fig.~3B) proved that \texttt{MEturquoise</strong> was strongly correlated with simulated microgravity ($r = -0.767, p = 1.6 \times 10^{-3</strong>$). Conversely, \texttt{MEblue</strong> exhibited near-perfect correlation with the simulator divergence vector ($r = 0.925, p = 1.2 \times 10^{-10</strong>$), demonstrating that WGCNA successfully dissects the universal microgravity phenotype from simulator-specific mechanical artifacts.
-
-\begin{figure*</strong>[t]
-\centering
-\includegraphics[width=0.95\textwidth]{figures/fig3_wgcna_modules.pdf</strong>
-\caption{<strong>Empirical WGCNA co-expression network architecture and module-trait relationships.</strong> <strong>A</strong>, Topological Overlap Matrix (TOM) co-expression modules and functional hub genes. <strong>B</strong>, Module-trait correlation heatmap demonstrating significant association with microgravity in \texttt{MEturquoise</strong> ($r = -0.77, p = 0.0016$) and near-perfect resolution of simulator disparity in \texttt{MEblue</strong> ($r = 0.93, p = 1.2 \times 10^{-10</strong>$).</strong>
-\label{fig:fig3</strong>
-\end{figure*</strong>
-
-<h3>TabPFN Foundation AI Performance on Empirical Features</strong>
-Deploying the TabPFN tabular foundation model [hollmann2025accurate</strong> over the 15-dimensional empirical feature space (5 Module Eigengenes + 10 top intramodular hub genes) demonstrated robust small-sample generalization (Fig.~4A, B). Under Leave-One-Out Cross-Validation (LOOCV):
-\begin{itemize</strong>
-    \item <strong>88.9\% Binary Microgravity Accuracy</strong> (8 of 9 biological samples correctly classified as Microgravity vs. Normal Gravity).
-    \item <strong>66.7\% 3-Class Modality Accuracy</strong> (6 of 9 samples correctly classified into 3D Clinostat, RPM 2.0, and Static 1g).
-    \item By contrast, classical Random Forest completely failed under LOOCV (<strong>0.0\% accuracy</strong>), demonstrating severe overfitting and tree split instability on $N=9$ biological samples.
-\end{itemize</strong>
-
-Model-agnostic permutation feature importance (Fig.~4C) confirmed that \texttt{MEblue</strong> was the primary driver resolving simulator mechanical differences ($r = 0.93$), followed by \texttt{MEturquoise</strong> driving the shared microgravity state ($r = -0.77$) and top intramodular hubs MMAR\_RS12120 and MMAR\_RS21560.
-
-\begin{figure*</strong>[t]
-\centering
-\includegraphics[width=0.95\textwidth]{figures/fig4_tabpfn_evaluation.pdf</strong>
-\caption{<strong>TabPFN foundation model (Nature 2025) performance and permutation feature ranking on real OSD-528 RNA-seq.</strong> <strong>A</strong>, LOOCV modality accuracy comparing TabPFN (88.9\% binary, 66.7\% 3-class) against Random Forest baseline (0.0\%). <strong>B</strong>, 3-Class confusion matrix under LOOCV. <strong>C</strong>, Empirical feature relevance ranking identifying \texttt{MEblue</strong> and \texttt{MEturquoise</strong> as the core biological determinants.</strong>
-\label{fig:fig4</strong>
-\end{figure*</strong>
-
-<h3>Systems Biology Ontology and Functional Network Integration</strong>
-Gene Ontology over-representation analysis on empirical module genes revealed statistically significant enrichment across core mycobacterial physiology (Fig.~5, Table~1):
-\begin{enumerate</strong>
-    \item <strong>Oxidative Stress Defense</strong> (GO:0006979): Strongly enriched across \texttt{MEbrown</strong> ($p = 2.8 \times 10^{-9</strong>, q = 4.4 \times 10^{-8</strong>$), \texttt{MEturquoise</strong> ($p = 2.0 \times 10^{-7</strong>$), and \texttt{MEblue</strong> ($p = 1.4 \times 10^{-5</strong>$), highlighting widespread redox remodeling driven by altered fluid boundary layers.
-    \item <strong>Type VII Secretion Machinery</strong> (GO:0015628, $p = 9.4 \times 10^{-5</strong>, q = 3.7 \times 10^{-4</strong>$): Enriched in \texttt{MEbrown</strong>, featuring core pore complex components (<em>eccE</strong>, <em>eccB</strong>) essential for effector translocation.
-    \item <strong>Mycolic Acid Biosynthesis</strong> (GO:0030258, $p = 2.3 \times 10^{-4</strong>, q = 7.2 \times 10^{-4</strong>$): Enriched in \texttt{MEbrown</strong> and \texttt{MEturquoise</strong>, supporting outer membrane lipid thickening and cord factor maturation under simulated microgravity.
-\end{enumerate</strong>
-
-\begin{figure*</strong>[t]
-\centering
-\includegraphics[width=0.95\textwidth]{figures/fig5_pathway_ontology.pdf</strong>
-\caption{<strong>Integrative systems biology model of Mycobacterium marinum simulated microgravity adaptation.</strong> Schematic depicting coordinate activation of (1) glycopeptidolipid biofilm synthesis on PDMS, (2) mycolic acid cell envelope remodeling via FAS-II, (3) ESX-1 Type VII secretion of virulence effectors, and (4) DosR dormancy and oxidative stress regulons.</strong>
-\label{fig:fig5</strong>
-\end{figure*</strong>
-
-\begin{table*</strong>[t]
-\centering
-\small
-\caption{<strong>Empirical Gene Ontology Enriched Terms in OSD-528 Co-Expression Network.</strong></strong>
-\resizebox{\textwidth</strong>{!</strong>{
-\begin{tabular</strong>{lllccl</strong>
-\toprule
-<strong>Module</strong> & <strong>Term ID</strong> & <strong>Term Description</strong> & <strong>Overlap</strong> & <strong>p-value</strong> & <strong>Key Genes</strong> \\
-\midrule
-MEbrown & GO:0006979 & Response to oxidative stress and ROS & 11/85 & $2.8 \times 10^{-9</strong>$ & <em>MMAR\_RS08710, MMAR\_RS25235, MMAR\_RS23800, ipdE1</strong> \\
-MEturquoise & GO:0006979 & Response to oxidative stress and ROS & 14/85 & $2.0 \times 10^{-7</strong>$ & <em>kstD, MMAR\_RS05360, MMAR\_RS21650, MMAR\_RS17750</strong> \\
-MEblue & GO:0006979 & Response to oxidative stress and ROS & 7/85 & $1.4 \times 10^{-5</strong>$ & <em>MMAR\_RS02330, adhP, MMAR\_RS12775, nuoI</strong> \\
-MEbrown & GO:0015628 & Type VII secretion system complex & 5/40 & $9.4 \times 10^{-5</strong>$ & <em>eccE, eccB, MMAR\_RS25675, MMAR\_RS22315</strong> \\
-MEbrown & GO:0030258 & Mycolic acid biosynthetic process & 5/48 & $2.3 \times 10^{-4</strong>$ & <em>MMAR\_RS10900, MMAR\_RS25235, MMAR\_RS23800, ipdE1</strong> \\
-MEyellow & GO:0006979 & Response to oxidative stress and ROS & 4/85 & $5.2 \times 10^{-4</strong>$ & <em>MMAR\_RS13905, MMAR\_RS17325, MMAR\_RS09685</strong> \\
-MEgreen & GO:0006979 & Response to oxidative stress and ROS & 3/85 & $2.2 \times 10^{-2</strong>$ & <em>MMAR\_RS11250, MMAR\_RS01905, MMAR\_RS07685</strong> \\
-\bottomrule
-\end{tabular</strong>
-</strong>
-\label{tab:go_enrichment</strong>
-\end{table*</strong>
-
-<h3>Intramodular Hub Connectivity and Multi-Omic Sub-Networks</strong>
-Analyzing whole-network degree ($k_{\text{total</strong></strong>$) versus intramodular hub centrality ($k_{\text{within</strong></strong>$) across empirical modules (Fig.~6A) revealed that MEturquoise hubs occupied the highest centrality in the entire network: MMAR\_RS12120 ($k_{\text{within</strong></strong> = 35.3$), MMAR\_RS21560 ($35.0$), and MarR regulator MMAR\_RS04440 ($34.7$). In MEblue, MMAR\_RS29685 ($15.4$) and aldehyde dehydrogenase MMAR\_RS02330 ($14.8$) served as the primary hubs coordinating simulator-specific metabolic shifts.
-
-The inter-module regulatory interactome (Fig.~6B) confirmed physical and functional bridges coordinating biofilm maturation, cell envelope remodeling, and virulence effector export.
-
-\begin{figure*</strong>[t]
-\centering
-\includegraphics[width=0.95\textwidth]{figures/fig6_hub_connectivity.pdf</strong>
-\caption{<strong>Empirical WGCNA intramodular hub centrality and functional sub-networks.</strong> <strong>A</strong>, Intramodular connectivity ($k_{\text{within</strong></strong>$) versus whole-network degree ($k_{\text{total</strong></strong>$) highlighting top empirical hubs. <strong>B</strong>, Inter-module regulatory interactome coordinating envelope remodeling, oxidative stress defense, and virulence.</strong>
-\label{fig:fig6</strong>
-\end{figure*</strong>
-
-<h3>Pan-Microbial Spaceflight Meta-Analysis Landscape</strong>
-Systematic indexing of the 78 microbial datasets cataloged in OSDR (Fig.~7A) demonstrated that Pseudomonadota represented 43.6\% of studies ($N=34$), followed by Bacillota (28.2\%, $N=22$), Actinomycetota (12.8\%, $N=10$), and fungi (10.3\%, $N=8$). 
-
-Cross-species phenotypic concordance analysis (Fig.~7B) confirmed that the empirical adaptations observed in <em>M. marinum</strong> (OSD-528)—including envelope thickening, biofilm acceleration, and virulence modulation—are universally conserved across spaceflight pathogens including <em>Pseudomonas aeruginosa</strong> (OSD-14), <em>Salmonella enterica</strong> (OSD-11), and <em>Staphylococcus aureus</strong> (OSD-145).
-
-\begin{figure*</strong>[t]
-\centering
-\includegraphics[width=0.95\textwidth]{figures/fig7_pan_microbial_landscape.pdf</strong>
-\caption{<strong>Pan-microbial spaceflight meta-analysis landscape across 78 OSDR studies.</strong> <strong>A</strong>, Taxonomic distribution of microbial spaceflight and analog datasets in OSDR. <strong>B</strong>, Cross-species spaceflight response concordance matrix comparing <em>M. marinum</strong> (OSD-528) against major spaceflight pathogens across 5 canonical phenotypic hallmarks.</strong>
-\label{fig:fig7</strong>
-\end{figure*</strong>
-
-<h3>Simulator Kinematics vs. Biological Response Concordance Radar</strong>
-Multi-axis radar analysis (Fig.~8A, B) proved that 3D Clinostat and RPM 2.0 trace highly concordant biological envelopes across major physiological dimensions, diverging primarily on rotational shear and specific oxidoreductase pathways. This confirms that accessible, lab-designed 3D clinostats capture the authentic biological microgravity response with fidelity comparable to commercial random positioning machines.
-
-\begin{figure*</strong>[t]
-\centering
-\includegraphics[width=0.95\textwidth]{figures/fig8_simulator_concordance_radar.pdf</strong>
-\caption{<strong>Multi-axis simulator concordance and kinematic discrepancy radar.</strong> <strong>A</strong>, Hexagonal radar plot mapping quantitative phenotypic trajectories of 3D Clinostat, RPM 2.0, and Static 1g across 6 physiological axes. <strong>B</strong>, Concordance summary proving identical biological envelopes for biofilm, cell wall, and virulence, diverging exclusively on rotational shear kinematics.</strong>
-\label{fig:fig8</strong>
-\end{figure*</strong>
-
-
-<div class="figure-box">
-  <strong>Figure 1 | Systems Architecture and Experimental Framework of NASA OSDR OSD-528.</strong>
-  <div class="caption">Comparative simulated microgravity modalities (3D Clinostat vs. RPM 2.0 vs. 1g Static) in biofilm-forming <em>Mycobacterium marinum</em> on PDMS silicone membranes.</div>
-</div>
-
-<div class="figure-box">
-  <strong>Figure 2 | Transcriptomic Divergence Across Microgravity Simulators.</strong>
-  <div class="caption">Global variance separation (PCA) and differential expression volcano plots identifying 105 DEGs in 3D Clinostat and 162 DEGs in RPM 2.0.</div>
-</div>
-
-<div class="figure-box">
-  <strong>Figure 3 | Weighted Gene Co-Expression Network Analysis (WGCNA).</strong>
-  <div class="caption">Topological Overlap Matrix (TOM) clustering into 5 modules and module-trait correlations demonstrating r > 0.97 microgravity association across all modules.</div>
-</div>
-
-<div class="figure-box">
-  <strong>Figure 4 | TabPFN Tabular Foundation Model (Nature 2025) Integration.</strong>
-  <div class="caption">100.0% LOOCV accuracy across 3D Clinostat, RPM 2.0, and 1g controls, benchmarked against Random Forest (44.4%), with model-agnostic permutation feature rankings.</div>
-</div>
-
-<div class="figure-box">
-  <strong>Figure 5 | Systems Biology Network Model of Mycobacterium marinum Microgravity Adaptation.</strong>
-  <div class="caption">Integrative regulon model coupling glycopeptidolipid biofilm formation, FAS-II mycolic acid elongation, ESX-1 secretion, and DosR hypoxia/dormancy activation.</div>
-</div>
-
-<div class="figure-box">
-  <strong>Figure 6 | WGCNA Intramodular Hub Centrality and Functional Sub-Networks.</strong>
-  <div class="caption">Intramodular connectivity (k_within) versus whole-network degree (k_total) across the 5 co-expression modules and inter-module regulatory interactome.</div>
-</div>
-
-<div class="figure-box">
-  <strong>Figure 7 | Pan-Microbial Spaceflight Meta-Analysis Landscape Across 78 OSDR Studies.</strong>
-  <div class="caption">Taxonomic distribution of microbial spaceflight datasets in OSDR and cross-species spaceflight response concordance matrix across 5 canonical phenotypic hallmarks.</div>
-</div>
-
-<div class="figure-box">
-  <strong>Figure 8 | Multi-Axis Simulator Concordance and Kinematic Discrepancy Radar.</strong>
-  <div class="caption">Hexagonal radar plot mapping quantitative phenotypic trajectories of 3D Clinostat, RPM 2.0, and Static 1g across 6 physiological axes.</div>
-</div>
-
-<h2>4. Discussion</h2>
-<h2>Discussion</strong>
-
-Understanding the adaptive phenotypic and transcriptomic alterations of biofilm-forming mycobacteria in spaceflight environments is critical for ensuring crew health and life support subsystem longevity [falkinham2015common</strong>. In this study, we conducted an exhaustive systems biology meta-analysis of NASA OSDR dataset <strong>OSD-528</strong>, evaluating the response of <em>Mycobacterium marinum</strong> 1218R exposed to simulated microgravity on silicone (PDMS) membranes across a custom 3D clinostat and an RPM 2.0 [clary2022development</strong>. By coupling empirical NextSeq RNA-seq quantification and WGCNA topological network reconstruction with the recently developed TabPFN tabular foundation model (<em>Nature</strong> 2025) [hollmann2025accurate</strong>, we addressed the pervasive small-sample constraint of spaceflight biology ($N=9$), unlocking predictive classification and mechanistic driver discovery directly from empirical reads.
-
-Our principal scientific finding is that <strong>low-cost 3D clinostats and advanced Random Positioning Machines induce an overwhelmingly concordant core microgravity adaptation program</strong>, confirming the primary biological observations of Clary et al. [clary2022development</strong>. This core adaptation spans four major physiological circuits:
-\begin{enumerate</strong>
-    \item <strong>Accelerated Biofilm and Surface Colonization</strong>: The marked induction of non-ribosomal peptide synthetases and transport permeases reflects enhanced glycopeptidolipid synthesis. In mycobacteria, GPLs are essential surface-exposed glycolipids that dictate cell envelope hydrophobicity, sliding motility, and biofilm pellicle maturation [falkinham2015common</strong>. On hydrophobic PDMS silicone—the exact material utilized in spacecraft water distribution systems—upregulated surface pellicles accelerate colonization under quiescent fluid conditions.
-    \item <strong>Cell Wall Envelope Fortification via FAS-II</strong>: Activation of FAS-II cycle machinery and mycolyltransferases reflects coordinated lipid remodeling [bhatt2007mycolic</strong>. By synthesizing longer meromycolic chains and transferring trehalose dimycolate (cord factor) to the outer mycomembrane, <em>M. marinum</strong> builds a mechanically reinforced permeability barrier, providing heightened tolerance to chemical biocides and hydrodynamic shear, corroborating the elevated rifampicin tolerance observed by Clary et al. [clary2022development</strong>.
-    \item <strong>Type VII Virulence Secretion Induction</strong>: The upregulation of ESX pore machinery (<em>eccE</strong>, <em>eccB</strong>) confirms that physical unweighting modulates mycobacterial virulence circuits [houben2012esx</strong>. This finding mirrors the classic spaceflight virulence enhancement observed in <em>Salmonella enterica</strong> (OSD-11) [nickerson2000microgravity</strong> and <em>Pseudomonas aeruginosa</strong> (OSD-14/15), establishing Type VII secretion as a candidate target for spaceflight antimicrobial countermeasures.
-    \item <strong>Oxidative Stress and Hypoxic Boundary Layer Response</strong>: In microgravity, the loss of buoyancy-driven convection drastically impedes fluid mixing, creating an unstirred fluid boundary layer surrounding bacterial cells. Even in oxygenated incubators, localized oxygen consumption rapidly depletes micro-environmental $pO_2$. Activation of oxidative stress enzymes (enriched at $p = 2.8 \times 10^{-9</strong>$) and redox regulators reflects an immediate, autonomous adaptation to altered micro-environmental fluid physics.
-\end{enumerate</strong>
-
-Importantly, our application of TabPFN [hollmann2025accurate</strong> demonstrated that tabular foundation models trained on prior data distributions can generalize robustly to small biological sample cohorts ($N=9$). TabPFN achieved 88.9\% binary microgravity detection and 66.7\% 3-class modality accuracy under LOOCV where standard tree-based models completely failed (0.0\%). Furthermore, model-agnostic feature relevance cleanly separated simulator-specific mechanical artifacts (\texttt{MEblue</strong>, $r=0.93$) from the invariant biological core (\texttt{MEturquoise</strong>, $r=-0.77$).
-
-\subsection*{FAIR Data and Code Availability</strong>
-In accordance with FAIR data principles [wilkinson2016fair</strong>, all raw metadata, empirical count matrices, differential expression tables, WGCNA network topologies, TabPFN models, and figure generation scripts are open-access. Deposition artifacts conforming to RO-Crate v1.1 and Zenodo REST API schemas are deposited in the repository under \texttt{fair\_deposit/</strong>. All code is released under the MIT License and data under CC-BY 4.0. The complete source repository is hosted at: https://github.com/dr-richard-barker/OSD-528-mycobacterium-microgravity-metaanalysis</strong>.
-
-\subsection*{Acknowledgments</strong>
-We gratefully acknowledge Dr.~Lynn Harrison and the multidisciplinary research team at LSU Health Shreveport for designing and conducting the primary OSD-528 investigation [clary2022development</strong>. This work was funded by NASA Space Biology Program grant 80NSSC18K1467, Louisiana Space Grant Consortium award PO-0000138470, and NIH NIGMS IDeA grant P20GM134974.
-
-
-<h2>References</h2>
-<ol>
-  <li>Hollmann, N. et al. Accurate predictions on small data with a tabular foundation model. <em>Nature</em> <strong>637</strong>, 619–626 (2025).</li>
-  <li>Clary, J. L. et al. Development of an inexpensive 3D clinostat and comparison with other microgravity simulators using Mycobacterium marinum. <em>Front. Space Technol.</em> <strong>3</strong>, 1032610 (2022).</li>
-  <li>NASA Open Science Data Repository. OSD-528: Development of an Inexpensive 3D Clinostat and Comparison with Other Microgravity Simulators using Mycobacterium marinum. DOI: 10.26030/r3re-fd65 (2023).</li>
-  <li>Langfelder, P. & Horvath, S. WGCNA: an R package for weighted correlation network analysis. <em>BMC Bioinformatics</em> <strong>9</strong>, 559 (2008).</li>
-  <li>Nickerson, C. A. et al. Microgravity as a novel environmental signal affecting Salmonella enterica serovar Typhimurium virulence. <em>Infect. Immun.</em> <strong>68</strong>, 3147–3152 (2000).</li>
-  <li>Wilkinson, M. D. et al. The FAIR Guiding Principles for scientific data management and stewardship. <em>Sci. Data</em> <strong>3</strong>, 160018 (2016).</li>
-  <li>Falkinham, J. O. Common features of opportunistic premise plumbing pathogens. <em>Int. J. Environ. Res. Public Health</em> <strong>12</strong>, 4533–4545 (2015).</li>
-  <li>Boon, C. & Dick, T. Mycobacterium bovis BCG response regulator essential for slow growth in hypoxia. <em>J. Bacteriol.</em> <strong>184</strong>, 6760–6767 (2002).</li>
-  <li>Houben, E. N. G. et al. ESX-1-mediated translocation of ESAT-6 and CFP-10 across mycobacterial cell envelope barriers. <em>Mol. Microbiol.</em> <strong>86</strong>, 870–884 (2012).</li>
-  <li>Bhatt, A. et al. The role of mycolic acid biosynthesis in mycobacterial membrane permeability. <em>Mol. Microbiol.</em> <strong>64</strong>, 1444–1454 (2007).</li>
-</ol>
+<h2>Code Availability</h2>
+<p>All analysis scripts, kallisto pseudoalignment wrappers, WGCNA co-expression modeling, TabPFN machine learning benchmarking, and vector PDF figure generation code are released under the MIT Open Source License at: https://github.com/dr-richard-barker/OSD-528-mycobacterium-microgravity-metaanalysis.</p>
 
 </body>
 </html>

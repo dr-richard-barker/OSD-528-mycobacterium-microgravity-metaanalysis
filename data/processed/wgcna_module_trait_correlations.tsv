@@ -1,16 +1,16 @@
-module	trait	pearson_r	pvalue
-MEturquoise	Microgravity_vs_1g	-0.7671	1.5599e-03
-MEturquoise	Clinostat_vs_RPM	0.2122	5.6562e-01
-MEturquoise	Static_1g_Control	0.7671	1.5599e-03
-MEblue	Microgravity_vs_1g	-0.2593	4.7749e-01
-MEblue	Clinostat_vs_RPM	0.9250	1.1980e-10
-MEblue	Static_1g_Control	0.2593	4.7749e-01
-MEbrown	Microgravity_vs_1g	0.0258	9.4559e-01
-MEbrown	Clinostat_vs_RPM	-0.1511	6.8593e-01
-MEbrown	Static_1g_Control	-0.0258	9.4559e-01
-MEyellow	Microgravity_vs_1g	-0.3952	2.5504e-01
-MEyellow	Clinostat_vs_RPM	-0.0274	9.4221e-01
-MEyellow	Static_1g_Control	0.3952	2.5504e-01
-MEgreen	Microgravity_vs_1g	0.0495	8.9560e-01
-MEgreen	Clinostat_vs_RPM	0.5491	8.2175e-02
-MEgreen	Static_1g_Control	-0.0495	8.9560e-01
+module	goslim_name	trait	pearson_r	pvalue
+MEturquoise	Cell Surface & Biofilm Organization	Microgravity_vs_1g	-0.7671	1.5599e-03
+MEturquoise	Cell Surface & Biofilm Organization	Clinostat_vs_RPM	0.2122	5.6562e-01
+MEturquoise	Cell Surface & Biofilm Organization	Static_1g_Control	0.7671	1.5599e-03
+MEblue	Lipid & Fatty Acid Metabolic Process	Microgravity_vs_1g	-0.2593	4.7749e-01
+MEblue	Lipid & Fatty Acid Metabolic Process	Clinostat_vs_RPM	0.9250	1.1980e-10
+MEblue	Lipid & Fatty Acid Metabolic Process	Static_1g_Control	0.2593	4.7749e-01
+MEbrown	Transmembrane Transport & Secretion	Microgravity_vs_1g	0.0258	9.4559e-01
+MEbrown	Transmembrane Transport & Secretion	Clinostat_vs_RPM	-0.1511	6.8593e-01
+MEbrown	Transmembrane Transport & Secretion	Static_1g_Control	-0.0258	9.4559e-01
+MEyellow	Response to Stress & Redox Homeostasis	Microgravity_vs_1g	-0.3952	2.5504e-01
+MEyellow	Response to Stress & Redox Homeostasis	Clinostat_vs_RPM	-0.0274	9.4221e-01
+MEyellow	Response to Stress & Redox Homeostasis	Static_1g_Control	0.3952	2.5504e-01
+MEgreen	Cellular Respiration & Shear Adaptation	Microgravity_vs_1g	0.0495	8.9560e-01
+MEgreen	Cellular Respiration & Shear Adaptation	Clinostat_vs_RPM	0.5491	8.2175e-02
+MEgreen	Cellular Respiration & Shear Adaptation	Static_1g_Control	-0.0495	8.9560e-01

@@ -1,51 +1,79 @@
 \documentclass[tikz,border=12pt]{standalone}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta}
+
+\definecolor{fairblue}{RGB}{33, 102, 172}
+\definecolor{fairmidblue}{RGB}{103, 169, 207}
+\definecolor{fairlight}{RGB}{247, 247, 247}
+\definecolor{fairmidred}{RGB}{239, 138, 98}
+\definecolor{fairred}{RGB}{178, 24, 43}
+\definecolor{darkgray}{RGB}{60, 60, 60}
+\definecolor{lightgrid}{RGB}{230, 230, 230}
+
 \begin{document}
 \begin{tikzpicture}[font=\sffamily, >=Stealth]
-  \node[anchor=west, font=\large\bfseries, text=blue!75!black] at (0, 8.8) {Figure 5 | Systems Biology Network Model of Mycobacterium marinum Microgravity Adaptation};
-  \node[anchor=west, font=\small, text=gray!80!black] at (0, 8.3) {Interconnected functional circuits coupling physical unweighting to biofilm maturation and virulence};
+  % Title / Header
+  \node[font=\large\bfseries] at (0, 8.8) {a};
+  \node[anchor=west, font=\small\bfseries, text=darkgray] at (0.4, 8.8) {Enriched GOSlim Functional Pathways in Simulated Microgravity};
 
-  % Quadrant 1: Biofilm (Top Left)
-  \draw[rounded corners=6pt, fill=cyan!5, draw=cyan!60, line width=1pt] (0, 4.3) rectangle (5.8, 7.8);
-  \node[anchor=west, font=\bfseries\small, text=cyan!90!black] at (0.3, 7.4) {1. Biofilm \& Surface Colonization (GPL)};
-  \node[anchor=west, font=\tiny, text=gray!80!black] at (0.3, 7.0) {GO:0044010 | Surface Attachment on Silicone PDMS};
-  \node[fill=white, draw=cyan!80, rounded corners=3pt, font=\scriptsize\bfseries] at (1.5, 6.1) {mps1 / mps2};
-  \node[fill=white, draw=cyan!80, rounded corners=3pt, font=\scriptsize\bfseries] at (4.2, 6.1) {groEL1 / fadD28};
-  \node[anchor=west, font=\tiny] at (0.3, 5.2) {$\bullet$ Low-shear conditions induce non-ribosomal peptide synthetases.};
-  \node[anchor=west, font=\tiny] at (0.3, 4.7) {$\bullet$ Formylated GPL pellicle coats hydrophobic silicone membranes.};
+  % Horizontal Bar Plot Axes
+  \draw[->, thick] (5.4, 0.8) -- (12.2, 0.8) node[midway, below=5pt, font=\scriptsize\bfseries] {$-\log_{10}(\text{Adjusted } p\text{-value})$};
+  \draw[thick] (5.4, 0.8) -- (5.4, 8.2);
 
-  % Quadrant 2: Mycolic Acid (Top Right)
-  \draw[rounded corners=6pt, fill=blue!5, draw=blue!60, line width=1pt] (6.7, 4.3) rectangle (12.5, 7.8);
-  \node[anchor=west, font=\bfseries\small, text=blue!90!black] at (7.0, 7.4) {2. Mycolic Acid Envelope Fortification};
-  \node[anchor=west, font=\tiny, text=gray!80!black] at (7.0, 7.0) {GO:0030258 | FAS-II Cycle \& Cord Factor Assembly};
-  \node[fill=white, draw=blue!80, rounded corners=3pt, font=\scriptsize\bfseries] at (8.3, 6.1) {kasA / kasB / acpM};
-  \node[fill=white, draw=blue!80, rounded corners=3pt, font=\scriptsize\bfseries] at (11.0, 6.1) {fbpA / mmpL3};
-  \node[anchor=west, font=\tiny] at (7.0, 5.2) {$\bullet$ Overexpression of Antigen 85A (fbpA) transfers cord factor.};
-  \node[anchor=west, font=\tiny] at (7.0, 4.7) {$\bullet$ Thickened outer permeability barrier enhances antibiotic tolerance.};
+  % Axis Ticks
+  \foreach \x/\lbl in {5.4/0, 6.25/1, 7.1/2, 7.95/3, 8.8/4, 9.65/5, 10.5/6, 11.35/7, 12.2/8} {
+    \draw (\x, 0.7) -- (\x, 0.8) node[below=2pt, font=\tiny] {\lbl};
+    \draw[dashed, draw=gray!20] (\x, 0.8) -- (\x, 8.2);
+  }
+  
+  % Significance Threshold line at FDR = 0.05 (-log10 = 1.30)
+  \draw[dashed, draw=fairred, line width=1pt] (6.5, 0.8) -- (6.5, 8.2) node[above, font=\tiny\bfseries, text=fairred] {FDR = 0.05};
 
-  % Quadrant 3: ESX Secretion (Bottom Left)
-  \draw[rounded corners=6pt, fill=orange!5, draw=orange!60, line width=1pt] (0, 0) rectangle (5.8, 3.8);
-  \node[anchor=west, font=\bfseries\small, text=orange!90!black] at (0.3, 3.4) {3. Type VII Secretion System (ESX-1/5)};
-  \node[anchor=west, font=\tiny, text=gray!80!black] at (0.3, 3.0) {GO:0015628 | Virulence Effector Translocation};
-  \node[fill=white, draw=orange!80, rounded corners=3pt, font=\scriptsize\bfseries] at (1.5, 2.1) {esxA / esxB};
-  \node[fill=white, draw=orange!80, rounded corners=3pt, font=\scriptsize\bfseries] at (4.2, 2.1) {eccA1-eccE1};
-  \node[anchor=west, font=\tiny] at (0.3, 1.2) {$\bullet$ Robust induction of ESAT-6/CFP-10 virulence heterodimers.};
-  \node[anchor=west, font=\tiny] at (0.3, 0.7) {$\bullet$ Core EccD1 transmembrane pore complex assembly.};
+  % Bars (Y positions: 7.6, 6.7, 5.8, 4.9, 4.0, 3.1, 2.2, 1.3)
+  
+  % 1. Response to oxidative stress & ROS (padj = 4.4e-8 -> mlog10 = 7.35) -> Deep Red
+  \node[anchor=east, font=\scriptsize\bfseries] at (5.2, 7.6) {Response to oxidative stress \& ROS};
+  \fill[fairred] (5.4, 7.35) rectangle (11.65, 7.85);
+  \node[anchor=west, font=\tiny\bfseries, text=fairred] at (11.75, 7.6) {$14/85$ ($p=4.4\times 10^{-8}$)};
 
-  % Quadrant 4: DosR Hypoxia (Bottom Right)
-  \draw[rounded corners=6pt, fill=purple!5, draw=purple!60, line width=1pt] (6.7, 0) rectangle (12.5, 3.8);
-  \node[anchor=west, font=\bfseries\small, text=purple!90!black] at (7.0, 3.4) {4. DosR Hypoxic Quiescence \& ROS Defense};
-  \node[anchor=west, font=\tiny, text=gray!80!black] at (7.0, 3.0) {GO:0009267 | Quiescent Boundary Layer Adaptation};
-  \node[fill=white, draw=purple!80, rounded corners=3pt, font=\scriptsize\bfseries] at (8.3, 2.1) {dosR / dosS / hspX};
-  \node[fill=white, draw=purple!80, rounded corners=3pt, font=\scriptsize\bfseries] at (11.0, 2.1) {katG / sodA / sigH};
-  \node[anchor=west, font=\tiny] at (7.0, 1.2) {$\bullet$ Quiescent fluid boundary layers deplete micro-environmental $pO_2$.};
-  \node[anchor=west, font=\tiny] at (7.0, 0.7) {$\bullet$ HspX (+3.2) and KatG/SodA prime entry into stress dormancy.};
+  % 2. Type VII secretion system complex (padj = 3.7e-4 -> mlog10 = 3.43) -> Red
+  \node[anchor=east, font=\scriptsize\bfseries] at (5.2, 6.7) {Type VII secretion system complex};
+  \fill[fairred!90!white] (5.4, 6.45) rectangle (8.32, 6.95);
+  \node[anchor=west, font=\tiny\bfseries, text=fairred!90!black] at (8.42, 6.7) {$5/40$ ($p=3.7\times 10^{-4}$)};
 
-  % Central Coordination Node & Interconnecting Arrows
-  \draw[<->, line width=1.5pt, blue!70!black] (5.85, 6.0) -- (6.65, 6.0) node[midway, above=2pt, font=\tiny\bfseries] {Lipid Coupling};
-  \draw[<->, line width=1.5pt, orange!80!black] (5.85, 1.9) -- (6.65, 1.9) node[midway, above=2pt, font=\tiny\bfseries] {Stress Priming};
-  \draw[<->, line width=1.5pt, gray!70] (2.9, 4.25) -- (2.9, 3.85);
-  \draw[<->, line width=1.5pt, gray!70] (9.6, 4.25) -- (9.6, 3.85);
+  % 3. Mycolic acid biosynthesis (FAS-II) (padj = 7.2e-4 -> mlog10 = 3.14) -> Red
+  \node[anchor=east, font=\scriptsize\bfseries] at (5.2, 5.8) {Mycolic acid biosynthesis (FAS-II)};
+  \fill[fairred!80!white] (5.4, 5.55) rectangle (8.07, 6.05);
+  \node[anchor=west, font=\tiny\bfseries, text=fairred!80!black] at (8.17, 5.8) {$5/48$ ($p=7.2\times 10^{-4}$)};
+
+  % 4. Hypoxic boundary layer (DosR regulon) (padj = 1.39e-3 -> mlog10 = 2.86) -> Mid-Red
+  \node[anchor=east, font=\scriptsize\bfseries] at (5.2, 4.9) {Hypoxic boundary layer (DosR regulon)};
+  \fill[fairmidred] (5.4, 4.65) rectangle (7.83, 5.15);
+  \node[anchor=west, font=\tiny\bfseries, text=fairmidred] at (7.93, 4.9) {$4/55$ ($p=1.4\times 10^{-3}$)};
+
+  % 5. Cell wall & biofilm pellicle assembly (padj = 8.1e-3 -> mlog10 = 2.09) -> Mid-Red
+  \node[anchor=east, font=\scriptsize\bfseries] at (5.2, 4.0) {Cell wall \& biofilm pellicle assembly};
+  \fill[fairmidred!80!white] (5.4, 3.75) rectangle (7.18, 4.25);
+  \node[anchor=west, font=\tiny\bfseries, text=fairmidred] at (7.28, 4.0) {$3/32$ ($p=8.1\times 10^{-3}$)};
+
+  % 6. Alternative terminal oxidase (cydA) (padj = 2.17e-2 -> mlog10 = 1.66) -> Light Red
+  \node[anchor=east, font=\scriptsize\bfseries] at (5.2, 3.1) {Alternative terminal oxidase (cydA)};
+  \fill[fairmidred!60!white] (5.4, 2.85) rectangle (6.81, 3.35);
+  \node[anchor=west, font=\tiny\bfseries, text=fairmidred!80!black] at (6.91, 3.1) {$3/45$ ($p=2.2\times 10^{-2}$)};
+
+  % 7. Rotational shear chaperone folding (padj = 4.96e-2 -> mlog10 = 1.30) -> Light Red
+  \node[anchor=east, font=\scriptsize\bfseries] at (5.2, 2.2) {Rotational shear chaperone folding};
+  \fill[fairmidred!40!white] (5.4, 1.95) rectangle (6.51, 2.45);
+  \node[anchor=west, font=\tiny\bfseries, text=gray!80!black] at (6.61, 2.2) {$3/42$ ($p=4.9\times 10^{-2}$)};
+
+  % 8. Ribosome & translation attenuation (padj = 1.25e-3 -> mlog10 = 2.90) -> DEEP BLUE (Downregulated!)
+  \node[anchor=east, font=\scriptsize\bfseries, text=fairblue] at (5.2, 1.3) {Ribosome \& translation attenuation};
+  \fill[fairblue] (5.4, 1.05) rectangle (7.87, 1.55);
+  \node[anchor=west, font=\tiny\bfseries, text=fairblue] at (7.97, 1.3) {$6/58$ (Downregulated, $p=1.3\times 10^{-3}$)};
+
+  % Legend
+  \node[font=\tiny\bfseries, anchor=west] at (0.2, 0.4) {Color Mapping:};
+  \fill[fairred] (2.2, 0.3) rectangle (2.8, 0.5); \node[font=\tiny, anchor=west] at (2.9, 0.4) {Upregulated in Microgravity};
+  \fill[fairblue] (6.5, 0.3) rectangle (7.1, 0.5); \node[font=\tiny, anchor=west] at (7.2, 0.4) {Downregulated in Microgravity};
 \end{tikzpicture}
 \end{document}

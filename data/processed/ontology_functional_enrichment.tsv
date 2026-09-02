@@ -1,17 +1,29 @@
-module	term_id	term_name	ontology	overlap	pvalue	padj	key_genes
-MEbrown	GO:0006979	Response to oxidative stress and reactive oxygen species	Biological Process	11/85	2.7675e-09	4.4280e-08	MMAR_RS08710, MMAR_RS25235, MMAR_RS23800, MMAR_RS12940, ipdE1, MMAR_RS13750
-MEturquoise	GO:0006979	Response to oxidative stress and reactive oxygen species	Biological Process	14/85	2.0184e-07	1.6147e-06	MMAR_RS05360, kstD, MMAR_RS21650, MMAR_RS17750, MMAR_RS20160, MMAR_RS24720
-MEblue	GO:0006979	Response to oxidative stress and reactive oxygen species	Biological Process	7/85	1.4069e-05	7.5033e-05	MMAR_RS02330, adhP, MMAR_RS12775, MMAR_RS22890, MMAR_RS07330, nuoI
-MEbrown	GO:0015628	Type VII secretion system complex	Cellular Component	5/40	9.3540e-05	3.7416e-04	MMAR_RS25675, MMAR_RS22315, MMAR_RS27390, eccE, MMAR_RS06265
-MEbrown	GO:0030258	Mycolic acid biosynthetic and elongation process	Biological Process	5/48	2.2636e-04	7.2434e-04	MMAR_RS10900, MMAR_RS25235, MMAR_RS23800, MMAR_RS14560, ipdE1
-MEyellow	GO:0006979	Response to oxidative stress and reactive oxygen species	Biological Process	4/85	5.2115e-04	1.3897e-03	MMAR_RS13905, MMAR_RS17325, MMAR_RS07955, MMAR_RS09685
-MEgreen	GO:0006979	Response to oxidative stress and reactive oxygen species	Biological Process	3/85	2.1719e-02	4.9643e-02	MMAR_RS11250, MMAR_RS01905, MMAR_RS07685
-MEturquoise	GO:0030258	Mycolic acid biosynthetic and elongation process	Biological Process	3/48	1.7933e-01	3.5866e-01	MMAR_RS20160, MMAR_RS01930, MMAR_RS25045
-MEgreen	GO:0006097	Glyoxylate cycle and alternative respiration	Biological Process	1/30	1.9238e-01	3.4201e-01	pdxH
-MEyellow	GO:0030258	Mycolic acid biosynthetic and elongation process	Biological Process	1/48	1.9685e-01	3.1497e-01	MMAR_RS09685
-MEgreen	GO:0044010	Single-species biofilm formation on surface	Biological Process	1/32	2.0383e-01	2.9648e-01	MMAR_RS18395
-MEturquoise	GO:0006097	Glyoxylate cycle and alternative respiration	Biological Process	2/30	2.3226e-01	3.0968e-01	sucD, MMAR_RS13720
-MEturquoise	GO:0044010	Single-species biofilm formation on surface	Biological Process	2/32	2.5507e-01	3.1393e-01	MMAR_RS18655, MMAR_RS04960
-MEgreen	GO:0030258	Mycolic acid biosynthetic and elongation process	Biological Process	1/48	2.8995e-01	3.3137e-01	MMAR_RS07685
-MEbrown	GO:0006097	Glyoxylate cycle and alternative respiration	Biological Process	1/30	3.0019e-01	3.2021e-01	MMAR_RS03750
-MEturquoise	GO:0015628	Type VII secretion system complex	Cellular Component	1/40	7.1150e-01	7.1150e-01	eccB
+module	goslim_module	term_id	term_name	category	direction	overlap	pvalue	padj	mlog10_padj	key_genes
+MEbrown	Transmembrane Transport & Secretion	GO:0006979	Response to oxidative stress & ROS	Biological Process	Upregulated	12/85	1.7037e-10	4.7704e-09	8.32	MMAR_RS08710, MMAR_RS25235, MMAR_RS23800, MMAR_RS12940, ipdE1, MMAR_RS13750
+MEturquoise	Cell Surface & Biofilm Organization	GO:0006979	Response to oxidative stress & ROS	Biological Process	Upregulated	16/85	3.4598e-09	4.8437e-08	7.31	MMAR_RS05360, kstD, MMAR_RS21650, MMAR_RS17750, MMAR_RS20160, MMAR_RS24720
+MEblue	Lipid & Fatty Acid Metabolic Process	GO:0006979	Response to oxidative stress & ROS	Biological Process	Upregulated	7/85	1.4069e-05	1.3131e-04	3.88	MMAR_RS02330, adhP, MMAR_RS12775, MMAR_RS22890, MMAR_RS07330, nuoI
+MEbrown	Transmembrane Transport & Secretion	GO:0015628	Type VII secretion system complex	Cellular Component	Upregulated	5/40	9.3540e-05	6.5478e-04	3.18	MMAR_RS25675, MMAR_RS22315, MMAR_RS27390, eccE, MMAR_RS06265
+MEbrown	Transmembrane Transport & Secretion	GO:0030258	Mycolic acid biosynthetic & FAS-II process	Biological Process	Upregulated	5/48	2.2636e-04	1.2676e-03	2.9	MMAR_RS10900, MMAR_RS25235, MMAR_RS23800, MMAR_RS14560, ipdE1
+MEgreen	Cellular Respiration & Shear Adaptation	GO:0006979	Response to oxidative stress & ROS	Biological Process	Upregulated	5/85	2.9584e-04	1.3806e-03	2.86	MMAR_RS11250, arsC, MMAR_RS01905, MMAR_RS07685, MMAR_RS25410
+MEyellow	Response to Stress & Redox Homeostasis	GO:0006979	Response to oxidative stress & ROS	Biological Process	Upregulated	4/85	5.2115e-04	2.0846e-03	2.68	MMAR_RS13905, MMAR_RS17325, MMAR_RS07955, MMAR_RS09685
+MEbrown	Transmembrane Transport & Secretion	GO:0055085	Transmembrane ABC lipid transport	Biological Process	Upregulated	5/95	5.0067e-03	1.7523e-02	1.76	MMAR_RS25435, MMAR_RS14800, MMAR_RS08185, MMAR_RS09415, MMAR_RS17570
+MEgreen	Cellular Respiration & Shear Adaptation	GO:0005840	Ribosome & translation elongation	Cellular Component	Downregulated	3/58	7.7337e-03	2.4060e-02	1.62	rpmD, MMAR_RS28070, MMAR_RS18395
+MEgreen	Cellular Respiration & Shear Adaptation	GO:0055085	Transmembrane ABC lipid transport	Biological Process	Upregulated	3/95	2.9002e-02	8.1207e-02	1.09	MMAR_RS04180, MMAR_RS08160, MMAR_RS19080
+MEblue	Lipid & Fatty Acid Metabolic Process	GO:0055085	Transmembrane ABC lipid transport	Biological Process	Upregulated	3/95	6.2672e-02	1.5953e-01	0.8	MMAR_RS20175, MMAR_RS20760, MMAR_RS18515
+MEblue	Lipid & Fatty Acid Metabolic Process	GO:0045333	Cellular respiration & alternative oxidase	Biological Process	Upregulated	2/45	6.9130e-02	1.6130e-01	0.79	MMAR_RS07330, nuoI
+MEturquoise	Cell Surface & Biofilm Organization	GO:0005840	Ribosome & translation elongation	Cellular Component	Downregulated	4/58	9.9617e-02	2.1456e-01	0.67	rpmG, rpsR, MMAR_RS01445, rpmB
+MEyellow	Response to Stress & Redox Homeostasis	GO:0006097	Glyoxylate bypass & isocitrate lyase	Biological Process	Upregulated	1/30	1.2784e-01	2.5569e-01	0.59	MMAR_RS08545
+MEturquoise	Cell Surface & Biofilm Organization	GO:0045333	Cellular respiration & alternative oxidase	Biological Process	Upregulated	3/45	1.5678e-01	2.9265e-01	0.53	cydD, MMAR_RS13720, MMAR_RS07320
+MEturquoise	Cell Surface & Biofilm Organization	GO:0055085	Transmembrane ABC lipid transport	Biological Process	Upregulated	5/95	1.6325e-01	2.8569e-01	0.54	MMAR_RS03605, MMAR_RS05670, MMAR_RS25025, MMAR_RS02840, MMAR_RS09865
+MEturquoise	Cell Surface & Biofilm Organization	GO:0030258	Mycolic acid biosynthetic & FAS-II process	Biological Process	Upregulated	3/48	1.7933e-01	2.9537e-01	0.53	MMAR_RS20160, MMAR_RS01930, MMAR_RS25045
+MEyellow	Response to Stress & Redox Homeostasis	GO:0030258	Mycolic acid biosynthetic & FAS-II process	Biological Process	Upregulated	1/48	1.9685e-01	3.0622e-01	0.51	MMAR_RS09685
+MEgreen	Cellular Respiration & Shear Adaptation	GO:0044010	Cell wall & biofilm pellicle organization	Biological Process	Upregulated	1/32	2.0383e-01	3.0039e-01	0.52	MMAR_RS18395
+MEyellow	Response to Stress & Redox Homeostasis	GO:0005840	Ribosome & translation elongation	Cellular Component	Downregulated	1/58	2.3290e-01	3.2606e-01	0.49	rpsN
+MEturquoise	Cell Surface & Biofilm Organization	GO:0044010	Cell wall & biofilm pellicle organization	Biological Process	Upregulated	2/32	2.5507e-01	3.4009e-01	0.47	MMAR_RS18655, MMAR_RS04960
+MEgreen	Cellular Respiration & Shear Adaptation	GO:0045333	Cellular respiration & alternative oxidase	Biological Process	Upregulated	1/45	2.7453e-01	3.4940e-01	0.46	pdxH
+MEgreen	Cellular Respiration & Shear Adaptation	GO:0030258	Mycolic acid biosynthetic & FAS-II process	Biological Process	Upregulated	1/48	2.8995e-01	3.5298e-01	0.45	MMAR_RS07685
+MEbrown	Transmembrane Transport & Secretion	GO:0045333	Cellular respiration & alternative oxidase	Biological Process	Upregulated	1/45	4.1501e-01	4.8418e-01	0.31	MMAR_RS03750
+MEblue	Lipid & Fatty Acid Metabolic Process	GO:0005840	Ribosome & translation elongation	Cellular Component	Downregulated	1/58	4.3080e-01	4.8250e-01	0.32	trpS
+MEbrown	Transmembrane Transport & Secretion	GO:0005840	Ribosome & translation elongation	Cellular Component	Downregulated	1/58	4.9937e-01	5.3778e-01	0.27	rpsQ
+MEturquoise	Cell Surface & Biofilm Organization	GO:0006097	Glyoxylate bypass & isocitrate lyase	Biological Process	Upregulated	1/30	6.0601e-01	6.2845e-01	0.2	sucD
+MEturquoise	Cell Surface & Biofilm Organization	GO:0015628	Type VII secretion system complex	Cellular Component	Upregulated	1/40	7.1150e-01	7.1150e-01	0.15	eccB

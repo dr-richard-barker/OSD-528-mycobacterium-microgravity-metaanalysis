@@ -1,92 +1,82 @@
 \documentclass[tikz,border=12pt]{standalone}
 \usepackage{tikz}
+
+\definecolor{fairblue}{RGB}{33, 102, 172}
+\definecolor{fairmidblue}{RGB}{103, 169, 207}
+\definecolor{fairlight}{RGB}{247, 247, 247}
+\definecolor{fairmidred}{RGB}{239, 138, 98}
+\definecolor{fairred}{RGB}{178, 24, 43}
+\definecolor{darkgray}{RGB}{60, 60, 60}
+\definecolor{lightgrid}{RGB}{230, 230, 230}
+
 \begin{document}
-\begin{tikzpicture}[font=\sffamily]
-  \node[anchor=west, font=\large\bfseries, text=blue!75!black] at (0, 8.8) {Figure 4 | TabPFN Tabular Foundation Model (Nature 2025) Performance};
-  \node[anchor=west, font=\small, text=gray!80!black] at (0, 8.3) {Accurate predictions on empirical OSD-528 small data ($N=9$) and permutation feature importance};
+\begin{tikzpicture}[font=\sffamily, >=Stealth]
+  % Panel a: LOOCV Accuracy Comparison
+  \node[font=\large\bfseries] at (0, 7.8) {a};
+  \node[anchor=west, font=\small\bfseries, text=darkgray] at (0.4, 7.8) {Leave-One-Out Cross-Validation (LOOCV) Benchmark};
 
-  % Panel A: Accuracy Benchmark
-  \draw[rounded corners=6pt, fill=gray!3, draw=gray!40] (0, 3.5) rectangle (5.8, 7.8);
-  \node[anchor=west, font=\bfseries\small] at (0.3, 7.4) {A | Cross-Validation Benchmark (LOOCV)};
+  \draw[->, thick] (0.8, 1.2) -- (0.8, 6.8) node[midway, above=5pt, rotate=90, font=\scriptsize\bfseries] {Accuracy (\%)};
+  \draw[thick] (0.8, 1.2) -- (5.6, 1.2);
   
-  \node[anchor=west, font=\scriptsize\bfseries] at (0.4, 6.7) {TabPFN (Microgravity Binary)};
-  \draw[rounded corners=2pt, fill=blue!75!black] (0.4, 6.2) rectangle (4.5, 6.6);
-  \node[font=\scriptsize\bfseries, text=white, anchor=east] at (4.4, 6.4) {88.9\%};
-
-  \node[anchor=west, font=\scriptsize\bfseries] at (0.4, 5.5) {TabPFN (3-Class Modality)};
-  \draw[rounded corners=2pt, fill=purple!75!black] (0.4, 5.0) rectangle (3.5, 5.4);
-  \node[font=\scriptsize\bfseries, text=white, anchor=east] at (3.4, 5.2) {66.7\%};
-
-  \node[anchor=west, font=\scriptsize\bfseries] at (0.4, 4.3) {Random Forest Baseline};
-  \draw[rounded corners=2pt, fill=gray!40] (0.4, 3.8) rectangle (0.8, 4.2);
-  \node[font=\scriptsize\bfseries, text=black, anchor=west] at (0.9, 4.0) {0.0\% (Collapses on N=9)};
-
-  % Panel B: Confusion Matrix (6/9 correct)
-  \draw[rounded corners=6pt, fill=gray!3, draw=gray!40] (6.4, 3.5) rectangle (12.5, 7.8);
-  \node[anchor=west, font=\bfseries\small] at (6.7, 7.4) {B | TabPFN Confusion Matrix (LOOCV)};
-  \node[font=\tiny\bfseries] at (8.3, 6.8) {Pred 1g};
-  \node[font=\tiny\bfseries] at (9.6, 6.8) {Pred Clin};
-  \node[font=\tiny\bfseries] at (10.9, 6.8) {Pred RPM};
-
-  \node[font=\tiny\bfseries, anchor=east] at (7.7, 6.1) {True 1g};
-  \draw[fill=green!70!black] (7.9, 5.8) rectangle (8.7, 6.4) node[midway, font=\small\bfseries, text=white] {2};
-  \draw[fill=gray!15] (9.2, 5.8) rectangle (10.0, 6.4) node[midway, font=\small, text=gray] {1};
-  \draw[fill=gray!15] (10.5, 5.8) rectangle (11.3, 6.4) node[midway, font=\small, text=gray] {0};
-
-  \node[font=\tiny\bfseries, anchor=east] at (7.7, 5.1) {True Clin};
-  \draw[fill=gray!15] (7.9, 4.8) rectangle (8.7, 5.4) node[midway, font=\small, text=gray] {0};
-  \draw[fill=blue!70!black] (9.2, 4.8) rectangle (10.0, 5.4) node[midway, font=\small\bfseries, text=white] {2};
-  \draw[fill=gray!15] (10.5, 4.8) rectangle (11.3, 5.4) node[midway, font=\small, text=gray] {1};
-
-  \node[font=\tiny\bfseries, anchor=east] at (7.7, 4.1) {True RPM};
-  \draw[fill=gray!15] (7.9, 3.8) rectangle (8.7, 4.4) node[midway, font=\small, text=gray] {0};
-  \draw[fill=gray!15] (9.2, 3.8) rectangle (10.0, 4.4) node[midway, font=\small, text=gray] {1};
-  \draw[fill=purple!70!black] (10.5, 3.8) rectangle (11.3, 4.4) node[midway, font=\small\bfseries, text=white] {2};
-
-  % Panel C: Feature Importance on Empirical Data
-  \draw[rounded corners=6pt, fill=gray!3, draw=gray!40] (0, 0) rectangle (12.5, 3.2);
-  \node[anchor=west, font=\bfseries\small] at (0.3, 2.85) {C | Empirical Topological Feature Relevance in Foundation Network};
-  
-  \draw[->, gray!60] (2.4, 0.3) -- (7.8, 0.3);
-  \foreach \x/\val in {2.4/0.0, 3.4/0.2, 4.4/0.4, 5.4/0.6, 6.4/0.8, 7.4/1.0} {
-    \draw[gray!60] (\x, 0.25) -- (\x, 0.35);
-    \node[font=\tiny, text=gray!80!black] at (\x, 0.1) {\val};
+  \foreach \y/\lbl in {1.2/0, 2.6/25, 4.0/50, 5.4/75, 6.8/100} {
+    \draw (0.7, \y) -- (0.8, \y) node[left=3pt, font=\tiny] {\lbl};
+    \draw[dashed, draw=gray!20] (0.8, \y) -- (5.6, \y);
   }
 
-  \node[anchor=east, font=\scriptsize\bfseries] at (2.3, 2.5) {MEblue};
-  \draw[fill=red!70!black] (2.4, 2.35) rectangle (7.05, 2.65);
-  \node[anchor=west, font=\tiny\bfseries] at (7.15, 2.5) {0.93 (Clin vs RPM)};
+  % Bars: TabPFN Binary (88.9%)
+  \fill[fairred] (1.3, 1.2) rectangle (2.1, 6.18);
+  \node[font=\tiny\bfseries, text=white] at (1.7, 5.8) {88.9\%};
+  \node[font=\tiny\bfseries, text=fairred, align=center] at (1.7, 0.7) {TabPFN\\Binary};
 
-  \node[anchor=east, font=\scriptsize\bfseries] at (2.3, 2.15) {MEturquoise};
-  \draw[fill=blue!70!black] (2.4, 2.0) rectangle (6.25, 2.3);
-  \node[anchor=west, font=\tiny\bfseries] at (6.35, 2.15) {0.77 (Microgravity)};
+  % TabPFN 3-Class (66.7%)
+  \fill[fairmidred] (2.7, 1.2) rectangle (3.5, 4.93);
+  \node[font=\tiny\bfseries, text=white] at (3.1, 4.6) {66.7\%};
+  \node[font=\tiny\bfseries, text=fairmidred, align=center] at (3.1, 0.7) {TabPFN\\3-Class};
 
-  \node[anchor=east, font=\scriptsize\bfseries] at (2.3, 1.8) {MEgreen};
-  \draw[fill=green!70!black] (2.4, 1.65) rectangle (5.15, 1.95);
-  \node[anchor=west, font=\tiny\bfseries] at (5.25, 1.8) {0.55 (Kinematics)};
+  % Random Forest Baseline (0.0%)
+  \fill[fairblue] (4.1, 1.2) rectangle (4.9, 1.3);
+  \node[font=\tiny\bfseries, text=fairblue] at (4.5, 1.6) {0.0\%};
+  \node[font=\tiny\bfseries, text=fairblue, align=center] at (4.5, 0.7) {Random\\Forest};
 
-  \node[anchor=east, font=\scriptsize\bfseries] at (2.3, 1.45) {MEyellow};
-  \draw[fill=yellow!70!black] (2.4, 1.3) rectangle (4.4, 1.6);
-  \node[anchor=west, font=\tiny\bfseries] at (4.5, 1.45) {0.40 (Dormancy)};
+  % Panel b: Confusion Matrix
+  \node[font=\large\bfseries] at (6.6, 7.8) {b};
+  \node[anchor=west, font=\small\bfseries, text=darkgray] at (7.0, 7.8) {TabPFN 3-Class Confusion Matrix (LOOCV)};
 
-  \node[anchor=east, font=\scriptsize\bfseries] at (2.3, 1.1) {RS12120};
-  \draw[fill=cyan!80!black] (2.4, 0.95) rectangle (4.15, 1.25);
-  \node[anchor=west, font=\tiny\bfseries] at (4.25, 1.1) {$k_{\text{within}}=35.3$};
+  \node[font=\tiny\bfseries] at (9.2, 6.8) {Predicted Class};
+  \node[font=\tiny\bfseries, rotate=90] at (7.2, 5.0) {True Class};
 
-  \node[anchor=east, font=\scriptsize\bfseries] at (2.3, 0.75) {RS21560};
-  \draw[fill=cyan!80!black] (2.4, 0.6) rectangle (4.12, 0.9);
-  \node[anchor=west, font=\tiny\bfseries] at (4.22, 0.75) {$k_{\text{within}}=35.0$};
+  \node[font=\tiny] at (8.3, 6.4) {Clinostat};
+  \node[font=\tiny] at (9.7, 6.4) {RPM 2.0};
+  \node[font=\tiny] at (11.1, 6.4) {Static 1g};
 
-  \node[anchor=east, font=\scriptsize\bfseries] at (2.3, 0.4) {RS02330};
-  \draw[fill=blue!80!black] (2.4, 0.35) rectangle (3.14, 0.55);
-  \node[anchor=west, font=\tiny\bfseries] at (3.24, 0.4) {$k_{\text{within}}=14.8$};
+  \node[font=\tiny, anchor=east] at (7.7, 5.7) {Clinostat};
+  \node[font=\tiny, anchor=east] at (7.7, 4.7) {RPM 2.0};
+  \node[font=\tiny, anchor=east] at (7.7, 3.7) {Static 1g};
 
-  % Annotation text box
-  \draw[rounded corners=4pt, fill=white, draw=gray!30] (8.5, 0.5) rectangle (12.2, 2.6);
-  \node[anchor=west, font=\tiny\bfseries, text=blue!80!black] at (8.6, 2.3) {Foundation Model Discovery:};
-  \node[anchor=west, font=\tiny, text=gray!90!black] at (8.6, 1.8) {$\bullet$ \textbf{MEblue}: Dominant feature};
-  \node[anchor=west, font=\tiny, text=gray!80!black] at (8.8, 1.5) {Resolves simulator mechanics ($r=0.93$).};
-  \node[anchor=west, font=\tiny, text=gray!90!black] at (8.6, 1.1) {$\bullet$ \textbf{MEturquoise}: Shared core};
-  \node[anchor=west, font=\tiny, text=gray!80!black] at (8.8, 0.8) {Drives microgravity response ($r=-0.77$).};
+  % Matrix Cells (Fair Red for diagonal, Fair Blue for off-diagonal)
+  \fill[fairred!90!white] (7.8, 5.2) rectangle (8.8, 6.2); \node[font=\small\bfseries, text=white] at (8.3, 5.7) {2};
+  \fill[fairlight] (9.2, 5.2) rectangle (10.2, 6.2); \node[font=\small\bfseries, text=gray] at (9.7, 5.7) {1};
+  \fill[white, draw=gray!20] (10.6, 5.2) rectangle (11.6, 6.2); \node[font=\small\bfseries, text=gray!40] at (11.1, 5.7) {0};
+
+  \fill[fairlight] (7.8, 4.2) rectangle (8.8, 5.2); \node[font=\small\bfseries, text=gray] at (8.3, 4.7) {1};
+  \fill[fairred!90!white] (9.2, 4.2) rectangle (10.2, 5.2); \node[font=\small\bfseries, text=white] at (9.7, 4.7) {2};
+  \fill[white, draw=gray!20] (10.6, 4.2) rectangle (11.6, 5.2); \node[font=\small\bfseries, text=gray!40] at (11.1, 4.7) {0};
+
+  \fill[white, draw=gray!20] (7.8, 3.2) rectangle (8.8, 4.2); \node[font=\small\bfseries, text=gray!40] at (8.3, 3.7) {0};
+  \fill[fairlight] (9.2, 3.2) rectangle (10.2, 4.2); \node[font=\small\bfseries, text=gray] at (9.7, 3.7) {1};
+  \fill[fairred!90!white] (10.6, 3.2) rectangle (11.6, 4.2); \node[font=\small\bfseries, text=white] at (11.1, 3.7) {2};
+
+  % Panel c: Feature Importance
+  \node[font=\large\bfseries] at (6.6, 2.6) {c};
+  \node[anchor=west, font=\small\bfseries, text=darkgray] at (7.0, 2.6) {Top Prioritized Features};
+
+  \fill[fairred] (7.8, 1.8) rectangle (11.5, 2.2);
+  \node[anchor=west, font=\tiny\bfseries] at (11.6, 2.0) {Lipid/Kinematic (MEblue, 0.93)};
+
+  \fill[fairmidred] (7.8, 1.2) rectangle (10.9, 1.6);
+  \node[anchor=west, font=\tiny\bfseries] at (11.0, 1.4) {Biofilm Core (MEturquoise, 0.77)};
+
+  \fill[fairmidblue] (7.8, 0.6) rectangle (10.0, 1.0);
+  \node[anchor=west, font=\tiny\bfseries] at (10.1, 0.8) {Shear Adaptation (MEgreen, 0.55)};
 \end{tikzpicture}
 \end{document}

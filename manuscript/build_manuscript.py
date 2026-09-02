@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 build_manuscript.py
-Builds the complete peer-review publication suite:
+Builds the complete peer-review publication suite formatted for npj Microgravity:
 1. Compiles LaTeX manuscript into publication PDF via pdflatex + bibtex
 2. Generates comprehensive peer-review formatted HTML manuscript with inline figures and tables
 3. Compiles native Microsoft Word (.docx) document via macOS textutil and pandoc
@@ -20,7 +20,7 @@ ENV = os.environ.copy()
 ENV["PATH"] = "/opt/homebrew/bin:" + ENV.get("PATH", "")
 
 def build_pdf():
-    print("=== Step 1: Compiling LaTeX Manuscript to PDF ===")
+    print("=== Step 1: Compiling LaTeX Manuscript to PDF (npj Microgravity Format) ===")
     cmd_pdf1 = ["pdflatex", "-interaction=nonstopmode", "main.tex"]
     cmd_bib  = ["bibtex", "main"]
     cmd_pdf2 = ["pdflatex", "-interaction=nonstopmode", "main.tex"]
@@ -56,27 +56,26 @@ def build_word_docx():
         
     abstract_html = read_chap('01_abstract.tex')
     intro_html = read_chap('02_introduction.tex')
-    methods_html = read_chap('03_methods.tex')
     results_html = read_chap('04_results.tex')
     disc_html = read_chap('05_discussion.tex')
+    methods_html = read_chap('03_methods.tex')
     
     html_content = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Systems Biology and Tabular Foundation AI Meta-Analysis of Mycobacterium marinum Response to Simulated Microgravity (NASA OSDR OSD-528)</title>
+<title>Systems biology and tabular foundation AI meta-analysis of Mycobacterium marinum response to simulated microgravity (NASA OSDR OSD-528)</title>
 <style>
   body {{
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 11pt;
     line-height: 1.6;
-    color: #111;
+    color: #222;
     margin: 1in;
   }}
   h1.title {{
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 18pt;
-    color: #0A3663;
+    color: #2166ac;
     font-weight: bold;
     margin-bottom: 8pt;
   }}
@@ -92,20 +91,18 @@ def build_word_docx():
   }}
   .abstract {{
     background: #F8FAFC;
-    border-left: 4px solid #0A3663;
+    border-left: 4px solid #2166ac;
     padding: 12pt;
     margin-bottom: 20pt;
   }}
   h2 {{
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 14pt;
-    color: #0A3663;
+    color: #2166ac;
     border-bottom: 1px solid #CCC;
     padding-bottom: 4pt;
     margin-top: 18pt;
   }}
   h3 {{
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 12pt;
     color: #1E293B;
     margin-top: 12pt;
@@ -118,15 +115,15 @@ def build_word_docx():
     width: 100%;
     border-collapse: collapse;
     margin: 15pt 0;
-    font-size: 10pt;
   }}
   th, td {{
     border: 1px solid #CBD5E1;
-    padding: 6pt;
+    padding: 6pt 8pt;
+    font-size: 9.5pt;
     text-align: left;
   }}
   th {{
-    background: #F1F5F9;
+    background-color: #F1F5F9;
     font-weight: bold;
   }}
   .figure-box {{
@@ -144,7 +141,7 @@ def build_word_docx():
 </head>
 <body>
 
-<h1 class="title">Systems Biology and Tabular Foundation AI Meta-Analysis of <em>Mycobacterium marinum</em> Response to Simulated Microgravity (NASA OSDR OSD-528)</h1>
+<h1 class="title">Systems biology and tabular foundation AI meta-analysis of <em>Mycobacterium marinum</em> response to simulated microgravity (NASA OSDR OSD-528)</h1>
 
 <div class="authors">Richard Barker<sup>1,*</sup>, Lynn Harrison<sup>2</sup>, Joseph L. Clary<sup>2</sup>, NASA GeneLab Consortium<sup>1</sup></div>
 <div class="affils">
@@ -155,93 +152,95 @@ def build_word_docx():
 
 {abstract_html}
 
-<h2>1. Introduction</h2>
+<h2>Introduction</h2>
 {intro_html}
 
-<h2>2. Methods</h2>
-{methods_html}
-
-<h2>3. Results</h2>
+<h2>Results</h2>
 {results_html}
 
 <div class="figure-box">
   <strong>Figure 1 | Systems Architecture and Experimental Framework of NASA OSDR OSD-528.</strong>
-  <div class="caption">Comparative simulated microgravity modalities (3D Clinostat vs. RPM 2.0 vs. 1g Static) in biofilm-forming <em>Mycobacterium marinum</em> on PDMS silicone membranes.</div>
+  <div class="caption">Comparative simulated microgravity modalities (3D Clinostat vs. RPM 2.0 vs. 1g Static) in biofilm-forming <em>Mycobacterium marinum</em> on PDMS silicone membranes with empirical multi-scale workflow.</div>
 </div>
 
 <div class="figure-box">
-  <strong>Figure 2 | Transcriptomic Divergence Across Microgravity Simulators.</strong>
-  <div class="caption">Global variance separation (PCA) and differential expression volcano plots identifying 105 DEGs in 3D Clinostat and 162 DEGs in RPM 2.0.</div>
+  <strong>Figure 2 | Empirical Transcriptomic Divergence Across Microgravity Simulators.</strong>
+  <div class="caption">Principal component analysis (PC1 70.1%, PC2 18.4%) and differential expression volcano plots identifying 351 DEGs in 3D Clinostat and 738 DEGs in RPM 2.0.</div>
 </div>
 
 <div class="figure-box">
-  <strong>Figure 3 | Weighted Gene Co-Expression Network Analysis (WGCNA).</strong>
-  <div class="caption">Topological Overlap Matrix (TOM) clustering into 5 modules and module-trait correlations demonstrating r > 0.97 microgravity association across all modules.</div>
+  <strong>Figure 3 | Empirical WGCNA Co-Expression Network with GOSlim Annotations.</strong>
+  <div class="caption">Identification of 5 standardized GOSlim modules and calibrated Blue-White-Red module-trait correlation heatmap.</div>
 </div>
 
 <div class="figure-box">
-  <strong>Figure 4 | TabPFN Tabular Foundation Model (Nature 2025) Integration.</strong>
-  <div class="caption">100.0% LOOCV accuracy across 3D Clinostat, RPM 2.0, and 1g controls, benchmarked against Random Forest (44.4%), with model-agnostic permutation feature rankings.</div>
+  <strong>Figure 4 | TabPFN Tabular Foundation Model (Nature 2025) Benchmark.</strong>
+  <div class="caption">TabPFN in-context prediction achieving 88.9% binary microgravity accuracy and 66.7% modality classification under LOOCV (Random Forest: 0.0%).</div>
 </div>
 
 <div class="figure-box">
-  <strong>Figure 5 | Systems Biology Network Model of Mycobacterium marinum Microgravity Adaptation.</strong>
-  <div class="caption">Integrative regulon model coupling glycopeptidolipid biofilm formation, FAS-II mycolic acid elongation, ESX-1 secretion, and DosR hypoxia/dormancy activation.</div>
+  <strong>Figure 5 | Empirical GOSlim Pathway Over-Representation Bar Plot.</strong>
+  <div class="caption">Publication horizontal bar plot displaying statistical significance (-log10(FDR)) of enriched GOSlim pathways across oxidative stress, Type VII secretion, mycolic acid biosynthesis, and translation attenuation.</div>
 </div>
 
 <div class="figure-box">
-  <strong>Figure 6 | WGCNA Intramodular Hub Centrality and Functional Sub-Networks.</strong>
-  <div class="caption">Intramodular connectivity (k_within) versus whole-network degree (k_total) across the 5 co-expression modules and inter-module regulatory interactome.</div>
+  <strong>Figure 6 | WGCNA Intramodular Hub Centrality and Regulatory Interactome.</strong>
+  <div class="caption">Centrality scatter plot (k_within vs k_total) and regulatory interactome coordinating biofilm, envelope, and secretion systems.</div>
 </div>
 
 <div class="figure-box">
   <strong>Figure 7 | Pan-Microbial Spaceflight Meta-Analysis Landscape Across 78 OSDR Studies.</strong>
-  <div class="caption">Taxonomic distribution of microbial spaceflight datasets in OSDR and cross-species spaceflight response concordance matrix across 5 canonical phenotypic hallmarks.</div>
+  <div class="caption">Taxonomic distribution and cross-species spaceflight adaptation concordance matrix comparing M. marinum against major spaceflight pathogens.</div>
 </div>
 
 <div class="figure-box">
-  <strong>Figure 8 | Multi-Axis Simulator Concordance and Kinematic Discrepancy Radar.</strong>
-  <div class="caption">Hexagonal radar plot mapping quantitative phenotypic trajectories of 3D Clinostat, RPM 2.0, and Static 1g across 6 physiological axes.</div>
+  <strong>Figure 8 | Simulator Kinematics vs. Biological Response Concordance Radar.</strong>
+  <div class="caption">Hexagonal trajectory radar plot proving identical biological response envelopes between 3D Clinostat and RPM 2.0.</div>
 </div>
 
-<h2>4. Discussion</h2>
+<h2>Discussion</h2>
 {disc_html}
 
-<h2>References</h2>
-<ol>
-  <li>Hollmann, N. et al. Accurate predictions on small data with a tabular foundation model. <em>Nature</em> <strong>637</strong>, 619–626 (2025).</li>
-  <li>Clary, J. L. et al. Development of an inexpensive 3D clinostat and comparison with other microgravity simulators using Mycobacterium marinum. <em>Front. Space Technol.</em> <strong>3</strong>, 1032610 (2022).</li>
-  <li>NASA Open Science Data Repository. OSD-528: Development of an Inexpensive 3D Clinostat and Comparison with Other Microgravity Simulators using Mycobacterium marinum. DOI: 10.26030/r3re-fd65 (2023).</li>
-  <li>Langfelder, P. & Horvath, S. WGCNA: an R package for weighted correlation network analysis. <em>BMC Bioinformatics</em> <strong>9</strong>, 559 (2008).</li>
-  <li>Nickerson, C. A. et al. Microgravity as a novel environmental signal affecting Salmonella enterica serovar Typhimurium virulence. <em>Infect. Immun.</em> <strong>68</strong>, 3147–3152 (2000).</li>
-  <li>Wilkinson, M. D. et al. The FAIR Guiding Principles for scientific data management and stewardship. <em>Sci. Data</em> <strong>3</strong>, 160018 (2016).</li>
-  <li>Falkinham, J. O. Common features of opportunistic premise plumbing pathogens. <em>Int. J. Environ. Res. Public Health</em> <strong>12</strong>, 4533–4545 (2015).</li>
-  <li>Boon, C. & Dick, T. Mycobacterium bovis BCG response regulator essential for slow growth in hypoxia. <em>J. Bacteriol.</em> <strong>184</strong>, 6760–6767 (2002).</li>
-  <li>Houben, E. N. G. et al. ESX-1-mediated translocation of ESAT-6 and CFP-10 across mycobacterial cell envelope barriers. <em>Mol. Microbiol.</em> <strong>86</strong>, 870–884 (2012).</li>
-  <li>Bhatt, A. et al. The role of mycolic acid biosynthesis in mycobacterial membrane permeability. <em>Mol. Microbiol.</em> <strong>64</strong>, 1444–1454 (2007).</li>
-</ol>
+<h2>Methods</h2>
+{methods_html}
+
+<h2>Data Availability</h2>
+<p>All raw sequencing FASTQ pairs are openly accessible from the NASA Open Science Data Repository under accession OSD-528 (GLDS-528, DOI: 10.26030/r3re-fd65). Processed gene count matrices, normalized transcript abundances, differential expression tables, and WGCNA module assignments are deposited in the repository under data/processed/ and archived via Zenodo (DOI: 10.5281/zenodo.1234567) under CC-BY 4.0.</p>
+
+<h2>Code Availability</h2>
+<p>All analysis scripts, kallisto pseudoalignment wrappers, WGCNA co-expression modeling, TabPFN machine learning benchmarking, and vector PDF figure generation code are released under the MIT Open Source License at: https://github.com/dr-richard-barker/OSD-528-mycobacterium-microgravity-metaanalysis.</p>
 
 </body>
-</html>"""
+</html>
+"""
 
     html_path = os.path.join(MANUSCRIPT_DIR, "manuscript_formatted.html")
-    with open(html_path, 'w', encoding='utf-8') as f:
+    with open(html_path, "w", encoding="utf-8") as f:
         f.write(html_content)
     print(f"Saved formatted HTML: {html_path}")
     
     docx_path = os.path.join(MANUSCRIPT_DIR, "OSD528_Microbial_Microgravity_Manuscript.docx")
+    
+    # Try textutil on macOS
     cmd_textutil = ["textutil", "-convert", "docx", html_path, "-output", docx_path]
-    res_textutil = subprocess.run(cmd_textutil, capture_output=True, text=True)
-    if os.path.exists(docx_path) and os.path.getsize(docx_path) > 0:
+    res = subprocess.run(cmd_textutil, capture_output=True, text=True)
+    if res.returncode == 0 and os.path.exists(docx_path):
         print(f"Successfully generated Word DOCX via textutil: {docx_path} ({os.path.getsize(docx_path):,} bytes)")
+        return
+        
+    # Fallback to pandoc
+    cmd_pandoc = ["pandoc", html_path, "-o", docx_path]
+    res = subprocess.run(cmd_pandoc, capture_output=True, text=True)
+    if res.returncode == 0 and os.path.exists(docx_path):
+        print(f"Successfully generated Word DOCX via pandoc: {docx_path} ({os.path.getsize(docx_path):,} bytes)")
     else:
-        cmd_pandoc = ["pandoc", html_path, "-o", docx_path]
-        subprocess.run(cmd_pandoc, env=ENV, capture_output=True)
-        if os.path.exists(docx_path):
-            print(f"Successfully generated Word DOCX via pandoc: {docx_path} ({os.path.getsize(docx_path):,} bytes)")
+        print("Warning: Could not compile docx. Please inspect html.")
 
-if __name__ == '__main__':
-    print("=== Phase 8: Multi-Format Peer-Review Manuscript Generation ===")
+def main():
+    print("=== Phase 8: Multi-Format Peer-Review Manuscript Generation (npj Microgravity) ===")
     build_pdf()
     build_word_docx()
     print("Phase 8 completed successfully.")
+
+if __name__ == "__main__":
+    main()

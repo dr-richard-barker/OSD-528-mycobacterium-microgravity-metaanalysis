@@ -1,351 +1,351 @@
-gene_id	gene_symbol	module	k_total	k_within	protein
-MMAR_RS17755	MMAR_RS17755	MEturquoise	28.888	28.089	nitroreductase/quinone reductase family protein
-MMAR_RS25675	MMAR_RS25675	MEbrown	6.676	3.363	WXG100 family type VII secretion target
-MMAR_RS18655	MMAR_RS18655	MEturquoise	27.581	22.845	MmpS family transport accessory protein
-MMAR_RS23210	MMAR_RS23210	MEturquoise	26.004	25.363	TetR/AcrR family transcriptional regulator
-MMAR_RS03605	MMAR_RS03605	MEturquoise	34.74	33.104	membrane protein
-MMAR_RS24880	MMAR_RS24880	MEturquoise	26.749	21.866	hypothetical protein
-MMAR_RS20590	MMAR_RS20590	MEturquoise	13.725	6.984	haloalkane dehalogenase
-MMAR_RS12780	MMAR_RS12780	MEturquoise	29.525	24.54	Rv0792c family HTH-type transcriptional regulator
-MMAR_RS22315	MMAR_RS22315	MEbrown	17.285	4.334	WXG100 family type VII secretion target
-MMAR_RS05360	MMAR_RS05360	MEturquoise	25.152	16.86	LLM class F420-dependent oxidoreductase
-MMAR_RS23870	MMAR_RS23870	MEturquoise	30.617	25.737	cytochrome P450
-MMAR_RS01955	MMAR_RS01955	MEturquoise	36.006	34.251	hypothetical protein
-MMAR_RS08555	leuD	MEyellow	14.199	3.722	3-isopropylmalate dehydratase small subunit
-MMAR_RS02665	eccB	MEturquoise	14.824	7.836	type VII secretion protein EccB
-MMAR_RS25200	kstD	MEturquoise	24.505	18.622	3-oxosteroid 1-dehydrogenase
-MMAR_RS02330	MMAR_RS02330	MEblue	24.678	14.836	aldehyde dehydrogenase
-MMAR_RS14585	MMAR_RS14585	MEturquoise	34.41	30.06	MMP alpha-(1->4)-mannosyltransferase
-MMAR_RS02650	MMAR_RS02650	MEturquoise	36.269	34.527	PPE family protein
-MMAR_RS25195	MMAR_RS25195	MEturquoise	35.445	33.748	2-keto-4-pentenoate hydratase
-MMAR_RS25435	MMAR_RS25435	MEbrown	14.55	3.112	metal ABC transporter solute-binding protein, Zn/Mn family
-MMAR_RS08970	MMAR_RS08970	MEturquoise	34.499	32.836	NAD-dependent epimerase/dehydratase family protein
-MMAR_RS12080	cydD	MEturquoise	14.25	12.046	thiol reductant ABC exporter subunit CydD
-MMAR_RS07395	MMAR_RS07395	MEturquoise	23.982	22.883	homogentisate 1,2-dioxygenase
-MMAR_RS21650	MMAR_RS21650	MEturquoise	33.796	29.428	SDR family oxidoreductase
-MMAR_RS13740	MMAR_RS13740	MEturquoise	23.102	17.14	hydrogen peroxide-inducible genes activator
-MMAR_RS17620	MMAR_RS17620	MEblue	24.291	11.953	DUF6632 domain-containing protein
-MMAR_RS24090	crtI	MEturquoise	20.336	16.319	phytoene desaturase family protein
-MMAR_RS00805	MMAR_RS00805	MEturquoise	21.311	17.199	hypothetical protein
-MMAR_RS25175	MMAR_RS25175	MEturquoise	36.114	34.381	hypothetical protein
-MMAR_RS18715	MMAR_RS18715	MEgreen	12.566	8.635	adenylate/guanylate cyclase domain-containing protein
-MMAR_RS13320	MMAR_RS13320	MEblue	20.474	6.995	PPE family protein
-MMAR_RS01745	MMAR_RS01745	MEturquoise	24.873	17.033	pirin family protein
-MMAR_RS04540	MMAR_RS04540	MEturquoise	25.312	19.459	TetR/AcrR family transcriptional regulator
-MMAR_RS00745	MMAR_RS00745	MEturquoise	18.938	16.068	TetR/AcrR family transcriptional regulator
-MMAR_RS17750	MMAR_RS17750	MEturquoise	18.632	15.903	oxidoreductase
-MMAR_RS04445	MMAR_RS04445	MEturquoise	25.162	17.018	sulfotransferase
-MMAR_RS20160	MMAR_RS20160	MEturquoise	12.72	9.505	acyl-CoA dehydrogenase family protein
-MMAR_RS20315	MMAR_RS20315	MEturquoise	23.699	15.726	MoaD/ThiS family protein
-MMAR_RS08710	MMAR_RS08710	MEbrown	12.449	8.311	LLM class flavin-dependent oxidoreductase
-MMAR_RS01960	MMAR_RS01960	MEturquoise	26.79	20.822	hypothetical protein
-MMAR_RS24720	MMAR_RS24720	MEturquoise	15.436	12.183	SDR family oxidoreductase
-MMAR_RS05670	MMAR_RS05670	MEturquoise	20.068	15.665	DHA2 family efflux MFS transporter permease subunit
-MMAR_RS23770	MMAR_RS23770	MEturquoise	33.243	28.733	amidohydrolase family protein
-MMAR_RS10350	MMAR_RS10350	MEturquoise	20.688	18.972	helix-turn-helix transcriptional regulator
-MMAR_RS05910	MMAR_RS05910	MEturquoise	15.532	9.095	VIT domain-containing protein
-MMAR_RS29930	MMAR_RS29930	MEturquoise	21.325	18.459	hypothetical protein
-MMAR_RS11530	MMAR_RS11530	MEgreen	14.536	6.496	phytanoyl-CoA dioxygenase family protein
-MMAR_RS14545	MMAR_RS14545	MEbrown	5.624	3.09	DUF1906 domain-containing protein
-MMAR_RS01230	MMAR_RS01230	MEturquoise	21.862	16.084	hypothetical protein
-MMAR_RS00510	MMAR_RS00510	MEgreen	12.633	2.627	type I polyketide synthase
-MMAR_RS11250	MMAR_RS11250	MEgreen	20.113	11.818	quinone oxidoreductase family protein
-MMAR_RS04180	MMAR_RS04180	MEgreen	6.354	1.421	transport-regulating membrane protein Mce1N
-MMAR_RS21810	xseA	MEturquoise	29.171	26.788	exodeoxyribonuclease VII large subunit
-MMAR_RS06400	MMAR_RS06400	MEturquoise	19.149	16.432	rubredoxin
-MMAR_RS01440	mrf	MEturquoise	21.785	18.946	ribosome hibernation factor-recruiting GTPase MRF
-MMAR_RS24345	MMAR_RS24345	MEturquoise	24.103	11.774	ArsR/SmtB family transcription factor
-MMAR_RS14135	MMAR_RS14135	MEturquoise	15.199	12.045	hypothetical protein
-MMAR_RS25030	MMAR_RS25030	MEyellow	14.302	4.305	3-oxoacyl-ACP reductase
-MMAR_RS10360	MMAR_RS10360	MEyellow	11.877	4.568	cupin domain-containing protein
-MMAR_RS20410	MMAR_RS20410	MEgreen	15.212	6.493	methylated-DNA--[protein
-MMAR_RS01430	rpmG	MEturquoise	20.034	18.283	50S ribosomal protein L33
-MMAR_RS14725	MMAR_RS14725	MEblue	17.661	13.085	DUF1906 domain-containing protein
-MMAR_RS13905	MMAR_RS13905	MEyellow	13.371	5.349	zinc-binding dehydrogenase
-MMAR_RS16975	MMAR_RS16975	MEturquoise	13.734	10.325	maleate cis-trans isomerase family protein
-MMAR_RS26020	MMAR_RS26020	MEbrown	9.325	4.316	SpoIIE family protein phosphatase
-MMAR_RS23530	MMAR_RS23530	MEturquoise	31.118	26.36	cytochrome P450
-MMAR_RS13150	MMAR_RS13150	MEturquoise	29.445	25.263	WS/DGAT/MGAT family O-acyltransferase
-MMAR_RS12510	MMAR_RS12510	MEblue	27.72	13.942	O-methyltransferase
-MMAR_RS10900	MMAR_RS10900	MEbrown	11.681	10.163	fatty acid desaturase
-MMAR_RS03870	MMAR_RS03870	MEturquoise	17.907	13.435	aminotransferase class I/II-fold pyridoxal phosphate-dependent enzyme
-MMAR_RS16515	MMAR_RS16515	MEbrown	7.511	2.548	oxygenase MpaB family protein
-MMAR_RS22795	sucD	MEturquoise	13.267	12.357	succinate--CoA ligase subunit alpha
-MMAR_RS06185	MMAR_RS06185	MEblue	8.962	3.126	TetR/AcrR family transcriptional regulator
-MMAR_RS23070	MMAR_RS23070	MEturquoise	11.973	11.429	PPE family protein
-MMAR_RS19790	MMAR_RS19790	MEturquoise	17.172	12.949	DUF2339 domain-containing protein
-MMAR_RS14295	MMAR_RS14295	MEgreen	19.213	8.287	YoaK family protein
-MMAR_RS25235	MMAR_RS25235	MEbrown	7.805	5.23	acyl-CoA dehydrogenase family protein
-MMAR_RS21530	MMAR_RS21530	MEturquoise	13.101	9.742	class I SAM-dependent methyltransferase
-MMAR_RS02850	MMAR_RS02850	MEturquoise	19.185	15.479	SDR family NAD(P)-dependent oxidoreductase
-MMAR_RS13230	MMAR_RS13230	MEbrown	11.946	8.99	PPE family protein
-MMAR_RS10110	hemE	MEyellow	13.7	2.218	uroporphyrinogen decarboxylase
-MMAR_RS03600	MMAR_RS03600	MEbrown	12.247	8.72	hypothetical protein
-MMAR_RS12305	argF	MEturquoise	27.934	26.47	ornithine carbamoyltransferase
-MMAR_RS16530	MMAR_RS16530	MEgreen	14.459	6.493	IS1380-like element ISMyma7 family transposase
-MMAR_RS23800	MMAR_RS23800	MEbrown	12.845	10.607	acyl-CoA dehydrogenase family protein
-MMAR_RS25755	MMAR_RS25755	MEgreen	7.132	2.585	hypothetical protein
-MMAR_RS18075	MMAR_RS18075	MEturquoise	12.024	11.237	esterase-like activity of phytase family protein
-MMAR_RS01420	rpsR	MEturquoise	15.339	8.752	30S ribosomal protein S18
-MMAR_RS20155	fabG	MEturquoise	26.382	21.856	3-oxoacyl-ACP reductase FabG
-MMAR_RS06530	rsgA	MEturquoise	9.872	7.375	ribosome small subunit-dependent GTPase A
-MMAR_RS13720	MMAR_RS13720	MEturquoise	25.392	22.024	alpha-hydroxy acid oxidase
-MMAR_RS19755	MMAR_RS19755	MEturquoise	14.502	6.53	lysophospholipid acyltransferase family protein
-MMAR_RS22855	MMAR_RS22855	MEturquoise	14.066	7.092	PE family protein
-MMAR_RS17090	MMAR_RS17090	MEbrown	11.753	9.013	alpha/beta hydrolase family protein
-MMAR_RS17665	MMAR_RS17665	MEbrown	7.505	4.743	MerR family transcriptional regulator
-MMAR_RS31135	MMAR_RS31135	MEbrown	12.904	9.549	DUF6893 family small protein
-MMAR_RS01930	MMAR_RS01930	MEturquoise	29.57	24.615	acyl-CoA thioesterase
-MMAR_RS14905	MMAR_RS14905	MEturquoise	19.272	14.642	VOC family protein
-MMAR_RS14065	MMAR_RS14065	MEyellow	12.475	4.167	SRPBCC family protein
-MMAR_RS22220	MMAR_RS22220	MEturquoise	19.228	17.441	hypothetical protein
-MMAR_RS01445	MMAR_RS01445	MEturquoise	7.622	5.469	type B 50S ribosomal protein L31
-MMAR_RS02855	MMAR_RS02855	MEyellow	14.186	4.326	HAD-IA family hydrolase
-MMAR_RS25225	MMAR_RS25225	MEturquoise	8.662	6.151	bifunctional MaoC family dehydratase N-terminal/OB-fold nucleic acid binding domain-containing protein
-MMAR_RS06105	MMAR_RS06105	MEturquoise	16.886	15.45	arylsulfatase
-MMAR_RS07770	MMAR_RS07770	MEturquoise	14.408	13.695	protein adenylyltransferase SelO
-MMAR_RS24735	MMAR_RS24735	MEturquoise	34.336	32.591	cytochrome P450
-MMAR_RS25045	MMAR_RS25045	MEturquoise	23.514	18.134	acyl-CoA dehydrogenase family protein
-MMAR_RS04050	MMAR_RS04050	MEblue	7.372	2.635	tocopherol cyclase family protein
-MMAR_RS08160	MMAR_RS08160	MEgreen	6.354	2.307	iron-siderophore ABC transporter substrate-binding protein
-MMAR_RS07320	MMAR_RS07320	MEturquoise	15.145	13.252	NADH-quinone oxidoreductase subunit C
-MMAR_RS14800	MMAR_RS14800	MEbrown	16.264	5.749	DHA2 family efflux MFS transporter permease subunit
-MMAR_RS07920	MMAR_RS07920	MEblue	15.642	11.904	DUF732 domain-containing protein
-MMAR_RS17740	MMAR_RS17740	MEturquoise	13.293	10.529	LLM class F420-dependent oxidoreductase
-MMAR_RS05205	rpmD	MEgreen	19.984	10.797	50S ribosomal protein L30
-MMAR_RS21265	MMAR_RS21265	MEturquoise	15.458	8.793	aldehyde dehydrogenase family protein
-MMAR_RS00410	MMAR_RS00410	MEblue	22.792	13.057	DUF3297 family protein
-MMAR_RS17760	arr	MEturquoise	8.232	5.434	NAD(+)--rifampin ADP-ribosyltransferase
-MMAR_RS07390	MMAR_RS07390	MEturquoise	23.975	18.948	alpha/beta hydrolase
-MMAR_RS02885	MMAR_RS02885	MEturquoise	12.002	8.438	Fic family protein
-MMAR_RS20635	MMAR_RS20635	MEturquoise	12.112	6.55	DUF2254 domain-containing protein
-MMAR_RS03855	MMAR_RS03855	MEgreen	14.429	7.367	DUF779 domain-containing protein
-MMAR_RS27145	dinB	MEturquoise	26.311	17.999	DNA polymerase IV
-MMAR_RS01415	MMAR_RS01415	MEturquoise	16.163	14.091	oxygenase MpaB family protein
-MMAR_RS00795	MMAR_RS00795	MEblue	18.168	11.847	mannan-binding lectin
-MMAR_RS14930	MMAR_RS14930	MEturquoise	20.746	17.35	MerR family transcriptional regulator
-MMAR_RS22395	arsC	MEgreen	8.513	5.857	arsenate reductase (glutaredoxin)
-MMAR_RS02860	MMAR_RS02860	MEgreen	6.658	2.36	ROK family protein
-MMAR_RS10710	MMAR_RS10710	MEturquoise	16.547	13.279	Rv2576c family protein
-MMAR_RS20600	MMAR_RS20600	MEturquoise	12.99	10.434	TetR/AcrR family transcriptional regulator
-MMAR_RS26760	MMAR_RS26760	MEturquoise	14.087	10.419	PPE family protein
-MMAR_RS24640	adhP	MEblue	7.705	4.473	alcohol dehydrogenase AdhP
-MMAR_RS26515	MMAR_RS26515	MEturquoise	14.658	11.15	M1 family metallopeptidase
-MMAR_RS13120	MMAR_RS13120	MEturquoise	34.057	32.883	Gfo/Idh/MocA family protein
-MMAR_RS13780	MMAR_RS13780	MEturquoise	10.374	4.944	amidohydrolase family protein
-MMAR_RS12775	MMAR_RS12775	MEblue	29.535	12.938	LLM class flavin-dependent oxidoreductase
-MMAR_RS25025	MMAR_RS25025	MEturquoise	9.117	6.906	MlaE family ABC transporter permease
-MMAR_RS20895	MMAR_RS20895	MEbrown	7.159	1.607	ATP-binding transcription factor AbmR
-MMAR_RS17550	MMAR_RS17550	MEblue	18.692	14.148	aldo/keto reductase
-MMAR_RS19140	lipQ	MEturquoise	12.599	11.68	esterase LipQ
-MMAR_RS09710	MMAR_RS09710	MEturquoise	10.969	7.471	class I SAM-dependent DNA methyltransferase
-MMAR_RS16365	MMAR_RS16365	MEgreen	8.568	5.949	DUF1622 domain-containing protein
-MMAR_RS22890	MMAR_RS22890	MEblue	27.463	12.66	LLM class flavin-dependent oxidoreductase
-MMAR_RS02845	MMAR_RS02845	MEturquoise	22.784	19.903	sedoheptulose 7-phosphate cyclase
-MMAR_RS01905	MMAR_RS01905	MEgreen	6.901	5.413	glucose 1-dehydrogenase
-MMAR_RS19810	MMAR_RS19810	MEgreen	15.29	8.04	SRPBCC family protein
-MMAR_RS11840	MMAR_RS11840	MEturquoise	17.794	15.384	aminotransferase class I/II-fold pyridoxal phosphate-dependent enzyme
-MMAR_RS18305	MMAR_RS18305	MEblue	14.182	3.566	amidase
-MMAR_RS17095	MMAR_RS17095	MEturquoise	31.311	26.843	1-acyl-sn-glycerol-3-phosphate acyltransferase
-MMAR_RS11045	ribD	MEturquoise	16.379	15.037	bifunctional diaminohydroxyphosphoribosylaminopyrimidine deaminase/5-amino-6-(5-phosphoribosylamino)uracil reductase RibD
-MMAR_RS14560	MMAR_RS14560	MEbrown	9.889	7.501	cyclopropane mycolic acid synthase family methyltransferase
-MMAR_RS26115	MMAR_RS26115	MEturquoise	6.646	3.394	stage II sporulation protein M
-MMAR_RS21575	MMAR_RS21575	MEblue	10.226	7.115	type III polyketide synthase
-MMAR_RS16320	MMAR_RS16320	MEbrown	14.632	5.973	acyl carrier protein
-MMAR_RS12590	MMAR_RS12590	MEyellow	5.553	1.175	ParA family protein
-MMAR_RS02935	pcp	MEbrown	7.336	5.691	pyroglutamyl-peptidase I
-MMAR_RS26845	MMAR_RS26845	MEblue	12.416	3.81	peptidoglycan DD-metalloendopeptidase family protein
-MMAR_RS08635	MMAR_RS08635	MEyellow	12.199	2.65	HNH endonuclease family protein
-MMAR_RS12940	MMAR_RS12940	MEbrown	22.663	5.071	SDR family NAD(P)-dependent oxidoreductase
-MMAR_RS02620	MMAR_RS02620	MEturquoise	29.012	23.974	alpha/beta hydrolase
-MMAR_RS30990	MMAR_RS30990	MEturquoise	14.051	10.966	PE family protein
-MMAR_RS02840	MMAR_RS02840	MEturquoise	13.968	11.968	MFS transporter
-MMAR_RS26820	MMAR_RS26820	MEturquoise	13.107	9.138	VOC family protein
-MMAR_RS31040	MMAR_RS31040	MEturquoise	23.655	19.339	PE family protein
-MMAR_RS08185	MMAR_RS08185	MEbrown	14.802	5.219	proton-conducting transporter transmembrane domain-containing protein
-MMAR_RS11130	MMAR_RS11130	MEbrown	4.179	2.326	PE family protein
-MMAR_RS23350	MMAR_RS23350	MEgreen	8.72	6.023	glutathione S-transferase family protein
-MMAR_RS18090	MMAR_RS18090	MEturquoise	24.23	23.554	tryptophan halogenase family protein
-MMAR_RS00020	recF	MEbrown	5.356	0.983	DNA replication/repair protein RecF
-MMAR_RS10815	mltG	MEturquoise	19.215	18.199	endolytic transglycosylase MltG
-MMAR_RS08315	MMAR_RS08315	MEturquoise	10.307	6.809	glycosyltransferase family 4 protein
-MMAR_RS05965	MMAR_RS05965	MEblue	17.603	13.818	thymidine phosphorylase
-MMAR_RS01925	MMAR_RS01925	MEblue	13.649	3.94	SMP-30/gluconolactonase/LRE family protein
-MMAR_RS18470	MMAR_RS18470	MEturquoise	23.98	23.096	salicylate synthase
-MMAR_RS25325	ipdE1	MEbrown	13.363	6.081	acyl-CoA dehydrogenase IpdE1
-MMAR_RS17645	MMAR_RS17645	MEbrown	7.003	4.514	hypothetical protein
-MMAR_RS10750	MMAR_RS10750	MEturquoise	18.345	13.386	nitroreductase family deazaflavin-dependent oxidoreductase
-MMAR_RS09240	MMAR_RS09240	MEturquoise	11.809	9.947	DUF6084 family protein
-MMAR_RS19975	MMAR_RS19975	MEbrown	12.48	9.566	cytochrome P450
-MMAR_RS21535	MMAR_RS21535	MEyellow	11.586	3.941	TetR/AcrR family transcriptional regulator
-MMAR_RS14010	MMAR_RS14010	MEturquoise	23.378	11.548	phytoene desaturase family protein
-MMAR_RS07685	MMAR_RS07685	MEgreen	18.858	7.645	acyl-CoA dehydrogenase family protein
-MMAR_RS22755	MMAR_RS22755	MEturquoise	9.116	4.616	sigma 54-interacting transcriptional regulator
-MMAR_RS12440	MMAR_RS12440	MEblue	10.355	6.593	PE family protein
-MMAR_RS26365	MMAR_RS26365	MEturquoise	21.171	15.289	PPOX class F420-dependent oxidoreductase
-MMAR_RS24725	MMAR_RS24725	MEturquoise	11.811	8.881	aldehyde dehydrogenase
-MMAR_RS07330	MMAR_RS07330	MEblue	6.913	2.747	NADH-quinone oxidoreductase subunit A
-MMAR_RS09415	MMAR_RS09415	MEbrown	9.027	5.657	ABC transporter ATP-binding protein
-MMAR_RS03670	MMAR_RS03670	MEyellow	6.224	1.977	peptide deformylase
-MMAR_RS12300	MMAR_RS12300	MEturquoise	15.667	14.324	acetylornithine transaminase
-MMAR_RS15155	cobN	MEgreen	13.651	2.438	cobaltochelatase subunit CobN
-MMAR_RS06340	MMAR_RS06340	MEturquoise	8.155	4.289	coenzyme F420-0:L-glutamate ligase
-MMAR_RS22675	MMAR_RS22675	MEturquoise	24.494	14.041	SAF domain-containing protein
-MMAR_RS00810	MMAR_RS00810	MEturquoise	25.464	20.26	GNAT family N-acetyltransferase
-MMAR_RS25990	MMAR_RS25990	MEgreen	19.162	10.906	DUF6328 family protein
-MMAR_RS13275	MMAR_RS13275	MEturquoise	13.875	12.331	hypothetical protein
-MMAR_RS01065	MMAR_RS01065	MEbrown	7.6	5.539	acyltransferase family protein
-MMAR_RS05530	alr	MEgreen	13.72	7.288	alanine racemase
-MMAR_RS21560	MMAR_RS21560	MEturquoise	37.115	35.032	NAD(P)H-binding protein
-MMAR_RS17570	MMAR_RS17570	MEbrown	14.318	9.782	multidrug effflux MFS transporter
-MMAR_RS27390	MMAR_RS27390	MEbrown	11.751	3.765	EspA/EspE family type VII secretion system effector
-MMAR_RS22915	MMAR_RS22915	MEyellow	15.253	3.8	ATP-dependent DNA ligase
-MMAR_RS04470	menJ	MEturquoise	35.17	33.829	menaquinone reductase MenJ
-MMAR_RS17545	MMAR_RS17545	MEturquoise	13.186	9.755	TetR/AcrR family transcriptional regulator
-MMAR_RS13990	MMAR_RS13990	MEyellow	10.089	6.109	TetR/AcrR family transcriptional regulator
-MMAR_RS09865	MMAR_RS09865	MEturquoise	35.257	33.576	TerC/Alx family metal homeostasis membrane protein
-MMAR_RS10345	fdxA	MEturquoise	33.9	32.219	ferredoxin
-MMAR_RS18500	MMAR_RS18500	MEblue	10.988	4.647	sirohydrochlorin chelatase
-MMAR_RS28070	MMAR_RS28070	MEgreen	19.652	10.847	30S ribosomal protein bS22
-MMAR_RS17325	MMAR_RS17325	MEyellow	6.842	0.903	Acg family FMN-binding oxidoreductase
-MMAR_RS21485	MMAR_RS21485	MEturquoise	13.452	12.535	hypothetical protein
-MMAR_RS17730	MMAR_RS17730	MEyellow	3.876	2.78	Lrp/AsnC family transcriptional regulator
-MMAR_RS21475	MMAR_RS21475	MEblue	25.669	13.79	4a-hydroxytetrahydrobiopterin dehydratase
-MMAR_RS03230	MMAR_RS03230	MEgreen	15.049	7.722	LysR family transcriptional regulator
-MMAR_RS20320	MMAR_RS20320	MEturquoise	11.039	8.917	M67 family metallopeptidase
-MMAR_RS08605	MMAR_RS08605	MEblue	8.278	6.806	uracil-DNA glycosylase
-MMAR_RS07385	MMAR_RS07385	MEturquoise	6.326	4.415	CaiB/BaiF CoA transferase family protein
-MMAR_RS14020	MMAR_RS14020	MEturquoise	35.869	34.212	SRPBCC family protein
-MMAR_RS18300	recO	MEbrown	8.58	5.743	DNA repair protein RecO
-MMAR_RS23880	MMAR_RS23880	MEturquoise	17.506	13.255	TetR/AcrR family transcriptional regulator
-MMAR_RS13750	MMAR_RS13750	MEbrown	10.481	7.815	TIGR03618 family F420-dependent PPOX class oxidoreductase
-MMAR_RS20175	MMAR_RS20175	MEblue	28.566	12.203	ABC transporter ATP-binding protein/permease
-MMAR_RS01435	rpmB	MEturquoise	20.066	17.102	50S ribosomal protein L28
-MMAR_RS02645	MMAR_RS02645	MEturquoise	11.298	8.907	oxygenase MpaB family protein
-MMAR_RS04410	MMAR_RS04410	MEblue	9.96	6.895	amidohydrolase
-MMAR_RS02710	eccE	MEbrown	7.784	3.034	type VII secretion protein EccE
-MMAR_RS00560	MMAR_RS00560	MEturquoise	11.253	9.679	PE family protein
-MMAR_RS23860	MMAR_RS23860	MEblue	7.795	2.743	M24 family metallopeptidase
-MMAR_RS25095	MMAR_RS25095	MEturquoise	20.078	13.785	cytochrome P450
-MMAR_RS14515	MMAR_RS14515	MEturquoise	14.003	10.674	alpha/beta fold hydrolase
-MMAR_RS12120	MMAR_RS12120	MEturquoise	37.035	35.34	Zn-ribbon domain-containing OB-fold protein
-MMAR_RS07955	MMAR_RS07955	MEyellow	16.204	3.487	aldehyde dehydrogenase family protein
-MMAR_RS26740	MMAR_RS26740	MEturquoise	26.081	18.185	DUF4334 domain-containing protein
-MMAR_RS14690	MMAR_RS14690	MEblue	18.866	4.305	DIP1984 family protein
-MMAR_RS20905	MMAR_RS20905	MEblue	17.524	13.626	serine/threonine-protein kinase
-MMAR_RS00360	MMAR_RS00360	MEbrown	13.238	10.597	DUF1707 SHOCT-like domain-containing protein
-MMAR_RS25735	MMAR_RS25735	MEturquoise	10.574	7.772	hypothetical protein
-MMAR_RS11875	MMAR_RS11875	MEturquoise	23.8	18.965	adenosylmethionine--8-amino-7-oxononanoate transaminase
-MMAR_RS02345	MMAR_RS02345	MEgreen	7.456	1.257	MmpA family trehalose lipid delivery protein
-MMAR_RS25425	kstR	MEyellow	21.734	1.463	cholesterol catabolism transcriptional regulator KstR
-MMAR_RS24685	MMAR_RS24685	MEturquoise	14.269	10.653	gamma-glutamyltransferase family protein
-MMAR_RS27755	MMAR_RS27755	MEturquoise	8.575	4.905	PE family protein
-MMAR_RS02960	MMAR_RS02960	MEbrown	9.537	4.345	UDP-glucose dehydrogenase family protein
-MMAR_RS05905	MMAR_RS05905	MEturquoise	27.318	23.342	helix-turn-helix domain-containing protein
-MMAR_RS17280	MMAR_RS17280	MEbrown	13.878	3.462	PPE family protein
-MMAR_RS18585	MMAR_RS18585	MEbrown	14.389	8.216	PE family protein
-MMAR_RS08545	MMAR_RS08545	MEyellow	14.023	1.208	IclR family transcriptional regulator
-MMAR_RS07740	MMAR_RS07740	MEyellow	11.96	2.677	DUF808 domain-containing protein
-MMAR_RS04440	MMAR_RS04440	MEturquoise	36.465	34.721	MarR family winged helix-turn-helix transcriptional regulator
-MMAR_RS17980	MMAR_RS17980	MEbrown	8.878	5.645	VOC family protein
-MMAR_RS00995	MMAR_RS00995	MEgreen	5.886	2.215	PPE domain-containing protein
-MMAR_RS09785	MMAR_RS09785	MEturquoise	7.488	3.986	glycosyltransferase
-MMAR_RS23850	MMAR_RS23850	MEgreen	12.328	7.592	enoyl-CoA hydratase/isomerase family protein
-MMAR_RS20760	MMAR_RS20760	MEblue	24.513	13.496	ABC transporter ATP-binding protein
-MMAR_RS03635	MMAR_RS03635	MEbrown	9.59	3.607	STAS domain-containing protein
-MMAR_RS13985	MMAR_RS13985	MEblue	27.725	14.382	PPE family protein
-MMAR_RS26550	MMAR_RS26550	MEturquoise	14.419	9.127	TM2 domain-containing protein
-MMAR_RS14040	MMAR_RS14040	MEblue	11.929	9.126	hypothetical protein
-MMAR_RS03750	MMAR_RS03750	MEbrown	13.23	9.164	pyridoxamine 5'-phosphate oxidase family protein
-MMAR_RS30950	MMAR_RS30950	MEturquoise	17.09	14.128	PE family protein
-MMAR_RS10390	MMAR_RS10390	MEturquoise	7.986	5.772	ATP adenylyltransferase
-MMAR_RS11880	MMAR_RS11880	MEturquoise	12.692	10.874	8-amino-7-oxononanoate synthase
-MMAR_RS03840	MMAR_RS03840	MEturquoise	11.326	7.624	crotonase/enoyl-CoA hydratase family protein
-MMAR_RS15995	idsA2	MEbrown	23.032	4.559	bifunctional (2E,6E)-farnesyl/geranyl diphosphate synthase
-MMAR_RS25415	MMAR_RS25415	MEturquoise	21.37	20.433	hypothetical protein
-MMAR_RS16900	MMAR_RS16900	MEblue	12.175	4.192	serine hydrolase domain-containing protein
-MMAR_RS07760	MMAR_RS07760	MEturquoise	20.089	18.804	patatin-like phospholipase family protein
-MMAR_RS04220	MMAR_RS04220	MEturquoise	12.955	9.985	alpha/beta hydrolase
-MMAR_RS10170	MMAR_RS10170	MEturquoise	9.928	4.612	DUF732 domain-containing protein
-MMAR_RS04270	MMAR_RS04270	MEblue	10.087	7.16	APC family permease
-MMAR_RS22450	MMAR_RS22450	MEbrown	13.297	8.235	TatD family hydrolase
-MMAR_RS17595	MMAR_RS17595	MEbrown	11.136	7.926	zinc-dependent alcohol dehydrogenase
-MMAR_RS23265	pdxH	MEgreen	8.71	6.017	pyridoxamine 5'-phosphate oxidase
-MMAR_RS05140	rpsQ	MEbrown	16.885	5.524	30S ribosomal protein S17
-MMAR_RS18395	MMAR_RS18395	MEgreen	6.847	2.555	non-ribosomal peptide synthetase
-MMAR_RS16730	MMAR_RS16730	MEbrown	12.462	10.821	SDR family oxidoreductase
-MMAR_RS13930	MMAR_RS13930	MEyellow	9.666	6.257	macro domain-containing protein
-MMAR_RS01105	MMAR_RS01105	MEbrown	16.842	3.569	TetR/AcrR family transcriptional regulator
-MMAR_RS21840	MMAR_RS21840	MEturquoise	9.698	7.334	carboxylesterase/lipase family protein
-MMAR_RS22020	MMAR_RS22020	MEbrown	12.415	9.005	rhodanese-like domain-containing protein
-MMAR_RS25100	MMAR_RS25100	MEblue	22.223	14.585	acetoacetate decarboxylase family protein
-MMAR_RS16600	MMAR_RS16600	MEbrown	10.197	4.365	WS/DGAT/MGAT family O-acyltransferase
-MMAR_RS01425	rpsN	MEyellow	7.871	1.496	30S ribosomal protein S14
-MMAR_RS13005	MMAR_RS13005	MEbrown	12.595	7.295	molybdopterin-dependent oxidoreductase
-MMAR_RS07810	MMAR_RS07810	MEgreen	13.814	5.238	DUF3556 domain-containing protein
-MMAR_RS25395	hsaC	MEturquoise	22.908	17.355	iron-dependent extradiol dioxygenase HsaC
-MMAR_RS22195	MMAR_RS22195	MEbrown	12.6	8.335	DUF3419 family protein
-MMAR_RS25355	MMAR_RS25355	MEblue	18.406	13.438	arylamine N-acetyltransferase family protein
-MMAR_RS26135	glpK	MEblue	10.298	7.75	glycerol kinase GlpK
-MMAR_RS20785	MMAR_RS20785	MEgreen	19.675	10.288	LppX_LprAFG lipoprotein
-MMAR_RS02800	MMAR_RS02800	MEblue	16.4	6.48	bifunctional phosphatase PAP2/diacylglycerol kinase family protein
-MMAR_RS05345	rfbC	MEblue	18.071	13.537	dTDP-4-dehydrorhamnose 3,5-epimerase
-MMAR_RS03550	thiG	MEturquoise	12.902	11.97	thiazole synthase
-MMAR_RS04960	MMAR_RS04960	MEturquoise	20.342	12.682	MmpS family transport accessory protein
-MMAR_RS21790	ychF	MEbrown	11.995	9.011	redox-regulated ATPase YchF
-MMAR_RS22155	MMAR_RS22155	MEturquoise	14.121	11.04	AraC-like ligand-binding domain-containing protein
-MMAR_RS05920	MMAR_RS05920	MEyellow	6.414	2.488	sigma-70 family RNA polymerase sigma factor
-MMAR_RS03620	thiD	MEgreen	19.502	10.544	bifunctional hydroxymethylpyrimidine kinase/phosphomethylpyrimidine kinase
-MMAR_RS23545	MMAR_RS23545	MEblue	13.177	4.495	hypothetical protein
-MMAR_RS07475	MMAR_RS07475	MEblue	28.229	14.271	hypothetical protein
-MMAR_RS18515	MMAR_RS18515	MEblue	8.266	4.139	sulfate/molybdate ABC transporter ATP-binding protein
-MMAR_RS13910	MMAR_RS13910	MEyellow	10.518	2.403	class I SAM-dependent methyltransferase
-MMAR_RS09685	MMAR_RS09685	MEyellow	9.86	6.226	acyl-CoA dehydrogenase family protein
-MMAR_RS25070	MMAR_RS25070	MEturquoise	18.717	13.547	amidohydrolase family protein
-MMAR_RS23345	MMAR_RS23345	MEturquoise	6.781	5.606	putative endonuclease domain-containing protein
-MMAR_RS21625	MMAR_RS21625	MEturquoise	10.195	8.194	PE family protein
-MMAR_RS19080	MMAR_RS19080	MEgreen	12.509	8.586	MFS transporter
-MMAR_RS04550	MMAR_RS04550	MEbrown	10.102	4.85	cation:proton antiporter
-MMAR_RS14365	MMAR_RS14365	MEbrown	12.689	8.509	virulence factor Mce family protein
-MMAR_RS04290	MMAR_RS04290	MEturquoise	12.277	11.369	cytochrome c biogenesis CcdA family protein
-MMAR_RS03815	MMAR_RS03815	MEblue	9.581	4.745	TetR/AcrR family transcriptional regulator
-MMAR_RS04940	MMAR_RS04940	MEturquoise	12.894	6.78	crotonase/enoyl-CoA hydratase family protein
-MMAR_RS18690	MMAR_RS18690	MEblue	20.12	11.69	class I SAM-dependent methyltransferase
-MMAR_RS25410	MMAR_RS25410	MEgreen	14.413	5.836	ferredoxin--NADP reductase
-MMAR_RS17585	MMAR_RS17585	MEbrown	12.482	9.353	putative quinol monooxygenase
-MMAR_RS23785	MMAR_RS23785	MEbrown	12.938	5.606	hypothetical protein
-MMAR_RS11565	MMAR_RS11565	MEgreen	19.847	11.874	acetyltransferase
-MMAR_RS25730	MMAR_RS25730	MEblue	28.495	14.204	DUF475 domain-containing protein
-MMAR_RS22825	MMAR_RS22825	MEturquoise	5.455	3.5	chorismate mutase
-MMAR_RS00265	MMAR_RS00265	MEturquoise	10.86	8.905	DUF5631 domain-containing protein
-MMAR_RS01715	MMAR_RS01715	MEblue	8.751	6.135	nuclear transport factor 2 family protein
-MMAR_RS07290	nuoI	MEblue	8.883	1.641	NADH-quinone oxidoreductase subunit NuoI
-MMAR_RS01160	MMAR_RS01160	MEturquoise	20.371	16.28	TetR/AcrR family transcriptional regulator
-MMAR_RS28580	trpD	MEbrown	9.757	5.431	anthranilate phosphoribosyltransferase
-MMAR_RS25205	MMAR_RS25205	MEbrown	9.757	5.431	enoyl-CoA hydratase ChsH3
-MMAR_RS06280	MMAR_RS06280	MEgreen	6.218	4.585	TetR/AcrR family transcriptional regulator
-MMAR_RS24940	MMAR_RS24940	MEyellow	14.299	3.768	aminotransferase class I/II-fold pyridoxal phosphate-dependent enzyme
-MMAR_RS21480	MMAR_RS21480	MEbrown	7.11	2.445	mannosyltransferase
-MMAR_RS04265	MMAR_RS04265	MEturquoise	23.331	17.915	HNH endonuclease signature motif containing protein
-MMAR_RS25115	MMAR_RS25115	MEturquoise	10.715	6.185	thiolase family protein
-MMAR_RS06265	MMAR_RS06265	MEbrown	4.969	2.545	response regulator
-MMAR_RS02770	MMAR_RS02770	MEblue	9.386	6.666	DUF7159 family protein
-MMAR_RS18445	MMAR_RS18445	MEblue	6.488	1.635	reductase
-MMAR_RS11760	MMAR_RS11760	MEblue	6.242	4.11	asparaginase
-MMAR_RS05045	mftD	MEturquoise	11.093	9.848	pre-mycofactocin synthase MftD
-MMAR_RS29635	MMAR_RS29635	MEturquoise	10.201	7.943	hypothetical protein
-MMAR_RS11260	MMAR_RS11260	MEbrown	9.084	1.399	COX15/CtaA family protein
-MMAR_RS26750	MMAR_RS26750	MEbrown	9.577	5.634	crotonase/enoyl-CoA hydratase family protein
-MMAR_RS00800	MMAR_RS00800	MEturquoise	23.464	15.26	Rv1363c family protein
-MMAR_RS06825	MMAR_RS06825	MEblue	8.169	6.472	TIGR03619 family F420-dependent LLM class oxidoreductase
-MMAR_RS03325	MMAR_RS03325	MEbrown	21.548	4.849	DUF3151 domain-containing protein
-MMAR_RS29685	MMAR_RS29685	MEblue	26.984	15.352	hypothetical protein
-MMAR_RS19265	orn	MEgreen	18.804	10.871	oligoribonuclease
-MMAR_RS07825	MMAR_RS07825	MEgreen	5.209	2.233	HNH endonuclease
-MMAR_RS13860	MMAR_RS13860	MEbrown	8.431	3.955	YceI family protein
-MMAR_RS05880	trpS	MEblue	6.65	4.666	tryptophan--tRNA ligase
-MMAR_RS30265	MMAR_RS30265	MEturquoise	14.578	10.961	TetR/AcrR family transcriptional regulator
-MMAR_RS14730	MMAR_RS14730	MEbrown	7.138	5.58	GMC family oxidoreductase
-MMAR_RS02310	MMAR_RS02310	MEturquoise	9.861	7.004	fatty acyl-AMP ligase
-MMAR_RS25700	MMAR_RS25700	MEgreen	13.262	8.259	SIMPL domain-containing protein
-MMAR_RS19090	MMAR_RS19090	MEturquoise	14.788	9.274	DUF8010 domain-containing protein
+gene_id	gene_symbol	module	goslim_name	k_total	k_within	protein
+MMAR_RS17755	MMAR_RS17755	MEturquoise	Cell Surface & Biofilm Organization	28.888	28.089	nitroreductase/quinone reductase family protein
+MMAR_RS25675	MMAR_RS25675	MEbrown	Transmembrane Transport & Secretion	6.676	3.363	WXG100 family type VII secretion target
+MMAR_RS18655	MMAR_RS18655	MEturquoise	Cell Surface & Biofilm Organization	27.581	22.845	MmpS family transport accessory protein
+MMAR_RS23210	MMAR_RS23210	MEturquoise	Cell Surface & Biofilm Organization	26.004	25.363	TetR/AcrR family transcriptional regulator
+MMAR_RS03605	MMAR_RS03605	MEturquoise	Cell Surface & Biofilm Organization	34.74	33.104	membrane protein
+MMAR_RS24880	MMAR_RS24880	MEturquoise	Cell Surface & Biofilm Organization	26.749	21.866	hypothetical protein
+MMAR_RS20590	MMAR_RS20590	MEturquoise	Cell Surface & Biofilm Organization	13.725	6.984	haloalkane dehalogenase
+MMAR_RS12780	MMAR_RS12780	MEturquoise	Cell Surface & Biofilm Organization	29.525	24.54	Rv0792c family HTH-type transcriptional regulator
+MMAR_RS22315	MMAR_RS22315	MEbrown	Transmembrane Transport & Secretion	17.285	4.334	WXG100 family type VII secretion target
+MMAR_RS05360	MMAR_RS05360	MEturquoise	Cell Surface & Biofilm Organization	25.152	16.86	LLM class F420-dependent oxidoreductase
+MMAR_RS23870	MMAR_RS23870	MEturquoise	Cell Surface & Biofilm Organization	30.617	25.737	cytochrome P450
+MMAR_RS01955	MMAR_RS01955	MEturquoise	Cell Surface & Biofilm Organization	36.006	34.251	hypothetical protein
+MMAR_RS08555	leuD	MEyellow	Response to Stress & Redox Homeostasis	14.199	3.722	3-isopropylmalate dehydratase small subunit
+MMAR_RS02665	eccB	MEturquoise	Cell Surface & Biofilm Organization	14.824	7.836	type VII secretion protein EccB
+MMAR_RS25200	kstD	MEturquoise	Cell Surface & Biofilm Organization	24.505	18.622	3-oxosteroid 1-dehydrogenase
+MMAR_RS02330	MMAR_RS02330	MEblue	Lipid & Fatty Acid Metabolic Process	24.678	14.836	aldehyde dehydrogenase
+MMAR_RS14585	MMAR_RS14585	MEturquoise	Cell Surface & Biofilm Organization	34.41	30.06	MMP alpha-(1->4)-mannosyltransferase
+MMAR_RS02650	MMAR_RS02650	MEturquoise	Cell Surface & Biofilm Organization	36.269	34.527	PPE family protein
+MMAR_RS25195	MMAR_RS25195	MEturquoise	Cell Surface & Biofilm Organization	35.445	33.748	2-keto-4-pentenoate hydratase
+MMAR_RS25435	MMAR_RS25435	MEbrown	Transmembrane Transport & Secretion	14.55	3.112	metal ABC transporter solute-binding protein, Zn/Mn family
+MMAR_RS08970	MMAR_RS08970	MEturquoise	Cell Surface & Biofilm Organization	34.499	32.836	NAD-dependent epimerase/dehydratase family protein
+MMAR_RS12080	cydD	MEturquoise	Cell Surface & Biofilm Organization	14.25	12.046	thiol reductant ABC exporter subunit CydD
+MMAR_RS07395	MMAR_RS07395	MEturquoise	Cell Surface & Biofilm Organization	23.982	22.883	homogentisate 1,2-dioxygenase
+MMAR_RS21650	MMAR_RS21650	MEturquoise	Cell Surface & Biofilm Organization	33.796	29.428	SDR family oxidoreductase
+MMAR_RS13740	MMAR_RS13740	MEturquoise	Cell Surface & Biofilm Organization	23.102	17.14	hydrogen peroxide-inducible genes activator
+MMAR_RS17620	MMAR_RS17620	MEblue	Lipid & Fatty Acid Metabolic Process	24.291	11.953	DUF6632 domain-containing protein
+MMAR_RS24090	crtI	MEturquoise	Cell Surface & Biofilm Organization	20.336	16.319	phytoene desaturase family protein
+MMAR_RS00805	MMAR_RS00805	MEturquoise	Cell Surface & Biofilm Organization	21.311	17.199	hypothetical protein
+MMAR_RS25175	MMAR_RS25175	MEturquoise	Cell Surface & Biofilm Organization	36.114	34.381	hypothetical protein
+MMAR_RS18715	MMAR_RS18715	MEgreen	Cellular Respiration & Shear Adaptation	12.566	8.635	adenylate/guanylate cyclase domain-containing protein
+MMAR_RS13320	MMAR_RS13320	MEblue	Lipid & Fatty Acid Metabolic Process	20.474	6.995	PPE family protein
+MMAR_RS01745	MMAR_RS01745	MEturquoise	Cell Surface & Biofilm Organization	24.873	17.033	pirin family protein
+MMAR_RS04540	MMAR_RS04540	MEturquoise	Cell Surface & Biofilm Organization	25.312	19.459	TetR/AcrR family transcriptional regulator
+MMAR_RS00745	MMAR_RS00745	MEturquoise	Cell Surface & Biofilm Organization	18.938	16.068	TetR/AcrR family transcriptional regulator
+MMAR_RS17750	MMAR_RS17750	MEturquoise	Cell Surface & Biofilm Organization	18.632	15.903	oxidoreductase
+MMAR_RS04445	MMAR_RS04445	MEturquoise	Cell Surface & Biofilm Organization	25.162	17.018	sulfotransferase
+MMAR_RS20160	MMAR_RS20160	MEturquoise	Cell Surface & Biofilm Organization	12.72	9.505	acyl-CoA dehydrogenase family protein
+MMAR_RS20315	MMAR_RS20315	MEturquoise	Cell Surface & Biofilm Organization	23.699	15.726	MoaD/ThiS family protein
+MMAR_RS08710	MMAR_RS08710	MEbrown	Transmembrane Transport & Secretion	12.449	8.311	LLM class flavin-dependent oxidoreductase
+MMAR_RS01960	MMAR_RS01960	MEturquoise	Cell Surface & Biofilm Organization	26.79	20.822	hypothetical protein
+MMAR_RS24720	MMAR_RS24720	MEturquoise	Cell Surface & Biofilm Organization	15.436	12.183	SDR family oxidoreductase
+MMAR_RS05670	MMAR_RS05670	MEturquoise	Cell Surface & Biofilm Organization	20.068	15.665	DHA2 family efflux MFS transporter permease subunit
+MMAR_RS23770	MMAR_RS23770	MEturquoise	Cell Surface & Biofilm Organization	33.243	28.733	amidohydrolase family protein
+MMAR_RS10350	MMAR_RS10350	MEturquoise	Cell Surface & Biofilm Organization	20.688	18.972	helix-turn-helix transcriptional regulator
+MMAR_RS05910	MMAR_RS05910	MEturquoise	Cell Surface & Biofilm Organization	15.532	9.095	VIT domain-containing protein
+MMAR_RS29930	MMAR_RS29930	MEturquoise	Cell Surface & Biofilm Organization	21.325	18.459	hypothetical protein
+MMAR_RS11530	MMAR_RS11530	MEgreen	Cellular Respiration & Shear Adaptation	14.536	6.496	phytanoyl-CoA dioxygenase family protein
+MMAR_RS14545	MMAR_RS14545	MEbrown	Transmembrane Transport & Secretion	5.624	3.09	DUF1906 domain-containing protein
+MMAR_RS01230	MMAR_RS01230	MEturquoise	Cell Surface & Biofilm Organization	21.862	16.084	hypothetical protein
+MMAR_RS00510	MMAR_RS00510	MEgreen	Cellular Respiration & Shear Adaptation	12.633	2.627	type I polyketide synthase
+MMAR_RS11250	MMAR_RS11250	MEgreen	Cellular Respiration & Shear Adaptation	20.113	11.818	quinone oxidoreductase family protein
+MMAR_RS04180	MMAR_RS04180	MEgreen	Cellular Respiration & Shear Adaptation	6.354	1.421	transport-regulating membrane protein Mce1N
+MMAR_RS21810	xseA	MEturquoise	Cell Surface & Biofilm Organization	29.171	26.788	exodeoxyribonuclease VII large subunit
+MMAR_RS06400	MMAR_RS06400	MEturquoise	Cell Surface & Biofilm Organization	19.149	16.432	rubredoxin
+MMAR_RS01440	mrf	MEturquoise	Cell Surface & Biofilm Organization	21.785	18.946	ribosome hibernation factor-recruiting GTPase MRF
+MMAR_RS24345	MMAR_RS24345	MEturquoise	Cell Surface & Biofilm Organization	24.103	11.774	ArsR/SmtB family transcription factor
+MMAR_RS14135	MMAR_RS14135	MEturquoise	Cell Surface & Biofilm Organization	15.199	12.045	hypothetical protein
+MMAR_RS25030	MMAR_RS25030	MEyellow	Response to Stress & Redox Homeostasis	14.302	4.305	3-oxoacyl-ACP reductase
+MMAR_RS10360	MMAR_RS10360	MEyellow	Response to Stress & Redox Homeostasis	11.877	4.568	cupin domain-containing protein
+MMAR_RS20410	MMAR_RS20410	MEgreen	Cellular Respiration & Shear Adaptation	15.212	6.493	methylated-DNA--[protein
+MMAR_RS01430	rpmG	MEturquoise	Cell Surface & Biofilm Organization	20.034	18.283	50S ribosomal protein L33
+MMAR_RS14725	MMAR_RS14725	MEblue	Lipid & Fatty Acid Metabolic Process	17.661	13.085	DUF1906 domain-containing protein
+MMAR_RS13905	MMAR_RS13905	MEyellow	Response to Stress & Redox Homeostasis	13.371	5.349	zinc-binding dehydrogenase
+MMAR_RS16975	MMAR_RS16975	MEturquoise	Cell Surface & Biofilm Organization	13.734	10.325	maleate cis-trans isomerase family protein
+MMAR_RS26020	MMAR_RS26020	MEbrown	Transmembrane Transport & Secretion	9.325	4.316	SpoIIE family protein phosphatase
+MMAR_RS23530	MMAR_RS23530	MEturquoise	Cell Surface & Biofilm Organization	31.118	26.36	cytochrome P450
+MMAR_RS13150	MMAR_RS13150	MEturquoise	Cell Surface & Biofilm Organization	29.445	25.263	WS/DGAT/MGAT family O-acyltransferase
+MMAR_RS12510	MMAR_RS12510	MEblue	Lipid & Fatty Acid Metabolic Process	27.72	13.942	O-methyltransferase
+MMAR_RS10900	MMAR_RS10900	MEbrown	Transmembrane Transport & Secretion	11.681	10.163	fatty acid desaturase
+MMAR_RS03870	MMAR_RS03870	MEturquoise	Cell Surface & Biofilm Organization	17.907	13.435	aminotransferase class I/II-fold pyridoxal phosphate-dependent enzyme
+MMAR_RS16515	MMAR_RS16515	MEbrown	Transmembrane Transport & Secretion	7.511	2.548	oxygenase MpaB family protein
+MMAR_RS22795	sucD	MEturquoise	Cell Surface & Biofilm Organization	13.267	12.357	succinate--CoA ligase subunit alpha
+MMAR_RS06185	MMAR_RS06185	MEblue	Lipid & Fatty Acid Metabolic Process	8.962	3.126	TetR/AcrR family transcriptional regulator
+MMAR_RS23070	MMAR_RS23070	MEturquoise	Cell Surface & Biofilm Organization	11.973	11.429	PPE family protein
+MMAR_RS19790	MMAR_RS19790	MEturquoise	Cell Surface & Biofilm Organization	17.172	12.949	DUF2339 domain-containing protein
+MMAR_RS14295	MMAR_RS14295	MEgreen	Cellular Respiration & Shear Adaptation	19.213	8.287	YoaK family protein
+MMAR_RS25235	MMAR_RS25235	MEbrown	Transmembrane Transport & Secretion	7.805	5.23	acyl-CoA dehydrogenase family protein
+MMAR_RS21530	MMAR_RS21530	MEturquoise	Cell Surface & Biofilm Organization	13.101	9.742	class I SAM-dependent methyltransferase
+MMAR_RS02850	MMAR_RS02850	MEturquoise	Cell Surface & Biofilm Organization	19.185	15.479	SDR family NAD(P)-dependent oxidoreductase
+MMAR_RS13230	MMAR_RS13230	MEbrown	Transmembrane Transport & Secretion	11.946	8.99	PPE family protein
+MMAR_RS10110	hemE	MEyellow	Response to Stress & Redox Homeostasis	13.7	2.218	uroporphyrinogen decarboxylase
+MMAR_RS03600	MMAR_RS03600	MEbrown	Transmembrane Transport & Secretion	12.247	8.72	hypothetical protein
+MMAR_RS12305	argF	MEturquoise	Cell Surface & Biofilm Organization	27.934	26.47	ornithine carbamoyltransferase
+MMAR_RS16530	MMAR_RS16530	MEgreen	Cellular Respiration & Shear Adaptation	14.459	6.493	IS1380-like element ISMyma7 family transposase
+MMAR_RS23800	MMAR_RS23800	MEbrown	Transmembrane Transport & Secretion	12.845	10.607	acyl-CoA dehydrogenase family protein
+MMAR_RS25755	MMAR_RS25755	MEgreen	Cellular Respiration & Shear Adaptation	7.132	2.585	hypothetical protein
+MMAR_RS18075	MMAR_RS18075	MEturquoise	Cell Surface & Biofilm Organization	12.024	11.237	esterase-like activity of phytase family protein
+MMAR_RS01420	rpsR	MEturquoise	Cell Surface & Biofilm Organization	15.339	8.752	30S ribosomal protein S18
+MMAR_RS20155	fabG	MEturquoise	Cell Surface & Biofilm Organization	26.382	21.856	3-oxoacyl-ACP reductase FabG
+MMAR_RS06530	rsgA	MEturquoise	Cell Surface & Biofilm Organization	9.872	7.375	ribosome small subunit-dependent GTPase A
+MMAR_RS13720	MMAR_RS13720	MEturquoise	Cell Surface & Biofilm Organization	25.392	22.024	alpha-hydroxy acid oxidase
+MMAR_RS19755	MMAR_RS19755	MEturquoise	Cell Surface & Biofilm Organization	14.502	6.53	lysophospholipid acyltransferase family protein
+MMAR_RS22855	MMAR_RS22855	MEturquoise	Cell Surface & Biofilm Organization	14.066	7.092	PE family protein
+MMAR_RS17090	MMAR_RS17090	MEbrown	Transmembrane Transport & Secretion	11.753	9.013	alpha/beta hydrolase family protein
+MMAR_RS17665	MMAR_RS17665	MEbrown	Transmembrane Transport & Secretion	7.505	4.743	MerR family transcriptional regulator
+MMAR_RS31135	MMAR_RS31135	MEbrown	Transmembrane Transport & Secretion	12.904	9.549	DUF6893 family small protein
+MMAR_RS01930	MMAR_RS01930	MEturquoise	Cell Surface & Biofilm Organization	29.57	24.615	acyl-CoA thioesterase
+MMAR_RS14905	MMAR_RS14905	MEturquoise	Cell Surface & Biofilm Organization	19.272	14.642	VOC family protein
+MMAR_RS14065	MMAR_RS14065	MEyellow	Response to Stress & Redox Homeostasis	12.475	4.167	SRPBCC family protein
+MMAR_RS22220	MMAR_RS22220	MEturquoise	Cell Surface & Biofilm Organization	19.228	17.441	hypothetical protein
+MMAR_RS01445	MMAR_RS01445	MEturquoise	Cell Surface & Biofilm Organization	7.622	5.469	type B 50S ribosomal protein L31
+MMAR_RS02855	MMAR_RS02855	MEyellow	Response to Stress & Redox Homeostasis	14.186	4.326	HAD-IA family hydrolase
+MMAR_RS25225	MMAR_RS25225	MEturquoise	Cell Surface & Biofilm Organization	8.662	6.151	bifunctional MaoC family dehydratase N-terminal/OB-fold nucleic acid binding domain-containing protein
+MMAR_RS06105	MMAR_RS06105	MEturquoise	Cell Surface & Biofilm Organization	16.886	15.45	arylsulfatase
+MMAR_RS07770	MMAR_RS07770	MEturquoise	Cell Surface & Biofilm Organization	14.408	13.695	protein adenylyltransferase SelO
+MMAR_RS24735	MMAR_RS24735	MEturquoise	Cell Surface & Biofilm Organization	34.336	32.591	cytochrome P450
+MMAR_RS25045	MMAR_RS25045	MEturquoise	Cell Surface & Biofilm Organization	23.514	18.134	acyl-CoA dehydrogenase family protein
+MMAR_RS04050	MMAR_RS04050	MEblue	Lipid & Fatty Acid Metabolic Process	7.372	2.635	tocopherol cyclase family protein
+MMAR_RS08160	MMAR_RS08160	MEgreen	Cellular Respiration & Shear Adaptation	6.354	2.307	iron-siderophore ABC transporter substrate-binding protein
+MMAR_RS07320	MMAR_RS07320	MEturquoise	Cell Surface & Biofilm Organization	15.145	13.252	NADH-quinone oxidoreductase subunit C
+MMAR_RS14800	MMAR_RS14800	MEbrown	Transmembrane Transport & Secretion	16.264	5.749	DHA2 family efflux MFS transporter permease subunit
+MMAR_RS07920	MMAR_RS07920	MEblue	Lipid & Fatty Acid Metabolic Process	15.642	11.904	DUF732 domain-containing protein
+MMAR_RS17740	MMAR_RS17740	MEturquoise	Cell Surface & Biofilm Organization	13.293	10.529	LLM class F420-dependent oxidoreductase
+MMAR_RS05205	rpmD	MEgreen	Cellular Respiration & Shear Adaptation	19.984	10.797	50S ribosomal protein L30
+MMAR_RS21265	MMAR_RS21265	MEturquoise	Cell Surface & Biofilm Organization	15.458	8.793	aldehyde dehydrogenase family protein
+MMAR_RS00410	MMAR_RS00410	MEblue	Lipid & Fatty Acid Metabolic Process	22.792	13.057	DUF3297 family protein
+MMAR_RS17760	arr	MEturquoise	Cell Surface & Biofilm Organization	8.232	5.434	NAD(+)--rifampin ADP-ribosyltransferase
+MMAR_RS07390	MMAR_RS07390	MEturquoise	Cell Surface & Biofilm Organization	23.975	18.948	alpha/beta hydrolase
+MMAR_RS02885	MMAR_RS02885	MEturquoise	Cell Surface & Biofilm Organization	12.002	8.438	Fic family protein
+MMAR_RS20635	MMAR_RS20635	MEturquoise	Cell Surface & Biofilm Organization	12.112	6.55	DUF2254 domain-containing protein
+MMAR_RS03855	MMAR_RS03855	MEgreen	Cellular Respiration & Shear Adaptation	14.429	7.367	DUF779 domain-containing protein
+MMAR_RS27145	dinB	MEturquoise	Cell Surface & Biofilm Organization	26.311	17.999	DNA polymerase IV
+MMAR_RS01415	MMAR_RS01415	MEturquoise	Cell Surface & Biofilm Organization	16.163	14.091	oxygenase MpaB family protein
+MMAR_RS00795	MMAR_RS00795	MEblue	Lipid & Fatty Acid Metabolic Process	18.168	11.847	mannan-binding lectin
+MMAR_RS14930	MMAR_RS14930	MEturquoise	Cell Surface & Biofilm Organization	20.746	17.35	MerR family transcriptional regulator
+MMAR_RS22395	arsC	MEgreen	Cellular Respiration & Shear Adaptation	8.513	5.857	arsenate reductase (glutaredoxin)
+MMAR_RS02860	MMAR_RS02860	MEgreen	Cellular Respiration & Shear Adaptation	6.658	2.36	ROK family protein
+MMAR_RS10710	MMAR_RS10710	MEturquoise	Cell Surface & Biofilm Organization	16.547	13.279	Rv2576c family protein
+MMAR_RS20600	MMAR_RS20600	MEturquoise	Cell Surface & Biofilm Organization	12.99	10.434	TetR/AcrR family transcriptional regulator
+MMAR_RS26760	MMAR_RS26760	MEturquoise	Cell Surface & Biofilm Organization	14.087	10.419	PPE family protein
+MMAR_RS24640	adhP	MEblue	Lipid & Fatty Acid Metabolic Process	7.705	4.473	alcohol dehydrogenase AdhP
+MMAR_RS26515	MMAR_RS26515	MEturquoise	Cell Surface & Biofilm Organization	14.658	11.15	M1 family metallopeptidase
+MMAR_RS13120	MMAR_RS13120	MEturquoise	Cell Surface & Biofilm Organization	34.057	32.883	Gfo/Idh/MocA family protein
+MMAR_RS13780	MMAR_RS13780	MEturquoise	Cell Surface & Biofilm Organization	10.374	4.944	amidohydrolase family protein
+MMAR_RS12775	MMAR_RS12775	MEblue	Lipid & Fatty Acid Metabolic Process	29.535	12.938	LLM class flavin-dependent oxidoreductase
+MMAR_RS25025	MMAR_RS25025	MEturquoise	Cell Surface & Biofilm Organization	9.117	6.906	MlaE family ABC transporter permease
+MMAR_RS20895	MMAR_RS20895	MEbrown	Transmembrane Transport & Secretion	7.159	1.607	ATP-binding transcription factor AbmR
+MMAR_RS17550	MMAR_RS17550	MEblue	Lipid & Fatty Acid Metabolic Process	18.692	14.148	aldo/keto reductase
+MMAR_RS19140	lipQ	MEturquoise	Cell Surface & Biofilm Organization	12.599	11.68	esterase LipQ
+MMAR_RS09710	MMAR_RS09710	MEturquoise	Cell Surface & Biofilm Organization	10.969	7.471	class I SAM-dependent DNA methyltransferase
+MMAR_RS16365	MMAR_RS16365	MEgreen	Cellular Respiration & Shear Adaptation	8.568	5.949	DUF1622 domain-containing protein
+MMAR_RS22890	MMAR_RS22890	MEblue	Lipid & Fatty Acid Metabolic Process	27.463	12.66	LLM class flavin-dependent oxidoreductase
+MMAR_RS02845	MMAR_RS02845	MEturquoise	Cell Surface & Biofilm Organization	22.784	19.903	sedoheptulose 7-phosphate cyclase
+MMAR_RS01905	MMAR_RS01905	MEgreen	Cellular Respiration & Shear Adaptation	6.901	5.413	glucose 1-dehydrogenase
+MMAR_RS19810	MMAR_RS19810	MEgreen	Cellular Respiration & Shear Adaptation	15.29	8.04	SRPBCC family protein
+MMAR_RS11840	MMAR_RS11840	MEturquoise	Cell Surface & Biofilm Organization	17.794	15.384	aminotransferase class I/II-fold pyridoxal phosphate-dependent enzyme
+MMAR_RS18305	MMAR_RS18305	MEblue	Lipid & Fatty Acid Metabolic Process	14.182	3.566	amidase
+MMAR_RS17095	MMAR_RS17095	MEturquoise	Cell Surface & Biofilm Organization	31.311	26.843	1-acyl-sn-glycerol-3-phosphate acyltransferase
+MMAR_RS11045	ribD	MEturquoise	Cell Surface & Biofilm Organization	16.379	15.037	bifunctional diaminohydroxyphosphoribosylaminopyrimidine deaminase/5-amino-6-(5-phosphoribosylamino)uracil reductase RibD
+MMAR_RS14560	MMAR_RS14560	MEbrown	Transmembrane Transport & Secretion	9.889	7.501	cyclopropane mycolic acid synthase family methyltransferase
+MMAR_RS26115	MMAR_RS26115	MEturquoise	Cell Surface & Biofilm Organization	6.646	3.394	stage II sporulation protein M
+MMAR_RS21575	MMAR_RS21575	MEblue	Lipid & Fatty Acid Metabolic Process	10.226	7.115	type III polyketide synthase
+MMAR_RS16320	MMAR_RS16320	MEbrown	Transmembrane Transport & Secretion	14.632	5.973	acyl carrier protein
+MMAR_RS12590	MMAR_RS12590	MEyellow	Response to Stress & Redox Homeostasis	5.553	1.175	ParA family protein
+MMAR_RS02935	pcp	MEbrown	Transmembrane Transport & Secretion	7.336	5.691	pyroglutamyl-peptidase I
+MMAR_RS26845	MMAR_RS26845	MEblue	Lipid & Fatty Acid Metabolic Process	12.416	3.81	peptidoglycan DD-metalloendopeptidase family protein
+MMAR_RS08635	MMAR_RS08635	MEyellow	Response to Stress & Redox Homeostasis	12.199	2.65	HNH endonuclease family protein
+MMAR_RS12940	MMAR_RS12940	MEbrown	Transmembrane Transport & Secretion	22.663	5.071	SDR family NAD(P)-dependent oxidoreductase
+MMAR_RS02620	MMAR_RS02620	MEturquoise	Cell Surface & Biofilm Organization	29.012	23.974	alpha/beta hydrolase
+MMAR_RS30990	MMAR_RS30990	MEturquoise	Cell Surface & Biofilm Organization	14.051	10.966	PE family protein
+MMAR_RS02840	MMAR_RS02840	MEturquoise	Cell Surface & Biofilm Organization	13.968	11.968	MFS transporter
+MMAR_RS26820	MMAR_RS26820	MEturquoise	Cell Surface & Biofilm Organization	13.107	9.138	VOC family protein
+MMAR_RS31040	MMAR_RS31040	MEturquoise	Cell Surface & Biofilm Organization	23.655	19.339	PE family protein
+MMAR_RS08185	MMAR_RS08185	MEbrown	Transmembrane Transport & Secretion	14.802	5.219	proton-conducting transporter transmembrane domain-containing protein
+MMAR_RS11130	MMAR_RS11130	MEbrown	Transmembrane Transport & Secretion	4.179	2.326	PE family protein
+MMAR_RS23350	MMAR_RS23350	MEgreen	Cellular Respiration & Shear Adaptation	8.72	6.023	glutathione S-transferase family protein
+MMAR_RS18090	MMAR_RS18090	MEturquoise	Cell Surface & Biofilm Organization	24.23	23.554	tryptophan halogenase family protein
+MMAR_RS00020	recF	MEbrown	Transmembrane Transport & Secretion	5.356	0.983	DNA replication/repair protein RecF
+MMAR_RS10815	mltG	MEturquoise	Cell Surface & Biofilm Organization	19.215	18.199	endolytic transglycosylase MltG
+MMAR_RS08315	MMAR_RS08315	MEturquoise	Cell Surface & Biofilm Organization	10.307	6.809	glycosyltransferase family 4 protein
+MMAR_RS05965	MMAR_RS05965	MEblue	Lipid & Fatty Acid Metabolic Process	17.603	13.818	thymidine phosphorylase
+MMAR_RS01925	MMAR_RS01925	MEblue	Lipid & Fatty Acid Metabolic Process	13.649	3.94	SMP-30/gluconolactonase/LRE family protein
+MMAR_RS18470	MMAR_RS18470	MEturquoise	Cell Surface & Biofilm Organization	23.98	23.096	salicylate synthase
+MMAR_RS25325	ipdE1	MEbrown	Transmembrane Transport & Secretion	13.363	6.081	acyl-CoA dehydrogenase IpdE1
+MMAR_RS17645	MMAR_RS17645	MEbrown	Transmembrane Transport & Secretion	7.003	4.514	hypothetical protein
+MMAR_RS10750	MMAR_RS10750	MEturquoise	Cell Surface & Biofilm Organization	18.345	13.386	nitroreductase family deazaflavin-dependent oxidoreductase
+MMAR_RS09240	MMAR_RS09240	MEturquoise	Cell Surface & Biofilm Organization	11.809	9.947	DUF6084 family protein
+MMAR_RS19975	MMAR_RS19975	MEbrown	Transmembrane Transport & Secretion	12.48	9.566	cytochrome P450
+MMAR_RS21535	MMAR_RS21535	MEyellow	Response to Stress & Redox Homeostasis	11.586	3.941	TetR/AcrR family transcriptional regulator
+MMAR_RS14010	MMAR_RS14010	MEturquoise	Cell Surface & Biofilm Organization	23.378	11.548	phytoene desaturase family protein
+MMAR_RS07685	MMAR_RS07685	MEgreen	Cellular Respiration & Shear Adaptation	18.858	7.645	acyl-CoA dehydrogenase family protein
+MMAR_RS22755	MMAR_RS22755	MEturquoise	Cell Surface & Biofilm Organization	9.116	4.616	sigma 54-interacting transcriptional regulator
+MMAR_RS12440	MMAR_RS12440	MEblue	Lipid & Fatty Acid Metabolic Process	10.355	6.593	PE family protein
+MMAR_RS26365	MMAR_RS26365	MEturquoise	Cell Surface & Biofilm Organization	21.171	15.289	PPOX class F420-dependent oxidoreductase
+MMAR_RS24725	MMAR_RS24725	MEturquoise	Cell Surface & Biofilm Organization	11.811	8.881	aldehyde dehydrogenase
+MMAR_RS07330	MMAR_RS07330	MEblue	Lipid & Fatty Acid Metabolic Process	6.913	2.747	NADH-quinone oxidoreductase subunit A
+MMAR_RS09415	MMAR_RS09415	MEbrown	Transmembrane Transport & Secretion	9.027	5.657	ABC transporter ATP-binding protein
+MMAR_RS03670	MMAR_RS03670	MEyellow	Response to Stress & Redox Homeostasis	6.224	1.977	peptide deformylase
+MMAR_RS12300	MMAR_RS12300	MEturquoise	Cell Surface & Biofilm Organization	15.667	14.324	acetylornithine transaminase
+MMAR_RS15155	cobN	MEgreen	Cellular Respiration & Shear Adaptation	13.651	2.438	cobaltochelatase subunit CobN
+MMAR_RS06340	MMAR_RS06340	MEturquoise	Cell Surface & Biofilm Organization	8.155	4.289	coenzyme F420-0:L-glutamate ligase
+MMAR_RS22675	MMAR_RS22675	MEturquoise	Cell Surface & Biofilm Organization	24.494	14.041	SAF domain-containing protein
+MMAR_RS00810	MMAR_RS00810	MEturquoise	Cell Surface & Biofilm Organization	25.464	20.26	GNAT family N-acetyltransferase
+MMAR_RS25990	MMAR_RS25990	MEgreen	Cellular Respiration & Shear Adaptation	19.162	10.906	DUF6328 family protein
+MMAR_RS13275	MMAR_RS13275	MEturquoise	Cell Surface & Biofilm Organization	13.875	12.331	hypothetical protein
+MMAR_RS01065	MMAR_RS01065	MEbrown	Transmembrane Transport & Secretion	7.6	5.539	acyltransferase family protein
+MMAR_RS05530	alr	MEgreen	Cellular Respiration & Shear Adaptation	13.72	7.288	alanine racemase
+MMAR_RS21560	MMAR_RS21560	MEturquoise	Cell Surface & Biofilm Organization	37.115	35.032	NAD(P)H-binding protein
+MMAR_RS17570	MMAR_RS17570	MEbrown	Transmembrane Transport & Secretion	14.318	9.782	multidrug effflux MFS transporter
+MMAR_RS27390	MMAR_RS27390	MEbrown	Transmembrane Transport & Secretion	11.751	3.765	EspA/EspE family type VII secretion system effector
+MMAR_RS22915	MMAR_RS22915	MEyellow	Response to Stress & Redox Homeostasis	15.253	3.8	ATP-dependent DNA ligase
+MMAR_RS04470	menJ	MEturquoise	Cell Surface & Biofilm Organization	35.17	33.829	menaquinone reductase MenJ
+MMAR_RS17545	MMAR_RS17545	MEturquoise	Cell Surface & Biofilm Organization	13.186	9.755	TetR/AcrR family transcriptional regulator
+MMAR_RS13990	MMAR_RS13990	MEyellow	Response to Stress & Redox Homeostasis	10.089	6.109	TetR/AcrR family transcriptional regulator
+MMAR_RS09865	MMAR_RS09865	MEturquoise	Cell Surface & Biofilm Organization	35.257	33.576	TerC/Alx family metal homeostasis membrane protein
+MMAR_RS10345	fdxA	MEturquoise	Cell Surface & Biofilm Organization	33.9	32.219	ferredoxin
+MMAR_RS18500	MMAR_RS18500	MEblue	Lipid & Fatty Acid Metabolic Process	10.988	4.647	sirohydrochlorin chelatase
+MMAR_RS28070	MMAR_RS28070	MEgreen	Cellular Respiration & Shear Adaptation	19.652	10.847	30S ribosomal protein bS22
+MMAR_RS17325	MMAR_RS17325	MEyellow	Response to Stress & Redox Homeostasis	6.842	0.903	Acg family FMN-binding oxidoreductase
+MMAR_RS21485	MMAR_RS21485	MEturquoise	Cell Surface & Biofilm Organization	13.452	12.535	hypothetical protein
+MMAR_RS17730	MMAR_RS17730	MEyellow	Response to Stress & Redox Homeostasis	3.876	2.78	Lrp/AsnC family transcriptional regulator
+MMAR_RS21475	MMAR_RS21475	MEblue	Lipid & Fatty Acid Metabolic Process	25.669	13.79	4a-hydroxytetrahydrobiopterin dehydratase
+MMAR_RS03230	MMAR_RS03230	MEgreen	Cellular Respiration & Shear Adaptation	15.049	7.722	LysR family transcriptional regulator
+MMAR_RS20320	MMAR_RS20320	MEturquoise	Cell Surface & Biofilm Organization	11.039	8.917	M67 family metallopeptidase
+MMAR_RS08605	MMAR_RS08605	MEblue	Lipid & Fatty Acid Metabolic Process	8.278	6.806	uracil-DNA glycosylase
+MMAR_RS07385	MMAR_RS07385	MEturquoise	Cell Surface & Biofilm Organization	6.326	4.415	CaiB/BaiF CoA transferase family protein
+MMAR_RS14020	MMAR_RS14020	MEturquoise	Cell Surface & Biofilm Organization	35.869	34.212	SRPBCC family protein
+MMAR_RS18300	recO	MEbrown	Transmembrane Transport & Secretion	8.58	5.743	DNA repair protein RecO
+MMAR_RS23880	MMAR_RS23880	MEturquoise	Cell Surface & Biofilm Organization	17.506	13.255	TetR/AcrR family transcriptional regulator
+MMAR_RS13750	MMAR_RS13750	MEbrown	Transmembrane Transport & Secretion	10.481	7.815	TIGR03618 family F420-dependent PPOX class oxidoreductase
+MMAR_RS20175	MMAR_RS20175	MEblue	Lipid & Fatty Acid Metabolic Process	28.566	12.203	ABC transporter ATP-binding protein/permease
+MMAR_RS01435	rpmB	MEturquoise	Cell Surface & Biofilm Organization	20.066	17.102	50S ribosomal protein L28
+MMAR_RS02645	MMAR_RS02645	MEturquoise	Cell Surface & Biofilm Organization	11.298	8.907	oxygenase MpaB family protein
+MMAR_RS04410	MMAR_RS04410	MEblue	Lipid & Fatty Acid Metabolic Process	9.96	6.895	amidohydrolase
+MMAR_RS02710	eccE	MEbrown	Transmembrane Transport & Secretion	7.784	3.034	type VII secretion protein EccE
+MMAR_RS00560	MMAR_RS00560	MEturquoise	Cell Surface & Biofilm Organization	11.253	9.679	PE family protein
+MMAR_RS23860	MMAR_RS23860	MEblue	Lipid & Fatty Acid Metabolic Process	7.795	2.743	M24 family metallopeptidase
+MMAR_RS25095	MMAR_RS25095	MEturquoise	Cell Surface & Biofilm Organization	20.078	13.785	cytochrome P450
+MMAR_RS14515	MMAR_RS14515	MEturquoise	Cell Surface & Biofilm Organization	14.003	10.674	alpha/beta fold hydrolase
+MMAR_RS12120	MMAR_RS12120	MEturquoise	Cell Surface & Biofilm Organization	37.035	35.34	Zn-ribbon domain-containing OB-fold protein
+MMAR_RS07955	MMAR_RS07955	MEyellow	Response to Stress & Redox Homeostasis	16.204	3.487	aldehyde dehydrogenase family protein
+MMAR_RS26740	MMAR_RS26740	MEturquoise	Cell Surface & Biofilm Organization	26.081	18.185	DUF4334 domain-containing protein
+MMAR_RS14690	MMAR_RS14690	MEblue	Lipid & Fatty Acid Metabolic Process	18.866	4.305	DIP1984 family protein
+MMAR_RS20905	MMAR_RS20905	MEblue	Lipid & Fatty Acid Metabolic Process	17.524	13.626	serine/threonine-protein kinase
+MMAR_RS00360	MMAR_RS00360	MEbrown	Transmembrane Transport & Secretion	13.238	10.597	DUF1707 SHOCT-like domain-containing protein
+MMAR_RS25735	MMAR_RS25735	MEturquoise	Cell Surface & Biofilm Organization	10.574	7.772	hypothetical protein
+MMAR_RS11875	MMAR_RS11875	MEturquoise	Cell Surface & Biofilm Organization	23.8	18.965	adenosylmethionine--8-amino-7-oxononanoate transaminase
+MMAR_RS02345	MMAR_RS02345	MEgreen	Cellular Respiration & Shear Adaptation	7.456	1.257	MmpA family trehalose lipid delivery protein
+MMAR_RS25425	kstR	MEyellow	Response to Stress & Redox Homeostasis	21.734	1.463	cholesterol catabolism transcriptional regulator KstR
+MMAR_RS24685	MMAR_RS24685	MEturquoise	Cell Surface & Biofilm Organization	14.269	10.653	gamma-glutamyltransferase family protein
+MMAR_RS27755	MMAR_RS27755	MEturquoise	Cell Surface & Biofilm Organization	8.575	4.905	PE family protein
+MMAR_RS02960	MMAR_RS02960	MEbrown	Transmembrane Transport & Secretion	9.537	4.345	UDP-glucose dehydrogenase family protein
+MMAR_RS05905	MMAR_RS05905	MEturquoise	Cell Surface & Biofilm Organization	27.318	23.342	helix-turn-helix domain-containing protein
+MMAR_RS17280	MMAR_RS17280	MEbrown	Transmembrane Transport & Secretion	13.878	3.462	PPE family protein
+MMAR_RS18585	MMAR_RS18585	MEbrown	Transmembrane Transport & Secretion	14.389	8.216	PE family protein
+MMAR_RS08545	MMAR_RS08545	MEyellow	Response to Stress & Redox Homeostasis	14.023	1.208	IclR family transcriptional regulator
+MMAR_RS07740	MMAR_RS07740	MEyellow	Response to Stress & Redox Homeostasis	11.96	2.677	DUF808 domain-containing protein
+MMAR_RS04440	MMAR_RS04440	MEturquoise	Cell Surface & Biofilm Organization	36.465	34.721	MarR family winged helix-turn-helix transcriptional regulator
+MMAR_RS17980	MMAR_RS17980	MEbrown	Transmembrane Transport & Secretion	8.878	5.645	VOC family protein
+MMAR_RS00995	MMAR_RS00995	MEgreen	Cellular Respiration & Shear Adaptation	5.886	2.215	PPE domain-containing protein
+MMAR_RS09785	MMAR_RS09785	MEturquoise	Cell Surface & Biofilm Organization	7.488	3.986	glycosyltransferase
+MMAR_RS23850	MMAR_RS23850	MEgreen	Cellular Respiration & Shear Adaptation	12.328	7.592	enoyl-CoA hydratase/isomerase family protein
+MMAR_RS20760	MMAR_RS20760	MEblue	Lipid & Fatty Acid Metabolic Process	24.513	13.496	ABC transporter ATP-binding protein
+MMAR_RS03635	MMAR_RS03635	MEbrown	Transmembrane Transport & Secretion	9.59	3.607	STAS domain-containing protein
+MMAR_RS13985	MMAR_RS13985	MEblue	Lipid & Fatty Acid Metabolic Process	27.725	14.382	PPE family protein
+MMAR_RS26550	MMAR_RS26550	MEturquoise	Cell Surface & Biofilm Organization	14.419	9.127	TM2 domain-containing protein
+MMAR_RS14040	MMAR_RS14040	MEblue	Lipid & Fatty Acid Metabolic Process	11.929	9.126	hypothetical protein
+MMAR_RS03750	MMAR_RS03750	MEbrown	Transmembrane Transport & Secretion	13.23	9.164	pyridoxamine 5'-phosphate oxidase family protein
+MMAR_RS30950	MMAR_RS30950	MEturquoise	Cell Surface & Biofilm Organization	17.09	14.128	PE family protein
+MMAR_RS10390	MMAR_RS10390	MEturquoise	Cell Surface & Biofilm Organization	7.986	5.772	ATP adenylyltransferase
+MMAR_RS11880	MMAR_RS11880	MEturquoise	Cell Surface & Biofilm Organization	12.692	10.874	8-amino-7-oxononanoate synthase
+MMAR_RS03840	MMAR_RS03840	MEturquoise	Cell Surface & Biofilm Organization	11.326	7.624	crotonase/enoyl-CoA hydratase family protein
+MMAR_RS15995	idsA2	MEbrown	Transmembrane Transport & Secretion	23.032	4.559	bifunctional (2E,6E)-farnesyl/geranyl diphosphate synthase
+MMAR_RS25415	MMAR_RS25415	MEturquoise	Cell Surface & Biofilm Organization	21.37	20.433	hypothetical protein
+MMAR_RS16900	MMAR_RS16900	MEblue	Lipid & Fatty Acid Metabolic Process	12.175	4.192	serine hydrolase domain-containing protein
+MMAR_RS07760	MMAR_RS07760	MEturquoise	Cell Surface & Biofilm Organization	20.089	18.804	patatin-like phospholipase family protein
+MMAR_RS04220	MMAR_RS04220	MEturquoise	Cell Surface & Biofilm Organization	12.955	9.985	alpha/beta hydrolase
+MMAR_RS10170	MMAR_RS10170	MEturquoise	Cell Surface & Biofilm Organization	9.928	4.612	DUF732 domain-containing protein
+MMAR_RS04270	MMAR_RS04270	MEblue	Lipid & Fatty Acid Metabolic Process	10.087	7.16	APC family permease
+MMAR_RS22450	MMAR_RS22450	MEbrown	Transmembrane Transport & Secretion	13.297	8.235	TatD family hydrolase
+MMAR_RS17595	MMAR_RS17595	MEbrown	Transmembrane Transport & Secretion	11.136	7.926	zinc-dependent alcohol dehydrogenase
+MMAR_RS23265	pdxH	MEgreen	Cellular Respiration & Shear Adaptation	8.71	6.017	pyridoxamine 5'-phosphate oxidase
+MMAR_RS05140	rpsQ	MEbrown	Transmembrane Transport & Secretion	16.885	5.524	30S ribosomal protein S17
+MMAR_RS18395	MMAR_RS18395	MEgreen	Cellular Respiration & Shear Adaptation	6.847	2.555	non-ribosomal peptide synthetase
+MMAR_RS16730	MMAR_RS16730	MEbrown	Transmembrane Transport & Secretion	12.462	10.821	SDR family oxidoreductase
+MMAR_RS13930	MMAR_RS13930	MEyellow	Response to Stress & Redox Homeostasis	9.666	6.257	macro domain-containing protein
+MMAR_RS01105	MMAR_RS01105	MEbrown	Transmembrane Transport & Secretion	16.842	3.569	TetR/AcrR family transcriptional regulator
+MMAR_RS21840	MMAR_RS21840	MEturquoise	Cell Surface & Biofilm Organization	9.698	7.334	carboxylesterase/lipase family protein
+MMAR_RS22020	MMAR_RS22020	MEbrown	Transmembrane Transport & Secretion	12.415	9.005	rhodanese-like domain-containing protein
+MMAR_RS25100	MMAR_RS25100	MEblue	Lipid & Fatty Acid Metabolic Process	22.223	14.585	acetoacetate decarboxylase family protein
+MMAR_RS16600	MMAR_RS16600	MEbrown	Transmembrane Transport & Secretion	10.197	4.365	WS/DGAT/MGAT family O-acyltransferase
+MMAR_RS01425	rpsN	MEyellow	Response to Stress & Redox Homeostasis	7.871	1.496	30S ribosomal protein S14
+MMAR_RS13005	MMAR_RS13005	MEbrown	Transmembrane Transport & Secretion	12.595	7.295	molybdopterin-dependent oxidoreductase
+MMAR_RS07810	MMAR_RS07810	MEgreen	Cellular Respiration & Shear Adaptation	13.814	5.238	DUF3556 domain-containing protein
+MMAR_RS25395	hsaC	MEturquoise	Cell Surface & Biofilm Organization	22.908	17.355	iron-dependent extradiol dioxygenase HsaC
+MMAR_RS22195	MMAR_RS22195	MEbrown	Transmembrane Transport & Secretion	12.6	8.335	DUF3419 family protein
+MMAR_RS25355	MMAR_RS25355	MEblue	Lipid & Fatty Acid Metabolic Process	18.406	13.438	arylamine N-acetyltransferase family protein
+MMAR_RS26135	glpK	MEblue	Lipid & Fatty Acid Metabolic Process	10.298	7.75	glycerol kinase GlpK
+MMAR_RS20785	MMAR_RS20785	MEgreen	Cellular Respiration & Shear Adaptation	19.675	10.288	LppX_LprAFG lipoprotein
+MMAR_RS02800	MMAR_RS02800	MEblue	Lipid & Fatty Acid Metabolic Process	16.4	6.48	bifunctional phosphatase PAP2/diacylglycerol kinase family protein
+MMAR_RS05345	rfbC	MEblue	Lipid & Fatty Acid Metabolic Process	18.071	13.537	dTDP-4-dehydrorhamnose 3,5-epimerase
+MMAR_RS03550	thiG	MEturquoise	Cell Surface & Biofilm Organization	12.902	11.97	thiazole synthase
+MMAR_RS04960	MMAR_RS04960	MEturquoise	Cell Surface & Biofilm Organization	20.342	12.682	MmpS family transport accessory protein
+MMAR_RS21790	ychF	MEbrown	Transmembrane Transport & Secretion	11.995	9.011	redox-regulated ATPase YchF
+MMAR_RS22155	MMAR_RS22155	MEturquoise	Cell Surface & Biofilm Organization	14.121	11.04	AraC-like ligand-binding domain-containing protein
+MMAR_RS05920	MMAR_RS05920	MEyellow	Response to Stress & Redox Homeostasis	6.414	2.488	sigma-70 family RNA polymerase sigma factor
+MMAR_RS03620	thiD	MEgreen	Cellular Respiration & Shear Adaptation	19.502	10.544	bifunctional hydroxymethylpyrimidine kinase/phosphomethylpyrimidine kinase
+MMAR_RS23545	MMAR_RS23545	MEblue	Lipid & Fatty Acid Metabolic Process	13.177	4.495	hypothetical protein
+MMAR_RS07475	MMAR_RS07475	MEblue	Lipid & Fatty Acid Metabolic Process	28.229	14.271	hypothetical protein
+MMAR_RS18515	MMAR_RS18515	MEblue	Lipid & Fatty Acid Metabolic Process	8.266	4.139	sulfate/molybdate ABC transporter ATP-binding protein
+MMAR_RS13910	MMAR_RS13910	MEyellow	Response to Stress & Redox Homeostasis	10.518	2.403	class I SAM-dependent methyltransferase
+MMAR_RS09685	MMAR_RS09685	MEyellow	Response to Stress & Redox Homeostasis	9.86	6.226	acyl-CoA dehydrogenase family protein
+MMAR_RS25070	MMAR_RS25070	MEturquoise	Cell Surface & Biofilm Organization	18.717	13.547	amidohydrolase family protein
+MMAR_RS23345	MMAR_RS23345	MEturquoise	Cell Surface & Biofilm Organization	6.781	5.606	putative endonuclease domain-containing protein
+MMAR_RS21625	MMAR_RS21625	MEturquoise	Cell Surface & Biofilm Organization	10.195	8.194	PE family protein
+MMAR_RS19080	MMAR_RS19080	MEgreen	Cellular Respiration & Shear Adaptation	12.509	8.586	MFS transporter
+MMAR_RS04550	MMAR_RS04550	MEbrown	Transmembrane Transport & Secretion	10.102	4.85	cation:proton antiporter
+MMAR_RS14365	MMAR_RS14365	MEbrown	Transmembrane Transport & Secretion	12.689	8.509	virulence factor Mce family protein
+MMAR_RS04290	MMAR_RS04290	MEturquoise	Cell Surface & Biofilm Organization	12.277	11.369	cytochrome c biogenesis CcdA family protein
+MMAR_RS03815	MMAR_RS03815	MEblue	Lipid & Fatty Acid Metabolic Process	9.581	4.745	TetR/AcrR family transcriptional regulator
+MMAR_RS04940	MMAR_RS04940	MEturquoise	Cell Surface & Biofilm Organization	12.894	6.78	crotonase/enoyl-CoA hydratase family protein
+MMAR_RS18690	MMAR_RS18690	MEblue	Lipid & Fatty Acid Metabolic Process	20.12	11.69	class I SAM-dependent methyltransferase
+MMAR_RS25410	MMAR_RS25410	MEgreen	Cellular Respiration & Shear Adaptation	14.413	5.836	ferredoxin--NADP reductase
+MMAR_RS17585	MMAR_RS17585	MEbrown	Transmembrane Transport & Secretion	12.482	9.353	putative quinol monooxygenase
+MMAR_RS23785	MMAR_RS23785	MEbrown	Transmembrane Transport & Secretion	12.938	5.606	hypothetical protein
+MMAR_RS11565	MMAR_RS11565	MEgreen	Cellular Respiration & Shear Adaptation	19.847	11.874	acetyltransferase
+MMAR_RS25730	MMAR_RS25730	MEblue	Lipid & Fatty Acid Metabolic Process	28.495	14.204	DUF475 domain-containing protein
+MMAR_RS22825	MMAR_RS22825	MEturquoise	Cell Surface & Biofilm Organization	5.455	3.5	chorismate mutase
+MMAR_RS00265	MMAR_RS00265	MEturquoise	Cell Surface & Biofilm Organization	10.86	8.905	DUF5631 domain-containing protein
+MMAR_RS01715	MMAR_RS01715	MEblue	Lipid & Fatty Acid Metabolic Process	8.751	6.135	nuclear transport factor 2 family protein
+MMAR_RS07290	nuoI	MEblue	Lipid & Fatty Acid Metabolic Process	8.883	1.641	NADH-quinone oxidoreductase subunit NuoI
+MMAR_RS01160	MMAR_RS01160	MEturquoise	Cell Surface & Biofilm Organization	20.371	16.28	TetR/AcrR family transcriptional regulator
+MMAR_RS28580	trpD	MEbrown	Transmembrane Transport & Secretion	9.757	5.431	anthranilate phosphoribosyltransferase
+MMAR_RS25205	MMAR_RS25205	MEbrown	Transmembrane Transport & Secretion	9.757	5.431	enoyl-CoA hydratase ChsH3
+MMAR_RS06280	MMAR_RS06280	MEgreen	Cellular Respiration & Shear Adaptation	6.218	4.585	TetR/AcrR family transcriptional regulator
+MMAR_RS24940	MMAR_RS24940	MEyellow	Response to Stress & Redox Homeostasis	14.299	3.768	aminotransferase class I/II-fold pyridoxal phosphate-dependent enzyme
+MMAR_RS21480	MMAR_RS21480	MEbrown	Transmembrane Transport & Secretion	7.11	2.445	mannosyltransferase
+MMAR_RS04265	MMAR_RS04265	MEturquoise	Cell Surface & Biofilm Organization	23.331	17.915	HNH endonuclease signature motif containing protein
+MMAR_RS25115	MMAR_RS25115	MEturquoise	Cell Surface & Biofilm Organization	10.715	6.185	thiolase family protein
+MMAR_RS06265	MMAR_RS06265	MEbrown	Transmembrane Transport & Secretion	4.969	2.545	response regulator
+MMAR_RS02770	MMAR_RS02770	MEblue	Lipid & Fatty Acid Metabolic Process	9.386	6.666	DUF7159 family protein
+MMAR_RS18445	MMAR_RS18445	MEblue	Lipid & Fatty Acid Metabolic Process	6.488	1.635	reductase
+MMAR_RS11760	MMAR_RS11760	MEblue	Lipid & Fatty Acid Metabolic Process	6.242	4.11	asparaginase
+MMAR_RS05045	mftD	MEturquoise	Cell Surface & Biofilm Organization	11.093	9.848	pre-mycofactocin synthase MftD
+MMAR_RS29635	MMAR_RS29635	MEturquoise	Cell Surface & Biofilm Organization	10.201	7.943	hypothetical protein
+MMAR_RS11260	MMAR_RS11260	MEbrown	Transmembrane Transport & Secretion	9.084	1.399	COX15/CtaA family protein
+MMAR_RS26750	MMAR_RS26750	MEbrown	Transmembrane Transport & Secretion	9.577	5.634	crotonase/enoyl-CoA hydratase family protein
+MMAR_RS00800	MMAR_RS00800	MEturquoise	Cell Surface & Biofilm Organization	23.464	15.26	Rv1363c family protein
+MMAR_RS06825	MMAR_RS06825	MEblue	Lipid & Fatty Acid Metabolic Process	8.169	6.472	TIGR03619 family F420-dependent LLM class oxidoreductase
+MMAR_RS03325	MMAR_RS03325	MEbrown	Transmembrane Transport & Secretion	21.548	4.849	DUF3151 domain-containing protein
+MMAR_RS29685	MMAR_RS29685	MEblue	Lipid & Fatty Acid Metabolic Process	26.984	15.352	hypothetical protein
+MMAR_RS19265	orn	MEgreen	Cellular Respiration & Shear Adaptation	18.804	10.871	oligoribonuclease
+MMAR_RS07825	MMAR_RS07825	MEgreen	Cellular Respiration & Shear Adaptation	5.209	2.233	HNH endonuclease
+MMAR_RS13860	MMAR_RS13860	MEbrown	Transmembrane Transport & Secretion	8.431	3.955	YceI family protein
+MMAR_RS05880	trpS	MEblue	Lipid & Fatty Acid Metabolic Process	6.65	4.666	tryptophan--tRNA ligase
+MMAR_RS30265	MMAR_RS30265	MEturquoise	Cell Surface & Biofilm Organization	14.578	10.961	TetR/AcrR family transcriptional regulator
+MMAR_RS14730	MMAR_RS14730	MEbrown	Transmembrane Transport & Secretion	7.138	5.58	GMC family oxidoreductase
+MMAR_RS02310	MMAR_RS02310	MEturquoise	Cell Surface & Biofilm Organization	9.861	7.004	fatty acyl-AMP ligase
+MMAR_RS25700	MMAR_RS25700	MEgreen	Cellular Respiration & Shear Adaptation	13.262	8.259	SIMPL domain-containing protein
+MMAR_RS19090	MMAR_RS19090	MEturquoise	Cell Surface & Biofilm Organization	14.788	9.274	DUF8010 domain-containing protein

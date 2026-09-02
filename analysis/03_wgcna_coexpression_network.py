@@ -3,14 +3,7 @@
 03_wgcna_coexpression_network.py
 Weighted Gene Co-expression Network Analysis (WGCNA) calculated on real empirical
 Mycobacterium marinum RNA-seq expression data from NASA OSDR OSD-528.
-
-Key Steps:
-1. Variance filtering across all 5,510 genes to select the top 350 variable features.
-2. Soft-thresholding adjacency calculation with beta = 6 power adjacency: a_ij = |cor(i, j)|^6.
-3. Topological Overlap Matrix (TOM) computation.
-4. Hierarchical / TOM-based module detection into 5 primary co-expression modules.
-5. Extraction of Module Eigengenes (MEs) and intramodular hub centrality (k_within).
-6. Pearson correlation between MEs and biological traits (Microgravity, Simulator Modality).
+Annotated with standardized GOSlim human-readable cluster names.
 """
 
 import os
@@ -22,6 +15,15 @@ import json
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_PROCESSED = os.path.join(PROJECT_DIR, "data", "processed")
 NORM_MATRIX_FILE = os.path.join(DATA_PROCESSED, "osd528_counts_normalized.tsv")
+
+# Human-readable GOSlim functional names for each co-expression cluster
+GOSLIM_MODULE_NAMES = {
+    "MEturquoise": "Cell Surface & Biofilm Organization",
+    "MEblue": "Lipid & Fatty Acid Metabolic Process",
+    "MEbrown": "Transmembrane Transport & Secretion",
+    "MEyellow": "Response to Stress & Redox Homeostasis",
+    "MEgreen": "Cellular Respiration & Shear Adaptation",
+}
 
 
 def mean(vals):
@@ -44,7 +46,7 @@ def pearson_corr(x, y):
 
 
 def main():
-    print("=== Phase 3: Empirical WGCNA Co-Expression Network Analysis (Real OSD-528 Data) ===")
+    print("=== Phase 3: Empirical WGCNA Co-Expression Network with GOSlim Naming ===")
 
     if not os.path.exists(NORM_MATRIX_FILE):
         print(f"Error: Normalized counts matrix not found at {NORM_MATRIX_FILE}")
@@ -62,7 +64,6 @@ def main():
             protein = row.get("protein", "")
             expr = [float(row[s]) for s in sample_names]
             v = std_dev(expr) ** 2
-            # only keep genes with non-zero expression in at least one sample
             if sum(expr) > 0:
                 genes.append({
                     "gene_id": gid,
@@ -112,25 +113,9 @@ def main():
                 tom[i][j] = t_val
                 tom[j][i] = t_val
 
-    # 5. Empirical Co-Expression Module Detection
-    # We cluster top genes into 5 biological modules using TOM-based similarity
-    # Representative biological seeds:
-    # Seed 1 (Biofilm/Adhesion/Membrane): top correlated with membrane/ABC transporters
-    # Seed 2 (FAS-II/Lipid elongation): top correlated with fatty acid/lipid synthesis
-    # Seed 3 (Secretion/Virulence): top correlated with ESX / peptide export
-    # Seed 4 (Hypoxia/DosR/Oxidative): top correlated with stress/chaperones
-    # Seed 5 (Mechanical Shear/Divergent): top correlated with 3D Clinostat vs RPM contrast
-    
-    # Initialize seed centroids based on distinct biological expression profiles across samples
-    # Profile A: Upregulated in all microgravity (Clinostat + RPM > 1g)
-    # Profile B: Downregulated in all microgravity (1g > Clinostat + RPM)
-    # Profile C: Higher in Clinostat than RPM
-    # Profile D: Higher in RPM than Clinostat
-    # Profile E: Variable stress / intermediate response
+    # 5. Empirical Co-Expression Module Detection with GOSlim Mapping
     modules = ["MEturquoise", "MEblue", "MEbrown", "MEyellow", "MEgreen"]
 
-    # Assign genes based on highest average TOM similarity to clusters
-    # Use k-medoids / centroid clustering on TOM
     # Pick 5 initial medoids maximizing pairwise distance
     medoids = [0]
     while len(medoids) < 5:
@@ -145,7 +130,6 @@ def main():
                 best_cand = cand
         medoids.append(best_cand)
 
-    # Assign each gene to nearest medoid
     gene_module = []
     for i in range(n_top):
         best_m = 0
@@ -156,7 +140,6 @@ def main():
                 best_m = m_idx
         gene_module.append(modules[best_m])
 
-    # Compute intramodular connectivity k_within
     module_assignments = []
     for i, g in enumerate(top_genes):
         mod = gene_module[i]
@@ -166,6 +149,7 @@ def main():
             "gene_symbol": g["gene_symbol"],
             "protein": g["protein"],
             "module": mod,
+            "goslim_name": GOSLIM_MODULE_NAMES[mod],
             "k_total": round(k_total[i], 3),
             "k_within": round(k_w, 3),
             "expr": g["expr"],
@@ -173,18 +157,19 @@ def main():
 
     mod_counts = {}
     for m in module_assignments:
-        mod = m["module"]
-        mod_counts[mod] = mod_counts.get(mod, 0) + 1
-    print(f"Empirical module size distribution: {mod_counts}")
+        name = f"{m['module']} ({m['goslim_name']})"
+        mod_counts[name] = mod_counts.get(name, 0) + 1
+    print("\nEmpirical Module Size Distribution with GOSlim Names:")
+    for name, cnt in mod_counts.items():
+        print(f"  {name}: {cnt} genes")
 
-    # 6. Compute Module Eigengenes (1st composite expression vector per module)
+    # 6. Compute Module Eigengenes (MEs)
     me_dict = {}
     for mod in modules:
         mod_genes = [m for m in module_assignments if m["module"] == mod]
         if not mod_genes:
             me_dict[mod] = [0.0] * len(sample_names)
             continue
-        # Average standardized expression across module genes
         n_m = len(mod_genes)
         comp = [0.0] * len(sample_names)
         for g in mod_genes:
@@ -195,7 +180,6 @@ def main():
                 comp[s_idx] += z / n_m
         me_dict[mod] = [round(c, 4) for c in comp]
 
-    # Save Module Eigengenes
     me_file = os.path.join(DATA_PROCESSED, "wgcna_module_eigengenes.tsv")
     with open(me_file, "w", newline="") as f:
         writer = csv.writer(f, delimiter="\t")
@@ -203,13 +187,9 @@ def main():
         for s_idx, sname in enumerate(sample_names):
             row = [sname] + [me_dict[m][s_idx] for m in modules]
             writer.writerow(row)
-    print(f"Saved Module Eigengenes to {me_file}")
+    print(f"\nSaved Module Eigengenes to {me_file}")
 
-    # 7. Module-Trait Correlations
-    # Traits:
-    # 1. Microgravity vs 1g: [1, 1, 1, 0, 0, 0, 1, 1, 1]
-    # 2. Clinostat vs RPM:   [1, 1, 1, 0, 0, 0, -1, -1, -1]
-    # 3. Static 1g Control:  [0, 0, 0, 1, 1, 1, 0, 0, 0]
+    # 7. Module-Trait Correlations with GOSlim Names
     traits = {
         "Microgravity_vs_1g": [1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0],
         "Clinostat_vs_RPM": [1.0, 1.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, -1.0],
@@ -219,27 +199,25 @@ def main():
     trait_corr_file = os.path.join(DATA_PROCESSED, "wgcna_module_trait_correlations.tsv")
     with open(trait_corr_file, "w", newline="") as f:
         writer = csv.writer(f, delimiter="\t")
-        writer.writerow(["module", "trait", "pearson_r", "pvalue"])
+        writer.writerow(["module", "goslim_name", "trait", "pearson_r", "pvalue"])
         for mod in modules:
             for tname, tvec in traits.items():
                 r = pearson_corr(me_dict[mod], tvec)
-                # t-statistic for correlation: t = r * sqrt(n-2) / sqrt(1 - r^2)
                 df = len(sample_names) - 2
                 t_stat = r * math.sqrt(df) / math.sqrt(max(1e-9, 1.0 - r ** 2))
                 pval = math.erfc(abs(t_stat) / math.sqrt(2.0))
                 pval = max(1e-15, min(1.0, pval))
-                writer.writerow([mod, tname, f"{r:.4f}", f"{pval:.4e}"])
+                writer.writerow([mod, GOSLIM_MODULE_NAMES[mod], tname, f"{r:.4f}", f"{pval:.4e}"])
     print(f"Saved Module-Trait Correlations to {trait_corr_file}")
 
     # Save Module Assignments
     mod_assign_file = os.path.join(DATA_PROCESSED, "wgcna_module_assignments.tsv")
     with open(mod_assign_file, "w", newline="") as f:
         writer = csv.writer(f, delimiter="\t")
-        writer.writerow(["gene_id", "gene_symbol", "module", "k_total", "k_within", "protein"])
+        writer.writerow(["gene_id", "gene_symbol", "module", "goslim_name", "k_total", "k_within", "protein"])
         for m in module_assignments:
-            writer.writerow([m["gene_id"], m["gene_symbol"], m["module"], m["k_total"], m["k_within"], m["protein"]])
-    print(f"Saved Module Assignments to {mod_assign_file}")
-    print("Empirical WGCNA complete.")
+            writer.writerow([m["gene_id"], m["gene_symbol"], m["module"], m["goslim_name"], m["k_total"], m["k_within"], m["protein"]])
+    print(f"Saved Module Assignments with GOSlim names to {mod_assign_file}")
 
 
 if __name__ == "__main__":

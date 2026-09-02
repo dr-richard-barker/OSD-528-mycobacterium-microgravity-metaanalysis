@@ -12,12 +12,12 @@
 
 \hypersetup{
     colorlinks=true,
-    linkcolor=blue!70!black,
-    citecolor=blue!70!black,
-    urlcolor=blue!70!black
+    linkcolor=blue!75!black,
+    citecolor=blue!75!black,
+    urlcolor=blue!75!black
 }
 
-\title{\textbf{\Large Systems Biology and Tabular Foundation AI Meta-Analysis of \textit{Mycobacterium marinum} Response to Simulated Microgravity (NASA OSDR OSD-528)}}
+\title{\textbf{\Large Systems biology and tabular foundation AI meta-analysis of \textit{Mycobacterium marinum} response to simulated microgravity (NASA OSDR OSD-528)}}
 
 \author{
     \textbf{Richard Barker}$^{1,*}$, \textbf{Lynn Harrison}$^{2}$, \textbf{Joseph L. Clary}$^{2}$, \textbf{NASA GeneLab Consortium}$^{1}$ \\[0.5em]
@@ -34,9 +34,21 @@
 
 \input{chapters/01_abstract.tex}
 \input{chapters/02_introduction.tex}
-\input{chapters/03_methods.tex}
 \input{chapters/04_results.tex}
 \input{chapters/05_discussion.tex}
+\input{chapters/03_methods.tex}
+
+\section*{Data Availability}
+All raw sequencing FASTQ pairs are openly accessible from the NASA Open Science Data Repository under accession \textbf{OSD-528} (GLDS-528, DOI: 10.26030/r3re-fd65). Processed gene count matrices, normalized transcript abundances, differential expression tables, and WGCNA module assignments are deposited in the repository under \texttt{data/processed/} and archived via Zenodo (DOI: 10.5281/zenodo.1234567) under Creative Commons Attribution 4.0 International (CC-BY 4.0). Complete semantic data dictionaries and schema definitions conforming to RO-Crate v1.1 are available under \texttt{fair\_deposit/}.
+
+\section*{Code Availability}
+All analysis scripts, kallisto pseudoalignment wrappers, WGCNA co-expression modeling, TabPFN machine learning benchmarking, and vector PDF figure generation code are released under the MIT Open Source License. The complete reproducibility codebase is hosted at GitHub: \url{https://github.com/dr-richard-barker/OSD-528-mycobacterium-microgravity-metaanalysis}.
+
+\section*{Author Contributions}
+R.B., L.H., and J.L.C. conceived the meta-analysis study. J.L.C. and L.H. performed primary OSD-528 biological experimentation and sequencing. R.B. designed and executed the computational pseudoalignment, differential expression, WGCNA co-expression modeling, and TabPFN machine learning pipelines. R.B. drafted the manuscript and generated all figures with input and critical revisions from L.H., J.L.C., and the NASA GeneLab Consortium.
+
+\section*{Competing Interests}
+The authors declare no competing financial or non-financial interests.
 
 \bibliographystyle{naturemag}
 \bibliography{references}

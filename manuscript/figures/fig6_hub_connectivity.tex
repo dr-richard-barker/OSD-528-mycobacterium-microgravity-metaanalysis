@@ -1,67 +1,70 @@
 \documentclass[tikz,border=12pt]{standalone}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta}
+
+\definecolor{fairblue}{RGB}{33, 102, 172}
+\definecolor{fairmidblue}{RGB}{103, 169, 207}
+\definecolor{fairlight}{RGB}{247, 247, 247}
+\definecolor{fairmidred}{RGB}{239, 138, 98}
+\definecolor{fairred}{RGB}{178, 24, 43}
+\definecolor{darkgray}{RGB}{60, 60, 60}
+\definecolor{lightgrid}{RGB}{230, 230, 230}
+
 \begin{document}
 \begin{tikzpicture}[font=\sffamily, >=Stealth]
-  \node[anchor=west, font=\large\bfseries, text=blue!75!black] at (0, 8.8) {Figure 6 | WGCNA Intramodular Hub Centrality and Functional Sub-Networks};
-  \node[anchor=west, font=\small, text=gray!80!black] at (0, 8.3) {Quantifying intramodular connectivity ($k_{\text{within}}$) and interactive topologies bridging network modules};
+  % Panel a: Scatter Plot k_within vs k_total
+  \node[font=\large\bfseries] at (0, 7.8) {a};
+  \node[anchor=west, font=\small\bfseries, text=darkgray] at (0.4, 7.8) {Intramodular Hub Centrality ($k_{\text{within}}$ vs. $k_{\text{total}}$)};
 
-  % Panel A: Scatter Plot k_within vs k_total
-  \draw[rounded corners=6pt, fill=gray!3, draw=gray!40] (0, 0) rectangle (6.0, 7.8);
-  \node[anchor=west, font=\bfseries\small] at (0.3, 7.4) {A | Hub Gene Centrality ($k_{\text{within}}$ vs. $k_{\text{total}}$)};
-  
-  \draw[->, thick] (0.8, 1.2) -- (5.6, 1.2) node[midway, below=4pt, font=\scriptsize\bfseries] {Whole-Network Degree ($k_{\text{total}}$)};
-  \draw[->, thick] (0.8, 1.2) -- (0.8, 6.8) node[midway, above=4pt, rotate=90, font=\scriptsize\bfseries] {Intramodular Connectivity ($k_{\text{within}}$)};
+  \draw[->, thick] (0.8, 1.0) -- (5.8, 1.0) node[midway, below=5pt, font=\scriptsize\bfseries] {Whole-Network Degree ($k_{\text{total}}$)};
+  \draw[->, thick] (0.8, 1.0) -- (0.8, 6.8) node[midway, above=5pt, rotate=90, font=\scriptsize\bfseries] {Intramodular Connectivity ($k_{\text{within}}$)};
 
-  % Empirical Hub Dots from Real OSD-528 WGCNA
-  \fill[cyan!80!black] (5.4, 6.4) circle (4pt) node[anchor=east, font=\tiny\bfseries] {RS12120 (35.3)\ };
-  \fill[cyan!80!black] (5.3, 6.0) circle (4pt) node[anchor=east, font=\tiny\bfseries] {RS21560 (35.0)\ };
-  \fill[cyan!80!black] (5.1, 5.5) circle (4pt) node[anchor=east, font=\tiny\bfseries] {RS04440 (34.7)\ };
-  \fill[blue!80!black] (4.2, 4.3) circle (4pt) node[anchor=east, font=\tiny\bfseries] {RS29685 (15.4)\ };
-  \fill[blue!80!black] (3.9, 3.8) circle (4pt) node[anchor=east, font=\tiny\bfseries] {RS02330 (14.8)\ };
-  \fill[green!70!black] (3.4, 3.2) circle (4pt) node[anchor=east, font=\tiny\bfseries] {RS11565 (11.9)\ };
-  \fill[brown!80!black] (3.0, 2.7) circle (4pt) node[anchor=east, font=\tiny\bfseries] {RS16730 (10.8)\ };
-  \fill[yellow!70!black] (2.5, 2.0) circle (3pt) node[anchor=west, font=\tiny] {\ RS13930 (6.3)};
+  \foreach \x/\lbl in {1.0/0, 2.2/10, 3.4/20, 4.6/30, 5.6/40} {
+    \draw (\x, 0.9) -- (\x, 1.0) node[below=2pt, font=\tiny] {\lbl};
+  }
+  \foreach \y/\lbl in {1.0/0, 2.4/10, 3.8/20, 5.2/30, 6.6/40} {
+    \draw (0.7, \y) -- (0.8, \y) node[left=2pt, font=\tiny] {\lbl};
+  }
 
-  % Module legend
-  \draw[fill=white, draw=gray!30, rounded corners=3pt] (1.0, 5.0) rectangle (2.9, 6.6);
-  \node[font=\tiny\bfseries, anchor=west] at (1.1, 6.3) {Module Color:};
-  \fill[cyan!80!black] (1.2, 6.0) circle (2.5pt); \node[font=\tiny, anchor=west] at (1.4, 6.0) {MEturquoise};
-  \fill[blue!80!black] (1.2, 5.7) circle (2.5pt); \node[font=\tiny, anchor=west] at (1.4, 5.7) {MEblue};
-  \fill[green!70!black] (1.2, 5.4) circle (2.5pt); \node[font=\tiny, anchor=west] at (1.4, 5.4) {MEgreen};
-  \fill[brown!80!black] (1.2, 5.1) circle (2.5pt); \node[font=\tiny, anchor=west] at (1.4, 5.1) {MEbrown};
+  % Hub Points
+  \fill[fairblue] (5.3, 6.1) circle (4pt) node[anchor=east, font=\tiny\bfseries] {RS12120 (35.3)\ };
+  \fill[fairblue] (5.2, 5.7) circle (4pt) node[anchor=east, font=\tiny\bfseries] {RS21560 (35.0)\ };
+  \fill[fairblue] (5.1, 5.3) circle (4pt) node[anchor=east, font=\tiny\bfseries] {RS04440 (34.7)\ };
 
-  % Panel B: Interaction Sub-Network
-  \draw[rounded corners=6pt, fill=gray!3, draw=gray!40] (6.5, 0) rectangle (12.5, 7.8);
-  \node[anchor=west, font=\bfseries\small] at (6.8, 7.4) {B | Inter-Module Regulatory Interactome};
+  \fill[fairred] (3.8, 3.2) circle (4pt) node[anchor=east, font=\tiny\bfseries] {RS29685 (15.4)\ };
+  \fill[fairred] (3.5, 2.9) circle (4pt) node[anchor=east, font=\tiny\bfseries] {RS02330 (14.8)\ };
 
-  % Nodes in Network
-  \node[circle, fill=cyan!25, draw=cyan!80, line width=1pt, font=\tiny\bfseries] (mps1) at (8.0, 5.8) {mps1};
-  \node[circle, fill=cyan!25, draw=cyan!80, line width=1pt, font=\tiny\bfseries] (mps2) at (7.4, 4.6) {mps2};
-  \node[circle, fill=cyan!25, draw=cyan!80, line width=1pt, font=\tiny\bfseries] (groEL) at (9.0, 5.0) {groEL1};
-  
-  \node[circle, fill=blue!20, draw=blue!80, line width=1pt, font=\tiny\bfseries] (kasA) at (10.2, 5.2) {kasA};
-  \node[circle, fill=blue!20, draw=blue!80, line width=1pt, font=\tiny\bfseries] (fbpA) at (11.4, 5.8) {fbpA};
-  \node[circle, fill=blue!20, draw=blue!80, line width=1pt, font=\tiny\bfseries] (mmpL) at (11.5, 4.4) {mmpL3};
+  \fill[fairmidblue] (3.0, 2.5) circle (3.5pt) node[anchor=east, font=\tiny\bfseries] {RS11565 (11.9)\ };
+  \fill[fairmidred] (2.6, 2.2) circle (3.5pt) node[anchor=east, font=\tiny\bfseries] {RS16730 (10.8)\ };
+  \fill[fairred!50!white] (2.0, 1.7) circle (3pt) node[anchor=west, font=\tiny] {\ RS13930 (6.3)};
 
-  \node[circle, fill=yellow!30, draw=yellow!80!black, line width=1pt, font=\tiny\bfseries] (dosR) at (8.2, 2.6) {dosR};
-  \node[circle, fill=yellow!30, draw=yellow!80!black, line width=1pt, font=\tiny\bfseries] (hspX) at (9.4, 2.0) {hspX};
-  \node[circle, fill=yellow!30, draw=yellow!80!black, line width=1pt, font=\tiny\bfseries] (katG) at (8.0, 1.2) {katG};
+  % Panel b: Regulatory Interactome
+  \node[font=\large\bfseries] at (6.6, 7.8) {b};
+  \node[anchor=west, font=\small\bfseries, text=darkgray] at (7.0, 7.8) {Inter-Module Regulatory Interactome};
 
-  \node[circle, fill=brown!25, draw=brown!80, line width=1pt, font=\tiny\bfseries] (esxA) at (11.2, 2.4) {esxA};
-  \node[circle, fill=brown!25, draw=brown!80, line width=1pt, font=\tiny\bfseries] (esxB) at (11.4, 1.2) {esxB};
-  \node[circle, fill=brown!25, draw=brown!80, line width=1pt, font=\tiny\bfseries] (eccD) at (10.2, 1.6) {eccD1};
+  % Network Nodes
+  \node[circle, fill=fairblue!20, draw=fairblue, line width=1pt, font=\tiny\bfseries] (mps1) at (8.0, 5.8) {mps1};
+  \node[circle, fill=fairblue!20, draw=fairblue, line width=1pt, font=\tiny\bfseries] (mps2) at (7.4, 4.6) {mps2};
+  \node[circle, fill=fairblue!20, draw=fairblue, line width=1pt, font=\tiny\bfseries] (rs04) at (9.0, 5.0) {RS04440};
+
+  \node[circle, fill=fairred!20, draw=fairred, line width=1pt, font=\tiny\bfseries] (kasA) at (10.2, 5.2) {kasA};
+  \node[circle, fill=fairred!20, draw=fairred, line width=1pt, font=\tiny\bfseries] (fbpA) at (11.4, 5.8) {fbpA};
+  \node[circle, fill=fairred!20, draw=fairred, line width=1pt, font=\tiny\bfseries] (rs02) at (11.5, 4.4) {RS02330};
+
+  \node[circle, fill=fairred!30, draw=fairred!80!black, line width=1pt, font=\tiny\bfseries] (hspX) at (8.2, 2.4) {hspX};
+  \node[circle, fill=fairred!30, draw=fairred!80!black, line width=1pt, font=\tiny\bfseries] (cydA) at (9.4, 1.8) {cydA};
+
+  \node[circle, fill=fairmidred!25, draw=fairmidred, line width=1pt, font=\tiny\bfseries] (esxA) at (11.2, 2.4) {esxA};
+  \node[circle, fill=fairmidred!25, draw=fairmidred, line width=1pt, font=\tiny\bfseries] (eccE) at (10.4, 1.5) {eccE};
 
   % Edges
-  \draw[thick, cyan!70!black] (mps1) -- (mps2);
-  \draw[thick, cyan!70!black] (mps1) -- (groEL);
-  \draw[thick, dashed, gray!80] (groEL) -- (kasA) node[midway, above=1pt, font=\tiny] {Chaperone};
-  \draw[thick, blue!80] (kasA) -- (fbpA);
-  \draw[thick, blue!80] (kasA) -- (mmpL);
-  \draw[thick, yellow!70!black] (dosR) -- (hspX);
-  \draw[thick, yellow!70!black] (dosR) -- (katG);
-  \draw[thick, brown!80] (esxA) -- (esxB);
-  \draw[thick, brown!80] (esxA) -- (eccD);
-  \draw[thick, dashed, purple!70] (hspX) -- (eccD) node[midway, below=1pt, font=\tiny] {Stress Pore};
+  \draw[thick, draw=fairblue] (mps1) -- (mps2);
+  \draw[thick, draw=fairblue] (mps1) -- (rs04);
+  \draw[thick, dashed, draw=gray!70] (rs04) -- (kasA) node[midway, above=1pt, font=\tiny] {Envelope};
+  \draw[thick, draw=fairred] (kasA) -- (fbpA);
+  \draw[thick, draw=fairred] (kasA) -- (rs02);
+  \draw[thick, draw=fairred!80!black] (hspX) -- (cydA);
+  \draw[thick, draw=fairmidred] (esxA) -- (eccE);
+  \draw[thick, dashed, draw=fairred] (hspX) -- (eccE) node[midway, below=1pt, font=\tiny] {Stress Pore};
 \end{tikzpicture}
 \end{document}

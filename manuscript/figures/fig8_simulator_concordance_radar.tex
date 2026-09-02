@@ -1,65 +1,76 @@
 \documentclass[tikz,border=12pt]{standalone}
 \usepackage{tikz}
+
+\definecolor{fairblue}{RGB}{33, 102, 172}
+\definecolor{fairmidblue}{RGB}{103, 169, 207}
+\definecolor{fairlight}{RGB}{247, 247, 247}
+\definecolor{fairmidred}{RGB}{239, 138, 98}
+\definecolor{fairred}{RGB}{178, 24, 43}
+\definecolor{darkgray}{RGB}{60, 60, 60}
+\definecolor{lightgrid}{RGB}{230, 230, 230}
+
 \begin{document}
 \begin{tikzpicture}[font=\sffamily]
-  \node[anchor=west, font=\large\bfseries, text=blue!75!black] at (0, 8.8) {Figure 8 | Multi-Axis Simulator Concordance and Kinematic Discrepancy Radar};
-  \node[anchor=west, font=\small, text=gray!80!black] at (0, 8.3) {Quantitative phenotypic trajectory comparison across 3D Clinostat, RPM 2.0, and 1g Ground Controls};
+  % Panel a: Radar Plot
+  \node[font=\large\bfseries] at (0, 7.8) {a};
+  \node[anchor=west, font=\small\bfseries, text=darkgray] at (0.4, 7.8) {Biological Response Trajectory Radar Across Simulation Modalities};
 
-  % Radar Plot Canvas (Center at x=4.0, y=4.0)
-  \draw[rounded corners=6pt, fill=gray!3, draw=gray!40] (0, 0) rectangle (8.0, 7.8);
-  \node[anchor=west, font=\bfseries\small] at (0.3, 7.4) {A | Multi-Axis Physiological Radar};
-
-  % Concentric Polygons (Web)
-  \foreach \r in {0.7, 1.4, 2.1, 2.8} {
-    \draw[gray!40, thin] (4.0, 4.0) ++(90:\r) \foreach \a in {150, 210, 270, 330, 30} { -- ++(\a:\r) } -- cycle;
+  % Center at (4.5, 4.0)
+  % Web rings
+  \foreach \r in {0.8, 1.6, 2.4, 3.2} {
+    \draw[gray!25, dashed] (4.5, 4.0) circle (\r cm);
+  }
+  
+  % 6 Axes at 60 degree intervals
+  \foreach \ang/\lbl in {90/Biofilm Pellicle, 30/Cell Wall (FAS-II), 330/Type VII Secretion, 270/DosR Hypoxia, 210/Oxidative Stress, 150/Rotational Shear} {
+    \draw[gray!40] (4.5, 4.0) -- ({4.5 + 3.4*cos(\ang)}, {4.0 + 3.4*sin(\ang)});
+    \node[font=\tiny\bfseries] at ({4.5 + 3.7*cos(\ang)}, {4.0 + 3.7*sin(\ang)}) {\lbl};
   }
 
-  % Axis spokes (6 axes at 30, 90, 150, 210, 270, 330 degrees)
-  \draw[gray!60, thin] (4.0, 4.0) -- ++(90:3.2) node[above, font=\tiny\bfseries] {GPL Biofilm};
-  \draw[gray!60, thin] (4.0, 4.0) -- ++(30:3.2) node[above right, font=\tiny\bfseries] {FAS-II Envelope};
-  \draw[gray!60, thin] (4.0, 4.0) -- ++(330:3.2) node[below right, font=\tiny\bfseries] {ESX Virulence};
-  \draw[gray!60, thin] (4.0, 4.0) -- ++(270:3.2) node[below, font=\tiny\bfseries] {DosR Hypoxia};
-  \draw[gray!60, thin] (4.0, 4.0) -- ++(210:3.2) node[below left, font=\tiny\bfseries] {ROS Defense};
-  \draw[gray!60, thin] (4.0, 4.0) -- ++(150:3.2) node[above left, font=\tiny\bfseries] {Rotational Shear};
+  % Static 1g Earth Polygon (Deep Blue - near center)
+  \draw[line width=1.5pt, draw=fairblue, fill=fairblue!15]
+    ({4.5 + 0.8*cos(90)}, {4.0 + 0.8*sin(90)}) --
+    ({4.5 + 0.9*cos(30)}, {4.0 + 0.9*sin(30)}) --
+    ({4.5 + 0.8*cos(330)}, {4.0 + 0.8*sin(330)}) --
+    ({4.5 + 0.7*cos(270)}, {4.0 + 0.7*sin(270)}) --
+    ({4.5 + 0.8*cos(210)}, {4.0 + 0.8*sin(210)}) --
+    ({4.5 + 0.8*cos(150)}, {4.0 + 0.8*sin(150)}) -- cycle;
 
-  % Static 1g Ground Control (Green polygon, basal near center r=0.7)
-  \draw[thick, green!70!black, fill=green!30, fill opacity=0.3] 
-    (4.0, 4.0) ++(90:0.6) -- ++(30:0.7) -- ++(330:0.6) -- ++(270:0.7) -- ++(210:0.6) -- ++(150:0.5) -- cycle;
+  % 3D Clinostat Polygon (Mid-Red / Slate)
+  \draw[line width=1.5pt, draw=fairmidblue, fill=fairmidblue!20]
+    ({4.5 + 3.0*cos(90)}, {4.0 + 3.0*sin(90)}) --
+    ({4.5 + 3.0*cos(30)}, {4.0 + 3.0*sin(30)}) --
+    ({4.5 + 2.8*cos(330)}, {4.0 + 2.8*sin(330)}) --
+    ({4.5 + 2.9*cos(270)}, {4.0 + 2.9*sin(270)}) --
+    ({4.5 + 2.9*cos(210)}, {4.0 + 2.9*sin(210)}) --
+    ({4.5 + 2.9*cos(150)}, {4.0 + 2.9*sin(150)}) -- cycle;
 
-  % 3D Clinostat (Blue polygon)
-  % Biofilm: 2.6, FAS-II: 2.4, ESX: 2.5, DosR: 2.7, ROS: 2.4, Shear: 2.6
-  \draw[thick, blue!80!black, fill=blue!30, fill opacity=0.35]
-    (4.0, 4.0) ++(90:2.6) -- ++(30:2.4) -- ++(330:2.5) -- ++(270:2.7) -- ++(210:2.4) -- ++(150:2.6) -- cycle;
+  % RPM 2.0 Polygon (Deep Red)
+  \draw[line width=1.5pt, draw=fairred, fill=fairred!20]
+    ({4.5 + 3.1*cos(90)}, {4.0 + 3.1*sin(90)}) --
+    ({4.5 + 3.1*cos(30)}, {4.0 + 3.1*sin(30)}) --
+    ({4.5 + 2.9*cos(330)}, {4.0 + 2.9*sin(330)}) --
+    ({4.5 + 3.0*cos(270)}, {4.0 + 3.0*sin(270)}) --
+    ({4.5 + 3.1*cos(210)}, {4.0 + 3.1*sin(210)}) --
+    ({4.5 + 1.8*cos(150)}, {4.0 + 1.8*sin(150)}) -- cycle;
 
-  % RPM 2.0 (Purple polygon)
-  % Biofilm: 2.4, FAS-II: 2.5, ESX: 2.6, DosR: 2.5, ROS: 2.4, Shear: 0.8 (divergent!)
-  \draw[thick, purple!80!black, fill=purple!30, fill opacity=0.35]
-    (4.0, 4.0) ++(90:2.4) -- ++(30:2.5) -- ++(330:2.6) -- ++(270:2.5) -- ++(210:2.4) -- ++(150:0.9) -- cycle;
+  % Panel b: Concordance Summary
+  \node[font=\large\bfseries] at (9.0, 7.8) {b};
+  \node[anchor=west, font=\small\bfseries, text=darkgray] at (9.4, 7.8) {Kinematic Concordance};
 
-  % Panel B: Legend & Key Insights
-  \draw[rounded corners=6pt, fill=gray!3, draw=gray!40] (8.5, 0) rectangle (12.5, 7.8);
-  \node[anchor=west, font=\bfseries\small] at (8.8, 7.4) {B | Simulator Concordance};
+  \draw[line width=1.2pt, draw=fairmidblue] (9.2, 6.8) -- (9.7, 6.8);
+  \node[anchor=west, font=\scriptsize\bfseries, text=fairblue] at (9.8, 6.8) {3D Clinostat ($<0.01g$)};
+  \node[anchor=west, font=\tiny, text=gray!80!black] at (9.8, 6.4) {Continuous rotational shear vector};
 
-  \draw[fill=blue!15, draw=blue!70, rounded corners=3pt] (8.8, 5.8) rectangle (12.2, 6.9);
-  \node[anchor=west, font=\scriptsize\bfseries, text=blue!90!black] at (8.9, 6.6) {3D Clinostat ($n=3$)};
-  \node[anchor=west, font=\tiny] at (8.9, 6.2) {Continuous 2-axis rotation.};
-  \node[anchor=west, font=\tiny\bfseries, text=blue!80!black] at (8.9, 5.9) {Elevated Shear (dnaK/clpP1).};
+  \draw[line width=1.2pt, draw=fairred] (9.2, 5.6) -- (9.7, 5.6);
+  \node[anchor=west, font=\scriptsize\bfseries, text=fairred] at (9.8, 5.6) {RPM 2.0 ($<0.01g$)};
+  \node[anchor=west, font=\tiny, text=gray!80!black] at (9.8, 5.2) {Multi-axis random vectoring};
 
-  \draw[fill=purple!15, draw=purple!70, rounded corners=3pt] (8.8, 4.4) rectangle (12.2, 5.5);
-  \node[anchor=west, font=\scriptsize\bfseries, text=purple!90!black] at (8.9, 5.2) {RPM 2.0 ($n=3$)};
-  \node[anchor=west, font=\tiny] at (8.9, 4.8) {Multi-axis random vectoring.};
-  \node[anchor=west, font=\tiny\bfseries, text=purple!80!black] at (8.9, 4.5) {Alternative Oxidase (cydA/icl1).};
+  \draw[line width=1.2pt, draw=fairblue] (9.2, 4.4) -- (9.7, 4.4);
+  \node[anchor=west, font=\scriptsize\bfseries, text=fairblue] at (9.8, 4.4) {Static 1g Ground Control};
+  \node[anchor=west, font=\tiny, text=gray!80!black] at (9.8, 4.0) {Standard gravity baseline};
 
-  \draw[fill=green!15, draw=green!70, rounded corners=3pt] (8.8, 3.0) rectangle (12.2, 4.1);
-  \node[anchor=west, font=\scriptsize\bfseries, text=green!80!black] at (8.9, 3.8) {Static 1g Control ($n=3$)};
-  \node[anchor=west, font=\tiny] at (8.9, 3.4) {Incubator shelf control.};
-  \node[anchor=west, font=\tiny\bfseries, text=green!80!black] at (8.9, 3.1) {Basal ground expression.};
-
-  \draw[fill=white, draw=gray!30, rounded corners=3pt] (8.8, 0.5) rectangle (12.2, 2.6);
-  \node[anchor=west, font=\tiny\bfseries, text=blue!80!black] at (8.9, 2.3) {Key Scientific Insight:};
-  \node[anchor=west, font=\tiny, text=gray!90!black] at (8.9, 1.8) {$\bullet$ Both simulators trace};
-  \node[anchor=west, font=\tiny, text=gray!90!black] at (9.1, 1.5) {identical biological hulls};
-  \node[anchor=west, font=\tiny, text=gray!90!black] at (9.1, 1.2) {for biofilm, lipids \& virulence.};
-  \node[anchor=west, font=\tiny, text=gray!90!black] at (8.9, 0.8) {$\bullet$ Diverge only on shear axis.};
+  \node[anchor=west, font=\tiny\bfseries, text=fairred] at (9.2, 2.8) {Core Concordance: $>75\%$ shared DEGs};
+  \node[anchor=west, font=\tiny\bfseries, text=fairblue] at (9.2, 2.4) {Divergence: Rotational shear only};
 \end{tikzpicture}
 \end{document}
