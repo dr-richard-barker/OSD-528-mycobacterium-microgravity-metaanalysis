@@ -1,0 +1,10 @@
+sample_id	study_accession	organism	strain	condition	simulation_modality	gravity_vector	duration_days	temperature_c	growth_surface	media	assay	replicate
+RFP3D11	OSD-528	Mycobacterium marinum	1218R (RFP-labeled, Giles integration)	Simulated Microgravity	3D_Clinostat	Clinorotation (<0.01g time-averaged)	4	31	PDMS membrane in flaskette	Biofilm-promoting medium	RNA-Seq	1
+RFP3D39	OSD-528	Mycobacterium marinum	1218R (RFP-labeled, Giles integration)	Simulated Microgravity	3D_Clinostat	Clinorotation (<0.01g time-averaged)	4	31	PDMS membrane in flaskette	Biofilm-promoting medium	RNA-Seq	2
+RFP3D47	OSD-528	Mycobacterium marinum	1218R (RFP-labeled, Giles integration)	Simulated Microgravity	3D_Clinostat	Clinorotation (<0.01g time-averaged)	4	31	PDMS membrane in flaskette	Biofilm-promoting medium	RNA-Seq	3
+RFPNG14	OSD-528	Mycobacterium marinum	1218R (RFP-labeled, Giles integration)	Normal Gravity	Static_1g_Control	1.0g static Earth gravity	4	31	PDMS membrane in flaskette	Biofilm-promoting medium	RNA-Seq	1
+RFPNG35	OSD-528	Mycobacterium marinum	1218R (RFP-labeled, Giles integration)	Normal Gravity	Static_1g_Control	1.0g static Earth gravity	4	31	PDMS membrane in flaskette	Biofilm-promoting medium	RNA-Seq	2
+RFPNG45	OSD-528	Mycobacterium marinum	1218R (RFP-labeled, Giles integration)	Normal Gravity	Static_1g_Control	1.0g static Earth gravity	4	31	PDMS membrane in flaskette	Biofilm-promoting medium	RNA-Seq	3
+RFPRPM4	OSD-528	Mycobacterium marinum	1218R (RFP-labeled, Giles integration)	Simulated Microgravity	RPM_2.0	Random Positioning (<0.01g time-averaged)	4	31	PDMS membrane in flaskette	Biofilm-promoting medium	RNA-Seq	1
+RFPRPM41	OSD-528	Mycobacterium marinum	1218R (RFP-labeled, Giles integration)	Simulated Microgravity	RPM_2.0	Random Positioning (<0.01g time-averaged)	4	31	PDMS membrane in flaskette	Biofilm-promoting medium	RNA-Seq	2
+RFPRPM6	OSD-528	Mycobacterium marinum	1218R (RFP-labeled, Giles integration)	Simulated Microgravity	RPM_2.0	Random Positioning (<0.01g time-averaged)	4	31	PDMS membrane in flaskette	Biofilm-promoting medium	RNA-Seq	3

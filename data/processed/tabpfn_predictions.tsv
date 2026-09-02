@@ -1,0 +1,10 @@
+sample_id	true_modality	predicted_modality	prob_static_1g	prob_3d_clinostat	prob_rpm2	correct
+RFP3D11	3D_Clinostat	3D_Clinostat	0.0312	0.5838	0.3850	YES
+RFP3D39	3D_Clinostat	3D_Clinostat	0.0306	0.5874	0.3820	YES
+RFP3D47	3D_Clinostat	3D_Clinostat	0.0315	0.5734	0.3951	YES
+RFPNG14	Static_1g	Static_1g	0.9189	0.0393	0.0418	YES
+RFPNG35	Static_1g	Static_1g	0.9264	0.0357	0.0379	YES
+RFPNG45	Static_1g	Static_1g	0.9260	0.0360	0.0380	YES
+RFPRPM4	RPM_2.0	RPM_2.0	0.0353	0.3949	0.5698	YES
+RFPRPM41	RPM_2.0	RPM_2.0	0.0326	0.3887	0.5787	YES
+RFPRPM6	RPM_2.0	RPM_2.0	0.0328	0.3815	0.5858	YES

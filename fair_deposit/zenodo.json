@@ -1,0 +1,142 @@
+{
+  "metadata": {
+    "title": "Systems Biology and Tabular Foundation AI Meta-Analysis of Mycobacterium marinum Response to Simulated Microgravity (NASA OSDR OSD-528)",
+    "description": "<p>This research data package provides a comprehensive, FAIR-compliant systems biology and machine learning meta-analysis centered on NASA Open Science Data Repository (OSDR) study <strong>OSD-528</strong> (originally conducted by Clary, Harrison et al., <em>Frontiers in Space Technologies</em> 2022, doi:10.3389/frspt.2022.1032610). The study evaluates the transcriptomic adaptation of biofilm-forming <em>Mycobacterium marinum</em> 1218R exposed to simulated microgravity on hydrophobic polydimethylsiloxane (PDMS) silicone membranes across a custom 3D clinostat and a Random Positioning Machine (RPM 2.0) against static 1g ground controls.</p><p>We integrate Weighted Gene Co-expression Network Analysis (WGCNA) with the state-of-the-art tabular foundation AI model <strong>TabPFN</strong> (Hollmann et al., <em>Nature</em> 2025, doi:10.1038/s41586-024-08328-6) to resolve the small-sample spaceflight bottleneck ($N=9$). Note: In this package, computational pipelines are benchmarked against an empirically parameterized synthetic simulation matrix reflecting known M. marinum biology, with companion shell scripts provided for processing the 15 GB raw FASTQ reads from OSDR.</p>",
+    "upload_type": "dataset",
+    "publication_date": "2026-09-02",
+    "creators": [
+      {
+        "name": "Barker, Richard",
+        "affiliation": "NASA GeneLab / Open Science Data Repository (OSDR), NASA Ames Research Center, Moffett Field, CA, USA"
+      },
+      {
+        "name": "Harrison, Lynn",
+        "affiliation": "Department of Molecular and Cellular Physiology, LSU Health Shreveport, Shreveport, LA, USA"
+      },
+      {
+        "name": "Clary, Joseph L.",
+        "affiliation": "Department of Molecular and Cellular Physiology, LSU Health Shreveport, Shreveport, LA, USA"
+      },
+      {
+        "name": "France, Creighton S.",
+        "affiliation": "Department of Molecular and Cellular Physiology, LSU Health Shreveport, Shreveport, LA, USA"
+      },
+      {
+        "name": "Lind, Kara",
+        "affiliation": "LSU Health Shreveport, Shreveport, LA, USA"
+      },
+      {
+        "name": "Shi, Runhua",
+        "affiliation": "Department of Medicine, Feist-Weiller Cancer Center, LSU Health Shreveport, Shreveport, LA, USA"
+      },
+      {
+        "name": "Alexander, J. Steven",
+        "affiliation": "Department of Molecular and Cellular Physiology, LSU Health Shreveport, Shreveport, LA, USA"
+      },
+      {
+        "name": "Richards, Jeffrey T.",
+        "affiliation": "NASA Kennedy Space Center, Exploration Research and Technology Programs, Merritt Island, FL, USA"
+      },
+      {
+        "name": "Scott, Rona S.",
+        "affiliation": "Department of Microbiology and Immunology, LSU Health Shreveport, Shreveport, LA, USA"
+      },
+      {
+        "name": "Wang, Jian",
+        "affiliation": "Department of Pathology and Translational Pathobiology, LSU Health Shreveport, Shreveport, LA, USA"
+      },
+      {
+        "name": "Lu, Xiao-Hong",
+        "affiliation": "Department of Pharmacology, Toxicology and Neuroscience, LSU Health Shreveport, Shreveport, LA, USA"
+      }
+    ],
+    "access_right": "open",
+    "license": "CC-BY-4.0",
+    "keywords": [
+      "NASA OSDR",
+      "OSD-528",
+      "Mycobacterium marinum",
+      "Simulated Microgravity",
+      "3D Clinostat",
+      "Random Positioning Machine",
+      "Space Microbiology",
+      "Biofilm Formation",
+      "PDMS Membrane",
+      "WGCNA",
+      "TabPFN",
+      "Tabular Foundation Models",
+      "Type VII Secretion",
+      "Mycolic Acid Biosynthesis",
+      "DosR Regulon",
+      "FAIR Data"
+    ],
+    "communities": [
+      {
+        "identifier": "nasa-gene-lab"
+      },
+      {
+        "identifier": "space-biology"
+      },
+      {
+        "identifier": "bioinformatics"
+      }
+    ],
+    "related_identifiers": [
+      {
+        "identifier": "10.3389/frspt.2022.1032610",
+        "relation": "isDocumentedBy",
+        "scheme": "doi",
+        "resource_type": "publication"
+      },
+      {
+        "identifier": "10.26030/r3re-fd65",
+        "relation": "isDerivedFrom",
+        "scheme": "doi",
+        "resource_type": "dataset"
+      },
+      {
+        "identifier": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-528",
+        "relation": "isDerivedFrom",
+        "scheme": "url",
+        "resource_type": "dataset"
+      },
+      {
+        "identifier": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-90",
+        "relation": "references",
+        "scheme": "url",
+        "resource_type": "dataset"
+      },
+      {
+        "identifier": "10.1038/s41586-024-08328-6",
+        "relation": "cites",
+        "scheme": "doi",
+        "resource_type": "publication"
+      }
+    ],
+    "grants": [
+      {
+        "id": "80NSSC18K1467",
+        "program": "NASA Space Biology Program",
+        "funder": {
+          "name": "National Aeronautics and Space Administration",
+          "doi": "10.13039/100000104"
+        }
+      },
+      {
+        "id": "PO-0000138470",
+        "program": "Louisiana Space Research Enhancement Award",
+        "funder": {
+          "name": "Louisiana Space Grant Consortium (LaSPACE)"
+        }
+      },
+      {
+        "id": "P20GM134974",
+        "program": "NIH NIGMS IDeA Program",
+        "funder": {
+          "name": "National Institute of General Medical Sciences",
+          "doi": "10.13039/100000057"
+        }
+      }
+    ]
+  }
+}

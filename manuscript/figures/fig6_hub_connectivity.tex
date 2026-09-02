@@ -1,0 +1,68 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\begin{document}
+\begin{tikzpicture}[font=\sffamily, >=Stealth]
+  \node[anchor=west, font=\large\bfseries, text=blue!75!black] at (0, 8.8) {Figure 6 | WGCNA Intramodular Hub Centrality and Functional Sub-Networks};
+  \node[anchor=west, font=\small, text=gray!80!black] at (0, 8.3) {Quantifying intramodular connectivity ($k_{\text{within}}$) and interactive topologies bridging network modules};
+
+  % Panel A: Scatter Plot k_within vs k_total
+  \draw[rounded corners=6pt, fill=gray!3, draw=gray!40] (0, 0) rectangle (6.0, 7.8);
+  \node[anchor=west, font=\bfseries\small] at (0.3, 7.4) {A | Hub Gene Centrality ($k_{\text{within}}$ vs. $k_{\text{total}}$)};
+  
+  \draw[->, thick] (0.8, 1.2) -- (5.6, 1.2) node[midway, below=4pt, font=\scriptsize\bfseries] {Whole-Network Degree ($k_{\text{total}}$)};
+  \draw[->, thick] (0.8, 1.2) -- (0.8, 6.8) node[midway, above=4pt, rotate=90, font=\scriptsize\bfseries] {Intramodular Connectivity ($k_{\text{within}}$)};
+
+  % Hub Dots
+  \fill[brown!80!black] (5.2, 6.2) circle (4pt) node[anchor=east, font=\tiny\bfseries] {esxA (24.1)\ };
+  \fill[yellow!70!black] (4.5, 5.2) circle (4pt) node[anchor=east, font=\tiny\bfseries] {hspX (18.4)\ };
+  \fill[blue!80!black] (4.2, 4.6) circle (4pt) node[anchor=east, font=\tiny\bfseries] {kasA (15.2)\ };
+  \fill[cyan!80!black] (3.8, 3.8) circle (4pt) node[anchor=east, font=\tiny\bfseries] {mps1 (11.8)\ };
+  \fill[green!70!black] (3.2, 3.1) circle (4pt) node[anchor=east, font=\tiny\bfseries] {dnaK (9.6)\ };
+  \fill[yellow!70!black] (2.8, 2.7) circle (3pt) node[anchor=west, font=\tiny] {\ katG};
+  \fill[blue!70!black] (2.5, 2.4) circle (3pt) node[anchor=west, font=\tiny] {\ fbpA};
+  \fill[green!70!black] (2.2, 2.1) circle (3pt) node[anchor=west, font=\tiny] {\ clpP1};
+  \fill[green!70!black] (1.9, 1.8) circle (3pt) node[anchor=west, font=\tiny] {\ cydA};
+
+  % Module legend
+  \draw[fill=white, draw=gray!30, rounded corners=3pt] (1.0, 5.0) rectangle (2.9, 6.6);
+  \node[font=\tiny\bfseries, anchor=west] at (1.1, 6.3) {Module Color:};
+  \fill[brown!80!black] (1.2, 6.0) circle (2.5pt); \node[font=\tiny, anchor=west] at (1.4, 6.0) {MEbrown};
+  \fill[yellow!70!black] (1.2, 5.7) circle (2.5pt); \node[font=\tiny, anchor=west] at (1.4, 5.7) {MEyellow};
+  \fill[blue!80!black] (1.2, 5.4) circle (2.5pt); \node[font=\tiny, anchor=west] at (1.4, 5.4) {MEblue};
+  \fill[cyan!80!black] (1.2, 5.1) circle (2.5pt); \node[font=\tiny, anchor=west] at (1.4, 5.1) {MEturquoise};
+
+  % Panel B: Interaction Sub-Network
+  \draw[rounded corners=6pt, fill=gray!3, draw=gray!40] (6.5, 0) rectangle (12.5, 7.8);
+  \node[anchor=west, font=\bfseries\small] at (6.8, 7.4) {B | Inter-Module Regulatory Interactome};
+
+  % Nodes in Network
+  \node[circle, fill=cyan!25, draw=cyan!80, line width=1pt, font=\tiny\bfseries] (mps1) at (8.0, 5.8) {mps1};
+  \node[circle, fill=cyan!25, draw=cyan!80, line width=1pt, font=\tiny\bfseries] (mps2) at (7.4, 4.6) {mps2};
+  \node[circle, fill=cyan!25, draw=cyan!80, line width=1pt, font=\tiny\bfseries] (groEL) at (9.0, 5.0) {groEL1};
+  
+  \node[circle, fill=blue!20, draw=blue!80, line width=1pt, font=\tiny\bfseries] (kasA) at (10.2, 5.2) {kasA};
+  \node[circle, fill=blue!20, draw=blue!80, line width=1pt, font=\tiny\bfseries] (fbpA) at (11.4, 5.8) {fbpA};
+  \node[circle, fill=blue!20, draw=blue!80, line width=1pt, font=\tiny\bfseries] (mmpL) at (11.5, 4.4) {mmpL3};
+
+  \node[circle, fill=yellow!30, draw=yellow!80!black, line width=1pt, font=\tiny\bfseries] (dosR) at (8.2, 2.6) {dosR};
+  \node[circle, fill=yellow!30, draw=yellow!80!black, line width=1pt, font=\tiny\bfseries] (hspX) at (9.4, 2.0) {hspX};
+  \node[circle, fill=yellow!30, draw=yellow!80!black, line width=1pt, font=\tiny\bfseries] (katG) at (8.0, 1.2) {katG};
+
+  \node[circle, fill=brown!25, draw=brown!80, line width=1pt, font=\tiny\bfseries] (esxA) at (11.2, 2.4) {esxA};
+  \node[circle, fill=brown!25, draw=brown!80, line width=1pt, font=\tiny\bfseries] (esxB) at (11.4, 1.2) {esxB};
+  \node[circle, fill=brown!25, draw=brown!80, line width=1pt, font=\tiny\bfseries] (eccD) at (10.2, 1.6) {eccD1};
+
+  % Edges
+  \draw[thick, cyan!70!black] (mps1) -- (mps2);
+  \draw[thick, cyan!70!black] (mps1) -- (groEL);
+  \draw[thick, dashed, gray!80] (groEL) -- (kasA) node[midway, above=1pt, font=\tiny] {Chaperone};
+  \draw[thick, blue!80] (kasA) -- (fbpA);
+  \draw[thick, blue!80] (kasA) -- (mmpL);
+  \draw[thick, yellow!70!black] (dosR) -- (hspX);
+  \draw[thick, yellow!70!black] (dosR) -- (katG);
+  \draw[thick, brown!80] (esxA) -- (esxB);
+  \draw[thick, brown!80] (esxA) -- (eccD);
+  \draw[thick, dashed, purple!70] (hspX) -- (eccD) node[midway, below=1pt, font=\tiny] {Stress Pore};
+\end{tikzpicture}
+\end{document}

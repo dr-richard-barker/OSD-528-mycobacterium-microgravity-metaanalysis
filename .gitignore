@@ -1,0 +1,29 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+build/
+dist/
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Large raw fastq sequences & genome reference binaries
+data/raw/fastqs/
+data/reference/
+data/processed/aligned/
+.chrome_tmp/

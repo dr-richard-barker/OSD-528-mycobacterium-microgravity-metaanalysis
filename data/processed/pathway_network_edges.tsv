@@ -1,0 +1,14 @@
+source	target	edge_type	weight	description
+MEturquoise	Single-species biofilm formation on surface	Enriched_Pathway	13.47	GO enrichment link
+MEblue	Mycolic acid biosynthetic and elongation process	Enriched_Pathway	13.13	GO enrichment link
+MEyellow	Response to oxidative stress and reactive oxygen species	Enriched_Pathway	7.94	GO enrichment link
+MEyellow	Cellular response to starvation and hypoxia (DosR regulon)	Enriched_Pathway	7.65	GO enrichment link
+MEbrown	Type VII secretion system complex	Enriched_Pathway	5.58	GO enrichment link
+MEgreen	Response to mechanical stress and rotational shear	Enriched_Pathway	4.88	GO enrichment link
+MEblue	ATP synthesis coupled proton transport	Enriched_Pathway	3.94	GO enrichment link
+MEgreen	Glyoxylate cycle and alternative respiratory chain	Enriched_Pathway	2.79	GO enrichment link
+Biofilm_GPL	Cell_Wall_Lipids	Biosynthetic_Coupling	0.85	GPL and Mycolic acid outer membrane coordination
+Cell_Wall_Lipids	ESX_Secretion	Substrate_Transport	0.90	ESX-1 translocates surface-bound virulence factors across mycolate barrier
+DosR_Stress	Oxidative_Stress	Regulon_Crosstalk	0.88	DosS redox sensor and SigH coordinate hypoxia and antioxidant defense
+3D_Clinostat	Heat_Shock_Chaperones	Rotational_Shear	0.75	Induction of DnaK/ClpP under continuous clinorotation
+RPM_2.0	Alternative_Oxidase	Kinetic_Variation	0.78	Induction of CydAB and Icl1 under random multi-axis turnaround points

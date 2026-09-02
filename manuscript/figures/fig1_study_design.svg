@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <rect width="1200" height="800" fill="#FFFFFF"/>
+  
+  <!-- Header Title -->
+  <text x="50" y="45" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="bold" fill="#0A3663">Figure 1 | Systems Architecture and Experimental Framework of NASA OSDR OSD-528</text>
+  <text x="50" y="70" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#555555">Comparative simulated microgravity modalities (3D Clinostat vs. RPM 2.0 vs. 1g Static) in biofilm-forming Mycobacterium marinum</text>
+  
+  <!-- Panel A: Biological System & Culture -->
+  <rect x="50" y="95" width="340" height="320" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="50" y="95" width="340" height="35" rx="8" fill="#E2E8F0"/>
+  <text x="65" y="118" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E293B">A | Biological Model &amp; Biofilm Surface</text>
+  
+  <circle cx="110" cy="180" r="35" fill="#EF4444" opacity="0.8"/>
+  <text x="110" y="185" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">RFP</text>
+  <text x="165" y="170" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="bold" fill="#0F172A">Mycobacterium marinum 1218R</text>
+  <text x="165" y="190" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#475569">• BSL-2 model for M. tuberculosis</text>
+  <text x="165" y="208" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#475569">• Giles site RFP chromosomal integration</text>
+  
+  <!-- Culture Vessel -->
+  <rect x="75" y="240" width="290" height="70" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.2"/>
+  <rect x="85" y="275" width="270" height="25" fill="#CBD5E1" opacity="0.6"/>
+  <text x="95" y="260" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0369A1">Flaskette Culture Vessel (31°C, 4 Days)</text>
+  <text x="95" y="292" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#0F172A">PDMS Silicone Membrane (Biofilm Substrate)</text>
+  <text x="75" y="340" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#64748B">• High hydrophobicity mimicking ISS water distribution materials</text>
+  <text x="75" y="360" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#64748B">• Suspended bacteria harvested for paired-end RNA-seq</text>
+  <text x="75" y="380" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#64748B">• n = 3 biological replicates per condition (9 total)</text>
+
+  <!-- Panel B: Simulator Modalities -->
+  <rect x="420" y="95" width="360" height="320" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="420" y="95" width="360" height="35" rx="8" fill="#E2E8F0"/>
+  <text x="435" y="118" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E293B">B | Microgravity Simulators</text>
+  
+  <!-- Modality 1: 3D Clinostat -->
+  <rect x="440" y="145" width="320" height="70" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="455" y="168" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1D4ED8">1. Lab-Designed 3D Clinostat (n=3)</text>
+  <text x="455" y="188" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1E3A8A">Continuous rotation, 2 orthogonal axes</text>
+  <text x="455" y="204" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#3B82F6">Samples: RFP3D11, RFP3D39, RFP3D47</text>
+  
+  <!-- Modality 2: RPM 2.0 -->
+  <rect x="440" y="225" width="320" height="70" rx="6" fill="#FAF5FF" stroke="#A855F7" stroke-width="1.2"/>
+  <text x="455" y="248" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#7E22CE">2. Random Positioning Machine 2.0 (n=3)</text>
+  <text x="455" y="268" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#581C87">Random velocity &amp; direction, time-averaged &lt;0.01g</text>
+  <text x="455" y="284" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#9333EA">Samples: RFPRPM4, RFPRPM41, RFPRPM6</text>
+
+  <!-- Modality 3: Static 1g Control -->
+  <rect x="440" y="305" width="320" height="70" rx="6" fill="#F0FDF4" stroke="#22C55E" stroke-width="1.2"/>
+  <text x="455" y="328" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#15803D">3. Static 1g Earth Control (n=3)</text>
+  <text x="455" y="348" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#14532D">Incubator shelf adjacent to simulators (31°C)</text>
+  <text x="455" y="364" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#16A34A">Samples: RFPNG14, RFPNG35, RFPNG45</text>
+
+  <!-- Panel C: Pan-Microbial OSDR Landscape -->
+  <rect x="810" y="95" width="340" height="320" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="810" y="95" width="340" height="35" rx="8" fill="#E2E8F0"/>
+  <text x="825" y="118" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E293B">C | OSDR Microbial Meta-Cohort</text>
+  
+  <text x="825" y="155" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Sister Study in OSDR:</text>
+  <text x="825" y="175" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#2563EB">• OSD-90: M. marinum HARV/RCCS low-shear stress</text>
+  
+  <text x="825" y="205" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Cross-Taxon Microgravity Compendium (78 datasets):</text>
+  <text x="825" y="225" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475569">• P. aeruginosa: OSD-14 (flight), OSD-15, OSD-554 (ISS)</text>
+  <text x="825" y="245" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475569">• S. enterica: OSD-11 (STS-115), OSD-277</text>
+  <text x="825" y="265" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475569">• E. coli: OSD-43, OSD-95, OSD-728 (membrane lipid remodeling)</text>
+  <text x="825" y="285" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475569">• B. subtilis: OSD-185, OSD-215 (HARV), OSD-216</text>
+  <text x="825" y="305" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475569">• S. aureus: OSD-145, OSD-500, OSD-683</text>
+  <text x="825" y="325" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#475569">• Fungi: C. albicans OSD-20; A. fumigatus OSD-68</text>
+
+  <!-- Panel D: Computational Workflow: WGCNA + TabPFN + FAIR Deposit -->
+  <rect x="50" y="440" width="1100" height="320" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+  <rect x="50" y="440" width="1100" height="35" rx="8" fill="#E2E8F0"/>
+  <text x="65" y="463" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E293B">D | Integrated Bioinformatic Pipeline: WGCNA Topological Reduction + Nature 2025 Tabular AI (TabPFN)</text>
+
+  <!-- Workflow Step 1 -->
+  <rect x="75" y="495" width="220" height="235" rx="6" fill="#FFFFFF" stroke="#0284C7" stroke-width="1.2"/>
+  <text x="90" y="520" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#0369A1">1. Processing &amp; Normalization</text>
+  <text x="90" y="545" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• OSDR ISA-Tab Ingestion</text>
+  <text x="90" y="565" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• 5,424 M. marinum gene models</text>
+  <text x="90" y="585" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• VST &amp; Median-of-Ratios</text>
+  <text x="90" y="605" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• 3 Differential Contrasts</text>
+  <text x="90" y="625" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• FDR &lt; 0.05, |log2FC| ≥ 0.75</text>
+  <text x="90" y="660" font-family="Helvetica, Arial, sans-serif" font-size="10" font-weight="bold" fill="#0284C7">Output: Harmonized Matrix</text>
+
+  <!-- Workflow Step 2 -->
+  <rect x="345" y="495" width="220" height="235" rx="6" fill="#FFFFFF" stroke="#4F46E5" stroke-width="1.2"/>
+  <text x="360" y="520" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#4338CA">2. WGCNA Co-Expression</text>
+  <text x="360" y="545" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• Soft-thresholding (β = 6)</text>
+  <text x="360" y="565" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• Topological Overlap (TOM)</text>
+  <text x="360" y="585" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• 5 Biological Modules (ME)</text>
+  <text x="360" y="605" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• Module Eigengene extraction</text>
+  <text x="360" y="625" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• Intramodular Hubs (k_within)</text>
+  <text x="360" y="660" font-family="Helvetica, Arial, sans-serif" font-size="10" font-weight="bold" fill="#4F46E5">Output: MEs &amp; Hub Genes</text>
+
+  <!-- Workflow Step 3 -->
+  <rect x="615" y="495" width="220" height="235" rx="6" fill="#FFFFFF" stroke="#9333EA" stroke-width="1.2"/>
+  <text x="630" y="520" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#7E22CE">3. TabPFN Tabular AI</text>
+  <text x="630" y="545" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• Nature 2025 Foundation Model</text>
+  <text x="630" y="565" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• Small-sample Prior Networks</text>
+  <text x="630" y="585" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• Input: MEs + 11 Key Hubs</text>
+  <text x="630" y="605" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• 100% LOOCV Modality Accuracy</text>
+  <text x="630" y="625" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• Permutation Feature Importance</text>
+  <text x="630" y="660" font-family="Helvetica, Arial, sans-serif" font-size="10" font-weight="bold" fill="#9333EA">Output: Biomarker Rankings</text>
+
+  <!-- Workflow Step 4 -->
+  <rect x="885" y="495" width="240" height="235" rx="6" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.2"/>
+  <text x="900" y="520" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#15803D">4. FAIR &amp; Zenodo Release</text>
+  <text x="900" y="545" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• Zenodo.json Schema (CC-BY 4.0)</text>
+  <text x="900" y="565" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• RO-Crate v1.1 Research Object</text>
+  <text x="900" y="585" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• Semantic Data Dictionary</text>
+  <text x="900" y="605" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• npj Microgravity LaTeX Suite</text>
+  <text x="900" y="625" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• Word (.docx) &amp; Vector PDF</text>
+  <text x="900" y="660" font-family="Helvetica, Arial, sans-serif" font-size="10" font-weight="bold" fill="#16A34A">Output: Publication Manuscript</text>
+
+  <!-- Connectors -->
+  <path d="M 295 610 L 345 610" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 565 610 L 615 610" stroke="#94A3B8" stroke-width="2"/>
+  <path d="M 835 610 L 885 610" stroke="#94A3B8" stroke-width="2"/>
+</svg>

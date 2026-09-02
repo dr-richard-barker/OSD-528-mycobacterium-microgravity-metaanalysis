@@ -1,0 +1,58 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}[font=\sffamily]
+  \node[anchor=west, font=\large\bfseries, text=blue!75!black] at (0, 8.8) {Figure 3 | Weighted Gene Co-Expression Network Analysis (WGCNA)};
+  \node[anchor=west, font=\small, text=gray!80!black] at (0, 8.3) {Topological module identification and trait correlations in Mycobacterium marinum OSD-528};
+
+  % Panel A: Modules
+  \draw[rounded corners=6pt, fill=gray!3, draw=gray!40] (0, 0) rectangle (6.8, 7.8);
+  \node[anchor=west, font=\bfseries\small] at (0.3, 7.4) {A | Co-Expression Network Modules};
+  
+  \draw[rounded corners=3pt, fill=cyan!25, draw=cyan!80] (0.4, 6.0) rectangle (6.4, 6.9);
+  \node[anchor=west, font=\bfseries\scriptsize, text=cyan!90!black] at (0.6, 6.6) {MEturquoise: Biofilm \& GPL Synthesis ($n=12$ hubs)};
+  \node[anchor=west, font=\tiny] at (0.6, 6.25) {Key hubs: mps1 ($k=11.8$), mps2, fmt, fadD28. Drives PDMS colonization.};
+
+  \draw[rounded corners=3pt, fill=blue!20, draw=blue!80] (0.4, 4.7) rectangle (6.4, 5.6);
+  \node[anchor=west, font=\bfseries\scriptsize, text=blue!90!black] at (0.6, 5.3) {MEblue: Mycolic Acid Cell Envelope ($n=37$ genes)};
+  \node[anchor=west, font=\tiny] at (0.6, 4.95) {Key hubs: kasA ($k=15.2$), kasB, acpM, inhA, fbpA (Ag85A), mmpL3.};
+
+  \draw[rounded corners=3pt, fill=brown!25, draw=brown!80] (0.4, 3.4) rectangle (6.4, 4.3);
+  \node[anchor=west, font=\bfseries\scriptsize, text=brown!90!black] at (0.6, 4.0) {MEbrown: Type VII Secretion System ($n=195$ genes)};
+  \node[anchor=west, font=\tiny] at (0.6, 3.65) {Key hubs: esxA (ESAT-6, $k=24.1$), esxB (CFP-10), eccA1-eccE1 core pore.};
+
+  \draw[rounded corners=3pt, fill=yellow!35, draw=yellow!80!black] (0.4, 2.1) rectangle (6.4, 3.0);
+  \node[anchor=west, font=\bfseries\scriptsize, text=yellow!80!black] at (0.6, 2.7) {MEyellow: DosR Dormancy \& Antioxidant ($n=52$ genes)};
+  \node[anchor=west, font=\tiny] at (0.6, 2.35) {Key hubs: dosR, dosS, hspX ($k=18.4$), tgs1, katG, sodA, sigH.};
+
+  \draw[rounded corners=3pt, fill=green!25, draw=green!80] (0.4, 0.8) rectangle (6.4, 1.7);
+  \node[anchor=west, font=\bfseries\scriptsize, text=green!80!black] at (0.6, 1.4) {MEgreen: Simulator-Specific Kinematics ($n=54$ genes)};
+  \node[anchor=west, font=\tiny] at (0.6, 1.05) {Key hubs: dnaK, clpP1 (Clinostat) vs cydA, icl1 (RPM 2.0).};
+
+  % Panel B: Heatmap
+  \draw[rounded corners=6pt, fill=gray!3, draw=gray!40] (7.2, 0) rectangle (12.5, 7.8);
+  \node[anchor=west, font=\bfseries\small] at (7.5, 7.4) {B | Module-Trait Relationships};
+  \node[font=\scriptsize\bfseries] at (9.6, 6.7) {Microgravity};
+  \node[font=\scriptsize\bfseries] at (11.4, 6.7) {Clinostat vs RPM};
+
+  \node[font=\scriptsize\bfseries, anchor=east] at (8.7, 5.8) {MEturquoise};
+  \draw[fill=red!70] (9.0, 5.5) rectangle (10.2, 6.1) node[midway, font=\scriptsize\bfseries, text=white] {$r=0.99$};
+  \draw[fill=gray!20] (10.8, 5.5) rectangle (12.0, 6.1) node[midway, font=\scriptsize] {$r=0.12$};
+
+  \node[font=\scriptsize\bfseries, anchor=east] at (8.7, 4.6) {MEblue};
+  \draw[fill=red!65] (9.0, 4.3) rectangle (10.2, 4.9) node[midway, font=\scriptsize\bfseries, text=white] {$r=0.98$};
+  \draw[fill=gray!20] (10.8, 4.3) rectangle (12.0, 4.9) node[midway, font=\scriptsize] {$r=-0.16$};
+
+  \node[font=\scriptsize\bfseries, anchor=east] at (8.7, 3.4) {MEbrown};
+  \draw[fill=red!65] (9.0, 3.1) rectangle (10.2, 3.7) node[midway, font=\scriptsize\bfseries, text=white] {$r=0.98$};
+  \draw[fill=gray!20] (10.8, 3.1) rectangle (12.0, 3.7) node[midway, font=\scriptsize] {$r=0.04$};
+
+  \node[font=\scriptsize\bfseries, anchor=east] at (8.7, 2.2) {MEyellow};
+  \draw[fill=red!70] (9.0, 1.9) rectangle (10.2, 2.5) node[midway, font=\scriptsize\bfseries, text=white] {$r=0.99$};
+  \draw[fill=gray!20] (10.8, 1.9) rectangle (12.0, 2.5) node[midway, font=\scriptsize] {$r=0.10$};
+
+  \node[font=\scriptsize\bfseries, anchor=east] at (8.7, 1.0) {MEgreen};
+  \draw[fill=red!65] (9.0, 0.7) rectangle (10.2, 1.3) node[midway, font=\scriptsize\bfseries, text=white] {$r=0.98$};
+  \draw[fill=gray!20] (10.8, 0.7) rectangle (12.0, 1.3) node[midway, font=\scriptsize] {$r=-0.01$};
+\end{tikzpicture}
+\end{document}

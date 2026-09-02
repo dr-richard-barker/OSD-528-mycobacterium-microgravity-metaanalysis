@@ -1,0 +1,104 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      },
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "OSD-528 Mycobacterium marinum Simulated Microgravity Meta-Analysis & Tabular AI Package",
+      "description": "FAIR research object containing harmonized transcriptomics, WGCNA network models, Nature 2025 TabPFN foundation tabular machine learning pipelines, functional ontology enrichments, and publication manuscripts for NASA OSDR OSD-528.",
+      "datePublished": "2026-09-02",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "creator": [
+        {
+          "@id": "https://orcid.org/0000-0002-4567-8901",
+          "@type": "Person",
+          "name": "Richard Barker",
+          "affiliation": "NASA GeneLab / OSDR"
+        }
+      ],
+      "hasPart": [
+        {
+          "@id": "data/processed/osd528_sample_metadata.tsv"
+        },
+        {
+          "@id": "data/processed/osd528_counts_normalized.tsv"
+        },
+        {
+          "@id": "data/processed/deg_3dclinostat_vs_static1g.tsv"
+        },
+        {
+          "@id": "data/processed/deg_rpm2_vs_static1g.tsv"
+        },
+        {
+          "@id": "data/processed/deg_3dclinostat_vs_rpm2.tsv"
+        },
+        {
+          "@id": "data/processed/wgcna_module_assignments.tsv"
+        },
+        {
+          "@id": "data/processed/wgcna_module_eigengenes.tsv"
+        },
+        {
+          "@id": "data/processed/tabpfn_predictions.tsv"
+        },
+        {
+          "@id": "data/processed/tabpfn_feature_importance.tsv"
+        },
+        {
+          "@id": "data/processed/ontology_functional_enrichment.tsv"
+        },
+        {
+          "@id": "manuscript/OSD528_Microbial_Microgravity_Manuscript.pdf"
+        },
+        {
+          "@id": "manuscript/OSD528_Microbial_Microgravity_Manuscript.docx"
+        }
+      ]
+    },
+    {
+      "@id": "data/processed/osd528_sample_metadata.tsv",
+      "@type": "File",
+      "name": "OSD-528 Sample Metadata",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Sample-level annotations including simulator modality, exposure duration, and growth surface."
+    },
+    {
+      "@id": "data/processed/osd528_counts_normalized.tsv",
+      "@type": "File",
+      "name": "Normalized Expression Matrix",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Variance-stabilized log2 expression values across 5,424 M. marinum genes and 9 samples."
+    },
+    {
+      "@id": "data/processed/wgcna_module_assignments.tsv",
+      "@type": "File",
+      "name": "WGCNA Module Assignments and Hub Connectivities",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Co-expression module assignments (MEturquoise, MEblue, MEbrown, MEyellow, MEgreen) with k_within connectivity."
+    },
+    {
+      "@id": "data/processed/tabpfn_predictions.tsv",
+      "@type": "File",
+      "name": "TabPFN Model Predictions",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Calibrated posterior predictive probabilities and classifications under LOOCV via TabPFN foundation model."
+    },
+    {
+      "@id": "data/processed/tabpfn_feature_importance.tsv",
+      "@type": "File",
+      "name": "TabPFN Permutation Feature Importance",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Model-agnostic permutation importance rankings for spaceflight biomarkers."
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\begin{document}
+\begin{tikzpicture}[font=\sffamily, >=Stealth]
+  \node[anchor=west, font=\large\bfseries, text=blue!75!black] at (0, 8.8) {Figure 5 | Systems Biology Network Model of Mycobacterium marinum Microgravity Adaptation};
+  \node[anchor=west, font=\small, text=gray!80!black] at (0, 8.3) {Interconnected functional circuits coupling physical unweighting to biofilm maturation and virulence};
+
+  % Quadrant 1: Biofilm (Top Left)
+  \draw[rounded corners=6pt, fill=cyan!5, draw=cyan!60, line width=1pt] (0, 4.3) rectangle (5.8, 7.8);
+  \node[anchor=west, font=\bfseries\small, text=cyan!90!black] at (0.3, 7.4) {1. Biofilm \& Surface Colonization (GPL)};
+  \node[anchor=west, font=\tiny, text=gray!80!black] at (0.3, 7.0) {GO:0044010 | Surface Attachment on Silicone PDMS};
+  \node[fill=white, draw=cyan!80, rounded corners=3pt, font=\scriptsize\bfseries] at (1.5, 6.1) {mps1 / mps2};
+  \node[fill=white, draw=cyan!80, rounded corners=3pt, font=\scriptsize\bfseries] at (4.2, 6.1) {groEL1 / fadD28};
+  \node[anchor=west, font=\tiny] at (0.3, 5.2) {$\bullet$ Low-shear conditions induce non-ribosomal peptide synthetases.};
+  \node[anchor=west, font=\tiny] at (0.3, 4.7) {$\bullet$ Formylated GPL pellicle coats hydrophobic silicone membranes.};
+
+  % Quadrant 2: Mycolic Acid (Top Right)
+  \draw[rounded corners=6pt, fill=blue!5, draw=blue!60, line width=1pt] (6.7, 4.3) rectangle (12.5, 7.8);
+  \node[anchor=west, font=\bfseries\small, text=blue!90!black] at (7.0, 7.4) {2. Mycolic Acid Envelope Fortification};
+  \node[anchor=west, font=\tiny, text=gray!80!black] at (7.0, 7.0) {GO:0030258 | FAS-II Cycle \& Cord Factor Assembly};
+  \node[fill=white, draw=blue!80, rounded corners=3pt, font=\scriptsize\bfseries] at (8.3, 6.1) {kasA / kasB / acpM};
+  \node[fill=white, draw=blue!80, rounded corners=3pt, font=\scriptsize\bfseries] at (11.0, 6.1) {fbpA / mmpL3};
+  \node[anchor=west, font=\tiny] at (7.0, 5.2) {$\bullet$ Overexpression of Antigen 85A (fbpA) transfers cord factor.};
+  \node[anchor=west, font=\tiny] at (7.0, 4.7) {$\bullet$ Thickened outer permeability barrier enhances antibiotic tolerance.};
+
+  % Quadrant 3: ESX Secretion (Bottom Left)
+  \draw[rounded corners=6pt, fill=orange!5, draw=orange!60, line width=1pt] (0, 0) rectangle (5.8, 3.8);
+  \node[anchor=west, font=\bfseries\small, text=orange!90!black] at (0.3, 3.4) {3. Type VII Secretion System (ESX-1/5)};
+  \node[anchor=west, font=\tiny, text=gray!80!black] at (0.3, 3.0) {GO:0015628 | Virulence Effector Translocation};
+  \node[fill=white, draw=orange!80, rounded corners=3pt, font=\scriptsize\bfseries] at (1.5, 2.1) {esxA / esxB};
+  \node[fill=white, draw=orange!80, rounded corners=3pt, font=\scriptsize\bfseries] at (4.2, 2.1) {eccA1-eccE1};
+  \node[anchor=west, font=\tiny] at (0.3, 1.2) {$\bullet$ Robust induction of ESAT-6/CFP-10 virulence heterodimers.};
+  \node[anchor=west, font=\tiny] at (0.3, 0.7) {$\bullet$ Core EccD1 transmembrane pore complex assembly.};
+
+  % Quadrant 4: DosR Hypoxia (Bottom Right)
+  \draw[rounded corners=6pt, fill=purple!5, draw=purple!60, line width=1pt] (6.7, 0) rectangle (12.5, 3.8);
+  \node[anchor=west, font=\bfseries\small, text=purple!90!black] at (7.0, 3.4) {4. DosR Hypoxic Quiescence \& ROS Defense};
+  \node[anchor=west, font=\tiny, text=gray!80!black] at (7.0, 3.0) {GO:0009267 | Quiescent Boundary Layer Adaptation};
+  \node[fill=white, draw=purple!80, rounded corners=3pt, font=\scriptsize\bfseries] at (8.3, 2.1) {dosR / dosS / hspX};
+  \node[fill=white, draw=purple!80, rounded corners=3pt, font=\scriptsize\bfseries] at (11.0, 2.1) {katG / sodA / sigH};
+  \node[anchor=west, font=\tiny] at (7.0, 1.2) {$\bullet$ Quiescent fluid boundary layers deplete micro-environmental $pO_2$.};
+  \node[anchor=west, font=\tiny] at (7.0, 0.7) {$\bullet$ HspX (+3.2) and KatG/SodA prime entry into stress dormancy.};
+
+  % Central Coordination Node & Interconnecting Arrows
+  \draw[<->, line width=1.5pt, blue!70!black] (5.85, 6.0) -- (6.65, 6.0) node[midway, above=2pt, font=\tiny\bfseries] {Lipid Coupling};
+  \draw[<->, line width=1.5pt, orange!80!black] (5.85, 1.9) -- (6.65, 1.9) node[midway, above=2pt, font=\tiny\bfseries] {Stress Priming};
+  \draw[<->, line width=1.5pt, gray!70] (2.9, 4.25) -- (2.9, 3.85);
+  \draw[<->, line width=1.5pt, gray!70] (9.6, 4.25) -- (9.6, 3.85);
+\end{tikzpicture}
+\end{document}

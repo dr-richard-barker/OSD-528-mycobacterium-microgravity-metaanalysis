@@ -1,0 +1,704 @@
+{
+  "OSD-119": {
+    "accession": "OSD-119",
+    "organism": "Euprymna scolopes",
+    "title": "Effect of microgravity on an animal-bacteria symbiosis",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Ground Study",
+    "factors": "",
+    "description": "Spaceflight imposes numerous adaptive challenges for terrestrial life. The reduction in gravity, or microgravity, represents a novel environment that can disrupt homeostasis of many physiological processes. Additionally, it is becoming increasingly clear that an organism's microbiome is critical for"
+  },
+  "OSD-106": {
+    "accession": "OSD-106",
+    "organism": "Streptococcus mutans",
+    "title": "Streptococcus mutans differential gene expression in response to simulated microgravity",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Ground Study",
+    "factors": "",
+    "description": "Astronauts have been previously shown to exhibit decreased salivary lysozyme and increased dental calculus and gingival inflammation in response to space flight, host factors that could contribute to oral diseases such as caries and periodontitis. However, the specific physiological response of cari"
+  },
+  "OSD-12": {
+    "accession": "OSD-12",
+    "organism": "Saccharomyces cerevisiae",
+    "title": "Transcription profiling of S. cerevisiae cultures grown under low shear-modeled microgravity",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Ground Study",
+    "factors": "",
+    "description": "The goal of this study was to assess whether low shear-modeled microgravity (LSMMG) affects yeast genomic expression patterns using the powerful tool of whole genome microarray hybridization. We determined changes in the yeast model organism, Saccharomyces cerevisisae, when grown in LSMMG using the "
+  },
+  "OSD-43": {
+    "accession": "OSD-43",
+    "organism": "Escherichia coli",
+    "title": "Effect of simulated microgravity on E. coli K12 MG1655 growth and gene expression",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Ground Study",
+    "factors": "",
+    "description": "This study demonstrates simulated microgravity effects on E. coli K 12 MG1655 when grown on LB medium supplemented with glycerol. The results imply that E. coli readily reprograms itself to combat the multiple stresses imposed due to microgravity. Under these conditions it survives by upregulating o"
+  },
+  "OSD-67": {
+    "accession": "OSD-67",
+    "organism": "Klebsiella, Staphylococcus, Enterobacter, Staphylococcus aureus, Pantoea conspicua, Acinetobacter pittii",
+    "title": "Microbial Observatory (ISS-MO): Study of BSL-2 bacterial isolates from the International Space Station",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "In an on-going Microbial Observatory experimental investigation on the International Space Station (ISS) multiple bacterial isolates of Biosafety Level 2 (BSL-2) were isolated and identified. The antibiotic susceptibility pattern was tested in these BSL-2 isolates for the following antibiotics: cefa"
+  },
+  "OSD-627": {
+    "accession": "OSD-627",
+    "organism": "Pseudomonas aeruginosa",
+    "title": "Characterization of Biofilm Formation, Growth, and Gene Expression on Different Materials and Environmental Conditions in Microgravity (Morphology of Pseudomonas aeruginosa biofilms)",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Microorganisms' natural ability to live as organized multicellular communities \u2013 also known as biofilms \u2013 provides them with unique survival advantages. For instance, biofilms are protected against environmental stresses thanks to their extracellular matrix, which could contribute to persistent infe"
+  },
+  "OSD-356": {
+    "accession": "OSD-356",
+    "organism": "Vibrio fischeri",
+    "title": "Transcriptional profiling of the mutualistic bacterium Vibrio fischeri and an hfq mutant under modeled microgravity",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Ground Study",
+    "factors": "",
+    "description": "For long-duration space missions, it is critical to maintain health-associated homeostasis between astronauts and their microbiome. To achieve this goal it is important to more fully understand the host\u2013symbiont relationship under the physiological stress conditions of spaceflight. To address this i"
+  },
+  "OSD-810": {
+    "accession": "OSD-810",
+    "organism": "Paraburkholderia phymatum",
+    "title": "RNA-seq analysis in simulated microgravity unveils down-regulation of the beta-rhizobial siderophore phymabactin.",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Ground Study",
+    "factors": "",
+    "description": "Exploiting the symbiotic interaction between crops and nitrogen-fixing bacteria is a simple and ecological method to promote plant growth in prospective extraterrestrial human outposts. In this study, we performed an RNA-seq analysis to investigate the adaptation of the legume symbiont Paraburkholde"
+  },
+  "OSD-628": {
+    "accession": "OSD-628",
+    "organism": "Penicillium rubens",
+    "title": "Characterization of Biofilm Formation, Growth, and Gene Expression on Different Materials and Environmental Conditions in Microgravity (Morphology of Penicillium rubens biofilms)",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Microorganisms' natural ability to live as organized multicellular communities \u2013 also known as biofilms \u2013 provides them with unique survival advantages. For instance, biofilms are protected against environmental stresses thanks to their extracellular matrix, which could contribute to persistent infe"
+  },
+  "OSD-132": {
+    "accession": "OSD-132",
+    "organism": "Beauveria bassiana     Aspergillus niger     Aspergillus terreus     Aureobasidium pullulans     Cladosporium cladosporioides     Fusarium solani     Trichoderma virens     Cladosporium sphaerospermum",
+    "title": "Whole genome sequencing and assembly of Eukaryotic microbes isolated from ISS environmental surface, Kirovograd region soil, Chernobyl Nuclear Power Plant and Chernobyl Exclusion Zone",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "The whole-genome sequences of eight fungal strains that were selected for exposure to microgravity at the International Space Station are presented here. These baseline sequences will help to understand the observed production of novel bioactive compounds."
+  },
+  "OSD-528": {
+    "accession": "OSD-528",
+    "organism": "Mycobacterium marinum",
+    "title": "Development of an Inexpensive 3D Clinostat and Comparison with Other Microgravity Simulators using Mycobacterium marinum",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Ground Study",
+    "factors": "",
+    "description": "M. marinum is a fish pathogen that usually only infects human skin, but it is genetically related to Mycobacterium tuberculosis and Mycobacterium avium and has similar pathogenic mechanisms to these human pathogens. M. marinum and M. avium have been found in biofilms in water distribution systems an"
+  },
+  "OSD-728": {
+    "accession": "OSD-728",
+    "organism": "Escherichia coli",
+    "title": "Simulated microgravity triggers a membrane adaptation to stress in E. coli REL606",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Ground Study",
+    "factors": "",
+    "description": "Investigating the evolution of Escherichia coli in microgravity offers valuable insights into microbial adaptation to extreme environments. Here the effects of simulated microgravity (S\u00b5G) on gene expression and genome evolution of E. coli REL606, a strain evolved terrestrially for 35\u00a0years, is expl"
+  },
+  "OSD-90": {
+    "accession": "OSD-90",
+    "organism": "Mycobacterium marinum",
+    "title": "RNA-seq analysis of mycobacteria stress response to microgravity",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Ground Study",
+    "factors": "",
+    "description": "The aim of this work is to determine whether mycobacteria have enhanced virulence during space travel and what mechanisms they use to adapt to microgravity. M. marinum and LHM4 were grown in high aspect ratio vessels (HARV) in a rotary cell culture system (RCCS) under normal gravity (NG) or low shea"
+  },
+  "OSD-110": {
+    "accession": "OSD-110",
+    "organism": "Daphnia magna",
+    "title": "The influence of simulated microgravity on the proteome of Daphnia magna",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Ground Study",
+    "factors": "",
+    "description": "Background/Objectives: The waterflea Daphnia is an interesting candidate for bioregenerative life support systems (BLSS). These animals are particularly promising because of their central role in the limnic food web and its mode of reproduction. However, the response of Daphnia to altered gravity co"
+  },
+  "OSD-216": {
+    "accession": "OSD-216",
+    "organism": "Bacillus subtilis",
+    "title": "HARV replication of the BRIC-23 Bacillus subtilis spaceflight",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Ground Study",
+    "factors": "",
+    "description": "Previous spaceflight experiments using Bacillus subtilis have reported altered transcriptome profiles during spaceflight compared to matching ground samples. This study tried to replicate those transcriptome changes using High Aspect Ratio Vessels (HARVs). B. subtilis spores were grown in HARVs usin"
+  },
+  "OSD-683": {
+    "accession": "OSD-683",
+    "organism": "Staphylococcus aureus",
+    "title": "Response of Staphylococcus aureus physiology and Agr quorum sensing to low shear modelled microgravity",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Ground Study",
+    "factors": "",
+    "description": "Staphylococcus aureus is commonly isolated from astronauts returning from spaceflight missions. Previous analysis of BRIC-23 omics data generated from S. aureus low Earth orbit cultures indicated significantly increased expression of the Agr quorum sensing system and its downstream targets in spacef"
+  },
+  "OSD-306": {
+    "accession": "OSD-306",
+    "organism": "Agrobacterium genomosp. 3",
+    "title": "Draft Genome Sequences of novel Agrobacterium genomospecies 3 Associated from the International Space Station",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "The whole-genome sequences (WGS) of three pathogenic bacterial strains collected from the International Space Station (ISS) were generated and identified as being part of Class Alphaproteobacteria. The WGS studies would enable further genomic/biochemical characterization of taxa for these bacteria t"
+  },
+  "OSD-215": {
+    "accession": "OSD-215",
+    "organism": "Bacillus subtilis",
+    "title": "HARV replication of the BRIC-21 Bacillus subtilis spaceflight samples",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Ground Study",
+    "factors": "",
+    "description": "Previous spaceflight experiments using Bacillus subtilis have reported altered transcriptome profiles during spaceflight compared to matching ground samples. This study tried to replicate those transcriptome changes using High Aspect Ratio Vessels (HARVs). B. subtilis spores were grown in HARVs usin"
+  },
+  "OSD-199": {
+    "accession": "OSD-199",
+    "organism": "Lactobacillus acidophilus",
+    "title": "Response to Low Shear Modeled Microgravity Indicates Translation of Lactobacillus acidophilus ATCC 4356 Benefits to Spaceflight",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Ground Study",
+    "factors": "",
+    "description": "The introduction of generally recognized as safe (GRAS) probiotic microbes into the spaceflight food system has the potential for use as a safe, non-invasive, daily countermeasure to crew microbiome and immune dysregulation. However, the microgravity effects on the stress tolerances and genetic expr"
+  },
+  "OSD-554": {
+    "accession": "OSD-554",
+    "organism": "Pseudomonas aeruginosa",
+    "title": "Characterization of Biofilm Formation, Growth, and Gene Expression on Different Materials and Environmental Conditions in Microgravity (Gene expression of Pseudomonas aeruginosa biofilms)",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Microorganisms' natural ability to live as organized multicellular communities \u2013 also known as biofilms \u2013 provides them with unique survival advantages. For instance, biofilms are protected against environmental stresses thanks to their extracellular matrix, which could contribute to persistent infe"
+  },
+  "OSD-62": {
+    "accession": "OSD-62",
+    "organism": "Saccharomyces cerevisiae",
+    "title": "Molecular mechanism of flocculation self-recognition in yeast and its role in mating and survival",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Saccharomyces cerevisiae flocculation occurs when fermentable sugars are limiting and is therefore considered as a way to enhance the survival chance of Flo-expressing yeast cells. In this paper, the role of Flo1p in mating was demonstrated by showing that the mating efficiency, which contributes to"
+  },
+  "OSD-466": {
+    "accession": "OSD-466",
+    "organism": "Microbiota",
+    "title": "Microbiome profiling of feces from mice flown on the RR-10 mission",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "The objective of the Rodent Research-10 Mission (RR-10) was to investigate how spaceflight affects the cellular and molecular mechanisms of normal bone tissue regeneration in space. To this end, ten (10) 14-15 weeks-old female B6129SF2/J Wild Type (WT), and ten (10) 14-15 weeks-old female B6;129S2-C"
+  },
+  "OSD-14": {
+    "accession": "OSD-14",
+    "organism": "Pseudomonas aeruginosa",
+    "title": "Response of Pseudomonas aeruginosa PAO1 to low shear modeled microgravity",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Ground Study",
+    "factors": "",
+    "description": "Anticipating the risk for infectious disease during space exploration and habitation is a critical factor to ensure safety, health and performance of the crewmembers. As a ubiquitous environmental organism that is occasionally part of the human flora, Pseudomonas aeruginosa could pose a health hazar"
+  },
+  "OSD-72": {
+    "accession": "OSD-72",
+    "organism": "Microbiota",
+    "title": "Space environmental factor impacts upon murine colon microbiota and mucosal homeostasis",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "We report how high and low linear energy transfer (LET) radiation, microgravity, and elevated dietary iron affect colon microbiota (determined by 16S rDNA pyrosequencing) and colon function. Three independent experiments were conducted: 1) fractionated low LET gamma radiation (137Cs, 3 Gy, RAD), hig"
+  },
+  "OSD-729": {
+    "accession": "OSD-729",
+    "organism": "Burkholderia contaminans",
+    "title": "Biofilm formation is correlated with low nutrient and simulated microgravity conditions in a Burkholderia isolate from the ISS water processor assembly",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Ground Study",
+    "factors": "",
+    "description": "The International Space Station (ISS) Water Processor Assembly (WPA) experiences intermittent dormancy in the WPA wastewater tank during water recycling events which promotes biofilm formation within the system. In this work we aimed to gain a deeper understanding of the impact of nutrient limitatio"
+  },
+  "OSD-278": {
+    "accession": "OSD-278",
+    "organism": "Drosophila melanogaster",
+    "title": "Spaceflight and simulated microgravity conditions increase virulence of Serratia marcescens in the Drosophila melanogaster infection model",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "While it has been shown that astronauts suffer immune disorders after spaceflight, the underlying causes are still poorly understood and there are many variables to consider when investigating the immune system in a complex environment. Additionally, there is growing evidence that suggests that not "
+  },
+  "OSD-3": {
+    "accession": "OSD-3",
+    "organism": "Drosophila melanogaster",
+    "title": "Drosophila melanogaster gene expression changes after spaceflight.",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Gene expression levels were determined in 3rd instar and adult Drosophila melanogaster reared during spaceflight, to elucidate the genetic and molecular mechanisms underpinning the effects of microgravity on the immune system. The goal was to validate the Drosophila model for understanding alteratio"
+  },
+  "OSD-58": {
+    "accession": "OSD-58",
+    "organism": "Saccharomyces cerevisiae",
+    "title": "Genes Required for Survival in Microgravity Revealed by Genome-Wide Yeast Deletion Collections Cultured during Spaceflight",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Spaceflight is a unique environment with profound effects on biological systems including tissue redistribution and musculoskeletal stresses. However, the more subtle biological effects of spaceflight on cells and organisms are difficult to measure in a systematic, unbiased manner. Here we test the "
+  },
+  "OSD-11": {
+    "accession": "OSD-11",
+    "organism": "Salmonella enterica",
+    "title": "Space flight alters bacterial gene expression and virulence and reveals a role for global regulator Hfq",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "A comprehensive analysis of both the molecular genetic and phenotypic responses of any organism to the space flight environment has never been accomplished because of significant technological and logistical hurdles. Moreover, the effects of space flight on microbial pathogenicity and associated inf"
+  },
+  "OSD-66": {
+    "accession": "OSD-66",
+    "organism": "cellular organisms",
+    "title": "Microbial Observatory (ISS-MO): Antimicrobial resistance genes",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "The environmental samples were collected with the polyester wipes from eight different locations in the International Space Station (ISS) during two consecutive sampling sessions (three months apart) within the ISS Microbial Observatory Experiment. DNA extracted from each of the samples was used to "
+  },
+  "OSD-277": {
+    "accession": "OSD-277",
+    "organism": "Not Applicable     Salmonella enterica subsp. enterica serovar Typhimurium",
+    "title": "Spaceflight Analogue Culture Enhances the Host-Pathogen Interaction Between Salmonella and a 3-D Biomimetic Intestinal Co-Culture Model",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Ground Study",
+    "factors": "",
+    "description": "Physical forces associated with spaceflight and spaceflight analogue culture regulate a wide range of physiological responses by both bacterial and mammalian cells that can impact infection. However, our mechanistic understanding of how these environments regulate host-pathogen interactions in human"
+  },
+  "OSD-27": {
+    "accession": "OSD-27",
+    "organism": "Drosophila melanogaster",
+    "title": "Transcription profiling of Drosophila exposed to a levitation magnet for different lengths of time",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Ground Study",
+    "factors": "",
+    "description": "Drosophila samples were exposed to the levitation magnet inside a 25mm diameter tubes with 3 ml of yeast-based Drosophila food in the bottom and a chamber of only 5 mm of height over the food. This small region is needed in order to guarantee that all the flies were located in the effective g area s"
+  },
+  "OSD-15": {
+    "accession": "OSD-15",
+    "organism": "Pseudomonas aeruginosa",
+    "title": "Transcriptional and proteomic response of Pseudomonas aeruginosa PAO1 to spaceflight conditions involves Hfq regulation and reveals a role for oxygen",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "This study describes the transcriptional response of P. aeruginosa PAO1 to low-Earth orbit environmental conditions. Our aim was to assess whether the microgravity environment of spaceflight could induce virulence traits in P. aeruginosa. To this end, P. aeruginosa cultures were grown in space, and "
+  },
+  "OSD-417": {
+    "accession": "OSD-417",
+    "organism": "Mus musculus     Microbiota",
+    "title": "Specific Host Metabolite and Gut Microbiome Alterations Are Associated with Bone-loss During Spaceflight",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Understanding the axis of the human microbiome and physiological homeostasis is an essential task in managing deep-space travel associated health risks. The NASA led Rodent Research 5 mission enabled an ancillary investigation of the gut microbiome varying exposure to microgravity (flight) relative "
+  },
+  "OSD-780": {
+    "accession": "OSD-780",
+    "organism": "Microbiota",
+    "title": "Pick-and-eat space crop production flight testing on the International Space Station (Plate Count Assay using Plant and Hardware Surface Microbes)",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Fresh, nutritious, palatable produce for crew consumption on long-duration spaceflight missions may provide health-promoting, bioavailable nutrients and enhance the dietary experience. VEG-04A and VEG-04B explored growing leafy greens on the International Space Station using the Veggie Vegetable Pro"
+  },
+  "OSD-200": {
+    "accession": "OSD-200",
+    "organism": "Bacillus atrophaeus     Microbiota     Escherichia coli",
+    "title": "Quantitative evaluation of bioaerosols in different particle size fractions collected on the International Space Station (ISS)",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Exposure to bioaerosols can negatively impact human health. On the International Space Station (ISS) this exposure differs to that on Earth due to lack of gravitational settling and differing microbial sources. It is unknown how microbes are influenced by different particle size fractions in microgr"
+  },
+  "OSD-655": {
+    "accession": "OSD-655",
+    "organism": "Brassica rapa",
+    "title": "Pick-and-eat space crop production flight testing on the International Space Station (Elemental Analysis, ORAC, Phenolic Content)",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Fresh, nutritious, palatable produce for crew consumption on long-duration spaceflight missions may provide health-promoting, bioavailable nutrients and enhance the dietary experience. VEG-04A and VEG-04B explored growing leafy greens on the International Space Station using the Veggie Vegetable Pro"
+  },
+  "OSD-39": {
+    "accession": "OSD-39",
+    "organism": "Rhodospirillum rubrum",
+    "title": "BASE-A space experiment with Rhodospirillum rubrum S1H",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Flight Study",
+    "factors": "",
+    "description": "R. rubrum S1H inoculated on solid minimal media was sent to the ISS in September 2006 (BASE-A experiment). After 10 days flight R. rubrum cultures returned back to Earth. These cultures were then subjected to both transcriptomic and proteomic analysis and compared with the corresponding ground contr"
+  },
+  "OSD-48": {
+    "accession": "OSD-48",
+    "organism": "Mus musculus",
+    "title": "Rodent Research-1 (RR1) NASA Validation Flight: Mouse liver transcriptomic, proteomic, epigenomic and histology data",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Translating fundamental biological discoveries from NASA Space Biology program into health risk from space flights has been an ongoing challenge. We propose to use NASA GeneLab database to gain new knowledge on potential systemic responses to space. Unbiased systems biology analysis of transcriptomi"
+  },
+  "OSD-1": {
+    "accession": "OSD-1",
+    "organism": "Drosophila melanogaster",
+    "title": "Expression data from drosophila melanogaster",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Space travel presents unlimited opportunities for exploration and discovery, but requires a more complete understanding of the immunological consequences of long-term exposure to the conditions of spaceflight. To understand these consequences better and to contribute to design of effective counterme"
+  },
+  "OSD-31": {
+    "accession": "OSD-31",
+    "organism": "Rhodospirillum rubrum",
+    "title": "Experimental design and environmental parameters affect Rhodospirillum rubrum S1H response to space flight.",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "In view of long-haul space exploration missions, the European Space Agency initiated the Micro-Ecological Life Support System Alternative (MELiSSA) project targeting the total recycling of organic waste produced by the astronauts into oxygen, water and food using a loop of bacterial and higher plant"
+  },
+  "OSD-773": {
+    "accession": "OSD-773",
+    "organism": "Microbiota",
+    "title": "Exposed Root On Orbit Test System (XROOTS), an aeroponic and hydroponic plant growth system technical demonstration on the International Space Station (ISS)",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Technical demonstration of the XROOTS payload integrated with the Veggie Hardware to demonstrate an aeroponic and hydroponic plant growth system in microgravity. The intent was to evaluate a nutrient delivery system using an ebb/flow nutrient solution recovery system. Additionally plants were harves"
+  },
+  "OSD-68": {
+    "accession": "OSD-68",
+    "organism": "Aspergillus fumigatus",
+    "title": "Microbial Observatory (ISS-MO): Draft Genome Sequence of two Aspergillus fumigatus Strains Isolated from the International Space Station",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Aspergillus fumigatus is a saprophytic, filamentous fungus that is ubiquitous outdoors (soil, decaying vegetation) and indoors (hospitals, simulated closed habitats, etc.). A. fumigatus can adapt to various environmental conditions and form airborne conidia that are the inoculum for a variety of dis"
+  },
+  "OSD-84": {
+    "accession": "OSD-84",
+    "organism": "Escherichia coli     Enterobacteria phage lambda     Mus musculus",
+    "title": "Biomolecule Sequencer",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Project",
+    "factors": "",
+    "description": "Technology demonstration of a nanopore sequencer operating aboard the ISS in comparison with the same sequencer on the ground."
+  },
+  "OSD-311": {
+    "accession": "OSD-311",
+    "organism": "Enterobacter bugandensis     Kalamiella piersonii     Pantoea brenneri     Pantoea agglomerans",
+    "title": "Part two: ISS Enterobacteriales",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "The microbial tracking-1 (MT-1) investigation allowed the characterization of the microbial population aboard the International Space Station (ISS)."
+  },
+  "OSD-302": {
+    "accession": "OSD-302",
+    "organism": "Enterobacter bugandensis     Pantoea brenneri     Klebsiella quasipneumoniae",
+    "title": "ISS Enterobacteriales Genomes",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "The microbial tracking-1 (MT-1) investigation allowed the characterization of the microbial population aboard the International Space Station (ISS)."
+  },
+  "OSD-212": {
+    "accession": "OSD-212",
+    "organism": "Microbiota",
+    "title": "Reproducible changes in gut microbiome reveal a shift in microbial and host metabolism during spaceflight",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Data were generated as part of a NASA-funded study (Turek F (PI) et al. Effects of Spaceflight on Gastrointestinal Microbiota in Mice: Mechanisms and Impact on Multi-System. NASA NRA: NRA NNH14ZTT002N). As part of the study, we requested and received samples from RR1. We generated 16S rRNA gene ampl"
+  },
+  "OSD-361": {
+    "accession": "OSD-361",
+    "organism": "Micrococcus luteus     Acinetobacter pittii     Bacillus horneckiae     Staphylococcus warneri     Methylobacterium organophilum     Staphylococcus caprae     Kocuria palustris     Pseudoclavibacter alba     Pseudomonas granadensis     Staphylococcus epidermidis     Staphylococcus saprophyticus     Pseudomonas fulva     Kocuria indica     Staphylococcus capitis",
+    "title": "ISS Surfaces Bacterial Genomes from MT-2 (ISS-MOP)",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Draft genomes of various bacterial phyla isolated from different locations on the International Space Station as part of the Microbial Tracking 2 mission (ISS-MOP)."
+  },
+  "OSD-303": {
+    "accession": "OSD-303",
+    "organism": "Bacillus cereus thuringiensis     Bacillus amyloliquefaciens     Paenibacillus polymyxa     Thermus amyloliquefaciens     Bacillus firmus",
+    "title": "ISS Bacillus Genomes",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "SRA of spore forming Bacillus strains isolated from various areas of the ISS during Microbial tracking investigation"
+  },
+  "OSD-470": {
+    "accession": "OSD-470",
+    "organism": "Klebsiella quasipneumoniae subsp. similipneumoniae",
+    "title": "Draft genome sequence of Klebsiella quasipneumoniae subsp. similipneumoniae strain IF3SW-P1 isolated from the International Space Station",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "In 2015, the Advanced Resistive Exercise Device (ARED) foot panel on the International Space Station (ISS) was sampled to identify culturable microorganisms. The whole-genome of the strain IF3SW-P1 was sequenced using the Oxford Nanopore Technologies platform and identified as Klebsiella quasipneumo"
+  },
+  "OSD-500": {
+    "accession": "OSD-500",
+    "organism": "Staphylococcus aureus",
+    "title": "Altered Quorum Sensing and Physiology of Staphylococcus aureus During Spaceflight Detected by Multi-omics Data Analysis (BRIC-23: Secretomics)",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Staphylococcus aureus colonizes the nares of approximately 30% of humans, a risk factor for opportunistic infections. Because of the potential threat of S. aureus to astronaut health, the effect of spaceflight conditions on this pathogen is of great interest. To gain insight into the virulence poten"
+  },
+  "OSD-400": {
+    "accession": "OSD-400",
+    "organism": "Aspergillus unguis     Cladosporium sphaerospermum     Rhodotorula mucilaginosa     Penicillium palitans     Aureobasidium pullulans     Penicillium rubens     Penicillium corylophilum     Cladosporium cladosporioides     Penicillium citrinum     Fusarium annulatum     Fusarium veterinarium",
+    "title": "Draft Genomes of Fungi Isolated from the International Space Station during the Microbial Tracking-2 Experiment",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Draft genomes of fungi isolated from different surfaces on the International Space Station, as part of the Microbial Tracking 2 mission (ISS-MOP)."
+  },
+  "OSD-582": {
+    "accession": "OSD-582",
+    "organism": "Staphylococcus saprophyticus     Pseudomonas fulva",
+    "title": "Resequencing of select microbial isolates from the International Space Station with the Nanopore MinION",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Microbial isolates from the NASA Space Biology-funded microbial tracking experiments were re-sequenced using the Oxford Nanopore MinION."
+  },
+  "OSD-309": {
+    "accession": "OSD-309",
+    "organism": "Klebsiella quasipneumoniae     Klebsiella pneumoniae     Klebsiella aerogenes",
+    "title": "Comparative Genomic Analysis of Klebsiella Exposed to Various Space Conditions at the International Space Station",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Due to the bacteria's evolved resistance to radiation, Klebsiella poses a great threat to not only planetary protection, but also to the integrity of future biological experiments in outer space. While previous literature has shown varying degrees of sensitivity in klebsiella to a high radiation env"
+  },
+  "OSD-300": {
+    "accession": "OSD-300",
+    "organism": "Methylobacterium sp.     Methylorubrum rhodesianum",
+    "title": "Draft Genome Sequences of Members of the family Methylobacteriaceae Associated with the International Space Station",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Draft Genome Sequences of isolates belonging to family Methylobacteriaceae Isolated from the International Space Station"
+  },
+  "OSD-20": {
+    "accession": "OSD-20",
+    "organism": "Candida albicans",
+    "title": "Candida albicans response to spaceflight (NASA STS-115)",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "This study presents the first global transcriptional profiling and phenotypic characterization of the major human opportunistic fungal pathogen, Candida albicans, grown in spaceflight conditions. Microarray analysis revealed that C. albicans subjected to short-term spaceflight culture differentially"
+  },
+  "OSD-185": {
+    "accession": "OSD-185",
+    "organism": "Bacillus subtilis",
+    "title": "BRIC-21 Bacillus subtilis transcriptome profile data",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "The BRIC-21 mission was designed to identify the response of Bacillus subtilis to the human spaceflight environment. For this mission, samples were grown in rich-medium using the Biological Research in Canister Petri Dish Fixation Units (BRIC-PDFU) spaceflight hardware. B. subtilis spores were inocu"
+  },
+  "OSD-372": {
+    "accession": "OSD-372",
+    "organism": "Staphylococcus auricularis     Staphylococcus epidermidis     Burkholderia cepacia     Burkholderia contaminans     Ralstonia pickettii     Ralstonia insidiosa     Staphylococcus saprophyticus     Staphylococcus lugdunensis     Staphylococcus aureus",
+    "title": "Genome sequencing of Staphylococcus, Burkholderia, and Ralstonia bacterial isolates isolated from the ISS",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "This repository holds genome assemblies for Staphylococcus, Burkholderia, and Ralstonia bacterial isolates isolated from the ISS between the years of 2006-2015. Information on the overall microbial isolation effort is stored under NASA's Life Science Data Archive experiment 13823 (https://lsda.jsc.n"
+  },
+  "OSD-280": {
+    "accession": "OSD-280",
+    "organism": "Microbiota",
+    "title": "Salivary microbiome sequencing of astronauts",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "This study's goal was to examine if any salivary microbiome changes were observed in astronauts as a result of spaceflight. In addition, this study looked for any microbiome signature that may be associated with viral reactivation in humans"
+  },
+  "OSD-350": {
+    "accession": "OSD-350",
+    "organism": "Aspergillus niger     Penicillium griseoroseum     Penicillium camemberti     Penicillium polonicum     Penicillium dipodomyicola     Aspergillus unguis     Penicillium chrysogenum",
+    "title": "Draft genome sequences of Aspergillus and Penicillium species isolated from the International Space Station and Crew Resupply Vehicle Capsule",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Genome sequencing and assembly of fungal isolates belonging to Penicilliium and Aspergillus genera isolated from International Space Station"
+  },
+  "OSD-64": {
+    "accession": "OSD-64",
+    "organism": ", Bacillus",
+    "title": "Microbial Observatory (ISS-MO): Molecular characterization of Bacillus issensis sp. nov. isolated from various quarters of the International Space Station",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "As part of an ongoing effort to catalogue microbial communities inhabiting the International Space Station (ISS) crew-associated environmental samples were collected from the Japanese Kibo Russian and US research modules. Initial analysis based on 16S rRNA gene sequencing identified 11 Bacillus isol"
+  },
+  "OSD-536": {
+    "accession": "OSD-536",
+    "organism": "Mus musculus",
+    "title": "Gene expression profiling for spaceflight induced-neuroinflammation in the mouse brain",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "The health risk from spaceflight-induced neuronal damage and potential adverse neurovascular effects is a chief concern. More recently, it has been proposed that neuroinflammatory response plays an important role in the neurovascular remodeling in the brain after stress. The goal of the present stud"
+  },
+  "OSD-323": {
+    "accession": "OSD-323",
+    "organism": "Homo sapiens",
+    "title": "Evaluating the effect of spaceflight on the host-pathogen interaction between human intestinal epithelial cells and Salmonella Typhimurium",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Spaceflight uniquely alters the physiology of both human cells and microbial pathogens, stimulating cellular and molecular changes directly relevant to infectious disease. However, the influence of this environment on host-pathogen interactions remains poorly understood. Here we report our results f"
+  },
+  "OSD-145": {
+    "accession": "OSD-145",
+    "organism": "Staphylococcus aureus",
+    "title": "BRIC-23 GeneLab Process Verification Test: Staphylococcus aureus transcriptomic, proteomic, and metabolomic data",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Microbes interact with humans in complex ways and understanding how they respond to the spaceflight environment is important to the success of future manned spaceflight missions. The BRIC-23 mission was designed to measure the response of Bacillus subtilis and Staphylococcus aureus to the spacefligh"
+  },
+  "OSD-252": {
+    "accession": "OSD-252",
+    "organism": "Microbiota",
+    "title": "International Space Station - Microbial Observatory of Pathogenic Virus, Bacteria, and Fungi project",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "This study investigated the interplay between the microbial community of the International Space Station and its crew. Environmental samples were collected from 8 habitable locations around the ISS. The microbial composition was measured using shotgun metagenomic sequencing and procesed using the Li"
+  },
+  "OSD-383": {
+    "accession": "OSD-383",
+    "organism": "Bacillus pumilus",
+    "title": "Long-read sequencing reveals increased occurrence of genomic variants and adenosine methylation in Bacillus pumilus SAFR-032 after long-duration flight exposure onboard the International Space Station",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Bacillus pumilus SAFR-032, an endospore-forming bacterial strain, was investigated to determine its methylation pattern (methylome) change, compared to ground control, after direct exposure to space conditions onboard the International Space Station (ISS) for 1.5 years. The resulting ISS-flown and n"
+  },
+  "OSD-138": {
+    "accession": "OSD-138",
+    "organism": "Not Applicable     Bacillus subtilis",
+    "title": "BRIC-23 GeneLab Process Verification Test: Bacillus subtilis transcriptomic, proteomic, and metabolomic data",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Microbes interact with humans in complex ways and understanding how they respond to the spaceflight environment is important to the success of future manned spaceflight missions. The BRIC-23 mission was designed to measure the response of Bacillus subtilis and Staphylococcus aureus to the spacefligh"
+  },
+  "OSD-174": {
+    "accession": "OSD-174",
+    "organism": "Homo sapiens",
+    "title": "Effects of a Closed Space Environment on Gene Expression in Hair Follicles of Astronauts in the International Space Station",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight",
+    "factors": "",
+    "description": "In recent times, long-term stay has become a common occurrence in the International Space Station (ISS). However, adaptation to the space environment can sometimes pose physiological problems to the astronauts after their return. Therefore, it is important to develop healthcare technologies for astr"
+  },
+  "OSD-233": {
+    "accession": "OSD-233",
+    "organism": "Aspergillus nidulans",
+    "title": "International Space Station conditions alter genomics, proteomics, and metabolomics in Aspergillus nidulans",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "The first global genomic, proteomic, and secondary metabolomic characterization of the filamentous fungus Aspergillus nidulans following growth onboard the International Space Station (ISS) is reported. The investigation included the A. nidulans wild-type and three mutant strains, two of which were "
+  },
+  "OSD-745": {
+    "accession": "OSD-745",
+    "organism": "Lactuca sativa",
+    "title": "Microbiological and Nutritional Analysis of Lettuce Crops Grown on the International Space Station (Anthocyanin Content, Phenolic Content, Elemental Analysis, ORAC)",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "The ability to grow safe, fresh food to supplement packaged foods of astronauts in space has been an important goal for NASA. Food crops grown in space experience different environmental conditions than plants grown on Earth (e.g., reduced gravity, elevated radiation levels). To study the effects of"
+  },
+  "OSD-487": {
+    "accession": "OSD-487",
+    "organism": "Microbiota",
+    "title": "The Maleth Program: Malta\u2019s first space mission discoveries on the microbiome of diabetic foot ulcers",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "The first mission (Maleth I) forms part of Project Maleth and aims to uncover the effects of spaceflight, microgravity and radiation on human skin tissue microbiome samples from six Type 2 Diabetes Mellitus diabetic foot ulcers (DFU). The mission intended to highlight some of the very best frontier "
+  },
+  "OSD-509": {
+    "accession": "OSD-509",
+    "organism": "Saccharomyces cerevisiae",
+    "title": "A CRISPR-based assay for the study of eukaryotic DNA repair onboard the International Space Station.",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "As we explore beyond Earth, astronauts may be at risk for harmful DNA damage caused by ionizing radiation. Double-strand breaks are a type of DNA damage that can be repaired by two major cellular pathways: non-homologous end joining, during which insertions or deletions may be added at the break sit"
+  },
+  "OSD-95": {
+    "accession": "OSD-95",
+    "organism": "Escherichia coli",
+    "title": "A Molecular Genetic Basis Explaining Altered Bacterial Behavior in Space",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Bacterial behavior has been observed to change during spaceflight. Higher final cell counts, enhanced biofilm formation, increased virulence, and reduced susceptibility to antibiotics have been reported to occur for cells cultured in space . Most of these phenomena are theorized as being an indirect"
+  },
+  "OSD-413": {
+    "accession": "OSD-413",
+    "organism": "Microbiota",
+    "title": "Spatial characterization of microbial communities on multi-species leafy greens grown simultaneously in the Veggie vegetable production systems on the International Space Station VEG-03E",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Investigates the microbial communities of plants and Veggie pillow components with culturable and non-culturable methods providing qualitative and quantitative data. This studies also stresses the food safety component of fresh crops grown on the ISS. The VEG-03E technology demonstration was complet"
+  },
+  "OSD-414": {
+    "accession": "OSD-414",
+    "organism": "Microbiota",
+    "title": "Spatial characterization of microbial communities on multi-species leafy greens grown simultaneously in the Veggie vegetable production systems on the International Space Station VEG-03F",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Investigates the microbial communities of plants and Veggie pillow components with culturable and non-culturable methods providing qualitative and quantitative data. This studies also stresses the food safety component of fresh crops grown on the ISS. The VEG-03F technology demonstration took place "
+  },
+  "OSD-69": {
+    "accession": "OSD-69",
+    "organism": "",
+    "title": "Microbial Observatory (ISS-MO): Indoor microbiome study of the International Space Station surfaces",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Presented here is the environmental microbiome study of the International Space Station surfaces. The environmental samples were collected with the polyester wipes from eight different locations in the ISS during two consecutive sampling sessions (three months apart). The specific objective was to u"
+  },
+  "OSD-65": {
+    "accession": "OSD-65",
+    "organism": "Microbiota",
+    "title": "Microbial Observatory (ISS-MO): Microbial diversity",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "The environmental microbiome study was designed to decipher microbial diversity of the International Space Station surfaces in terms of spatial and temporal distributions using 16S and ITS iTag Illumina sequencing. We hypothesized that the microbial population of environmental surfaces changes in ti"
+  },
+  "OSD-358": {
+    "accession": "OSD-358",
+    "organism": "Burkholderia contaminans     Fusarium sporotrichioides     Fusarium oxysporum     Zinnia",
+    "title": "Diagnosing an Opportunistic Fungal Pathogen on Spaceflight-Grown Plants Using the MinION Sequencing Platform",
+    "assay_type": "Transcription Profiling",
+    "flight_or_ground": "Spaceflight Study",
+    "factors": "",
+    "description": "Sustainable agriculture in microgravity is integral to future long-term space exploration. To ensure the efficient and sustainable cultivation of plants in space, a contingency plan to monitor plant health and mitigate plant diseases is necessary. Yet, neither methods nor tools currently exist to ev"
+  }
+}

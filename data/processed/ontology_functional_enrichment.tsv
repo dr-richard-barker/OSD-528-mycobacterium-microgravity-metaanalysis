@@ -1,0 +1,13 @@
+module	term_id	term_name	ontology	overlap_count	term_size	module_size	pvalue	fdr	overlap_genes
+MEturquoise	GO:0044010	Single-species biofilm formation on surface	Biological Process	7	28	12	3.377e-14	4.053e-13	mps1, mps2, fmt, fadD28, drrA, drrB, groEL1
+MEblue	GO:0030258	Mycolic acid biosynthetic and elongation process	Biological Process	10	42	37	7.356e-14	4.413e-13	kasA, kasB, acpM, inhA, fabD, fbpA, fbpB, fbpC, mmpL3, mmpL8
+MEyellow	GO:0006979	Response to oxidative stress and reactive oxygen species	Biological Process	8	48	52	1.149e-08	4.597e-08	katG, sodA, sodC, ahpC, ahpD, trxB2, trxC, sigH
+MEyellow	GO:0009267	Cellular response to starvation and hypoxia (DosR regulon)	Biological Process	8	52	52	2.226e-08	6.678e-08	dosR, dosS, hspX, tgs1, fdxA, narG, sigE, whiB3
+MEbrown	GO:0015628	Type VII secretion system complex	Cellular Component	9	35	195	2.618e-06	6.283e-06	esxA, esxB, eccA1, eccB1, eccC1, eccD1, eccE1, espA, mycP1
+MEgreen	GO:0006950	Response to mechanical stress and rotational shear	Biological Process	5	32	54	1.330e-05	2.660e-05	clpP1, clpP2, dnaK, grpE, recA
+MEblue	GO:0015986	ATP synthesis coupled proton transport	Biological Process	4	38	37	1.146e-04	1.965e-04	atpD, nuoA, nuoB, nuoD
+MEgreen	GO:0006097	Glyoxylate cycle and alternative respiratory chain	Biological Process	3	24	54	1.629e-03	2.443e-03	icl1, cydA, cydB
+MEturquoise	GO:0051707	Response to other organism / virulence factor secretion	Biological Process	1	56	12	1.172e-01	1.563e-01	groEL1
+MEblue	GO:0051707	Response to other organism / virulence factor secretion	Biological Process	1	56	37	3.197e-01	3.837e-01	fbpA
+MEbrown	GO:0051707	Response to other organism / virulence factor secretion	Biological Process	3	56	195	3.269e-01	3.566e-01	esxA, esxB, espA
+MEbrown	GO:0015986	ATP synthesis coupled proton transport	Biological Process	2	38	195	3.992e-01	3.992e-01	atpA, atpB

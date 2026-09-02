@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <rect width="1200" height="800" fill="#FFFFFF"/>
+  <text x="50" y="45" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="bold" fill="#0A3663">Figure 5 | Systems Biology Network Model of Mycobacterium marinum Microgravity Adaptation</text>
+  <text x="50" y="70" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#555555">Interconnected functional regulons coupling physical unweighting to biofilm maturation, envelope lipid remodeling, and virulence</text>
+
+  <!-- Cell Envelope Outer Boundary Diagram -->
+  <rect x="50" y="100" width="1100" height="660" rx="12" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+  
+  <!-- Subsystem 1: Biofilm & GPL Synthesis on PDMS -->
+  <rect x="80" y="130" width="480" height="280" rx="8" fill="#ECFEFF" stroke="#06B6D4" stroke-width="1.5"/>
+  <text x="100" y="160" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="bold" fill="#0891B2">1. Biofilm &amp; Glycopeptidolipid (GPL) Machinery</text>
+  <text x="100" y="180" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#0E7490">GO:0044010 | Surface Colonization of Hydrophobic Silicone (PDMS)</text>
+  
+  <!-- Inner Nodes -->
+  <rect x="100" y="205" width="130" height="50" rx="6" fill="#FFFFFF" stroke="#06B6D4"/>
+  <text x="165" y="228" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0891B2" text-anchor="middle">mps1 / mps2</text>
+  <text x="165" y="244" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#475569" text-anchor="middle">NRPS Core Synthetase</text>
+
+  <rect x="250" y="205" width="130" height="50" rx="6" fill="#FFFFFF" stroke="#06B6D4"/>
+  <text x="315" y="228" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0891B2" text-anchor="middle">fadD28 / drrAB</text>
+  <text x="315" y="244" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#475569" text-anchor="middle">Surface Export Permease</text>
+
+  <rect x="400" y="205" width="130" height="50" rx="6" fill="#FFFFFF" stroke="#06B6D4"/>
+  <text x="465" y="228" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0891B2" text-anchor="middle">groEL1</text>
+  <text x="465" y="244" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#475569" text-anchor="middle">Chaperonin Maturation</text>
+
+  <text x="100" y="290" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• Continuous low shear prevents sedimentation, promoting rapid GPL pellicle formation.</text>
+  <text x="100" y="310" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• Formylated glycopeptidolipids enhance surface hydrophobicity and biofilm cohesion.</text>
+  <text x="100" y="330" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• GroEL1 associates with KasA to coordinate biofilm lipid assembly.</text>
+
+  <!-- Subsystem 2: Cell Wall Mycolic Acid Remodeling -->
+  <rect x="640" y="130" width="480" height="280" rx="8" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5"/>
+  <text x="660" y="160" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1D4ED8">2. Mycolic Acid &amp; Arabinogalactan Synthesis</text>
+  <text x="660" y="180" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#1E40AF">GO:0030258 | FAS-II Cycle &amp; Cord Factor Assembly</text>
+  
+  <rect x="660" y="205" width="130" height="50" rx="6" fill="#FFFFFF" stroke="#3B82F6"/>
+  <text x="725" y="228" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1D4ED8" text-anchor="middle">kasA / kasB</text>
+  <text x="725" y="244" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#475569" text-anchor="middle">Meromycolate Elongation</text>
+
+  <rect x="810" y="205" width="130" height="50" rx="6" fill="#FFFFFF" stroke="#3B82F6"/>
+  <text x="875" y="228" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1D4ED8" text-anchor="middle">acpM / inhA</text>
+  <text x="875" y="244" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#475569" text-anchor="middle">Acyl Carrier &amp; Enoyl Reductase</text>
+
+  <rect x="960" y="205" width="130" height="50" rx="6" fill="#FFFFFF" stroke="#3B82F6"/>
+  <text x="1025" y="228" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1D4ED8" text-anchor="middle">fbpA / mmpL3</text>
+  <text x="1025" y="244" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#475569" text-anchor="middle">Trehalose Mycolate Flippase</text>
+
+  <text x="660" y="290" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• Overexpression of Antigen 85A (FbpA) drives trehalose dimycolate (cord factor).</text>
+  <text x="660" y="310" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• MmpL3 flippase upregulation thickens outer mycomembrane barrier.</text>
+  <text x="660" y="330" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• Provides mechanical rigidity against hydrodynamic shear stresses in microgravity.</text>
+
+  <!-- Subsystem 3: ESX-1 Type VII Secretion System -->
+  <rect x="80" y="450" width="480" height="280" rx="8" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
+  <text x="100" y="480" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="bold" fill="#B45309">3. Type VII Secretion System (ESX-1 &amp; ESX-5)</text>
+  <text x="100" y="500" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#92400E">GO:0015628 | Virulence Factor Secretion &amp; Envelope Integrity</text>
+  
+  <rect x="100" y="525" width="130" height="50" rx="6" fill="#FFFFFF" stroke="#D97706"/>
+  <text x="165" y="548" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#B45309" text-anchor="middle">esxA / esxB</text>
+  <text x="165" y="564" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#475569" text-anchor="middle">ESAT-6 / CFP-10 Dimer</text>
+
+  <rect x="250" y="525" width="130" height="50" rx="6" fill="#FFFFFF" stroke="#D97706"/>
+  <text x="315" y="548" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#B45309" text-anchor="middle">eccA1-eccE1</text>
+  <text x="315" y="564" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#475569" text-anchor="middle">Core Transmembrane Channel</text>
+
+  <rect x="400" y="525" width="130" height="50" rx="6" fill="#FFFFFF" stroke="#D97706"/>
+  <text x="465" y="548" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#B45309" text-anchor="middle">espA / mycP1</text>
+  <text x="465" y="564" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#475569" text-anchor="middle">Substrate Protease Complex</text>
+
+  <text x="100" y="610" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• Strong transcriptional induction of ESAT-6 and CFP-10 virulence antigens.</text>
+  <text x="100" y="630" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• ESX-1 pore mediates host membrane disruption and immune modulation.</text>
+  <text x="100" y="650" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• Direct cross-species homology to Salmonella SPI-1 / Hfq virulence activation in space.</text>
+
+  <!-- Subsystem 4: DosR Regulon & Stress Response -->
+  <rect x="640" y="450" width="480" height="280" rx="8" fill="#FDF4FF" stroke="#C026D3" stroke-width="1.5"/>
+  <text x="660" y="480" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="bold" fill="#A21CAF">4. DosR Dormancy &amp; Antioxidant Defense</text>
+  <text x="660" y="500" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#86198F">GO:0009267 | Hypoxic Unweighting &amp; ROS Neutralization</text>
+  
+  <rect x="660" y="525" width="130" height="50" rx="6" fill="#FFFFFF" stroke="#C026D3"/>
+  <text x="725" y="548" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#A21CAF" text-anchor="middle">dosR / dosS</text>
+  <text x="725" y="564" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#475569" text-anchor="middle">Redox Two-Component Sensor</text>
+
+  <rect x="810" y="525" width="130" height="50" rx="6" fill="#FFFFFF" stroke="#C026D3"/>
+  <text x="875" y="548" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#A21CAF" text-anchor="middle">hspX / tgs1</text>
+  <text x="875" y="564" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#475569" text-anchor="middle">Acr Chaperone &amp; TAG Lipid</text>
+
+  <rect x="960" y="525" width="130" height="50" rx="6" fill="#FFFFFF" stroke="#C026D3"/>
+  <text x="1025" y="548" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#A21CAF" text-anchor="middle">katG / sodA</text>
+  <text x="1025" y="564" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#475569" text-anchor="middle">Peroxidase &amp; Dismutase</text>
+
+  <text x="660" y="610" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• Fluid unweighting limits buoyant convection, generating localized hypoxic microenvironments.</text>
+  <text x="660" y="630" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• HspX (+3.2 log2FC) prevents misfolding and primes for dormancy survival.</text>
+  <text x="660" y="650" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">• SodA and KatG prevent oxidative damage from microgravity-induced ROS.</text>
+</svg>

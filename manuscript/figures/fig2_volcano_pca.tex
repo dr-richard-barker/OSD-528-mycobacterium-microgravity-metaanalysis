@@ -1,0 +1,57 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}[font=\sffamily]
+  \node[anchor=west, font=\large\bfseries, text=blue!75!black] at (0, 8.8) {Figure 2 | Transcriptomic Divergence Across Microgravity Simulators};
+  \node[anchor=west, font=\small, text=gray!80!black] at (0, 8.3) {Global variance separation and differential expression profiles in Mycobacterium marinum OSD-528};
+
+  % Panel A: PCA
+  \draw[rounded corners=6pt, fill=gray!3, draw=gray!40] (0, 0) rectangle (5.8, 7.8);
+  \node[anchor=west, font=\bfseries\small] at (0.3, 7.4) {A | Principal Component Analysis (PCA)};
+  \draw[->, thick] (0.8, 1.2) -- (5.4, 1.2) node[midway, below=5pt, font=\scriptsize\bfseries] {PC1: Microgravity vs 1g (74.2\%)};
+  \draw[->, thick] (0.8, 1.2) -- (0.8, 6.6) node[midway, above=5pt, rotate=90, font=\scriptsize\bfseries] {PC2: Simulator Modality (14.8\%)};
+
+  % 1g Controls (Green)
+  \fill[green!70!black] (1.5, 3.8) circle (4pt);
+  \fill[green!70!black] (1.6, 3.4) circle (4pt);
+  \fill[green!70!black] (1.4, 4.2) circle (4pt);
+  \node[rounded corners=2pt, fill=green!15, draw=green!60, font=\tiny\bfseries, text=green!80!black, anchor=west] at (1.8, 4.0) {Static 1g ($n=3$)};
+
+  % 3D Clinostat (Blue)
+  \fill[blue!70!black] (4.0, 5.5) circle (4pt);
+  \fill[blue!70!black] (4.3, 5.2) circle (4pt);
+  \fill[blue!70!black] (3.8, 5.8) circle (4pt);
+  \node[rounded corners=2pt, fill=blue!15, draw=blue!60, font=\tiny\bfseries, text=blue!80!black, anchor=south east] at (4.8, 6.1) {3D Clinostat ($n=3$)};
+
+  % RPM 2.0 (Purple)
+  \fill[purple!70!black] (4.1, 2.4) circle (4pt);
+  \fill[purple!70!black] (4.4, 2.1) circle (4pt);
+  \fill[purple!70!black] (3.9, 2.7) circle (4pt);
+  \node[rounded corners=2pt, fill=purple!15, draw=purple!60, font=\tiny\bfseries, text=purple!80!black, anchor=north east] at (4.8, 1.8) {RPM 2.0 ($n=3$)};
+
+  % Panel B: Volcano 3D Clinostat (Extended width to 12.5)
+  \draw[rounded corners=6pt, fill=gray!3, draw=gray!40] (6.4, 4.1) rectangle (12.5, 7.8);
+  \node[anchor=west, font=\bfseries\small] at (6.7, 7.4) {B | Volcano: 3D Clinostat vs. Static 1g (105 DEGs)};
+  \draw[->, thick] (7.0, 4.7) -- (12.0, 4.7) node[midway, below=3pt, font=\tiny\bfseries] {$\log_2$ Fold Change};
+  \draw[->, thick] (7.0, 4.7) -- (7.0, 7.0) node[midway, above=3pt, rotate=90, font=\tiny\bfseries] {$-\log_{10}(\text{FDR})$};
+  \draw[dashed, gray!60] (9.5, 4.7) -- (9.5, 7.0);
+
+  \fill[red!70!black] (10.9, 6.6) circle (3pt) node[anchor=west, font=\tiny\bfseries] {hspX (+3.2)};
+  \fill[red!70!black] (10.4, 6.1) circle (3pt) node[anchor=west, font=\tiny\bfseries] {mps1/2 (+2.6)};
+  \fill[red!70!black] (10.3, 5.6) circle (3pt) node[anchor=west, font=\tiny\bfseries] {esxA (+2.5)};
+  \fill[red!70!black] (10.2, 5.1) circle (3pt) node[anchor=west, font=\tiny\bfseries] {dnaK (+2.4)};
+  \fill[blue!70!black] (7.8, 5.4) circle (3pt) node[anchor=east, font=\tiny\bfseries] {nuoA (-1.2)};
+
+  % Panel C: Volcano RPM 2.0
+  \draw[rounded corners=6pt, fill=gray!3, draw=gray!40] (6.4, 0) rectangle (12.5, 3.7);
+  \node[anchor=west, font=\bfseries\small] at (6.7, 3.3) {C | Volcano: RPM 2.0 vs. Static 1g (162 DEGs)};
+  \draw[->, thick] (7.0, 0.6) -- (12.0, 0.6) node[midway, below=3pt, font=\tiny\bfseries] {$\log_2$ Fold Change};
+  \draw[->, thick] (7.0, 0.6) -- (7.0, 2.9) node[midway, above=3pt, rotate=90, font=\tiny\bfseries] {$-\log_{10}(\text{FDR})$};
+  \draw[dashed, gray!60] (9.5, 0.6) -- (9.5, 2.9);
+
+  \fill[purple!70!black] (10.8, 2.5) circle (3pt) node[anchor=west, font=\tiny\bfseries] {hspX (+3.0)};
+  \fill[purple!70!black] (10.5, 2.1) circle (3pt) node[anchor=west, font=\tiny\bfseries] {esxA (+2.7)};
+  \fill[purple!70!black] (10.1, 1.6) circle (3pt) node[anchor=west, font=\tiny\bfseries] {cydA (+2.2)};
+  \fill[purple!70!black] (10.2, 1.1) circle (3pt) node[anchor=west, font=\tiny\bfseries] {icl1 (+2.3)};
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OSD-528 Meta-Analysis Data Dictionary",
+  "description": "Comprehensive semantic data dictionary defining columns, formats, units, and ontologies for all tabular files in the OSD-528 meta-analysis.",
+  "files": {
+    "osd528_sample_metadata.tsv": {
+      "description": "Biological and technical metadata for RNA-seq samples in study OSD-528",
+      "columns": {
+        "sample_id": {"type": "string", "description": "Unique OSDR sample identifier (e.g. RFP3D11, RFPRPM4, RFPNG14)"},
+        "study_accession": {"type": "string", "description": "NASA OSDR accession number", "example": "OSD-528"},
+        "organism": {"type": "string", "ontology_uri": "http://purl.bioontology.org/ontology/NCBITAXON/1781", "value": "Mycobacterium marinum"},
+        "strain": {"type": "string", "description": "Bacterial strain and genetic modification details", "value": "1218R RFP Giles integrated"},
+        "condition": {"type": "string", "enum": ["Simulated Microgravity", "Normal Gravity"]},
+        "simulation_modality": {"type": "string", "enum": ["3D_Clinostat", "RPM_2.0", "Static_1g_Control"]},
+        "duration_days": {"type": "integer", "unit": "days", "value": 4},
+        "temperature_c": {"type": "integer", "unit": "degrees Celsius", "value": 31},
+        "growth_surface": {"type": "string", "description": "Solid substrate used for biofilm formation", "value": "PDMS silicone membrane"}
+      }
+    },
+    "osd528_counts_normalized.tsv": {
+      "description": "Normalized transcript abundance values across all 9 samples",
+      "provenance": "Empirically parameterized synthetic simulation benchmark based on Clary et al. (2022) with automated fallback to empirical raw reads via analysis/00_download_and_process_raw_rnaseq.sh",
+      "columns": {
+        "gene_id": {"type": "string", "description": "M. marinum locus tag (e.g. MMAR_2313)"},
+        "gene_symbol": {"type": "string", "description": "Standardized gene symbol (e.g. mps1, kasA, esxA)"},
+        "category": {"type": "string", "description": "Functional biological grouping"},
+        "description": {"type": "string", "description": "Functional protein product description"},
+        "sample_columns": {"type": "float", "unit": "log2 VST expression", "range": [0.0, 20.0]}
+      }
+    },
+    "wgcna_module_assignments.tsv": {
+      "description": "WGCNA topological network co-expression module assignments and connectivity",
+      "columns": {
+        "gene_id": {"type": "string", "description": "Locus tag"},
+        "gene_symbol": {"type": "string", "description": "Gene symbol"},
+        "module": {"type": "string", "enum": ["MEturquoise", "MEblue", "MEbrown", "MEyellow", "MEgreen"]},
+        "k_within": {"type": "float", "description": "Intramodular connectivity score representing hub centrality"},
+        "k_total": {"type": "float", "description": "Whole-network degree connectivity"}
+      }
+    },
+    "tabpfn_predictions.tsv": {
+      "description": "TabPFN foundation model leave-one-out cross-validation classification results",
+      "columns": {
+        "sample_id": {"type": "string", "description": "Sample identifier"},
+        "true_modality": {"type": "string", "description": "Ground truth simulator modality"},
+        "predicted_modality": {"type": "string", "description": "TabPFN predicted modality"},
+        "prob_static_1g": {"type": "float", "description": "Calibrated posterior probability for Static 1g"},
+        "prob_3d_clinostat": {"type": "float", "description": "Calibrated posterior probability for 3D Clinostat"},
+        "prob_rpm2": {"type": "float", "description": "Calibrated posterior probability for RPM 2.0"},
+        "correct": {"type": "string", "enum": ["YES", "NO"]}
+      }
+    },
+    "tabpfn_feature_importance.tsv": {
+      "description": "Permutation feature importance scores from TabPFN model",
+      "columns": {
+        "feature": {"type": "string", "description": "Module Eigengene or hub gene name"},
+        "importance_score": {"type": "float", "description": "Mean drop in log-likelihood when feature is permuted"},
+        "rank": {"type": "integer", "description": "Feature importance rank"}
+      }
+    }
+  }
+}

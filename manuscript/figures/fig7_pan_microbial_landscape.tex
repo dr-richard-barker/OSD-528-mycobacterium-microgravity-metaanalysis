@@ -1,0 +1,79 @@
+\documentclass[tikz,border=12pt]{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}[font=\sffamily]
+  \node[anchor=west, font=\large\bfseries, text=blue!75!black] at (0, 8.8) {Figure 7 | Pan-Microbial Spaceflight Meta-Analysis Landscape Across 78 OSDR Studies};
+  \node[anchor=west, font=\small, text=gray!80!black] at (0, 8.3) {Contextualizing Mycobacterium marinum within conserved spaceflight bacterial adaptation phenotypes};
+
+  % Panel A: Taxonomic Breakdown of 78 OSDR Studies
+  \draw[rounded corners=6pt, fill=gray!3, draw=gray!40] (0, 0) rectangle (5.8, 7.8);
+  \node[anchor=west, font=\bfseries\small] at (0.3, 7.4) {A | OSDR Microbial Studies Breakdown ($N=78$)};
+
+  % Horizontal Stacked Representation
+  \node[anchor=west, font=\scriptsize\bfseries] at (0.4, 6.7) {Pseudomonadota (P. aeruginosa, S. enterica, E. coli)};
+  \draw[fill=blue!70!black] (0.4, 6.2) rectangle (4.2, 6.6) node[midway, font=\scriptsize\bfseries, text=white] {34 Studies (43.6\%)};
+
+  \node[anchor=west, font=\scriptsize\bfseries] at (0.4, 5.4) {Bacillota (B. subtilis, S. aureus, Enterococcus)};
+  \draw[fill=green!60!black] (0.4, 4.9) rectangle (2.8, 5.3) node[midway, font=\scriptsize\bfseries, text=white] {22 Studies (28.2\%)};
+
+  \node[anchor=west, font=\scriptsize\bfseries] at (0.4, 4.1) {Actinomycetota (M. marinum, Rhodococcus)};
+  \draw[fill=orange!70!black] (0.4, 3.6) rectangle (1.7, 4.0) node[midway, font=\tiny\bfseries, text=white] {10 (12.8\%)};
+
+  \node[anchor=west, font=\scriptsize\bfseries] at (0.4, 2.8) {Fungi \& Yeasts (C. albicans, S. cerevisiae)};
+  \draw[fill=purple!70!black] (0.4, 2.3) rectangle (1.3, 2.7) node[midway, font=\tiny\bfseries, text=white] {8 (10.3\%)};
+
+  \node[anchor=west, font=\scriptsize\bfseries] at (0.4, 1.5) {ISS Microbial Observatories};
+  \draw[fill=gray!60] (0.4, 1.0) rectangle (0.85, 1.4) node[midway, right=6pt, font=\tiny\bfseries] {4 (5.1\%)};
+
+  % Panel B: Cross-Species Comparative Concordance Matrix
+  \draw[rounded corners=6pt, fill=gray!3, draw=gray!40] (6.4, 0) rectangle (12.5, 7.8);
+  \node[anchor=west, font=\bfseries\small] at (6.7, 7.4) {B | Cross-Species Spaceflight Response Concordance};
+
+  % Matrix Headers
+  \node[font=\tiny\bfseries] at (8.6, 6.8) {Biofilm};
+  \node[font=\tiny\bfseries] at (9.5, 6.8) {Envelope};
+  \node[font=\tiny\bfseries] at (10.4, 6.8) {Virulence};
+  \node[font=\tiny\bfseries] at (11.3, 6.8) {Hypoxia};
+  \node[font=\tiny\bfseries] at (12.1, 6.8) {Shear};
+
+  % Species 1: M. marinum (OSD-528)
+  \node[font=\scriptsize\bfseries, anchor=east] at (8.0, 5.9) {M. marinum (OSD-528)};
+  \draw[fill=red!70] (8.3, 5.6) rectangle (8.9, 6.2) node[midway, font=\tiny\bfseries, text=white] {++};
+  \draw[fill=red!70] (9.2, 5.6) rectangle (9.8, 6.2) node[midway, font=\tiny\bfseries, text=white] {++};
+  \draw[fill=red!70] (10.1, 5.6) rectangle (10.7, 6.2) node[midway, font=\tiny\bfseries, text=white] {++};
+  \draw[fill=red!70] (11.0, 5.6) rectangle (11.6, 6.2) node[midway, font=\tiny\bfseries, text=white] {++};
+  \draw[fill=orange!70] (11.8, 5.6) rectangle (12.4, 6.2) node[midway, font=\tiny\bfseries, text=white] {+};
+
+  % Species 2: P. aeruginosa (OSD-14/15)
+  \node[font=\scriptsize\bfseries, anchor=east] at (8.0, 4.7) {P. aeruginosa (OSD-14)};
+  \draw[fill=red!70] (8.3, 4.4) rectangle (8.9, 5.0) node[midway, font=\tiny\bfseries, text=white] {++};
+  \draw[fill=red!60] (9.2, 4.4) rectangle (9.8, 5.0) node[midway, font=\tiny\bfseries, text=white] {++};
+  \draw[fill=red!70] (10.1, 4.4) rectangle (10.7, 5.0) node[midway, font=\tiny\bfseries, text=white] {++};
+  \draw[fill=orange!70] (11.0, 4.4) rectangle (11.6, 5.0) node[midway, font=\tiny\bfseries, text=white] {+};
+  \draw[fill=orange!70] (11.8, 4.4) rectangle (12.4, 5.0) node[midway, font=\tiny\bfseries, text=white] {+};
+
+  % Species 3: S. enterica (OSD-11)
+  \node[font=\scriptsize\bfseries, anchor=east] at (8.0, 3.5) {S. enterica (OSD-11)};
+  \draw[fill=orange!70] (8.3, 3.2) rectangle (8.9, 3.8) node[midway, font=\tiny\bfseries, text=white] {+};
+  \draw[fill=red!60] (9.2, 3.2) rectangle (9.8, 3.8) node[midway, font=\tiny\bfseries, text=white] {++};
+  \draw[fill=red!80] (10.1, 3.2) rectangle (10.7, 3.8) node[midway, font=\tiny\bfseries, text=white] {+++};
+  \draw[fill=orange!70] (11.0, 3.2) rectangle (11.6, 3.8) node[midway, font=\tiny\bfseries, text=white] {+};
+  \draw[fill=gray!20] (11.8, 3.2) rectangle (12.4, 3.8) node[midway, font=\tiny] {0};
+
+  % Species 4: B. subtilis (OSD-185)
+  \node[font=\scriptsize\bfseries, anchor=east] at (8.0, 2.3) {B. subtilis (OSD-185)};
+  \draw[fill=red!60] (8.3, 2.0) rectangle (8.9, 2.6) node[midway, font=\tiny\bfseries, text=white] {++};
+  \draw[fill=red!70] (9.2, 2.0) rectangle (9.8, 2.6) node[midway, font=\tiny\bfseries, text=white] {++};
+  \draw[fill=gray!20] (10.1, 2.0) rectangle (10.7, 2.6) node[midway, font=\tiny] {0};
+  \draw[fill=red!60] (11.0, 2.0) rectangle (11.6, 2.6) node[midway, font=\tiny\bfseries, text=white] {++};
+  \draw[fill=orange!70] (11.8, 2.0) rectangle (12.4, 2.6) node[midway, font=\tiny\bfseries, text=white] {+};
+
+  % Species 5: S. aureus (OSD-145)
+  \node[font=\scriptsize\bfseries, anchor=east] at (8.0, 1.1) {S. aureus (OSD-145)};
+  \draw[fill=red!70] (8.3, 0.8) rectangle (8.9, 1.4) node[midway, font=\tiny\bfseries, text=white] {++};
+  \draw[fill=red!60] (9.2, 0.8) rectangle (9.8, 1.4) node[midway, font=\tiny\bfseries, text=white] {++};
+  \draw[fill=red!70] (10.1, 0.8) rectangle (10.7, 1.4) node[midway, font=\tiny\bfseries, text=white] {++};
+  \draw[fill=gray!20] (11.0, 0.8) rectangle (11.6, 1.4) node[midway, font=\tiny] {0};
+  \draw[fill=orange!70] (11.8, 0.8) rectangle (12.4, 1.4) node[midway, font=\tiny\bfseries, text=white] {+};
+\end{tikzpicture}
+\end{document}

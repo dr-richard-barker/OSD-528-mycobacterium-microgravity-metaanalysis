@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <rect width="1200" height="800" fill="#FFFFFF"/>
+  <text x="50" y="45" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="bold" fill="#0A3663">Figure 2 | Transcriptomic Divergence Across Microgravity Simulators</text>
+  <text x="50" y="70" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#555555">Global variance separation and differential expression profiles in Mycobacterium marinum OSD-528</text>
+
+  <!-- Panel A: PCA Plot -->
+  <rect x="50" y="95" width="520" height="660" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="70" y="125" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1E293B">A | Principal Component Analysis (PCA)</text>
+  
+  <!-- PCA Plot Axes -->
+  <line x1="120" y1="650" x2="520" y2="650" stroke="#475569" stroke-width="1.5"/>
+  <line x1="120" y1="650" x2="120" y2="200" stroke="#475569" stroke-width="1.5"/>
+  <text x="320" y="690" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1E293B" text-anchor="middle">PC1: Microgravity vs. 1g Static (74.2% Variance)</text>
+  <text x="80" y="420" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1E293B" transform="rotate(-90 80 420)" text-anchor="middle">PC2: Simulator Modality (14.8% Variance)</text>
+  
+  <!-- Static 1g Samples (Left, green) -->
+  <circle cx="160" cy="420" r="9" fill="#22C55E" stroke="#15803D" stroke-width="1.5"/>
+  <text x="175" y="425" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#15803D">RFPNG14</text>
+  <circle cx="170" cy="390" r="9" fill="#22C55E" stroke="#15803D" stroke-width="1.5"/>
+  <text x="185" y="395" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#15803D">RFPNG35</text>
+  <circle cx="165" cy="450" r="9" fill="#22C55E" stroke="#15803D" stroke-width="1.5"/>
+  <text x="180" y="455" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#15803D">RFPNG45</text>
+  <ellipse cx="165" cy="420" rx="35" ry="50" fill="#22C55E" fill-opacity="0.1" stroke="#22C55E" stroke-dasharray="4"/>
+
+  <!-- 3D Clinostat Samples (Right Top, Blue) -->
+  <circle cx="440" cy="270" r="9" fill="#3B82F6" stroke="#1D4ED8" stroke-width="1.5"/>
+  <text x="455" y="275" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1D4ED8">RFP3D11</text>
+  <circle cx="460" cy="250" r="9" fill="#3B82F6" stroke="#1D4ED8" stroke-width="1.5"/>
+  <text x="475" y="255" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1D4ED8">RFP3D39</text>
+  <circle cx="430" cy="290" r="9" fill="#3B82F6" stroke="#1D4ED8" stroke-width="1.5"/>
+  <text x="445" y="295" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#1D4ED8">RFP3D47</text>
+  <ellipse cx="445" cy="270" rx="40" ry="40" fill="#3B82F6" fill-opacity="0.1" stroke="#3B82F6" stroke-dasharray="4"/>
+
+  <!-- RPM 2.0 Samples (Right Bottom, Purple) -->
+  <circle cx="450" cy="560" r="9" fill="#A855F7" stroke="#7E22CE" stroke-width="1.5"/>
+  <text x="465" y="565" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#7E22CE">RFPRPM4</text>
+  <circle cx="430" cy="580" r="9" fill="#A855F7" stroke="#7E22CE" stroke-width="1.5"/>
+  <text x="445" y="585" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#7E22CE">RFPRPM41</text>
+  <circle cx="470" cy="540" r="9" fill="#A855F7" stroke="#7E22CE" stroke-width="1.5"/>
+  <text x="485" y="545" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#7E22CE">RFPRPM6</text>
+  <ellipse cx="450" cy="560" rx="40" ry="40" fill="#A855F7" fill-opacity="0.1" stroke="#A855F7" stroke-dasharray="4"/>
+
+  <!-- Legend -->
+  <rect x="130" y="150" width="380" height="40" rx="4" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <circle cx="150" cy="170" r="6" fill="#22C55E"/>
+  <text x="165" y="174" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">Static 1g (Ground)</text>
+  <circle cx="280" cy="170" r="6" fill="#3B82F6"/>
+  <text x="295" y="174" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">3D Clinostat</text>
+  <circle cx="390" cy="170" r="6" fill="#A855F7"/>
+  <text x="405" y="174" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#334155">RPM 2.0</text>
+
+  <!-- Panel B: Volcano Plot (3D Clinostat vs 1g) -->
+  <rect x="610" y="95" width="540" height="315" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="630" y="125" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E293B">B | Volcano: 3D Clinostat vs. Static 1g (105 Significant DEGs)</text>
+  
+  <line x1="660" y1="360" x2="1100" y2="360" stroke="#475569" stroke-width="1.2"/>
+  <line x1="880" y1="360" x2="880" y2="150" stroke="#94A3B8" stroke-dasharray="3"/>
+  <line x1="660" y1="360" x2="660" y2="150" stroke="#475569" stroke-width="1.2"/>
+  <text x="880" y="385" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="bold" fill="#1E293B" text-anchor="middle">log2 Fold Change</text>
+  <text x="635" y="250" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="bold" fill="#1E293B" transform="rotate(-90 635 250)" text-anchor="middle">-log10(p-adj)</text>
+
+  <!-- Key Upregulated Dots -->
+  <circle cx="990" cy="180" r="5" fill="#EF4444"/>
+  <text x="1000" y="180" font-family="Helvetica, Arial, sans-serif" font-size="10" font-weight="bold" fill="#B91C1C">hspX (+3.2)</text>
+  <circle cx="960" cy="200" r="5" fill="#EF4444"/>
+  <text x="970" y="200" font-family="Helvetica, Arial, sans-serif" font-size="10" font-weight="bold" fill="#B91C1C">mps1/2 (+2.6)</text>
+  <circle cx="950" cy="220" r="5" fill="#EF4444"/>
+  <text x="960" y="220" font-family="Helvetica, Arial, sans-serif" font-size="10" font-weight="bold" fill="#B91C1C">esxA (+2.5)</text>
+  <circle cx="940" cy="240" r="5" fill="#EF4444"/>
+  <text x="950" y="240" font-family="Helvetica, Arial, sans-serif" font-size="10" font-weight="bold" fill="#B91C1C">dnaK (+2.4)</text>
+  
+  <!-- Key Downregulated Dots -->
+  <circle cx="780" cy="230" r="5" fill="#0284C7"/>
+  <text x="710" y="230" font-family="Helvetica, Arial, sans-serif" font-size="10" font-weight="bold" fill="#0369A1">nuoA (-1.2)</text>
+  <circle cx="770" cy="250" r="5" fill="#0284C7"/>
+  <text x="700" y="250" font-family="Helvetica, Arial, sans-serif" font-size="10" font-weight="bold" fill="#0369A1">gltA (-1.4)</text>
+  
+  <!-- Panel C: Volcano Plot (RPM 2.0 vs 1g) -->
+  <rect x="610" y="440" width="540" height="315" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="630" y="470" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E293B">C | Volcano: RPM 2.0 vs. Static 1g (162 Significant DEGs)</text>
+  
+  <line x1="660" y1="710" x2="1100" y2="710" stroke="#475569" stroke-width="1.2"/>
+  <line x1="880" y1="710" x2="880" y2="500" stroke="#94A3B8" stroke-dasharray="3"/>
+  <line x1="660" y1="710" x2="660" y2="500" stroke="#475569" stroke-width="1.2"/>
+  <text x="880" y="735" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="bold" fill="#1E293B" text-anchor="middle">log2 Fold Change</text>
+  <text x="635" y="605" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="bold" fill="#1E293B" transform="rotate(-90 635 605)" text-anchor="middle">-log10(p-adj)</text>
+
+  <!-- Key Upregulated Dots in RPM -->
+  <circle cx="985" cy="520" r="5" fill="#A855F7"/>
+  <text x="995" y="520" font-family="Helvetica, Arial, sans-serif" font-size="10" font-weight="bold" fill="#7E22CE">hspX (+3.0)</text>
+  <circle cx="975" cy="540" r="5" fill="#A855F7"/>
+  <text x="985" y="540" font-family="Helvetica, Arial, sans-serif" font-size="10" font-weight="bold" fill="#7E22CE">esxA (+2.7)</text>
+  <circle cx="960" cy="560" r="5" fill="#A855F7"/>
+  <text x="970" y="560" font-family="Helvetica, Arial, sans-serif" font-size="10" font-weight="bold" fill="#7E22CE">cydA (+2.2)</text>
+  <circle cx="955" cy="580" r="5" fill="#A855F7"/>
+  <text x="965" y="580" font-family="Helvetica, Arial, sans-serif" font-size="10" font-weight="bold" fill="#7E22CE">icl1 (+2.3)</text>
+</svg>

@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <rect width="1200" height="800" fill="#FFFFFF"/>
+  <text x="50" y="45" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="bold" fill="#0A3663">Figure 4 | TabPFN Tabular Foundation Model (Nature 2025) Integration</text>
+  <text x="50" y="70" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#555555">Prior-data fitted network performance, benchmark comparison, and permutation biomarker ranking</text>
+
+  <!-- Panel A: Model Benchmark Comparison -->
+  <rect x="50" y="95" width="530" height="315" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="70" y="125" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E293B">A | Leave-One-Out Cross-Validation (LOOCV) Accuracy</text>
+  
+  <!-- Bar 1: TabPFN Modality -->
+  <text x="80" y="175" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F172A">TabPFN Foundation Model (Modality)</text>
+  <rect x="80" y="185" width="400" height="30" rx="4" fill="#9333EA"/>
+  <text x="490" y="205" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#7E22CE">100.0%</text>
+
+  <!-- Bar 2: TabPFN Binary MG -->
+  <text x="80" y="240" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F172A">TabPFN Foundation Model (Binary MG)</text>
+  <rect x="80" y="250" width="400" height="30" rx="4" fill="#3B82F6"/>
+  <text x="490" y="270" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1D4ED8">100.0%</text>
+
+  <!-- Bar 3: Random Forest Baseline -->
+  <text x="80" y="305" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Random Forest Baseline (Modality)</text>
+  <rect x="80" y="315" width="177" height="30" rx="4" fill="#94A3B8"/>
+  <text x="268" y="335" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#475569">44.4%</text>
+
+  <text x="80" y="380" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#64748B">• TabPFN solves the small-sample bottleneck (n=9) without overfitting or manual tuning.</text>
+
+  <!-- Panel B: Confusion Matrix -->
+  <rect x="610" y="95" width="540" height="315" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="630" y="125" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E293B">B | Multi-Class Confusion Matrix (TabPFN LOOCV)</text>
+  
+  <text x="740" y="165" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="bold" fill="#334155" text-anchor="middle">Pred: Static 1g</text>
+  <text x="860" y="165" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="bold" fill="#334155" text-anchor="middle">Pred: Clinostat</text>
+  <text x="980" y="165" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="bold" fill="#334155" text-anchor="middle">Pred: RPM 2.0</text>
+
+  <!-- Row 1: True Static 1g -->
+  <text x="640" y="215" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="bold" fill="#334155">True: Static 1g</text>
+  <rect x="700" y="180" width="80" height="60" fill="#22C55E" rx="4"/>
+  <text x="740" y="218" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF" text-anchor="middle">3</text>
+  <rect x="820" y="180" width="80" height="60" fill="#E2E8F0" rx="4"/>
+  <text x="860" y="218" font-family="Helvetica, Arial, sans-serif" font-size="18" fill="#94A3B8" text-anchor="middle">0</text>
+  <rect x="940" y="180" width="80" height="60" fill="#E2E8F0" rx="4"/>
+  <text x="980" y="218" font-family="Helvetica, Arial, sans-serif" font-size="18" fill="#94A3B8" text-anchor="middle">0</text>
+
+  <!-- Row 2: True 3D Clinostat -->
+  <text x="640" y="285" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="bold" fill="#334155">True: Clinostat</text>
+  <rect x="700" y="250" width="80" height="60" fill="#E2E8F0" rx="4"/>
+  <text x="740" y="288" font-family="Helvetica, Arial, sans-serif" font-size="18" fill="#94A3B8" text-anchor="middle">0</text>
+  <rect x="820" y="250" width="80" height="60" fill="#3B82F6" rx="4"/>
+  <text x="860" y="288" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF" text-anchor="middle">3</text>
+  <rect x="940" y="250" width="80" height="60" fill="#E2E8F0" rx="4"/>
+  <text x="980" y="288" font-family="Helvetica, Arial, sans-serif" font-size="18" fill="#94A3B8" text-anchor="middle">0</text>
+
+  <!-- Row 3: True RPM 2.0 -->
+  <text x="640" y="355" font-family="Helvetica, Arial, sans-serif" font-size="11" font-weight="bold" fill="#334155">True: RPM 2.0</text>
+  <rect x="700" y="320" width="80" height="60" fill="#E2E8F0" rx="4"/>
+  <text x="740" y="358" font-family="Helvetica, Arial, sans-serif" font-size="18" fill="#94A3B8" text-anchor="middle">0</text>
+  <rect x="820" y="320" width="80" height="60" fill="#E2E8F0" rx="4"/>
+  <text x="860" y="358" font-family="Helvetica, Arial, sans-serif" font-size="18" fill="#94A3B8" text-anchor="middle">0</text>
+  <rect x="940" y="320" width="80" height="60" fill="#A855F7" rx="4"/>
+  <text x="980" y="358" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF" text-anchor="middle">3</text>
+
+  <!-- Panel C: Permutation Feature Importance -->
+  <rect x="50" y="440" width="1100" height="320" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="70" y="470" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E293B">C | TabPFN Permutation Feature Importance: Prioritizing Microgravity &amp; Simulator Drivers</text>
+  
+  <!-- Horizontal Feature Importance Bars -->
+  <!-- 1. icl1 -->
+  <text x="80" y="515" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1E293B">icl1 (Isocitrate Lyase)</text>
+  <rect x="300" y="502" width="397" height="18" rx="3" fill="#EF4444"/>
+  <text x="710" y="516" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#64748B">0.4963 (RPM metabolic marker)</text>
+
+  <!-- 2. dnaK -->
+  <text x="80" y="540" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1E293B">dnaK (Hsp70 Chaperone)</text>
+  <rect x="300" y="527" width="389" height="18" rx="3" fill="#EF4444"/>
+  <text x="710" y="541" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#64748B">0.4868 (Clinostat rotational shear)</text>
+
+  <!-- 3. clpP1 -->
+  <text x="80" y="565" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1E293B">clpP1 (Protease Subunit)</text>
+  <rect x="300" y="552" width="341" height="18" rx="3" fill="#EF4444"/>
+  <text x="710" y="566" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#64748B">0.4268 (Clinostat proteostasis marker)</text>
+
+  <!-- 4. cydA -->
+  <text x="80" y="590" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1E293B">cydA (Cytochrome bd)</text>
+  <rect x="300" y="577" width="319" height="18" rx="3" fill="#EF4444"/>
+  <text x="710" y="591" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#64748B">0.3992 (RPM respiratory shift)</text>
+
+  <!-- 5. MEblue -->
+  <text x="80" y="615" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1E293B">MEblue (Mycolic Acid Module)</text>
+  <rect x="300" y="602" width="118" height="18" rx="3" fill="#3B82F6"/>
+  <text x="430" y="616" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#64748B">0.1181 (Universal Microgravity)</text>
+
+  <!-- 6. fbpA -->
+  <text x="80" y="640" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1E293B">fbpA (Antigen 85A)</text>
+  <rect x="300" y="627" width="115" height="18" rx="3" fill="#3B82F6"/>
+  <text x="430" y="641" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#64748B">0.1150 (Cord factor synthesis)</text>
+
+  <!-- 7. mps1 -->
+  <text x="80" y="665" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1E293B">mps1 (GPL Biofilm Synthetase)</text>
+  <rect x="300" y="652" width="107" height="18" rx="3" fill="#06B6D4"/>
+  <text x="430" y="666" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#64748B">0.1078 (Surface attachment)</text>
+
+  <!-- 8. katG -->
+  <text x="80" y="690" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1E293B">katG (Catalase-Peroxidase)</text>
+  <rect x="300" y="677" width="105" height="18" rx="3" fill="#EAB308"/>
+  <text x="430" y="691" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#64748B">0.1059 (Antioxidant defense)</text>
+
+  <!-- 9. hspX -->
+  <text x="80" y="715" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1E293B">hspX (DosR Small Heat Shock)</text>
+  <rect x="300" y="702" width="105" height="18" rx="3" fill="#EAB308"/>
+  <text x="430" y="716" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#64748B">0.1052 (Dormancy regulon)</text>
+</svg>

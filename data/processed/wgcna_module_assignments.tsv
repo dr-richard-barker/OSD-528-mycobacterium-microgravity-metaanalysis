@@ -1,0 +1,351 @@
+gene_id	gene_symbol	module	k_within	k_total	category	description
+MMAR_2434	fbpB	MEblue	9.312	183.245	Cell_Wall_Lipids	Antigen 85B mycolyltransferase FbpB
+MMAR_5207	fbpA	MEblue	9.304	184.16	Cell_Wall_Lipids	Antigen 85A mycolyltransferase FbpA (cord factor synthesis)
+MMAR_0344	fbpC	MEblue	9.288	182.864	Cell_Wall_Lipids	Antigen 85C mycolyltransferase FbpC
+MMAR_0392	mmpL3	MEblue	9.268	177.839	Cell_Wall_Lipids	Trehalose monomycolate flippase MmpL3
+MMAR_1534	fabD	MEblue	9.165	181.306	Cell_Wall_Lipids	Malonyl-CoA:ACP transacylase FabD
+MMAR_2760	inhA	MEblue	9.043	176.354	Cell_Wall_Lipids	Enoyl-ACP reductase InhA (FAS-II cycle)
+MMAR_1535	acpM	MEblue	9.035	175.359	Cell_Wall_Lipids	Acyl carrier protein AcpM (meromycolic chain carrier)
+MMAR_0792	mmp_792	MEblue	8.954	176.026	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0792
+MMAR_1536	kasB	MEblue	8.871	182.07	Cell_Wall_Lipids	Beta-ketoacyl-ACP synthase KasB (meromycolate maturation)
+MMAR_1537	kasA	MEblue	8.871	179.705	Cell_Wall_Lipids	Beta-ketoacyl-ACP synthase KasA (FAS-II elongation)
+MMAR_2350	nuoA	MEblue	8.784	169.226	Downregulated_Metabolism	NADH-quinone oxidoreductase subunit A
+MMAR_2352	nuoD	MEblue	8.517	163.476	Downregulated_Metabolism	NADH-quinone oxidoreductase subunit D
+MMAR_4996	mmpL8	MEblue	8.366	159.452	Cell_Wall_Lipids	Sulfolipid transporter MmpL8
+MMAR_0379	mmp_379	MEblue	8.29	157.283	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0379
+MMAR_4100	gltA	MEblue	8.288	166.378	Downregulated_Metabolism	Citrate synthase GltA
+MMAR_2351	nuoB	MEblue	8.184	158.928	Downregulated_Metabolism	NADH-quinone oxidoreductase subunit B
+MMAR_0081	mmp_81	MEblue	8.108	159.291	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0081
+MMAR_0442	mmp_442	MEblue	8.074	156.321	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0442
+MMAR_0377	mmp_377	MEblue	7.999	155.536	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0377
+MMAR_0532	mmp_532	MEblue	7.869	151.009	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0532
+MMAR_0801	mmp_801	MEblue	7.613	149.245	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0801
+MMAR_0284	mmp_284	MEblue	7.554	144.31	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0284
+MMAR_0164	mmp_164	MEblue	7.548	146.743	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0164
+MMAR_1095	mmp_1095	MEblue	7.482	143.114	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1095
+MMAR_0926	mmp_926	MEblue	7.114	139.58	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0926
+MMAR_1100	mmp_1100	MEblue	7.045	140.326	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1100
+MMAR_0965	mmp_965	MEblue	6.999	140.462	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0965
+MMAR_0192	mmp_192	MEblue	6.928	135.725	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0192
+MMAR_1114	mmp_1114	MEblue	6.849	131.26	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1114
+MMAR_0741	mmp_741	MEblue	6.815	129.165	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0741
+MMAR_0539	mmp_539	MEblue	6.74	130.902	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0539
+MMAR_0514	mmp_514	MEblue	6.646	128.709	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0514
+MMAR_0912	atpD	MEblue	6.591	133.326	Downregulated_Metabolism	ATP synthase F1 delta subunit
+MMAR_0845	mmp_845	MEblue	6.558	125.587	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0845
+MMAR_0847	mmp_847	MEblue	6.3	120.689	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0847
+MMAR_0628	mmp_628	MEblue	5.924	112.795	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0628
+MMAR_0108	mmp_108	MEblue	1.137	26.023	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0108
+MMAR_5439	esxA	MEbrown	8.475	185.418	ESX_Secretion	6 kDa early secretory antigenic target ESAT-6
+MMAR_5445	eccB1	MEbrown	8.466	182.731	ESX_Secretion	ESX-1 membrane protein EccB1
+MMAR_5434	espA	MEbrown	8.393	187.383	ESX_Secretion	ESX-1 substrate EspA (virulence factor)
+MMAR_5444	eccA1	MEbrown	8.366	182.001	ESX_Secretion	ESX-1 ATPase EccA1
+MMAR_5448	eccE1	MEbrown	8.318	179.929	ESX_Secretion	ESX-1 membrane complex subunit EccE1
+MMAR_5447	eccD1	MEbrown	8.194	174.082	ESX_Secretion	ESX-1 transmembrane channel EccD1
+MMAR_0500	mmp_500	MEbrown	8.187	175.72	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0500
+MMAR_5446	eccC1	MEbrown	8.129	177.246	ESX_Secretion	ESX-1 core ATPase EccC1
+MMAR_5440	esxB	MEbrown	8.126	178.272	ESX_Secretion	10 kDa culture filtrate antigen CFP-10
+MMAR_5449	mycP1	MEbrown	8.092	172.425	ESX_Secretion	Subtilisin-like protease MycP1
+MMAR_0520	mmp_520	MEbrown	7.922	169.054	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0520
+MMAR_0400	mmp_400	MEbrown	7.904	169.388	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0400
+MMAR_0549	mmp_549	MEbrown	7.902	178.633	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0549
+MMAR_0899	mmp_899	MEbrown	7.869	173.061	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0899
+MMAR_0533	mmp_533	MEbrown	7.78	170.89	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0533
+MMAR_0484	mmp_484	MEbrown	7.778	170.409	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0484
+MMAR_0578	mmp_578	MEbrown	7.752	165.238	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0578
+MMAR_0566	mmp_566	MEbrown	7.737	177.48	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0566
+MMAR_0128	mmp_128	MEbrown	7.686	163.921	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0128
+MMAR_1151	mmp_1151	MEbrown	7.634	171.832	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1151
+MMAR_0317	mmp_317	MEbrown	7.625	173.499	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0317
+MMAR_4101	icd1	MEbrown	7.591	166.725	Downregulated_Metabolism	Isocitrate dehydrogenase Icd1
+MMAR_0427	mmp_427	MEbrown	7.546	161.912	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0427
+MMAR_1070	mmp_1070	MEbrown	7.543	161.457	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1070
+MMAR_1144	mmp_1144	MEbrown	7.457	171.736	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1144
+MMAR_0432	mmp_432	MEbrown	7.424	158.708	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0432
+MMAR_1078	mmp_1078	MEbrown	7.407	171.741	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1078
+MMAR_0837	mmp_837	MEbrown	7.347	170.764	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0837
+MMAR_0173	mmp_173	MEbrown	7.32	167.988	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0173
+MMAR_1890	eno	MEbrown	7.316	168.327	Downregulated_Metabolism	Enolase Eno (glycolytic enzyme)
+MMAR_0466	mmp_466	MEbrown	7.305	177.989	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0466
+MMAR_0198	mmp_198	MEbrown	7.28	178.409	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0198
+MMAR_0873	mmp_873	MEbrown	7.276	161.529	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0873
+MMAR_1067	mmp_1067	MEbrown	7.273	174.165	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1067
+MMAR_1048	mmp_1048	MEbrown	7.174	164.831	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1048
+MMAR_0687	mmp_687	MEbrown	7.152	155.843	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0687
+MMAR_0681	mmp_681	MEbrown	7.149	171.284	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0681
+MMAR_0453	mmp_453	MEbrown	7.14	156.195	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0453
+MMAR_0364	mmp_364	MEbrown	7.096	156.293	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0364
+MMAR_0791	mmp_791	MEbrown	7.034	165.543	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0791
+MMAR_0984	mmp_984	MEbrown	7.016	178.203	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0984
+MMAR_0207	mmp_207	MEbrown	6.966	157.686	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0207
+MMAR_0286	mmp_286	MEbrown	6.94	172.774	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0286
+MMAR_0624	mmp_624	MEbrown	6.877	169.719	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0624
+MMAR_0165	mmp_165	MEbrown	6.868	149.543	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0165
+MMAR_0449	mmp_449	MEbrown	6.837	168.878	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0449
+MMAR_0430	mmp_430	MEbrown	6.813	159.844	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0430
+MMAR_0186	mmp_186	MEbrown	6.809	152.628	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0186
+MMAR_0210	mmp_210	MEbrown	6.802	149.062	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0210
+MMAR_0652	mmp_652	MEbrown	6.792	156.407	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0652
+MMAR_0834	mmp_834	MEbrown	6.726	154.448	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0834
+MMAR_0341	mmp_341	MEbrown	6.684	162.496	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0341
+MMAR_0177	mmp_177	MEbrown	6.664	149.017	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0177
+MMAR_0911	atpB	MEbrown	6.663	141.933	Downregulated_Metabolism	ATP synthase F1 beta subunit
+MMAR_1153	mmp_1153	MEbrown	6.659	166.936	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1153
+MMAR_0745	mmp_745	MEbrown	6.648	172.233	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0745
+MMAR_0365	mmp_365	MEbrown	6.648	153.992	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0365
+MMAR_0802	mmp_802	MEbrown	6.612	140.804	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0802
+MMAR_0555	mmp_555	MEbrown	6.61	155.842	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0555
+MMAR_1099	mmp_1099	MEbrown	6.604	167.335	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1099
+MMAR_0784	mmp_784	MEbrown	6.597	151.265	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0784
+MMAR_0106	mmp_106	MEbrown	6.568	158.441	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0106
+MMAR_1090	mmp_1090	MEbrown	6.538	138.112	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1090
+MMAR_1085	mmp_1085	MEbrown	6.538	154.672	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1085
+MMAR_0178	mmp_178	MEbrown	6.531	142.258	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0178
+MMAR_0548	mmp_548	MEbrown	6.452	153.592	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0548
+MMAR_0622	mmp_622	MEbrown	6.422	159.316	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0622
+MMAR_0268	mmp_268	MEbrown	6.392	161.964	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0268
+MMAR_0905	mmp_905	MEbrown	6.38	140.508	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0905
+MMAR_0447	mmp_447	MEbrown	6.378	158.176	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0447
+MMAR_0806	mmp_806	MEbrown	6.309	149.848	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0806
+MMAR_1060	mmp_1060	MEbrown	6.293	153.597	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1060
+MMAR_0961	mmp_961	MEbrown	6.275	152.211	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0961
+MMAR_0818	mmp_818	MEbrown	6.246	144.486	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0818
+MMAR_0956	mmp_956	MEbrown	6.204	131.746	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0956
+MMAR_0688	mmp_688	MEbrown	6.166	152.392	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0688
+MMAR_0494	mmp_494	MEbrown	6.152	139.551	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0494
+MMAR_0813	mmp_813	MEbrown	6.128	159.232	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0813
+MMAR_1128	mmp_1128	MEbrown	6.105	135.242	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1128
+MMAR_0955	mmp_955	MEbrown	6.063	132.686	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0955
+MMAR_1032	mmp_1032	MEbrown	5.952	163.266	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1032
+MMAR_0172	mmp_172	MEbrown	5.93	131.184	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0172
+MMAR_0224	mmp_224	MEbrown	5.918	161.789	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0224
+MMAR_0140	mmp_140	MEbrown	5.905	141.652	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0140
+MMAR_0176	mmp_176	MEbrown	5.819	139.975	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0176
+MMAR_0096	mmp_96	MEbrown	5.796	153.292	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0096
+MMAR_0582	mmp_582	MEbrown	5.729	127.388	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0582
+MMAR_0145	mmp_145	MEbrown	5.707	142.114	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0145
+MMAR_1081	mmp_1081	MEbrown	5.627	150.8	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1081
+MMAR_0476	mmp_476	MEbrown	5.612	160.583	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0476
+MMAR_0249	mmp_249	MEbrown	5.596	120.502	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0249
+MMAR_0479	mmp_479	MEbrown	5.537	150.258	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0479
+MMAR_0723	mmp_723	MEbrown	5.512	146.705	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0723
+MMAR_1088	mmp_1088	MEbrown	5.507	116.107	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1088
+MMAR_0788	mmp_788	MEbrown	5.376	142.985	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0788
+MMAR_0945	mmp_945	MEbrown	5.328	129.743	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0945
+MMAR_0596	mmp_596	MEbrown	5.307	121.661	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0596
+MMAR_0497	mmp_497	MEbrown	5.254	118.062	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0497
+MMAR_1149	mmp_1149	MEbrown	5.236	142.026	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1149
+MMAR_0842	mmp_842	MEbrown	5.186	139.543	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0842
+MMAR_0920	mmp_920	MEbrown	5.181	116.528	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0920
+MMAR_0691	mmp_691	MEbrown	5.17	122.674	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0691
+MMAR_0516	mmp_516	MEbrown	5.164	112.501	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0516
+MMAR_0464	mmp_464	MEbrown	5.152	127.421	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0464
+MMAR_0366	mmp_366	MEbrown	5.118	113.961	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0366
+MMAR_0425	mmp_425	MEbrown	5.074	129.364	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0425
+MMAR_0330	mmp_330	MEbrown	5.037	135.205	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0330
+MMAR_1184	mmp_1184	MEbrown	4.994	126.576	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1184
+MMAR_0602	mmp_602	MEbrown	4.969	144.772	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0602
+MMAR_0897	mmp_897	MEbrown	4.964	111.028	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0897
+MMAR_0348	mmp_348	MEbrown	4.916	139.882	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0348
+MMAR_0820	mmp_820	MEbrown	4.905	122.172	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0820
+MMAR_0368	mmp_368	MEbrown	4.89	110.83	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0368
+MMAR_0526	mmp_526	MEbrown	4.868	143.907	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0526
+MMAR_0868	mmp_868	MEbrown	4.817	106.761	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0868
+MMAR_0969	mmp_969	MEbrown	4.792	121.386	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0969
+MMAR_0804	mmp_804	MEbrown	4.696	137.863	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0804
+MMAR_0095	mmp_95	MEbrown	4.686	104.248	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0095
+MMAR_0696	mmp_696	MEbrown	4.651	150.96	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0696
+MMAR_0848	mmp_848	MEbrown	4.616	115.259	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0848
+MMAR_1112	mmp_1112	MEbrown	4.614	127.553	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1112
+MMAR_0415	mmp_415	MEbrown	4.601	135.25	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0415
+MMAR_0565	mmp_565	MEbrown	4.601	115.548	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0565
+MMAR_0179	mmp_179	MEbrown	4.563	143.002	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0179
+MMAR_0227	mmp_227	MEbrown	4.556	126.275	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0227
+MMAR_0778	mmp_778	MEbrown	4.549	145.05	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0778
+MMAR_0214	mmp_214	MEbrown	4.521	124.125	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0214
+MMAR_0326	mmp_326	MEbrown	4.515	129.716	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0326
+MMAR_0656	mmp_656	MEbrown	4.492	139.562	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0656
+MMAR_0898	mmp_898	MEbrown	4.492	143.574	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0898
+MMAR_0541	mmp_541	MEbrown	4.481	96.635	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0541
+MMAR_0110	mmp_110	MEbrown	4.455	136.682	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0110
+MMAR_0724	mmp_724	MEbrown	4.393	122.573	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0724
+MMAR_0910	atpA	MEbrown	4.38	98.656	Downregulated_Metabolism	ATP synthase F1 alpha subunit
+MMAR_0413	mmp_413	MEbrown	4.36	135.343	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0413
+MMAR_0663	mmp_663	MEbrown	4.303	134.697	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0663
+MMAR_0429	mmp_429	MEbrown	4.15	103.834	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0429
+MMAR_0935	mmp_935	MEbrown	4.123	116.455	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0935
+MMAR_0574	mmp_574	MEbrown	4.101	135.108	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0574
+MMAR_0303	mmp_303	MEbrown	4.039	115.622	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0303
+MMAR_0201	mmp_201	MEbrown	3.996	139.643	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0201
+MMAR_1063	mmp_1063	MEbrown	3.994	98.273	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1063
+MMAR_1170	mmp_1170	MEbrown	3.986	121.016	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1170
+MMAR_0759	mmp_759	MEbrown	3.98	112.892	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0759
+MMAR_0680	mmp_680	MEbrown	3.936	95.441	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0680
+MMAR_0963	mmp_963	MEbrown	3.927	115.926	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0963
+MMAR_0675	mmp_675	MEbrown	3.901	123.784	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0675
+MMAR_0942	mmp_942	MEbrown	3.886	136.084	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0942
+MMAR_0854	mmp_854	MEbrown	3.848	126.819	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0854
+MMAR_0393	mmp_393	MEbrown	3.762	107.668	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0393
+MMAR_0612	mmp_612	MEbrown	3.709	123.18	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0612
+MMAR_0402	mmp_402	MEbrown	3.684	128.797	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0402
+MMAR_0435	mmp_435	MEbrown	3.677	129.403	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0435
+MMAR_0603	mmp_603	MEbrown	3.647	97.952	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0603
+MMAR_0133	mmp_133	MEbrown	3.64	115.64	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0133
+MMAR_0867	mmp_867	MEbrown	3.481	109.284	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0867
+MMAR_0343	mmp_343	MEbrown	3.47	111.087	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0343
+MMAR_0496	mmp_496	MEbrown	3.42	130.091	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0496
+MMAR_0138	mmp_138	MEbrown	3.419	89.518	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0138
+MMAR_0797	mmp_797	MEbrown	3.401	123.467	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0797
+MMAR_0486	mmp_486	MEbrown	3.318	129.623	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0486
+MMAR_0285	mmp_285	MEbrown	3.279	127.636	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0285
+MMAR_1138	mmp_1138	MEbrown	3.254	123.855	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1138
+MMAR_1196	mmp_1196	MEbrown	3.1	110.485	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1196
+MMAR_0871	mmp_871	MEbrown	3.08	101.588	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0871
+MMAR_0093	mmp_93	MEbrown	2.986	107.713	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0093
+MMAR_0349	mmp_349	MEbrown	2.982	100.411	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0349
+MMAR_1065	mmp_1065	MEbrown	2.931	119.22	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1065
+MMAR_1159	mmp_1159	MEbrown	2.876	111.569	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1159
+MMAR_1108	mmp_1108	MEbrown	2.798	73.386	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1108
+MMAR_0401	mmp_401	MEbrown	2.777	76.541	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0401
+MMAR_0340	mmp_340	MEbrown	2.734	104.748	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0340
+MMAR_1069	mmp_1069	MEbrown	2.715	77.631	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1069
+MMAR_0577	mmp_577	MEbrown	2.655	103.784	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0577
+MMAR_0787	mmp_787	MEbrown	2.64	97.989	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0787
+MMAR_0203	mmp_203	MEbrown	2.593	87.999	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0203
+MMAR_0525	mmp_525	MEbrown	2.464	105.614	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0525
+MMAR_0420	mmp_420	MEbrown	2.434	86.656	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0420
+MMAR_0411	mmp_411	MEbrown	2.327	105.865	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0411
+MMAR_0930	mmp_930	MEbrown	2.283	104.676	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0930
+MMAR_1111	mmp_1111	MEbrown	2.263	84.075	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1111
+MMAR_0553	mmp_553	MEbrown	2.217	98.581	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0553
+MMAR_0815	mmp_815	MEbrown	2.067	99.172	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0815
+MMAR_0327	mmp_327	MEbrown	1.903	77.236	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0327
+MMAR_0917	mmp_917	MEbrown	1.878	101.044	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0917
+MMAR_0100	mmp_100	MEbrown	1.869	83.819	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0100
+MMAR_1137	mmp_1137	MEbrown	1.765	83.677	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1137
+MMAR_0540	mmp_540	MEbrown	1.751	88.52	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0540
+MMAR_0972	mmp_972	MEbrown	1.712	94.471	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0972
+MMAR_0491	mmp_491	MEbrown	1.647	54.892	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0491
+MMAR_0519	mmp_519	MEbrown	1.644	45.337	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0519
+MMAR_1113	mmp_1113	MEbrown	1.306	77.877	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1113
+MMAR_1094	mmp_1094	MEbrown	1.292	76.145	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1094
+MMAR_0976	mmp_976	MEbrown	1.2	70.972	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0976
+MMAR_1173	mmp_1173	MEbrown	0.559	37.724	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1173
+MMAR_3121	grpE	MEgreen	4.701	37.636	Simulator_Divergent	Heat shock protein GrpE (DnaK nucleotide exchange)
+MMAR_1121	clpP2	MEgreen	4.688	41.095	Simulator_Divergent	ATP-dependent Clp protease proteolytic subunit 2
+MMAR_1120	clpP1	MEgreen	4.663	32.732	Simulator_Divergent	ATP-dependent Clp protease proteolytic subunit 1
+MMAR_3120	dnaK	MEgreen	4.625	41.299	Simulator_Divergent	Molecular chaperone DnaK (Hsp70 family)
+MMAR_1340	recA	MEgreen	4.549	24.591	Simulator_Divergent	Recombinase RecA (DNA repair & shear stress)
+MMAR_1152	mmp_1152	MEgreen	3.69	18.863	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1152
+MMAR_0307	mmp_307	MEgreen	3.016	15.93	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0307
+MMAR_0820	icl1	MEgreen	2.845	99.062	Simulator_Divergent	Isocitrate lyase Icl1 (glyoxylate shunt)
+MMAR_4420	cydA	MEgreen	2.82	96.363	Simulator_Divergent	Cytochrome bd ubiquinol oxidase subunit I
+MMAR_4421	cydB	MEgreen	2.795	87.408	Simulator_Divergent	Cytochrome bd ubiquinol oxidase subunit II
+MMAR_0753	mmp_753	MEgreen	2.649	69.565	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0753
+MMAR_0508	mmp_508	MEgreen	2.61	119.881	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0508
+MMAR_0281	mmp_281	MEgreen	2.571	81.291	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0281
+MMAR_0821	mmp_821	MEgreen	2.567	105.257	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0821
+MMAR_0881	mmp_881	MEgreen	2.486	79.769	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0881
+MMAR_0361	mmp_361	MEgreen	2.447	82.832	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0361
+MMAR_1129	mmp_1129	MEgreen	2.436	112.972	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1129
+MMAR_0948	mmp_948	MEgreen	2.426	72.362	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0948
+MMAR_0618	mmp_618	MEgreen	2.336	78.57	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0618
+MMAR_0888	mmp_888	MEgreen	2.232	62.079	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0888
+MMAR_0440	mmp_440	MEgreen	2.226	10.561	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0440
+MMAR_0351	mmp_351	MEgreen	2.209	63.012	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0351
+MMAR_0996	mmp_996	MEgreen	2.186	73.614	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0996
+MMAR_1166	mmp_1166	MEgreen	2.142	49.971	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1166
+MMAR_0228	mmp_228	MEgreen	2.14	10.567	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0228
+MMAR_0187	mmp_187	MEgreen	2.049	54.868	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0187
+MMAR_0599	mmp_599	MEgreen	2.021	11.941	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0599
+MMAR_0403	mmp_403	MEgreen	2.008	51.954	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0403
+MMAR_0146	mmp_146	MEgreen	1.995	50.71	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0146
+MMAR_0410	mmp_410	MEgreen	1.99	51.876	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0410
+MMAR_0355	mmp_355	MEgreen	1.96	46.132	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0355
+MMAR_0557	mmp_557	MEgreen	1.859	71.583	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0557
+MMAR_0545	mmp_545	MEgreen	1.827	70.772	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0545
+MMAR_0489	mmp_489	MEgreen	1.752	52.368	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0489
+MMAR_0991	mmp_991	MEgreen	1.719	48.055	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0991
+MMAR_0906	mmp_906	MEgreen	1.716	35.769	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0906
+MMAR_1110	mmp_1110	MEgreen	1.71	12.638	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1110
+MMAR_0503	mmp_503	MEgreen	1.655	34.212	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0503
+MMAR_0518	mmp_518	MEgreen	1.64	68.93	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0518
+MMAR_1117	mmp_1117	MEgreen	1.557	9.068	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1117
+MMAR_0233	mmp_233	MEgreen	1.479	38.279	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0233
+MMAR_0985	mmp_985	MEgreen	1.472	34.208	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0985
+MMAR_0678	mmp_678	MEgreen	1.465	32.377	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0678
+MMAR_1059	mmp_1059	MEgreen	1.359	57.521	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1059
+MMAR_0672	mmp_672	MEgreen	1.334	36.411	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0672
+MMAR_1036	mmp_1036	MEgreen	1.313	32.807	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1036
+MMAR_0161	mmp_161	MEgreen	1.286	31.428	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0161
+MMAR_0091	mmp_91	MEgreen	1.072	23.613	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0091
+MMAR_1127	mmp_1127	MEgreen	1.027	22.064	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1127
+MMAR_0874	mmp_874	MEgreen	0.963	16.237	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0874
+MMAR_0335	mmp_335	MEgreen	0.959	12.716	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0335
+MMAR_1077	mmp_1077	MEgreen	0.79	10.481	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1077
+MMAR_1000	mmp_1000	MEgreen	0.7	16.102	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1000
+MMAR_0590	mmp_590	MEgreen	0.612	16.595	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0590
+MMAR_2314	mps2	MEturquoise	6.768	160.064	Biofilm_GPL	Peptide synthetase Mps2 (GPL biosynthesis / biofilm)
+MMAR_5284	groEL1	MEturquoise	6.655	163.424	Biofilm_GPL	Chaperonin GroEL1 (biofilm maturation & mycolic acid association)
+MMAR_2313	mps1	MEturquoise	6.618	152.52	Biofilm_GPL	Peptide synthetase Mps1 (GPL biosynthesis / biofilm)
+MMAR_1765	drrB	MEturquoise	6.609	155.093	Biofilm_GPL	ABC transporter transmembrane permease DrrB
+MMAR_1764	drrA	MEturquoise	6.562	158.215	Biofilm_GPL	Daunorubicin resistance ABC transporter DrrA
+MMAR_2315	fmt	MEturquoise	6.546	171.865	Biofilm_GPL	Formyltransferase (glycopeptidolipid modification)
+MMAR_1762	fadD28	MEturquoise	6.525	151.083	Biofilm_GPL	Fatty acyl-AMP ligase (PDMS surface attachment)
+MMAR_0970	mmp_970	MEturquoise	2.824	55.965	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0970
+MMAR_0766	mmp_766	MEturquoise	2.465	52.594	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0766
+MMAR_0169	mmp_169	MEturquoise	2.176	48.496	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0169
+MMAR_1039	mmp_1039	MEturquoise	1.31	32.457	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1039
+MMAR_0195	mmp_195	MEturquoise	1.258	32.548	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0195
+MMAR_2030	hspX	MEyellow	15.483	170.221	DosR_Stress	Alpha-crystallin small heat shock protein HspX / Acr
+MMAR_4531	dosR	MEyellow	15.442	170.19	DosR_Stress	DevR/DosR two-component transcriptional response regulator
+MMAR_4571	sigH	MEyellow	15.404	167.681	DosR_Stress	ECF RNA polymerase sigma factor SigH (oxidative stress)
+MMAR_4532	dosS	MEyellow	15.396	167.889	DosR_Stress	DosS histidine kinase sensor (redox / oxygen unweighting)
+MMAR_2028	fdxA	MEyellow	15.374	172.479	DosR_Stress	Ferredoxin FdxA (anaerobic electron transfer)
+MMAR_1416	narG	MEyellow	15.159	162.996	DosR_Stress	Nitrate reductase alpha subunit NarG
+MMAR_1804	sigE	MEyellow	15.075	169.853	DosR_Stress	ECF RNA polymerase sigma factor SigE (envelope stress)
+MMAR_3978	trxB2	MEyellow	15.065	164.463	Oxidative_Stress	Thioredoxin reductase TrxB2
+MMAR_3514	ahpC	MEyellow	15.011	175.46	Oxidative_Stress	Alkyl hydroperoxide reductase subunit C
+MMAR_0638	sodC	MEyellow	14.989	172.565	Oxidative_Stress	Superoxide dismutase SodC (Cu/Zn envelope enzyme)
+MMAR_5238	sodA	MEyellow	14.951	177.809	Oxidative_Stress	Superoxide dismutase SodA (Mn/Fe cofactor)
+MMAR_4670	whiB3	MEyellow	14.943	168.529	DosR_Stress	Redox-sensing transcription regulator WhiB3
+MMAR_4533	tgs1	MEyellow	14.921	162.096	DosR_Stress	Triacylglycerol synthase Tgs1 (lipid droplet dormancy)
+MMAR_3979	trxC	MEyellow	14.909	166.868	Oxidative_Stress	Thioredoxin TrxC
+MMAR_3513	ahpD	MEyellow	14.885	172.174	Oxidative_Stress	Alkyl hydroperoxide reductase subunit D
+MMAR_2761	katG	MEyellow	14.761	166.899	Oxidative_Stress	Catalase-peroxidase KatG
+MMAR_0266	mmp_266	MEyellow	13.635	140.868	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0266
+MMAR_0875	mmp_875	MEyellow	13.096	132.613	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0875
+MMAR_0812	mmp_812	MEyellow	12.759	130.089	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0812
+MMAR_0679	mmp_679	MEyellow	12.216	129.618	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0679
+MMAR_0829	mmp_829	MEyellow	12.114	122.268	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0829
+MMAR_0952	mmp_952	MEyellow	11.975	124.856	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0952
+MMAR_1071	mmp_1071	MEyellow	11.648	118.265	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1071
+MMAR_0564	mmp_564	MEyellow	10.962	109.082	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0564
+MMAR_1075	mmp_1075	MEyellow	10.905	111.051	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1075
+MMAR_0738	mmp_738	MEyellow	10.305	103.281	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0738
+MMAR_0492	mmp_492	MEyellow	10.223	101.728	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0492
+MMAR_0162	mmp_162	MEyellow	10.186	107.337	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0162
+MMAR_0119	mmp_119	MEyellow	9.933	100.524	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0119
+MMAR_0658	mmp_658	MEyellow	9.619	98.625	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0658
+MMAR_0979	mmp_979	MEyellow	9.492	95.595	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0979
+MMAR_0749	mmp_749	MEyellow	9.131	92.572	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0749
+MMAR_1068	mmp_1068	MEyellow	9.12	92.497	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1068
+MMAR_0981	mmp_981	MEyellow	9.024	90.731	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0981
+MMAR_0982	mmp_982	MEyellow	8.794	89.103	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0982
+MMAR_1162	mmp_1162	MEyellow	8.755	89.003	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1162
+MMAR_0987	mmp_987	MEyellow	8.164	83.369	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0987
+MMAR_0860	mmp_860	MEyellow	8.14	83.015	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0860
+MMAR_0855	mmp_855	MEyellow	7.866	78.358	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0855
+MMAR_0591	mmp_591	MEyellow	7.69	77.091	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0591
+MMAR_0448	mmp_448	MEyellow	7.313	75.147	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0448
+MMAR_0259	mmp_259	MEyellow	7.274	76.199	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0259
+MMAR_0711	mmp_711	MEyellow	7.208	72.091	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0711
+MMAR_1119	mmp_1119	MEyellow	6.98	71.167	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1119
+MMAR_0122	mmp_122	MEyellow	6.965	71.339	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0122
+MMAR_1185	mmp_1185	MEyellow	6.937	70.788	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_1185
+MMAR_0302	mmp_302	MEyellow	6.868	69.945	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0302
+MMAR_0755	mmp_755	MEyellow	6.458	64.891	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0755
+MMAR_0463	mmp_463	MEyellow	5.881	61.388	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0463
+MMAR_0892	mmp_892	MEyellow	3.956	43.032	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0892
+MMAR_0232	mmp_232	MEyellow	3.552	40.585	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0232
+MMAR_0185	mmp_185	MEyellow	3.34	36.099	Background_Genome	Hypothetical protein / putative uncharacterized oxidoreductase MMAR_0185

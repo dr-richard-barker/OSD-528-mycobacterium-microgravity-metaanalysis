@@ -1,0 +1,10 @@
+sample_id	condition	modality	MEturquoise	MEblue	MEbrown	MEyellow	MEgreen
+RFP3D11	Microgravity	3D_Clinostat	0.7570	0.3700	0.8070	0.7906	0.8866
+RFP3D39	Microgravity	3D_Clinostat	0.8357	0.4082	0.7657	0.7839	0.5647
+RFP3D47	Microgravity	3D_Clinostat	0.8014	0.6231	0.5413	0.7645	0.4776
+RFPNG14	NormalGravity	Static_1g	-1.2930	-1.3409	-1.3022	-1.3257	-1.0620
+RFPNG35	NormalGravity	Static_1g	-1.3300	-1.1839	-1.1691	-1.3229	-1.4156
+RFPNG45	NormalGravity	Static_1g	-1.3466	-1.3837	-1.4595	-1.3301	-1.4514
+RFPRPM4	Microgravity	RPM_2.0	0.4710	0.5818	0.7819	0.5070	0.4720
+RFPRPM41	Microgravity	RPM_2.0	0.5675	0.9945	0.2630	0.5467	0.9032
+RFPRPM6	Microgravity	RPM_2.0	0.5370	0.9310	0.7720	0.5860	0.6247

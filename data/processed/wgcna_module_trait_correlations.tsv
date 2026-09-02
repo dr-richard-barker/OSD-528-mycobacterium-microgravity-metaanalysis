@@ -1,0 +1,6 @@
+module	cor_microgravity	pval_microgravity	cor_clinostat_vs_rpm
+MEturquoise	0.9924	5.271e-101	0.1182
+MEblue	0.9771	5.472e-34	-0.1596
+MEbrown	0.9827	7.853e-45	0.0429
+MEyellow	0.9947	9.696e-144	0.1009
+MEgreen	0.9822	1.401e-43	-0.0102
