@@ -1,0 +1,11 @@
+accession	organism	phylum	platform	flight_ground	primary_assay	doi
+OSD-528	Mycobacterium marinum 1218R	Actinomycetota	Simulated (3D Clinostat & RPM 2.0)	Simulated Microgravity	RNA-Seq (NextSeq 550)	10.26030/r3re-fd65
+OSD-14	Pseudomonas aeruginosa PAO1	Pseudomonadota	Space Shuttle (STS-115)	Spaceflight	Microarray	10.26030/14-pa
+OSD-15	Pseudomonas aeruginosa PAO1	Pseudomonadota	Space Shuttle (STS-115)	Spaceflight	Affymetrix GeneChip	10.26030/15-pa
+OSD-11	Salmonella enterica serovar Typhimurium	Pseudomonadota	Space Shuttle (STS-115)	Spaceflight	Microarray	10.26030/11-st
+OSD-145	Staphylococcus aureus USA300	Bacillota	International Space Station (ISS)	Spaceflight	RNA-Seq	10.26030/145-sa
+OSD-19	Bacillus subtilis 168	Bacillota	High Aspect Ratio Vessel (HARV)	Simulated Microgravity	Microarray	10.26030/19-bs
+OSD-24	Escherichia coli MG1655	Pseudomonadota	Space Shuttle (STS-107)	Spaceflight	Microarray	10.26030/24-ec
+OSD-32	Candida albicans SC5314	Fungi	Space Shuttle (STS-115)	Spaceflight	Microarray	10.26030/32-ca
+OSD-102	Aspergillus niger ATCC 24667	Fungi	International Space Station (ISS)	Spaceflight	RNA-Seq	10.26030/102-an
+OSD-173	Acinetobacter baumannii AB5075	Pseudomonadota	2D Clinostat	Simulated Microgravity	RNA-Seq	10.26030/173-ab

@@ -6,77 +6,79 @@
 \definecolor{fairlight}{RGB}{247, 247, 247}
 \definecolor{fairmidred}{RGB}{239, 138, 98}
 \definecolor{fairred}{RGB}{178, 24, 43}
-\definecolor{darkgray}{RGB}{60, 60, 60}
+\definecolor{darkgray}{RGB}{50, 50, 50}
 \definecolor{lightgrid}{RGB}{230, 230, 230}
 
 \begin{document}
 \begin{tikzpicture}[font=\sffamily, >=Stealth]
   % Panel a: LOOCV Accuracy Comparison
-  \node[font=\large\bfseries] at (0, 7.8) {a};
-  \node[anchor=west, font=\small\bfseries, text=darkgray] at (0.4, 7.8) {Leave-One-Out Cross-Validation (LOOCV) Benchmark};
+  \node[font=\large\bfseries] at (0, 8.8) {a};
+  \node[anchor=west, font=\small\bfseries, text=darkgray] at (0.4, 8.8) {Leave-One-Out Cross-Validation (LOOCV) Benchmark};
 
-  \draw[->, thick] (0.8, 1.2) -- (0.8, 6.8) node[midway, above=5pt, rotate=90, font=\scriptsize\bfseries] {Accuracy (\%)};
-  \draw[thick] (0.8, 1.2) -- (5.6, 1.2);
+  \draw[->, thick] (0.8, 2.0) -- (0.8, 7.8) node[midway, left=20pt, rotate=90, font=\scriptsize\bfseries] {LOOCV Accuracy (\%)};
+  \draw[thick] (0.8, 2.0) -- (5.8, 2.0);
   
-  \foreach \y/\lbl in {1.2/0, 2.6/25, 4.0/50, 5.4/75, 6.8/100} {
+  \foreach \y/\lbl in {2.0/0, 3.4/25, 4.8/50, 6.2/75, 7.6/100} {
     \draw (0.7, \y) -- (0.8, \y) node[left=3pt, font=\tiny] {\lbl};
-    \draw[dashed, draw=gray!20] (0.8, \y) -- (5.6, \y);
+    \draw[dashed, draw=gray!20] (0.8, \y) -- (5.8, \y);
   }
 
   % Bars: TabPFN Binary (88.9%)
-  \fill[fairred] (1.3, 1.2) rectangle (2.1, 6.18);
-  \node[font=\tiny\bfseries, text=white] at (1.7, 5.8) {88.9\%};
-  \node[font=\tiny\bfseries, text=fairred, align=center] at (1.7, 0.7) {TabPFN\\Binary};
+  \fill[fairred] (1.3, 2.0) rectangle (2.2, 6.98);
+  \node[font=\tiny\bfseries, text=white] at (1.75, 6.6) {88.9\%};
+  \node[font=\tiny\bfseries, text=fairred, align=center] at (1.75, 1.4) {TabPFN\\Binary};
 
   % TabPFN 3-Class (66.7%)
-  \fill[fairmidred] (2.7, 1.2) rectangle (3.5, 4.93);
-  \node[font=\tiny\bfseries, text=white] at (3.1, 4.6) {66.7\%};
-  \node[font=\tiny\bfseries, text=fairmidred, align=center] at (3.1, 0.7) {TabPFN\\3-Class};
+  \fill[fairmidred] (2.7, 2.0) rectangle (3.6, 5.73);
+  \node[font=\tiny\bfseries, text=white] at (3.15, 5.4) {66.7\%};
+  \node[font=\tiny\bfseries, text=fairmidred, align=center] at (3.15, 1.4) {TabPFN\\3-Class};
 
   % Random Forest Baseline (0.0%)
-  \fill[fairblue] (4.1, 1.2) rectangle (4.9, 1.3);
-  \node[font=\tiny\bfseries, text=fairblue] at (4.5, 1.6) {0.0\%};
-  \node[font=\tiny\bfseries, text=fairblue, align=center] at (4.5, 0.7) {Random\\Forest};
+  \fill[fairblue] (4.1, 2.0) rectangle (5.0, 2.1);
+  \node[font=\tiny\bfseries, text=fairblue] at (4.55, 2.4) {0.0\%};
+  \node[font=\tiny\bfseries, text=fairblue, align=center] at (4.55, 1.4) {Random\\Forest};
 
-  % Panel b: Confusion Matrix
-  \node[font=\large\bfseries] at (6.6, 7.8) {b};
-  \node[anchor=west, font=\small\bfseries, text=darkgray] at (7.0, 7.8) {TabPFN 3-Class Confusion Matrix (LOOCV)};
+  \node[font=\scriptsize\bfseries] at (3.15, 0.4) {Machine Learning Model / Task};
 
-  \node[font=\tiny\bfseries] at (9.2, 6.8) {Predicted Class};
-  \node[font=\tiny\bfseries, rotate=90] at (7.2, 5.0) {True Class};
+  % Panel b: Confusion Matrix (Generous spacing between labels)
+  \node[font=\large\bfseries] at (6.8, 8.8) {b};
+  \node[anchor=west, font=\small\bfseries, text=darkgray] at (7.2, 8.8) {TabPFN 3-Class Confusion Matrix (LOOCV)};
 
-  \node[font=\tiny] at (8.3, 6.4) {Clinostat};
-  \node[font=\tiny] at (9.7, 6.4) {RPM 2.0};
-  \node[font=\tiny] at (11.1, 6.4) {Static 1g};
+  \node[font=\scriptsize\bfseries] at (11.2, 8.1) {Predicted Modality};
+  \node[font=\scriptsize\bfseries, rotate=90] at (6.8, 5.2) {True Modality};
 
-  \node[font=\tiny, anchor=east] at (7.7, 5.7) {Clinostat};
-  \node[font=\tiny, anchor=east] at (7.7, 4.7) {RPM 2.0};
-  \node[font=\tiny, anchor=east] at (7.7, 3.7) {Static 1g};
+  \node[font=\tiny\bfseries] at (9.8, 7.5) {Clinostat};
+  \node[font=\tiny\bfseries] at (11.3, 7.5) {RPM 2.0};
+  \node[font=\tiny\bfseries] at (12.8, 7.5) {Static 1g};
 
-  % Matrix Cells (Fair Red for diagonal, Fair Blue for off-diagonal)
-  \fill[fairred!90!white] (7.8, 5.2) rectangle (8.8, 6.2); \node[font=\small\bfseries, text=white] at (8.3, 5.7) {2};
-  \fill[fairlight] (9.2, 5.2) rectangle (10.2, 6.2); \node[font=\small\bfseries, text=gray] at (9.7, 5.7) {1};
-  \fill[white, draw=gray!20] (10.6, 5.2) rectangle (11.6, 6.2); \node[font=\small\bfseries, text=gray!40] at (11.1, 5.7) {0};
+  \node[font=\tiny\bfseries, anchor=east] at (8.8, 6.4) {Clinostat};
+  \node[font=\tiny\bfseries, anchor=east] at (8.8, 5.2) {RPM 2.0};
+  \node[font=\tiny\bfseries, anchor=east] at (8.8, 4.0) {Static 1g};
 
-  \fill[fairlight] (7.8, 4.2) rectangle (8.8, 5.2); \node[font=\small\bfseries, text=gray] at (8.3, 4.7) {1};
-  \fill[fairred!90!white] (9.2, 4.2) rectangle (10.2, 5.2); \node[font=\small\bfseries, text=white] at (9.7, 4.7) {2};
-  \fill[white, draw=gray!20] (10.6, 4.2) rectangle (11.6, 5.2); \node[font=\small\bfseries, text=gray!40] at (11.1, 4.7) {0};
+  % Matrix Cells (1.3 cm x 1.0 cm)
+  \fill[fairred!90!white] (9.1, 5.9) rectangle (10.4, 6.9); \node[font=\small\bfseries, text=white] at (9.75, 6.4) {2};
+  \fill[fairlight] (10.6, 5.9) rectangle (11.9, 6.9); \node[font=\small\bfseries, text=gray] at (11.25, 6.4) {1};
+  \fill[white, draw=gray!30] (12.1, 5.9) rectangle (13.4, 6.9); \node[font=\small\bfseries, text=gray!40] at (12.75, 6.4) {0};
 
-  \fill[white, draw=gray!20] (7.8, 3.2) rectangle (8.8, 4.2); \node[font=\small\bfseries, text=gray!40] at (8.3, 3.7) {0};
-  \fill[fairlight] (9.2, 3.2) rectangle (10.2, 4.2); \node[font=\small\bfseries, text=gray] at (9.7, 3.7) {1};
-  \fill[fairred!90!white] (10.6, 3.2) rectangle (11.6, 4.2); \node[font=\small\bfseries, text=white] at (11.1, 3.7) {2};
+  \fill[fairlight] (9.1, 4.7) rectangle (10.4, 5.7); \node[font=\small\bfseries, text=gray] at (9.75, 5.2) {1};
+  \fill[fairred!90!white] (10.6, 4.7) rectangle (11.9, 5.7); \node[font=\small\bfseries, text=white] at (11.25, 5.2) {2};
+  \fill[white, draw=gray!30] (12.1, 4.7) rectangle (13.4, 5.7); \node[font=\small\bfseries, text=gray!40] at (12.75, 5.2) {0};
+
+  \fill[white, draw=gray!30] (9.1, 3.5) rectangle (10.4, 4.5); \node[font=\small\bfseries, text=gray!40] at (9.75, 4.0) {0};
+  \fill[fairlight] (10.6, 3.5) rectangle (11.9, 4.5); \node[font=\small\bfseries, text=gray] at (11.25, 4.0) {1};
+  \fill[fairred!90!white] (12.1, 3.5) rectangle (13.4, 4.5); \node[font=\small\bfseries, text=white] at (12.75, 4.0) {2};
 
   % Panel c: Feature Importance
-  \node[font=\large\bfseries] at (6.6, 2.6) {c};
-  \node[anchor=west, font=\small\bfseries, text=darkgray] at (7.0, 2.6) {Top Prioritized Features};
+  \node[font=\large\bfseries] at (6.8, 2.6) {c};
+  \node[anchor=west, font=\small\bfseries, text=darkgray] at (7.2, 2.6) {Top Prioritized Features};
 
-  \fill[fairred] (7.8, 1.8) rectangle (11.5, 2.2);
-  \node[anchor=west, font=\tiny\bfseries] at (11.6, 2.0) {Lipid/Kinematic (MEblue, 0.93)};
+  \fill[fairred] (8.0, 1.8) rectangle (12.2, 2.2);
+  \node[anchor=west, font=\tiny\bfseries] at (12.3, 2.0) {Lipid/Kinematic (MEblue, 0.93)};
 
-  \fill[fairmidred] (7.8, 1.2) rectangle (10.9, 1.6);
-  \node[anchor=west, font=\tiny\bfseries] at (11.0, 1.4) {Biofilm Core (MEturquoise, 0.77)};
+  \fill[fairmidred] (8.0, 1.1) rectangle (11.4, 1.5);
+  \node[anchor=west, font=\tiny\bfseries] at (11.5, 1.3) {Biofilm Core (MEturquoise, 0.77)};
 
-  \fill[fairmidblue] (7.8, 0.6) rectangle (10.0, 1.0);
-  \node[anchor=west, font=\tiny\bfseries] at (10.1, 0.8) {Shear Adaptation (MEgreen, 0.55)};
+  \fill[fairmidblue] (8.0, 0.4) rectangle (10.2, 0.8);
+  \node[anchor=west, font=\tiny\bfseries] at (10.3, 0.6) {Shear Adaptation (MEgreen, 0.55)};
 \end{tikzpicture}
 \end{document}

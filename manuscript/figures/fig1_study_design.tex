@@ -7,85 +7,89 @@
 \definecolor{fairlight}{RGB}{247, 247, 247}
 \definecolor{fairmidred}{RGB}{239, 138, 98}
 \definecolor{fairred}{RGB}{178, 24, 43}
-\definecolor{darkgray}{RGB}{60, 60, 60}
+\definecolor{darkgray}{RGB}{50, 50, 50}
 \definecolor{lightgrid}{RGB}{230, 230, 230}
 
 \begin{document}
 \begin{tikzpicture}[font=\sffamily, >=Stealth]
-  % Panel a: Biological Model & Biofilm Substrate
-  \node[font=\large\bfseries] at (0, 9.8) {a};
-  \node[anchor=west, font=\small\bfseries, text=darkgray] at (0.4, 9.8) {Biological Model and Silicone Biofilm Substrate};
+  % Panel a: Biological Model & Biofilm Substrate (Expanded width)
+  \node[font=\large\bfseries] at (0, 11.2) {a};
+  \node[anchor=west, font=\small\bfseries, text=darkgray] at (0.4, 11.2) {Biological Model and Silicone Biofilm Substrate};
   
-  \node[circle, fill=fairred, text=white, font=\bfseries\small, inner sep=6pt] at (1.2, 8.5) {RFP};
-  \node[anchor=west, font=\bfseries\footnotesize] at (2.0, 8.7) {Mycobacterium marinum 1218R};
-  \node[anchor=west, font=\scriptsize, text=gray!85!black] at (2.0, 8.2) {BSL-2 surrogate for Mycobacterium tuberculosis};
-  \node[anchor=west, font=\scriptsize, text=gray!85!black] at (2.0, 7.7) {Stable chromosomal RFP at Giles phage attB site};
+  \node[circle, fill=fairred, text=white, font=\bfseries\small, inner sep=6pt] at (1.0, 9.8) {RFP};
+  \node[anchor=west, font=\bfseries\footnotesize] at (1.8, 10.1) {Mycobacterium marinum 1218R};
+  \node[anchor=west, font=\scriptsize, text=gray!85!black] at (1.8, 9.6) {BSL-2 surrogate for Mycobacterium tuberculosis};
+  \node[anchor=west, font=\scriptsize, text=gray!85!black] at (1.8, 9.1) {Stable chromosomal RFP at Giles phage attB site};
 
-  \draw[thick, draw=gray!30] (0.2, 5.2) -- (5.6, 5.2);
-  \node[anchor=west, font=\bfseries\scriptsize, text=fairblue] at (0.2, 6.8) {Culture Vessel Specifications (31$^\circ$C, 4 Days):};
-  \node[anchor=west, font=\scriptsize] at (0.2, 6.3) {$\bullet$ Polydimethylsiloxane (PDMS) silicone membranes};
-  \node[anchor=west, font=\scriptsize] at (0.2, 5.8) {$\bullet$ Suspended biofilm-forming cell pellets harvested};
-  \node[anchor=west, font=\scriptsize] at (0.2, 5.4) {$\bullet$ $n=3$ biological replicates per experimental modality};
+  \draw[thick, draw=gray!30] (0.2, 8.4) -- (7.2, 8.4);
+  \node[anchor=west, font=\bfseries\scriptsize, text=fairblue] at (0.2, 8.0) {Culture Vessel Specifications (31$^\circ$C, 4 Days):};
+  \node[anchor=west, font=\scriptsize] at (0.2, 7.4) {$\bullet$ Polydimethylsiloxane (PDMS) silicone membranes};
+  \node[anchor=west, font=\scriptsize] at (0.2, 6.8) {$\bullet$ Suspended biofilm-forming cell pellets harvested for RNA-seq};
+  \node[anchor=west, font=\scriptsize] at (0.2, 6.2) {$\bullet$ $n=3$ biological replicates per experimental modality};
 
   % Panel b: Microgravity Simulation Hardware
-  \node[font=\large\bfseries] at (6.6, 9.8) {b};
-  \node[anchor=west, font=\small\bfseries, text=darkgray] at (7.0, 9.8) {Simulated Microgravity and Ground Hardware};
+  \node[font=\large\bfseries] at (8.0, 11.2) {b};
+  \node[anchor=west, font=\small\bfseries, text=darkgray] at (8.4, 11.2) {Simulated Microgravity and Ground Hardware};
 
   % 3D Clinostat
-  \draw[line width=1.5pt, draw=fairmidblue] (6.8, 8.8) -- (6.8, 7.7);
-  \node[anchor=west, font=\bfseries\scriptsize, text=fairblue] at (7.1, 8.6) {1. Lab-Designed 3D Clinostat ($n=3$)};
-  \node[anchor=west, font=\scriptsize] at (7.1, 8.1) {Continuous 2-axis clinorotation ($I=1.5$~rpm, $O=3.825$~rpm)};
-  \node[anchor=west, font=\tiny, text=gray!80!black] at (7.1, 7.7) {Samples: RFP3D11, RFP3D39, RFP3D47};
+  \draw[line width=2pt, draw=fairmidblue] (8.2, 10.2) -- (8.2, 8.9);
+  \node[anchor=west, font=\bfseries\scriptsize, text=fairblue] at (8.5, 9.9) {1. Lab-Designed 3D Clinostat ($n=3$)};
+  \node[anchor=west, font=\scriptsize] at (8.5, 9.4) {Continuous 2-axis clinorotation ($I=1.5$~rpm, $O=3.825$~rpm)};
+  \node[anchor=west, font=\tiny, text=gray!80!black] at (8.5, 9.0) {Samples: RFP3D11, RFP3D39, RFP3D47};
 
   % RPM 2.0
-  \draw[line width=1.5pt, draw=fairred] (6.8, 7.2) -- (6.8, 6.1);
-  \node[anchor=west, font=\bfseries\scriptsize, text=fairred] at (7.1, 7.0) {2. Random Positioning Machine 2.0 ($n=3$)};
-  \node[anchor=west, font=\scriptsize] at (7.1, 6.5) {Random multi-axis velocity vectoring, time-averaged $<0.01g$};
-  \node[anchor=west, font=\tiny, text=gray!80!black] at (7.1, 6.1) {Samples: RFPRPM4, RFPRPM41, RFPRPM6};
+  \draw[line width=2pt, draw=fairred] (8.2, 8.4) -- (8.2, 7.1);
+  \node[anchor=west, font=\bfseries\scriptsize, text=fairred] at (8.5, 8.1) {2. Random Positioning Machine 2.0 ($n=3$)};
+  \node[anchor=west, font=\scriptsize] at (8.5, 7.6) {Random multi-axis velocity vectoring, time-averaged $<0.01g$};
+  \node[anchor=west, font=\tiny, text=gray!80!black] at (8.5, 7.2) {Samples: RFPRPM4, RFPRPM41, RFPRPM6};
 
   % Static 1g
-  \draw[line width=1.5pt, draw=fairblue] (6.8, 5.6) -- (6.8, 4.5);
-  \node[anchor=west, font=\bfseries\scriptsize, text=fairblue] at (7.1, 5.4) {3. Static 1g Earth Control ($n=3$)};
-  \node[anchor=west, font=\scriptsize] at (7.1, 4.9) {Stationary incubator shelf adjacent to simulators};
-  \node[anchor=west, font=\tiny, text=gray!80!black] at (7.1, 4.5) {Samples: RFPNG14, RFPNG35, RFPNG45};
+  \draw[line width=2pt, draw=fairblue] (8.2, 6.6) -- (8.2, 5.3);
+  \node[anchor=west, font=\bfseries\scriptsize, text=fairblue] at (8.5, 6.3) {3. Static 1g Earth Control ($n=3$)};
+  \node[anchor=west, font=\scriptsize] at (8.5, 5.8) {Stationary incubator shelf adjacent to simulators};
+  \node[anchor=west, font=\tiny, text=gray!80!black] at (8.5, 5.4) {Samples: RFPNG14, RFPNG35, RFPNG45};
 
-  % Panel c: Integrated Empirical Workflow
-  \node[font=\large\bfseries] at (0, 3.8) {c};
-  \node[anchor=west, font=\small\bfseries, text=darkgray] at (0.4, 3.8) {Empirical Multi-Scale Analytical Framework};
+  % Panel c: Integrated Empirical Workflow (Spread horizontally across 16.5 cm)
+  \node[font=\large\bfseries] at (0, 4.8) {c};
+  \node[anchor=west, font=\small\bfseries, text=darkgray] at (0.4, 4.8) {Empirical Multi-Scale Analytical Framework};
 
-  % Flowchart nodes
-  \draw[thick, draw=fairblue, fill=white] (0.2, 0.4) rectangle (2.9, 3.2);
-  \node[font=\bfseries\scriptsize, text=fairblue] at (1.55, 2.8) {1. Empirical Quant};
-  \node[font=\tiny] at (1.55, 2.3) {OSDR S3 Raw Reads};
-  \node[font=\tiny] at (1.55, 1.9) {5,510 Gene Models};
-  \node[font=\tiny] at (1.55, 1.5) {kallisto Pseudoalign};
-  \node[font=\tiny\bfseries, text=fairblue] at (1.55, 0.8) {351--738 Real DEGs};
+  % 4 Flowchart Boxes (Width 3.6 cm each with generous spacing)
+  % Box 1
+  \draw[thick, draw=fairblue, fill=white] (0.2, 0.6) rectangle (3.8, 4.0);
+  \node[font=\bfseries\scriptsize, text=fairblue] at (2.0, 3.5) {1. Empirical Quant};
+  \node[font=\tiny] at (2.0, 2.9) {NASA OSDR S3 Raw Reads};
+  \node[font=\tiny] at (2.0, 2.4) {5,510 Annotated Genes};
+  \node[font=\tiny] at (2.0, 1.9) {kallisto Pseudoalignment};
+  \node[font=\tiny\bfseries, text=fairblue] at (2.0, 1.1) {351--738 Real DEGs};
 
-  \draw[->, thick, draw=gray!60] (2.9, 1.8) -- (3.4, 1.8);
+  \draw[->, line width=1.5pt, draw=gray!60] (3.8, 2.3) -- (4.3, 2.3);
 
-  \draw[thick, draw=fairmidblue, fill=white] (3.4, 0.4) rectangle (6.0, 3.2);
-  \node[font=\bfseries\scriptsize, text=fairblue!80!black] at (4.7, 2.8) {2. WGCNA Modules};
-  \node[font=\tiny] at (4.7, 2.3) {Soft Threshold $\beta=6$};
-  \node[font=\tiny] at (4.7, 1.9) {Topological Overlap};
-  \node[font=\tiny] at (4.7, 1.5) {5 GOSlim Modules};
-  \node[font=\tiny\bfseries, text=fairblue!80!black] at (4.7, 0.8) {$k_{\text{within}}$ Centrality};
+  % Box 2
+  \draw[thick, draw=fairmidblue, fill=white] (4.3, 0.6) rectangle (7.9, 4.0);
+  \node[font=\bfseries\scriptsize, text=fairblue!80!black] at (6.1, 3.5) {2. WGCNA Modules};
+  \node[font=\tiny] at (6.1, 2.9) {Soft-Threshold $\beta=6$};
+  \node[font=\tiny] at (6.1, 2.4) {Topological Overlap (TOM)};
+  \node[font=\tiny] at (6.1, 1.9) {5 GOSlim Co-Expression Modules};
+  \node[font=\tiny\bfseries, text=fairblue!80!black] at (6.1, 1.1) {$k_{\text{within}}$ Hub Centrality};
 
-  \draw[->, thick, draw=gray!60] (6.0, 1.8) -- (6.5, 1.8);
+  \draw[->, line width=1.5pt, draw=gray!60] (7.9, 2.3) -- (8.4, 2.3);
 
-  \draw[thick, draw=fairmidred, fill=white] (6.5, 0.4) rectangle (9.1, 3.2);
-  \node[font=\bfseries\scriptsize, text=fairred] at (7.8, 2.8) {3. TabPFN AI (Nature)};
-  \node[font=\tiny] at (7.8, 2.3) {Prior-Data Transformer};
-  \node[font=\tiny] at (7.8, 1.9) {In-Context Priors};
-  \node[font=\tiny] at (7.8, 1.5) {15 Topological Hubs};
-  \node[font=\tiny\bfseries, text=fairred] at (7.8, 0.8) {88.9\% Binary LOOCV};
+  % Box 3
+  \draw[thick, draw=fairmidred, fill=white] (8.4, 0.6) rectangle (12.0, 4.0);
+  \node[font=\bfseries\scriptsize, text=fairred] at (10.2, 3.5) {3. TabPFN AI (Nature 2025)};
+  \node[font=\tiny] at (10.2, 2.9) {Prior-Data Transformer};
+  \node[font=\tiny] at (10.2, 2.4) {Bayesian In-Context Priors};
+  \node[font=\tiny] at (10.2, 1.9) {15 Topological Hub Features};
+  \node[font=\tiny\bfseries, text=fairred] at (10.2, 1.1) {88.9\% Binary LOOCV};
 
-  \draw[->, thick, draw=gray!60] (9.1, 1.8) -- (9.6, 1.8);
+  \draw[->, line width=1.5pt, draw=gray!60] (12.0, 2.3) -- (12.5, 2.3);
 
-  \draw[thick, draw=fairred, fill=white] (9.6, 0.4) rectangle (12.3, 3.2);
-  \node[font=\bfseries\scriptsize, text=fairred!80!black] at (10.95, 2.8) {4. Systems Validation};
-  \node[font=\tiny] at (10.95, 2.3) {GOSlim Over-Rep};
-  \node[font=\tiny] at (10.95, 1.9) {Oxidative Stress & ESX};
-  \node[font=\tiny] at (10.95, 1.5) {Kinematic Radar};
-  \node[font=\tiny\bfseries, text=fairred!80!black] at (10.95, 0.8) {RO-Crate \& Zenodo};
+  % Box 4
+  \draw[thick, draw=fairred, fill=white] (12.5, 0.6) rectangle (16.1, 4.0);
+  \node[font=\bfseries\scriptsize, text=fairred!80!black] at (14.3, 3.5) {4. Systems Validation};
+  \node[font=\tiny] at (14.3, 2.9) {GOSlim Over-Representation};
+  \node[font=\tiny] at (14.3, 2.4) {Cellular Metabolic Model};
+  \node[font=\tiny] at (14.3, 1.9) {Kinematic Radar Trajectories};
+  \node[font=\tiny\bfseries, text=fairred!80!black] at (14.3, 1.1) {RO-Crate \& Zenodo Deposit};
 \end{tikzpicture}
 \end{document}
