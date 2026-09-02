@@ -39,6 +39,11 @@ def build_pdf():
     else:
         print("Error: main.pdf was not generated.")
 
+    # Also run compile_manuscript_pdf.py to generate npj_manuscript.pdf and npj_supplementary.pdf
+    compile_script = os.path.join(MANUSCRIPT_DIR, "compile_manuscript_pdf.py")
+    if os.path.exists(compile_script):
+        subprocess.run([sys.executable, compile_script], cwd=MANUSCRIPT_DIR, env=ENV)
+
 def build_word_docx():
     print("=== Step 2: Generating Microsoft Word (.docx) Manuscript ===")
     
