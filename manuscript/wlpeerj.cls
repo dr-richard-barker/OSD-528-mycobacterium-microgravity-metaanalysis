@@ -80,13 +80,14 @@
   \def\@corremail{#3}%
 }
 
-% Store abstract when defined in preamble
+% Store abstract when defined in preamble.
+% \gdef takes a parameter text then a braced body, so "\gdef\@abstract\bgroup"
+% never stored anything - it made \bgroup the parameter text and let the abstract
+% body be typeset immediately, which errors with "Missing \begin{document}".
+% \RenewEnviron captures the environment body in \BODY without typesetting it.
+\RequirePackage{environ}
 \def\@abstract{}
-\renewenvironment{abstract}{%
-  \gdef\@abstract\bgroup
-}{%
-  \egroup
-}
+\RenewEnviron{abstract}{\global\let\@abstract\BODY}
 
 % Redefine maketitle to print title banner, authors, and abstract box in twocolumn
 \renewcommand{\maketitle}{%
