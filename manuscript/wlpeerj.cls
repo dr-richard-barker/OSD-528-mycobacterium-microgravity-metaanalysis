@@ -52,7 +52,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \rhead{\small\sffamily\thepage}
-\lhead{\small\sffamily npj Microgravity (2026) | \url{https://doi.org/10.1038/s41526-026-00000-x}}
+\lhead{\small\sffamily Manuscript in preparation --- target journal: npj Microgravity}
 \rfoot{\footnotesize\sffamily\today}
 \lfoot{\footnotesize\sffamily Barker et al. | Simulated Microgravity Adaptation in \textit{M. marinum}}
 \renewcommand{\headrulewidth}{0.4pt}
