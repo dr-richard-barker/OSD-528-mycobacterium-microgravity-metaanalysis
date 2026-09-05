@@ -52,7 +52,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \rhead{\small\sffamily\thepage}
-\lhead{\small\sffamily npj Microgravity (2026) | \url{https://doi.org/10.1038/s41526-026-00000-x}}
+\lhead{\small\sffamily Manuscript in preparation --- target journal: npj Microgravity}
 \rfoot{\footnotesize\sffamily\today}
 \lfoot{\footnotesize\sffamily Barker et al. | Simulated Microgravity Adaptation in \textit{M. marinum}}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -80,13 +80,14 @@
   \def\@corremail{#3}%
 }
 
-% Store abstract when defined in preamble
+% Store abstract when defined in preamble.
+% \gdef takes a parameter text then a braced body, so "\gdef\@abstract\bgroup"
+% never stored anything - it made \bgroup the parameter text and let the abstract
+% body be typeset immediately, which errors with "Missing \begin{document}".
+% \RenewEnviron captures the environment body in \BODY without typesetting it.
+\RequirePackage{environ}
 \def\@abstract{}
-\renewenvironment{abstract}{%
-  \gdef\@abstract\bgroup
-}{%
-  \egroup
-}
+\RenewEnviron{abstract}{\global\let\@abstract\BODY}
 
 % Redefine maketitle to print title banner, authors, and abstract box in twocolumn
 \renewcommand{\maketitle}{%
