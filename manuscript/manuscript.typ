@@ -26,7 +26,7 @@
         columns: (1fr, auto),
         align: (left + bottom, right + bottom),
         [
-          #text(font: "Helvetica", size: 7.5pt, fill: rgb("#666666"))[npj Microgravity (2026) 12:45 | https://doi.org/10.1038/s41526-026-00000-x]
+          #text(font: "Helvetica", size: 7.5pt, fill: rgb("#666666"))[Manuscript in preparation --- target journal: npj Microgravity]
         ],
         [
           #text(font: "Helvetica", weight: "bold", size: 8pt, fill: rgb("#005696"))[#page_number]
