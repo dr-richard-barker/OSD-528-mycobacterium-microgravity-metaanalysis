@@ -1,6 +1,6 @@
 # Systems Biology & Tabular Foundation AI Meta-Analysis of *Mycobacterium marinum* Response to Simulated Microgravity (NASA OSDR OSD-528)
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1234567.svg)](https://doi.org/10.5281/zenodo.1234567)
+[![Zenodo](https://img.shields.io/badge/Zenodo-DOI%20Pending-lightgrey.svg)](https://zenodo.org)
 [![FAIR](https://img.shields.io/badge/FAIR-Compliant-success.svg)](fair_deposit/README.md)
 [![License: MIT / CC-BY 4.0](https://img.shields.io/badge/License-MIT%20%2F%20CC--BY%204.0-blue.svg)](LICENSE)
 [![NASA OSDR](https://img.shields.io/badge/NASA%20OSDR-OSD--528-0B3D91.svg)](https://osdr.nasa.gov/bio/repo/data/studies/OSD-528)

@@ -215,7 +215,7 @@ def build_word_docx():
 {methods_html}
 
 <h2>Data Availability</h2>
-<p>All raw sequencing FASTQ pairs are openly accessible from the NASA Open Science Data Repository under accession OSD-528 (GLDS-528, DOI: 10.26030/r3re-fd65). Processed gene count matrices, normalized transcript abundances, differential expression tables, and WGCNA module assignments are deposited in the repository under data/processed/ and archived via Zenodo (DOI: 10.5281/zenodo.1234567) under CC-BY 4.0.</p>
+<p>All raw sequencing FASTQ pairs are openly accessible from the NASA Open Science Data Repository under accession OSD-528 (GLDS-528, DOI: 10.26030/r3re-fd65). Processed gene count matrices, normalized transcript abundances, differential expression tables, and WGCNA module assignments are deposited in the repository under data/processed/ and archived via Zenodo (DOI will be assigned upon publication) under CC-BY 4.0.</p>
 
 <h2>Code Availability</h2>
 <p>All analysis scripts, kallisto pseudoalignment wrappers, WGCNA co-expression modeling, TabPFN machine learning benchmarking, and vector PDF figure generation code are released under the MIT Open Source License at: https://github.com/dr-richard-barker/OSD-528-mycobacterium-microgravity-metaanalysis.</p>
