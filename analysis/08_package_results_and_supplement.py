@@ -1,152 +1,294 @@
 #!/usr/bin/env python3
 """
 08_package_results_and_supplement.py
-Packages all empirical results tables, pathway enrichment files, and supplementary figures
-into dedicated, publication-ready release directories:
-- results_tables/
-- supplementary_figures/
+Copy the pipeline outputs into results_tables/ under their supplementary-table names, and
+write results_tables/README_RESULTS_TABLES.md and supplementary_figures/README.md.
+
+Nothing here computes or types a result: every table is an output file of an earlier step
+(or a join of output files), and the README row counts are counted from the files written.
+Table S16 is produced directly by 01_fetch_osdr_microbial_data.py and only listed here.
+Files in results_tables/ that are not in the current table list are removed, so a retired
+table cannot linger.
 """
 
-import os
-import sys
-import shutil
-import subprocess
 import csv
+import glob
+import json
+import os
+import shutil
+import sys
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA_PROCESSED = os.path.join(PROJECT_DIR, "data", "processed")
-FIG_DIR = os.path.join(PROJECT_DIR, "manuscript", "figures")
-RESULTS_DIR = os.path.join(PROJECT_DIR, "results_tables")
-SUPP_FIG_DIR = os.path.join(PROJECT_DIR, "supplementary_figures")
+PROC = os.path.join(PROJECT_DIR, "data", "processed")
+RESULTS = os.path.join(PROJECT_DIR, "results_tables")
+SUPP = os.path.join(PROJECT_DIR, "supplementary_figures")
 
-os.makedirs(RESULTS_DIR, exist_ok=True)
-os.makedirs(SUPP_FIG_DIR, exist_ok=True)
+# (table name, source under data/processed, description)
+TABLES = [
+    ("Table_S1_kallisto_estimated_counts.tsv", "osd528_counts_raw.tsv",
+     "kallisto estimated read-pair counts per CDS, all nine deposited samples (RFPRPM4 = inferred second library)"),
+    ("Table_S2_kallisto_tpm.tsv", "osd528_tpm.tsv", "Transcripts per million per CDS, all nine samples"),
+    ("Table_S3_samples_and_sequencing_qc.tsv", None,
+     "Sample groups, primary/sensitivity use, library index, read pairs and read assignment (rRNA, other ncRNA, CDS)"),
+    ("Table_S4_deseq2_clinostat_vs_static1g.tsv", "deg_3dclinostat_vs_static1g.tsv",
+     "DESeq2: 3D clinostat vs static 1g (primary samples); MLE and apeglm-shrunk log2FC, Wald p, BH FDR"),
+    ("Table_S5_deseq2_rpm2_vs_static1g.tsv", "deg_rpm2_vs_static1g.tsv", "DESeq2: RPM 2.0 vs static 1g (primary samples)"),
+    ("Table_S6_deseq2_clinostat_vs_rpm2.tsv", "deg_3dclinostat_vs_rpm2.tsv", "DESeq2: 3D clinostat vs RPM 2.0 (primary samples)"),
+    ("Table_S7_shared_simulated_microgravity_genes.tsv", "deg_shared_simulated_microgravity.tsv",
+     "Genes differentially expressed under both simulators in the same direction"),
+    ("Table_S8_deseq2_sensitivity_with_rfprpm4.tsv", None,
+     "DESeq2 results for all three contrasts with the inferred RFPRPM4 library included (sensitivity analysis)"),
+    ("Table_S9_wgcna_module_assignments.tsv", "wgcna_module_assignments.tsv",
+     "WGCNA module, module membership (kME) and connectivity (kTotal, kWithin) per gene"),
+    ("Table_S10_wgcna_module_eigengenes.tsv", "wgcna_module_eigengenes.tsv", "Module eigengenes per primary sample"),
+    ("Table_S11_wgcna_module_trait_correlations.tsv", "wgcna_module_trait_correlations.tsv",
+     "Module eigengene vs trait Pearson correlation, Student p and BH FDR"),
+    ("Table_S12_go_enrichment_deg_sets.tsv", "go_enrichment_deg.tsv",
+     "GO over-representation (hypergeometric, BH FDR) for up and down DEG sets and the shared response"),
+    ("Table_S13_go_enrichment_wgcna_modules.tsv", "go_enrichment_modules.tsv", "GO over-representation for each WGCNA module"),
+    ("Table_S14_classification_loocv_predictions.tsv", "ml_loocv_predictions.tsv",
+     "Leave-one-out held-out predictions and class probabilities (TabPFN, logistic regression, random forest)"),
+    ("Table_S15_classification_metrics.tsv", "ml_metrics.tsv",
+     "LOOCV accuracy, balanced accuracy, AUROC and label-permutation p-values per model, task and feature count"),
+    ("Table_S17_kegg_mapped_reactions.tsv", "metabolic_model_reactions.tsv",
+     "Curated reactions with their KEGG-supported M. marinum genes and per-contrast expression changes"),
+    ("Table_S18_kegg_subsystem_summary.tsv", "metabolic_subsystem_perturbation.tsv",
+     "Per-subsystem, per-contrast summaries of the KEGG-mapped reactions"),
+    ("Table_S19_metabolic_model.json", "metabolic_model_sbml.json", "Reaction model with KEGG-supported gene links (JSON)"),
+]
+S16_GLOB = "Table_S16_*.tsv"
+S16_DESC = "Microbial spaceflight and simulated-microgravity studies in NASA OSDR, from the OSDR API"
 
-def create_pan_microbial_table():
-    pan_file = os.path.join(RESULTS_DIR, "Table_S16_pan_microbial_osdr_compendium_78studies.tsv")
-    rows = [
-        {"accession": "OSD-528", "organism": "Mycobacterium marinum 1218R", "phylum": "Actinomycetota", "platform": "Simulated (3D Clinostat & RPM 2.0)", "flight_ground": "Simulated Microgravity", "primary_assay": "RNA-Seq (NextSeq 550)", "doi": "10.26030/r3re-fd65"},
-        {"accession": "OSD-14", "organism": "Pseudomonas aeruginosa PAO1", "phylum": "Pseudomonadota", "platform": "Space Shuttle (STS-115)", "flight_ground": "Spaceflight", "primary_assay": "Microarray", "doi": "10.26030/14-pa"},
-        {"accession": "OSD-15", "organism": "Pseudomonas aeruginosa PAO1", "phylum": "Pseudomonadota", "platform": "Space Shuttle (STS-115)", "flight_ground": "Spaceflight", "primary_assay": "Affymetrix GeneChip", "doi": "10.26030/15-pa"},
-        {"accession": "OSD-11", "organism": "Salmonella enterica serovar Typhimurium", "phylum": "Pseudomonadota", "platform": "Space Shuttle (STS-115)", "flight_ground": "Spaceflight", "primary_assay": "Microarray", "doi": "10.26030/11-st"},
-        {"accession": "OSD-145", "organism": "Staphylococcus aureus USA300", "phylum": "Bacillota", "platform": "International Space Station (ISS)", "flight_ground": "Spaceflight", "primary_assay": "RNA-Seq", "doi": "10.26030/145-sa"},
-        {"accession": "OSD-19", "organism": "Bacillus subtilis 168", "phylum": "Bacillota", "platform": "High Aspect Ratio Vessel (HARV)", "flight_ground": "Simulated Microgravity", "primary_assay": "Microarray", "doi": "10.26030/19-bs"},
-        {"accession": "OSD-24", "organism": "Escherichia coli MG1655", "phylum": "Pseudomonadota", "platform": "Space Shuttle (STS-107)", "flight_ground": "Spaceflight", "primary_assay": "Microarray", "doi": "10.26030/24-ec"},
-        {"accession": "OSD-32", "organism": "Candida albicans SC5314", "phylum": "Fungi", "platform": "Space Shuttle (STS-115)", "flight_ground": "Spaceflight", "primary_assay": "Microarray", "doi": "10.26030/32-ca"},
-        {"accession": "OSD-102", "organism": "Aspergillus niger ATCC 24667", "phylum": "Fungi", "platform": "International Space Station (ISS)", "flight_ground": "Spaceflight", "primary_assay": "RNA-Seq", "doi": "10.26030/102-an"},
-        {"accession": "OSD-173", "organism": "Acinetobacter baumannii AB5075", "phylum": "Pseudomonadota", "platform": "2D Clinostat", "flight_ground": "Simulated Microgravity", "primary_assay": "RNA-Seq", "doi": "10.26030/173-ab"}
+
+def tsv_rows(path):
+    with open(path) as f:
+        return list(csv.DictReader(f, delimiter="\t"))
+
+
+def write_tsv(path, rows, fields):
+    with open(path, "w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=fields, delimiter="\t", lineterminator="\n")
+        w.writeheader()
+        w.writerows(rows)
+
+
+def table_s3(dest):
+    samples = tsv_rows(os.path.join(PROJECT_DIR, "config", "samples.tsv"))
+    qc = json.load(open(os.path.join(PROC, "osd528_sequencing_qc_stats.json")))["samples"]
+    out = []
+    for s in samples:
+        q = qc[s["sample_id"]]
+        out.append({**s, "library_index": q["library_index"], "fastq_r1": q["fastq_r1"], "fastq_r2": q["fastq_r2"],
+                    "read_pairs": q["read_pairs_processed"], "percent_pseudoaligned": q["percent_pseudoaligned"],
+                    "percent_rRNA": q["percent_of_pairs_assigned"]["rRNA"],
+                    "percent_other_ncRNA": q["percent_of_pairs_assigned"]["other_ncRNA"],
+                    "percent_CDS": q["percent_of_pairs_assigned"]["CDS"]})
+    write_tsv(dest, out, list(out[0].keys()))
+
+
+def table_s8(dest):
+    sens = os.path.join(PROC, "sensitivity_with_rfprpm4")
+    out, fields = [], None
+    for contrast, name in (("clinostat_vs_static1g", "deg_3dclinostat_vs_static1g.tsv"),
+                           ("rpm2_vs_static1g", "deg_rpm2_vs_static1g.tsv"),
+                           ("clinostat_vs_rpm2", "deg_3dclinostat_vs_rpm2.tsv")):
+        for r in tsv_rows(os.path.join(sens, name)):
+            out.append({"contrast": contrast, **r})
+        fields = ["contrast"] + list(r.keys())
+    write_tsv(dest, out, fields)
+
+
+def count(path):
+    if path.endswith(".json"):
+        return "JSON"
+    with open(path) as f:
+        return f"{sum(1 for _ in f) - 1:,} rows"
+
+
+COLUMN_DESCRIPTIONS = {
+    "target_id": "kallisto target (RefSeq CDS record id)", "gene_id": "RefSeq locus tag (MMAR_RSxxxxx), GCF_000018345.1",
+    "gene_symbol": "Gene symbol from the RefSeq annotation (locus tag if none)", "replicon": "Chromosome or plasmid accession",
+    "pseudo": "yes if the CDS is annotated as a pseudogene", "protein": "RefSeq protein name",
+    "baseMean": "DESeq2 mean of normalised counts", "log2FoldChange": "DESeq2 maximum-likelihood log2 fold change (numerator vs denominator)",
+    "lfcSE": "Standard error of log2FoldChange", "log2FoldChange_shrunk": "apeglm-shrunk log2 fold change",
+    "pvalue": "Wald test p-value", "padj": "Benjamini-Hochberg adjusted p-value", "significant": "YES if padj < 0.05",
+    "contrast": "Comparison (numerator_vs_denominator)", "module": "WGCNA module colour (grey = unassigned)",
+    "kME": "Module membership: correlation with the own module eigengene", "kTotal": "Whole-network connectivity",
+    "kWithin": "Intramodular connectivity", "sample_id": "OSDR sample name", "trait": "Binary trait correlated with eigengenes",
+    "pearson_r": "Pearson correlation coefficient", "group": "Condition (Ground, Clinostat, RPM) or gene-set group",
+    "microgravity": "yes for clinostat and RPM samples", "primary": "yes if the sample enters the primary analysis",
+    "note": "Free-text note", "gene_set": "Gene set tested", "subset": "Direction or module within the gene set",
+    "ontology": "GO namespace: BP, MF or CC", "go_id": "GO term identifier", "term_name": "GO term name",
+    "term_size": "Annotated universe genes in the term (after propagation)", "overlap": "Gene-set genes in the term",
+    "set_size": "Annotated gene-set genes in the universe", "universe_size": "Annotated genes in the universe",
+    "expected": "Expected overlap under the hypergeometric null", "fold_enrichment": "overlap / expected",
+    "fdr": "Benjamini-Hochberg FDR within ontology and gene set", "n_terms_tested": "Terms tested in that family",
+    "fdr_bh_hit_terms_only": "Sensitivity FDR over terms with at least one hit",
+    "overlap_gene_ids": "Overlapping genes (locus tags)", "overlap_gene_symbols": "Overlapping genes (symbols)",
+    "subsystem": "Metabolic or cellular subsystem", "bh_fdr": "Benjamini-Hochberg FDR", "hypergeom_p": "One-sided hypergeometric p-value",
+    "n_deg": "DEGs (padj < 0.05)", "n_up": "Up-regulated DEGs", "n_down": "Down-regulated DEGs",
+    "median_log2fc_shrunk": "Median apeglm-shrunk log2 fold change of tested genes",
+    # samples and QC (Table S3)
+    "library_index": "Index sequence in the first read header", "fastq_r1": "R1 FASTQ file used", "fastq_r2": "R2 FASTQ file used",
+    "read_pairs": "Read pairs processed by kallisto", "percent_pseudoaligned": "Percent of pairs pseudoaligned",
+    "percent_rRNA": "Percent of pairs assigned to rRNA decoys", "percent_other_ncRNA": "Percent of pairs assigned to tRNA/other ncRNA decoys",
+    "percent_CDS": "Percent of pairs assigned to protein-coding genes",
+    # classification (Tables S14, S15)
+    "analysis": "primary (8 samples) or sensitivity_9 (adds the inferred RFPRPM4)", "task": "Classification task",
+    "k": "Number of most variable genes selected within each training fold", "model": "Classifier",
+    "n_samples": "Samples in the analysis", "class_counts": "Samples per class", "n_correct": "Held-out samples classified correctly",
+    "accuracy": "LOOCV accuracy", "balanced_accuracy": "LOOCV balanced accuracy", "auroc": "AUROC of pooled held-out probabilities (binary task)",
+    "permutation_method": "exact (all class-size-preserving relabellings) or Monte Carlo",
+    "n_relabellings_total": "Distinct class-size-preserving relabellings", "n_relabellings_evaluated": "Relabellings evaluated",
+    "p_accuracy": "Permutation p-value for accuracy", "p_balanced_accuracy": "Permutation p-value for balanced accuracy",
+    "p_auroc": "Permutation p-value for AUROC", "null_mean_accuracy": "Mean accuracy over relabellings",
+    "null_mean_balanced_accuracy": "Mean balanced accuracy over relabellings",
+    "min_attainable_p": "Smallest p-value the permutation test can give", "true_label": "True class", "predicted_label": "Predicted class",
+    "correct": "Whether the prediction was correct", "n_train": "Training samples in the fold",
+    "prob_ground_1g": "Held-out probability of static 1g", "prob_simulated_microgravity": "Held-out probability of simulated microgravity",
+    "prob_Clinostat": "Held-out probability of clinostat", "prob_Ground": "Held-out probability of ground", "prob_RPM": "Held-out probability of RPM",
+    # OSDR compendium (Table S16)
+    "accession": "OSDR study accession", "title": "Study title as given by OSDR", "organisms": "Microbial organisms listed by OSDR",
+    "microbial_categories": "Categories from the NCBI Taxonomy lineage", "other_listed_organisms": "Other organisms listed",
+    "host_organisms": "Host organisms listed", "assay_types": "Assay types as given by OSDR", "factors": "Study factors as given by OSDR",
+    "project_type": "OSDR project type", "flight_program": "Flight programme", "mission": "Mission",
+    "inclusion_basis": "Why the study meets the spaceflight/simulated-microgravity rule",
+    "doi": "Study DOI provided by OSDR and resolved by DataCite (empty if none)",
+    # KEGG-mapped reactions and subsystems (Tables S17, S18)
+    "reaction_id": "Reaction identifier", "reaction_name": "Reaction name", "compartment": "Cellular compartment",
+    "mapping_basis": "KEGG link type used (EC or KO)", "kegg_queries": "KEGG REST queries used", "ec_number": "EC number",
+    "kegg_name": "KEGG entry name", "equation": "Reaction equation", "kegg_scope": "Scope of the KEGG link (gene family or specific)",
+    "n_kegg_genes": "M. marinum genes linked by KEGG", "kegg_gene_ids": "KEGG gene ids (MMAR_xxxx)", "gene_ids": "RefSeq locus tags",
+    "gene_symbols": "Gene symbols", "old_assignment": "Locus assigned in the earlier, uncorrected model",
+    "old_locus_correct": "Whether that earlier locus is the KEGG-supported one", "n_reactions": "Reactions in the subsystem",
+    "n_genes_mapped": "Genes mapped by KEGG", "n_genes_tested": "Mapped genes tested by DESeq2", "deg_fraction": "n_deg / n_genes_tested",
+    "background_n_tested": "Genes tested in the contrast", "background_n_deg": "DEGs in the contrast",
+    "lead_gene_id": "Gene with the smallest padj", "lead_gene_symbol": "Symbol of that gene",
+    "lead_log2fc_shrunk": "Its apeglm-shrunk log2 fold change", "lead_padj": "Its adjusted p-value", "n_tested": "Genes tested",
+}
+
+
+def column_description(col, sample_ids):
+    if col in COLUMN_DESCRIPTIONS:
+        return COLUMN_DESCRIPTIONS[col]
+    if col in sample_ids:
+        return f"Value for sample {col}"
+    if col.startswith("ME"):
+        return f"Eigengene of WGCNA module {col[2:]}"
+    for prefix, label in (("clinostat_", "clinostat vs ground"), ("rpm_", "RPM vs ground")):
+        base = col[len(prefix):]
+        if col.startswith(prefix) and base in COLUMN_DESCRIPTIONS:
+            return f"{COLUMN_DESCRIPTIONS[base]} ({label})"
+    for suffix, label in (("_clinostat", "clinostat vs ground"), ("_rpm", "RPM vs ground"),
+                          ("_primary", "primary analysis"), ("_sensitivity", "sensitivity analysis")):
+        if col.endswith(suffix) and col[:-len(suffix)] in COLUMN_DESCRIPTIONS:
+            return f"{COLUMN_DESCRIPTIONS[col[:-len(suffix)]]} ({label})"
+    return "Not described here; see the script that writes this file"
+
+
+def write_fair(entries):
+    """fair_deposit/data_dictionary.json and ro-crate-metadata.json from the files just written."""
+    fair = os.path.join(PROJECT_DIR, "fair_deposit")
+    sample_ids = {r["sample_id"] for r in tsv_rows(os.path.join(PROJECT_DIR, "config", "samples.tsv"))}
+    files, undescribed = {}, set()
+    for name, _, desc, source in entries:
+        p = os.path.join(RESULTS, name)
+        cols = {}
+        if name.endswith(".tsv"):
+            with open(p) as f:
+                header = f.readline().rstrip("\n").split("\t")
+            for c in header:
+                d = column_description(c, sample_ids)
+                cols[c] = d
+                if d.startswith("Not described"):
+                    undescribed.add(c)
+        files[f"results_tables/{name}"] = {"description": desc, "source": source.strip("`"), "columns": cols}
+    with open(os.path.join(fair, "data_dictionary.json"), "w") as f:
+        json.dump({"title": "OSD-528 re-analysis: data dictionary",
+                   "generated_by": "analysis/08_package_results_and_supplement.py", "files": files}, f, indent=2)
+        f.write("\n")
+    author = {"@id": "https://orcid.org/0000-0001-5681-9857", "@type": "Person", "name": "Richard Barker",
+              "affiliation": "Collaborative Science Environment Inc., Madison, Wisconsin, USA"}
+    graph = [
+        {"@id": "ro-crate-metadata.json", "@type": "CreativeWork",
+         "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"}, "about": {"@id": "./"}},
+        {"@id": "./", "@type": "Dataset",
+         "name": "A shared transcriptional response of Mycobacterium marinum to two microgravity simulators: "
+                 "a re-analysis of NASA OSDR study OSD-528",
+         "description": "Processed outputs, code and manuscript of an independent re-analysis of NASA OSDR OSD-528.",
+         "author": {"@id": author["@id"]}, "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+         "isBasedOn": {"@id": "https://doi.org/10.26030/r3re-fd65"},
+         "hasPart": [{"@id": k} for k in files]},
+        author,
+        {"@id": "https://doi.org/10.26030/r3re-fd65", "@type": "Dataset", "name": "NASA OSDR OSD-528 (GLDS-528)"},
+        {"@id": "https://creativecommons.org/licenses/by/4.0/", "@type": "CreativeWork", "name": "CC BY 4.0"},
     ]
-    with open(pan_file, "w", newline="") as f:
-        fieldnames = ["accession", "organism", "phylum", "platform", "flight_ground", "primary_assay", "doi"]
-        writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter="\t")
-        writer.writeheader()
-        for r in rows:
-            writer.writerow(r)
-    print(f"Created {pan_file}")
+    for k, v in files.items():
+        graph.append({"@id": k, "@type": "File", "name": os.path.basename(k), "description": v["description"],
+                      "encodingFormat": "application/json" if k.endswith(".json") else "text/tab-separated-values"})
+    with open(os.path.join(fair, "ro-crate-metadata.json"), "w") as f:
+        json.dump({"@context": "https://w3id.org/ro/crate/1.1/context", "@graph": graph}, f, indent=2)
+        f.write("\n")
+    print(f"Wrote fair_deposit/data_dictionary.json and ro-crate-metadata.json ({len(files)} files)")
+    if undescribed:
+        print(f"  columns without a description: {sorted(undescribed)}")
+
 
 def main():
-    print("=== Phase 9: Packaging Results Tables & Supplementary Figures ===")
+    os.makedirs(RESULTS, exist_ok=True)
+    missing = [src for _, src, _ in TABLES if src and not os.path.exists(os.path.join(PROC, src))]
+    s16 = sorted(glob.glob(os.path.join(RESULTS, S16_GLOB)))
+    if missing or len(s16) != 1:
+        sys.exit(f"Missing inputs: {missing}; Table S16 files found: {[os.path.basename(x) for x in s16]}")
+    keep = {os.path.basename(s16[0]), "README_RESULTS_TABLES.md"}
+    lines = ["# Supplementary tables", "",
+             "Written by `analysis/08_package_results_and_supplement.py` from the pipeline outputs in",
+             "`data/processed/`. Row counts are counted from the files.", "",
+             "| Table | Rows | Description | Source |", "|---|---:|---|---|"]
+    entries = []
+    for name, src, desc in TABLES:
+        dest = os.path.join(RESULTS, name)
+        if name.startswith("Table_S3_"):
+            table_s3(dest)
+            source = "`config/samples.tsv` + `osd528_sequencing_qc_stats.json`"
+        elif name.startswith("Table_S8_"):
+            table_s8(dest)
+            source = "`data/processed/sensitivity_with_rfprpm4/deg_*.tsv`"
+        else:
+            shutil.copyfile(os.path.join(PROC, src), dest)
+            source = f"`data/processed/{src}`"
+        keep.add(name)
+        entries.append((name, count(dest), desc, source))
+    entries.append((os.path.basename(s16[0]), count(s16[0]), S16_DESC, "`analysis/01_fetch_osdr_microbial_data.py`"))
+    entries.sort(key=lambda e: int(e[0].split("_")[1][1:]))
+    lines += [f"| `{n}` | {c} | {d} | {s} |" for n, c, d, s in entries]
+    with open(os.path.join(RESULTS, "README_RESULTS_TABLES.md"), "w") as f:
+        f.write("\n".join(lines) + "\n")
+    # The same list for the supplementary information PDF (manuscript/npj_supplementary.tex).
+    def tex(x):
+        return x.replace("\\", "").replace("_", "\\_").replace("&", "\\&").replace("%", "\\%")
+    tex_lines = ["% Generated by analysis/08_package_results_and_supplement.py. Do not edit by hand.",
+                 "\\begin{description}"]
+    for n, c, d, _ in entries:
+        label = n.split("_")[1]
+        tex_lines.append(f"  \\item[Table {label}] \\texttt{{{tex(n)}}} ({tex(c)}). {tex(d)}.")
+    tex_lines.append("\\end{description}")
+    with open(os.path.join(PROJECT_DIR, "manuscript", "chapters", "supplementary_tables.tex"), "w") as f:
+        f.write("\n".join(tex_lines) + "\n")
+    for old in os.listdir(RESULTS):
+        if old not in keep:
+            os.remove(os.path.join(RESULTS, old))
+            print(f"  removed retired table {old}")
+    print(f"Wrote {len(entries)} tables and README_RESULTS_TABLES.md")
+    write_fair(entries)
 
-    # 1. Results Tables Mapping
-    table_mappings = [
-        ("osd528_counts_raw.tsv", "Table_S1_raw_counts_matrix.tsv"),
-        ("osd528_counts_normalized.tsv", "Table_S2_normalized_log2cpm_expression.tsv"),
-        ("osd528_sample_metadata.tsv", "Table_S3_sample_metadata.tsv"),
-        ("deg_3dclinostat_vs_static1g.tsv", "Table_S4_differential_expression_3dclinostat_vs_1g.tsv"),
-        ("deg_rpm2_vs_static1g.tsv", "Table_S5_differential_expression_rpm2_vs_1g.tsv"),
-        ("deg_3dclinostat_vs_rpm2.tsv", "Table_S6_differential_expression_3dclinostat_vs_rpm2.tsv"),
-        ("wgcna_module_assignments.tsv", "Table_S7_wgcna_module_assignments_goslim.tsv"),
-        ("wgcna_module_eigengenes.tsv", "Table_S8_wgcna_module_eigengenes.tsv"),
-        ("wgcna_module_trait_correlations.tsv", "Table_S9_wgcna_module_trait_correlations.tsv"),
-        ("goslim_pathway_enrichment.tsv", "Table_S10_goslim_pathway_enrichment.tsv"),
-        ("ontology_functional_enrichment.tsv", "Table_S11_full_gene_ontology_enrichment.tsv"),
-        ("tabpfn_predictions.tsv", "Table_S12_tabpfn_loocv_predictions.tsv"),
-        ("tabpfn_feature_importance.tsv", "Table_S13_tabpfn_feature_importance.tsv"),
-        ("metabolic_model_reactions.tsv", "Table_S14_cellular_metabolic_model_reactions.tsv"),
-        ("metabolic_subsystem_perturbation.tsv", "Table_S15_metabolic_subsystem_perturbation_index.tsv"),
-        ("metabolic_model_sbml.json", "Table_S17_cellular_metabolic_model_sbml.json")
-    ]
+    figs = sorted(f for f in os.listdir(SUPP) if f.endswith(".pdf")) if os.path.isdir(SUPP) else []
+    with open(os.path.join(SUPP, "README.md"), "w") as f:
+        f.write("# Supplementary figures\n\nDrawn by `analysis/06_generate_figures.py` (functions `figS*`) from the "
+                "pipeline outputs. Each figure is provided as PDF (vector) and PNG.\n\n")
+        for fig in figs:
+            f.write(f"- `{fig[:-4]}`\n")
 
-    for src_name, dest_name in table_mappings:
-        src = os.path.join(DATA_PROCESSED, src_name)
-        dest = os.path.join(RESULTS_DIR, dest_name)
-        if os.path.exists(src):
-            shutil.copyfile(src, dest)
-            print(f"  Copied {dest_name} ({os.path.getsize(dest):,} bytes)")
-
-    create_pan_microbial_table()
-
-    # Create README for results tables
-    readme_tables_path = os.path.join(RESULTS_DIR, "README_RESULTS_TABLES.md")
-    with open(readme_tables_path, "w") as f:
-        f.write("""# NASA OSDR OSD-528: Comprehensive Empirical Results Tables
-
-This directory contains the complete set of empirical data tables generated for the meta-analysis of *Mycobacterium marinum* response to simulated microgravity:
-
-| File Name | Description | Rows / Features | Primary Assays / Methods |
-| :--- | :--- | :--- | :--- |
-| **`Table_S1_raw_counts_matrix.tsv`** | Raw transcript count matrix | 5,510 genes $\\times$ 9 samples | kallisto v0.52.0 pseudoalignment of NextSeq 550 paired reads |
-| **`Table_S2_normalized_log2cpm_expression.tsv`** | Normalized $\\log_2(\\text{CPM}+1)$ matrix | 4,964 expressed genes $\\times$ 9 samples | TMM library size scaling + log-CPM transformation |
-| **`Table_S3_sample_metadata.tsv`** | NASA OSDR sample experimental metadata | 9 samples $\\times$ 5 attributes | 3D Clinostat, RPM 2.0, Static 1g; PDMS silicone membranes |
-| **`Table_S4_differential_expression_3dclinostat_vs_1g.tsv`** | Differential expression: 3D Clinostat vs 1g | 5,510 genes (351 sig DEGs) | Negative binomial Wald test, Benjamini-Hochberg FDR |
-| **`Table_S5_differential_expression_rpm2_vs_1g.tsv`** | Differential expression: RPM 2.0 vs 1g | 5,510 genes (738 sig DEGs) | Negative binomial Wald test, Benjamini-Hochberg FDR |
-| **`Table_S6_differential_expression_3dclinostat_vs_rpm2.tsv`** | Differential expression: Simulator comparison | 5,510 genes (242 sig DEGs) | Contrast evaluating kinematic shear and rotational differences |
-| **`Table_S7_wgcna_module_assignments_goslim.tsv`** | WGCNA module assignments & hub metrics | 350 top variable genes | Topological Overlap Matrix (TOM), $k_{\\text{within}}$, $k_{\\text{total}}$ |
-| **`Table_S8_wgcna_module_eigengenes.tsv`** | Module Eigengene expression values | 5 modules $\\times$ 9 samples | First principal component per co-expression module |
-| **`Table_S9_wgcna_module_trait_correlations.tsv`** | Module-trait correlation coefficients | 5 modules $\\times$ 3 traits | Pearson $r$, student asymptotic $p$-values |
-| **`Table_S10_goslim_pathway_enrichment.tsv`** | GOSlim pathway over-representation | Core enriched pathways | Hypergeometric test, FDR adjustment, gene overlap counts |
-| **`Table_S11_full_gene_ontology_enrichment.tsv`** | Full Gene Ontology enrichment table | Biological Process, Molecular Function | QuickGO & EMBL-EBI OLS mappings |
-| **`Table_S12_tabpfn_loocv_predictions.tsv`** | TabPFN foundation model LOOCV predictions | 9 sample validations | Calibrated class probabilities, true vs predicted labels |
-| **`Table_S13_tabpfn_feature_importance.tsv`** | TabPFN permutation feature importances | 15 module & hub features | Mean log-likelihood decrease under feature permutation |
-| **`Table_S14_cellular_metabolic_model_reactions.tsv`** | Genome-scale cellular metabolic reactions | 32 curated reactions | Compartments, equations, EC numbers, empirical $\\log_2\\text{FC}$ |
-| **`Table_S15_metabolic_subsystem_perturbation_index.tsv`** | Subsystem Perturbation Index (SPI) ranking | 8 core physiological subsystems | Pathway vulnerability scores, predominant flux shifts |
-| **`Table_S16_pan_microbial_osdr_compendium_78studies.tsv`** | Pan-microbial spaceflight meta-analysis index | 78 OSDR microbial datasets | Cross-species study compendium, phylum annotations |
-| **`Table_S17_cellular_metabolic_model_sbml.json`** | SBML-compatible computational model JSON | Multi-compartment reconstruction | Reactions, subsystems, and expression perturbations |
-""")
-    print(f"Created {readme_tables_path}")
-
-    # 2. Supplementary Figures Packaging
-    fig_mappings = [
-        ("fig1_study_design", "Supplementary_Figure_1_Study_Design"),
-        ("fig2_volcano_pca", "Supplementary_Figure_2_Volcano_PCA"),
-        ("fig3_wgcna_modules", "Supplementary_Figure_3_WGCNA_Modules"),
-        ("fig4_tabpfn_evaluation", "Supplementary_Figure_4_TabPFN_Evaluation"),
-        ("fig5_pathway_ontology", "Supplementary_Figure_5_Pathway_Ontology"),
-        ("fig6_hub_connectivity", "Supplementary_Figure_6_Hub_Connectivity"),
-        ("fig7_pan_microbial_landscape", "Supplementary_Figure_7_Pan_Microbial_Landscape"),
-        ("fig8_simulator_concordance_radar", "Supplementary_Figure_8_Simulator_Concordance_Radar"),
-        ("fig9_cellular_metabolic_landscape", "Supplementary_Figure_9_Cellular_Metabolic_Landscape")
-    ]
-
-    for src_base, dest_base in fig_mappings:
-        src_pdf = os.path.join(FIG_DIR, f"{src_base}.pdf")
-        dest_pdf = os.path.join(SUPP_FIG_DIR, f"{dest_base}.pdf")
-        dest_png = os.path.join(SUPP_FIG_DIR, f"{dest_base}.png")
-        if os.path.exists(src_pdf):
-            shutil.copyfile(src_pdf, dest_pdf)
-            # Generate high-resolution PNG using macOS sips
-            subprocess.run(["sips", "-s", "format", "png", dest_pdf, "--out", dest_png], capture_output=True)
-            print(f"  Packaged {dest_base}.pdf ({os.path.getsize(dest_pdf):,} bytes) and {dest_base}.png")
-
-    readme_fig_path = os.path.join(SUPP_FIG_DIR, "README_SUPPLEMENTARY_FIGURES.md")
-    with open(readme_fig_path, "w") as f:
-        f.write("""# NASA OSDR OSD-528: Supplementary Figure Suite (npj Microgravity Style)
-
-This directory contains high-resolution publication vector PDFs and high-fidelity PNG previews for all 9 figures generated for this study:
-
-- **`Supplementary_Figure_1_Study_Design.pdf / .png`**: Systems architecture, biological model (*M. marinum* 1218R on PDMS silicone membranes), microgravity simulation hardware (3D Clinostat, RPM 2.0, Static 1g), and the multi-scale analytical workflow.
-- **`Supplementary_Figure_2_Volcano_PCA.pdf / .png`**: Transcriptomic PCA biplot separating microgravity from 1g along PC1 (70.1% variance) and volcano plot of 351 empirical DEGs in 3D Clinostat vs Static 1g.
-- **`Supplementary_Figure_3_WGCNA_Modules.pdf / .png`**: Gene count distribution with Cartesian axes across 5 GOSlim co-expression modules and module-trait correlation heatmap.
-- **`Supplementary_Figure_4_TabPFN_Evaluation.pdf / .png`**: TabPFN tabular foundation model benchmark under leave-one-out cross-validation (LOOCV), 3-class confusion matrix, and permutation feature importances.
-- **`Supplementary_Figure_5_Pathway_Ontology.pdf / .png`**: Horizontal bar plot of enriched GOSlim pathways ($-\\log_{10}(\\text{FDR})$) with FAIR Blue-White-Red color fill and non-overlapping legend.
-- **`Supplementary_Figure_6_Hub_Connectivity.pdf / .png`**: Intramodular connectivity ($k_{\\text{within}}$) versus whole-network degree ($k_{\\text{total}}$) with generous axis margins and inter-module regulatory interactome.
-- **`Supplementary_Figure_7_Pan_Microbial_Landscape.pdf / .png`**: Taxonomic distribution with Cartesian axes across 78 OSDR spaceflight datasets and cross-species spaceflight adaptation concordance matrix.
-- **`Supplementary_Figure_8_Simulator_Concordance_Radar.pdf / .png`**: Hexagonal trajectory radar mapping phenotypic concordance across 6 physiological dimensions between 3D Clinostat, RPM 2.0, and Static 1g.
-- **`Supplementary_Figure_9_Cellular_Metabolic_Landscape.pdf / .png`**: Multi-compartment cellular cross-section (Outer Mycomembrane, Periplasm, Inner Plasma Membrane, Cytoplasm) with enzyme nodes colored strictly by empirical $\\log_2\\text{FC}$ and Subsystem Perturbation Index (SPI) ranking.
-""")
-    print(f"Created {readme_fig_path}")
-
-    print("\nPhase 9 completed successfully.")
 
 if __name__ == "__main__":
     main()

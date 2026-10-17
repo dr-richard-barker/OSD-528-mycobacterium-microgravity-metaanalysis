@@ -1,6 +1,10 @@
+% main.tex: two-column article layout of the manuscript.
+% The text itself lives in chapters/*.tex and is shared with npj_manuscript.tex;
+% edit the chapters, not this file. Build everything with: python3 build_manuscript.py
 \documentclass[10pt,twocolumn,letterpaper]{article}
 
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage[margin=0.75in]{geometry}
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
@@ -9,6 +13,7 @@
 \usepackage{hyperref}
 \usepackage{xcolor}
 \usepackage{microtype}
+\graphicspath{{figures/}}
 
 \hypersetup{
     colorlinks=true,
@@ -17,16 +22,15 @@
     urlcolor=blue!75!black
 }
 
-\title{\textbf{\Large Systems biology and tabular foundation AI meta-analysis of \textit{Mycobacterium marinum} response to simulated microgravity (NASA OSDR OSD-528)}}
+\input{chapters/00_title.tex}
 
 \author{
-    \textbf{Richard Barker}$^{1,*}$, \textbf{Lynn Harrison}$^{2}$, \textbf{Joseph L. Clary}$^{2}$ \\[0.5em]
-    \small $^{1}$Department of Agricultural and Biological Engineering, Purdue University, West Lafayette, IN 47907, USA \\
-    \small $^{2}$Department of Molecular and Cellular Physiology, LSU Health Shreveport, Shreveport, LA 71103, USA \\
-    \small $^*$Correspondence: Richard Barker, Department of Agricultural and Biological Engineering, Purdue University
+    \textbf{Richard Barker} \\[0.3em]
+    \small Collaborative Science Environment Inc., Madison, Wisconsin, USA \\
+    \small ORCID: \href{https://orcid.org/0000-0001-5681-9857}{0000-0001-5681-9857}
 }
 
-\date{\small September 2, 2026}
+\date{}
 
 \begin{document}
 
@@ -37,18 +41,7 @@
 \input{chapters/04_results.tex}
 \input{chapters/05_discussion.tex}
 \input{chapters/03_methods.tex}
-
-\section*{Data Availability}
-All raw sequencing FASTQ pairs are openly accessible from the NASA Open Science Data Repository under accession \textbf{OSD-528} (GLDS-528, DOI: 10.26030/r3re-fd65). Processed gene count matrices, normalized transcript abundances, differential expression tables, and WGCNA module assignments are deposited in the repository under \texttt{data/processed/} and archived via Zenodo (DOI will be assigned upon publication) under Creative Commons Attribution 4.0 International (CC-BY 4.0). Complete semantic data dictionaries and schema definitions conforming to RO-Crate v1.1 are available under \texttt{fair\_deposit/}.
-
-\section*{Code Availability}
-All analysis scripts, kallisto pseudoalignment wrappers, WGCNA co-expression modeling, TabPFN machine learning benchmarking, and vector PDF figure generation code are released under the MIT Open Source License. The complete reproducibility codebase is hosted at GitHub: \url{https://github.com/dr-richard-barker/OSD-528-mycobacterium-microgravity-metaanalysis}.
-
-\section*{Author Contributions}
-R.B., L.H., and J.L.C. conceived the meta-analysis study. J.L.C. and L.H. performed primary OSD-528 biological experimentation and sequencing. R.B. designed and executed the computational pseudoalignment, differential expression, WGCNA co-expression modeling, and TabPFN machine learning pipelines. R.B. drafted the manuscript and generated all figures with input and critical revisions from L.H., J.L.C., and the NASA GeneLab Consortium.
-
-\section*{Competing Interests}
-The authors declare no competing financial or non-financial interests.
+\input{chapters/06_declarations.tex}
 
 \bibliographystyle{naturemag}
 \bibliography{references}
