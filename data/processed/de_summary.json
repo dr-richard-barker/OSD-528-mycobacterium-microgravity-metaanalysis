@@ -1,0 +1,141 @@
+{
+  "method": {
+    "deseq2": "1.52.0",
+    "apeglm": "1.34.0",
+    "R": "R version 4.6.1 (2026-06-24)",
+    "alpha": 0.05,
+    "prefilter": "counts >= 10 in at least 2 samples",
+    "deg_definition": "BH-adjusted Wald p < 0.05"
+  },
+  "primary": {
+    "samples": ["RFP3D11", "RFP3D39", "RFP3D47", "RFPNG14", "RFPNG35", "RFPNG45", "RFPRPM41", "RFPRPM6"],
+    "genes_input": 5413,
+    "genes_tested": 3968,
+    "size_factors": {
+      "RFP3D11": 1.18636061528323,
+      "RFP3D39": 0.877371753654351,
+      "RFP3D47": 1.00787054734001,
+      "RFPNG14": 1.17263737159668,
+      "RFPNG35": 1.71920811821763,
+      "RFPNG45": 0.624219529187456,
+      "RFPRPM41": 1.00673616113253,
+      "RFPRPM6": 0.841013851869125
+    },
+    "contrasts": {
+      "clinostat_vs_ground": {
+        "numerator": "Clinostat",
+        "denominator": "Ground",
+        "genes_with_padj": 3967,
+        "deg": 619,
+        "up": 187,
+        "down": 432,
+        "deg_abs_shrunk_lfc_ge_1": 574
+      },
+      "rpm_vs_ground": {
+        "numerator": "RPM",
+        "denominator": "Ground",
+        "genes_with_padj": 3967,
+        "deg": 706,
+        "up": 209,
+        "down": 497,
+        "deg_abs_shrunk_lfc_ge_1": 680
+      },
+      "clinostat_vs_rpm": {
+        "numerator": "Clinostat",
+        "denominator": "RPM",
+        "genes_with_padj": 3967,
+        "deg": 0,
+        "up": 0,
+        "down": 0,
+        "deg_abs_shrunk_lfc_ge_1": 0
+      }
+    },
+    "simulator_overlap": {
+      "deg_both": 533,
+      "deg_both_same_direction": 533,
+      "deg_either": 792,
+      "jaccard_same_direction": 0.672979797979798,
+      "spearman_lfc_all_tested": 0.915547122582234
+    },
+    "pca": {
+      "genes": 500,
+      "variance_explained": [0.768395386918421, 0.096688279058201, 0.0480600851766737, 0.0293950219250979, 0.0259530281974919]
+    }
+  },
+  "sensitivity_with_rfprpm4": {
+    "samples": ["RFP3D11", "RFP3D39", "RFP3D47", "RFPNG14", "RFPNG35", "RFPNG45", "RFPRPM4", "RFPRPM41", "RFPRPM6"],
+    "genes_input": 5413,
+    "genes_tested": 3970,
+    "size_factors": {
+      "RFP3D11": 1.26521878471935,
+      "RFP3D39": 0.93862697679549,
+      "RFP3D47": 1.07569327003259,
+      "RFPNG14": 1.24711178767556,
+      "RFPNG35": 1.8290976387184,
+      "RFPNG45": 0.663453360470771,
+      "RFPRPM4": 0.595090432743846,
+      "RFPRPM41": 1.06948314514823,
+      "RFPRPM6": 0.905706961997452
+    },
+    "contrasts": {
+      "clinostat_vs_ground": {
+        "numerator": "Clinostat",
+        "denominator": "Ground",
+        "genes_with_padj": 3967,
+        "deg": 683,
+        "up": 228,
+        "down": 455,
+        "deg_abs_shrunk_lfc_ge_1": 608
+      },
+      "rpm_vs_ground": {
+        "numerator": "RPM",
+        "denominator": "Ground",
+        "genes_with_padj": 3967,
+        "deg": 859,
+        "up": 297,
+        "down": 562,
+        "deg_abs_shrunk_lfc_ge_1": 779
+      },
+      "clinostat_vs_rpm": {
+        "numerator": "Clinostat",
+        "denominator": "RPM",
+        "genes_with_padj": 3967,
+        "deg": 0,
+        "up": 0,
+        "down": 0,
+        "deg_abs_shrunk_lfc_ge_1": 0
+      }
+    },
+    "simulator_overlap": {
+      "deg_both": 620,
+      "deg_both_same_direction": 620,
+      "deg_either": 922,
+      "jaccard_same_direction": 0.672451193058568,
+      "spearman_lfc_all_tested": 0.923497849050217
+    },
+    "pca": {
+      "genes": 500,
+      "variance_explained": [0.783790297553729, 0.0950251692275471, 0.0498559486328909, 0.0222338234054333, 0.0156875562263765]
+    }
+  },
+  "primary_vs_sensitivity": {
+    "clinostat_vs_ground": {
+      "deg_primary": 619,
+      "deg_sensitivity": 683,
+      "deg_both": 608,
+      "pearson_lfc": 0.999991732286922
+    },
+    "rpm_vs_ground": {
+      "deg_primary": 706,
+      "deg_sensitivity": 859,
+      "deg_both": 669,
+      "pearson_lfc": 0.983201892506629
+    },
+    "clinostat_vs_rpm": {
+      "deg_primary": 0,
+      "deg_sensitivity": 0,
+      "deg_both": 0,
+      "pearson_lfc": 0.891299521578845
+    }
+  }
+}
