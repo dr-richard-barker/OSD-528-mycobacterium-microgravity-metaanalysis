@@ -1,0 +1,2639 @@
+{
+ "description": "KEGG data used by analysis/07_cellular_metabolic_modeling.py. Raw responses are cached in data/reference/kegg/ (git-ignored); this file is the tracked snapshot.",
+ "source": {
+  "kegg_rest": "https://rest.kegg.jp/",
+  "kegg_release": "not stated by info/kegg; see kegg_database_dates",
+  "kegg_database_dates": {
+   "ko": "2026/10/16",
+   "genes": "2026/10/16",
+   "enzyme": "2026/10/13"
+  },
+  "kegg_organism": "mmi Mycobacterium marinum M | T00694 5452 proteins, 2407 proteins with KOs | 1686 RNAs, 51 RNAs with KOs",
+  "retrieved_first": "2026-10-17",
+  "retrieved_last": "2026-10-17",
+  "cache_files_used": 198,
+  "user_agent": "osd528-reanalysis/1.0",
+  "refseq_gbff": "data/reference/GCF_000018345.1_ASM1834v1_genomic.gbff.gz",
+  "refseq_gbff_sha256": "898aa40056505efb94894a342fa4507da3b67f52c399deb6810608074855ded0"
+ },
+ "id_bridge": {
+  "method": "KEGG mmi ids are original Sanger locus tags (MMAR_xxxx); DESeq2 ids are RefSeq PGAP locus tags (MMAR_RSxxxxx). Joined through the RefSeq GBFF /old_locus_tag qualifier; each pair checked by KEGG position (list/mmi) vs RefSeq gene coordinates.",
+  "refseq_loci": 5591,
+  "refseq_loci_with_old_locus_tag": 5398,
+  "refseq_old_locus_tags_shared_by_several_loci": 0,
+  "kegg_genes": 5570,
+  "kegg_genes_with_one_refseq_locus": 5398,
+  "kegg_genes_without_refseq_locus": 172,
+  "refseq_old_locus_tags_absent_from_kegg": 0,
+  "position_check_counts": {
+   "exact": 4487,
+   "overlap_same_strand": 911,
+   "mismatch": 0,
+   "not_compared": 0
+  }
+ },
+ "queries": {
+  "ec:7.1.1.2": {
+   "kegg_name": "NADH:ubiquinone reductase (H+-translocating)",
+   "kegg_equation": "NADH + H+ + an ubiquinone + 4 H+[side 1] = NAD+ + an ubiquinol + 4 H+[side 2] [RN:R11945]",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_1470",
+    "MMAR_1471",
+    "MMAR_1472",
+    "MMAR_1473",
+    "MMAR_1474",
+    "MMAR_1475",
+    "MMAR_1476",
+    "MMAR_1477",
+    "MMAR_1478",
+    "MMAR_1479",
+    "MMAR_1480",
+    "MMAR_1481",
+    "MMAR_1482",
+    "MMAR_1483"
+   ],
+   "used_by_reactions": [
+    "R_NDH1"
+   ]
+  },
+  "ec:1.3.99.38": {
+   "kegg_name": "menaquinone-9 beta-reductase",
+   "kegg_equation": "menaquinone-9 + reduced acceptor = beta-dihydromenaquinone-9 + acceptor [RN:R11654]",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_0910"
+   ],
+   "used_by_reactions": [
+    "R_MENJ"
+   ]
+  },
+  "ec:7.1.1.7": {
+   "kegg_name": "quinol oxidase (electrogenic, proton-motive force generating)",
+   "kegg_equation": "2 quinol + O2[side 2] + 4 H+[side 2] = 2 quinone + 2 H2O[side 2] + 4 H+[side 1] (overall reaction) [RN:R11325]; (1a) 2 quinol = 2 quinone + 4 H+[side 1] + 4 e- [RN:R11885]; (1b) O2[side 2] + 4 H+[side 2] + 4 e- = 2 H2O[side 2] [RN:R11886]",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_2425",
+    "MMAR_2426"
+   ],
+   "used_by_reactions": [
+    "R_CYDA"
+   ]
+  },
+  "ko:K16013": {
+   "kegg_name": "cydD; ATP-binding cassette, subfamily C, bacterial CydD",
+   "kegg_equation": "",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_2424"
+   ],
+   "used_by_reactions": [
+    "R_CYDD"
+   ]
+  },
+  "ec:7.1.2.2": {
+   "kegg_name": "H+-transporting two-sector ATPase",
+   "kegg_equation": "ATP + H2O + 4 H+[side 1] = ADP + phosphate + 4 H+[side 2] [RN:R00086]",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_4087",
+    "MMAR_4089"
+   ],
+   "used_by_reactions": [
+    "R_ATPS"
+   ]
+  },
+  "ec:4.1.3.1": {
+   "kegg_name": "isocitrate lyase",
+   "kegg_equation": "isocitrate = succinate + glyoxylate [RN:R00479]",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_0792",
+    "MMAR_2821"
+   ],
+   "used_by_reactions": [
+    "R_ICL"
+   ]
+  },
+  "ec:2.3.3.9": {
+   "kegg_name": "malate synthase",
+   "kegg_equation": "acetyl-CoA + glyoxylate + H2O = (S)-malate + CoA [RN:R00472]",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_2713"
+   ],
+   "used_by_reactions": [
+    "R_GLCB"
+   ]
+  },
+  "ec:2.3.3.1": {
+   "kegg_name": "citrate (Si)-synthase",
+   "kegg_equation": "acetyl-CoA + H2O + oxaloacetate = citrate + CoA [RN:R00351]",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_4640",
+    "MMAR_4643"
+   ],
+   "used_by_reactions": [
+    "R_CS"
+   ]
+  },
+  "ec:6.2.1.5": {
+   "kegg_name": "succinate---CoA ligase (ADP-forming)",
+   "kegg_equation": "ATP + succinate + CoA = ADP + phosphate + succinyl-CoA [RN:R00405]",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_4549",
+    "MMAR_4550"
+   ],
+   "used_by_reactions": [
+    "R_SUCD"
+   ]
+  },
+  "ko:K11533": {
+   "kegg_name": "fas; fatty acid synthase, bacteria type [EC:2.3.1.-]",
+   "kegg_equation": "",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_3962"
+   ],
+   "used_by_reactions": [
+    "R_FAS"
+   ]
+  },
+  "ec:6.4.1.2": {
+   "kegg_name": "acetyl-CoA carboxylase",
+   "kegg_equation": "ATP + acetyl-CoA + hydrogencarbonate = ADP + phosphate + malonyl-CoA [RN:R00742]",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_1251",
+    "MMAR_3340"
+   ],
+   "used_by_reactions": [
+    "R_ACCD"
+   ]
+  },
+  "ec:2.3.1.293": {
+   "kegg_name": "meromycolic acid 3-oxoacyl-(acyl carrier protein) synthase I",
+   "kegg_equation": "an ultra-long-chain mono-unsaturated acyl-[acyl-carrier protein] + a malonyl-[acyl-carrier protein] = an ultra-long-chain mono-unsaturated 3-oxo-fatty acyl-[acyl-carrier protein] + CO2 + a holo-[acyl-carrier protein] [RN:R13266]",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_3338"
+   ],
+   "used_by_reactions": [
+    "R_KASA"
+   ]
+  },
+  "ec:1.3.1.118": {
+   "kegg_name": "meromycolic acid enoyl-[acyl-carrier-protein] reductase",
+   "kegg_equation": "a meromycolyl-[acyl-carrier protein] + NAD+ = a trans-Delta2-meromycolyl-[acyl-carrier protein] + NADH + H+ [RN:R12236]",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_2290"
+   ],
+   "used_by_reactions": [
+    "R_INHA"
+   ]
+  },
+  "ko:K20470": {
+   "kegg_name": "mmpL3; trehalose monomycolate/heme transporter",
+   "kegg_equation": "",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_0446"
+   ],
+   "used_by_reactions": [
+    "R_MMPL3"
+   ]
+  },
+  "ec:2.3.1.122": {
+   "kegg_name": "trehalose O-mycolyltransferase",
+   "kegg_equation": "2 alpha,alpha-trehalose 6-mycolate = alpha,alpha-trehalose + alpha,alpha-trehalose 6,6'-bismycolate [RN:R07248]",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_0328",
+    "MMAR_2777",
+    "MMAR_4556",
+    "MMAR_5368"
+   ],
+   "used_by_reactions": [
+    "R_FBPA"
+   ]
+  },
+  "ec:6.2.1.3": {
+   "kegg_name": "long-chain-fatty-acid---CoA ligase",
+   "kegg_equation": "ATP + a long-chain fatty acid + CoA = AMP + diphosphate + an acyl-CoA [RN:R00390]",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_1606",
+    "MMAR_2071",
+    "MMAR_2597",
+    "MMAR_3231",
+    "MMAR_4025",
+    "MMAR_4793",
+    "MMAR_5275"
+   ],
+   "used_by_reactions": [
+    "R_FACL"
+   ]
+  },
+  "ko:K16228": {
+   "kegg_name": "mps1; glycopeptidolipid biosynthesis protein",
+   "kegg_equation": "",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [],
+   "used_by_reactions": [
+    "R_MPS1"
+   ]
+  },
+  "ko:K16229": {
+   "kegg_name": "mps2; glycopeptidolipid biosynthesis protein",
+   "kegg_equation": "",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [],
+   "used_by_reactions": [
+    "R_MPS2"
+   ]
+  },
+  "ec:2.5.1.7": {
+   "kegg_name": "UDP-N-acetylglucosamine 1-carboxyvinyltransferase",
+   "kegg_equation": "phosphoenolpyruvate + UDP-N-acetyl-alpha-D-glucosamine = phosphate + UDP-N-acetyl-3-O-(1-carboxyvinyl)-alpha-D-glucosamine [RN:R00660]",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_4083"
+   ],
+   "used_by_reactions": [
+    "R_MURA"
+   ]
+  },
+  "ko:K27088": {
+   "kegg_name": "eccE; ESX secretion system protein EccE",
+   "kegg_equation": "",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_0551",
+    "MMAR_2679",
+    "MMAR_5458"
+   ],
+   "used_by_reactions": [
+    "R_ECCE"
+   ]
+  },
+  "ko:K27085": {
+   "kegg_name": "eccB; ESX secretion system ATPase EccB",
+   "kegg_equation": "",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_0542",
+    "MMAR_1099",
+    "MMAR_2664",
+    "MMAR_5444"
+   ],
+   "used_by_reactions": [
+    "R_ECCB"
+   ]
+  },
+  "ko:K14956": {
+   "kegg_name": "esx, esat6, cfp10; ESAT-6 family protein",
+   "kegg_equation": "",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_0187",
+    "MMAR_0188",
+    "MMAR_0189",
+    "MMAR_0196",
+    "MMAR_0546",
+    "MMAR_0547",
+    "MMAR_1104",
+    "MMAR_1105",
+    "MMAR_2674",
+    "MMAR_2675",
+    "MMAR_3000",
+    "MMAR_3001",
+    "MMAR_3580",
+    "MMAR_3653",
+    "MMAR_3654",
+    "MMAR_3659",
+    "MMAR_3660",
+    "MMAR_3662",
+    "MMAR_3663",
+    "MMAR_4453",
+    "MMAR_4454",
+    "MMAR_5119",
+    "MMAR_5120",
+    "MMAR_5449",
+    "MMAR_5450",
+    "MMAR_5465",
+    "MMAR_5466"
+   ],
+   "used_by_reactions": [
+    "R_ESXA"
+   ]
+  },
+  "ko:K27099": {
+   "kegg_name": "espB; ESX secretion-associated protein EspB",
+   "kegg_equation": "",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_0202",
+    "MMAR_0203",
+    "MMAR_1329",
+    "MMAR_5457"
+   ],
+   "used_by_reactions": [
+    "R_ESPB"
+   ]
+  },
+  "ec:2.1.3.3": {
+   "kegg_name": "ornithine carbamoyltransferase",
+   "kegg_equation": "carbamoyl phosphate + L-ornithine = phosphate + L-citrulline [RN:R01398]",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_2466"
+   ],
+   "used_by_reactions": [
+    "R_ARGF"
+   ]
+  },
+  "ec:2.2.1.6": {
+   "kegg_name": "acetolactate synthase",
+   "kegg_equation": "2 pyruvate = 2-acetolactate + CO2 [RN:R00006]",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_1508",
+    "MMAR_1710",
+    "MMAR_1711",
+    "MMAR_2332",
+    "MMAR_3281",
+    "MMAR_4997"
+   ],
+   "used_by_reactions": [
+    "R_ALS"
+   ]
+  },
+  "ec:1.1.1.1": {
+   "kegg_name": "alcohol dehydrogenase",
+   "kegg_equation": "(1) a primary alcohol + NAD+ = an aldehyde + NADH + H+ [RN:R00623]; (2) a secondary alcohol + NAD+ = a ketone + NADH + H+ [RN:R00624]",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_2739",
+    "MMAR_4110",
+    "MMAR_4911",
+    "MMAR_4935"
+   ],
+   "used_by_reactions": [
+    "R_ADHP"
+   ]
+  },
+  "ec:3.5.4.26": {
+   "kegg_name": "diaminohydroxyphosphoribosylaminopyrimidine deaminase",
+   "kegg_equation": "2,5-diamino-6-hydroxy-4-(5-phospho-D-ribosylamino)pyrimidine + H2O = 5-amino-6-(5-phospho-D-ribosylamino)uracil + NH3 [RN:R03459]",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_2218"
+   ],
+   "used_by_reactions": [
+    "R_RIBD"
+   ]
+  },
+  "ec:1.1.1.193": {
+   "kegg_name": "5-amino-6-(5-phosphoribosylamino)uracil reductase",
+   "kegg_equation": "5-amino-6-(5-phospho-D-ribitylamino)uracil + NADP+ = 5-amino-6-(5-phospho-D-ribosylamino)uracil + NADPH + H+ [RN:R03458]",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_2218"
+   ],
+   "used_by_reactions": [
+    "R_RIBD"
+   ]
+  },
+  "ec:1.11.1.21": {
+   "kegg_name": "catalase-peroxidase",
+   "kegg_equation": "(1) donor + H2O2 = oxidized donor + 2 H2O [RN:R03532]; (2) 2 H2O2 = O2 + 2 H2O [RN:R00009]",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_2914"
+   ],
+   "used_by_reactions": [
+    "R_KATG"
+   ]
+  },
+  "ko:K13993": {
+   "kegg_name": "HSP20; HSP20 family protein",
+   "kegg_equation": "",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_0515",
+    "MMAR_2991"
+   ],
+   "used_by_reactions": [
+    "R_HSPX"
+   ]
+  },
+  "ko:K07695": {
+   "kegg_name": "devR; two-component system, NarL family, response regulator DevR",
+   "kegg_equation": "",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_1516",
+    "MMAR_3480"
+   ],
+   "used_by_reactions": [
+    "R_DOSR"
+   ]
+  },
+  "ec:1.3.5.2": {
+   "kegg_name": "dihydroorotate dehydrogenase (quinone)",
+   "kegg_equation": "(S)-dihydroorotate + a quinone = orotate + a quinol [RN:R01868]",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [
+    "MMAR_3120"
+   ],
+   "used_by_reactions": []
+  },
+  "ec:1.10.3.14": {
+   "kegg_name": "Transferred to 7.1.1.7",
+   "kegg_equation": "",
+   "obsolete": true,
+   "record_found": true,
+   "genes": [],
+   "used_by_reactions": []
+  },
+  "ec:7.6.2.2": {
+   "kegg_name": "ABC-type xenobiotic transporter",
+   "kegg_equation": "ATP + H2O + xenobiotic[side 1] = ADP + phosphate + xenobiotic[side 2]",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [],
+   "used_by_reactions": []
+  },
+  "ec:2.3.1.85": {
+   "kegg_name": "fatty-acid synthase system",
+   "kegg_equation": "acetyl-CoA + n malonyl-CoA + 2n NADPH + 2n H+ = a long-chain fatty acid + (n+1) CoA + n CO2 + 2n NADP+ [RN:R05188]",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [],
+   "used_by_reactions": []
+  },
+  "ec:2.3.1.41": {
+   "kegg_name": "beta-ketoacyl-[acyl-carrier-protein] synthase I",
+   "kegg_equation": "an acyl-[acyl-carrier protein] + a malonyl-[acyl-carrier protein] = a 3-oxoacyl-[acyl-carrier protein] + CO2 + an [acyl-carrier protein] [RN:R02768]",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [],
+   "used_by_reactions": []
+  },
+  "ec:1.3.1.9": {
+   "kegg_name": "enoyl-[acyl-carrier-protein] reductase (NADH)",
+   "kegg_equation": "an acyl-[acyl-carrier protein] + NAD+ = a trans-2,3-dehydroacyl-[acyl-carrier protein] + NADH + H+ [RN:R01403]",
+   "obsolete": false,
+   "record_found": true,
+   "genes": [],
+   "used_by_reactions": []
+  }
+ },
+ "genes": {
+  "MMAR_0145": {
+   "refseq_locus_tag": "MMAR_RS00720",
+   "refseq_gene": "",
+   "refseq_product": "MarR family winged helix-turn-helix transcriptional regulator",
+   "refseq_location": "complement(174522..175013)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "",
+   "kegg_name": "transcriptional regulator",
+   "kegg_orthology": "K23775 MarR family transcriptional regulator, organic hydroperoxide resistance regulator",
+   "kegg_ko": [
+    "K23775"
+   ],
+   "kegg_position": "complement(174522..175013)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_0187": {
+   "refseq_locus_tag": "MMAR_RS00930",
+   "refseq_gene": "esxB",
+   "refseq_product": "type VII secretion system ESX-1 WXG100 family target CFP-10",
+   "refseq_location": "222089..222391",
+   "refseq_pseudo": false,
+   "kegg_symbol": "esxB_1",
+   "kegg_name": "10 kDa culture filtrate antigen EsxB_1",
+   "kegg_orthology": "K14956 ESAT-6 family protein",
+   "kegg_ko": [
+    "K14956"
+   ],
+   "kegg_position": "222089..222391",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_0188": {
+   "refseq_locus_tag": "MMAR_RS00935",
+   "refseq_gene": "",
+   "refseq_product": "WXG100 family type VII secretion target",
+   "refseq_location": "222428..222715",
+   "refseq_pseudo": false,
+   "kegg_symbol": "esxA_1",
+   "kegg_name": "6 kDa culture filtrate antigen EsxA_1 (early secreted antigenic target - Esat6)",
+   "kegg_orthology": "K14956 ESAT-6 family protein",
+   "kegg_ko": [
+    "K14956"
+   ],
+   "kegg_position": "222428..222715",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_0189": {
+   "refseq_locus_tag": "MMAR_RS00940",
+   "refseq_gene": "",
+   "refseq_product": "WXG100 family type VII secretion target",
+   "refseq_location": "222948..223235",
+   "refseq_pseudo": false,
+   "kegg_symbol": "esxA_3",
+   "kegg_name": "conserved hypothetical EsxA-like protein, EsxA_3",
+   "kegg_orthology": "K14956 ESAT-6 family protein",
+   "kegg_ko": [
+    "K14956"
+   ],
+   "kegg_position": "222948..223235",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_0196": {
+   "refseq_locus_tag": "MMAR_RS00960",
+   "refseq_gene": "",
+   "refseq_product": "WXG100 family type VII secretion target",
+   "refseq_location": "226072..226359",
+   "refseq_pseudo": false,
+   "kegg_symbol": "esxA_2",
+   "kegg_name": "conserved hypothetical EsxA-like protein, EsxA_2",
+   "kegg_orthology": "K14956 ESAT-6 family protein",
+   "kegg_ko": [
+    "K14956"
+   ],
+   "kegg_position": "226072..226359",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_0200": {
+   "refseq_locus_tag": "MMAR_RS00980",
+   "refseq_gene": "",
+   "refseq_product": "hypothetical protein",
+   "refseq_location": "229316..229807",
+   "refseq_pseudo": false,
+   "kegg_symbol": "",
+   "kegg_name": "conserved hypothetical protein",
+   "kegg_orthology": "",
+   "kegg_ko": [],
+   "kegg_position": "229316..229807",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_0202": {
+   "refseq_locus_tag": "MMAR_RS00990",
+   "refseq_gene": "espB",
+   "refseq_product": "EspB family ESX-1 secretion system-associated protein",
+   "refseq_location": "complement(230276..231814)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "",
+   "kegg_name": "conserved hypothetical alanine and glycine rich protein",
+   "kegg_orthology": "K27099 ESX secretion-associated protein EspB",
+   "kegg_ko": [
+    "K27099"
+   ],
+   "kegg_position": "complement(230276..231814)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_0203": {
+   "refseq_locus_tag": "MMAR_RS00995",
+   "refseq_gene": "",
+   "refseq_product": "PPE domain-containing protein",
+   "refseq_location": "232431..233972",
+   "refseq_pseudo": false,
+   "kegg_symbol": "",
+   "kegg_name": "conserved hypothetical alanine and glycine rich protein",
+   "kegg_orthology": "K27099 ESX secretion-associated protein EspB",
+   "kegg_ko": [
+    "K27099"
+   ],
+   "kegg_position": "232431..233972",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_0204": {
+   "refseq_locus_tag": "MMAR_RS01000",
+   "refseq_gene": "",
+   "refseq_product": "TetR/AcrR family transcriptional regulator",
+   "refseq_location": "234050..234607",
+   "refseq_pseudo": false,
+   "kegg_symbol": "",
+   "kegg_name": "conserved hypothetical protein",
+   "kegg_orthology": "",
+   "kegg_ko": [],
+   "kegg_position": "234056..234607",
+   "kegg_record_found": true,
+   "position_check": "overlap_same_strand"
+  },
+  "MMAR_0254": {
+   "refseq_locus_tag": "MMAR_RS01245",
+   "refseq_gene": "",
+   "refseq_product": "SDR family NAD(P)-dependent oxidoreductase",
+   "refseq_location": "284972..285775",
+   "refseq_pseudo": false,
+   "kegg_symbol": "",
+   "kegg_name": "ketoacyl reductase",
+   "kegg_orthology": "K07124 uncharacterized protein",
+   "kegg_ko": [
+    "K07124"
+   ],
+   "kegg_position": "284972..285775",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_0328": {
+   "refseq_locus_tag": "MMAR_RS01615",
+   "refseq_gene": "ag85C",
+   "refseq_product": "diacylglycerol acyltransferase/mycolyltransferase Ag85C",
+   "refseq_location": "complement(379208..380248)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "fbpC",
+   "kegg_name": "secreted antigen 85-C FbpC",
+   "kegg_orthology": "K18851 diacylglycerol O-acyltransferase / trehalose O-mycolyltransferase / mycolyltransferase Ag85 [EC:2.3.1.20 2.3.1.122 2.3.1.-]",
+   "kegg_ko": [
+    "K18851"
+   ],
+   "kegg_position": "complement(379208..380248)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_0446": {
+   "refseq_locus_tag": "MMAR_RS02205",
+   "refseq_gene": "",
+   "refseq_product": "MMPL family transporter",
+   "refseq_location": "complement(520843..523725)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "mmpL3",
+   "kegg_name": "conserved transmembrane transport protein MmpL3",
+   "kegg_orthology": "K20470 trehalose monomycolate/heme transporter",
+   "kegg_ko": [
+    "K20470"
+   ],
+   "kegg_position": "complement(520843..523725)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_0515": {
+   "refseq_locus_tag": "MMAR_RS02535",
+   "refseq_gene": "",
+   "refseq_product": "Hsp20/alpha crystallin family protein",
+   "refseq_location": "complement(607545..608003)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "hsp",
+   "kegg_name": "heat shock protein Hsp",
+   "kegg_orthology": "K13993 HSP20 family protein",
+   "kegg_ko": [
+    "K13993"
+   ],
+   "kegg_position": "complement(607545..608003)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_0542": {
+   "refseq_locus_tag": "MMAR_RS02665",
+   "refseq_gene": "eccB",
+   "refseq_product": "type VII secretion protein EccB",
+   "refseq_location": "638207..639808",
+   "refseq_pseudo": false,
+   "kegg_symbol": "",
+   "kegg_name": "conserved membrane protein",
+   "kegg_orthology": "K27085 ESX secretion system ATPase EccB",
+   "kegg_ko": [
+    "K27085"
+   ],
+   "kegg_position": "638207..639808",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_0546": {
+   "refseq_locus_tag": "MMAR_RS02685",
+   "refseq_gene": "esxG",
+   "refseq_product": "type VII secretion system protein EsxG",
+   "refseq_location": "645710..646003",
+   "refseq_pseudo": false,
+   "kegg_symbol": "esxG",
+   "kegg_name": "EsaT-6 like protein EsxG",
+   "kegg_orthology": "K14956 ESAT-6 family protein",
+   "kegg_ko": [
+    "K14956"
+   ],
+   "kegg_position": "645710..646003",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_0547": {
+   "refseq_locus_tag": "MMAR_RS02690",
+   "refseq_gene": "",
+   "refseq_product": "WXG100 family type VII secretion target",
+   "refseq_location": "646032..646322",
+   "refseq_pseudo": false,
+   "kegg_symbol": "esxH",
+   "kegg_name": "EsaT-6 like protein EsxH",
+   "kegg_orthology": "K14956 ESAT-6 family protein",
+   "kegg_ko": [
+    "K14956"
+   ],
+   "kegg_position": "646032..646322",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_0551": {
+   "refseq_locus_tag": "MMAR_RS02710",
+   "refseq_gene": "eccE",
+   "refseq_product": "type VII secretion protein EccE",
+   "refseq_location": "650128..651141",
+   "refseq_pseudo": false,
+   "kegg_symbol": "",
+   "kegg_name": "conserved transmembrane protein",
+   "kegg_orthology": "K27088 ESX secretion system protein EccE",
+   "kegg_ko": [
+    "K27088"
+   ],
+   "kegg_position": "650128..651141",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_0792": {
+   "refseq_locus_tag": "MMAR_RS03910",
+   "refseq_gene": "aceA",
+   "refseq_product": "isocitrate lyase",
+   "refseq_location": "949865..951151",
+   "refseq_pseudo": false,
+   "kegg_symbol": "icl",
+   "kegg_name": "isocitrate lyase Icl",
+   "kegg_orthology": "K01637 isocitrate/methylisocitrate lyase [EC:4.1.3.1 4.1.3.30]",
+   "kegg_ko": [
+    "K01637"
+   ],
+   "kegg_position": "949865..951151",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_0796": {
+   "refseq_locus_tag": "MMAR_RS03930",
+   "refseq_gene": "pcaA",
+   "refseq_product": "cyclopropane mycolic acid synthase PcaA",
+   "refseq_location": "complement(954500..955363)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "pcaA",
+   "kegg_name": "mycolic acid synthase PcaA",
+   "kegg_orthology": "K26591 cyclopropane mycolic acid synthase PcaA",
+   "kegg_ko": [
+    "K26591"
+   ],
+   "kegg_position": "complement(954500..955363)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_0910": {
+   "refseq_locus_tag": "MMAR_RS04470",
+   "refseq_gene": "menJ",
+   "refseq_product": "menaquinone reductase",
+   "refseq_location": "complement(1100831..1102069)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "",
+   "kegg_name": "FAD-linked oxidoreductase",
+   "kegg_orthology": "K21401 menaquinone-9 beta-reductase [EC:1.3.99.38]",
+   "kegg_ko": [
+    "K21401"
+   ],
+   "kegg_position": "complement(1100831..1102069)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_0954": {
+   "refseq_locus_tag": "MMAR_RS04685",
+   "refseq_gene": "",
+   "refseq_product": "metal-dependent hydrolase family protein",
+   "refseq_location": "complement(1165242..1166504)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "",
+   "kegg_name": "imidazolonepropionase",
+   "kegg_orthology": "",
+   "kegg_ko": [],
+   "kegg_position": "complement(1165242..1166504)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_1079": {
+   "refseq_locus_tag": "MMAR_RS05335",
+   "refseq_gene": "",
+   "refseq_product": "CoA-acylating methylmalonate-semialdehyde dehydrogenase",
+   "refseq_location": "complement(1300867..1302387)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "mmsA",
+   "kegg_name": "methylmalonate semialdehyde dehydrogenase, MmsA",
+   "kegg_orthology": "K00140 malonate-semialdehyde dehydrogenase (acetylating) / methylmalonate-semialdehyde dehydrogenase [EC:1.2.1.18 1.2.1.27]",
+   "kegg_ko": [
+    "K00140"
+   ],
+   "kegg_position": "complement(1300867..1302387)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_1099": {
+   "refseq_locus_tag": "MMAR_RS05430",
+   "refseq_gene": "eccB",
+   "refseq_product": "type VII secretion protein EccB",
+   "refseq_location": "1320373..1321881",
+   "refseq_pseudo": false,
+   "kegg_symbol": "",
+   "kegg_name": "conserved hypothetical membrane protein",
+   "kegg_orthology": "K27085 ESX secretion system ATPase EccB",
+   "kegg_ko": [
+    "K27085"
+   ],
+   "kegg_position": "1320373..1321881",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_1104": {
+   "refseq_locus_tag": "MMAR_RS05455",
+   "refseq_gene": "",
+   "refseq_product": "WXG100 family type VII secretion target",
+   "refseq_location": "1329622..1329975",
+   "refseq_pseudo": false,
+   "kegg_symbol": "esxU",
+   "kegg_name": "EsaT-6 like protein, EsxU",
+   "kegg_orthology": "K14956 ESAT-6 family protein",
+   "kegg_ko": [
+    "K14956"
+   ],
+   "kegg_position": "1329622..1329975",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_1105": {
+   "refseq_locus_tag": "MMAR_RS05460",
+   "refseq_gene": "",
+   "refseq_product": "WXG100 family type VII secretion target",
+   "refseq_location": "1329991..1330287",
+   "refseq_pseudo": false,
+   "kegg_symbol": "esxT",
+   "kegg_name": "EsaT-6 like protein, EsxT",
+   "kegg_orthology": "K14956 ESAT-6 family protein",
+   "kegg_ko": [
+    "K14956"
+   ],
+   "kegg_position": "1329991..1330287",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_1251": {
+   "refseq_locus_tag": "MMAR_RS06195",
+   "refseq_gene": "",
+   "refseq_product": "acetyl/propionyl/methylcrotonyl-CoA carboxylase subunit alpha",
+   "refseq_location": "complement(1531258..1533051)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "accA3",
+   "kegg_name": "bifunctional protein acetyl-/propionyl-coenzyme A carboxylase alpha chain AccA3",
+   "kegg_orthology": "K11263 acetyl-CoA/propionyl-CoA/long-chain acyl-CoA carboxylase, biotin carboxylase, biotin carboxyl carrier protein [EC:6.4.1.2 6.4.1.3 6.4.1.- 6.3.4.14]",
+   "kegg_ko": [
+    "K11263"
+   ],
+   "kegg_position": "complement(1531258..1533051)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_1329": {
+   "refseq_locus_tag": "MMAR_RS06580",
+   "refseq_gene": "espB",
+   "refseq_product": "EspB family ESX-1 secretion system-associated protein",
+   "refseq_location": "1621784..1623304",
+   "refseq_pseudo": false,
+   "kegg_symbol": "",
+   "kegg_name": "conserved hypothetical alanine and glycine rich protein",
+   "kegg_orthology": "K27099 ESX secretion-associated protein EspB",
+   "kegg_ko": [
+    "K27099"
+   ],
+   "kegg_position": "1621784..1623304",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_1355": {
+   "refseq_locus_tag": "MMAR_RS06710",
+   "refseq_gene": "",
+   "refseq_product": "alpha/beta fold hydrolase",
+   "refseq_location": "complement(1645301..1646086)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "lipV",
+   "kegg_name": "lipase LipV",
+   "kegg_orthology": "K19311 lipase [EC:3.1.1.-]",
+   "kegg_ko": [
+    "K19311"
+   ],
+   "kegg_position": "complement(1645301..1646086)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_1372": {
+   "refseq_locus_tag": "MMAR_RS06790",
+   "refseq_gene": "",
+   "refseq_product": "TIGR03617 family F420-dependent LLM class oxidoreductase",
+   "refseq_location": "complement(1668828..1669841)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "",
+   "kegg_name": "conserved hypothetical protein",
+   "kegg_orthology": "",
+   "kegg_ko": [],
+   "kegg_position": "complement(1668828..1669841)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_1470": {
+   "refseq_locus_tag": "MMAR_RS07265",
+   "refseq_gene": "nuoN",
+   "refseq_product": "NADH-quinone oxidoreductase subunit NuoN",
+   "refseq_location": "complement(1781510..1783096)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "nuoN",
+   "kegg_name": "NADH dehydrogenase I (chain N) NuoN (NADH-ubiquinone oxidoreductase chain N)",
+   "kegg_orthology": "K00343 NADH-quinone oxidoreductase subunit N [EC:7.1.1.2]",
+   "kegg_ko": [
+    "K00343"
+   ],
+   "kegg_position": "complement(1781510..1783096)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_1471": {
+   "refseq_locus_tag": "MMAR_RS07270",
+   "refseq_gene": "",
+   "refseq_product": "NADH-quinone oxidoreductase subunit M",
+   "refseq_location": "complement(1783093..1784679)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "nuoM",
+   "kegg_name": "NADH dehydrogenase I (chain M) NuoM (NADH-ubiquinone oxidoreductase chain M)",
+   "kegg_orthology": "K00342 NADH-quinone oxidoreductase subunit M [EC:7.1.1.2]",
+   "kegg_ko": [
+    "K00342"
+   ],
+   "kegg_position": "complement(1783093..1784679)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_1472": {
+   "refseq_locus_tag": "MMAR_RS07275",
+   "refseq_gene": "nuoL",
+   "refseq_product": "NADH-quinone oxidoreductase subunit L",
+   "refseq_location": "complement(1784676..1786577)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "nuoL",
+   "kegg_name": "NADH dehydrogenase I (chain L) NuoL (NADH-ubiquinone oxidoreductase chain L)",
+   "kegg_orthology": "K00341 NADH-quinone oxidoreductase subunit L [EC:7.1.1.2]",
+   "kegg_ko": [
+    "K00341"
+   ],
+   "kegg_position": "complement(1784676..1786577)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_1473": {
+   "refseq_locus_tag": "MMAR_RS07280",
+   "refseq_gene": "nuoK",
+   "refseq_product": "NADH-quinone oxidoreductase subunit NuoK",
+   "refseq_location": "complement(1786588..1786887)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "nuoK",
+   "kegg_name": "NADH dehydrogenase I (chain K) NuoK (NADH-ubiquinone oxidoreductase chain K)",
+   "kegg_orthology": "K00340 NADH-quinone oxidoreductase subunit K [EC:7.1.1.2]",
+   "kegg_ko": [
+    "K00340"
+   ],
+   "kegg_position": "complement(1786588..1786887)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_1474": {
+   "refseq_locus_tag": "MMAR_RS07285",
+   "refseq_gene": "",
+   "refseq_product": "NADH-quinone oxidoreductase subunit J",
+   "refseq_location": "complement(1786884..1787660)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "nuoJ",
+   "kegg_name": "NADH dehydrogenase I (chain J) NuoJ (NADH-ubiquinone oxidoreductase chain J)",
+   "kegg_orthology": "K00339 NADH-quinone oxidoreductase subunit J [EC:7.1.1.2]",
+   "kegg_ko": [
+    "K00339"
+   ],
+   "kegg_position": "complement(1786884..1787672)",
+   "kegg_record_found": true,
+   "position_check": "overlap_same_strand"
+  },
+  "MMAR_1475": {
+   "refseq_locus_tag": "MMAR_RS07290",
+   "refseq_gene": "nuoI",
+   "refseq_product": "NADH-quinone oxidoreductase subunit NuoI",
+   "refseq_location": "complement(1787669..>1788232)",
+   "refseq_pseudo": true,
+   "kegg_symbol": "nuoI",
+   "kegg_name": "NADH dehydrogenase I (chain I) NuoI (NADH-ubiquinone oxidoreductase chain I)",
+   "kegg_orthology": "K00338 NADH-quinone oxidoreductase subunit I [EC:7.1.1.2]",
+   "kegg_ko": [
+    "K00338"
+   ],
+   "kegg_position": "complement(1787669..1788214)",
+   "kegg_record_found": true,
+   "position_check": "overlap_same_strand"
+  },
+  "MMAR_1476": {
+   "refseq_locus_tag": "MMAR_RS07295",
+   "refseq_gene": "nuoH",
+   "refseq_product": "NADH-quinone oxidoreductase subunit NuoH",
+   "refseq_location": "complement(1788207..1789481)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "nuoH",
+   "kegg_name": "NADH dehydrogenase I (chain H) NuoH (NADH-ubiquinone oxidoreductase chain H)",
+   "kegg_orthology": "K00337 NADH-quinone oxidoreductase subunit H [EC:7.1.1.2]",
+   "kegg_ko": [
+    "K00337"
+   ],
+   "kegg_position": "complement(1788207..1789481)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_1477": {
+   "refseq_locus_tag": "MMAR_RS07300",
+   "refseq_gene": "",
+   "refseq_product": "NADH-quinone oxidoreductase subunit G",
+   "refseq_location": "complement(1789531..1791948)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "nuoG",
+   "kegg_name": "NADH dehydrogenase I (chain G) NuoG (NADH-ubiquinone oxidoreductase chain G)",
+   "kegg_orthology": "K00336 NADH-quinone oxidoreductase subunit G [EC:7.1.1.2]",
+   "kegg_ko": [
+    "K00336"
+   ],
+   "kegg_position": "complement(1789531..1791948)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_1478": {
+   "refseq_locus_tag": "MMAR_RS07305",
+   "refseq_gene": "nuoF",
+   "refseq_product": "NADH-quinone oxidoreductase subunit NuoF",
+   "refseq_location": "complement(1791945..1793291)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "nuoF",
+   "kegg_name": "NADH dehydrogenase I (chain F) NuoF (NADH-ubiquinone oxidoreductase chain F)",
+   "kegg_orthology": "K00335 NADH-quinone oxidoreductase subunit F [EC:7.1.1.2]",
+   "kegg_ko": [
+    "K00335"
+   ],
+   "kegg_position": "complement(1791945..1793291)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_1479": {
+   "refseq_locus_tag": "MMAR_RS07310",
+   "refseq_gene": "nuoE",
+   "refseq_product": "NADH-quinone oxidoreductase subunit NuoE",
+   "refseq_location": "complement(1793291..1794046)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "nuoE",
+   "kegg_name": "NADH dehydrogenase I (chain E) NuoE (NADH-ubiquinone oxidoreductase chain E)",
+   "kegg_orthology": "K00334 NADH-quinone oxidoreductase subunit E [EC:7.1.1.2]",
+   "kegg_ko": [
+    "K00334"
+   ],
+   "kegg_position": "complement(1793291..1794046)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_1480": {
+   "refseq_locus_tag": "MMAR_RS07315",
+   "refseq_gene": "nuoD",
+   "refseq_product": "NADH dehydrogenase (quinone) subunit D",
+   "refseq_location": "complement(1794043..1795341)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "nuoD",
+   "kegg_name": "NADH dehydrogenase I (chain D) NuoD (NADH-ubiquinone oxidoreductase chain D)",
+   "kegg_orthology": "K00333 NADH-quinone oxidoreductase subunit D [EC:7.1.1.2]",
+   "kegg_ko": [
+    "K00333"
+   ],
+   "kegg_position": "complement(1794043..1795341)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_1481": {
+   "refseq_locus_tag": "MMAR_RS07320",
+   "refseq_gene": "",
+   "refseq_product": "NADH-quinone oxidoreductase subunit C",
+   "refseq_location": "complement(1795361..1796077)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "nuoC",
+   "kegg_name": "NADH dehydrogenase I (chain C) NuoC (NADH-ubiquinone oxidoreductase chain C)",
+   "kegg_orthology": "K00332 NADH-quinone oxidoreductase subunit C [EC:7.1.1.2]",
+   "kegg_ko": [
+    "K00332"
+   ],
+   "kegg_position": "complement(1795361..1796077)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_1482": {
+   "refseq_locus_tag": "MMAR_RS07325",
+   "refseq_gene": "",
+   "refseq_product": "NuoB/complex I 20 kDa subunit family protein",
+   "refseq_location": "complement(1796074..1796628)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "nuoB",
+   "kegg_name": "NADH dehydrogenase I (chain B) NuoB (NADH-ubiquinone oxidoreductase chain B)",
+   "kegg_orthology": "K00331 NADH-quinone oxidoreductase subunit B [EC:7.1.1.2]",
+   "kegg_ko": [
+    "K00331"
+   ],
+   "kegg_position": "complement(1796074..1796628)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_1483": {
+   "refseq_locus_tag": "MMAR_RS07330",
+   "refseq_gene": "",
+   "refseq_product": "NADH-quinone oxidoreductase subunit A",
+   "refseq_location": "complement(1796637..1797020)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "nuoA",
+   "kegg_name": "NADH dehydrogenase I (chain a) NuoA (NADH-ubiquinone oxidoreductase chain a)",
+   "kegg_orthology": "K00330 NADH-quinone oxidoreductase subunit A [EC:7.1.1.2]",
+   "kegg_ko": [
+    "K00330"
+   ],
+   "kegg_position": "complement(1796637..1797125)",
+   "kegg_record_found": true,
+   "position_check": "overlap_same_strand"
+  },
+  "MMAR_1508": {
+   "refseq_locus_tag": "MMAR_RS07455",
+   "refseq_gene": "alsS",
+   "refseq_product": "acetolactate synthase AlsS",
+   "refseq_location": "1822205..1823875",
+   "refseq_pseudo": false,
+   "kegg_symbol": "ilvB1_1",
+   "kegg_name": "acetolactate synthase (large subunit) IlvB1_1",
+   "kegg_orthology": "K01652 acetolactate synthase I/II/III large subunit [EC:2.2.1.6]",
+   "kegg_ko": [
+    "K01652"
+   ],
+   "kegg_position": "1822205..1823875",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_1516": {
+   "refseq_locus_tag": "MMAR_RS07495",
+   "refseq_gene": "dosR",
+   "refseq_product": "hypoxia response regulator transcription factor DosR/DevR",
+   "refseq_location": "1832380..1833030",
+   "refseq_pseudo": false,
+   "kegg_symbol": "devR",
+   "kegg_name": "two-component transcriptional regulatory protein DevR",
+   "kegg_orthology": "K07695 two-component system, NarL family, response regulator DevR",
+   "kegg_ko": [
+    "K07695"
+   ],
+   "kegg_position": "1832380..1833030",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_1606": {
+   "refseq_locus_tag": "MMAR_RS07950",
+   "refseq_gene": "",
+   "refseq_product": "long-chain-fatty-acid--CoA ligase",
+   "refseq_location": "1943310..1944797",
+   "refseq_pseudo": false,
+   "kegg_symbol": "",
+   "kegg_name": "fatty-acid-CoA ligase",
+   "kegg_orthology": "K01897 long-chain-fatty-acid---CoA ligase [EC:6.2.1.3]",
+   "kegg_ko": [
+    "K01897"
+   ],
+   "kegg_position": "1943310..1944797",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_1710": {
+   "refseq_locus_tag": "MMAR_RS08460",
+   "refseq_gene": "",
+   "refseq_product": "acetolactate synthase large subunit",
+   "refseq_location": "2058430..2060286",
+   "refseq_pseudo": false,
+   "kegg_symbol": "ilvB1",
+   "kegg_name": "acetolactate synthase (large subunit) IlvB1",
+   "kegg_orthology": "K01652 acetolactate synthase I/II/III large subunit [EC:2.2.1.6]",
+   "kegg_ko": [
+    "K01652"
+   ],
+   "kegg_position": "2058430..2060286",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_1711": {
+   "refseq_locus_tag": "MMAR_RS08465",
+   "refseq_gene": "ilvN",
+   "refseq_product": "acetolactate synthase small subunit",
+   "refseq_location": "2060286..2060795",
+   "refseq_pseudo": false,
+   "kegg_symbol": "ilvN",
+   "kegg_name": "acetolactate synthase (small subunit) IlvN",
+   "kegg_orthology": "K01653 acetolactate synthase I/III small subunit [EC:2.2.1.6]",
+   "kegg_ko": [
+    "K01653"
+   ],
+   "kegg_position": "2060286..2060795",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_1954": {
+   "refseq_locus_tag": "MMAR_RS09685",
+   "refseq_gene": "",
+   "refseq_product": "acyl-CoA dehydrogenase family protein",
+   "refseq_location": "2373249..2374352",
+   "refseq_pseudo": false,
+   "kegg_symbol": "fadE18_1",
+   "kegg_name": "acyl-CoA dehydrogenase FadE18_1",
+   "kegg_orthology": "",
+   "kegg_ko": [],
+   "kegg_position": "2373249..2374352",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_2071": {
+   "refseq_locus_tag": "MMAR_RS10300",
+   "refseq_gene": "",
+   "refseq_product": "AMP-dependent synthetase/ligase",
+   "refseq_location": "complement(2495093..2496958)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "fadD11_1",
+   "kegg_name": "long-chain-fatty-acid-CoA ligase, FadD11_1",
+   "kegg_orthology": "K01897 long-chain-fatty-acid---CoA ligase [EC:6.2.1.3]",
+   "kegg_ko": [
+    "K01897"
+   ],
+   "kegg_position": "complement(2495093..2496958)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_2189": {
+   "refseq_locus_tag": "MMAR_RS10900",
+   "refseq_gene": "",
+   "refseq_product": "fatty acid desaturase",
+   "refseq_location": "2635049..2636512",
+   "refseq_pseudo": false,
+   "kegg_symbol": "",
+   "kegg_name": "conserved membrane protein",
+   "kegg_orthology": "",
+   "kegg_ko": [],
+   "kegg_position": "2635049..2636512",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_2218": {
+   "refseq_locus_tag": "MMAR_RS11045",
+   "refseq_gene": "ribD",
+   "refseq_product": "bifunctional diaminohydroxyphosphoribosylaminopyrimidine deaminase/5-amino-6-(5-phosphoribosylamino)uracil reductase RibD",
+   "refseq_location": "2667382..2668401",
+   "refseq_pseudo": false,
+   "kegg_symbol": "ribG",
+   "kegg_name": "bifunctional riboflavin biosynthesis protein RibG",
+   "kegg_orthology": "K11752 diaminohydroxyphosphoribosylaminopyrimidine deaminase / 5-amino-6-(5-phosphoribosylamino)uracil reductase [EC:3.5.4.26 1.1.1.193]",
+   "kegg_ko": [
+    "K11752"
+   ],
+   "kegg_position": "2667382..2668401",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_2290": {
+   "refseq_locus_tag": "MMAR_RS11405",
+   "refseq_gene": "inhA",
+   "refseq_product": "NADH-dependent enoyl-ACP reductase InhA",
+   "refseq_location": "2755688..2756497",
+   "refseq_pseudo": false,
+   "kegg_symbol": "inhA",
+   "kegg_name": "enoyl-[acyl-carrier-protein] reductase, InhA",
+   "kegg_orthology": "K11611 meromycolic acid enoyl-[acyl-carrier protein] reductase [EC:1.3.1.118]",
+   "kegg_ko": [
+    "K11611"
+   ],
+   "kegg_position": "2755688..2756497",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_2332": {
+   "refseq_locus_tag": "MMAR_RS11620",
+   "refseq_gene": "",
+   "refseq_product": "thiamine pyrophosphate-binding protein",
+   "refseq_location": "complement(2801343..2803163)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "ilvB1_3",
+   "kegg_name": "acetolactate synthase (large subunit) IlvB1_3",
+   "kegg_orthology": "K01652 acetolactate synthase I/II/III large subunit [EC:2.2.1.6]",
+   "kegg_ko": [
+    "K01652"
+   ],
+   "kegg_position": "complement(2801343..2803163)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_2424": {
+   "refseq_locus_tag": "MMAR_RS12080",
+   "refseq_gene": "cydD",
+   "refseq_product": "thiol reductant ABC exporter subunit CydD",
+   "refseq_location": "complement(2924754..2926376)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "cydD",
+   "kegg_name": "Cytochrome transmembrane ATP-binding protein ABC transporter CydD",
+   "kegg_orthology": "K16013 ATP-binding cassette, subfamily C, bacterial CydD",
+   "kegg_ko": [
+    "K16013"
+   ],
+   "kegg_position": "complement(2924754..2926352)",
+   "kegg_record_found": true,
+   "position_check": "overlap_same_strand"
+  },
+  "MMAR_2425": {
+   "refseq_locus_tag": "MMAR_RS12085",
+   "refseq_gene": "cydB",
+   "refseq_product": "cytochrome d ubiquinol oxidase subunit II",
+   "refseq_location": "complement(2926439..2927479)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "cydB",
+   "kegg_name": "integral membrane cytochrome D ubiquinol oxidase (subunit II) CydB",
+   "kegg_orthology": "K00426 cytochrome bd ubiquinol oxidase subunit II [EC:7.1.1.7]",
+   "kegg_ko": [
+    "K00426"
+   ],
+   "kegg_position": "complement(2926439..2927479)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_2426": {
+   "refseq_locus_tag": "MMAR_RS12090",
+   "refseq_gene": "",
+   "refseq_product": "cytochrome ubiquinol oxidase subunit I",
+   "refseq_location": "complement(2927527..2928984)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "cydA",
+   "kegg_name": "integral membrane cytochrome D ubiquinol oxidase (subunit I) CydA",
+   "kegg_orthology": "K00425 cytochrome bd ubiquinol oxidase subunit I [EC:7.1.1.7]",
+   "kegg_ko": [
+    "K00425"
+   ],
+   "kegg_position": "complement(2927527..2928984)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_2427": {
+   "refseq_locus_tag": "MMAR_RS12095",
+   "refseq_gene": "",
+   "refseq_product": "HdeD family acid-resistance protein",
+   "refseq_location": "complement(2929088..2929666)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "",
+   "kegg_name": "conserved hypothetical membrane protein",
+   "kegg_orthology": "",
+   "kegg_ko": [],
+   "kegg_position": "complement(2929088..2929666)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_2466": {
+   "refseq_locus_tag": "MMAR_RS12305",
+   "refseq_gene": "argF",
+   "refseq_product": "ornithine carbamoyltransferase",
+   "refseq_location": "2987852..2988778",
+   "refseq_pseudo": false,
+   "kegg_symbol": "argF",
+   "kegg_name": "ornithine carbamoyltransferase, anabolic ArgF",
+   "kegg_orthology": "K00611 ornithine carbamoyltransferase [EC:2.1.3.3]",
+   "kegg_ko": [
+    "K00611"
+   ],
+   "kegg_position": "2987852..2988778",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_2504": {
+   "refseq_locus_tag": "MMAR_RS12495",
+   "refseq_gene": "",
+   "refseq_product": "CTP synthase",
+   "refseq_location": "3048176..3049927",
+   "refseq_pseudo": false,
+   "kegg_symbol": "pyrG",
+   "kegg_name": "CTP synthase, PyrG",
+   "kegg_orthology": "K01937 CTP synthase [EC:6.3.4.2]",
+   "kegg_ko": [
+    "K01937"
+   ],
+   "kegg_position": "3048176..3049927",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_2597": {
+   "refseq_locus_tag": "MMAR_RS12965",
+   "refseq_gene": "",
+   "refseq_product": "acyl-CoA synthetase",
+   "refseq_location": "complement(3165755..3167263)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "fadD13",
+   "kegg_name": "fatty-acid-CoA ligase FadD13",
+   "kegg_orthology": "K28161 long-chain-fatty-acid---CoA ligase [EC:6.2.1.3]",
+   "kegg_ko": [
+    "K28161"
+   ],
+   "kegg_position": "complement(3165755..3167263)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_2664": {
+   "refseq_locus_tag": "MMAR_RS13290",
+   "refseq_gene": "eccB",
+   "refseq_product": "type VII secretion protein EccB",
+   "refseq_location": "3249090..3250613",
+   "refseq_pseudo": false,
+   "kegg_symbol": "",
+   "kegg_name": "conserved membrane protein",
+   "kegg_orthology": "K27085 ESX secretion system ATPase EccB",
+   "kegg_ko": [
+    "K27085"
+   ],
+   "kegg_position": "3249090..3250613",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_2674": {
+   "refseq_locus_tag": "MMAR_RS13335",
+   "refseq_gene": "esxM",
+   "refseq_product": "type VII secretion system effector EsxM",
+   "refseq_location": "3261571..3261867",
+   "refseq_pseudo": false,
+   "kegg_symbol": "esxM",
+   "kegg_name": "EsaT-6 like protein EsxM",
+   "kegg_orthology": "K14956 ESAT-6 family protein",
+   "kegg_ko": [
+    "K14956"
+   ],
+   "kegg_position": "3261571..3261867",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_2675": {
+   "refseq_locus_tag": "MMAR_RS13340",
+   "refseq_gene": "",
+   "refseq_product": "WXG100 family type VII secretion target",
+   "refseq_location": "3261919..3262203",
+   "refseq_pseudo": false,
+   "kegg_symbol": "esxN",
+   "kegg_name": "EsaT-6 like protein EsxN",
+   "kegg_orthology": "K14956 ESAT-6 family protein",
+   "kegg_ko": [
+    "K14956"
+   ],
+   "kegg_position": "3261919..3262203",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_2679": {
+   "refseq_locus_tag": "MMAR_RS13360",
+   "refseq_gene": "eccE",
+   "refseq_product": "type VII secretion protein EccE",
+   "refseq_location": "3266708..3267919",
+   "refseq_pseudo": false,
+   "kegg_symbol": "",
+   "kegg_name": "conserved membrane protein",
+   "kegg_orthology": "K27088 ESX secretion system protein EccE",
+   "kegg_ko": [
+    "K27088"
+   ],
+   "kegg_position": "3266708..3267919",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_2697": {
+   "refseq_locus_tag": "MMAR_RS13445",
+   "refseq_gene": "",
+   "refseq_product": "acetolactate synthase",
+   "refseq_location": "3291842..3293494",
+   "refseq_pseudo": false,
+   "kegg_symbol": "ilvG",
+   "kegg_name": "acetolactate synthase IlvG",
+   "kegg_orthology": "",
+   "kegg_ko": [],
+   "kegg_position": "3291842..3293494",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_2713": {
+   "refseq_locus_tag": "MMAR_RS13525",
+   "refseq_gene": "",
+   "refseq_product": "malate synthase G",
+   "refseq_location": "complement(3311551..3313746)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "glcB",
+   "kegg_name": "malate synthase G GlcB",
+   "kegg_orthology": "K01638 malate synthase [EC:2.3.3.9]",
+   "kegg_ko": [
+    "K01638"
+   ],
+   "kegg_position": "complement(3311551..3313746)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_2739": {
+   "refseq_locus_tag": "MMAR_RS13655",
+   "refseq_gene": "",
+   "refseq_product": "zinc-binding alcohol dehydrogenase family protein",
+   "refseq_location": "3338822..3339850",
+   "refseq_pseudo": false,
+   "kegg_symbol": "adhA",
+   "kegg_name": "alcohol dehydrogenase AdhA",
+   "kegg_orthology": "K13953 alcohol dehydrogenase, propanol-preferring [EC:1.1.1.1]",
+   "kegg_ko": [
+    "K13953"
+   ],
+   "kegg_position": "3338849..3339850",
+   "kegg_record_found": true,
+   "position_check": "overlap_same_strand"
+  },
+  "MMAR_2753": {
+   "refseq_locus_tag": "MMAR_RS13725",
+   "refseq_gene": "",
+   "refseq_product": "alpha-amylase family protein",
+   "refseq_location": "complement(3357465..3358772)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "treS_1",
+   "kegg_name": "trehalose synthase TreS_1",
+   "kegg_orthology": "K01208 cyclomaltodextrinase / maltogenic alpha-amylase / neopullulanase [EC:3.2.1.54 3.2.1.133 3.2.1.135]",
+   "kegg_ko": [
+    "K01208"
+   ],
+   "kegg_position": "complement(3357465..3358754)",
+   "kegg_record_found": true,
+   "position_check": "overlap_same_strand"
+  },
+  "MMAR_2777": {
+   "refseq_locus_tag": "MMAR_RS13845",
+   "refseq_gene": "ag85B",
+   "refseq_product": "diacylglycerol acyltransferase/mycolyltransferase Ag85B",
+   "refseq_location": "complement(3381716..3382693)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "fbpB",
+   "kegg_name": "secreted antigen 85-B FbpB",
+   "kegg_orthology": "K18851 diacylglycerol O-acyltransferase / trehalose O-mycolyltransferase / mycolyltransferase Ag85 [EC:2.3.1.20 2.3.1.122 2.3.1.-]",
+   "kegg_ko": [
+    "K18851"
+   ],
+   "kegg_position": "complement(3381716..3382693)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_2790": {
+   "refseq_locus_tag": "MMAR_RS13905",
+   "refseq_gene": "",
+   "refseq_product": "zinc-binding dehydrogenase",
+   "refseq_location": "3393813..>3394953",
+   "refseq_pseudo": true,
+   "kegg_symbol": "",
+   "kegg_name": "dehydrogenase",
+   "kegg_orthology": "",
+   "kegg_ko": [],
+   "kegg_position": "3393813..3394838",
+   "kegg_record_found": true,
+   "position_check": "overlap_same_strand"
+  },
+  "MMAR_2821": {
+   "refseq_locus_tag": "MMAR_RS14045",
+   "refseq_gene": "aceA",
+   "refseq_product": "isocitrate lyase ICL2",
+   "refseq_location": "3418358..3420646",
+   "refseq_pseudo": false,
+   "kegg_symbol": "aceAb",
+   "kegg_name": "isocitrate lyase AceAb",
+   "kegg_orthology": "K01637 isocitrate/methylisocitrate lyase [EC:4.1.3.1 4.1.3.30]",
+   "kegg_ko": [
+    "K01637"
+   ],
+   "kegg_position": "3418358..3420646",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_2914": {
+   "refseq_locus_tag": "MMAR_RS14525",
+   "refseq_gene": "katG",
+   "refseq_product": "catalase/peroxidase HPI",
+   "refseq_location": "complement(3517457..3519688)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "katG",
+   "kegg_name": "catalase-peroxidase-peroxynitritase T KatG",
+   "kegg_orthology": "K03782 catalase-peroxidase [EC:1.11.1.21]",
+   "kegg_ko": [
+    "K03782"
+   ],
+   "kegg_position": "complement(3517457..3519688)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_2920": {
+   "refseq_locus_tag": "MMAR_RS14560",
+   "refseq_gene": "",
+   "refseq_product": "cyclopropane mycolic acid synthase family methyltransferase",
+   "refseq_location": "3523957..3524820",
+   "refseq_pseudo": false,
+   "kegg_symbol": "mmaA2_1",
+   "kegg_name": "methoxy mycolic acid synthase 2 MmaA2 _1",
+   "kegg_orthology": "K00574 cyclopropane-fatty-acyl-phospholipid synthase [EC:2.1.1.79]",
+   "kegg_ko": [
+    "K00574"
+   ],
+   "kegg_position": "3523957..3524820",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_2991": {
+   "refseq_locus_tag": "MMAR_RS14935",
+   "refseq_gene": "",
+   "refseq_product": "Hsp20/alpha crystallin family protein",
+   "refseq_location": "3616260..3616709",
+   "refseq_pseudo": false,
+   "kegg_symbol": "",
+   "kegg_name": "molecular chaperone (small heat shock protein)",
+   "kegg_orthology": "K13993 HSP20 family protein",
+   "kegg_ko": [
+    "K13993"
+   ],
+   "kegg_position": "3616260..3616709",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_3000": {
+   "refseq_locus_tag": "MMAR_RS14980",
+   "refseq_gene": "",
+   "refseq_product": "WXG100 family type VII secretion target",
+   "refseq_location": "complement(3623357..3623647)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "esxR",
+   "kegg_name": "EsaT-6 family EsxR",
+   "kegg_orthology": "K14956 ESAT-6 family protein",
+   "kegg_ko": [
+    "K14956"
+   ],
+   "kegg_position": "complement(3623357..3623647)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_3001": {
+   "refseq_locus_tag": "MMAR_RS14985",
+   "refseq_gene": "esxG",
+   "refseq_product": "type VII secretion system protein EsxG",
+   "refseq_location": "complement(3623683..3623976)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "esxG_1",
+   "kegg_name": "EsaT-6 like protein EsxG_1",
+   "kegg_orthology": "K14956 ESAT-6 family protein",
+   "kegg_ko": [
+    "K14956"
+   ],
+   "kegg_position": "complement(3623683..3623976)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_3120": {
+   "refseq_locus_tag": "MMAR_RS15565",
+   "refseq_gene": "",
+   "refseq_product": "quinone-dependent dihydroorotate dehydrogenase",
+   "refseq_location": "3803305..3804387",
+   "refseq_pseudo": false,
+   "kegg_symbol": "pyrD",
+   "kegg_name": "dihydroorotate dehydrogenase PyrD",
+   "kegg_orthology": "K00254 dihydroorotate dehydrogenase [EC:1.3.5.2]",
+   "kegg_ko": [
+    "K00254"
+   ],
+   "kegg_position": "3803305..3804387",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_3231": {
+   "refseq_locus_tag": "MMAR_RS16110",
+   "refseq_gene": "",
+   "refseq_product": "AMP-dependent synthetase/ligase",
+   "refseq_location": "3935705..3937507",
+   "refseq_pseudo": false,
+   "kegg_symbol": "fadD15",
+   "kegg_name": "long-chain-fatty-acid-CoA ligase FadD15",
+   "kegg_orthology": "K01897 long-chain-fatty-acid---CoA ligase [EC:6.2.1.3]",
+   "kegg_ko": [
+    "K01897"
+   ],
+   "kegg_position": "3935705..3937507",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_3281": {
+   "refseq_locus_tag": "MMAR_RS16360",
+   "refseq_gene": "",
+   "refseq_product": "acetolactate synthase large subunit",
+   "refseq_location": "4044825..4046501",
+   "refseq_pseudo": false,
+   "kegg_symbol": "ilvB1_2",
+   "kegg_name": "acetolactate synthase (large subunit) IlvB1_2",
+   "kegg_orthology": "K01652 acetolactate synthase I/II/III large subunit [EC:2.2.1.6]",
+   "kegg_ko": [
+    "K01652"
+   ],
+   "kegg_position": "4044825..4046501",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_3338": {
+   "refseq_locus_tag": "MMAR_RS16645",
+   "refseq_gene": "kasA",
+   "refseq_product": "3-oxoacyl-ACP synthase KasA",
+   "refseq_location": "4119394..4120644",
+   "refseq_pseudo": false,
+   "kegg_symbol": "kasA",
+   "kegg_name": "3-oxoacyl-[acyl-carrier protein] synthase 1 KasA",
+   "kegg_orthology": "K11609 meromycolic acid 3-oxoacyl-[acyl-carrier protein] synthase I [EC:2.3.1.293]",
+   "kegg_ko": [
+    "K11609"
+   ],
+   "kegg_position": "4119394..4120644",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_3340": {
+   "refseq_locus_tag": "MMAR_RS16655",
+   "refseq_gene": "",
+   "refseq_product": "acyl-CoA carboxylase subunit beta",
+   "refseq_location": "4122017..4123438",
+   "refseq_pseudo": false,
+   "kegg_symbol": "accD6",
+   "kegg_name": "acetyl/propionyl-CoA carboxylase (beta subunit) AccD6",
+   "kegg_orthology": "K18472 acetyl-CoA/propionyl-CoA carboxylase carboxyl transferase subunit [EC:6.4.1.2 6.4.1.3 2.1.3.15]",
+   "kegg_ko": [
+    "K18472"
+   ],
+   "kegg_position": "4122017..4123438",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_3480": {
+   "refseq_locus_tag": "MMAR_RS17350",
+   "refseq_gene": "dosR",
+   "refseq_product": "hypoxia response regulator transcription factor DosR/DevR",
+   "refseq_location": "complement(4286242..4286895)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "",
+   "kegg_name": "two-component transcriptional regulatory protein",
+   "kegg_orthology": "K07695 two-component system, NarL family, response regulator DevR",
+   "kegg_ko": [
+    "K07695"
+   ],
+   "kegg_position": "complement(4286242..4286895)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_3580": {
+   "refseq_locus_tag": "MMAR_RS17835",
+   "refseq_gene": "",
+   "refseq_product": "WXG100 family type VII secretion target",
+   "refseq_location": "4400665..4400949",
+   "refseq_pseudo": false,
+   "kegg_symbol": "esxN_6",
+   "kegg_name": "EsaT-6 like protein EsxN_6",
+   "kegg_orthology": "K14956 ESAT-6 family protein",
+   "kegg_ko": [
+    "K14956"
+   ],
+   "kegg_position": "4400665..4400949",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_3653": {
+   "refseq_locus_tag": "MMAR_RS18200",
+   "refseq_gene": "",
+   "refseq_product": "WXG100 family type VII secretion target",
+   "refseq_location": "complement(4500638..4500922)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "esxN_3",
+   "kegg_name": "EsaT-6 like protein EsxN_3",
+   "kegg_orthology": "K14956 ESAT-6 family protein",
+   "kegg_ko": [
+    "K14956"
+   ],
+   "kegg_position": "complement(4500638..4500922)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_3654": {
+   "refseq_locus_tag": "MMAR_RS18205",
+   "refseq_gene": "esxM",
+   "refseq_product": "type VII secretion system effector EsxM",
+   "refseq_location": "complement(4500985..4501281)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "esxP_2",
+   "kegg_name": "EsaT-6 like protein EsxP_2",
+   "kegg_orthology": "K14956 ESAT-6 family protein",
+   "kegg_ko": [
+    "K14956"
+   ],
+   "kegg_position": "complement(4500985..4501281)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_3659": {
+   "refseq_locus_tag": "MMAR_RS18235",
+   "refseq_gene": "",
+   "refseq_product": "WXG100 family type VII secretion target",
+   "refseq_location": "complement(4507101..4507385)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "esxN_4",
+   "kegg_name": "EsaT-6 like protein EsxN_4",
+   "kegg_orthology": "K14956 ESAT-6 family protein",
+   "kegg_ko": [
+    "K14956"
+   ],
+   "kegg_position": "complement(4507101..4507385)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_3660": {
+   "refseq_locus_tag": "MMAR_RS18240",
+   "refseq_gene": "esxM",
+   "refseq_product": "type VII secretion system effector EsxM",
+   "refseq_location": "complement(4507400..4507696)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "esxP_3",
+   "kegg_name": "EsaT-6 like protein EsxP_3",
+   "kegg_orthology": "K14956 ESAT-6 family protein",
+   "kegg_ko": [
+    "K14956"
+   ],
+   "kegg_position": "complement(4507400..4507696)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_3662": {
+   "refseq_locus_tag": "MMAR_RS18250",
+   "refseq_gene": "",
+   "refseq_product": "WXG100 family type VII secretion target",
+   "refseq_location": "complement(4509214..4509498)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "esxN_5",
+   "kegg_name": "EsaT-6 like protein EsxN_5",
+   "kegg_orthology": "K14956 ESAT-6 family protein",
+   "kegg_ko": [
+    "K14956"
+   ],
+   "kegg_position": "complement(4509214..4509498)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_3663": {
+   "refseq_locus_tag": "MMAR_RS18255",
+   "refseq_gene": "esxM",
+   "refseq_product": "type VII secretion system effector EsxM",
+   "refseq_location": "complement(4509513..4509809)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "esxP_4",
+   "kegg_name": "EsaT-6 like protein EsxP_4",
+   "kegg_orthology": "K14956 ESAT-6 family protein",
+   "kegg_ko": [
+    "K14956"
+   ],
+   "kegg_position": "complement(4509513..4509809)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_3691": {
+   "refseq_locus_tag": "MMAR_RS18395",
+   "refseq_gene": "",
+   "refseq_product": "non-ribosomal peptide synthetase",
+   "refseq_location": "complement(4542511..4547523)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "mbtE",
+   "kegg_name": "non-ribosomal peptide synthetase MbtE",
+   "kegg_orthology": "K04789 mycobactin peptide synthetase MbtE",
+   "kegg_ko": [
+    "K04789"
+   ],
+   "kegg_position": "complement(4542511..4547523)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_3692": {
+   "refseq_locus_tag": "MMAR_RS18400",
+   "refseq_gene": "",
+   "refseq_product": "GNAT family N-acetyltransferase",
+   "refseq_location": "4547837..4548403",
+   "refseq_pseudo": false,
+   "kegg_symbol": "",
+   "kegg_name": "conserved hypothetical protein",
+   "kegg_orthology": "",
+   "kegg_ko": [],
+   "kegg_position": "4547798..4548403",
+   "kegg_record_found": true,
+   "position_check": "overlap_same_strand"
+  },
+  "MMAR_3962": {
+   "refseq_locus_tag": "MMAR_RS19800",
+   "refseq_gene": "",
+   "refseq_product": "type I polyketide synthase",
+   "refseq_location": "complement(4879650..4888862)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "fas",
+   "kegg_name": "fatty acid synthase Fas",
+   "kegg_orthology": "K11533 fatty acid synthase, bacteria type [EC:2.3.1.-]",
+   "kegg_ko": [
+    "K11533"
+   ],
+   "kegg_position": "complement(4879650..4888862)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_4025": {
+   "refseq_locus_tag": "MMAR_RS20115",
+   "refseq_gene": "",
+   "refseq_product": "class I adenylate-forming enzyme family protein",
+   "refseq_location": "4962626..4964107",
+   "refseq_pseudo": false,
+   "kegg_symbol": "",
+   "kegg_name": "long-chain fatty-acid CoA ligase",
+   "kegg_orthology": "K01897 long-chain-fatty-acid---CoA ligase [EC:6.2.1.3]",
+   "kegg_ko": [
+    "K01897"
+   ],
+   "kegg_position": "4962626..4964107",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_4083": {
+   "refseq_locus_tag": "MMAR_RS20430",
+   "refseq_gene": "murA",
+   "refseq_product": "UDP-N-acetylglucosamine 1-carboxyvinyltransferase",
+   "refseq_location": "complement(5035745..5036998)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "murA",
+   "kegg_name": "UDP-N-acetylglucosamine 1-carboxyvinyltransferase MurA",
+   "kegg_orthology": "K00790 UDP-N-acetylglucosamine 1-carboxyvinyltransferase [EC:2.5.1.7]",
+   "kegg_ko": [
+    "K00790"
+   ],
+   "kegg_position": "complement(5035745..5036998)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_4087": {
+   "refseq_locus_tag": "MMAR_RS20450",
+   "refseq_gene": "atpD",
+   "refseq_product": "F0F1 ATP synthase subunit beta",
+   "refseq_location": "complement(5038606..5040057)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "atpD",
+   "kegg_name": "ATP synthase beta chain AtpD",
+   "kegg_orthology": "K02112 F-type H+/Na+-transporting ATPase subunit beta [EC:7.1.2.2 7.2.2.1]",
+   "kegg_ko": [
+    "K02112"
+   ],
+   "kegg_position": "complement(5038606..5040057)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_4089": {
+   "refseq_locus_tag": "MMAR_RS20460",
+   "refseq_gene": "atpA",
+   "refseq_product": "F0F1 ATP synthase subunit alpha",
+   "refseq_location": "complement(5041019..5042668)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "atpA",
+   "kegg_name": "ATP synthase alpha chain AtpA",
+   "kegg_orthology": "K02111 F-type H+/Na+-transporting ATPase subunit alpha [EC:7.1.2.2 7.2.2.1]",
+   "kegg_ko": [
+    "K02111"
+   ],
+   "kegg_position": "complement(5041019..5042668)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_4110": {
+   "refseq_locus_tag": "MMAR_RS20575",
+   "refseq_gene": "adhE",
+   "refseq_product": "bifunctional acetaldehyde-CoA/alcohol dehydrogenase",
+   "refseq_location": "5065092..5067761",
+   "refseq_pseudo": false,
+   "kegg_symbol": "",
+   "kegg_name": "aldehyde dehydrogenase",
+   "kegg_orthology": "K04072 acetaldehyde dehydrogenase / alcohol dehydrogenase [EC:1.2.1.10 1.1.1.1]",
+   "kegg_ko": [
+    "K04072"
+   ],
+   "kegg_position": "5065092..5067761",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_4453": {
+   "refseq_locus_tag": "MMAR_RS22310",
+   "refseq_gene": "esxM",
+   "refseq_product": "type VII secretion system effector EsxM",
+   "refseq_location": "5473419..5473715",
+   "refseq_pseudo": false,
+   "kegg_symbol": "esxP",
+   "kegg_name": "EsaT-6 like protein EsxP",
+   "kegg_orthology": "K14956 ESAT-6 family protein",
+   "kegg_ko": [
+    "K14956"
+   ],
+   "kegg_position": "5473419..5473715",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_4454": {
+   "refseq_locus_tag": "MMAR_RS22315",
+   "refseq_gene": "",
+   "refseq_product": "WXG100 family type VII secretion target",
+   "refseq_location": "5473754..5474038",
+   "refseq_pseudo": false,
+   "kegg_symbol": "esxN_1",
+   "kegg_name": "EsaT-6 like protein EsxN_1",
+   "kegg_orthology": "K14956 ESAT-6 family protein",
+   "kegg_ko": [
+    "K14956"
+   ],
+   "kegg_position": "5473754..5474038",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_4457": {
+   "refseq_locus_tag": "MMAR_RS22330",
+   "refseq_gene": "",
+   "refseq_product": "aspartate/glutamate racemase family protein",
+   "refseq_location": "5476704..5477402",
+   "refseq_pseudo": false,
+   "kegg_symbol": "",
+   "kegg_name": "hydantoin racemase",
+   "kegg_orthology": "K16841 allantoin racemase [EC:5.1.99.3]",
+   "kegg_ko": [
+    "K16841"
+   ],
+   "kegg_position": "5476662..5477402",
+   "kegg_record_found": true,
+   "position_check": "overlap_same_strand"
+  },
+  "MMAR_4549": {
+   "refseq_locus_tag": "MMAR_RS22795",
+   "refseq_gene": "sucD",
+   "refseq_product": "succinate--CoA ligase subunit alpha",
+   "refseq_location": "complement(5581063..5581965)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "sucD",
+   "kegg_name": "succinyl-CoA synthetase (alpha chain) SucD",
+   "kegg_orthology": "K01902 succinyl-CoA synthetase alpha subunit [EC:6.2.1.5]",
+   "kegg_ko": [
+    "K01902"
+   ],
+   "kegg_position": "complement(5581063..5581965)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_4550": {
+   "refseq_locus_tag": "MMAR_RS22800",
+   "refseq_gene": "sucC",
+   "refseq_product": "ADP-forming succinate--CoA ligase subunit beta",
+   "refseq_location": "complement(5581980..5583143)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "sucC",
+   "kegg_name": "succinyl-CoA synthetase (beta chain) SucC",
+   "kegg_orthology": "K01903 succinyl-CoA synthetase beta subunit [EC:6.2.1.5]",
+   "kegg_ko": [
+    "K01903"
+   ],
+   "kegg_position": "complement(5581980..5583143)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_4556": {
+   "refseq_locus_tag": "MMAR_RS22830",
+   "refseq_gene": "",
+   "refseq_product": "esterase family protein",
+   "refseq_location": "5590317..5591288",
+   "refseq_pseudo": false,
+   "kegg_symbol": "fbpC_2",
+   "kegg_name": "secreted antigen 85-C FbpC_2",
+   "kegg_orthology": "K18851 diacylglycerol O-acyltransferase / trehalose O-mycolyltransferase / mycolyltransferase Ag85 [EC:2.3.1.20 2.3.1.122 2.3.1.-]",
+   "kegg_ko": [
+    "K18851"
+   ],
+   "kegg_position": "5590317..5591288",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_4640": {
+   "refseq_locus_tag": "MMAR_RS23255",
+   "refseq_gene": "",
+   "refseq_product": "citrate synthase",
+   "refseq_location": "complement(5691484..5692779)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "gltA2",
+   "kegg_name": "citrate synthase I GltA2",
+   "kegg_orthology": "K01647 citrate synthase [EC:2.3.3.1]",
+   "kegg_ko": [
+    "K01647"
+   ],
+   "kegg_position": "complement(5691484..5692779)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_4643": {
+   "refseq_locus_tag": "MMAR_RS23270",
+   "refseq_gene": "",
+   "refseq_product": "citrate synthase 2",
+   "refseq_location": "5695630..5696751",
+   "refseq_pseudo": false,
+   "kegg_symbol": "citA",
+   "kegg_name": "citrate synthase II CitA",
+   "kegg_orthology": "K01647 citrate synthase [EC:2.3.3.1]",
+   "kegg_ko": [
+    "K01647"
+   ],
+   "kegg_position": "5695630..5696751",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_4793": {
+   "refseq_locus_tag": "MMAR_RS24025",
+   "refseq_gene": "",
+   "refseq_product": "class I adenylate-forming enzyme family protein",
+   "refseq_location": "complement(5847396..5848799)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "",
+   "kegg_name": "acyl-CoA synthetase",
+   "kegg_orthology": "K01897 long-chain-fatty-acid---CoA ligase [EC:6.2.1.3]",
+   "kegg_ko": [
+    "K01897"
+   ],
+   "kegg_position": "complement(5847396..5848799)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_4911": {
+   "refseq_locus_tag": "MMAR_RS24640",
+   "refseq_gene": "adhP",
+   "refseq_product": "alcohol dehydrogenase AdhP",
+   "refseq_location": "complement(5965968..5967029)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "adhX",
+   "kegg_name": "Zn-dependent alcohol dehydrogenase, AdhX",
+   "kegg_orthology": "K13953 alcohol dehydrogenase, propanol-preferring [EC:1.1.1.1]",
+   "kegg_ko": [
+    "K13953"
+   ],
+   "kegg_position": "complement(5965968..5967029)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_4935": {
+   "refseq_locus_tag": "MMAR_RS24760",
+   "refseq_gene": "",
+   "refseq_product": "NDMA-dependent alcohol dehydrogenase",
+   "refseq_location": "5994056..5995183",
+   "refseq_pseudo": false,
+   "kegg_symbol": "adhB",
+   "kegg_name": "zinc-containing alcohol dehydrogenase NAD-dependent AdhB",
+   "kegg_orthology": "K00121 S-(hydroxymethyl)glutathione dehydrogenase / alcohol dehydrogenase [EC:1.1.1.284 1.1.1.1]",
+   "kegg_ko": [
+    "K00121"
+   ],
+   "kegg_position": "5994056..5995183",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_4997": {
+   "refseq_locus_tag": "MMAR_RS25065",
+   "refseq_gene": "",
+   "refseq_product": "acetolactate synthase large subunit",
+   "refseq_location": "complement(6065524..6067071)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "ilvX",
+   "kegg_name": "acetohydroxyacid synthase IlvX",
+   "kegg_orthology": "K01652 acetolactate synthase I/II/III large subunit [EC:2.2.1.6]",
+   "kegg_ko": [
+    "K01652"
+   ],
+   "kegg_position": "complement(6065524..6067071)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_5119": {
+   "refseq_locus_tag": "MMAR_RS25675",
+   "refseq_gene": "",
+   "refseq_product": "WXG100 family type VII secretion target",
+   "refseq_location": "complement(6199053..6199337)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "esxN_2",
+   "kegg_name": "EsaT-6 like protein EsxN_2",
+   "kegg_orthology": "K14956 ESAT-6 family protein",
+   "kegg_ko": [
+    "K14956"
+   ],
+   "kegg_position": "complement(6199053..6199337)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_5120": {
+   "refseq_locus_tag": "MMAR_RS25680",
+   "refseq_gene": "esxM",
+   "refseq_product": "type VII secretion system effector EsxM",
+   "refseq_location": "complement(6199376..6199672)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "esxP_1",
+   "kegg_name": "EsaT-6 like protein EsxP_1",
+   "kegg_orthology": "K14956 ESAT-6 family protein",
+   "kegg_ko": [
+    "K14956"
+   ],
+   "kegg_position": "complement(6199376..6199672)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_5275": {
+   "refseq_locus_tag": "MMAR_RS26470",
+   "refseq_gene": "",
+   "refseq_product": "AMP-dependent synthetase/ligase",
+   "refseq_location": "complement(6365728..6367530)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "fadD15_1",
+   "kegg_name": "long-chain-fatty-acid-CoA ligase FadD15_1",
+   "kegg_orthology": "K01897 long-chain-fatty-acid---CoA ligase [EC:6.2.1.3]",
+   "kegg_ko": [
+    "K01897"
+   ],
+   "kegg_position": "complement(6365728..6367530)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_5368": {
+   "refseq_locus_tag": "MMAR_RS26950",
+   "refseq_gene": "ag85A",
+   "refseq_product": "diacylglycerol acyltransferase/mycolyltransferase Ag85A",
+   "refseq_location": "complement(6499893..6500906)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "fbpA",
+   "kegg_name": "secreted antigen 85-A FbpA",
+   "kegg_orthology": "K18851 diacylglycerol O-acyltransferase / trehalose O-mycolyltransferase / mycolyltransferase Ag85 [EC:2.3.1.20 2.3.1.122 2.3.1.-]",
+   "kegg_ko": [
+    "K18851"
+   ],
+   "kegg_position": "complement(6499893..6500906)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_5444": {
+   "refseq_locus_tag": "MMAR_RS27340",
+   "refseq_gene": "eccB",
+   "refseq_product": "type VII secretion protein EccB",
+   "refseq_location": "6583979..6585424",
+   "refseq_pseudo": false,
+   "kegg_symbol": "",
+   "kegg_name": "conserved membrane protein",
+   "kegg_orthology": "K27085 ESX secretion system ATPase EccB",
+   "kegg_ko": [
+    "K27085"
+   ],
+   "kegg_position": "6583979..6585424",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_5449": {
+   "refseq_locus_tag": "MMAR_RS27365",
+   "refseq_gene": "esxB",
+   "refseq_product": "type VII secretion system ESX-1 WXG100 family target CFP-10",
+   "refseq_location": "6591158..6591460",
+   "refseq_pseudo": false,
+   "kegg_symbol": "esxB",
+   "kegg_name": "Esat-6 like protein EsxB",
+   "kegg_orthology": "K14956 ESAT-6 family protein",
+   "kegg_ko": [
+    "K14956"
+   ],
+   "kegg_position": "6591158..6591460",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_5450": {
+   "refseq_locus_tag": "MMAR_RS27370",
+   "refseq_gene": "",
+   "refseq_product": "WXG100 family type VII secretion target",
+   "refseq_location": "6591497..6591784",
+   "refseq_pseudo": false,
+   "kegg_symbol": "esxA",
+   "kegg_name": "6 kDa early secretory antigenic target EsxA (EsaT-6)",
+   "kegg_orthology": "K14956 ESAT-6 family protein",
+   "kegg_ko": [
+    "K14956"
+   ],
+   "kegg_position": "6591497..6591784",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_5457": {
+   "refseq_locus_tag": "MMAR_RS27405",
+   "refseq_gene": "espB",
+   "refseq_product": "EspB family ESX-1 secretion system-associated protein",
+   "refseq_location": "complement(6601456..6602820)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "espB",
+   "kegg_name": "Esx-1 secreted protein, EspB",
+   "kegg_orthology": "K27099 ESX secretion-associated protein EspB",
+   "kegg_ko": [
+    "K27099"
+   ],
+   "kegg_position": "complement(6601456..6602820)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_5458": {
+   "refseq_locus_tag": "MMAR_RS27410",
+   "refseq_gene": "eccE",
+   "refseq_product": "type VII secretion protein EccE",
+   "refseq_location": "complement(6602919..6604316)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "",
+   "kegg_name": "conserved hypothetical membrane protein",
+   "kegg_orthology": "K27088 ESX secretion system protein EccE",
+   "kegg_ko": [
+    "K27088"
+   ],
+   "kegg_position": "complement(6602919..6604316)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_5465": {
+   "refseq_locus_tag": "MMAR_RS27435",
+   "refseq_gene": "",
+   "refseq_product": "WXG100 family type VII secretion target",
+   "refseq_location": "complement(6612188..6612478)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "esxE",
+   "kegg_name": "EsaT-6 like protein EsxE",
+   "kegg_orthology": "K14956 ESAT-6 family protein",
+   "kegg_ko": [
+    "K14956"
+   ],
+   "kegg_position": "complement(6612188..6612478)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  },
+  "MMAR_5466": {
+   "refseq_locus_tag": "MMAR_RS27440",
+   "refseq_gene": "",
+   "refseq_product": "WXG100 family type VII secretion target",
+   "refseq_location": "complement(6612471..6612782)",
+   "refseq_pseudo": false,
+   "kegg_symbol": "esxF",
+   "kegg_name": "EsaT-6 like protein EsxF",
+   "kegg_orthology": "K14956 ESAT-6 family protein",
+   "kegg_ko": [
+    "K14956"
+   ],
+   "kegg_position": "complement(6612471..6612782)",
+   "kegg_record_found": true,
+   "position_check": "exact"
+  }
+ },
+ "old_loci": {
+  "MMAR_RS07320": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_1481",
+   "refseq_gene": "",
+   "refseq_product": "NADH-quinone oxidoreductase subunit C"
+  },
+  "MMAR_RS07325": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_1482",
+   "refseq_gene": "",
+   "refseq_product": "NuoB/complex I 20 kDa subunit family protein"
+  },
+  "MMAR_RS04470": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_0910",
+   "refseq_gene": "menJ",
+   "refseq_product": "menaquinone reductase"
+  },
+  "MMAR_RS12095": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_2427",
+   "refseq_gene": "",
+   "refseq_product": "HdeD family acid-resistance protein"
+  },
+  "MMAR_RS12080": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_2424",
+   "refseq_gene": "cydD",
+   "refseq_product": "thiol reductant ABC exporter subunit CydD"
+  },
+  "MMAR_RS07455": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_1508",
+   "refseq_gene": "alsS",
+   "refseq_product": "acetolactate synthase AlsS"
+  },
+  "MMAR_RS05335": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_1079",
+   "refseq_gene": "",
+   "refseq_product": "CoA-acylating methylmalonate-semialdehyde dehydrogenase"
+  },
+  "MMAR_RS13410": {
+   "in_refseq": false,
+   "old_locus_tag": "",
+   "refseq_gene": "",
+   "refseq_product": ""
+  },
+  "MMAR_RS04685": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_0954",
+   "refseq_gene": "",
+   "refseq_product": "metal-dependent hydrolase family protein"
+  },
+  "MMAR_RS13725": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_2753",
+   "refseq_gene": "",
+   "refseq_product": "alpha-amylase family protein"
+  },
+  "MMAR_RS13525": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_2713",
+   "refseq_gene": "",
+   "refseq_product": "malate synthase G"
+  },
+  "MMAR_RS22330": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_4457",
+   "refseq_gene": "",
+   "refseq_product": "aspartate/glutamate racemase family protein"
+  },
+  "MMAR_RS10900": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_2189",
+   "refseq_gene": "",
+   "refseq_product": "fatty acid desaturase"
+  },
+  "MMAR_RS14560": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_2920",
+   "refseq_gene": "",
+   "refseq_product": "cyclopropane mycolic acid synthase family methyltransferase"
+  },
+  "MMAR_RS01245": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_0254",
+   "refseq_gene": "",
+   "refseq_product": "SDR family NAD(P)-dependent oxidoreductase"
+  },
+  "MMAR_RS00720": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_0145",
+   "refseq_gene": "",
+   "refseq_product": "MarR family winged helix-turn-helix transcriptional regulator"
+  },
+  "MMAR_RS12495": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_2504",
+   "refseq_gene": "",
+   "refseq_product": "CTP synthase"
+  },
+  "MMAR_RS18395": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_3691",
+   "refseq_gene": "",
+   "refseq_product": "non-ribosomal peptide synthetase"
+  },
+  "MMAR_RS18400": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_3692",
+   "refseq_gene": "",
+   "refseq_product": "GNAT family N-acetyltransferase"
+  },
+  "MMAR_RS06710": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_1355",
+   "refseq_gene": "",
+   "refseq_product": "alpha/beta fold hydrolase"
+  },
+  "MMAR_RS00995": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_0203",
+   "refseq_gene": "",
+   "refseq_product": "PPE domain-containing protein"
+  },
+  "MMAR_RS00980": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_0200",
+   "refseq_gene": "",
+   "refseq_product": "hypothetical protein"
+  },
+  "MMAR_RS01000": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_0204",
+   "refseq_gene": "",
+   "refseq_product": "TetR/AcrR family transcriptional regulator"
+  },
+  "MMAR_RS00990": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_0202",
+   "refseq_gene": "espB",
+   "refseq_product": "EspB family ESX-1 secretion system-associated protein"
+  },
+  "MMAR_RS12305": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_2466",
+   "refseq_gene": "argF",
+   "refseq_product": "ornithine carbamoyltransferase"
+  },
+  "MMAR_RS13445": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_2697",
+   "refseq_gene": "",
+   "refseq_product": "acetolactate synthase"
+  },
+  "MMAR_RS24640": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_4911",
+   "refseq_gene": "adhP",
+   "refseq_product": "alcohol dehydrogenase AdhP"
+  },
+  "MMAR_RS11045": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_2218",
+   "refseq_gene": "ribD",
+   "refseq_product": "bifunctional diaminohydroxyphosphoribosylaminopyrimidine deaminase/5-amino-6-(5-phosphoribosylamino)uracil reductase RibD"
+  },
+  "MMAR_RS06790": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_1372",
+   "refseq_gene": "",
+   "refseq_product": "TIGR03617 family F420-dependent LLM class oxidoreductase"
+  },
+  "MMAR_RS09685": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_1954",
+   "refseq_gene": "",
+   "refseq_product": "acyl-CoA dehydrogenase family protein"
+  },
+  "MMAR_RS13905": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_2790",
+   "refseq_gene": "",
+   "refseq_product": "zinc-binding dehydrogenase"
+  },
+  "MMAR_RS03930": {
+   "in_refseq": true,
+   "old_locus_tag": "MMAR_0796",
+   "refseq_gene": "pcaA",
+   "refseq_product": "cyclopropane mycolic acid synthase PcaA"
+  }
+ }
+}

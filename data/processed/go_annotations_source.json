@@ -1,0 +1,67 @@
+{
+  "annotation_source": {
+    "database": "UniProtKB",
+    "proteome": "UP000001190",
+    "organism": "Mycobacterium marinum strain M (ATCC BAA-535)",
+    "ncbi_taxon": 216594,
+    "query_url": "https://rest.uniprot.org/uniprotkb/stream?query=proteome:UP000001190&fields=accession,gene_oln,gene_names,go_id&format=json",
+    "uniprot_release": "2026_03",
+    "uniprot_release_date": "02-September-2026",
+    "api_deployment_date": "15-October-2026",
+    "downloaded_utc": "2026-10-17T12:20:01Z",
+    "raw_file": "data/reference/go/uniprot_UP000001190_go.json",
+    "raw_sha256": "5c73bd111934aa12a88bd2c24e930350c53a27e19b4343fcfaedef0fe75812d9",
+    "entries": 5418,
+    "entries_with_go": 3578,
+    "go_cross_references": 9772,
+    "go_id_resolution": {
+      "current": 9761,
+      "obsolete": 5,
+      "replaced_by": 6
+    },
+    "go_ids_dropped_obsolete_or_unknown": {
+      "GO:0006528": 1,
+      "GO:1901605": 4
+    },
+    "evidence_code_counts_in_snapshot_rows": {
+      "IEA": 9704,
+      "ISS": 17,
+      "EXP": 11,
+      "IDA": 3,
+      "IMP": 3
+    },
+    "fraction_electronic_iea": 0.9965
+  },
+  "locus_mapping": {
+    "method": "UniProt ordered locus name (MMAR_xxxx) -> RefSeq /old_locus_tag on gene features -> RefSeq /locus_tag (MMAR_RSxxxxx)",
+    "gbff_file": "data/reference/GCF_000018345.1_ASM1834v1_genomic.gbff.gz",
+    "gbff_sha256": "898aa40056505efb94894a342fa4507da3b67f52c399deb6810608074855ded0",
+    "gene_features": 5591,
+    "gene_features_with_old_locus_tag": 5398,
+    "old_tags_mapping_to_several_loci": 0,
+    "uniprot_entries_mapped_to_a_locus": 5280,
+    "uniprot_ordered_locus_names_without_refseq_locus": 147,
+    "refseq_loci_with_go": 3576
+  },
+  "ontology_source": {
+    "url": "http://purl.obolibrary.org/obo/go/go-basic.obo",
+    "final_url": "https://current.geneontology.org/ontology/go-basic.obo",
+    "data_version": "releases/2026-07-26",
+    "format_version": "1.2",
+    "downloaded_utc": "2026-10-17T12:20:02Z",
+    "raw_file": "data/reference/go/go-basic.obo",
+    "raw_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+    "terms_in_file": 48340,
+    "relations_propagated": [
+      "is_a",
+      "part_of"
+    ],
+    "subset_terms_saved": 3112
+  },
+  "snapshot_files": {
+    "annotations": "data/processed/go_annotations_mmarinum.tsv",
+    "annotations_sha256": "5b596bbbcb8ba4d34e1265d23db032cdac8ac55672e808cf2c4873c2ea3b89ff",
+    "ontology_subset": "data/processed/go_ontology_subset.tsv",
+    "ontology_subset_sha256": "4a36bc340fc3a8753f4fca3d70f1c2a4a4cbfb7950aed77014c99efc0f98d2ef"
+  }
+}

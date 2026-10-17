@@ -1,0 +1,2714 @@
+{
+  "script": "analysis/05_ontology_functional_enrichment.py",
+  "annotation_source": {
+    "database": "UniProtKB",
+    "proteome": "UP000001190",
+    "organism": "Mycobacterium marinum strain M (ATCC BAA-535)",
+    "ncbi_taxon": 216594,
+    "query_url": "https://rest.uniprot.org/uniprotkb/stream?query=proteome:UP000001190&fields=accession,gene_oln,gene_names,go_id&format=json",
+    "uniprot_release": "2026_03",
+    "uniprot_release_date": "02-September-2026",
+    "api_deployment_date": "15-October-2026",
+    "downloaded_utc": "2026-10-17T12:20:01Z",
+    "raw_file": "data/reference/go/uniprot_UP000001190_go.json",
+    "raw_sha256": "5c73bd111934aa12a88bd2c24e930350c53a27e19b4343fcfaedef0fe75812d9",
+    "entries": 5418,
+    "entries_with_go": 3578,
+    "go_cross_references": 9772,
+    "go_id_resolution": {
+      "current": 9761,
+      "obsolete": 5,
+      "replaced_by": 6
+    },
+    "go_ids_dropped_obsolete_or_unknown": {
+      "GO:0006528": 1,
+      "GO:1901605": 4
+    },
+    "evidence_code_counts_in_snapshot_rows": {
+      "IEA": 9704,
+      "ISS": 17,
+      "EXP": 11,
+      "IDA": 3,
+      "IMP": 3
+    },
+    "fraction_electronic_iea": 0.9965
+  },
+  "locus_mapping": {
+    "method": "UniProt ordered locus name (MMAR_xxxx) -> RefSeq /old_locus_tag on gene features -> RefSeq /locus_tag (MMAR_RSxxxxx)",
+    "gbff_file": "data/reference/GCF_000018345.1_ASM1834v1_genomic.gbff.gz",
+    "gbff_sha256": "898aa40056505efb94894a342fa4507da3b67f52c399deb6810608074855ded0",
+    "gene_features": 5591,
+    "gene_features_with_old_locus_tag": 5398,
+    "old_tags_mapping_to_several_loci": 0,
+    "uniprot_entries_mapped_to_a_locus": 5280,
+    "uniprot_ordered_locus_names_without_refseq_locus": 147,
+    "refseq_loci_with_go": 3576
+  },
+  "ontology_source": {
+    "url": "http://purl.obolibrary.org/obo/go/go-basic.obo",
+    "final_url": "https://current.geneontology.org/ontology/go-basic.obo",
+    "data_version": "releases/2026-07-26",
+    "format_version": "1.2",
+    "downloaded_utc": "2026-10-17T12:20:02Z",
+    "raw_file": "data/reference/go/go-basic.obo",
+    "raw_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+    "terms_in_file": 48340,
+    "relations_propagated": [
+      "is_a",
+      "part_of"
+    ],
+    "subset_terms_saved": 3112
+  },
+  "snapshot_files": {
+    "annotations": "data/processed/go_annotations_mmarinum.tsv",
+    "annotations_sha256": "5b596bbbcb8ba4d34e1265d23db032cdac8ac55672e808cf2c4873c2ea3b89ff",
+    "ontology_subset": "data/processed/go_ontology_subset.tsv",
+    "ontology_subset_sha256": "4a36bc340fc3a8753f4fca3d70f1c2a4a4cbfb7950aed77014c99efc0f98d2ef"
+  },
+  "method": {
+    "test": "one-sided hypergeometric (over-representation), scipy.stats.hypergeom.sf",
+    "ontologies": "BP, MF and CC tested separately",
+    "propagation": "true-path rule over is_a and part_of, within namespace",
+    "universe": "genes in the gene set's background with at least one annotation in the ontology being tested",
+    "backgrounds": {
+      "tested_<contrast>": "genes with non-missing DESeq2 padj in that contrast",
+      "tested_both_simulators": "genes with non-missing padj in both clinostat_vs_static1g and rpm2_vs_static1g",
+      "wgcna_all_genes": "every gene in wgcna_module_assignments.tsv, grey included"
+    },
+    "deg_definition": "DESeq2 padj < 0.05, direction by sign of log2FoldChange",
+    "term_size_range": [
+      5,
+      500
+    ],
+    "term_size_definition": "annotated universe genes in the term (after propagation)",
+    "multiple_testing": "Benjamini-Hochberg within each gene set and ontology, over all size-eligible terms (zero-overlap terms enter with p = 1)",
+    "multiple_testing_sensitivity": "fdr_bh_hit_terms_only: BH over terms with at least one overlapping gene (clusterProfiler enricher convention); reported only, not used for calls",
+    "significance": "FDR < 0.05",
+    "evidence_codes": "all UniProtKB GO evidence codes kept, IEA included",
+    "small_set_flag": "gene sets with fewer than 10 GO-annotated genes"
+  },
+  "inputs": {
+    "deg_3dclinostat_vs_static1g.tsv": {
+      "sha256": "f3948ffc2707c6f394e1becf9c769e1e8aaea7bb5b58a7f355538e58250e8d9c",
+      "rows": 3968,
+      "genes_with_padj": 3967,
+      "deg_up": 187,
+      "deg_down": 432
+    },
+    "deg_rpm2_vs_static1g.tsv": {
+      "sha256": "b7bb57775e26e9d1271f6d16a2fc896725ef66f385e0f252088c3e9ae7682910",
+      "rows": 3968,
+      "genes_with_padj": 3967,
+      "deg_up": 209,
+      "deg_down": 497
+    },
+    "deg_3dclinostat_vs_rpm2.tsv": {
+      "sha256": "2a1ef00862c82b4798ca860d582181bdc65e9c5bf4cd515c5f39da4f9ec4b783",
+      "rows": 3968,
+      "genes_with_padj": 3967,
+      "deg_up": 0,
+      "deg_down": 0
+    },
+    "deg_shared_simulated_microgravity.tsv": {
+      "sha256": "8c750cdc7654673b6fe16c83daef2c028d5f22e21dcc8928a5f2434d05a2d9ab",
+      "rows": 533,
+      "shared_up": 149,
+      "shared_down": 384
+    },
+    "wgcna_module_assignments.tsv": {
+      "sha256": "49dd2c7e0215de51f7c8391d23203c48e4aae9604cee88f7cdadf2cb7742e3aa",
+      "rows": 3968,
+      "modules_tested": 20,
+      "genes_unassigned_grey": 38
+    }
+  },
+  "coverage": {
+    "tested_clinostat_vs_static1g": {
+      "genes": 3967,
+      "annotated_any": 2821,
+      "fraction_annotated_any": 0.7111,
+      "annotated_BP": 1494,
+      "eligible_terms_BP": 584,
+      "annotated_MF": 2432,
+      "eligible_terms_MF": 365,
+      "annotated_CC": 1438,
+      "eligible_terms_CC": 46
+    },
+    "tested_rpm2_vs_static1g": {
+      "genes": 3967,
+      "annotated_any": 2821,
+      "fraction_annotated_any": 0.7111,
+      "annotated_BP": 1494,
+      "eligible_terms_BP": 584,
+      "annotated_MF": 2432,
+      "eligible_terms_MF": 365,
+      "annotated_CC": 1438,
+      "eligible_terms_CC": 46
+    },
+    "tested_clinostat_vs_rpm2": {
+      "genes": 3967,
+      "annotated_any": 2821,
+      "fraction_annotated_any": 0.7111,
+      "annotated_BP": 1494,
+      "eligible_terms_BP": 584,
+      "annotated_MF": 2432,
+      "eligible_terms_MF": 365,
+      "annotated_CC": 1438,
+      "eligible_terms_CC": 46
+    },
+    "tested_both_simulators": {
+      "genes": 3967,
+      "annotated_any": 2821,
+      "fraction_annotated_any": 0.7111,
+      "annotated_BP": 1494,
+      "eligible_terms_BP": 584,
+      "annotated_MF": 2432,
+      "eligible_terms_MF": 365,
+      "annotated_CC": 1438,
+      "eligible_terms_CC": 46
+    },
+    "wgcna_all_genes": {
+      "genes": 3968,
+      "annotated_any": 2822,
+      "fraction_annotated_any": 0.7112,
+      "annotated_BP": 1494,
+      "eligible_terms_BP": 584,
+      "annotated_MF": 2433,
+      "eligible_terms_MF": 365,
+      "annotated_CC": 1439,
+      "eligible_terms_CC": 46
+    }
+  },
+  "genes_in_any_background_without_go": 1146,
+  "gene_sets": {
+    "clinostat_vs_static1g_up": {
+      "description": "up DEGs in deg_3dclinostat_vs_static1g.tsv (padj < 0.05, log2FoldChange > 0)",
+      "background": "tested_clinostat_vs_static1g",
+      "n_genes": 187,
+      "n_genes_with_go": 141,
+      "fraction_with_go": 0.754,
+      "n_significant_fdr_lt_0.05": 5,
+      "per_ontology": {
+        "BP": {
+          "set_size_annotated": 74,
+          "universe_size": 1494,
+          "n_terms_tested": 584,
+          "n_significant": 1,
+          "n_significant_bh_hit_terms_only": 8
+        },
+        "MF": {
+          "set_size_annotated": 95,
+          "universe_size": 2432,
+          "n_terms_tested": 365,
+          "n_significant": 3,
+          "n_significant_bh_hit_terms_only": 5
+        },
+        "CC": {
+          "set_size_annotated": 81,
+          "universe_size": 1438,
+          "n_terms_tested": 46,
+          "n_significant": 1,
+          "n_significant_bh_hit_terms_only": 1
+        }
+      },
+      "top_terms_by_fdr": [
+        {
+          "ontology": "CC",
+          "go_id": "GO:0005576",
+          "term_name": "extracellular region",
+          "overlap": 22,
+          "term_size": 98,
+          "set_size": 81,
+          "fold_enrichment": 3.985,
+          "pvalue": 3.128e-09,
+          "fdr": 1.439e-07,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0003954",
+          "term_name": "NADH dehydrogenase activity",
+          "overlap": 6,
+          "term_size": 16,
+          "set_size": 95,
+          "fold_enrichment": 9.6,
+          "pvalue": 1.771e-05,
+          "fdr": 0.006465,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0016655",
+          "term_name": "oxidoreductase activity, acting on NAD(P)H, quinone or similar compound as acceptor",
+          "overlap": 6,
+          "term_size": 21,
+          "set_size": 95,
+          "fold_enrichment": 7.314,
+          "pvalue": 0.0001024,
+          "fdr": 0.01868,
+          "significant": true
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0044419",
+          "term_name": "biological process involved in interspecies interaction between organisms",
+          "overlap": 15,
+          "term_size": 96,
+          "set_size": 74,
+          "fold_enrichment": 3.155,
+          "pvalue": 3.492e-05,
+          "fdr": 0.02039,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0008137",
+          "term_name": "NADH dehydrogenase (ubiquinone) activity",
+          "overlap": 4,
+          "term_size": 10,
+          "set_size": 95,
+          "fold_enrichment": 10.24,
+          "pvalue": 0.0003832,
+          "fdr": 0.04662,
+          "significant": true
+        }
+      ],
+      "notes": []
+    },
+    "clinostat_vs_static1g_down": {
+      "description": "down DEGs in deg_3dclinostat_vs_static1g.tsv (padj < 0.05, log2FoldChange < 0)",
+      "background": "tested_clinostat_vs_static1g",
+      "n_genes": 432,
+      "n_genes_with_go": 320,
+      "fraction_with_go": 0.7407,
+      "n_significant_fdr_lt_0.05": 17,
+      "per_ontology": {
+        "BP": {
+          "set_size_annotated": 135,
+          "universe_size": 1494,
+          "n_terms_tested": 584,
+          "n_significant": 6,
+          "n_significant_bh_hit_terms_only": 6
+        },
+        "MF": {
+          "set_size_annotated": 291,
+          "universe_size": 2432,
+          "n_terms_tested": 365,
+          "n_significant": 10,
+          "n_significant_bh_hit_terms_only": 10
+        },
+        "CC": {
+          "set_size_annotated": 118,
+          "universe_size": 1438,
+          "n_terms_tested": 46,
+          "n_significant": 1,
+          "n_significant_bh_hit_terms_only": 1
+        }
+      },
+      "top_terms_by_fdr": [
+        {
+          "ontology": "MF",
+          "go_id": "GO:0003700",
+          "term_name": "DNA-binding transcription factor activity",
+          "overlap": 46,
+          "term_size": 154,
+          "set_size": 291,
+          "fold_enrichment": 2.496,
+          "pvalue": 4.994e-10,
+          "fdr": 1.823e-07,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0140110",
+          "term_name": "transcription regulator activity",
+          "overlap": 46,
+          "term_size": 160,
+          "set_size": 291,
+          "fold_enrichment": 2.403,
+          "pvalue": 2.048e-09,
+          "fdr": 3.737e-07,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0004497",
+          "term_name": "monooxygenase activity",
+          "overlap": 24,
+          "term_size": 80,
+          "set_size": 291,
+          "fold_enrichment": 2.507,
+          "pvalue": 9.035e-06,
+          "fdr": 0.0007169,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0000976",
+          "term_name": "transcription cis-regulatory region binding",
+          "overlap": 27,
+          "term_size": 97,
+          "set_size": 291,
+          "fold_enrichment": 2.326,
+          "pvalue": 1.165e-05,
+          "fdr": 0.0007169,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0001067",
+          "term_name": "transcription regulatory region nucleic acid binding",
+          "overlap": 27,
+          "term_size": 97,
+          "set_size": 291,
+          "fold_enrichment": 2.326,
+          "pvalue": 1.165e-05,
+          "fdr": 0.0007169,
+          "significant": true
+        }
+      ],
+      "notes": []
+    },
+    "rpm2_vs_static1g_up": {
+      "description": "up DEGs in deg_rpm2_vs_static1g.tsv (padj < 0.05, log2FoldChange > 0)",
+      "background": "tested_rpm2_vs_static1g",
+      "n_genes": 209,
+      "n_genes_with_go": 145,
+      "fraction_with_go": 0.6938,
+      "n_significant_fdr_lt_0.05": 21,
+      "per_ontology": {
+        "BP": {
+          "set_size_annotated": 75,
+          "universe_size": 1494,
+          "n_terms_tested": 584,
+          "n_significant": 1,
+          "n_significant_bh_hit_terms_only": 12
+        },
+        "MF": {
+          "set_size_annotated": 102,
+          "universe_size": 2432,
+          "n_terms_tested": 365,
+          "n_significant": 15,
+          "n_significant_bh_hit_terms_only": 15
+        },
+        "CC": {
+          "set_size_annotated": 86,
+          "universe_size": 1438,
+          "n_terms_tested": 46,
+          "n_significant": 5,
+          "n_significant_bh_hit_terms_only": 5
+        }
+      },
+      "top_terms_by_fdr": [
+        {
+          "ontology": "MF",
+          "go_id": "GO:0003954",
+          "term_name": "NADH dehydrogenase activity",
+          "overlap": 10,
+          "term_size": 16,
+          "set_size": 102,
+          "fold_enrichment": 14.9,
+          "pvalue": 7.055e-11,
+          "fdr": 2.575e-08,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0008137",
+          "term_name": "NADH dehydrogenase (ubiquinone) activity",
+          "overlap": 8,
+          "term_size": 10,
+          "set_size": 102,
+          "fold_enrichment": 19.07,
+          "pvalue": 3.066e-10,
+          "fdr": 5.596e-08,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0016655",
+          "term_name": "oxidoreductase activity, acting on NAD(P)H, quinone or similar compound as acceptor",
+          "overlap": 10,
+          "term_size": 21,
+          "set_size": 102,
+          "fold_enrichment": 11.35,
+          "pvalue": 2.606e-09,
+          "fdr": 3.171e-07,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0015453",
+          "term_name": "oxidoreduction-driven active transmembrane transporter activity",
+          "overlap": 9,
+          "term_size": 21,
+          "set_size": 102,
+          "fold_enrichment": 10.22,
+          "pvalue": 5.463e-08,
+          "fdr": 4.985e-06,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0016651",
+          "term_name": "oxidoreductase activity, acting on NAD(P)H",
+          "overlap": 10,
+          "term_size": 30,
+          "set_size": 102,
+          "fold_enrichment": 7.948,
+          "pvalue": 1.618e-07,
+          "fdr": 1.181e-05,
+          "significant": true
+        }
+      ],
+      "notes": []
+    },
+    "rpm2_vs_static1g_down": {
+      "description": "down DEGs in deg_rpm2_vs_static1g.tsv (padj < 0.05, log2FoldChange < 0)",
+      "background": "tested_rpm2_vs_static1g",
+      "n_genes": 497,
+      "n_genes_with_go": 366,
+      "fraction_with_go": 0.7364,
+      "n_significant_fdr_lt_0.05": 22,
+      "per_ontology": {
+        "BP": {
+          "set_size_annotated": 162,
+          "universe_size": 1494,
+          "n_terms_tested": 584,
+          "n_significant": 10,
+          "n_significant_bh_hit_terms_only": 20
+        },
+        "MF": {
+          "set_size_annotated": 335,
+          "universe_size": 2432,
+          "n_terms_tested": 365,
+          "n_significant": 11,
+          "n_significant_bh_hit_terms_only": 12
+        },
+        "CC": {
+          "set_size_annotated": 140,
+          "universe_size": 1438,
+          "n_terms_tested": 46,
+          "n_significant": 1,
+          "n_significant_bh_hit_terms_only": 1
+        }
+      },
+      "top_terms_by_fdr": [
+        {
+          "ontology": "MF",
+          "go_id": "GO:0003700",
+          "term_name": "DNA-binding transcription factor activity",
+          "overlap": 50,
+          "term_size": 154,
+          "set_size": 335,
+          "fold_enrichment": 2.357,
+          "pvalue": 5.629e-10,
+          "fdr": 2.054e-07,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0043565",
+          "term_name": "sequence-specific DNA binding",
+          "overlap": 39,
+          "term_size": 108,
+          "set_size": 335,
+          "fold_enrichment": 2.622,
+          "pvalue": 1.748e-09,
+          "fdr": 3.111e-07,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0140110",
+          "term_name": "transcription regulator activity",
+          "overlap": 50,
+          "term_size": 160,
+          "set_size": 335,
+          "fold_enrichment": 2.269,
+          "pvalue": 2.557e-09,
+          "fdr": 3.111e-07,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0000976",
+          "term_name": "transcription cis-regulatory region binding",
+          "overlap": 35,
+          "term_size": 97,
+          "set_size": 335,
+          "fold_enrichment": 2.619,
+          "pvalue": 1.321e-08,
+          "fdr": 9.646e-07,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0001067",
+          "term_name": "transcription regulatory region nucleic acid binding",
+          "overlap": 35,
+          "term_size": 97,
+          "set_size": 335,
+          "fold_enrichment": 2.619,
+          "pvalue": 1.321e-08,
+          "fdr": 9.646e-07,
+          "significant": true
+        }
+      ],
+      "notes": []
+    },
+    "clinostat_vs_rpm2_up": {
+      "description": "up DEGs in deg_3dclinostat_vs_rpm2.tsv (padj < 0.05, log2FoldChange > 0)",
+      "background": "tested_clinostat_vs_rpm2",
+      "n_genes": 0,
+      "n_genes_with_go": 0,
+      "fraction_with_go": null,
+      "n_significant_fdr_lt_0.05": 0,
+      "per_ontology": {
+        "BP": {
+          "set_size_annotated": 0,
+          "universe_size": 1494,
+          "n_terms_tested": 0,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "MF": {
+          "set_size_annotated": 0,
+          "universe_size": 2432,
+          "n_terms_tested": 0,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "CC": {
+          "set_size_annotated": 0,
+          "universe_size": 1438,
+          "n_terms_tested": 0,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        }
+      },
+      "top_terms_by_fdr": [],
+      "notes": [
+        "empty gene set: nothing tested"
+      ]
+    },
+    "clinostat_vs_rpm2_down": {
+      "description": "down DEGs in deg_3dclinostat_vs_rpm2.tsv (padj < 0.05, log2FoldChange < 0)",
+      "background": "tested_clinostat_vs_rpm2",
+      "n_genes": 0,
+      "n_genes_with_go": 0,
+      "fraction_with_go": null,
+      "n_significant_fdr_lt_0.05": 0,
+      "per_ontology": {
+        "BP": {
+          "set_size_annotated": 0,
+          "universe_size": 1494,
+          "n_terms_tested": 0,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "MF": {
+          "set_size_annotated": 0,
+          "universe_size": 2432,
+          "n_terms_tested": 0,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "CC": {
+          "set_size_annotated": 0,
+          "universe_size": 1438,
+          "n_terms_tested": 0,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        }
+      },
+      "top_terms_by_fdr": [],
+      "notes": [
+        "empty gene set: nothing tested"
+      ]
+    },
+    "shared_simulated_microgravity_up": {
+      "description": "up in both 3D clinostat and RPM 2.0 vs static 1g (deg_shared_simulated_microgravity.tsv)",
+      "background": "tested_both_simulators",
+      "n_genes": 149,
+      "n_genes_with_go": 110,
+      "fraction_with_go": 0.7383,
+      "n_significant_fdr_lt_0.05": 19,
+      "per_ontology": {
+        "BP": {
+          "set_size_annotated": 56,
+          "universe_size": 1494,
+          "n_terms_tested": 584,
+          "n_significant": 9,
+          "n_significant_bh_hit_terms_only": 10
+        },
+        "MF": {
+          "set_size_annotated": 73,
+          "universe_size": 2432,
+          "n_terms_tested": 365,
+          "n_significant": 5,
+          "n_significant_bh_hit_terms_only": 5
+        },
+        "CC": {
+          "set_size_annotated": 64,
+          "universe_size": 1438,
+          "n_terms_tested": 46,
+          "n_significant": 5,
+          "n_significant_bh_hit_terms_only": 7
+        }
+      },
+      "top_terms_by_fdr": [
+        {
+          "ontology": "CC",
+          "go_id": "GO:0005576",
+          "term_name": "extracellular region",
+          "overlap": 18,
+          "term_size": 98,
+          "set_size": 64,
+          "fold_enrichment": 4.127,
+          "pvalue": 5.949e-08,
+          "fdr": 2.736e-06,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0003954",
+          "term_name": "NADH dehydrogenase activity",
+          "overlap": 6,
+          "term_size": 16,
+          "set_size": 73,
+          "fold_enrichment": 12.49,
+          "pvalue": 3.757e-06,
+          "fdr": 0.001371,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0016655",
+          "term_name": "oxidoreductase activity, acting on NAD(P)H, quinone or similar compound as acceptor",
+          "overlap": 6,
+          "term_size": 21,
+          "set_size": 73,
+          "fold_enrichment": 9.519,
+          "pvalue": 2.259e-05,
+          "fdr": 0.004122,
+          "significant": true
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0044419",
+          "term_name": "biological process involved in interspecies interaction between organisms",
+          "overlap": 13,
+          "term_size": 96,
+          "set_size": 56,
+          "fold_enrichment": 3.613,
+          "pvalue": 2.68e-05,
+          "fdr": 0.01565,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0008137",
+          "term_name": "NADH dehydrogenase (ubiquinone) activity",
+          "overlap": 4,
+          "term_size": 10,
+          "set_size": 73,
+          "fold_enrichment": 13.33,
+          "pvalue": 0.000137,
+          "fdr": 0.01666,
+          "significant": true
+        }
+      ],
+      "notes": []
+    },
+    "shared_simulated_microgravity_down": {
+      "description": "down in both 3D clinostat and RPM 2.0 vs static 1g (deg_shared_simulated_microgravity.tsv)",
+      "background": "tested_both_simulators",
+      "n_genes": 384,
+      "n_genes_with_go": 284,
+      "fraction_with_go": 0.7396,
+      "n_significant_fdr_lt_0.05": 15,
+      "per_ontology": {
+        "BP": {
+          "set_size_annotated": 119,
+          "universe_size": 1494,
+          "n_terms_tested": 584,
+          "n_significant": 5,
+          "n_significant_bh_hit_terms_only": 9
+        },
+        "MF": {
+          "set_size_annotated": 258,
+          "universe_size": 2432,
+          "n_terms_tested": 365,
+          "n_significant": 10,
+          "n_significant_bh_hit_terms_only": 10
+        },
+        "CC": {
+          "set_size_annotated": 108,
+          "universe_size": 1438,
+          "n_terms_tested": 46,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        }
+      },
+      "top_terms_by_fdr": [
+        {
+          "ontology": "MF",
+          "go_id": "GO:0003700",
+          "term_name": "DNA-binding transcription factor activity",
+          "overlap": 41,
+          "term_size": 154,
+          "set_size": 258,
+          "fold_enrichment": 2.51,
+          "pvalue": 5.149e-09,
+          "fdr": 1.879e-06,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0140110",
+          "term_name": "transcription regulator activity",
+          "overlap": 41,
+          "term_size": 160,
+          "set_size": 258,
+          "fold_enrichment": 2.416,
+          "pvalue": 1.761e-08,
+          "fdr": 3.214e-06,
+          "significant": true
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0009408",
+          "term_name": "response to heat",
+          "overlap": 7,
+          "term_size": 9,
+          "set_size": 119,
+          "fold_enrichment": 9.765,
+          "pvalue": 5.414e-07,
+          "fdr": 0.0003162,
+          "significant": true
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0009266",
+          "term_name": "response to temperature stimulus",
+          "overlap": 7,
+          "term_size": 11,
+          "set_size": 119,
+          "fold_enrichment": 7.989,
+          "pvalue": 4.331e-06,
+          "fdr": 0.001265,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0043565",
+          "term_name": "sequence-specific DNA binding",
+          "overlap": 26,
+          "term_size": 108,
+          "set_size": 258,
+          "fold_enrichment": 2.269,
+          "pvalue": 3.128e-05,
+          "fdr": 0.002894,
+          "significant": true
+        }
+      ],
+      "notes": []
+    },
+    "module_black": {
+      "description": "WGCNA module black (wgcna_module_assignments.tsv)",
+      "background": "wgcna_all_genes",
+      "n_genes": 141,
+      "n_genes_with_go": 106,
+      "fraction_with_go": 0.7518,
+      "n_significant_fdr_lt_0.05": 3,
+      "per_ontology": {
+        "BP": {
+          "set_size_annotated": 71,
+          "universe_size": 1494,
+          "n_terms_tested": 584,
+          "n_significant": 3,
+          "n_significant_bh_hit_terms_only": 10
+        },
+        "MF": {
+          "set_size_annotated": 93,
+          "universe_size": 2433,
+          "n_terms_tested": 365,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "CC": {
+          "set_size_annotated": 55,
+          "universe_size": 1439,
+          "n_terms_tested": 46,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        }
+      },
+      "top_terms_by_fdr": [
+        {
+          "ontology": "BP",
+          "go_id": "GO:0001666",
+          "term_name": "response to hypoxia",
+          "overlap": 7,
+          "term_size": 24,
+          "set_size": 71,
+          "fold_enrichment": 6.137,
+          "pvalue": 7.376e-05,
+          "fdr": 0.01436,
+          "significant": true
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0036293",
+          "term_name": "response to decreased oxygen levels",
+          "overlap": 7,
+          "term_size": 24,
+          "set_size": 71,
+          "fold_enrichment": 6.137,
+          "pvalue": 7.376e-05,
+          "fdr": 0.01436,
+          "significant": true
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0070482",
+          "term_name": "response to oxygen levels",
+          "overlap": 7,
+          "term_size": 24,
+          "set_size": 71,
+          "fold_enrichment": 6.137,
+          "pvalue": 7.376e-05,
+          "fdr": 0.01436,
+          "significant": true
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0006641",
+          "term_name": "triglyceride metabolic process",
+          "overlap": 5,
+          "term_size": 18,
+          "set_size": 71,
+          "fold_enrichment": 5.845,
+          "pvalue": 0.001112,
+          "fdr": 0.07215,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0019432",
+          "term_name": "triglyceride biosynthetic process",
+          "overlap": 5,
+          "term_size": 18,
+          "set_size": 71,
+          "fold_enrichment": 5.845,
+          "pvalue": 0.001112,
+          "fdr": 0.07215,
+          "significant": false
+        }
+      ],
+      "notes": []
+    },
+    "module_blue": {
+      "description": "WGCNA module blue (wgcna_module_assignments.tsv)",
+      "background": "wgcna_all_genes",
+      "n_genes": 739,
+      "n_genes_with_go": 541,
+      "fraction_with_go": 0.7321,
+      "n_significant_fdr_lt_0.05": 25,
+      "per_ontology": {
+        "BP": {
+          "set_size_annotated": 288,
+          "universe_size": 1494,
+          "n_terms_tested": 584,
+          "n_significant": 1,
+          "n_significant_bh_hit_terms_only": 1
+        },
+        "MF": {
+          "set_size_annotated": 429,
+          "universe_size": 2433,
+          "n_terms_tested": 365,
+          "n_significant": 14,
+          "n_significant_bh_hit_terms_only": 14
+        },
+        "CC": {
+          "set_size_annotated": 338,
+          "universe_size": 1439,
+          "n_terms_tested": 46,
+          "n_significant": 10,
+          "n_significant_bh_hit_terms_only": 12
+        }
+      },
+      "top_terms_by_fdr": [
+        {
+          "ontology": "MF",
+          "go_id": "GO:0003954",
+          "term_name": "NADH dehydrogenase activity",
+          "overlap": 11,
+          "term_size": 16,
+          "set_size": 429,
+          "fold_enrichment": 3.899,
+          "pvalue": 8.517e-06,
+          "fdr": 0.002657,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0016772",
+          "term_name": "transferase activity, transferring phosphorus-containing groups",
+          "overlap": 46,
+          "term_size": 145,
+          "set_size": 429,
+          "fold_enrichment": 1.799,
+          "pvalue": 1.456e-05,
+          "fdr": 0.002657,
+          "significant": true
+        },
+        {
+          "ontology": "CC",
+          "go_id": "GO:0005576",
+          "term_name": "extracellular region",
+          "overlap": 39,
+          "term_size": 98,
+          "set_size": 338,
+          "fold_enrichment": 1.694,
+          "pvalue": 0.0001399,
+          "fdr": 0.003728,
+          "significant": true
+        },
+        {
+          "ontology": "CC",
+          "go_id": "GO:0098796",
+          "term_name": "membrane protein complex",
+          "overlap": 21,
+          "term_size": 43,
+          "set_size": 338,
+          "fold_enrichment": 2.079,
+          "pvalue": 0.0002018,
+          "fdr": 0.003728,
+          "significant": true
+        },
+        {
+          "ontology": "CC",
+          "go_id": "GO:0098803",
+          "term_name": "respiratory chain complex",
+          "overlap": 8,
+          "term_size": 10,
+          "set_size": 338,
+          "fold_enrichment": 3.406,
+          "pvalue": 0.0002474,
+          "fdr": 0.003728,
+          "significant": true
+        }
+      ],
+      "notes": []
+    },
+    "module_brown": {
+      "description": "WGCNA module brown (wgcna_module_assignments.tsv)",
+      "background": "wgcna_all_genes",
+      "n_genes": 324,
+      "n_genes_with_go": 196,
+      "fraction_with_go": 0.6049,
+      "n_significant_fdr_lt_0.05": 6,
+      "per_ontology": {
+        "BP": {
+          "set_size_annotated": 97,
+          "universe_size": 1494,
+          "n_terms_tested": 584,
+          "n_significant": 6,
+          "n_significant_bh_hit_terms_only": 10
+        },
+        "MF": {
+          "set_size_annotated": 170,
+          "universe_size": 2433,
+          "n_terms_tested": 365,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "CC": {
+          "set_size_annotated": 87,
+          "universe_size": 1439,
+          "n_terms_tested": 46,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        }
+      },
+      "top_terms_by_fdr": [
+        {
+          "ontology": "BP",
+          "go_id": "GO:0045892",
+          "term_name": "negative regulation of DNA-templated transcription",
+          "overlap": 9,
+          "term_size": 34,
+          "set_size": 97,
+          "fold_enrichment": 4.077,
+          "pvalue": 0.000191,
+          "fdr": 0.02788,
+          "significant": true
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0045934",
+          "term_name": "negative regulation of nucleobase-containing compound metabolic process",
+          "overlap": 9,
+          "term_size": 34,
+          "set_size": 97,
+          "fold_enrichment": 4.077,
+          "pvalue": 0.000191,
+          "fdr": 0.02788,
+          "significant": true
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0051253",
+          "term_name": "negative regulation of RNA metabolic process",
+          "overlap": 9,
+          "term_size": 34,
+          "set_size": 97,
+          "fold_enrichment": 4.077,
+          "pvalue": 0.000191,
+          "fdr": 0.02788,
+          "significant": true
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:1902679",
+          "term_name": "negative regulation of RNA biosynthetic process",
+          "overlap": 9,
+          "term_size": 34,
+          "set_size": 97,
+          "fold_enrichment": 4.077,
+          "pvalue": 0.000191,
+          "fdr": 0.02788,
+          "significant": true
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0010558",
+          "term_name": "negative regulation of macromolecule biosynthetic process",
+          "overlap": 10,
+          "term_size": 46,
+          "set_size": 97,
+          "fold_enrichment": 3.348,
+          "pvalue": 0.0004804,
+          "fdr": 0.04675,
+          "significant": true
+        }
+      ],
+      "notes": []
+    },
+    "module_cyan": {
+      "description": "WGCNA module cyan (wgcna_module_assignments.tsv)",
+      "background": "wgcna_all_genes",
+      "n_genes": 60,
+      "n_genes_with_go": 42,
+      "fraction_with_go": 0.7,
+      "n_significant_fdr_lt_0.05": 0,
+      "per_ontology": {
+        "BP": {
+          "set_size_annotated": 29,
+          "universe_size": 1494,
+          "n_terms_tested": 584,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "MF": {
+          "set_size_annotated": 40,
+          "universe_size": 2433,
+          "n_terms_tested": 365,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "CC": {
+          "set_size_annotated": 24,
+          "universe_size": 1439,
+          "n_terms_tested": 46,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        }
+      },
+      "top_terms_by_fdr": [
+        {
+          "ontology": "MF",
+          "go_id": "GO:0016854",
+          "term_name": "racemase and epimerase activity",
+          "overlap": 3,
+          "term_size": 11,
+          "set_size": 40,
+          "fold_enrichment": 16.59,
+          "pvalue": 0.0006204,
+          "fdr": 0.2264,
+          "significant": false
+        },
+        {
+          "ontology": "CC",
+          "go_id": "GO:0005829",
+          "term_name": "cytosol",
+          "overlap": 11,
+          "term_size": 316,
+          "set_size": 24,
+          "fold_enrichment": 2.087,
+          "pvalue": 0.007515,
+          "fdr": 0.3457,
+          "significant": false
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0016853",
+          "term_name": "isomerase activity",
+          "overlap": 6,
+          "term_size": 85,
+          "set_size": 40,
+          "fold_enrichment": 4.294,
+          "pvalue": 0.002251,
+          "fdr": 0.4107,
+          "significant": false
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0000287",
+          "term_name": "magnesium ion binding",
+          "overlap": 6,
+          "term_size": 94,
+          "set_size": 40,
+          "fold_enrichment": 3.882,
+          "pvalue": 0.003756,
+          "fdr": 0.457,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0033014",
+          "term_name": "tetrapyrrole biosynthetic process",
+          "overlap": 3,
+          "term_size": 21,
+          "set_size": 29,
+          "fold_enrichment": 7.36,
+          "pvalue": 0.006918,
+          "fdr": 1.0,
+          "significant": false
+        }
+      ],
+      "notes": []
+    },
+    "module_green": {
+      "description": "WGCNA module green (wgcna_module_assignments.tsv)",
+      "background": "wgcna_all_genes",
+      "n_genes": 234,
+      "n_genes_with_go": 168,
+      "fraction_with_go": 0.7179,
+      "n_significant_fdr_lt_0.05": 12,
+      "per_ontology": {
+        "BP": {
+          "set_size_annotated": 104,
+          "universe_size": 1494,
+          "n_terms_tested": 584,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 2
+        },
+        "MF": {
+          "set_size_annotated": 147,
+          "universe_size": 2433,
+          "n_terms_tested": 365,
+          "n_significant": 5,
+          "n_significant_bh_hit_terms_only": 5
+        },
+        "CC": {
+          "set_size_annotated": 99,
+          "universe_size": 1439,
+          "n_terms_tested": 46,
+          "n_significant": 7,
+          "n_significant_bh_hit_terms_only": 7
+        }
+      },
+      "top_terms_by_fdr": [
+        {
+          "ontology": "MF",
+          "go_id": "GO:0019843",
+          "term_name": "rRNA binding",
+          "overlap": 11,
+          "term_size": 40,
+          "set_size": 147,
+          "fold_enrichment": 4.552,
+          "pvalue": 1.364e-05,
+          "fdr": 0.004478,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0003735",
+          "term_name": "structural constituent of ribosome",
+          "overlap": 13,
+          "term_size": 59,
+          "set_size": 147,
+          "fold_enrichment": 3.647,
+          "pvalue": 3.04e-05,
+          "fdr": 0.004478,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0005198",
+          "term_name": "structural molecule activity",
+          "overlap": 13,
+          "term_size": 60,
+          "set_size": 147,
+          "fold_enrichment": 3.586,
+          "pvalue": 3.681e-05,
+          "fdr": 0.004478,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0003723",
+          "term_name": "RNA binding",
+          "overlap": 16,
+          "term_size": 92,
+          "set_size": 147,
+          "fold_enrichment": 2.878,
+          "pvalue": 8.163e-05,
+          "fdr": 0.007449,
+          "significant": true
+        },
+        {
+          "ontology": "CC",
+          "go_id": "GO:0005840",
+          "term_name": "ribosome",
+          "overlap": 13,
+          "term_size": 64,
+          "set_size": 99,
+          "fold_enrichment": 2.952,
+          "pvalue": 0.0002436,
+          "fdr": 0.01121,
+          "significant": true
+        }
+      ],
+      "notes": []
+    },
+    "module_greenyellow": {
+      "description": "WGCNA module greenyellow (wgcna_module_assignments.tsv)",
+      "background": "wgcna_all_genes",
+      "n_genes": 97,
+      "n_genes_with_go": 70,
+      "fraction_with_go": 0.7216,
+      "n_significant_fdr_lt_0.05": 0,
+      "per_ontology": {
+        "BP": {
+          "set_size_annotated": 39,
+          "universe_size": 1494,
+          "n_terms_tested": 584,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 4
+        },
+        "MF": {
+          "set_size_annotated": 55,
+          "universe_size": 2433,
+          "n_terms_tested": 365,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "CC": {
+          "set_size_annotated": 41,
+          "universe_size": 1439,
+          "n_terms_tested": 46,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        }
+      },
+      "top_terms_by_fdr": [
+        {
+          "ontology": "BP",
+          "go_id": "GO:0006810",
+          "term_name": "transport",
+          "overlap": 10,
+          "term_size": 108,
+          "set_size": 39,
+          "fold_enrichment": 3.547,
+          "pvalue": 0.0002758,
+          "fdr": 0.0728,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0051234",
+          "term_name": "establishment of localization",
+          "overlap": 10,
+          "term_size": 111,
+          "set_size": 39,
+          "fold_enrichment": 3.451,
+          "pvalue": 0.000347,
+          "fdr": 0.0728,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0051179",
+          "term_name": "localization",
+          "overlap": 10,
+          "term_size": 112,
+          "set_size": 39,
+          "fold_enrichment": 3.42,
+          "pvalue": 0.000374,
+          "fdr": 0.0728,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0055085",
+          "term_name": "transmembrane transport",
+          "overlap": 7,
+          "term_size": 59,
+          "set_size": 39,
+          "fold_enrichment": 4.545,
+          "pvalue": 0.0005967,
+          "fdr": 0.08712,
+          "significant": false
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0005215",
+          "term_name": "transporter activity",
+          "overlap": 11,
+          "term_size": 194,
+          "set_size": 55,
+          "fold_enrichment": 2.508,
+          "pvalue": 0.003283,
+          "fdr": 0.5991,
+          "significant": false
+        }
+      ],
+      "notes": []
+    },
+    "module_grey60": {
+      "description": "WGCNA module grey60 (wgcna_module_assignments.tsv)",
+      "background": "wgcna_all_genes",
+      "n_genes": 45,
+      "n_genes_with_go": 28,
+      "fraction_with_go": 0.6222,
+      "n_significant_fdr_lt_0.05": 0,
+      "per_ontology": {
+        "BP": {
+          "set_size_annotated": 17,
+          "universe_size": 1494,
+          "n_terms_tested": 584,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "MF": {
+          "set_size_annotated": 24,
+          "universe_size": 2433,
+          "n_terms_tested": 365,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "CC": {
+          "set_size_annotated": 13,
+          "universe_size": 1439,
+          "n_terms_tested": 46,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        }
+      },
+      "top_terms_by_fdr": [
+        {
+          "ontology": "BP",
+          "go_id": "GO:0006790",
+          "term_name": "sulfur compound metabolic process",
+          "overlap": 5,
+          "term_size": 70,
+          "set_size": 17,
+          "fold_enrichment": 6.277,
+          "pvalue": 0.0007803,
+          "fdr": 0.349,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0010126",
+          "term_name": "mycothiol metabolic process",
+          "overlap": 2,
+          "term_size": 5,
+          "set_size": 17,
+          "fold_enrichment": 35.15,
+          "pvalue": 0.001195,
+          "fdr": 0.349,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0016137",
+          "term_name": "glycoside metabolic process",
+          "overlap": 2,
+          "term_size": 8,
+          "set_size": 17,
+          "fold_enrichment": 21.97,
+          "pvalue": 0.00328,
+          "fdr": 0.4788,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:1901659",
+          "term_name": "glycosyl compound biosynthetic process",
+          "overlap": 2,
+          "term_size": 8,
+          "set_size": 17,
+          "fold_enrichment": 21.97,
+          "pvalue": 0.00328,
+          "fdr": 0.4788,
+          "significant": false
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0043169",
+          "term_name": "cation binding",
+          "overlap": 7,
+          "term_size": 328,
+          "set_size": 24,
+          "fold_enrichment": 2.163,
+          "pvalue": 0.03388,
+          "fdr": 1.0,
+          "significant": false
+        }
+      ],
+      "notes": []
+    },
+    "module_lightcyan": {
+      "description": "WGCNA module lightcyan (wgcna_module_assignments.tsv)",
+      "background": "wgcna_all_genes",
+      "n_genes": 46,
+      "n_genes_with_go": 35,
+      "fraction_with_go": 0.7609,
+      "n_significant_fdr_lt_0.05": 0,
+      "per_ontology": {
+        "BP": {
+          "set_size_annotated": 21,
+          "universe_size": 1494,
+          "n_terms_tested": 584,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "MF": {
+          "set_size_annotated": 34,
+          "universe_size": 2433,
+          "n_terms_tested": 365,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "CC": {
+          "set_size_annotated": 14,
+          "universe_size": 1439,
+          "n_terms_tested": 46,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        }
+      },
+      "top_terms_by_fdr": [
+        {
+          "ontology": "MF",
+          "go_id": "GO:0016874",
+          "term_name": "ligase activity",
+          "overlap": 7,
+          "term_size": 128,
+          "set_size": 34,
+          "fold_enrichment": 3.913,
+          "pvalue": 0.001546,
+          "fdr": 0.5642,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0009423",
+          "term_name": "chorismate biosynthetic process",
+          "overlap": 2,
+          "term_size": 7,
+          "set_size": 21,
+          "fold_enrichment": 20.33,
+          "pvalue": 0.003789,
+          "fdr": 0.5851,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0043412",
+          "term_name": "macromolecule modification",
+          "overlap": 3,
+          "term_size": 24,
+          "set_size": 21,
+          "fold_enrichment": 8.893,
+          "pvalue": 0.00401,
+          "fdr": 0.5851,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0006400",
+          "term_name": "tRNA modification",
+          "overlap": 2,
+          "term_size": 8,
+          "set_size": 21,
+          "fold_enrichment": 17.79,
+          "pvalue": 0.00501,
+          "fdr": 0.5851,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0043650",
+          "term_name": "dicarboxylic acid biosynthetic process",
+          "overlap": 2,
+          "term_size": 8,
+          "set_size": 21,
+          "fold_enrichment": 17.79,
+          "pvalue": 0.00501,
+          "fdr": 0.5851,
+          "significant": false
+        }
+      ],
+      "notes": []
+    },
+    "module_lightgreen": {
+      "description": "WGCNA module lightgreen (wgcna_module_assignments.tsv)",
+      "background": "wgcna_all_genes",
+      "n_genes": 44,
+      "n_genes_with_go": 31,
+      "fraction_with_go": 0.7045,
+      "n_significant_fdr_lt_0.05": 0,
+      "per_ontology": {
+        "BP": {
+          "set_size_annotated": 15,
+          "universe_size": 1494,
+          "n_terms_tested": 584,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 6
+        },
+        "MF": {
+          "set_size_annotated": 27,
+          "universe_size": 2433,
+          "n_terms_tested": 365,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "CC": {
+          "set_size_annotated": 15,
+          "universe_size": 1439,
+          "n_terms_tested": 46,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 2
+        }
+      },
+      "top_terms_by_fdr": [
+        {
+          "ontology": "BP",
+          "go_id": "GO:0051301",
+          "term_name": "cell division",
+          "overlap": 3,
+          "term_size": 13,
+          "set_size": 15,
+          "fold_enrichment": 22.98,
+          "pvalue": 0.0002208,
+          "fdr": 0.129,
+          "significant": false
+        },
+        {
+          "ontology": "CC",
+          "go_id": "GO:0005886",
+          "term_name": "plasma membrane",
+          "overlap": 10,
+          "term_size": 476,
+          "set_size": 15,
+          "fold_enrichment": 2.015,
+          "pvalue": 0.007717,
+          "fdr": 0.1775,
+          "significant": false
+        },
+        {
+          "ontology": "CC",
+          "go_id": "GO:0071944",
+          "term_name": "cell periphery",
+          "overlap": 10,
+          "term_size": 476,
+          "set_size": 15,
+          "fold_enrichment": 2.015,
+          "pvalue": 0.007717,
+          "fdr": 0.1775,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0008299",
+          "term_name": "isoprenoid biosynthetic process",
+          "overlap": 3,
+          "term_size": 20,
+          "set_size": 15,
+          "fold_enrichment": 14.94,
+          "pvalue": 0.0008436,
+          "fdr": 0.1869,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0006720",
+          "term_name": "isoprenoid metabolic process",
+          "overlap": 3,
+          "term_size": 22,
+          "set_size": 15,
+          "fold_enrichment": 13.58,
+          "pvalue": 0.001126,
+          "fdr": 0.1869,
+          "significant": false
+        }
+      ],
+      "notes": []
+    },
+    "module_lightyellow": {
+      "description": "WGCNA module lightyellow (wgcna_module_assignments.tsv)",
+      "background": "wgcna_all_genes",
+      "n_genes": 37,
+      "n_genes_with_go": 29,
+      "fraction_with_go": 0.7838,
+      "n_significant_fdr_lt_0.05": 8,
+      "per_ontology": {
+        "BP": {
+          "set_size_annotated": 16,
+          "universe_size": 1494,
+          "n_terms_tested": 584,
+          "n_significant": 3,
+          "n_significant_bh_hit_terms_only": 9
+        },
+        "MF": {
+          "set_size_annotated": 28,
+          "universe_size": 2433,
+          "n_terms_tested": 365,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 2
+        },
+        "CC": {
+          "set_size_annotated": 16,
+          "universe_size": 1439,
+          "n_terms_tested": 46,
+          "n_significant": 5,
+          "n_significant_bh_hit_terms_only": 5
+        }
+      },
+      "top_terms_by_fdr": [
+        {
+          "ontology": "BP",
+          "go_id": "GO:0010467",
+          "term_name": "gene expression",
+          "overlap": 9,
+          "term_size": 172,
+          "set_size": 16,
+          "fold_enrichment": 4.886,
+          "pvalue": 1.627e-05,
+          "fdr": 0.009502,
+          "significant": true
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0043170",
+          "term_name": "macromolecule metabolic process",
+          "overlap": 12,
+          "term_size": 375,
+          "set_size": 16,
+          "fold_enrichment": 2.988,
+          "pvalue": 3.58e-05,
+          "fdr": 0.01045,
+          "significant": true
+        },
+        {
+          "ontology": "CC",
+          "go_id": "GO:0043228",
+          "term_name": "membraneless organelle",
+          "overlap": 5,
+          "term_size": 76,
+          "set_size": 16,
+          "fold_enrichment": 5.917,
+          "pvalue": 0.0009958,
+          "fdr": 0.01291,
+          "significant": true
+        },
+        {
+          "ontology": "CC",
+          "go_id": "GO:0043229",
+          "term_name": "intracellular organelle",
+          "overlap": 5,
+          "term_size": 76,
+          "set_size": 16,
+          "fold_enrichment": 5.917,
+          "pvalue": 0.0009958,
+          "fdr": 0.01291,
+          "significant": true
+        },
+        {
+          "ontology": "CC",
+          "go_id": "GO:0043232",
+          "term_name": "intracellular membraneless organelle",
+          "overlap": 5,
+          "term_size": 76,
+          "set_size": 16,
+          "fold_enrichment": 5.917,
+          "pvalue": 0.0009958,
+          "fdr": 0.01291,
+          "significant": true
+        }
+      ],
+      "notes": []
+    },
+    "module_magenta": {
+      "description": "WGCNA module magenta (wgcna_module_assignments.tsv)",
+      "background": "wgcna_all_genes",
+      "n_genes": 139,
+      "n_genes_with_go": 90,
+      "fraction_with_go": 0.6475,
+      "n_significant_fdr_lt_0.05": 0,
+      "per_ontology": {
+        "BP": {
+          "set_size_annotated": 51,
+          "universe_size": 1494,
+          "n_terms_tested": 584,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "MF": {
+          "set_size_annotated": 82,
+          "universe_size": 2433,
+          "n_terms_tested": 365,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "CC": {
+          "set_size_annotated": 51,
+          "universe_size": 1439,
+          "n_terms_tested": 46,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        }
+      },
+      "top_terms_by_fdr": [
+        {
+          "ontology": "MF",
+          "go_id": "GO:0140096",
+          "term_name": "catalytic activity, acting on a protein",
+          "overlap": 13,
+          "term_size": 163,
+          "set_size": 82,
+          "fold_enrichment": 2.366,
+          "pvalue": 0.002584,
+          "fdr": 0.5314,
+          "significant": false
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0000155",
+          "term_name": "phosphorelay sensor kinase activity",
+          "overlap": 3,
+          "term_size": 11,
+          "set_size": 82,
+          "fold_enrichment": 8.092,
+          "pvalue": 0.005008,
+          "fdr": 0.5314,
+          "significant": false
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0004673",
+          "term_name": "protein histidine kinase activity",
+          "overlap": 3,
+          "term_size": 13,
+          "set_size": 82,
+          "fold_enrichment": 6.847,
+          "pvalue": 0.008267,
+          "fdr": 0.5314,
+          "significant": false
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0016775",
+          "term_name": "phosphotransferase activity, nitrogenous group as acceptor",
+          "overlap": 3,
+          "term_size": 13,
+          "set_size": 82,
+          "fold_enrichment": 6.847,
+          "pvalue": 0.008267,
+          "fdr": 0.5314,
+          "significant": false
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0140299",
+          "term_name": "molecular sensor activity",
+          "overlap": 3,
+          "term_size": 13,
+          "set_size": 82,
+          "fold_enrichment": 6.847,
+          "pvalue": 0.008267,
+          "fdr": 0.5314,
+          "significant": false
+        }
+      ],
+      "notes": []
+    },
+    "module_midnightblue": {
+      "description": "WGCNA module midnightblue (wgcna_module_assignments.tsv)",
+      "background": "wgcna_all_genes",
+      "n_genes": 53,
+      "n_genes_with_go": 39,
+      "fraction_with_go": 0.7358,
+      "n_significant_fdr_lt_0.05": 0,
+      "per_ontology": {
+        "BP": {
+          "set_size_annotated": 22,
+          "universe_size": 1494,
+          "n_terms_tested": 584,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "MF": {
+          "set_size_annotated": 28,
+          "universe_size": 2433,
+          "n_terms_tested": 365,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "CC": {
+          "set_size_annotated": 21,
+          "universe_size": 1439,
+          "n_terms_tested": 46,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        }
+      },
+      "top_terms_by_fdr": [
+        {
+          "ontology": "BP",
+          "go_id": "GO:0071941",
+          "term_name": "nitrogen cycle metabolic process",
+          "overlap": 2,
+          "term_size": 6,
+          "set_size": 22,
+          "fold_enrichment": 22.64,
+          "pvalue": 0.002997,
+          "fdr": 1.0,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:1902223",
+          "term_name": "erythrose 4-phosphate/phosphoenolpyruvate family amino acid biosynthetic process",
+          "overlap": 2,
+          "term_size": 9,
+          "set_size": 22,
+          "fold_enrichment": 15.09,
+          "pvalue": 0.007003,
+          "fdr": 1.0,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0009396",
+          "term_name": "folic acid-containing compound biosynthetic process",
+          "overlap": 2,
+          "term_size": 10,
+          "set_size": 22,
+          "fold_enrichment": 13.58,
+          "pvalue": 0.008676,
+          "fdr": 1.0,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0000160",
+          "term_name": "phosphorelay signal transduction system",
+          "overlap": 2,
+          "term_size": 11,
+          "set_size": 22,
+          "fold_enrichment": 12.35,
+          "pvalue": 0.01051,
+          "fdr": 1.0,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0042559",
+          "term_name": "pteridine-containing compound biosynthetic process",
+          "overlap": 2,
+          "term_size": 11,
+          "set_size": 22,
+          "fold_enrichment": 12.35,
+          "pvalue": 0.01051,
+          "fdr": 1.0,
+          "significant": false
+        }
+      ],
+      "notes": []
+    },
+    "module_pink": {
+      "description": "WGCNA module pink (wgcna_module_assignments.tsv)",
+      "background": "wgcna_all_genes",
+      "n_genes": 141,
+      "n_genes_with_go": 94,
+      "fraction_with_go": 0.6667,
+      "n_significant_fdr_lt_0.05": 0,
+      "per_ontology": {
+        "BP": {
+          "set_size_annotated": 56,
+          "universe_size": 1494,
+          "n_terms_tested": 584,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "MF": {
+          "set_size_annotated": 80,
+          "universe_size": 2433,
+          "n_terms_tested": 365,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "CC": {
+          "set_size_annotated": 58,
+          "universe_size": 1439,
+          "n_terms_tested": 46,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        }
+      },
+      "top_terms_by_fdr": [
+        {
+          "ontology": "MF",
+          "go_id": "GO:0016829",
+          "term_name": "lyase activity",
+          "overlap": 13,
+          "term_size": 158,
+          "set_size": 80,
+          "fold_enrichment": 2.502,
+          "pvalue": 0.001542,
+          "fdr": 0.3561,
+          "significant": false
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0004016",
+          "term_name": "adenylate cyclase activity",
+          "overlap": 5,
+          "term_size": 29,
+          "set_size": 80,
+          "fold_enrichment": 5.244,
+          "pvalue": 0.002165,
+          "fdr": 0.3561,
+          "significant": false
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0009975",
+          "term_name": "cyclase activity",
+          "overlap": 5,
+          "term_size": 32,
+          "set_size": 80,
+          "fold_enrichment": 4.752,
+          "pvalue": 0.003398,
+          "fdr": 0.3561,
+          "significant": false
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0016849",
+          "term_name": "phosphorus-oxygen lyase activity",
+          "overlap": 5,
+          "term_size": 33,
+          "set_size": 80,
+          "fold_enrichment": 4.608,
+          "pvalue": 0.003903,
+          "fdr": 0.3561,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0009187",
+          "term_name": "cyclic nucleotide metabolic process",
+          "overlap": 5,
+          "term_size": 25,
+          "set_size": 56,
+          "fold_enrichment": 5.336,
+          "pvalue": 0.001849,
+          "fdr": 0.3834,
+          "significant": false
+        }
+      ],
+      "notes": []
+    },
+    "module_purple": {
+      "description": "WGCNA module purple (wgcna_module_assignments.tsv)",
+      "background": "wgcna_all_genes",
+      "n_genes": 136,
+      "n_genes_with_go": 109,
+      "fraction_with_go": 0.8015,
+      "n_significant_fdr_lt_0.05": 0,
+      "per_ontology": {
+        "BP": {
+          "set_size_annotated": 65,
+          "universe_size": 1494,
+          "n_terms_tested": 584,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 3
+        },
+        "MF": {
+          "set_size_annotated": 98,
+          "universe_size": 2433,
+          "n_terms_tested": 365,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "CC": {
+          "set_size_annotated": 66,
+          "universe_size": 1439,
+          "n_terms_tested": 46,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        }
+      },
+      "top_terms_by_fdr": [
+        {
+          "ontology": "BP",
+          "go_id": "GO:0006091",
+          "term_name": "generation of precursor metabolites and energy",
+          "overlap": 11,
+          "term_size": 68,
+          "set_size": 65,
+          "fold_enrichment": 3.718,
+          "pvalue": 9.725e-05,
+          "fdr": 0.05679,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0009060",
+          "term_name": "aerobic respiration",
+          "overlap": 8,
+          "term_size": 43,
+          "set_size": 65,
+          "fold_enrichment": 4.276,
+          "pvalue": 0.0003588,
+          "fdr": 0.07836,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0006099",
+          "term_name": "tricarboxylic acid cycle",
+          "overlap": 5,
+          "term_size": 16,
+          "set_size": 65,
+          "fold_enrichment": 7.183,
+          "pvalue": 0.0004025,
+          "fdr": 0.07836,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0045333",
+          "term_name": "cellular respiration",
+          "overlap": 8,
+          "term_size": 48,
+          "set_size": 65,
+          "fold_enrichment": 3.831,
+          "pvalue": 0.0007846,
+          "fdr": 0.1145,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0015980",
+          "term_name": "energy derivation by oxidation of organic compounds",
+          "overlap": 8,
+          "term_size": 55,
+          "set_size": 65,
+          "fold_enrichment": 3.343,
+          "pvalue": 0.001984,
+          "fdr": 0.2317,
+          "significant": false
+        }
+      ],
+      "notes": []
+    },
+    "module_red": {
+      "description": "WGCNA module red (wgcna_module_assignments.tsv)",
+      "background": "wgcna_all_genes",
+      "n_genes": 162,
+      "n_genes_with_go": 108,
+      "fraction_with_go": 0.6667,
+      "n_significant_fdr_lt_0.05": 0,
+      "per_ontology": {
+        "BP": {
+          "set_size_annotated": 58,
+          "universe_size": 1494,
+          "n_terms_tested": 584,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "MF": {
+          "set_size_annotated": 90,
+          "universe_size": 2433,
+          "n_terms_tested": 365,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "CC": {
+          "set_size_annotated": 46,
+          "universe_size": 1439,
+          "n_terms_tested": 46,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        }
+      },
+      "top_terms_by_fdr": [
+        {
+          "ontology": "BP",
+          "go_id": "GO:0043650",
+          "term_name": "dicarboxylic acid biosynthetic process",
+          "overlap": 3,
+          "term_size": 8,
+          "set_size": 58,
+          "fold_enrichment": 9.659,
+          "pvalue": 0.002709,
+          "fdr": 1.0,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0043648",
+          "term_name": "dicarboxylic acid metabolic process",
+          "overlap": 5,
+          "term_size": 29,
+          "set_size": 58,
+          "fold_enrichment": 4.441,
+          "pvalue": 0.0043,
+          "fdr": 1.0,
+          "significant": false
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0140098",
+          "term_name": "catalytic activity, acting on RNA",
+          "overlap": 8,
+          "term_size": 78,
+          "set_size": 90,
+          "fold_enrichment": 2.773,
+          "pvalue": 0.007173,
+          "fdr": 1.0,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0016070",
+          "term_name": "RNA metabolic process",
+          "overlap": 8,
+          "term_size": 84,
+          "set_size": 58,
+          "fold_enrichment": 2.453,
+          "pvalue": 0.01359,
+          "fdr": 1.0,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0046503",
+          "term_name": "glycerolipid catabolic process",
+          "overlap": 2,
+          "term_size": 6,
+          "set_size": 58,
+          "fold_enrichment": 8.586,
+          "pvalue": 0.0201,
+          "fdr": 1.0,
+          "significant": false
+        }
+      ],
+      "notes": []
+    },
+    "module_royalblue": {
+      "description": "WGCNA module royalblue (wgcna_module_assignments.tsv)",
+      "background": "wgcna_all_genes",
+      "n_genes": 36,
+      "n_genes_with_go": 25,
+      "fraction_with_go": 0.6944,
+      "n_significant_fdr_lt_0.05": 0,
+      "per_ontology": {
+        "BP": {
+          "set_size_annotated": 9,
+          "universe_size": 1494,
+          "n_terms_tested": 584,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "MF": {
+          "set_size_annotated": 22,
+          "universe_size": 2433,
+          "n_terms_tested": 365,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "CC": {
+          "set_size_annotated": 11,
+          "universe_size": 1439,
+          "n_terms_tested": 46,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        }
+      },
+      "top_terms_by_fdr": [
+        {
+          "ontology": "BP",
+          "go_id": "GO:0008299",
+          "term_name": "isoprenoid biosynthetic process",
+          "overlap": 2,
+          "term_size": 20,
+          "set_size": 9,
+          "fold_enrichment": 16.6,
+          "pvalue": 0.005796,
+          "fdr": 1.0,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0006720",
+          "term_name": "isoprenoid metabolic process",
+          "overlap": 2,
+          "term_size": 22,
+          "set_size": 9,
+          "fold_enrichment": 15.09,
+          "pvalue": 0.007003,
+          "fdr": 1.0,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0008610",
+          "term_name": "lipid biosynthetic process",
+          "overlap": 4,
+          "term_size": 174,
+          "set_size": 9,
+          "fold_enrichment": 3.816,
+          "pvalue": 0.01398,
+          "fdr": 1.0,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0009240",
+          "term_name": "isopentenyl diphosphate biosynthetic process",
+          "overlap": 1,
+          "term_size": 7,
+          "set_size": 9,
+          "fold_enrichment": 23.71,
+          "pvalue": 0.0415,
+          "fdr": 1.0,
+          "significant": false
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0019288",
+          "term_name": "isopentenyl diphosphate biosynthetic process, methylerythritol phosphate pathway",
+          "overlap": 1,
+          "term_size": 7,
+          "set_size": 9,
+          "fold_enrichment": 23.71,
+          "pvalue": 0.0415,
+          "fdr": 1.0,
+          "significant": false
+        }
+      ],
+      "notes": []
+    },
+    "module_salmon": {
+      "description": "WGCNA module salmon (wgcna_module_assignments.tsv)",
+      "background": "wgcna_all_genes",
+      "n_genes": 71,
+      "n_genes_with_go": 51,
+      "fraction_with_go": 0.7183,
+      "n_significant_fdr_lt_0.05": 0,
+      "per_ontology": {
+        "BP": {
+          "set_size_annotated": 24,
+          "universe_size": 1494,
+          "n_terms_tested": 584,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "MF": {
+          "set_size_annotated": 43,
+          "universe_size": 2433,
+          "n_terms_tested": 365,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "CC": {
+          "set_size_annotated": 19,
+          "universe_size": 1439,
+          "n_terms_tested": 46,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        }
+      },
+      "top_terms_by_fdr": [
+        {
+          "ontology": "CC",
+          "go_id": "GO:0043190",
+          "term_name": "ATP-binding cassette (ABC) transporter complex",
+          "overlap": 2,
+          "term_size": 25,
+          "set_size": 19,
+          "fold_enrichment": 6.059,
+          "pvalue": 0.04137,
+          "fdr": 0.6113,
+          "significant": false
+        },
+        {
+          "ontology": "CC",
+          "go_id": "GO:0098533",
+          "term_name": "ATPase dependent transmembrane transport complex",
+          "overlap": 2,
+          "term_size": 25,
+          "set_size": 19,
+          "fold_enrichment": 6.059,
+          "pvalue": 0.04137,
+          "fdr": 0.6113,
+          "significant": false
+        },
+        {
+          "ontology": "CC",
+          "go_id": "GO:0098797",
+          "term_name": "plasma membrane protein complex",
+          "overlap": 2,
+          "term_size": 29,
+          "set_size": 19,
+          "fold_enrichment": 5.223,
+          "pvalue": 0.05426,
+          "fdr": 0.6113,
+          "significant": false
+        },
+        {
+          "ontology": "CC",
+          "go_id": "GO:0005694",
+          "term_name": "chromosome",
+          "overlap": 1,
+          "term_size": 5,
+          "set_size": 19,
+          "fold_enrichment": 15.15,
+          "pvalue": 0.06438,
+          "fdr": 0.6113,
+          "significant": false
+        },
+        {
+          "ontology": "CC",
+          "go_id": "GO:1902495",
+          "term_name": "transmembrane transporter complex",
+          "overlap": 2,
+          "term_size": 36,
+          "set_size": 19,
+          "fold_enrichment": 4.208,
+          "pvalue": 0.07973,
+          "fdr": 0.6113,
+          "significant": false
+        }
+      ],
+      "notes": []
+    },
+    "module_tan": {
+      "description": "WGCNA module tan (wgcna_module_assignments.tsv)",
+      "background": "wgcna_all_genes",
+      "n_genes": 75,
+      "n_genes_with_go": 63,
+      "fraction_with_go": 0.84,
+      "n_significant_fdr_lt_0.05": 2,
+      "per_ontology": {
+        "BP": {
+          "set_size_annotated": 39,
+          "universe_size": 1494,
+          "n_terms_tested": 584,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "MF": {
+          "set_size_annotated": 57,
+          "universe_size": 2433,
+          "n_terms_tested": 365,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "CC": {
+          "set_size_annotated": 33,
+          "universe_size": 1439,
+          "n_terms_tested": 46,
+          "n_significant": 2,
+          "n_significant_bh_hit_terms_only": 4
+        }
+      },
+      "top_terms_by_fdr": [
+        {
+          "ontology": "CC",
+          "go_id": "GO:0032991",
+          "term_name": "protein-containing complex",
+          "overlap": 11,
+          "term_size": 175,
+          "set_size": 33,
+          "fold_enrichment": 2.741,
+          "pvalue": 0.001095,
+          "fdr": 0.04431,
+          "significant": true
+        },
+        {
+          "ontology": "CC",
+          "go_id": "GO:1902494",
+          "term_name": "catalytic complex",
+          "overlap": 7,
+          "term_size": 82,
+          "set_size": 33,
+          "fold_enrichment": 3.722,
+          "pvalue": 0.001926,
+          "fdr": 0.04431,
+          "significant": true
+        },
+        {
+          "ontology": "CC",
+          "go_id": "GO:0005960",
+          "term_name": "glycine cleavage complex",
+          "overlap": 2,
+          "term_size": 5,
+          "set_size": 33,
+          "fold_enrichment": 17.44,
+          "pvalue": 0.004886,
+          "fdr": 0.05619,
+          "significant": false
+        },
+        {
+          "ontology": "CC",
+          "go_id": "GO:0033202",
+          "term_name": "DNA helicase complex",
+          "overlap": 2,
+          "term_size": 5,
+          "set_size": 33,
+          "fold_enrichment": 17.44,
+          "pvalue": 0.004886,
+          "fdr": 0.05619,
+          "significant": false
+        },
+        {
+          "ontology": "CC",
+          "go_id": "GO:1990234",
+          "term_name": "transferase complex",
+          "overlap": 3,
+          "term_size": 21,
+          "set_size": 33,
+          "fold_enrichment": 6.229,
+          "pvalue": 0.01103,
+          "fdr": 0.09455,
+          "significant": false
+        }
+      ],
+      "notes": []
+    },
+    "module_turquoise": {
+      "description": "WGCNA module turquoise (wgcna_module_assignments.tsv)",
+      "background": "wgcna_all_genes",
+      "n_genes": 1039,
+      "n_genes_with_go": 749,
+      "fraction_with_go": 0.7209,
+      "n_significant_fdr_lt_0.05": 33,
+      "per_ontology": {
+        "BP": {
+          "set_size_annotated": 326,
+          "universe_size": 1494,
+          "n_terms_tested": 584,
+          "n_significant": 22,
+          "n_significant_bh_hit_terms_only": 30
+        },
+        "MF": {
+          "set_size_annotated": 666,
+          "universe_size": 2433,
+          "n_terms_tested": 365,
+          "n_significant": 10,
+          "n_significant_bh_hit_terms_only": 12
+        },
+        "CC": {
+          "set_size_annotated": 304,
+          "universe_size": 1439,
+          "n_terms_tested": 46,
+          "n_significant": 1,
+          "n_significant_bh_hit_terms_only": 1
+        }
+      },
+      "top_terms_by_fdr": [
+        {
+          "ontology": "MF",
+          "go_id": "GO:0003700",
+          "term_name": "DNA-binding transcription factor activity",
+          "overlap": 74,
+          "term_size": 154,
+          "set_size": 666,
+          "fold_enrichment": 1.755,
+          "pvalue": 1.245e-08,
+          "fdr": 2.7e-06,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0140110",
+          "term_name": "transcription regulator activity",
+          "overlap": 76,
+          "term_size": 160,
+          "set_size": 666,
+          "fold_enrichment": 1.735,
+          "pvalue": 1.479e-08,
+          "fdr": 2.7e-06,
+          "significant": true
+        },
+        {
+          "ontology": "BP",
+          "go_id": "GO:0006629",
+          "term_name": "lipid metabolic process",
+          "overlap": 95,
+          "term_size": 271,
+          "set_size": 326,
+          "fold_enrichment": 1.607,
+          "pvalue": 1.74e-08,
+          "fdr": 1.016e-05,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0043565",
+          "term_name": "sequence-specific DNA binding",
+          "overlap": 55,
+          "term_size": 108,
+          "set_size": 666,
+          "fold_enrichment": 1.86,
+          "pvalue": 9.169e-08,
+          "fdr": 1.116e-05,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0000976",
+          "term_name": "transcription cis-regulatory region binding",
+          "overlap": 50,
+          "term_size": 97,
+          "set_size": 666,
+          "fold_enrichment": 1.883,
+          "pvalue": 2.239e-07,
+          "fdr": 1.634e-05,
+          "significant": true
+        }
+      ],
+      "notes": []
+    },
+    "module_yellow": {
+      "description": "WGCNA module yellow (wgcna_module_assignments.tsv)",
+      "background": "wgcna_all_genes",
+      "n_genes": 311,
+      "n_genes_with_go": 227,
+      "fraction_with_go": 0.7299,
+      "n_significant_fdr_lt_0.05": 13,
+      "per_ontology": {
+        "BP": {
+          "set_size_annotated": 139,
+          "universe_size": 1494,
+          "n_terms_tested": 584,
+          "n_significant": 0,
+          "n_significant_bh_hit_terms_only": 0
+        },
+        "MF": {
+          "set_size_annotated": 202,
+          "universe_size": 2433,
+          "n_terms_tested": 365,
+          "n_significant": 6,
+          "n_significant_bh_hit_terms_only": 7
+        },
+        "CC": {
+          "set_size_annotated": 118,
+          "universe_size": 1439,
+          "n_terms_tested": 46,
+          "n_significant": 7,
+          "n_significant_bh_hit_terms_only": 8
+        }
+      },
+      "top_terms_by_fdr": [
+        {
+          "ontology": "CC",
+          "go_id": "GO:0140535",
+          "term_name": "intracellular protein-containing complex",
+          "overlap": 10,
+          "term_size": 27,
+          "set_size": 118,
+          "fold_enrichment": 4.517,
+          "pvalue": 2.411e-05,
+          "fdr": 0.001109,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0004518",
+          "term_name": "nuclease activity",
+          "overlap": 14,
+          "term_size": 44,
+          "set_size": 202,
+          "fold_enrichment": 3.832,
+          "pvalue": 5.814e-06,
+          "fdr": 0.002122,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0016787",
+          "term_name": "hydrolase activity",
+          "overlap": 62,
+          "term_size": 476,
+          "set_size": 202,
+          "fold_enrichment": 1.569,
+          "pvalue": 5.236e-05,
+          "fdr": 0.009556,
+          "significant": true
+        },
+        {
+          "ontology": "MF",
+          "go_id": "GO:0140640",
+          "term_name": "catalytic activity, acting on a nucleic acid",
+          "overlap": 26,
+          "term_size": 146,
+          "set_size": 202,
+          "fold_enrichment": 2.145,
+          "pvalue": 9.963e-05,
+          "fdr": 0.01212,
+          "significant": true
+        },
+        {
+          "ontology": "CC",
+          "go_id": "GO:1905347",
+          "term_name": "endodeoxyribonuclease complex",
+          "overlap": 4,
+          "term_size": 6,
+          "set_size": 118,
+          "fold_enrichment": 8.13,
+          "pvalue": 0.0005674,
+          "fdr": 0.01305,
+          "significant": true
+        }
+      ],
+      "notes": []
+    }
+  },
+  "caveats": [
+    "99.7% of the UniProtKB GO annotations used are electronic (IEA: InterPro2GO, UniRule, EC and similar pipelines), not experimental, so the results describe predicted function.",
+    "tested_clinostat_vs_static1g, tested_rpm2_vs_static1g, tested_clinostat_vs_rpm2, tested_both_simulators: 2821 of 3967 genes (71.1%) have at least one GO annotation (BP 1494, MF 2432, CC 1438). Unannotated genes, mostly hypothetical proteins, cannot contribute.",
+    "wgcna_all_genes: 2822 of 3968 genes (71.1%) have at least one GO annotation (BP 1494, MF 2433, CC 1439). Unannotated genes, mostly hypothetical proteins, cannot contribute.",
+    "BH is applied over all size-eligible terms (conservative). With the clusterProfiler enricher convention (BH over terms with at least one hit, column fdr_bh_hit_terms_only) the total across gene sets is 291 significant term-tests instead of 201.",
+    "GO terms overlap (parents and children share genes), so significant terms within a gene set are not independent findings.",
+    "The hypergeometric test treats genes as independent. Co-transcribed operons whose members share annotations (for example nuo or mce clusters) can drive a term on their own; check overlap_gene_ids before interpreting a term.",
+    "clinostat_vs_rpm2_up: empty gene set: nothing tested.",
+    "clinostat_vs_rpm2_down: empty gene set: nothing tested."
+  ],
+  "outputs": [
+    "data/processed/go_enrichment_deg.tsv",
+    "data/processed/go_enrichment_modules.tsv",
+    "data/processed/go_summary.json"
+  ]
+}
