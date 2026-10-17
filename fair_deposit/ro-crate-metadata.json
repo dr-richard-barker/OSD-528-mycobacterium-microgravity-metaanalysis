@@ -14,91 +14,225 @@
     {
       "@id": "./",
       "@type": "Dataset",
-      "name": "OSD-528 Mycobacterium marinum Simulated Microgravity Meta-Analysis & Tabular AI Package",
-      "description": "FAIR research object containing harmonized transcriptomics, WGCNA network models, Nature 2025 TabPFN foundation tabular machine learning pipelines, functional ontology enrichments, and publication manuscripts for NASA OSDR OSD-528.",
-      "datePublished": "2026-09-02",
-      "license": "https://creativecommons.org/licenses/by/4.0/",
-      "creator": [
-        {
-          "@id": "https://orcid.org/0000-0002-4567-8901",
-          "@type": "Person",
-          "name": "Richard Barker",
-          "affiliation": "Department of Agricultural and Biological Engineering, Purdue University, West Lafayette, IN, USA"
-        }
-      ],
+      "name": "A shared transcriptional response of Mycobacterium marinum to two microgravity simulators: a re-analysis of NASA OSDR study OSD-528",
+      "description": "Processed outputs, code and manuscript of an independent re-analysis of NASA OSDR OSD-528.",
+      "author": {
+        "@id": "https://orcid.org/0000-0001-5681-9857"
+      },
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "isBasedOn": {
+        "@id": "https://doi.org/10.26030/r3re-fd65"
+      },
       "hasPart": [
         {
-          "@id": "data/processed/osd528_sample_metadata.tsv"
+          "@id": "results_tables/Table_S1_kallisto_estimated_counts.tsv"
         },
         {
-          "@id": "data/processed/osd528_counts_normalized.tsv"
+          "@id": "results_tables/Table_S2_kallisto_tpm.tsv"
         },
         {
-          "@id": "data/processed/deg_3dclinostat_vs_static1g.tsv"
+          "@id": "results_tables/Table_S3_samples_and_sequencing_qc.tsv"
         },
         {
-          "@id": "data/processed/deg_rpm2_vs_static1g.tsv"
+          "@id": "results_tables/Table_S4_deseq2_clinostat_vs_static1g.tsv"
         },
         {
-          "@id": "data/processed/deg_3dclinostat_vs_rpm2.tsv"
+          "@id": "results_tables/Table_S5_deseq2_rpm2_vs_static1g.tsv"
         },
         {
-          "@id": "data/processed/wgcna_module_assignments.tsv"
+          "@id": "results_tables/Table_S6_deseq2_clinostat_vs_rpm2.tsv"
         },
         {
-          "@id": "data/processed/wgcna_module_eigengenes.tsv"
+          "@id": "results_tables/Table_S7_shared_simulated_microgravity_genes.tsv"
         },
         {
-          "@id": "data/processed/tabpfn_predictions.tsv"
+          "@id": "results_tables/Table_S8_deseq2_sensitivity_with_rfprpm4.tsv"
         },
         {
-          "@id": "data/processed/tabpfn_feature_importance.tsv"
+          "@id": "results_tables/Table_S9_wgcna_module_assignments.tsv"
         },
         {
-          "@id": "data/processed/ontology_functional_enrichment.tsv"
+          "@id": "results_tables/Table_S10_wgcna_module_eigengenes.tsv"
         },
         {
-          "@id": "manuscript/OSD528_Microbial_Microgravity_Manuscript.pdf"
+          "@id": "results_tables/Table_S11_wgcna_module_trait_correlations.tsv"
         },
         {
-          "@id": "manuscript/OSD528_Microbial_Microgravity_Manuscript.docx"
+          "@id": "results_tables/Table_S12_go_enrichment_deg_sets.tsv"
+        },
+        {
+          "@id": "results_tables/Table_S13_go_enrichment_wgcna_modules.tsv"
+        },
+        {
+          "@id": "results_tables/Table_S14_classification_loocv_predictions.tsv"
+        },
+        {
+          "@id": "results_tables/Table_S15_classification_metrics.tsv"
+        },
+        {
+          "@id": "results_tables/Table_S16_pan_microbial_osdr_compendium_102studies.tsv"
+        },
+        {
+          "@id": "results_tables/Table_S17_kegg_mapped_reactions.tsv"
+        },
+        {
+          "@id": "results_tables/Table_S18_kegg_subsystem_summary.tsv"
+        },
+        {
+          "@id": "results_tables/Table_S19_metabolic_model.json"
         }
       ]
     },
     {
-      "@id": "data/processed/osd528_sample_metadata.tsv",
-      "@type": "File",
-      "name": "OSD-528 Sample Metadata",
-      "encodingFormat": "text/tab-separated-values",
-      "description": "Sample-level annotations including simulator modality, exposure duration, and growth surface."
+      "@id": "https://orcid.org/0000-0001-5681-9857",
+      "@type": "Person",
+      "name": "Richard Barker",
+      "affiliation": "Collaborative Science Environment Inc., Madison, Wisconsin, USA"
     },
     {
-      "@id": "data/processed/osd528_counts_normalized.tsv",
-      "@type": "File",
-      "name": "Normalized Expression Matrix",
-      "encodingFormat": "text/tab-separated-values",
-      "description": "Variance-stabilized log2 expression values across 5,424 M. marinum genes and 9 samples."
+      "@id": "https://doi.org/10.26030/r3re-fd65",
+      "@type": "Dataset",
+      "name": "NASA OSDR OSD-528 (GLDS-528)"
     },
     {
-      "@id": "data/processed/wgcna_module_assignments.tsv",
-      "@type": "File",
-      "name": "WGCNA Module Assignments and Hub Connectivities",
-      "encodingFormat": "text/tab-separated-values",
-      "description": "Co-expression module assignments (MEturquoise, MEblue, MEbrown, MEyellow, MEgreen) with k_within connectivity."
+      "@id": "https://creativecommons.org/licenses/by/4.0/",
+      "@type": "CreativeWork",
+      "name": "CC BY 4.0"
     },
     {
-      "@id": "data/processed/tabpfn_predictions.tsv",
+      "@id": "results_tables/Table_S1_kallisto_estimated_counts.tsv",
       "@type": "File",
-      "name": "TabPFN Model Predictions",
-      "encodingFormat": "text/tab-separated-values",
-      "description": "Calibrated posterior predictive probabilities and classifications under LOOCV via TabPFN foundation model."
+      "name": "Table_S1_kallisto_estimated_counts.tsv",
+      "description": "kallisto estimated read-pair counts per CDS, all nine deposited samples (RFPRPM4 = inferred second library)",
+      "encodingFormat": "text/tab-separated-values"
     },
     {
-      "@id": "data/processed/tabpfn_feature_importance.tsv",
+      "@id": "results_tables/Table_S2_kallisto_tpm.tsv",
       "@type": "File",
-      "name": "TabPFN Permutation Feature Importance",
-      "encodingFormat": "text/tab-separated-values",
-      "description": "Model-agnostic permutation importance rankings for spaceflight biomarkers."
+      "name": "Table_S2_kallisto_tpm.tsv",
+      "description": "Transcripts per million per CDS, all nine samples",
+      "encodingFormat": "text/tab-separated-values"
+    },
+    {
+      "@id": "results_tables/Table_S3_samples_and_sequencing_qc.tsv",
+      "@type": "File",
+      "name": "Table_S3_samples_and_sequencing_qc.tsv",
+      "description": "Sample groups, primary/sensitivity use, library index, read pairs and read assignment (rRNA, other ncRNA, CDS)",
+      "encodingFormat": "text/tab-separated-values"
+    },
+    {
+      "@id": "results_tables/Table_S4_deseq2_clinostat_vs_static1g.tsv",
+      "@type": "File",
+      "name": "Table_S4_deseq2_clinostat_vs_static1g.tsv",
+      "description": "DESeq2: 3D clinostat vs static 1g (primary samples); MLE and apeglm-shrunk log2FC, Wald p, BH FDR",
+      "encodingFormat": "text/tab-separated-values"
+    },
+    {
+      "@id": "results_tables/Table_S5_deseq2_rpm2_vs_static1g.tsv",
+      "@type": "File",
+      "name": "Table_S5_deseq2_rpm2_vs_static1g.tsv",
+      "description": "DESeq2: RPM 2.0 vs static 1g (primary samples)",
+      "encodingFormat": "text/tab-separated-values"
+    },
+    {
+      "@id": "results_tables/Table_S6_deseq2_clinostat_vs_rpm2.tsv",
+      "@type": "File",
+      "name": "Table_S6_deseq2_clinostat_vs_rpm2.tsv",
+      "description": "DESeq2: 3D clinostat vs RPM 2.0 (primary samples)",
+      "encodingFormat": "text/tab-separated-values"
+    },
+    {
+      "@id": "results_tables/Table_S7_shared_simulated_microgravity_genes.tsv",
+      "@type": "File",
+      "name": "Table_S7_shared_simulated_microgravity_genes.tsv",
+      "description": "Genes differentially expressed under both simulators in the same direction",
+      "encodingFormat": "text/tab-separated-values"
+    },
+    {
+      "@id": "results_tables/Table_S8_deseq2_sensitivity_with_rfprpm4.tsv",
+      "@type": "File",
+      "name": "Table_S8_deseq2_sensitivity_with_rfprpm4.tsv",
+      "description": "DESeq2 results for all three contrasts with the inferred RFPRPM4 library included (sensitivity analysis)",
+      "encodingFormat": "text/tab-separated-values"
+    },
+    {
+      "@id": "results_tables/Table_S9_wgcna_module_assignments.tsv",
+      "@type": "File",
+      "name": "Table_S9_wgcna_module_assignments.tsv",
+      "description": "WGCNA module, module membership (kME) and connectivity (kTotal, kWithin) per gene",
+      "encodingFormat": "text/tab-separated-values"
+    },
+    {
+      "@id": "results_tables/Table_S10_wgcna_module_eigengenes.tsv",
+      "@type": "File",
+      "name": "Table_S10_wgcna_module_eigengenes.tsv",
+      "description": "Module eigengenes per primary sample",
+      "encodingFormat": "text/tab-separated-values"
+    },
+    {
+      "@id": "results_tables/Table_S11_wgcna_module_trait_correlations.tsv",
+      "@type": "File",
+      "name": "Table_S11_wgcna_module_trait_correlations.tsv",
+      "description": "Module eigengene vs trait Pearson correlation, Student p and BH FDR",
+      "encodingFormat": "text/tab-separated-values"
+    },
+    {
+      "@id": "results_tables/Table_S12_go_enrichment_deg_sets.tsv",
+      "@type": "File",
+      "name": "Table_S12_go_enrichment_deg_sets.tsv",
+      "description": "GO over-representation (hypergeometric, BH FDR) for up and down DEG sets and the shared response",
+      "encodingFormat": "text/tab-separated-values"
+    },
+    {
+      "@id": "results_tables/Table_S13_go_enrichment_wgcna_modules.tsv",
+      "@type": "File",
+      "name": "Table_S13_go_enrichment_wgcna_modules.tsv",
+      "description": "GO over-representation for each WGCNA module",
+      "encodingFormat": "text/tab-separated-values"
+    },
+    {
+      "@id": "results_tables/Table_S14_classification_loocv_predictions.tsv",
+      "@type": "File",
+      "name": "Table_S14_classification_loocv_predictions.tsv",
+      "description": "Leave-one-out held-out predictions and class probabilities (TabPFN, logistic regression, random forest)",
+      "encodingFormat": "text/tab-separated-values"
+    },
+    {
+      "@id": "results_tables/Table_S15_classification_metrics.tsv",
+      "@type": "File",
+      "name": "Table_S15_classification_metrics.tsv",
+      "description": "LOOCV accuracy, balanced accuracy, AUROC and label-permutation p-values per model, task and feature count",
+      "encodingFormat": "text/tab-separated-values"
+    },
+    {
+      "@id": "results_tables/Table_S16_pan_microbial_osdr_compendium_102studies.tsv",
+      "@type": "File",
+      "name": "Table_S16_pan_microbial_osdr_compendium_102studies.tsv",
+      "description": "Microbial spaceflight and simulated-microgravity studies in NASA OSDR, from the OSDR API",
+      "encodingFormat": "text/tab-separated-values"
+    },
+    {
+      "@id": "results_tables/Table_S17_kegg_mapped_reactions.tsv",
+      "@type": "File",
+      "name": "Table_S17_kegg_mapped_reactions.tsv",
+      "description": "Curated reactions with their KEGG-supported M. marinum genes and per-contrast expression changes",
+      "encodingFormat": "text/tab-separated-values"
+    },
+    {
+      "@id": "results_tables/Table_S18_kegg_subsystem_summary.tsv",
+      "@type": "File",
+      "name": "Table_S18_kegg_subsystem_summary.tsv",
+      "description": "Per-subsystem, per-contrast summaries of the KEGG-mapped reactions",
+      "encodingFormat": "text/tab-separated-values"
+    },
+    {
+      "@id": "results_tables/Table_S19_metabolic_model.json",
+      "@type": "File",
+      "name": "Table_S19_metabolic_model.json",
+      "description": "Reaction model with KEGG-supported gene links (JSON)",
+      "encodingFormat": "application/json"
     }
   ]
 }

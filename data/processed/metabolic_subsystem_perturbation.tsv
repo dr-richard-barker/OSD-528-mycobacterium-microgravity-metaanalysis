@@ -1,9 +1,17 @@
-subsystem	reaction_count	significant_reactions	mean_net_log2fc	mean_abs_log2fc	subsystem_perturbation_index	predominant_flux_shift
-Nitrogen Shunts & Polyamines	2	2	6.585	6.585	24.517	Activation
-Redox Homeostasis & Cofactors	4	3	3.484	4.313	10.619	Activation
-Cellular Respiration & Energy	6	3	2.537	3.277	5.266	Activation
-Type VII Secretion & Virulence	4	1	-0.544	1.688	2.869	Repression
-GPL Biofilm & Cell Surface	3	0	-0.948	2.435	2.685	Repression
-Mycolic Acid & FAS-II Envelope	7	1	0.378	0.851	1.237	Activation
-DosR Hypoxia & Dormancy	2	0	-0.645	0.931	0.967	Repression
-Central Carbon & Glyoxylate Shunt	4	0	-0.666	0.666	0.729	Repression
+subsystem	contrast	n_reactions	n_genes_mapped	n_genes_tested	n_deg	n_up	n_down	deg_fraction	background_n_tested	background_n_deg	fold_enrichment	hypergeom_p	bh_fdr	median_log2fc_shrunk	lead_gene_id	lead_gene_symbol	lead_log2fc_shrunk	lead_padj
+Cellular Respiration & Energy	clinostat_vs_static1g	5	20	19	7	7	0	0.368	3967	619	2.361	1.979e-02	1.583e-01	0.8958	MMAR_RS07295	nuoH	1.6877	3.669e-03
+DosR Hypoxia & Dormancy	clinostat_vs_static1g	2	4	4	2	0	2	0.500	3967	619	3.204	1.174e-01	4.695e-01	-0.9735	MMAR_RS14935	-	-1.8097	1.822e-04
+Arginine & Branched-Chain Amino Acid Biosynthesis	clinostat_vs_static1g	2	7	7	2	2	0	0.286	3967	619	1.831	3.003e-01	6.006e-01	0.0836	MMAR_RS12305	argF	2.2449	1.708e-03
+Central Carbon & Glyoxylate Shunt	clinostat_vs_static1g	4	7	7	2	1	1	0.286	3967	619	1.831	3.003e-01	6.006e-01	-0.0437	MMAR_RS03910	icl	-2.0271	3.897e-03
+Type VII (ESX) Secretion	clinostat_vs_static1g	4	38	27	5	3	2	0.185	3967	619	1.187	4.160e-01	6.655e-01	0.1698	MMAR_RS18200	esxN_3	1.6412	1.615e-05
+Mycolic Acid & FAS-II Envelope	clinostat_vs_static1g	7	17	15	0	0	0	0.000	3967	619	0.000	1.000e+00	1.000e+00	0.1189	MMAR_RS24025	-	-0.6865	2.051e-01
+Peptidoglycan Biosynthesis	clinostat_vs_static1g	1	1	1	0	0	0	0.000	3967	619	0.000	1.000e+00	1.000e+00	0.1259	MMAR_RS20430	murA	0.1259	8.389e-01
+Redox Homeostasis & Cofactors	clinostat_vs_static1g	3	6	6	0	0	0	0.000	3967	619	0.000	1.000e+00	1.000e+00	0.2796	MMAR_RS11045	ribG	0.7347	1.212e-01
+Cellular Respiration & Energy	rpm2_vs_static1g	5	20	19	10	10	0	0.526	3967	706	2.957	5.881e-04	4.705e-03	1.4063	MMAR_RS07295	nuoH	2.2443	3.051e-04
+DosR Hypoxia & Dormancy	rpm2_vs_static1g	2	4	4	2	0	2	0.500	3967	706	2.809	1.479e-01	5.111e-01	-2.0234	MMAR_RS14935	-	-3.4380	1.637e-10
+Type VII (ESX) Secretion	rpm2_vs_static1g	4	38	27	7	5	2	0.259	3967	706	1.457	1.916e-01	5.111e-01	0.3491	MMAR_RS18200	esxN_3	1.8740	4.577e-06
+Arginine & Branched-Chain Amino Acid Biosynthesis	rpm2_vs_static1g	2	7	7	1	1	0	0.143	3967	706	0.803	7.466e-01	1.000e+00	0.2007	MMAR_RS11620	ilvB1_3	1.4916	6.499e-03
+Central Carbon & Glyoxylate Shunt	rpm2_vs_static1g	4	7	7	1	0	1	0.143	3967	706	0.803	7.466e-01	1.000e+00	0.0130	MMAR_RS03910	icl	-2.2111	4.127e-03
+Mycolic Acid & FAS-II Envelope	rpm2_vs_static1g	7	17	15	0	0	0	0.000	3967	706	0.000	1.000e+00	1.000e+00	0.1659	MMAR_RS24025	-	-0.6138	3.396e-01
+Peptidoglycan Biosynthesis	rpm2_vs_static1g	1	1	1	0	0	0	0.000	3967	706	0.000	1.000e+00	1.000e+00	0.0546	MMAR_RS20430	murA	0.0546	9.442e-01
+Redox Homeostasis & Cofactors	rpm2_vs_static1g	3	6	6	0	0	0	0.000	3967	706	0.000	1.000e+00	1.000e+00	0.1650	MMAR_RS11045	ribG	0.6092	2.792e-01

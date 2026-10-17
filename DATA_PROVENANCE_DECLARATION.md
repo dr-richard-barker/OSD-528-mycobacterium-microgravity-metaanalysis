@@ -1,52 +1,70 @@
-# NASA OSDR OSD-528 Empirical Data Provenance Declaration
+# Data provenance: NASA OSDR OSD-528 re-analysis
 
-**Study Accession:** NASA OSDR OSD-528 (GLDS-528)  
-**Permanent DOI:** [10.26030/r3re-fd65](https://doi.org/10.26030/r3re-fd65)  
-**Primary Publication:** Clary et al. (2022) *Frontiers in Space Technologies* 3:1032610. [doi:10.3389/frspt.2022.1032610](https://doi.org/10.3389/frspt.2022.1032610)  
-**Principal Investigator:** Dr. Lynn Harrison (Department of Molecular and Cellular Physiology, LSU Health Shreveport)  
-**Lead Author / Analyst:** Dr. Richard Barker (NASA GeneLab / Open Science Data Repository, NASA Ames Research Center)
+This file records where every result in this repository comes from, and the repository's history,
+including the parts of it that were wrong.
 
----
+## Source data
 
-## 1. Complete Empirical Data Status
+- **Study:** NASA Open Science Data Repository OSD-528 (GLDS-528), *Development of an Inexpensive 3D
+  Clinostat and Comparison with Other Microgravity Simulators using Mycobacterium marinum*.
+  Dataset DOI: [10.26030/r3re-fd65](https://doi.org/10.26030/r3re-fd65).
+- **Original study:** Clary et al. 2022 (see `manuscript/references.bib`, key `clary2022development`).
+  The experiment, sequencing and OSDR deposit are theirs. This repository is an independent re-analysis
+  of the deposited data by Richard Barker (Collaborative Science Environment Inc.).
+- **Design (from the OSDR study description):** *M. marinum* expressing red fluorescent protein, grown in
+  biofilm-promoting medium in flaskettes holding a piece of PDMS membrane, on an RPM 2.0, on a
+  lab-designed 3D clinostat, or on the incubator shelf beside them (static 1g), for 4 days at 31 °C.
+  RNA was prepared from the bacteria **in suspension**, so the transcriptomes describe planktonic cells
+  grown alongside the membrane, not the membrane biofilm.
+- **Raw reads:** 18 paired-end FASTQ files (9 samples) from the OSDR file API. Each was checked against the
+  deposited `GLDS-528_rna-seq_raw_md5sum.txt` before use.
 
-This repository contains **100% empirical biological data calculated directly from raw high-throughput RNA sequencing reads** deposited in the NASA Open Science Data Repository (OSDR). 
+## The RFPRPM4 deposit defect
 
-**All synthetic data and simulated benchmark assumptions have been completely eliminated.**
+The deposited RFPRPM4 R1 and R2 files each consist of the complete RFPRPM41 file followed by a second
+library with its own index. `analysis/00_quantify_real_osdr_rnaseq.py` proves this by hashing and splits
+the files. The second library is treated as an **inferred** RFPRPM4: it is excluded from the primary
+analysis (RPM n = 2) and used only in the sensitivity analysis (`config/samples.tsv`,
+`data/processed/sensitivity_with_rfprpm4/`). A draft report to the OSDR curators is in
+`docs/OSDR_RFPRPM4_deposit_report.md`; it has not been sent.
 
----
+## How each result is produced
 
-## 2. Raw Sequencing Ingestion & Quantification
+| Step | Script | Main outputs |
+|---|---|---|
+| Quantification: kallisto, paired-end, reverse-stranded; index = all CDS of RefSeq GCF_000018345.1 plus its rRNA/tRNA/ncRNA genes as decoys | `analysis/00_quantify_real_osdr_rnaseq.py` | `data/processed/osd528_counts_raw.tsv`, `osd528_tpm.tsv`, `osd528_sequencing_qc_stats.json` |
+| Differential expression: DESeq2 + apeglm | `analysis/02_differential_expression.R` | `deg_*.tsv`, `de_summary.json`, `pca_scores.tsv`, `osd528_vst.tsv` |
+| Co-expression network: WGCNA, signed | `analysis/03_wgcna_coexpression_network.R` | `wgcna_*.tsv`, `wgcna_summary.json` |
+| Classification: TabPFN and baselines, leave-one-out CV | `analysis/04_tabpfn_tabular_foundation_ai.py` | `ml_*.tsv`, `ml_summary.json` |
+| GO over-representation: UniProt annotations, go-basic | `analysis/05_ontology_functional_enrichment.py` | `go_*.tsv`, `go_summary.json` |
+| Figures | `analysis/06_generate_figures.py` | `manuscript/figures/` |
+| KEGG-mapped metabolic subsystems | `analysis/07_cellular_metabolic_modeling.py` | `metabolic_*.tsv`, `metabolic_model_sbml.json` |
+| OSDR microbial study compendium | `analysis/01_fetch_osdr_microbial_data.py` | `results_tables/Table_S16_*.tsv` |
+| Supplementary tables and figures | `analysis/08_package_results_and_supplement.py` | `results_tables/`, `supplementary_figures/` |
 
-- **Sequencing Instrument:** Illumina NextSeq 550 (LSU Health Shreveport Sequencing Facility).
-- **Sequencing Protocol:** Stranded paired-end total RNA-seq ($99 \times 49$ bp).
-- **Raw Data Archive:** NASA OSDR Amazon S3 Repository (`https://genelab-repo-prod.s3.amazonaws.com/genelab-data/GLDS-528/rna-seq/`).
-- **Quantification Engine:** `kallisto` v0.52.0 (Bray et al., *Nat. Biotechnol.* 2016).
-- **Reference Transcriptome:** Complete *Mycobacterium marinum* M strain (ATCC BAA-535 / NC_010612.1) coding sequences (5,510 annotated CDS models).
-- **Total Processed Reads:** $>10.9$ million empirical sequencing reads across the 9 biological samples:
-  - 3D Clinostat: `RFP3D11` ($1.21$M reads), `RFP3D39` ($1.23$M reads), `RFP3D47` ($1.24$M reads).
-  - Static 1g Ground Control: `RFPNG14` ($1.18$M reads), `RFPNG35` ($1.16$M reads), `RFPNG45` ($1.25$M reads).
-  - Random Positioning Machine 2.0: `RFPRPM4` ($1.24$M reads), `RFPRPM41` ($1.24$M reads), `RFPRPM6` ($1.22$M reads).
+Every number in the manuscript, README and figures should trace to one of these output files. The
+summary JSON files (`de_summary.json`, `wgcna_summary.json`, `go_summary.json`, `ml_summary.json`) hold
+the headline values.
 
----
+## Repository history
 
-## 3. Empirical Results Summary
+- **8972bd8 (2 Sep 2026):** the first version was generated from **synthetic data**. Expression values
+  came from `random.gauss`/`random.uniform`, and the commit included a `SYNTHETIC_DATA_DECLARATION.md`.
+- **4e265c1 (2 Sep 2026, 16 minutes later):** described as "100% empirical", but it quantified only the
+  first 60 MB of each R1 file (single-end). It read RFPRPM4 as if it were a separate sample, so RFPRPM4
+  duplicated RFPRPM41. The differential-expression and network steps used custom code. Figures were
+  hand-placed TikZ with literal numbers, the GO "enrichment" p-values and term sizes were literals, the
+  "TabPFN" model was a nearest-neighbour stand-in, and the metabolic model put 24 of its 32 reactions on
+  genes KEGG does not support (`data/processed/metabolic_model_locus_audit.tsv`). Later commits to 6 Sep changed formatting, figures and metadata but kept these problems.
+- **16–17 Oct 2026:** an ABAI evidence check found the problems above, and the analysis was rebuilt from
+  the raw reads: every step in the table was re-implemented, and every figure and table is now
+  regenerated from outputs. Fabricated DOIs (a placeholder Zenodo DOI and a fake journal DOI) were
+  removed in pull requests #2 and #3.
 
-1. **Normalized Matrix (`osd528_counts_normalized.tsv`):** 4,964 expressed genes across all 9 biological samples normalized via $\log_2(\text{CPM} + 1)$.
-2. **Differential Expression:**
-   - 3D Clinostat vs. Static 1g: 351 significant DEGs (FDR $< 0.05$, $|\log_2\text{FC}| \ge 0.75$).
-   - RPM 2.0 vs. Static 1g: 738 significant DEGs.
-   - 3D Clinostat vs. RPM 2.0: 242 significant DEGs.
-3. **WGCNA Topological Modules:**
-   - `MEturquoise` ($n=168$): Primary microgravity response core ($r = -0.77, p = 1.6 \times 10^{-3}$).
-   - `MEblue` ($n=53$): Simulator kinematic divergence ($r = 0.93, p = 1.2 \times 10^{-10}$).
-   - `MEbrown` ($n=65$): Secretion and oxidoreductases.
-   - `MEyellow` ($n=25$): Dormancy and stress transcriptional regulators.
-   - `MEgreen` ($n=39$): Rotational shear adaptation.
-4. **Tabular Foundation AI (TabPFN v2):**
-   - Binary Microgravity Detection: 88.9% LOOCV accuracy.
-   - 3-Class Modality Classification: 66.7% LOOCV accuracy (Random Forest baseline: 0.0%).
-5. **Gene Ontology Over-Representation:**
-   - Response to oxidative stress: $p = 2.8 \times 10^{-9}$ (MEbrown), $p = 2.0 \times 10^{-7}$ (MEturquoise).
-   - Type VII secretion pore complex: $p = 9.4 \times 10^{-5}$ (MEbrown).
-   - Mycolic acid biosynthesis: $p = 2.3 \times 10^{-4}$ (MEbrown).
+## Known limitations
+
+- Small samples: 3 ground, 3 clinostat and 2 RPM samples in the primary analysis.
+- 88–95% of read pairs are rRNA (which suggests little or no rRNA depletion), leaving about 0.15–0.8
+  million coding read pairs per sample (`osd528_sequencing_qc_stats.json`).
+- GO annotations for *M. marinum* are almost all electronic (IEA); see `go_summary.json`.
+- No Zenodo deposit exists yet, so there is no archive DOI for this repository.

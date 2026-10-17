@@ -29,3 +29,14 @@ data/processed/aligned/
 .chrome_tmp/
 data/raw/fastq_slices/
 data/reference/m_marinum_kallisto.idx
+
+# Full-read kallisto output (both index versions) and ABAI attestation (local only)
+data/raw/kallisto/
+data/raw/kallisto_cds_ncrna/
+.abai/
+
+# Classification virtual environment (make ml-env)
+.venv-ml/
+
+# Raw OSDR API responses for Table S16 (re-fetched by 01_fetch_osdr_microbial_data.py if absent)
+data/raw/microbial_osdr_api_cache/
