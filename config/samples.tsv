@@ -1,0 +1,10 @@
+sample_id	group	microgravity	primary	note
+RFP3D11	Clinostat	yes	yes	3D clinostat (inner 1.5 rpm, outer 3.875 rpm), 31 C, 4 days
+RFP3D39	Clinostat	yes	yes	3D clinostat
+RFP3D47	Clinostat	yes	yes	3D clinostat
+RFPNG14	Ground	no	yes	static 1g control
+RFPNG35	Ground	no	yes	static 1g control
+RFPNG45	Ground	no	yes	static 1g control
+RFPRPM4	RPM	yes	no	inferred: second library inside the deposited RFPRPM4 files, which begin with the complete RFPRPM41 files; excluded from the primary analysis, used in the sensitivity analysis only
+RFPRPM41	RPM	yes	yes	RPM 2.0 (0g file)
+RFPRPM6	RPM	yes	yes	RPM 2.0 (0g file)

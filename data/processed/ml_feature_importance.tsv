@@ -1,0 +1,101 @@
+analysis	task	k	rank	gene_id	gene_symbol	product	std_coef_toward_microgravity	abs_std_coef	loocv_folds_selected	loocv_folds_same_sign	n_loocv_folds	status
+primary	binary_microgravity_vs_ground	50	1	MMAR_RS11655	MMAR_RS11655	class I SAM-dependent methyltransferase	0.432086	0.432086	7	7	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	50	2	MMAR_RS18655	MMAR_RS18655	MmpS family transport accessory protein	-0.186856	0.186856	6	6	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	50	3	MMAR_RS23875	MMAR_RS23875	ferredoxin	-0.181556	0.181556	7	7	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	50	4	MMAR_RS01440	mrf	ribosome hibernation factor-recruiting GTPase MRF	-0.1752	0.1752	8	8	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	50	5	MMAR_RS10350	MMAR_RS10350	helix-turn-helix transcriptional regulator	-0.157409	0.157409	6	6	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	50	6	MMAR_RS01430	rpmG	50S ribosomal protein L33	-0.156132	0.156132	8	8	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	50	7	MMAR_RS01445	MMAR_RS01445	type B 50S ribosomal protein L31	-0.152535	0.152535	7	7	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	50	8	MMAR_RS20590	MMAR_RS20590	haloalkane dehalogenase	-0.14931	0.14931	7	7	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	50	9	MMAR_RS17755	MMAR_RS17755	nitroreductase/quinone reductase family protein	-0.141514	0.141514	8	8	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	50	10	MMAR_RS00810	MMAR_RS00810	GNAT family N-acetyltransferase	-0.136824	0.136824	6	6	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	50	11	MMAR_RS01955	MMAR_RS01955	hypothetical protein	-0.136022	0.136022	8	8	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	50	12	MMAR_RS19755	MMAR_RS19755	lysophospholipid acyltransferase family protein	-0.135143	0.135143	7	7	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	50	13	MMAR_RS01960	MMAR_RS01960	hypothetical protein	-0.128855	0.128855	7	7	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	50	14	MMAR_RS07395	MMAR_RS07395	homogentisate 1,2-dioxygenase	-0.1276	0.1276	8	8	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	50	15	MMAR_RS19030	MMAR_RS19030	Rv2466c family mycothiol-dependent reductase	-0.126807	0.126807	8	8	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	50	16	MMAR_RS03190	clpB	ATP-dependent chaperone ClpB	-0.118131	0.118131	6	6	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	50	17	MMAR_RS23210	MMAR_RS23210	TetR/AcrR family transcriptional regulator	-0.112474	0.112474	7	7	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	50	18	MMAR_RS00800	MMAR_RS00800	hypothetical protein	-0.111783	0.111783	8	8	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	50	19	MMAR_RS10345	fdxA	ferredoxin	-0.109398	0.109398	8	8	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	50	20	MMAR_RS17750	MMAR_RS17750	oxidoreductase	-0.108632	0.108632	8	8	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	50	21	MMAR_RS01435	rpmB	50S ribosomal protein L28	-0.106697	0.106697	8	8	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	50	22	MMAR_RS06400	MMAR_RS06400	rubredoxin	-0.100069	0.100069	7	7	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	50	23	MMAR_RS06390	MMAR_RS06390	alkane 1-monooxygenase	-0.0989262	0.0989262	8	8	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	50	24	MMAR_RS00740	MMAR_RS00740	acyl-CoA dehydrogenase family protein	-0.0981122	0.0981122	8	8	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	50	25	MMAR_RS23530	MMAR_RS23530	cytochrome P450	-0.0959923	0.0959923	8	8	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	200	1	MMAR_RS01935	MMAR_RS01935	LLM class F420-dependent oxidoreductase	-0.132932	0.132932	5	5	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	200	2	MMAR_RS11530	MMAR_RS11530	phytanoyl-CoA dioxygenase family protein	0.132241	0.132241	7	7	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	200	3	MMAR_RS00185	MMAR_RS00185	glycine betaine ABC transporter substrate-binding protein	0.122999	0.122999	7	7	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	200	4	MMAR_RS11655	MMAR_RS11655	class I SAM-dependent methyltransferase	0.108664	0.108664	7	7	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	200	5	MMAR_RS16890	MMAR_RS16890	DUF3500 domain-containing protein	0.10169	0.10169	7	7	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	200	6	MMAR_RS15065	MMAR_RS15065	DUF7064 domain-containing protein	0.0998801	0.0998801	7	7	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	200	7	MMAR_RS25435	MMAR_RS25435	metal ABC transporter solute-binding protein, Zn/Mn family	-0.0932959	0.0932959	7	7	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	200	8	MMAR_RS02860	MMAR_RS02860	ROK family protein	-0.0824929	0.0824929	7	7	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	200	9	MMAR_RS09045	MMAR_RS09045	winged helix-turn-helix domain-containing protein	-0.0743409	0.0743409	7	7	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	200	10	MMAR_RS14935	MMAR_RS14935	Hsp20/alpha crystallin family protein	-0.0733893	0.0733893	7	7	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	200	11	MMAR_RS25235	MMAR_RS25235	acyl-CoA dehydrogenase family protein	-0.0731461	0.0731461	7	7	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	200	12	MMAR_RS14915	mhpA	bifunctional 3-(3-hydroxy-phenyl)propionate/3-hydroxycinnamic acid hydroxylase MhpA	-0.0707724	0.0707724	6	6	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	200	13	MMAR_RS02635	MMAR_RS02635	hypothetical protein	-0.0703498	0.0703498	8	8	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	200	14	MMAR_RS20585	MMAR_RS20585	YciI family protein	-0.0678757	0.0678757	7	7	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	200	15	MMAR_RS26490	MMAR_RS26490	flavin-containing monooxygenase	-0.0623538	0.0623538	7	7	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	200	16	MMAR_RS02630	MMAR_RS02630	VOC family protein	-0.0618715	0.0618715	8	8	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	200	17	MMAR_RS25045	MMAR_RS25045	acyl-CoA dehydrogenase family protein	-0.0614146	0.0614146	7	7	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	200	18	MMAR_RS24055	MMAR_RS24055	class I SAM-dependent methyltransferase	-0.0608918	0.0608918	7	7	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	200	19	MMAR_RS25365	MMAR_RS25365	thiol:disulfide interchange protein	-0.0605527	0.0605527	7	7	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	200	20	MMAR_RS17615	MMAR_RS17615	SAM-dependent methyltransferase	-0.0604196	0.0604196	8	8	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	200	21	MMAR_RS25200	kstD	3-oxosteroid 1-dehydrogenase	-0.0586883	0.0586883	7	7	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	200	22	MMAR_RS17110	MMAR_RS17110	alpha/beta hydrolase	-0.0576932	0.0576932	8	8	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	200	23	MMAR_RS11840	MMAR_RS11840	aminotransferase class I/II-fold pyridoxal phosphate-dependent enzyme	-0.0566897	0.0566897	8	8	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	200	24	MMAR_RS23865	MMAR_RS23865	amidohydrolase family protein	-0.0561184	0.0561184	7	7	8	descriptive_not_validated
+primary	binary_microgravity_vs_ground	200	25	MMAR_RS25225	MMAR_RS25225	bifunctional MaoC family dehydratase N-terminal/OB-fold nucleic acid binding domain-containing protein	-0.0551464	0.0551464	7	7	8	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	50	1	MMAR_RS11840	MMAR_RS11840	aminotransferase class I/II-fold pyridoxal phosphate-dependent enzyme	-0.245687	0.245687	9	9	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	50	2	MMAR_RS17615	MMAR_RS17615	SAM-dependent methyltransferase	-0.24446	0.24446	5	5	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	50	3	MMAR_RS18655	MMAR_RS18655	MmpS family transport accessory protein	-0.225289	0.225289	8	8	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	50	4	MMAR_RS17530	MMAR_RS17530	alkane 1-monooxygenase	0.220422	0.220422	8	8	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	50	5	MMAR_RS25245	MMAR_RS25245	steroid 3-ketoacyl-CoA thiolase	-0.205964	0.205964	8	8	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	50	6	MMAR_RS01440	mrf	ribosome hibernation factor-recruiting GTPase MRF	-0.174429	0.174429	9	9	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	50	7	MMAR_RS25240	MMAR_RS25240	cytochrome P450	-0.166389	0.166389	8	8	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	50	8	MMAR_RS01955	MMAR_RS01955	hypothetical protein	-0.165566	0.165566	9	9	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	50	9	MMAR_RS23870	MMAR_RS23870	cytochrome P450	-0.155915	0.155915	7	7	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	50	10	MMAR_RS07395	MMAR_RS07395	homogentisate 1,2-dioxygenase	-0.154488	0.154488	9	9	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	50	11	MMAR_RS17755	MMAR_RS17755	nitroreductase/quinone reductase family protein	-0.142833	0.142833	9	9	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	50	12	MMAR_RS01445	MMAR_RS01445	type B 50S ribosomal protein L31	-0.142228	0.142228	8	8	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	50	13	MMAR_RS10345	fdxA	ferredoxin	-0.136316	0.136316	6	6	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	50	14	MMAR_RS23210	MMAR_RS23210	TetR/AcrR family transcriptional regulator	-0.131511	0.131511	9	9	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	50	15	MMAR_RS25040	MMAR_RS25040	acyl-CoA dehydrogenase	-0.130802	0.130802	9	9	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	50	16	MMAR_RS01960	MMAR_RS01960	hypothetical protein	-0.130003	0.130003	9	9	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	50	17	MMAR_RS20590	MMAR_RS20590	haloalkane dehalogenase	-0.129029	0.129029	8	8	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	50	18	MMAR_RS24880	MMAR_RS24880	hypothetical protein	0.1229	0.1229	9	7	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	50	19	MMAR_RS01435	rpmB	50S ribosomal protein L28	-0.121389	0.121389	9	9	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	50	20	MMAR_RS00800	MMAR_RS00800	hypothetical protein	-0.11913	0.11913	6	6	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	50	21	MMAR_RS03605	MMAR_RS03605	membrane protein	-0.115632	0.115632	9	9	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	50	22	MMAR_RS19030	MMAR_RS19030	Rv2466c family mycothiol-dependent reductase	-0.104128	0.104128	6	6	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	50	23	MMAR_RS11170	MMAR_RS11170	APC family permease	-0.103383	0.103383	9	9	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	50	24	MMAR_RS23530	MMAR_RS23530	cytochrome P450	-0.100119	0.100119	9	9	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	50	25	MMAR_RS00805	MMAR_RS00805	hypothetical protein	-0.0945723	0.0945723	9	9	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	200	1	MMAR_RS11530	MMAR_RS11530	phytanoyl-CoA dioxygenase family protein	0.116029	0.116029	7	7	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	200	2	MMAR_RS02035	MMAR_RS02035	virulence factor Mce family protein	0.103242	0.103242	7	7	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	200	3	MMAR_RS05580	MMAR_RS05580	PPE family protein	0.0939703	0.0939703	8	8	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	200	4	MMAR_RS01945	MMAR_RS01945	phosphotransferase	-0.0896937	0.0896937	8	8	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	200	5	MMAR_RS11525	losA	glycosyltransferase LosA	0.0885861	0.0885861	6	6	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	200	6	MMAR_RS11655	MMAR_RS11655	class I SAM-dependent methyltransferase	0.0862972	0.0862972	8	8	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	200	7	MMAR_RS25435	MMAR_RS25435	metal ABC transporter solute-binding protein, Zn/Mn family	-0.0848819	0.0848819	8	8	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	200	8	MMAR_RS24675	MMAR_RS24675	TetR/AcrR family transcriptional regulator	0.08111	0.08111	9	9	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	200	9	MMAR_RS12140	MMAR_RS12140	DNA polymerase ligase N-terminal domain-containing protein	-0.0808294	0.0808294	7	7	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	200	10	MMAR_RS01930	MMAR_RS01930	acyl-CoA thioesterase	-0.076938	0.076938	7	7	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	200	11	MMAR_RS01230	MMAR_RS01230	hypothetical protein	-0.0724095	0.0724095	7	7	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	200	12	MMAR_RS09045	MMAR_RS09045	winged helix-turn-helix domain-containing protein	-0.0716693	0.0716693	8	8	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	200	13	MMAR_RS04050	MMAR_RS04050	hypothetical protein	-0.0714732	0.0714732	8	8	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	200	14	MMAR_RS02635	MMAR_RS02635	hypothetical protein	-0.070849	0.070849	9	9	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	200	15	MMAR_RS19140	lipQ	esterase LipQ	0.0700586	0.0700586	9	9	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	200	16	MMAR_RS16680	MMAR_RS16680	diacylglycerol kinase	-0.068308	0.068308	4	4	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	200	17	MMAR_RS21090	MMAR_RS21090	lytic transglycosylase domain-containing protein	0.0659576	0.0659576	8	8	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	200	18	MMAR_RS25365	MMAR_RS25365	thiol:disulfide interchange protein	-0.0558017	0.0558017	9	9	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	200	19	MMAR_RS25235	MMAR_RS25235	acyl-CoA dehydrogenase family protein	-0.0557095	0.0557095	9	9	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	200	20	MMAR_RS23875	MMAR_RS23875	ferredoxin	-0.0556735	0.0556735	9	9	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	200	21	MMAR_RS25035	MMAR_RS25035	ferredoxin	-0.0546224	0.0546224	8	8	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	200	22	MMAR_RS02630	MMAR_RS02630	VOC family protein	-0.053625	0.053625	9	9	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	200	23	MMAR_RS24345	MMAR_RS24345	ArsR/SmtB family transcription factor	-0.0536017	0.0536017	7	7	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	200	24	MMAR_RS11840	MMAR_RS11840	aminotransferase class I/II-fold pyridoxal phosphate-dependent enzyme	-0.0530749	0.0530749	9	9	9	descriptive_not_validated
+sensitivity_9	binary_microgravity_vs_ground	200	25	MMAR_RS17615	MMAR_RS17615	SAM-dependent methyltransferase	-0.0529542	0.0529542	9	9	9	descriptive_not_validated

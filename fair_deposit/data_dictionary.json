@@ -1,108 +1,380 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "OSD-528 Meta-Analysis Data Dictionary",
-  "description": "Comprehensive semantic data dictionary defining columns, formats, units, and ontologies for all tabular files in the OSD-528 meta-analysis.",
+  "title": "OSD-528 re-analysis: data dictionary",
+  "generated_by": "analysis/08_package_results_and_supplement.py",
   "files": {
-    "osd528_sample_metadata.tsv": {
-      "description": "Biological and technical metadata for RNA-seq samples in study OSD-528",
+    "results_tables/Table_S1_kallisto_estimated_counts.tsv": {
+      "description": "kallisto estimated read-pair counts per CDS, all nine deposited samples (RFPRPM4 = inferred second library)",
+      "source": "data/processed/osd528_counts_raw.tsv",
       "columns": {
-        "sample_id": {"type": "string", "description": "Unique OSDR sample identifier (e.g. RFP3D11, RFPRPM4, RFPNG14)"},
-        "study_accession": {"type": "string", "description": "NASA OSDR accession number", "example": "OSD-528"},
-        "organism": {"type": "string", "ontology_uri": "http://purl.bioontology.org/ontology/NCBITAXON/1781", "value": "Mycobacterium marinum"},
-        "strain": {"type": "string", "description": "Bacterial strain and genetic modification details", "value": "1218R RFP Giles integrated"},
-        "condition": {"type": "string", "enum": ["Simulated Microgravity", "Normal Gravity"]},
-        "simulation_modality": {"type": "string", "enum": ["3D_Clinostat", "RPM_2.0", "Static_1g_Control"]},
-        "duration_days": {"type": "integer", "unit": "days", "value": 4},
-        "temperature_c": {"type": "integer", "unit": "degrees Celsius", "value": 31},
-        "growth_surface": {"type": "string", "description": "Solid substrate used for biofilm formation", "value": "PDMS silicone membrane"}
+        "target_id": "kallisto target (RefSeq CDS record id)",
+        "gene_id": "RefSeq locus tag (MMAR_RSxxxxx), GCF_000018345.1",
+        "gene_symbol": "Gene symbol from the RefSeq annotation (locus tag if none)",
+        "replicon": "Chromosome or plasmid accession",
+        "pseudo": "yes if the CDS is annotated as a pseudogene",
+        "RFP3D11": "Value for sample RFP3D11",
+        "RFP3D39": "Value for sample RFP3D39",
+        "RFP3D47": "Value for sample RFP3D47",
+        "RFPNG14": "Value for sample RFPNG14",
+        "RFPNG35": "Value for sample RFPNG35",
+        "RFPNG45": "Value for sample RFPNG45",
+        "RFPRPM4": "Value for sample RFPRPM4",
+        "RFPRPM41": "Value for sample RFPRPM41",
+        "RFPRPM6": "Value for sample RFPRPM6",
+        "protein": "RefSeq protein name"
       }
     },
-    "osd528_counts_normalized.tsv": {
-      "description": "Normalized transcript abundance values across all 9 samples",
-      "provenance": "Empirical transcript quantification from raw NextSeq 550 sequencing reads streamed from NASA OSDR S3 using kallisto v0.52.0 against M. marinum NC_010612.1 reference transcriptome",
+    "results_tables/Table_S2_kallisto_tpm.tsv": {
+      "description": "Transcripts per million per CDS, all nine samples",
+      "source": "data/processed/osd528_tpm.tsv",
       "columns": {
-        "gene_id": {"type": "string", "description": "M. marinum locus tag (e.g. MMAR_2313)"},
-        "gene_symbol": {"type": "string", "description": "Standardized gene symbol (e.g. mps1, kasA, esxA)"},
-        "category": {"type": "string", "description": "Functional biological grouping"},
-        "description": {"type": "string", "description": "Functional protein product description"},
-        "sample_columns": {"type": "float", "unit": "log2 VST expression", "range": [0.0, 20.0]}
+        "target_id": "kallisto target (RefSeq CDS record id)",
+        "gene_id": "RefSeq locus tag (MMAR_RSxxxxx), GCF_000018345.1",
+        "gene_symbol": "Gene symbol from the RefSeq annotation (locus tag if none)",
+        "replicon": "Chromosome or plasmid accession",
+        "pseudo": "yes if the CDS is annotated as a pseudogene",
+        "RFP3D11": "Value for sample RFP3D11",
+        "RFP3D39": "Value for sample RFP3D39",
+        "RFP3D47": "Value for sample RFP3D47",
+        "RFPNG14": "Value for sample RFPNG14",
+        "RFPNG35": "Value for sample RFPNG35",
+        "RFPNG45": "Value for sample RFPNG45",
+        "RFPRPM4": "Value for sample RFPRPM4",
+        "RFPRPM41": "Value for sample RFPRPM41",
+        "RFPRPM6": "Value for sample RFPRPM6",
+        "protein": "RefSeq protein name"
       }
     },
-    "wgcna_module_assignments.tsv": {
-      "description": "WGCNA topological network co-expression module assignments, GOSlim cluster descriptors, and connectivity",
+    "results_tables/Table_S3_samples_and_sequencing_qc.tsv": {
+      "description": "Sample groups, primary/sensitivity use, library index, read pairs and read assignment (rRNA, other ncRNA, CDS)",
+      "source": "config/samples.tsv` + `osd528_sequencing_qc_stats.json",
       "columns": {
-        "gene_id": {"type": "string", "description": "Locus tag"},
-        "gene_symbol": {"type": "string", "description": "Gene symbol"},
-        "module": {"type": "string", "enum": ["MEturquoise", "MEblue", "MEbrown", "MEyellow", "MEgreen"]},
-        "goslim_name": {"type": "string", "description": "Human-readable standardized GOSlim functional cluster name"},
-        "k_total": {"type": "float", "description": "Whole-network degree connectivity"},
-        "k_within": {"type": "float", "description": "Intramodular connectivity score representing hub centrality"},
-        "protein": {"type": "string", "description": "Annotated protein product"}
+        "sample_id": "OSDR sample name",
+        "group": "Condition (Ground, Clinostat, RPM) or gene-set group",
+        "microgravity": "yes for clinostat and RPM samples",
+        "primary": "yes if the sample enters the primary analysis",
+        "note": "Free-text note",
+        "library_index": "Index sequence in the first read header",
+        "fastq_r1": "R1 FASTQ file used",
+        "fastq_r2": "R2 FASTQ file used",
+        "read_pairs": "Read pairs processed by kallisto",
+        "percent_pseudoaligned": "Percent of pairs pseudoaligned",
+        "percent_rRNA": "Percent of pairs assigned to rRNA decoys",
+        "percent_other_ncRNA": "Percent of pairs assigned to tRNA/other ncRNA decoys",
+        "percent_CDS": "Percent of pairs assigned to protein-coding genes"
       }
     },
-    "goslim_pathway_enrichment.tsv": {
-      "description": "Empirical GOSlim pathway over-representation data for publication bar plot (Figure 5)",
+    "results_tables/Table_S4_deseq2_clinostat_vs_static1g.tsv": {
+      "description": "DESeq2: 3D clinostat vs static 1g (primary samples); MLE and apeglm-shrunk log2FC, Wald p, BH FDR",
+      "source": "data/processed/deg_3dclinostat_vs_static1g.tsv",
       "columns": {
-        "term_id": {"type": "string", "description": "Gene Ontology identifier"},
-        "term_name": {"type": "string", "description": "Human-readable GOSlim term name"},
-        "category": {"type": "string", "enum": ["Biological Process", "Cellular Component", "Molecular Function"]},
-        "direction": {"type": "string", "enum": ["Upregulated", "Downregulated"]},
-        "overlap_count": {"type": "integer", "description": "Count of overlapping genes in term"},
-        "term_size": {"type": "integer", "description": "Total annotated genes in term"},
-        "padj": {"type": "float", "description": "Benjamini-Hochberg adjusted p-value (FDR)"},
-        "mlog10_padj": {"type": "float", "description": "Negative log10 of adjusted p-value"},
-        "associated_cluster": {"type": "string", "description": "GOSlim co-expression cluster association"}
+        "gene_id": "RefSeq locus tag (MMAR_RSxxxxx), GCF_000018345.1",
+        "gene_symbol": "Gene symbol from the RefSeq annotation (locus tag if none)",
+        "protein": "RefSeq protein name",
+        "baseMean": "DESeq2 mean of normalised counts",
+        "log2FoldChange": "DESeq2 maximum-likelihood log2 fold change (numerator vs denominator)",
+        "lfcSE": "Standard error of log2FoldChange",
+        "log2FoldChange_shrunk": "apeglm-shrunk log2 fold change",
+        "pvalue": "Wald test p-value",
+        "padj": "Benjamini-Hochberg adjusted p-value",
+        "significant": "YES if padj < 0.05"
       }
     },
-    "tabpfn_predictions.tsv": {
-      "description": "TabPFN foundation model leave-one-out cross-validation classification results",
+    "results_tables/Table_S5_deseq2_rpm2_vs_static1g.tsv": {
+      "description": "DESeq2: RPM 2.0 vs static 1g (primary samples)",
+      "source": "data/processed/deg_rpm2_vs_static1g.tsv",
       "columns": {
-        "sample_id": {"type": "string", "description": "Sample identifier"},
-        "true_modality": {"type": "string", "description": "Ground truth simulator modality"},
-        "predicted_modality": {"type": "string", "description": "TabPFN predicted modality"},
-        "prob_static_1g": {"type": "float", "description": "Calibrated posterior probability for Static 1g"},
-        "prob_3d_clinostat": {"type": "float", "description": "Calibrated posterior probability for 3D Clinostat"},
-        "prob_rpm2": {"type": "float", "description": "Calibrated posterior probability for RPM 2.0"},
-        "correct": {"type": "string", "enum": ["YES", "NO"]}
+        "gene_id": "RefSeq locus tag (MMAR_RSxxxxx), GCF_000018345.1",
+        "gene_symbol": "Gene symbol from the RefSeq annotation (locus tag if none)",
+        "protein": "RefSeq protein name",
+        "baseMean": "DESeq2 mean of normalised counts",
+        "log2FoldChange": "DESeq2 maximum-likelihood log2 fold change (numerator vs denominator)",
+        "lfcSE": "Standard error of log2FoldChange",
+        "log2FoldChange_shrunk": "apeglm-shrunk log2 fold change",
+        "pvalue": "Wald test p-value",
+        "padj": "Benjamini-Hochberg adjusted p-value",
+        "significant": "YES if padj < 0.05"
       }
     },
-    "tabpfn_feature_importance.tsv": {
-      "description": "Permutation feature importance scores from TabPFN model",
+    "results_tables/Table_S6_deseq2_clinostat_vs_rpm2.tsv": {
+      "description": "DESeq2: 3D clinostat vs RPM 2.0 (primary samples)",
+      "source": "data/processed/deg_3dclinostat_vs_rpm2.tsv",
       "columns": {
-        "feature": {"type": "string", "description": "Module Eigengene or hub gene name"},
-        "importance_score": {"type": "float", "description": "Mean drop in log-likelihood when feature is permuted"},
-        "rank": {"type": "integer", "description": "Feature importance rank"}
+        "gene_id": "RefSeq locus tag (MMAR_RSxxxxx), GCF_000018345.1",
+        "gene_symbol": "Gene symbol from the RefSeq annotation (locus tag if none)",
+        "protein": "RefSeq protein name",
+        "baseMean": "DESeq2 mean of normalised counts",
+        "log2FoldChange": "DESeq2 maximum-likelihood log2 fold change (numerator vs denominator)",
+        "lfcSE": "Standard error of log2FoldChange",
+        "log2FoldChange_shrunk": "apeglm-shrunk log2 fold change",
+        "pvalue": "Wald test p-value",
+        "padj": "Benjamini-Hochberg adjusted p-value",
+        "significant": "YES if padj < 0.05"
       }
     },
-    "metabolic_model_reactions.tsv": {
-      "description": "Reaction-level cellular and metabolic network model integrated with empirical microgravity expression",
+    "results_tables/Table_S7_shared_simulated_microgravity_genes.tsv": {
+      "description": "Genes differentially expressed under both simulators in the same direction",
+      "source": "data/processed/deg_shared_simulated_microgravity.tsv",
       "columns": {
-        "reaction_id": {"type": "string", "description": "Unique reaction identifier"},
-        "subsystem": {"type": "string", "description": "Metabolic and cellular subsystem"},
-        "compartment": {"type": "string", "description": "Subcellular compartment (Outer Mycomembrane, Periplasm, Plasma Membrane, Cytoplasm)"},
-        "reaction_name": {"type": "string", "description": "Human-readable reaction name"},
-        "equation": {"type": "string", "description": "Stoichiometric chemical equation"},
-        "ec_number": {"type": "string", "description": "Enzyme Commission classification number"},
-        "gene_id": {"type": "string", "description": "NCBI locus tag"},
-        "gene_symbol": {"type": "string", "description": "Gene symbol"},
-        "protein": {"type": "string", "description": "Annotated protein product"},
-        "clinostat_log2fc": {"type": "float", "description": "Empirical log2FC in 3D Clinostat vs 1g"},
-        "rpm_log2fc": {"type": "float", "description": "Empirical log2FC in RPM 2.0 vs 1g"},
-        "mean_microgravity_log2fc": {"type": "float", "description": "Mean log2FC across simulated microgravity"},
-        "direction": {"type": "string", "enum": ["Upregulated", "Downregulated", "Invariant"]}
+        "gene_id": "RefSeq locus tag (MMAR_RSxxxxx), GCF_000018345.1",
+        "gene_symbol": "Gene symbol from the RefSeq annotation (locus tag if none)",
+        "protein": "RefSeq protein name",
+        "log2FoldChange_clinostat": "DESeq2 maximum-likelihood log2 fold change (numerator vs denominator) (clinostat vs ground)",
+        "significant_clinostat": "YES if padj < 0.05 (clinostat vs ground)",
+        "log2FoldChange_rpm": "DESeq2 maximum-likelihood log2 fold change (numerator vs denominator) (RPM vs ground)",
+        "significant_rpm": "YES if padj < 0.05 (RPM vs ground)"
       }
     },
-    "metabolic_subsystem_perturbation.tsv": {
-      "description": "Subsystem Perturbation Index (SPI) ranking empirical metabolic pathway flux alterations",
+    "results_tables/Table_S8_deseq2_sensitivity_with_rfprpm4.tsv": {
+      "description": "DESeq2 results for all three contrasts with the inferred RFPRPM4 library included (sensitivity analysis)",
+      "source": "data/processed/sensitivity_with_rfprpm4/deg_*.tsv",
       "columns": {
-        "subsystem": {"type": "string", "description": "Metabolic subsystem name"},
-        "reaction_count": {"type": "integer", "description": "Number of reactions in subsystem"},
-        "significant_reactions": {"type": "integer", "description": "Count of significantly perturbed reactions"},
-        "mean_net_log2fc": {"type": "float", "description": "Mean net log2FC across subsystem"},
-        "mean_abs_log2fc": {"type": "float", "description": "Mean absolute log2FC"},
-        "subsystem_perturbation_index": {"type": "float", "description": "Quantitative Subsystem Perturbation Index score"},
-        "predominant_flux_shift": {"type": "string", "enum": ["Activation", "Repression"]}
+        "contrast": "Comparison (numerator_vs_denominator)",
+        "gene_id": "RefSeq locus tag (MMAR_RSxxxxx), GCF_000018345.1",
+        "gene_symbol": "Gene symbol from the RefSeq annotation (locus tag if none)",
+        "protein": "RefSeq protein name",
+        "baseMean": "DESeq2 mean of normalised counts",
+        "log2FoldChange": "DESeq2 maximum-likelihood log2 fold change (numerator vs denominator)",
+        "lfcSE": "Standard error of log2FoldChange",
+        "log2FoldChange_shrunk": "apeglm-shrunk log2 fold change",
+        "pvalue": "Wald test p-value",
+        "padj": "Benjamini-Hochberg adjusted p-value",
+        "significant": "YES if padj < 0.05"
       }
+    },
+    "results_tables/Table_S9_wgcna_module_assignments.tsv": {
+      "description": "WGCNA module, module membership (kME) and connectivity (kTotal, kWithin) per gene",
+      "source": "data/processed/wgcna_module_assignments.tsv",
+      "columns": {
+        "gene_id": "RefSeq locus tag (MMAR_RSxxxxx), GCF_000018345.1",
+        "gene_symbol": "Gene symbol from the RefSeq annotation (locus tag if none)",
+        "protein": "RefSeq protein name",
+        "module": "WGCNA module colour (grey = unassigned)",
+        "kME": "Module membership: correlation with the own module eigengene",
+        "kTotal": "Whole-network connectivity",
+        "kWithin": "Intramodular connectivity"
+      }
+    },
+    "results_tables/Table_S10_wgcna_module_eigengenes.tsv": {
+      "description": "Module eigengenes per primary sample",
+      "source": "data/processed/wgcna_module_eigengenes.tsv",
+      "columns": {
+        "sample_id": "OSDR sample name",
+        "MEturquoise": "Eigengene of WGCNA module turquoise",
+        "MEgrey60": "Eigengene of WGCNA module grey60",
+        "MEroyalblue": "Eigengene of WGCNA module royalblue",
+        "MElightgreen": "Eigengene of WGCNA module lightgreen",
+        "MEbrown": "Eigengene of WGCNA module brown",
+        "MEmagenta": "Eigengene of WGCNA module magenta",
+        "MEblack": "Eigengene of WGCNA module black",
+        "MElightyellow": "Eigengene of WGCNA module lightyellow",
+        "MEcyan": "Eigengene of WGCNA module cyan",
+        "MElightcyan": "Eigengene of WGCNA module lightcyan",
+        "MEtan": "Eigengene of WGCNA module tan",
+        "MEmidnightblue": "Eigengene of WGCNA module midnightblue",
+        "MEsalmon": "Eigengene of WGCNA module salmon",
+        "MEgreen": "Eigengene of WGCNA module green",
+        "MEpurple": "Eigengene of WGCNA module purple",
+        "MEred": "Eigengene of WGCNA module red",
+        "MEblue": "Eigengene of WGCNA module blue",
+        "MEgreenyellow": "Eigengene of WGCNA module greenyellow",
+        "MEpink": "Eigengene of WGCNA module pink",
+        "MEyellow": "Eigengene of WGCNA module yellow",
+        "MEgrey": "Eigengene of WGCNA module grey"
+      }
+    },
+    "results_tables/Table_S11_wgcna_module_trait_correlations.tsv": {
+      "description": "Module eigengene vs trait Pearson correlation, Student p and BH FDR",
+      "source": "data/processed/wgcna_module_trait_correlations.tsv",
+      "columns": {
+        "module": "WGCNA module colour (grey = unassigned)",
+        "trait": "Binary trait correlated with eigengenes",
+        "pearson_r": "Pearson correlation coefficient",
+        "pvalue": "Wald test p-value",
+        "padj": "Benjamini-Hochberg adjusted p-value"
+      }
+    },
+    "results_tables/Table_S12_go_enrichment_deg_sets.tsv": {
+      "description": "GO over-representation (hypergeometric, BH FDR) for up and down DEG sets and the shared response",
+      "source": "data/processed/go_enrichment_deg.tsv",
+      "columns": {
+        "gene_set": "Gene set tested",
+        "group": "Condition (Ground, Clinostat, RPM) or gene-set group",
+        "subset": "Direction or module within the gene set",
+        "ontology": "GO namespace: BP, MF or CC",
+        "go_id": "GO term identifier",
+        "term_name": "GO term name",
+        "term_size": "Annotated universe genes in the term (after propagation)",
+        "overlap": "Gene-set genes in the term",
+        "set_size": "Annotated gene-set genes in the universe",
+        "universe_size": "Annotated genes in the universe",
+        "expected": "Expected overlap under the hypergeometric null",
+        "fold_enrichment": "overlap / expected",
+        "pvalue": "Wald test p-value",
+        "fdr": "Benjamini-Hochberg FDR within ontology and gene set",
+        "n_terms_tested": "Terms tested in that family",
+        "fdr_bh_hit_terms_only": "Sensitivity FDR over terms with at least one hit",
+        "overlap_gene_ids": "Overlapping genes (locus tags)",
+        "overlap_gene_symbols": "Overlapping genes (symbols)"
+      }
+    },
+    "results_tables/Table_S13_go_enrichment_wgcna_modules.tsv": {
+      "description": "GO over-representation for each WGCNA module",
+      "source": "data/processed/go_enrichment_modules.tsv",
+      "columns": {
+        "gene_set": "Gene set tested",
+        "group": "Condition (Ground, Clinostat, RPM) or gene-set group",
+        "subset": "Direction or module within the gene set",
+        "ontology": "GO namespace: BP, MF or CC",
+        "go_id": "GO term identifier",
+        "term_name": "GO term name",
+        "term_size": "Annotated universe genes in the term (after propagation)",
+        "overlap": "Gene-set genes in the term",
+        "set_size": "Annotated gene-set genes in the universe",
+        "universe_size": "Annotated genes in the universe",
+        "expected": "Expected overlap under the hypergeometric null",
+        "fold_enrichment": "overlap / expected",
+        "pvalue": "Wald test p-value",
+        "fdr": "Benjamini-Hochberg FDR within ontology and gene set",
+        "n_terms_tested": "Terms tested in that family",
+        "fdr_bh_hit_terms_only": "Sensitivity FDR over terms with at least one hit",
+        "overlap_gene_ids": "Overlapping genes (locus tags)",
+        "overlap_gene_symbols": "Overlapping genes (symbols)"
+      }
+    },
+    "results_tables/Table_S14_classification_loocv_predictions.tsv": {
+      "description": "Leave-one-out held-out predictions and class probabilities (TabPFN, logistic regression, random forest)",
+      "source": "data/processed/ml_loocv_predictions.tsv",
+      "columns": {
+        "analysis": "primary (8 samples) or sensitivity_9 (adds the inferred RFPRPM4)",
+        "task": "Classification task",
+        "k": "Number of most variable genes selected within each training fold",
+        "model": "Classifier",
+        "sample_id": "OSDR sample name",
+        "group": "Condition (Ground, Clinostat, RPM) or gene-set group",
+        "true_label": "True class",
+        "predicted_label": "Predicted class",
+        "correct": "Whether the prediction was correct",
+        "n_train": "Training samples in the fold",
+        "prob_ground_1g": "Held-out probability of static 1g",
+        "prob_simulated_microgravity": "Held-out probability of simulated microgravity",
+        "prob_Clinostat": "Held-out probability of clinostat",
+        "prob_Ground": "Held-out probability of ground",
+        "prob_RPM": "Held-out probability of RPM"
+      }
+    },
+    "results_tables/Table_S15_classification_metrics.tsv": {
+      "description": "LOOCV accuracy, balanced accuracy, AUROC and label-permutation p-values per model, task and feature count",
+      "source": "data/processed/ml_metrics.tsv",
+      "columns": {
+        "analysis": "primary (8 samples) or sensitivity_9 (adds the inferred RFPRPM4)",
+        "task": "Classification task",
+        "k": "Number of most variable genes selected within each training fold",
+        "model": "Classifier",
+        "n_samples": "Samples in the analysis",
+        "class_counts": "Samples per class",
+        "n_correct": "Held-out samples classified correctly",
+        "accuracy": "LOOCV accuracy",
+        "balanced_accuracy": "LOOCV balanced accuracy",
+        "auroc": "AUROC of pooled held-out probabilities (binary task)",
+        "permutation_method": "exact (all class-size-preserving relabellings) or Monte Carlo",
+        "n_relabellings_total": "Distinct class-size-preserving relabellings",
+        "n_relabellings_evaluated": "Relabellings evaluated",
+        "p_accuracy": "Permutation p-value for accuracy",
+        "p_balanced_accuracy": "Permutation p-value for balanced accuracy",
+        "p_auroc": "Permutation p-value for AUROC",
+        "null_mean_accuracy": "Mean accuracy over relabellings",
+        "null_mean_balanced_accuracy": "Mean balanced accuracy over relabellings",
+        "min_attainable_p": "Smallest p-value the permutation test can give"
+      }
+    },
+    "results_tables/Table_S16_pan_microbial_osdr_compendium_102studies.tsv": {
+      "description": "Microbial spaceflight and simulated-microgravity studies in NASA OSDR, from the OSDR API",
+      "source": "analysis/01_fetch_osdr_microbial_data.py",
+      "columns": {
+        "accession": "OSDR study accession",
+        "title": "Study title as given by OSDR",
+        "organisms": "Microbial organisms listed by OSDR",
+        "microbial_categories": "Categories from the NCBI Taxonomy lineage",
+        "other_listed_organisms": "Other organisms listed",
+        "host_organisms": "Host organisms listed",
+        "assay_types": "Assay types as given by OSDR",
+        "factors": "Study factors as given by OSDR",
+        "project_type": "OSDR project type",
+        "flight_program": "Flight programme",
+        "mission": "Mission",
+        "inclusion_basis": "Why the study meets the spaceflight/simulated-microgravity rule",
+        "doi": "Study DOI provided by OSDR and resolved by DataCite (empty if none)"
+      }
+    },
+    "results_tables/Table_S17_kegg_mapped_reactions.tsv": {
+      "description": "Curated reactions with their KEGG-supported M. marinum genes and per-contrast expression changes",
+      "source": "data/processed/metabolic_model_reactions.tsv",
+      "columns": {
+        "reaction_id": "Reaction identifier",
+        "subsystem": "Metabolic or cellular subsystem",
+        "compartment": "Cellular compartment",
+        "reaction_name": "Reaction name",
+        "mapping_basis": "KEGG link type used (EC or KO)",
+        "kegg_queries": "KEGG REST queries used",
+        "ec_number": "EC number",
+        "kegg_name": "KEGG entry name",
+        "equation": "Reaction equation",
+        "kegg_scope": "Scope of the KEGG link (gene family or specific)",
+        "n_kegg_genes": "M. marinum genes linked by KEGG",
+        "kegg_gene_ids": "KEGG gene ids (MMAR_xxxx)",
+        "gene_ids": "RefSeq locus tags",
+        "gene_symbols": "Gene symbols",
+        "old_assignment": "Locus assigned in the earlier, uncorrected model",
+        "old_locus_correct": "Whether that earlier locus is the KEGG-supported one",
+        "clinostat_n_tested": "Genes tested (clinostat vs ground)",
+        "clinostat_n_deg": "DEGs (padj < 0.05) (clinostat vs ground)",
+        "clinostat_n_up": "Up-regulated DEGs (clinostat vs ground)",
+        "clinostat_n_down": "Down-regulated DEGs (clinostat vs ground)",
+        "clinostat_median_log2fc_shrunk": "Median apeglm-shrunk log2 fold change of tested genes (clinostat vs ground)",
+        "clinostat_lead_gene_id": "Gene with the smallest padj (clinostat vs ground)",
+        "clinostat_lead_gene_symbol": "Symbol of that gene (clinostat vs ground)",
+        "clinostat_lead_log2fc_shrunk": "Its apeglm-shrunk log2 fold change (clinostat vs ground)",
+        "clinostat_lead_padj": "Its adjusted p-value (clinostat vs ground)",
+        "rpm_n_tested": "Genes tested (RPM vs ground)",
+        "rpm_n_deg": "DEGs (padj < 0.05) (RPM vs ground)",
+        "rpm_n_up": "Up-regulated DEGs (RPM vs ground)",
+        "rpm_n_down": "Down-regulated DEGs (RPM vs ground)",
+        "rpm_median_log2fc_shrunk": "Median apeglm-shrunk log2 fold change of tested genes (RPM vs ground)",
+        "rpm_lead_gene_id": "Gene with the smallest padj (RPM vs ground)",
+        "rpm_lead_gene_symbol": "Symbol of that gene (RPM vs ground)",
+        "rpm_lead_log2fc_shrunk": "Its apeglm-shrunk log2 fold change (RPM vs ground)",
+        "rpm_lead_padj": "Its adjusted p-value (RPM vs ground)"
+      }
+    },
+    "results_tables/Table_S18_kegg_subsystem_summary.tsv": {
+      "description": "Per-subsystem, per-contrast summaries of the KEGG-mapped reactions",
+      "source": "data/processed/metabolic_subsystem_perturbation.tsv",
+      "columns": {
+        "subsystem": "Metabolic or cellular subsystem",
+        "contrast": "Comparison (numerator_vs_denominator)",
+        "n_reactions": "Reactions in the subsystem",
+        "n_genes_mapped": "Genes mapped by KEGG",
+        "n_genes_tested": "Mapped genes tested by DESeq2",
+        "n_deg": "DEGs (padj < 0.05)",
+        "n_up": "Up-regulated DEGs",
+        "n_down": "Down-regulated DEGs",
+        "deg_fraction": "n_deg / n_genes_tested",
+        "background_n_tested": "Genes tested in the contrast",
+        "background_n_deg": "DEGs in the contrast",
+        "fold_enrichment": "overlap / expected",
+        "hypergeom_p": "One-sided hypergeometric p-value",
+        "bh_fdr": "Benjamini-Hochberg FDR",
+        "median_log2fc_shrunk": "Median apeglm-shrunk log2 fold change of tested genes",
+        "lead_gene_id": "Gene with the smallest padj",
+        "lead_gene_symbol": "Symbol of that gene",
+        "lead_log2fc_shrunk": "Its apeglm-shrunk log2 fold change",
+        "lead_padj": "Its adjusted p-value"
+      }
+    },
+    "results_tables/Table_S19_metabolic_model.json": {
+      "description": "Reaction model with KEGG-supported gene links (JSON)",
+      "source": "data/processed/metabolic_model_sbml.json",
+      "columns": {}
     }
   }
 }

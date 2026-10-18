@@ -1,0 +1,273 @@
+analysis	task	k	model	sample_id	group	true_label	predicted_label	correct	n_train	prob_ground_1g	prob_simulated_microgravity	prob_Clinostat	prob_Ground	prob_RPM
+primary	binary_microgravity_vs_ground	50	TabPFN_v2	RFP3D11	Clinostat	simulated_microgravity	ground_1g	False	7	0.786886	0.213114			
+primary	binary_microgravity_vs_ground	50	TabPFN_v2	RFP3D39	Clinostat	simulated_microgravity	simulated_microgravity	True	7	0.0791558	0.920844			
+primary	binary_microgravity_vs_ground	50	TabPFN_v2	RFP3D47	Clinostat	simulated_microgravity	simulated_microgravity	True	7	0.0739587	0.926041			
+primary	binary_microgravity_vs_ground	50	TabPFN_v2	RFPNG14	Ground	ground_1g	ground_1g	True	7	0.769254	0.230746			
+primary	binary_microgravity_vs_ground	50	TabPFN_v2	RFPNG35	Ground	ground_1g	ground_1g	True	7	0.810062	0.189938			
+primary	binary_microgravity_vs_ground	50	TabPFN_v2	RFPNG45	Ground	ground_1g	simulated_microgravity	False	7	0.325835	0.674165			
+primary	binary_microgravity_vs_ground	50	TabPFN_v2	RFPRPM41	RPM	simulated_microgravity	simulated_microgravity	True	7	0.0901674	0.909833			
+primary	binary_microgravity_vs_ground	50	TabPFN_v2	RFPRPM6	RPM	simulated_microgravity	simulated_microgravity	True	7	0.0772261	0.922774			
+primary	binary_microgravity_vs_ground	50	LogReg_L2	RFP3D11	Clinostat	simulated_microgravity	ground_1g	False	7	0.774535	0.225465			
+primary	binary_microgravity_vs_ground	50	LogReg_L2	RFP3D39	Clinostat	simulated_microgravity	simulated_microgravity	True	7	0.00078637	0.999214			
+primary	binary_microgravity_vs_ground	50	LogReg_L2	RFP3D47	Clinostat	simulated_microgravity	simulated_microgravity	True	7	0.00279358	0.997206			
+primary	binary_microgravity_vs_ground	50	LogReg_L2	RFPNG14	Ground	ground_1g	ground_1g	True	7	0.923148	0.0768515			
+primary	binary_microgravity_vs_ground	50	LogReg_L2	RFPNG35	Ground	ground_1g	ground_1g	True	7	0.955692	0.0443076			
+primary	binary_microgravity_vs_ground	50	LogReg_L2	RFPNG45	Ground	ground_1g	simulated_microgravity	False	7	0.294715	0.705285			
+primary	binary_microgravity_vs_ground	50	LogReg_L2	RFPRPM41	RPM	simulated_microgravity	simulated_microgravity	True	7	0.00194768	0.998052			
+primary	binary_microgravity_vs_ground	50	LogReg_L2	RFPRPM6	RPM	simulated_microgravity	simulated_microgravity	True	7	0.000283989	0.999716			
+primary	binary_microgravity_vs_ground	50	RandomForest_500	RFP3D11	Clinostat	simulated_microgravity	ground_1g	False	7	0.792	0.208			
+primary	binary_microgravity_vs_ground	50	RandomForest_500	RFP3D39	Clinostat	simulated_microgravity	simulated_microgravity	True	7	0.002	0.998			
+primary	binary_microgravity_vs_ground	50	RandomForest_500	RFP3D47	Clinostat	simulated_microgravity	simulated_microgravity	True	7	0.006	0.994			
+primary	binary_microgravity_vs_ground	50	RandomForest_500	RFPNG14	Ground	ground_1g	ground_1g	True	7	0.886	0.114			
+primary	binary_microgravity_vs_ground	50	RandomForest_500	RFPNG35	Ground	ground_1g	ground_1g	True	7	0.826	0.174			
+primary	binary_microgravity_vs_ground	50	RandomForest_500	RFPNG45	Ground	ground_1g	simulated_microgravity	False	7	0.458	0.542			
+primary	binary_microgravity_vs_ground	50	RandomForest_500	RFPRPM41	RPM	simulated_microgravity	simulated_microgravity	True	7	0.008	0.992			
+primary	binary_microgravity_vs_ground	50	RandomForest_500	RFPRPM6	RPM	simulated_microgravity	simulated_microgravity	True	7	0.01	0.99			
+primary	binary_microgravity_vs_ground	50	Majority_baseline	RFP3D11	Clinostat	simulated_microgravity	simulated_microgravity	True	7	0.428571	0.571429			
+primary	binary_microgravity_vs_ground	50	Majority_baseline	RFP3D39	Clinostat	simulated_microgravity	simulated_microgravity	True	7	0.428571	0.571429			
+primary	binary_microgravity_vs_ground	50	Majority_baseline	RFP3D47	Clinostat	simulated_microgravity	simulated_microgravity	True	7	0.428571	0.571429			
+primary	binary_microgravity_vs_ground	50	Majority_baseline	RFPNG14	Ground	ground_1g	simulated_microgravity	False	7	0.285714	0.714286			
+primary	binary_microgravity_vs_ground	50	Majority_baseline	RFPNG35	Ground	ground_1g	simulated_microgravity	False	7	0.285714	0.714286			
+primary	binary_microgravity_vs_ground	50	Majority_baseline	RFPNG45	Ground	ground_1g	simulated_microgravity	False	7	0.285714	0.714286			
+primary	binary_microgravity_vs_ground	50	Majority_baseline	RFPRPM41	RPM	simulated_microgravity	simulated_microgravity	True	7	0.428571	0.571429			
+primary	binary_microgravity_vs_ground	50	Majority_baseline	RFPRPM6	RPM	simulated_microgravity	simulated_microgravity	True	7	0.428571	0.571429			
+primary	three_class_modality	50	TabPFN_v2	RFP3D11	Clinostat	Clinostat	Ground	False	7			0.247194	0.619674	0.133133
+primary	three_class_modality	50	TabPFN_v2	RFP3D39	Clinostat	Clinostat	Clinostat	True	7			0.667456	0.0526674	0.279877
+primary	three_class_modality	50	TabPFN_v2	RFP3D47	Clinostat	Clinostat	Clinostat	True	7			0.836811	0.072247	0.0909423
+primary	three_class_modality	50	TabPFN_v2	RFPNG14	Ground	Ground	Ground	True	7			0.0681199	0.910102	0.0217782
+primary	three_class_modality	50	TabPFN_v2	RFPNG35	Ground	Ground	Ground	True	7			0.050359	0.923521	0.0261196
+primary	three_class_modality	50	TabPFN_v2	RFPNG45	Ground	Ground	Ground	True	7			0.343179	0.606926	0.0498951
+primary	three_class_modality	50	TabPFN_v2	RFPRPM41	RPM	RPM	Clinostat	False	7			0.816318	0.0758281	0.107853
+primary	three_class_modality	50	TabPFN_v2	RFPRPM6	RPM	RPM	RPM	True	7			0.340961	0.071016	0.588023
+primary	three_class_modality	50	LogReg_L2	RFP3D11	Clinostat	Clinostat	Ground	False	7			0.0590596	0.817006	0.123934
+primary	three_class_modality	50	LogReg_L2	RFP3D39	Clinostat	Clinostat	RPM	False	7			0.18936	0.000243148	0.810397
+primary	three_class_modality	50	LogReg_L2	RFP3D47	Clinostat	Clinostat	Clinostat	True	7			0.631964	0.00101661	0.367019
+primary	three_class_modality	50	LogReg_L2	RFPNG14	Ground	Ground	Ground	True	7			0.0902571	0.909379	0.00036414
+primary	three_class_modality	50	LogReg_L2	RFPNG35	Ground	Ground	Ground	True	7			0.0494932	0.950327	0.000179828
+primary	three_class_modality	50	LogReg_L2	RFPNG45	Ground	Ground	Clinostat	False	7			0.78061	0.209597	0.00979292
+primary	three_class_modality	50	LogReg_L2	RFPRPM41	RPM	RPM	Clinostat	False	7			0.905565	0.00120267	0.0932324
+primary	three_class_modality	50	LogReg_L2	RFPRPM6	RPM	RPM	Clinostat	False	7			0.815545	8.62795e-05	0.184369
+primary	three_class_modality	50	RandomForest_500	RFP3D11	Clinostat	Clinostat	Ground	False	7			0.074	0.828	0.098
+primary	three_class_modality	50	RandomForest_500	RFP3D39	Clinostat	Clinostat	RPM	False	7			0.366	0.002	0.632
+primary	three_class_modality	50	RandomForest_500	RFP3D47	Clinostat	Clinostat	RPM	False	7			0.476	0.01	0.514
+primary	three_class_modality	50	RandomForest_500	RFPNG14	Ground	Ground	Ground	True	7			0.108	0.882	0.01
+primary	three_class_modality	50	RandomForest_500	RFPNG35	Ground	Ground	Ground	True	7			0.186	0.8	0.014
+primary	three_class_modality	50	RandomForest_500	RFPNG45	Ground	Ground	Clinostat	False	7			0.49	0.47	0.04
+primary	three_class_modality	50	RandomForest_500	RFPRPM41	RPM	RPM	Clinostat	False	7			0.822	0.01	0.168
+primary	three_class_modality	50	RandomForest_500	RFPRPM6	RPM	RPM	Clinostat	False	7			0.752	0.01	0.238
+primary	three_class_modality	50	Majority_baseline	RFP3D11	Clinostat	Clinostat	Ground	False	7			0.285714	0.428571	0.285714
+primary	three_class_modality	50	Majority_baseline	RFP3D39	Clinostat	Clinostat	Ground	False	7			0.285714	0.428571	0.285714
+primary	three_class_modality	50	Majority_baseline	RFP3D47	Clinostat	Clinostat	Ground	False	7			0.285714	0.428571	0.285714
+primary	three_class_modality	50	Majority_baseline	RFPNG14	Ground	Ground	Clinostat	False	7			0.428571	0.285714	0.285714
+primary	three_class_modality	50	Majority_baseline	RFPNG35	Ground	Ground	Clinostat	False	7			0.428571	0.285714	0.285714
+primary	three_class_modality	50	Majority_baseline	RFPNG45	Ground	Ground	Clinostat	False	7			0.428571	0.285714	0.285714
+primary	three_class_modality	50	Majority_baseline	RFPRPM41	RPM	RPM	Clinostat	False	7			0.428571	0.428571	0.142857
+primary	three_class_modality	50	Majority_baseline	RFPRPM6	RPM	RPM	Clinostat	False	7			0.428571	0.428571	0.142857
+primary	binary_microgravity_vs_ground	200	TabPFN_v2	RFP3D11	Clinostat	simulated_microgravity	ground_1g	False	7	0.683006	0.316994			
+primary	binary_microgravity_vs_ground	200	TabPFN_v2	RFP3D39	Clinostat	simulated_microgravity	simulated_microgravity	True	7	0.0582071	0.941793			
+primary	binary_microgravity_vs_ground	200	TabPFN_v2	RFP3D47	Clinostat	simulated_microgravity	simulated_microgravity	True	7	0.0750694	0.924931			
+primary	binary_microgravity_vs_ground	200	TabPFN_v2	RFPNG14	Ground	ground_1g	ground_1g	True	7	0.746519	0.253481			
+primary	binary_microgravity_vs_ground	200	TabPFN_v2	RFPNG35	Ground	ground_1g	ground_1g	True	7	0.813175	0.186825			
+primary	binary_microgravity_vs_ground	200	TabPFN_v2	RFPNG45	Ground	ground_1g	simulated_microgravity	False	7	0.429517	0.570483			
+primary	binary_microgravity_vs_ground	200	TabPFN_v2	RFPRPM41	RPM	simulated_microgravity	simulated_microgravity	True	7	0.0560759	0.943924			
+primary	binary_microgravity_vs_ground	200	TabPFN_v2	RFPRPM6	RPM	simulated_microgravity	simulated_microgravity	True	7	0.0501151	0.949885			
+primary	binary_microgravity_vs_ground	200	LogReg_L2	RFP3D11	Clinostat	simulated_microgravity	ground_1g	False	7	0.661968	0.338032			
+primary	binary_microgravity_vs_ground	200	LogReg_L2	RFP3D39	Clinostat	simulated_microgravity	simulated_microgravity	True	7	0.000214089	0.999786			
+primary	binary_microgravity_vs_ground	200	LogReg_L2	RFP3D47	Clinostat	simulated_microgravity	simulated_microgravity	True	7	0.00112935	0.998871			
+primary	binary_microgravity_vs_ground	200	LogReg_L2	RFPNG14	Ground	ground_1g	ground_1g	True	7	0.944373	0.0556271			
+primary	binary_microgravity_vs_ground	200	LogReg_L2	RFPNG35	Ground	ground_1g	ground_1g	True	7	0.973076	0.0269239			
+primary	binary_microgravity_vs_ground	200	LogReg_L2	RFPNG45	Ground	ground_1g	simulated_microgravity	False	7	0.340477	0.659523			
+primary	binary_microgravity_vs_ground	200	LogReg_L2	RFPRPM41	RPM	simulated_microgravity	simulated_microgravity	True	7	0.000568321	0.999432			
+primary	binary_microgravity_vs_ground	200	LogReg_L2	RFPRPM6	RPM	simulated_microgravity	simulated_microgravity	True	7	8.69529e-05	0.999913			
+primary	binary_microgravity_vs_ground	200	RandomForest_500	RFP3D11	Clinostat	simulated_microgravity	ground_1g	False	7	0.65	0.35			
+primary	binary_microgravity_vs_ground	200	RandomForest_500	RFP3D39	Clinostat	simulated_microgravity	simulated_microgravity	True	7	0.046	0.954			
+primary	binary_microgravity_vs_ground	200	RandomForest_500	RFP3D47	Clinostat	simulated_microgravity	simulated_microgravity	True	7	0.038	0.962			
+primary	binary_microgravity_vs_ground	200	RandomForest_500	RFPNG14	Ground	ground_1g	ground_1g	True	7	0.822	0.178			
+primary	binary_microgravity_vs_ground	200	RandomForest_500	RFPNG35	Ground	ground_1g	ground_1g	True	7	0.734	0.266			
+primary	binary_microgravity_vs_ground	200	RandomForest_500	RFPNG45	Ground	ground_1g	simulated_microgravity	False	7	0.49	0.51			
+primary	binary_microgravity_vs_ground	200	RandomForest_500	RFPRPM41	RPM	simulated_microgravity	simulated_microgravity	True	7	0.028	0.972			
+primary	binary_microgravity_vs_ground	200	RandomForest_500	RFPRPM6	RPM	simulated_microgravity	simulated_microgravity	True	7	0.012	0.988			
+primary	binary_microgravity_vs_ground	200	Majority_baseline	RFP3D11	Clinostat	simulated_microgravity	simulated_microgravity	True	7	0.428571	0.571429			
+primary	binary_microgravity_vs_ground	200	Majority_baseline	RFP3D39	Clinostat	simulated_microgravity	simulated_microgravity	True	7	0.428571	0.571429			
+primary	binary_microgravity_vs_ground	200	Majority_baseline	RFP3D47	Clinostat	simulated_microgravity	simulated_microgravity	True	7	0.428571	0.571429			
+primary	binary_microgravity_vs_ground	200	Majority_baseline	RFPNG14	Ground	ground_1g	simulated_microgravity	False	7	0.285714	0.714286			
+primary	binary_microgravity_vs_ground	200	Majority_baseline	RFPNG35	Ground	ground_1g	simulated_microgravity	False	7	0.285714	0.714286			
+primary	binary_microgravity_vs_ground	200	Majority_baseline	RFPNG45	Ground	ground_1g	simulated_microgravity	False	7	0.285714	0.714286			
+primary	binary_microgravity_vs_ground	200	Majority_baseline	RFPRPM41	RPM	simulated_microgravity	simulated_microgravity	True	7	0.428571	0.571429			
+primary	binary_microgravity_vs_ground	200	Majority_baseline	RFPRPM6	RPM	simulated_microgravity	simulated_microgravity	True	7	0.428571	0.571429			
+primary	three_class_modality	200	TabPFN_v2	RFP3D11	Clinostat	Clinostat	Ground	False	7			0.181639	0.693925	0.124435
+primary	three_class_modality	200	TabPFN_v2	RFP3D39	Clinostat	Clinostat	RPM	False	7			0.362527	0.0421699	0.595303
+primary	three_class_modality	200	TabPFN_v2	RFP3D47	Clinostat	Clinostat	Clinostat	True	7			0.578948	0.100761	0.320291
+primary	three_class_modality	200	TabPFN_v2	RFPNG14	Ground	Ground	Ground	True	7			0.135813	0.816793	0.0473937
+primary	three_class_modality	200	TabPFN_v2	RFPNG35	Ground	Ground	Ground	True	7			0.120172	0.834165	0.0456632
+primary	three_class_modality	200	TabPFN_v2	RFPNG45	Ground	Ground	Ground	True	7			0.355977	0.555985	0.0880382
+primary	three_class_modality	200	TabPFN_v2	RFPRPM41	RPM	RPM	Clinostat	False	7			0.675883	0.0566285	0.267488
+primary	three_class_modality	200	TabPFN_v2	RFPRPM6	RPM	RPM	RPM	True	7			0.441486	0.0575327	0.500981
+primary	three_class_modality	200	LogReg_L2	RFP3D11	Clinostat	Clinostat	Ground	False	7			0.107564	0.76442	0.128016
+primary	three_class_modality	200	LogReg_L2	RFP3D39	Clinostat	Clinostat	RPM	False	7			0.197861	0.00021998	0.801919
+primary	three_class_modality	200	LogReg_L2	RFP3D47	Clinostat	Clinostat	Clinostat	True	7			0.580018	0.00132895	0.418653
+primary	three_class_modality	200	LogReg_L2	RFPNG14	Ground	Ground	Ground	True	7			0.0763905	0.923449	0.000160452
+primary	three_class_modality	200	LogReg_L2	RFPNG35	Ground	Ground	Ground	True	7			0.0384692	0.961502	2.85206e-05
+primary	three_class_modality	200	LogReg_L2	RFPNG45	Ground	Ground	Clinostat	False	7			0.754169	0.243286	0.00254486
+primary	three_class_modality	200	LogReg_L2	RFPRPM41	RPM	RPM	Clinostat	False	7			0.787769	0.00118201	0.211049
+primary	three_class_modality	200	LogReg_L2	RFPRPM6	RPM	RPM	Clinostat	False	7			0.736584	0.000130697	0.263285
+primary	three_class_modality	200	RandomForest_500	RFP3D11	Clinostat	Clinostat	Ground	False	7			0.178	0.66	0.162
+primary	three_class_modality	200	RandomForest_500	RFP3D39	Clinostat	Clinostat	RPM	False	7			0.352	0.042	0.606
+primary	three_class_modality	200	RandomForest_500	RFP3D47	Clinostat	Clinostat	Clinostat	True	7			0.534	0.032	0.434
+primary	three_class_modality	200	RandomForest_500	RFPNG14	Ground	Ground	Ground	True	7			0.196	0.788	0.016
+primary	three_class_modality	200	RandomForest_500	RFPNG35	Ground	Ground	Ground	True	7			0.238	0.722	0.04
+primary	three_class_modality	200	RandomForest_500	RFPNG45	Ground	Ground	Ground	True	7			0.398	0.51	0.092
+primary	three_class_modality	200	RandomForest_500	RFPRPM41	RPM	RPM	Clinostat	False	7			0.724	0.026	0.25
+primary	three_class_modality	200	RandomForest_500	RFPRPM6	RPM	RPM	Clinostat	False	7			0.622	0.02	0.358
+primary	three_class_modality	200	Majority_baseline	RFP3D11	Clinostat	Clinostat	Ground	False	7			0.285714	0.428571	0.285714
+primary	three_class_modality	200	Majority_baseline	RFP3D39	Clinostat	Clinostat	Ground	False	7			0.285714	0.428571	0.285714
+primary	three_class_modality	200	Majority_baseline	RFP3D47	Clinostat	Clinostat	Ground	False	7			0.285714	0.428571	0.285714
+primary	three_class_modality	200	Majority_baseline	RFPNG14	Ground	Ground	Clinostat	False	7			0.428571	0.285714	0.285714
+primary	three_class_modality	200	Majority_baseline	RFPNG35	Ground	Ground	Clinostat	False	7			0.428571	0.285714	0.285714
+primary	three_class_modality	200	Majority_baseline	RFPNG45	Ground	Ground	Clinostat	False	7			0.428571	0.285714	0.285714
+primary	three_class_modality	200	Majority_baseline	RFPRPM41	RPM	RPM	Clinostat	False	7			0.428571	0.428571	0.142857
+primary	three_class_modality	200	Majority_baseline	RFPRPM6	RPM	RPM	Clinostat	False	7			0.428571	0.428571	0.142857
+sensitivity_9	binary_microgravity_vs_ground	50	TabPFN_v2	RFP3D11	Clinostat	simulated_microgravity	ground_1g	False	8	0.742749	0.257251			
+sensitivity_9	binary_microgravity_vs_ground	50	TabPFN_v2	RFP3D39	Clinostat	simulated_microgravity	simulated_microgravity	True	8	0.0417399	0.95826			
+sensitivity_9	binary_microgravity_vs_ground	50	TabPFN_v2	RFP3D47	Clinostat	simulated_microgravity	simulated_microgravity	True	8	0.0527302	0.94727			
+sensitivity_9	binary_microgravity_vs_ground	50	TabPFN_v2	RFPNG14	Ground	ground_1g	ground_1g	True	8	0.712386	0.287614			
+sensitivity_9	binary_microgravity_vs_ground	50	TabPFN_v2	RFPNG35	Ground	ground_1g	ground_1g	True	8	0.847799	0.152201			
+sensitivity_9	binary_microgravity_vs_ground	50	TabPFN_v2	RFPNG45	Ground	ground_1g	simulated_microgravity	False	8	0.28728	0.71272			
+sensitivity_9	binary_microgravity_vs_ground	50	TabPFN_v2	RFPRPM4	RPM	simulated_microgravity	simulated_microgravity	True	8	0.0803552	0.919645			
+sensitivity_9	binary_microgravity_vs_ground	50	TabPFN_v2	RFPRPM41	RPM	simulated_microgravity	simulated_microgravity	True	8	0.0488025	0.951198			
+sensitivity_9	binary_microgravity_vs_ground	50	TabPFN_v2	RFPRPM6	RPM	simulated_microgravity	simulated_microgravity	True	8	0.0463487	0.953651			
+sensitivity_9	binary_microgravity_vs_ground	50	LogReg_L2	RFP3D11	Clinostat	simulated_microgravity	ground_1g	False	8	0.712838	0.287162			
+sensitivity_9	binary_microgravity_vs_ground	50	LogReg_L2	RFP3D39	Clinostat	simulated_microgravity	simulated_microgravity	True	8	0.00100455	0.998995			
+sensitivity_9	binary_microgravity_vs_ground	50	LogReg_L2	RFP3D47	Clinostat	simulated_microgravity	simulated_microgravity	True	8	0.00209516	0.997905			
+sensitivity_9	binary_microgravity_vs_ground	50	LogReg_L2	RFPNG14	Ground	ground_1g	ground_1g	True	8	0.937672	0.0623278			
+sensitivity_9	binary_microgravity_vs_ground	50	LogReg_L2	RFPNG35	Ground	ground_1g	ground_1g	True	8	0.967543	0.0324573			
+sensitivity_9	binary_microgravity_vs_ground	50	LogReg_L2	RFPNG45	Ground	ground_1g	simulated_microgravity	False	8	0.293623	0.706377			
+sensitivity_9	binary_microgravity_vs_ground	50	LogReg_L2	RFPRPM4	RPM	simulated_microgravity	simulated_microgravity	True	8	0.00308014	0.99692			
+sensitivity_9	binary_microgravity_vs_ground	50	LogReg_L2	RFPRPM41	RPM	simulated_microgravity	simulated_microgravity	True	8	0.00150853	0.998491			
+sensitivity_9	binary_microgravity_vs_ground	50	LogReg_L2	RFPRPM6	RPM	simulated_microgravity	simulated_microgravity	True	8	0.000458801	0.999541			
+sensitivity_9	binary_microgravity_vs_ground	50	RandomForest_500	RFP3D11	Clinostat	simulated_microgravity	ground_1g	False	8	0.736	0.264			
+sensitivity_9	binary_microgravity_vs_ground	50	RandomForest_500	RFP3D39	Clinostat	simulated_microgravity	simulated_microgravity	True	8	0.01	0.99			
+sensitivity_9	binary_microgravity_vs_ground	50	RandomForest_500	RFP3D47	Clinostat	simulated_microgravity	simulated_microgravity	True	8	0.006	0.994			
+sensitivity_9	binary_microgravity_vs_ground	50	RandomForest_500	RFPNG14	Ground	ground_1g	ground_1g	True	8	0.88	0.12			
+sensitivity_9	binary_microgravity_vs_ground	50	RandomForest_500	RFPNG35	Ground	ground_1g	ground_1g	True	8	0.82	0.18			
+sensitivity_9	binary_microgravity_vs_ground	50	RandomForest_500	RFPNG45	Ground	ground_1g	simulated_microgravity	False	8	0.44	0.56			
+sensitivity_9	binary_microgravity_vs_ground	50	RandomForest_500	RFPRPM4	RPM	simulated_microgravity	simulated_microgravity	True	8	0.04	0.96			
+sensitivity_9	binary_microgravity_vs_ground	50	RandomForest_500	RFPRPM41	RPM	simulated_microgravity	simulated_microgravity	True	8	0	1			
+sensitivity_9	binary_microgravity_vs_ground	50	RandomForest_500	RFPRPM6	RPM	simulated_microgravity	simulated_microgravity	True	8	0.002	0.998			
+sensitivity_9	binary_microgravity_vs_ground	50	Majority_baseline	RFP3D11	Clinostat	simulated_microgravity	simulated_microgravity	True	8	0.375	0.625			
+sensitivity_9	binary_microgravity_vs_ground	50	Majority_baseline	RFP3D39	Clinostat	simulated_microgravity	simulated_microgravity	True	8	0.375	0.625			
+sensitivity_9	binary_microgravity_vs_ground	50	Majority_baseline	RFP3D47	Clinostat	simulated_microgravity	simulated_microgravity	True	8	0.375	0.625			
+sensitivity_9	binary_microgravity_vs_ground	50	Majority_baseline	RFPNG14	Ground	ground_1g	simulated_microgravity	False	8	0.25	0.75			
+sensitivity_9	binary_microgravity_vs_ground	50	Majority_baseline	RFPNG35	Ground	ground_1g	simulated_microgravity	False	8	0.25	0.75			
+sensitivity_9	binary_microgravity_vs_ground	50	Majority_baseline	RFPNG45	Ground	ground_1g	simulated_microgravity	False	8	0.25	0.75			
+sensitivity_9	binary_microgravity_vs_ground	50	Majority_baseline	RFPRPM4	RPM	simulated_microgravity	simulated_microgravity	True	8	0.375	0.625			
+sensitivity_9	binary_microgravity_vs_ground	50	Majority_baseline	RFPRPM41	RPM	simulated_microgravity	simulated_microgravity	True	8	0.375	0.625			
+sensitivity_9	binary_microgravity_vs_ground	50	Majority_baseline	RFPRPM6	RPM	simulated_microgravity	simulated_microgravity	True	8	0.375	0.625			
+sensitivity_9	three_class_modality	50	TabPFN_v2	RFP3D11	Clinostat	Clinostat	Ground	False	8			0.0833659	0.770058	0.146576
+sensitivity_9	three_class_modality	50	TabPFN_v2	RFP3D39	Clinostat	Clinostat	RPM	False	8			0.139521	0.0155568	0.844922
+sensitivity_9	three_class_modality	50	TabPFN_v2	RFP3D47	Clinostat	Clinostat	RPM	False	8			0.424182	0.0756807	0.500138
+sensitivity_9	three_class_modality	50	TabPFN_v2	RFPNG14	Ground	Ground	Ground	True	8			0.170815	0.766132	0.063053
+sensitivity_9	three_class_modality	50	TabPFN_v2	RFPNG35	Ground	Ground	Ground	True	8			0.0658152	0.906779	0.027406
+sensitivity_9	three_class_modality	50	TabPFN_v2	RFPNG45	Ground	Ground	Clinostat	False	8			0.584013	0.323177	0.0928108
+sensitivity_9	three_class_modality	50	TabPFN_v2	RFPRPM4	RPM	RPM	RPM	True	8			0.375782	0.0757653	0.548453
+sensitivity_9	three_class_modality	50	TabPFN_v2	RFPRPM41	RPM	RPM	RPM	True	8			0.332071	0.0519099	0.616019
+sensitivity_9	three_class_modality	50	TabPFN_v2	RFPRPM6	RPM	RPM	Clinostat	False	8			0.641904	0.0590701	0.299026
+sensitivity_9	three_class_modality	50	LogReg_L2	RFP3D11	Clinostat	Clinostat	Ground	False	8			0.0199834	0.650716	0.329301
+sensitivity_9	three_class_modality	50	LogReg_L2	RFP3D39	Clinostat	Clinostat	RPM	False	8			0.139397	0.000292082	0.860311
+sensitivity_9	three_class_modality	50	LogReg_L2	RFP3D47	Clinostat	Clinostat	RPM	False	8			0.40247	0.000578451	0.596952
+sensitivity_9	three_class_modality	50	LogReg_L2	RFPNG14	Ground	Ground	Ground	True	8			0.0800728	0.919652	0.000275557
+sensitivity_9	three_class_modality	50	LogReg_L2	RFPNG35	Ground	Ground	Ground	True	8			0.0352427	0.964588	0.000169213
+sensitivity_9	three_class_modality	50	LogReg_L2	RFPNG45	Ground	Ground	Clinostat	False	8			0.856361	0.137208	0.00643043
+sensitivity_9	three_class_modality	50	LogReg_L2	RFPRPM4	RPM	RPM	RPM	True	8			0.303003	0.00152513	0.695472
+sensitivity_9	three_class_modality	50	LogReg_L2	RFPRPM41	RPM	RPM	RPM	True	8			0.272676	0.000521017	0.726803
+sensitivity_9	three_class_modality	50	LogReg_L2	RFPRPM6	RPM	RPM	Clinostat	False	8			0.660198	0.000128384	0.339674
+sensitivity_9	three_class_modality	50	RandomForest_500	RFP3D11	Clinostat	Clinostat	Ground	False	8			0.1	0.752	0.148
+sensitivity_9	three_class_modality	50	RandomForest_500	RFP3D39	Clinostat	Clinostat	RPM	False	8			0.312	0.016	0.672
+sensitivity_9	three_class_modality	50	RandomForest_500	RFP3D47	Clinostat	Clinostat	RPM	False	8			0.446	0.006	0.548
+sensitivity_9	three_class_modality	50	RandomForest_500	RFPNG14	Ground	Ground	Ground	True	8			0.12	0.852	0.028
+sensitivity_9	three_class_modality	50	RandomForest_500	RFPNG35	Ground	Ground	Ground	True	8			0.184	0.794	0.022
+sensitivity_9	three_class_modality	50	RandomForest_500	RFPNG45	Ground	Ground	Clinostat	False	8			0.508	0.45	0.042
+sensitivity_9	three_class_modality	50	RandomForest_500	RFPRPM4	RPM	RPM	Clinostat	False	8			0.498	0.036	0.466
+sensitivity_9	three_class_modality	50	RandomForest_500	RFPRPM41	RPM	RPM	Clinostat	False	8			0.534	0.002	0.464
+sensitivity_9	three_class_modality	50	RandomForest_500	RFPRPM6	RPM	RPM	Clinostat	False	8			0.668	0.002	0.33
+sensitivity_9	three_class_modality	50	Majority_baseline	RFP3D11	Clinostat	Clinostat	Ground	False	8			0.25	0.375	0.375
+sensitivity_9	three_class_modality	50	Majority_baseline	RFP3D39	Clinostat	Clinostat	Ground	False	8			0.25	0.375	0.375
+sensitivity_9	three_class_modality	50	Majority_baseline	RFP3D47	Clinostat	Clinostat	Ground	False	8			0.25	0.375	0.375
+sensitivity_9	three_class_modality	50	Majority_baseline	RFPNG14	Ground	Ground	Clinostat	False	8			0.375	0.25	0.375
+sensitivity_9	three_class_modality	50	Majority_baseline	RFPNG35	Ground	Ground	Clinostat	False	8			0.375	0.25	0.375
+sensitivity_9	three_class_modality	50	Majority_baseline	RFPNG45	Ground	Ground	Clinostat	False	8			0.375	0.25	0.375
+sensitivity_9	three_class_modality	50	Majority_baseline	RFPRPM4	RPM	RPM	Clinostat	False	8			0.375	0.375	0.25
+sensitivity_9	three_class_modality	50	Majority_baseline	RFPRPM41	RPM	RPM	Clinostat	False	8			0.375	0.375	0.25
+sensitivity_9	three_class_modality	50	Majority_baseline	RFPRPM6	RPM	RPM	Clinostat	False	8			0.375	0.375	0.25
+sensitivity_9	binary_microgravity_vs_ground	200	TabPFN_v2	RFP3D11	Clinostat	simulated_microgravity	ground_1g	False	8	0.612587	0.387413			
+sensitivity_9	binary_microgravity_vs_ground	200	TabPFN_v2	RFP3D39	Clinostat	simulated_microgravity	simulated_microgravity	True	8	0.0402436	0.959756			
+sensitivity_9	binary_microgravity_vs_ground	200	TabPFN_v2	RFP3D47	Clinostat	simulated_microgravity	simulated_microgravity	True	8	0.0585384	0.941462			
+sensitivity_9	binary_microgravity_vs_ground	200	TabPFN_v2	RFPNG14	Ground	ground_1g	ground_1g	True	8	0.822271	0.177729			
+sensitivity_9	binary_microgravity_vs_ground	200	TabPFN_v2	RFPNG35	Ground	ground_1g	ground_1g	True	8	0.829485	0.170515			
+sensitivity_9	binary_microgravity_vs_ground	200	TabPFN_v2	RFPNG45	Ground	ground_1g	simulated_microgravity	False	8	0.417874	0.582126			
+sensitivity_9	binary_microgravity_vs_ground	200	TabPFN_v2	RFPRPM4	RPM	simulated_microgravity	simulated_microgravity	True	8	0.051961	0.948039			
+sensitivity_9	binary_microgravity_vs_ground	200	TabPFN_v2	RFPRPM41	RPM	simulated_microgravity	simulated_microgravity	True	8	0.0375164	0.962484			
+sensitivity_9	binary_microgravity_vs_ground	200	TabPFN_v2	RFPRPM6	RPM	simulated_microgravity	simulated_microgravity	True	8	0.0346295	0.965371			
+sensitivity_9	binary_microgravity_vs_ground	200	LogReg_L2	RFP3D11	Clinostat	simulated_microgravity	ground_1g	False	8	0.536139	0.463861			
+sensitivity_9	binary_microgravity_vs_ground	200	LogReg_L2	RFP3D39	Clinostat	simulated_microgravity	simulated_microgravity	True	8	0.000265135	0.999735			
+sensitivity_9	binary_microgravity_vs_ground	200	LogReg_L2	RFP3D47	Clinostat	simulated_microgravity	simulated_microgravity	True	8	0.000856871	0.999143			
+sensitivity_9	binary_microgravity_vs_ground	200	LogReg_L2	RFPNG14	Ground	ground_1g	ground_1g	True	8	0.981672	0.0183276			
+sensitivity_9	binary_microgravity_vs_ground	200	LogReg_L2	RFPNG35	Ground	ground_1g	ground_1g	True	8	0.978741	0.0212592			
+sensitivity_9	binary_microgravity_vs_ground	200	LogReg_L2	RFPNG45	Ground	ground_1g	simulated_microgravity	False	8	0.323559	0.676441			
+sensitivity_9	binary_microgravity_vs_ground	200	LogReg_L2	RFPRPM4	RPM	simulated_microgravity	simulated_microgravity	True	8	0.000967403	0.999033			
+sensitivity_9	binary_microgravity_vs_ground	200	LogReg_L2	RFPRPM41	RPM	simulated_microgravity	simulated_microgravity	True	8	0.00043486	0.999565			
+sensitivity_9	binary_microgravity_vs_ground	200	LogReg_L2	RFPRPM6	RPM	simulated_microgravity	simulated_microgravity	True	8	9.77773e-05	0.999902			
+sensitivity_9	binary_microgravity_vs_ground	200	RandomForest_500	RFP3D11	Clinostat	simulated_microgravity	ground_1g	False	8	0.576	0.424			
+sensitivity_9	binary_microgravity_vs_ground	200	RandomForest_500	RFP3D39	Clinostat	simulated_microgravity	simulated_microgravity	True	8	0.018	0.982			
+sensitivity_9	binary_microgravity_vs_ground	200	RandomForest_500	RFP3D47	Clinostat	simulated_microgravity	simulated_microgravity	True	8	0.014	0.986			
+sensitivity_9	binary_microgravity_vs_ground	200	RandomForest_500	RFPNG14	Ground	ground_1g	ground_1g	True	8	0.836	0.164			
+sensitivity_9	binary_microgravity_vs_ground	200	RandomForest_500	RFPNG35	Ground	ground_1g	ground_1g	True	8	0.702	0.298			
+sensitivity_9	binary_microgravity_vs_ground	200	RandomForest_500	RFPNG45	Ground	ground_1g	simulated_microgravity	False	8	0.454	0.546			
+sensitivity_9	binary_microgravity_vs_ground	200	RandomForest_500	RFPRPM4	RPM	simulated_microgravity	simulated_microgravity	True	8	0.026	0.974			
+sensitivity_9	binary_microgravity_vs_ground	200	RandomForest_500	RFPRPM41	RPM	simulated_microgravity	simulated_microgravity	True	8	0.004	0.996			
+sensitivity_9	binary_microgravity_vs_ground	200	RandomForest_500	RFPRPM6	RPM	simulated_microgravity	simulated_microgravity	True	8	0.002	0.998			
+sensitivity_9	binary_microgravity_vs_ground	200	Majority_baseline	RFP3D11	Clinostat	simulated_microgravity	simulated_microgravity	True	8	0.375	0.625			
+sensitivity_9	binary_microgravity_vs_ground	200	Majority_baseline	RFP3D39	Clinostat	simulated_microgravity	simulated_microgravity	True	8	0.375	0.625			
+sensitivity_9	binary_microgravity_vs_ground	200	Majority_baseline	RFP3D47	Clinostat	simulated_microgravity	simulated_microgravity	True	8	0.375	0.625			
+sensitivity_9	binary_microgravity_vs_ground	200	Majority_baseline	RFPNG14	Ground	ground_1g	simulated_microgravity	False	8	0.25	0.75			
+sensitivity_9	binary_microgravity_vs_ground	200	Majority_baseline	RFPNG35	Ground	ground_1g	simulated_microgravity	False	8	0.25	0.75			
+sensitivity_9	binary_microgravity_vs_ground	200	Majority_baseline	RFPNG45	Ground	ground_1g	simulated_microgravity	False	8	0.25	0.75			
+sensitivity_9	binary_microgravity_vs_ground	200	Majority_baseline	RFPRPM4	RPM	simulated_microgravity	simulated_microgravity	True	8	0.375	0.625			
+sensitivity_9	binary_microgravity_vs_ground	200	Majority_baseline	RFPRPM41	RPM	simulated_microgravity	simulated_microgravity	True	8	0.375	0.625			
+sensitivity_9	binary_microgravity_vs_ground	200	Majority_baseline	RFPRPM6	RPM	simulated_microgravity	simulated_microgravity	True	8	0.375	0.625			
+sensitivity_9	three_class_modality	200	TabPFN_v2	RFP3D11	Clinostat	Clinostat	Ground	False	8			0.141427	0.611063	0.24751
+sensitivity_9	three_class_modality	200	TabPFN_v2	RFP3D39	Clinostat	Clinostat	RPM	False	8			0.135794	0.010737	0.853469
+sensitivity_9	three_class_modality	200	TabPFN_v2	RFP3D47	Clinostat	Clinostat	RPM	False	8			0.446793	0.0708865	0.482321
+sensitivity_9	three_class_modality	200	TabPFN_v2	RFPNG14	Ground	Ground	Ground	True	8			0.0989036	0.860775	0.0403215
+sensitivity_9	three_class_modality	200	TabPFN_v2	RFPNG35	Ground	Ground	Ground	True	8			0.0883413	0.866091	0.0455677
+sensitivity_9	three_class_modality	200	TabPFN_v2	RFPNG45	Ground	Ground	Ground	True	8			0.372412	0.491022	0.136566
+sensitivity_9	three_class_modality	200	TabPFN_v2	RFPRPM4	RPM	RPM	Clinostat	False	8			0.825568	0.0251182	0.149314
+sensitivity_9	three_class_modality	200	TabPFN_v2	RFPRPM41	RPM	RPM	Clinostat	False	8			0.680033	0.0277669	0.2922
+sensitivity_9	three_class_modality	200	TabPFN_v2	RFPRPM6	RPM	RPM	Clinostat	False	8			0.611571	0.0339833	0.354446
+sensitivity_9	three_class_modality	200	LogReg_L2	RFP3D11	Clinostat	Clinostat	RPM	False	8			0.0209978	0.41326	0.565742
+sensitivity_9	three_class_modality	200	LogReg_L2	RFP3D39	Clinostat	Clinostat	RPM	False	8			0.112477	0.000158546	0.887365
+sensitivity_9	three_class_modality	200	LogReg_L2	RFP3D47	Clinostat	Clinostat	RPM	False	8			0.481771	0.000510693	0.517718
+sensitivity_9	three_class_modality	200	LogReg_L2	RFPNG14	Ground	Ground	Ground	True	8			0.0343795	0.965617	3.31975e-06
+sensitivity_9	three_class_modality	200	LogReg_L2	RFPNG35	Ground	Ground	Ground	True	8			0.0320085	0.967988	3.61735e-06
+sensitivity_9	three_class_modality	200	LogReg_L2	RFPNG45	Ground	Ground	Clinostat	False	8			0.729439	0.268337	0.00222467
+sensitivity_9	three_class_modality	200	LogReg_L2	RFPRPM4	RPM	RPM	RPM	True	8			0.465663	0.0012852	0.533051
+sensitivity_9	three_class_modality	200	LogReg_L2	RFPRPM41	RPM	RPM	Clinostat	False	8			0.623657	0.000432481	0.375911
+sensitivity_9	three_class_modality	200	LogReg_L2	RFPRPM6	RPM	RPM	Clinostat	False	8			0.682058	8.55181e-05	0.317857
+sensitivity_9	three_class_modality	200	RandomForest_500	RFP3D11	Clinostat	Clinostat	Ground	False	8			0.216	0.534	0.25
+sensitivity_9	three_class_modality	200	RandomForest_500	RFP3D39	Clinostat	Clinostat	RPM	False	8			0.262	0.01	0.728
+sensitivity_9	three_class_modality	200	RandomForest_500	RFP3D47	Clinostat	Clinostat	RPM	False	8			0.396	0.012	0.592
+sensitivity_9	three_class_modality	200	RandomForest_500	RFPNG14	Ground	Ground	Ground	True	8			0.15	0.818	0.032
+sensitivity_9	three_class_modality	200	RandomForest_500	RFPNG35	Ground	Ground	Ground	True	8			0.24	0.702	0.058
+sensitivity_9	three_class_modality	200	RandomForest_500	RFPNG45	Ground	Ground	Ground	True	8			0.388	0.484	0.128
+sensitivity_9	three_class_modality	200	RandomForest_500	RFPRPM4	RPM	RPM	Clinostat	False	8			0.638	0.026	0.336
+sensitivity_9	three_class_modality	200	RandomForest_500	RFPRPM41	RPM	RPM	Clinostat	False	8			0.604	0.004	0.392
+sensitivity_9	three_class_modality	200	RandomForest_500	RFPRPM6	RPM	RPM	Clinostat	False	8			0.558	0.004	0.438
+sensitivity_9	three_class_modality	200	Majority_baseline	RFP3D11	Clinostat	Clinostat	Ground	False	8			0.25	0.375	0.375
+sensitivity_9	three_class_modality	200	Majority_baseline	RFP3D39	Clinostat	Clinostat	Ground	False	8			0.25	0.375	0.375
+sensitivity_9	three_class_modality	200	Majority_baseline	RFP3D47	Clinostat	Clinostat	Ground	False	8			0.25	0.375	0.375
+sensitivity_9	three_class_modality	200	Majority_baseline	RFPNG14	Ground	Ground	Clinostat	False	8			0.375	0.25	0.375
+sensitivity_9	three_class_modality	200	Majority_baseline	RFPNG35	Ground	Ground	Clinostat	False	8			0.375	0.25	0.375
+sensitivity_9	three_class_modality	200	Majority_baseline	RFPNG45	Ground	Ground	Clinostat	False	8			0.375	0.25	0.375
+sensitivity_9	three_class_modality	200	Majority_baseline	RFPRPM4	RPM	RPM	Clinostat	False	8			0.375	0.375	0.25
+sensitivity_9	three_class_modality	200	Majority_baseline	RFPRPM41	RPM	RPM	Clinostat	False	8			0.375	0.375	0.25
+sensitivity_9	three_class_modality	200	Majority_baseline	RFPRPM6	RPM	RPM	Clinostat	False	8			0.375	0.375	0.25

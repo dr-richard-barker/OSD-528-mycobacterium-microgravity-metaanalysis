@@ -1,62 +1,24 @@
-\section{Methods}
+\section*{Methods}
 
-\subsection{NASA OSDR Data Ingestion and Cataloging}
-Study metadata and raw paired-end RNA sequencing records for \textbf{OSD-528} (GLDS-528, DOI: 10.26030/r3re-fd65) and companion study \textbf{OSD-90} were harvested programmatically from the NASA Open Science Data Repository (OSDR) REST API (\url{https://osdr.nasa.gov/osdr/data/osd/meta/}). Across OSDR, a total of 78 microbial spaceflight and simulated microgravity datasets spanning bacteria, fungi, and microbial observatories were indexed into a structured catalog (\texttt{microbial\_osdr\_catalog.json}). 
+\subsection*{Source data and study design}
+All data come from NASA Open Science Data Repository study OSD-528 (GLDS-528)\cite{osd528data}, deposited by Clary and colleagues\cite{clary2022development}. According to the OSDR study description, \textit{M.~marinum} expressing red fluorescent protein was grown in biofilm-promoting medium in flaskettes holding a piece of polydimethylsiloxane (PDMS) membrane. Flaskettes were attached to an RPM~2.0 or to a lab-designed 3D clinostat in the same incubator, or placed on the shelf beside them as the static 1g control, for 4~days at 31\,$^\circ$C. RNA was prepared from the bacteria in suspension. The transcriptomes therefore describe planktonic cells grown alongside the membrane, not the membrane biofilm. Three libraries per condition were deposited as paired-end FASTQ files (\nSamplesDeposited{} samples, 18 files). We downloaded every file through the OSDR file API and checked it against the deposited md5 list before use.
 
-For OSD-528, as described by Clary et al. \cite{clary2022development}, \textit{Mycobacterium marinum} strain 1218R (harboring a red fluorescent protein [RFP] cassette integrated at the Giles mycobacteriophage chromosomal attachment site) was cultured in biofilm-promoting medium inside flaskettes affixed with a PDMS silicone membrane. Flaskettes were subjected to three parallel regimes for 4 days at $31^\circ$C ($n=3$ biological replicates per condition, total $N=9$):
-\begin{enumerate}
-    \item \textbf{3D Clinostat}: Continuous 2-axis clinorotation at $I=1.5$~rpm, $O=3.825$~rpm (samples RFP3D11, RFP3D39, RFP3D47).
-    \item \textbf{Random Positioning Machine 2.0 (RPM 2.0)}: Random multi-axis velocity vectoring, time-averaged $<0.01g$ (samples RFPRPM4, RFPRPM41, RFPRPM6).
-    \item \textbf{Static 1g Ground Control}: Stationary shelf housed in the identical incubator adjacent to the simulators (samples RFPNG14, RFPNG35, RFPNG45).
-\end{enumerate}
+\subsection*{The RFPRPM4 deposit defect}
+The deposited R1 and R2 files of sample RFPRPM4 each begin with the complete corresponding file of sample RFPRPM41: the md5 of the first \rpmFourPrefixBytesRone{} bytes of RFPRPM4~R1 equals the deposited md5 of RFPRPM41~R1, and likewise for R2. A second gzip stream follows in each file, holding \rpmFourPairs{} read pairs. These reads come from the same sequencing run but carry a library index used by no other sample. Read from the start, RFPRPM4 therefore duplicates RFPRPM41. We split off the second library and treat it as an \emph{inferred} RFPRPM4: it is excluded from the primary analysis, which uses \nGround{} ground, \nClino{} clinostat and \nRpm{} RPM samples, and included only in a sensitivity analysis. The OSDR curators have not yet been asked to confirm this assignment.
 
-\subsection{Direct Empirical RNA-Seq Quantification from NASA OSDR}
-All sequencing reads were sourced directly from the active NASA OSDR Amazon S3 repository (\url{https://genelab-repo-prod.s3.amazonaws.com/genelab-data/GLDS-528/rna-seq/}). High-throughput transcript quantification was performed using \texttt{kallisto} (v0.52.0) \cite{bray2016near} against the complete \textit{Mycobacterium marinum} M strain reference transcriptome (NC\_010612.1), comprising 5,510 annotated coding sequences. 
+\subsection*{Quantification}
+Reads were quantified with kallisto \kallistoVersion{}\cite{bray2016near} in paired-end mode against the \textit{M.~marinum} strain M RefSeq assembly GCF\_000018345.1\cite{stinear2008insights}, whose md5 was checked against NCBI. The index contained all \nCdsIndex{} annotated coding sequences (CDS) plus the genome's \nNcrnaDecoys{} rRNA, tRNA and other non-coding RNA genes as decoys. Library strandedness was inferred by pseudoaligning 200{,}000 read pairs in each orientation; the libraries are \strandedness{}-stranded and were quantified as such. Between \pctRrnaMin{}\% and \pctRrnaMax{}\% of read pairs were assigned to rRNA, which suggests little or no rRNA depletion. CDS received \pctCdsMin{}--\pctCdsMax{}\%, about \cdsPairsPrimaryMinK{}{,}000--\cdsPairsPrimaryMaxK{}{,}000 read pairs per primary sample. Only CDS rows enter the count matrix (Supplementary Table~S1).
 
-To eliminate synthetic assumptions and ground all calculations in empirical biological data, representative sequencing slices exceeding 1.1 million paired-end reads per sample ($>10.9$ million total reads) were quantified under single-end mode ($l=99$~bp, $s=10$). Read abundances were collapsed to gene-level estimates and normalized via Counts Per Million with logarithmic transformation ($\log_2(\text{CPM} + 1)$), producing the complete empirical expression matrix (\texttt{osd528\_counts\_normalized.tsv}) covering 4,964 expressed mycobacterial genes.
+\subsection*{Differential expression}
+Estimated counts were rounded and analysed with DESeq2 \deseqVersion{}\cite{love2014moderated} using the design $\sim$\,condition (ground, clinostat, RPM). Genes with at least 10 counts in at least 2 samples were kept (\nGenesTested{} of \nGenesInput{} non-pseudogene CDS). We tested clinostat vs ground, RPM vs ground and clinostat vs RPM with Wald tests and Benjamini--Hochberg (BH) correction, calling a gene differentially expressed (DEG) at FDR $<0.05$. Fold changes are reported both as maximum-likelihood estimates and shrunk with apeglm \apeglmVersion{}\cite{zhu2019heavy}. The shared simulated-microgravity response is the set of genes that are DEGs under both simulators with the same sign. For the principal component analysis (PCA), we used the variance-stabilised transform (blind to design) and the \pcaGenes{} most variable genes. The whole analysis was repeated with the inferred RFPRPM4 library included (sensitivity analysis).
 
-\subsection{Differential Expression Analysis}
-Empirical differential expression was calculated across three pairwise contrasts:
-\begin{align}
-    \text{Contrast 1: } & \text{3D Clinostat vs. Static 1g} \\
-    \text{Contrast 2: } & \text{RPM 2.0 vs. Static 1g} \\
-    \text{Contrast 3: } & \text{3D Clinostat vs. RPM 2.0}
-\end{align}
-Hypothesis testing utilized empirical two-sample $t$-statistics with pooled variance moderation, followed by multiple-testing correction via the Benjamini-Hochberg False Discovery Rate (FDR). Differentially expressed genes (DEGs) were defined by $\text{FDR} < 0.05$ and $|\log_2 \text{Fold Change}| \ge 0.75$.
+\subsection*{Co-expression network}
+We built a signed weighted gene co-expression network with WGCNA \wgcnaVersion{}\cite{langfelder2008wgcna} from the variance-stabilised expression of the \nPrimary{} primary samples. The soft-thresholding power was the smallest that gave a signed scale-free fit $R^2\ge0.8$ (power \wgcnaPower{}, $R^2=\wgcnaRsq$). Modules were detected with a minimum size of 30 genes and merged at a cut height of 0.25. Module eigengenes were correlated with three binary traits (simulated microgravity, clinostat, RPM). Student p-values were BH-corrected across all \nModuleTraitTests{} module--trait tests. With eight samples every correlation rests on eight points, so the network results are exploratory.
 
-\subsection{Weighted Gene Co-Expression Network Analysis (WGCNA)}
-Unsupervised co-expression network reconstruction followed the formulation of Langfelder and Horvath \cite{langfelder2008wgcna}. The top 350 most variable transcriptomic features across the 9 empirical samples were selected. Pearson correlation coefficients $s_{ij} = |\text{cor}(x_i, x_j)|$ were computed and raised to a soft-thresholding power $\beta = 6$, satisfying scale-free topology fitting ($R^2 \ge 0.85$). 
+\subsection*{Gene Ontology over-representation}
+GO annotations for \textit{M.~marinum} strain M were taken from UniProtKB (reference proteome UP000001190, release \uniprotRelease{}) and mapped to RefSeq locus tags through the GenBank \texttt{old\_locus\_tag} qualifiers. They were propagated up the \texttt{is\_a} and \texttt{part\_of} relations of go-basic (release \goRelease{}). Of the \goTestedGenes{} genes tested for differential expression, \goAnnotatedGenes{} (\goAnnotatedPct\%) have at least one annotation, and \goIeaPct\% of the annotations used are electronic (IEA), so the results describe predicted function. For each DEG set (up and down per contrast, and the shared response) and each WGCNA module, we ran a one-sided hypergeometric test for every GO term with 5--500 annotated genes in the universe. The universe was the annotated tested genes, taken separately for biological process, molecular function and cellular component. P-values were BH-corrected within each ontology and gene set. The test treats genes as independent; operons and nested GO terms make neighbouring results correlated.
 
-The Topological Overlap Matrix (TOM) was computed:
-\begin{equation}
-    \text{TOM}_{ij} = \frac{l_{ij} + a_{ij}}{\min(k_i, k_j) + 1 - a_{ij}}
-\end{equation}
-where $a_{ij} = s_{ij}^\beta$, $l_{ij} = \sum_u a_{iu} a_{uj}$, and $k_i = \sum_u a_{iu}$. Network dissimilarity $d_{ij} = 1 - \text{TOM}_{ij}$ guided clustering into 5 discrete co-expression modules (\texttt{MEturquoise}, \texttt{MEblue}, \texttt{MEbrown}, \texttt{MEyellow}, \texttt{MEgreen}). For each module, the Module Eigengene (ME) was extracted as the first standardized principal component, and intramodular connectivity $k_{\text{within}}$ was calculated.
+\input{chapters/03b_methods_ml_kegg.tex}
 
-\subsection{Tabular Foundation AI (TabPFN) Integration}
-To resolve the severe small-sample constraint ($N=9$), we implemented the Prior-data Fitted Network framework established by Hollmann et al. (\textit{Nature} 2025) \cite{hollmann2025accurate}. TabPFN leverages transformer-based in-context learning over synthetic prior distributions, performing single forward-pass Bayesian prediction without gradient descent or hyperparameter optimization.
-
-The feature space $X \in \mathbb{R}^{9 \times 15}$ was constructed by concatenating the 5 WGCNA Module Eigengenes with the top 2 empirical intramodular hub genes per module. We evaluated 3-class modality prediction (3D Clinostat vs. RPM 2.0 vs. Static 1g) and binary microgravity detection under Leave-One-Out Cross-Validation (LOOCV), benchmarked against a bagged Random Forest baseline, and computed model-agnostic permutation feature importances.
-
-\subsection{Gene Ontology and Pathway Over-Representation}
-Functional enrichment was conducted across Gene Ontology (GO) domains (Biological Process, Molecular Function, Cellular Component) utilizing EMBL-EBI Ontology Lookup Service (OLS) and QuickGO definitions. Statistical over-representation was evaluated using the hypergeometric distribution:
-\begin{equation}
-    P(X \ge k) = \sum_{i=k}^{\min(n, N)} \frac{\binom{n}{i} \binom{M - n}{N - i}}{\binom{M}{N}}
-\end{equation}
-where $M=5,510$ is the total genome size, $n$ is the annotated term size, $N$ is the query set size, and $k$ is the observed overlap. FDR adjustments were applied at $q < 0.05$.
-
-\subsection{Genome-Scale Cellular and Metabolic Modeling}
-We reconstructed the reaction-level cellular and metabolic architecture of \textit{M. marinum} M strain (NC\_010612.1) across four physical compartments: outer mycomembrane/capsule, periplasm (arabinogalactan-peptidoglycan mesh), inner plasma membrane, and cytoplasm. Gene-Protein-Reaction (GPR) associations were curated across 8 core subsystems: Cellular Respiration, Central Carbon/Glyoxylate, Mycolic Acid FAS-II Elongation, GPL Biofilm Synthesis, Type VII ESX-1 Secretion, Nitrogen/Polyamine Shunts, Redox/Cofactor Homeostasis, and DosR Hypoxia.
-
-Empirical transcriptomic perturbations ($\log_2\text{FC}$ and FDR) were integrated into each enzymatic reaction. To rank biochemical pathway vulnerability, we defined the Subsystem Perturbation Index ($\text{SPI}_S$):
-\begin{equation}
-\begin{aligned}
-    \text{SPI}_S = & \left( \frac{1}{|E_S|} \sum_{e \in E_S} |\log_2\text{FC}_e| \right) \\
-    & \times \left( 1 + \frac{1}{5 |E_S|} \sum_{e \in E_S} (-\log_{10}\text{FDR}_e) \right)
-\end{aligned}
-\end{equation}
-where $E_S$ is the set of enzymes in subsystem $S$. Complete reaction equations, EC numbers, and scores were compiled into SBML-compatible schemas (\texttt{metabolic\_model\_reactions.tsv} and \texttt{metabolic\_model\_sbml.json}).
-
-\subsection{FAIR Data and Zenodo Packaging}
-All tabular data, scripts, figures, and metadata were structured following FAIR principles \cite{wilkinson2016fair}. Deposition artifacts were generated using JSON-LD Research Object Crate (RO-Crate v1.1, \texttt{ro-crate-metadata.json}), Zenodo REST API schema (\texttt{zenodo.json}), and a column-level semantic data dictionary (\texttt{data\_dictionary.json}).
-
+\subsection*{Software and reproducibility}
+Every step is a script in the repository (\texttt{analysis/00}--\texttt{09}), and \texttt{make all} reruns the pipeline from the raw reads. Every number quoted in this manuscript is written into \texttt{manuscript/chapters/numbers.tex} by \texttt{analysis/09\_manuscript\_numbers.py} from the output files, and every figure is drawn from those outputs by \texttt{analysis/06\_generate\_figures.py}.

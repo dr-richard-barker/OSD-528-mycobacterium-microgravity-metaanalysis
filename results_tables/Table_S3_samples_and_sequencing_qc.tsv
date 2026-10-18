@@ -1,0 +1,10 @@
+sample_id	group	microgravity	primary	note	library_index	fastq_r1	fastq_r2	read_pairs	percent_pseudoaligned	percent_rRNA	percent_other_ncRNA	percent_CDS
+RFP3D11	Clinostat	yes	yes	3D clinostat (inner 1.5 rpm, outer 3.875 rpm), 31 C, 4 days	TATGACAATC+NTACAAGCAA	GLDS-528_rna-seq_RFP3D11_R1_raw.fastq.gz	GLDS-528_rna-seq_RFP3D11_R2_raw.fastq.gz	14564656	96.1	92.13	1.68	2.3
+RFP3D39	Clinostat	yes	yes	3D clinostat	ACGGTCCAAC+NGATGTAAGA	GLDS-528_rna-seq_RFP3D39_R1_raw.fastq.gz	GLDS-528_rna-seq_RFP3D39_R2_raw.fastq.gz	14024505	97.4	94.43	1.35	1.63
+RFP3D47	Clinostat	yes	yes	3D clinostat	TTGTATCAGG+NGGCCTCTGT	GLDS-528_rna-seq_RFP3D47_R1_raw.fastq.gz	GLDS-528_rna-seq_RFP3D47_R2_raw.fastq.gz	15695240	96.3	93.08	1.47	1.77
+RFPNG14	Ground	no	yes	static 1g control	CCTTCTAACA+NGAGCTTATC	GLDS-528_rna-seq_RFPNG14_R1_raw.fastq.gz	GLDS-528_rna-seq_RFPNG14_R2_raw.fastq.gz	16341497	95.7	91.7	1.25	2.79
+RFPNG35	Ground	no	yes	static 1g control	ATCCAGGTAT+NCTGACGTTG	GLDS-528_rna-seq_RFPNG35_R1_raw.fastq.gz	GLDS-528_rna-seq_RFPNG35_R2_raw.fastq.gz	16082770	94.2	88.22	1.02	4.95
+RFPNG45	Ground	no	yes	static 1g control	GGACCAGTGG+NAGGCTCGCG	GLDS-528_rna-seq_RFPNG45_R1_raw.fastq.gz	GLDS-528_rna-seq_RFPNG45_R2_raw.fastq.gz	15541999	94.7	92.01	1.28	1.46
+RFPRPM4	RPM	yes	no	inferred: second library inside the deposited RFPRPM4 files, which begin with the complete RFPRPM41 files; excluded from the primary analysis, used in the sensitivity analysis only	CACAGCGGTC+NAATAGGAAT	GLDS-528_rna-seq_RFPRPM4_R1_second_library.fastq.gz	GLDS-528_rna-seq_RFPRPM4_R2_second_library.fastq.gz	15304202	97.6	95.04	1.54	0.99
+RFPRPM41	RPM	yes	yes	RPM 2.0 (0g file)	AGCCTATGAT+NTAGGTGGTG	GLDS-528_rna-seq_RFPRPM41_R1_raw.fastq.gz	GLDS-528_rna-seq_RFPRPM41_R2_raw.fastq.gz	14370842	96.5	93.09	1.54	1.91
+RFPRPM6	RPM	yes	yes	RPM 2.0 (0g file)	GTGACGGAGC+NGGACCGCCA	GLDS-528_rna-seq_RFPRPM6_R1_raw.fastq.gz	GLDS-528_rna-seq_RFPRPM6_R2_raw.fastq.gz	15288543	97.6	94.67	1.52	1.42

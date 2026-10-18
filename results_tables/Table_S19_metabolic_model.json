@@ -1,0 +1,3474 @@
+{
+  "model_id": "M_marinum_OSD528_KEGG_reaction_sets",
+  "organism": "Mycobacterium marinum M (RefSeq GCF_000018345.1; KEGG organism mmi, T00694)",
+  "study_accession": "NASA OSDR OSD-528",
+  "description": "28 curated reactions and named proteins in 8 subsystems. Each is linked to M. marinum M genes only through KEGG EC or KO links and summarised with DESeq2 statistics. Not a genome-scale model; no flux balance analysis or flux predictions; no gene-protein-reaction logic is asserted. The file name is historical; the content is not SBML.",
+  "generated_by": "analysis/07_cellular_metabolic_modeling.py",
+  "kegg": {
+    "kegg_rest": "https://rest.kegg.jp/",
+    "kegg_release": "not stated by info/kegg; see kegg_database_dates",
+    "kegg_database_dates": {
+      "ko": "2026/10/16",
+      "genes": "2026/10/16",
+      "enzyme": "2026/10/13"
+    },
+    "kegg_organism": "mmi Mycobacterium marinum M | T00694 5452 proteins, 2407 proteins with KOs | 1686 RNAs, 51 RNAs with KOs",
+    "retrieved_first": "2026-10-17",
+    "retrieved_last": "2026-10-17",
+    "cache_files_used": 198,
+    "user_agent": "osd528-reanalysis/1.0",
+    "refseq_gbff": "data/reference/GCF_000018345.1_ASM1834v1_genomic.gbff.gz",
+    "refseq_gbff_sha256": "898aa40056505efb94894a342fa4507da3b67f52c399deb6810608074855ded0"
+  },
+  "gene_identifier_bridge": {
+    "method": "KEGG mmi ids are original Sanger locus tags (MMAR_xxxx); DESeq2 ids are RefSeq PGAP locus tags (MMAR_RSxxxxx). Joined through the RefSeq GBFF /old_locus_tag qualifier; each pair checked by KEGG position (list/mmi) vs RefSeq gene coordinates.",
+    "refseq_loci": 5591,
+    "refseq_loci_with_old_locus_tag": 5398,
+    "refseq_old_locus_tags_shared_by_several_loci": 0,
+    "kegg_genes": 5570,
+    "kegg_genes_with_one_refseq_locus": 5398,
+    "kegg_genes_without_refseq_locus": 172,
+    "refseq_old_locus_tags_absent_from_kegg": 0,
+    "position_check_counts": {
+      "exact": 4487,
+      "overlap_same_strand": 911,
+      "mismatch": 0,
+      "not_compared": 0
+    },
+    "deseq2_id_style": "refseq_locus_tag",
+    "model_genes": 100,
+    "model_genes_position_check": {
+      "exact": 95,
+      "overlap_same_strand": 5
+    },
+    "model_genes_in_deseq2_table": {
+      "clinostat_vs_static1g": 86,
+      "rpm2_vs_static1g": 86
+    }
+  },
+  "contrasts": [
+    {
+      "id": "clinostat_vs_static1g",
+      "label": "3D clinostat vs static 1g",
+      "deseq2_table": "data/processed/deg_3dclinostat_vs_static1g.tsv",
+      "column_prefix": "clinostat",
+      "background": {
+        "n_tested": 3967,
+        "n_deg": 619
+      }
+    },
+    {
+      "id": "rpm2_vs_static1g",
+      "label": "RPM 2.0 vs static 1g",
+      "deseq2_table": "data/processed/deg_rpm2_vs_static1g.tsv",
+      "column_prefix": "rpm",
+      "background": {
+        "n_tested": 3967,
+        "n_deg": 706
+      }
+    }
+  ],
+  "definitions": {
+    "reaction_genes": "Union of mmi genes returned by KEGG link/mmi/<query> for the reaction's EC (preferred) or KO queries. No gene is added by hand.",
+    "tested_gene": "Gene present in the contrast's DESeq2 table with non-missing padj.",
+    "deg": "significant == 'YES' in the DESeq2 table (BH-adjusted Wald p < 0.05).",
+    "up_down": "DEG with log2FoldChange > 0 (up) or < 0 (down).",
+    "reaction_lead_gene": "Tested gene with the smallest padj (ties: smaller pvalue, then gene id); reported with its padj and apeglm-shrunken log2FC.",
+    "median_log2fc_shrunk": "Median of log2FoldChange_shrunk (apeglm) over the tested genes.",
+    "subsystem_genes": "De-duplicated union of the subsystem's reaction genes.",
+    "deg_fraction": "n_deg / n_tested.",
+    "fold_enrichment": "(n_deg / n_tested) / (background DEGs / background tested genes).",
+    "hypergeom_p": "One-sided hypergeometric P(X >= n_deg), X ~ Hypergeom(N = tested genes in the contrast, K = DEGs in the contrast, n = subsystem tested genes).",
+    "bh_fdr": "Benjamini-Hochberg FDR over the subsystems within each contrast.",
+    "removed_metrics": "The earlier Subsystem Perturbation Index, the mean-of-simulators log2FC with +/-0.5 direction calls, and the 'predominant flux shift' labels are removed."
+  },
+  "subsystem_renames": [
+    {
+      "old": "GPL Biofilm & Cell Surface",
+      "new": "Peptidoglycan Biosynthesis",
+      "reason": "KEGG has no mmi gene in the glycopeptidolipid KOs (mps1 K16228, mps2 K16229), so both GPL reactions are dropped; only MurA remains."
+    },
+    {
+      "old": "Nitrogen Shunts & Polyamines",
+      "new": "Arginine & Branched-Chain Amino Acid Biosynthesis",
+      "reason": "The two reactions are ornithine carbamoyltransferase (arginine biosynthesis) and acetolactate synthase (valine/leucine/isoleucine); neither is a polyamine reaction."
+    },
+    {
+      "old": "Type VII Secretion & Virulence",
+      "new": "Type VII (ESX) Secretion",
+      "reason": "The ESX KOs group the paralogues of every ESX locus, so these gene sets are not specific to the ESX-1 virulence system."
+    }
+  ],
+  "old_assignment_summary": {
+    "assignments": 32,
+    "status": {
+      "kept": 7,
+      "re-mapped": 22,
+      "dropped": 3
+    },
+    "old_locus_correct": {
+      "YES": 7,
+      "NO": 24,
+      "UNVERIFIABLE": 1
+    }
+  },
+  "merged_reactions": [
+    {
+      "new_reaction_id": "R_NDH1",
+      "old_reaction_ids": [
+        "R_NDH1_C",
+        "R_NDH1_D"
+      ],
+      "reason": "The two old entries (subunits C and D) are one reaction, EC 7.1.1.2; merged."
+    }
+  ],
+  "dropped_reactions": [
+    {
+      "reaction_id": "R_MPS1",
+      "reaction_name": "Glycopeptidolipid synthetase Mps1",
+      "kegg_queries": [
+        "ko:K16228"
+      ],
+      "replaces": [
+        "R_MPS1"
+      ],
+      "reason": "No mmi gene linked to ko:K16228. Old EC 6.3.2.- is incomplete, so the entry is mapped by the mps1 KO (K16228)."
+    },
+    {
+      "reaction_id": "R_MPS2",
+      "reaction_name": "Glycopeptidolipid synthetase Mps2",
+      "kegg_queries": [
+        "ko:K16229"
+      ],
+      "replaces": [
+        "R_MPS2"
+      ],
+      "reason": "No mmi gene linked to ko:K16229. Old EC 6.3.2.- is incomplete, so the entry is mapped by the mps2 KO (K16229)."
+    },
+    {
+      "reaction_id": "R_F420",
+      "reaction_name": "F420-dependent LLM class oxidoreductase",
+      "kegg_queries": [],
+      "replaces": [
+        "R_F420"
+      ],
+      "reason": "Old EC 1.5.-.- is incomplete and the old locus has no KEGG KO, so KEGG offers no reaction or ortholog group to map."
+    }
+  ],
+  "subsystems": [
+    {
+      "subsystem": "Cellular Respiration & Energy",
+      "reactions": [
+        "R_NDH1",
+        "R_MENJ",
+        "R_CYDA",
+        "R_CYDD",
+        "R_ATPS"
+      ],
+      "kegg_genes": [
+        "MMAR_0910",
+        "MMAR_1470",
+        "MMAR_1471",
+        "MMAR_1472",
+        "MMAR_1473",
+        "MMAR_1474",
+        "MMAR_1475",
+        "MMAR_1476",
+        "MMAR_1477",
+        "MMAR_1478",
+        "MMAR_1479",
+        "MMAR_1480",
+        "MMAR_1481",
+        "MMAR_1482",
+        "MMAR_1483",
+        "MMAR_2424",
+        "MMAR_2425",
+        "MMAR_2426",
+        "MMAR_4087",
+        "MMAR_4089"
+      ],
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 19,
+          "n_deg": 7,
+          "n_up": 7,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.895819,
+          "lead_gene_id": "MMAR_RS07295",
+          "lead_log2fc_shrunk": 1.68768,
+          "lead_padj": 0.003669,
+          "n_genes_mapped": 20,
+          "deg_fraction": 0.368421,
+          "fold_enrichment": 2.36111,
+          "hypergeom_p": 0.0197908,
+          "bh_fdr": 0.158327
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 19,
+          "n_deg": 10,
+          "n_up": 10,
+          "n_down": 0,
+          "median_log2fc_shrunk": 1.40626,
+          "lead_gene_id": "MMAR_RS07295",
+          "lead_log2fc_shrunk": 2.24428,
+          "lead_padj": 0.000305116,
+          "n_genes_mapped": 20,
+          "deg_fraction": 0.526316,
+          "fold_enrichment": 2.95736,
+          "hypergeom_p": 0.000588092,
+          "bh_fdr": 0.00470474
+        }
+      }
+    },
+    {
+      "subsystem": "Central Carbon & Glyoxylate Shunt",
+      "reactions": [
+        "R_ICL",
+        "R_GLCB",
+        "R_CS",
+        "R_SUCD"
+      ],
+      "kegg_genes": [
+        "MMAR_0792",
+        "MMAR_2713",
+        "MMAR_2821",
+        "MMAR_4549",
+        "MMAR_4550",
+        "MMAR_4640",
+        "MMAR_4643"
+      ],
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 7,
+          "n_deg": 2,
+          "n_up": 1,
+          "n_down": 1,
+          "median_log2fc_shrunk": -0.0436539,
+          "lead_gene_id": "MMAR_RS03910",
+          "lead_log2fc_shrunk": -2.02708,
+          "lead_padj": 0.0038968,
+          "n_genes_mapped": 7,
+          "deg_fraction": 0.285714,
+          "fold_enrichment": 1.83106,
+          "hypergeom_p": 0.300304,
+          "bh_fdr": 0.600609
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 7,
+          "n_deg": 1,
+          "n_up": 0,
+          "n_down": 1,
+          "median_log2fc_shrunk": 0.0130268,
+          "lead_gene_id": "MMAR_RS03910",
+          "lead_log2fc_shrunk": -2.21105,
+          "lead_padj": 0.00412671,
+          "n_genes_mapped": 7,
+          "deg_fraction": 0.142857,
+          "fold_enrichment": 0.802711,
+          "hypergeom_p": 0.746649,
+          "bh_fdr": 1.0
+        }
+      }
+    },
+    {
+      "subsystem": "Mycolic Acid & FAS-II Envelope",
+      "reactions": [
+        "R_FAS",
+        "R_ACCD",
+        "R_KASA",
+        "R_INHA",
+        "R_MMPL3",
+        "R_FBPA",
+        "R_FACL"
+      ],
+      "kegg_genes": [
+        "MMAR_0328",
+        "MMAR_0446",
+        "MMAR_1251",
+        "MMAR_1606",
+        "MMAR_2071",
+        "MMAR_2290",
+        "MMAR_2597",
+        "MMAR_2777",
+        "MMAR_3231",
+        "MMAR_3338",
+        "MMAR_3340",
+        "MMAR_3962",
+        "MMAR_4025",
+        "MMAR_4556",
+        "MMAR_4793",
+        "MMAR_5275",
+        "MMAR_5368"
+      ],
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 15,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.118936,
+          "lead_gene_id": "MMAR_RS24025",
+          "lead_log2fc_shrunk": -0.686479,
+          "lead_padj": 0.205072,
+          "n_genes_mapped": 17,
+          "deg_fraction": 0.0,
+          "fold_enrichment": 0.0,
+          "hypergeom_p": 1.0,
+          "bh_fdr": 1.0
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 15,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.165885,
+          "lead_gene_id": "MMAR_RS24025",
+          "lead_log2fc_shrunk": -0.613768,
+          "lead_padj": 0.339619,
+          "n_genes_mapped": 17,
+          "deg_fraction": 0.0,
+          "fold_enrichment": 0.0,
+          "hypergeom_p": 1.0,
+          "bh_fdr": 1.0
+        }
+      }
+    },
+    {
+      "subsystem": "Peptidoglycan Biosynthesis",
+      "reactions": [
+        "R_MURA"
+      ],
+      "kegg_genes": [
+        "MMAR_4083"
+      ],
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 1,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.125923,
+          "lead_gene_id": "MMAR_RS20430",
+          "lead_log2fc_shrunk": 0.125923,
+          "lead_padj": 0.838944,
+          "n_genes_mapped": 1,
+          "deg_fraction": 0.0,
+          "fold_enrichment": 0.0,
+          "hypergeom_p": 1.0,
+          "bh_fdr": 1.0
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 1,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.0546355,
+          "lead_gene_id": "MMAR_RS20430",
+          "lead_log2fc_shrunk": 0.0546355,
+          "lead_padj": 0.944184,
+          "n_genes_mapped": 1,
+          "deg_fraction": 0.0,
+          "fold_enrichment": 0.0,
+          "hypergeom_p": 1.0,
+          "bh_fdr": 1.0
+        }
+      }
+    },
+    {
+      "subsystem": "Type VII (ESX) Secretion",
+      "reactions": [
+        "R_ECCE",
+        "R_ECCB",
+        "R_ESXA",
+        "R_ESPB"
+      ],
+      "kegg_genes": [
+        "MMAR_0187",
+        "MMAR_0188",
+        "MMAR_0189",
+        "MMAR_0196",
+        "MMAR_0202",
+        "MMAR_0203",
+        "MMAR_0542",
+        "MMAR_0546",
+        "MMAR_0547",
+        "MMAR_0551",
+        "MMAR_1099",
+        "MMAR_1104",
+        "MMAR_1105",
+        "MMAR_1329",
+        "MMAR_2664",
+        "MMAR_2674",
+        "MMAR_2675",
+        "MMAR_2679",
+        "MMAR_3000",
+        "MMAR_3001",
+        "MMAR_3580",
+        "MMAR_3653",
+        "MMAR_3654",
+        "MMAR_3659",
+        "MMAR_3660",
+        "MMAR_3662",
+        "MMAR_3663",
+        "MMAR_4453",
+        "MMAR_4454",
+        "MMAR_5119",
+        "MMAR_5120",
+        "MMAR_5444",
+        "MMAR_5449",
+        "MMAR_5450",
+        "MMAR_5457",
+        "MMAR_5458",
+        "MMAR_5465",
+        "MMAR_5466"
+      ],
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 27,
+          "n_deg": 5,
+          "n_up": 3,
+          "n_down": 2,
+          "median_log2fc_shrunk": 0.169764,
+          "lead_gene_id": "MMAR_RS18200",
+          "lead_log2fc_shrunk": 1.64119,
+          "lead_padj": 1.61524e-05,
+          "n_genes_mapped": 38,
+          "deg_fraction": 0.185185,
+          "fold_enrichment": 1.1868,
+          "hypergeom_p": 0.415961,
+          "bh_fdr": 0.665537
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 27,
+          "n_deg": 7,
+          "n_up": 5,
+          "n_down": 2,
+          "median_log2fc_shrunk": 0.349084,
+          "lead_gene_id": "MMAR_RS18200",
+          "lead_log2fc_shrunk": 1.87402,
+          "lead_padj": 4.57692e-06,
+          "n_genes_mapped": 38,
+          "deg_fraction": 0.259259,
+          "fold_enrichment": 1.45677,
+          "hypergeom_p": 0.191649,
+          "bh_fdr": 0.511064
+        }
+      }
+    },
+    {
+      "subsystem": "Arginine & Branched-Chain Amino Acid Biosynthesis",
+      "reactions": [
+        "R_ARGF",
+        "R_ALS"
+      ],
+      "kegg_genes": [
+        "MMAR_1508",
+        "MMAR_1710",
+        "MMAR_1711",
+        "MMAR_2332",
+        "MMAR_2466",
+        "MMAR_3281",
+        "MMAR_4997"
+      ],
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 7,
+          "n_deg": 2,
+          "n_up": 2,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.0835834,
+          "lead_gene_id": "MMAR_RS12305",
+          "lead_log2fc_shrunk": 2.24491,
+          "lead_padj": 0.00170801,
+          "n_genes_mapped": 7,
+          "deg_fraction": 0.285714,
+          "fold_enrichment": 1.83106,
+          "hypergeom_p": 0.300304,
+          "bh_fdr": 0.600609
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 7,
+          "n_deg": 1,
+          "n_up": 1,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.200721,
+          "lead_gene_id": "MMAR_RS11620",
+          "lead_log2fc_shrunk": 1.49162,
+          "lead_padj": 0.0064991,
+          "n_genes_mapped": 7,
+          "deg_fraction": 0.142857,
+          "fold_enrichment": 0.802711,
+          "hypergeom_p": 0.746649,
+          "bh_fdr": 1.0
+        }
+      }
+    },
+    {
+      "subsystem": "Redox Homeostasis & Cofactors",
+      "reactions": [
+        "R_ADHP",
+        "R_RIBD",
+        "R_KATG"
+      ],
+      "kegg_genes": [
+        "MMAR_2218",
+        "MMAR_2739",
+        "MMAR_2914",
+        "MMAR_4110",
+        "MMAR_4911",
+        "MMAR_4935"
+      ],
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 6,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.279627,
+          "lead_gene_id": "MMAR_RS11045",
+          "lead_log2fc_shrunk": 0.73467,
+          "lead_padj": 0.121236,
+          "n_genes_mapped": 6,
+          "deg_fraction": 0.0,
+          "fold_enrichment": 0.0,
+          "hypergeom_p": 1.0,
+          "bh_fdr": 1.0
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 6,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.165018,
+          "lead_gene_id": "MMAR_RS11045",
+          "lead_log2fc_shrunk": 0.609247,
+          "lead_padj": 0.279161,
+          "n_genes_mapped": 6,
+          "deg_fraction": 0.0,
+          "fold_enrichment": 0.0,
+          "hypergeom_p": 1.0,
+          "bh_fdr": 1.0
+        }
+      }
+    },
+    {
+      "subsystem": "DosR Hypoxia & Dormancy",
+      "reactions": [
+        "R_HSPX",
+        "R_DOSR"
+      ],
+      "kegg_genes": [
+        "MMAR_0515",
+        "MMAR_1516",
+        "MMAR_2991",
+        "MMAR_3480"
+      ],
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 4,
+          "n_deg": 2,
+          "n_up": 0,
+          "n_down": 2,
+          "median_log2fc_shrunk": -0.973518,
+          "lead_gene_id": "MMAR_RS14935",
+          "lead_log2fc_shrunk": -1.80967,
+          "lead_padj": 0.000182186,
+          "n_genes_mapped": 4,
+          "deg_fraction": 0.5,
+          "fold_enrichment": 3.20436,
+          "hypergeom_p": 0.117382,
+          "bh_fdr": 0.469527
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 4,
+          "n_deg": 2,
+          "n_up": 0,
+          "n_down": 2,
+          "median_log2fc_shrunk": -2.02342,
+          "lead_gene_id": "MMAR_RS14935",
+          "lead_log2fc_shrunk": -3.43804,
+          "lead_padj": 1.63689e-10,
+          "n_genes_mapped": 4,
+          "deg_fraction": 0.5,
+          "fold_enrichment": 2.80949,
+          "hypergeom_p": 0.147867,
+          "bh_fdr": 0.511064
+        }
+      }
+    }
+  ],
+  "reactions": [
+    {
+      "reaction_id": "R_NDH1",
+      "subsystem": "Cellular Respiration & Energy",
+      "compartment": "Plasma Membrane",
+      "reaction_name": "NADH:quinone oxidoreductase (Complex I, NDH-1)",
+      "mapping_basis": "EC",
+      "kegg_queries": [
+        "ec:7.1.1.2"
+      ],
+      "ec_number": "7.1.1.2",
+      "kegg_name": "NADH:ubiquinone reductase (H+-translocating)",
+      "equation": "NADH + H+ + an ubiquinone + 4 H+[side 1] = NAD+ + an ubiquinol + 4 H+[side 2] [RN:R11945]",
+      "kegg_scope": "complex: every subunit KEGG links to the EC",
+      "gene_reaction_rule": null,
+      "genes": [
+        {
+          "kegg_gene_id": "MMAR_1470",
+          "refseq_locus_tag": "MMAR_RS07265",
+          "symbol": "nuoN",
+          "kegg_name": "NADH dehydrogenase I (chain N) NuoN (NADH-ubiquinone oxidoreductase chain N)",
+          "kegg_orthology": "K00343 NADH-quinone oxidoreductase subunit N [EC:7.1.1.2]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_1471",
+          "refseq_locus_tag": "MMAR_RS07270",
+          "symbol": "nuoM",
+          "kegg_name": "NADH dehydrogenase I (chain M) NuoM (NADH-ubiquinone oxidoreductase chain M)",
+          "kegg_orthology": "K00342 NADH-quinone oxidoreductase subunit M [EC:7.1.1.2]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_1472",
+          "refseq_locus_tag": "MMAR_RS07275",
+          "symbol": "nuoL",
+          "kegg_name": "NADH dehydrogenase I (chain L) NuoL (NADH-ubiquinone oxidoreductase chain L)",
+          "kegg_orthology": "K00341 NADH-quinone oxidoreductase subunit L [EC:7.1.1.2]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_1473",
+          "refseq_locus_tag": "MMAR_RS07280",
+          "symbol": "nuoK",
+          "kegg_name": "NADH dehydrogenase I (chain K) NuoK (NADH-ubiquinone oxidoreductase chain K)",
+          "kegg_orthology": "K00340 NADH-quinone oxidoreductase subunit K [EC:7.1.1.2]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_1474",
+          "refseq_locus_tag": "MMAR_RS07285",
+          "symbol": "nuoJ",
+          "kegg_name": "NADH dehydrogenase I (chain J) NuoJ (NADH-ubiquinone oxidoreductase chain J)",
+          "kegg_orthology": "K00339 NADH-quinone oxidoreductase subunit J [EC:7.1.1.2]",
+          "position_check": "overlap_same_strand"
+        },
+        {
+          "kegg_gene_id": "MMAR_1475",
+          "refseq_locus_tag": "MMAR_RS07290",
+          "symbol": "nuoI",
+          "kegg_name": "NADH dehydrogenase I (chain I) NuoI (NADH-ubiquinone oxidoreductase chain I)",
+          "kegg_orthology": "K00338 NADH-quinone oxidoreductase subunit I [EC:7.1.1.2]",
+          "position_check": "overlap_same_strand"
+        },
+        {
+          "kegg_gene_id": "MMAR_1476",
+          "refseq_locus_tag": "MMAR_RS07295",
+          "symbol": "nuoH",
+          "kegg_name": "NADH dehydrogenase I (chain H) NuoH (NADH-ubiquinone oxidoreductase chain H)",
+          "kegg_orthology": "K00337 NADH-quinone oxidoreductase subunit H [EC:7.1.1.2]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_1477",
+          "refseq_locus_tag": "MMAR_RS07300",
+          "symbol": "nuoG",
+          "kegg_name": "NADH dehydrogenase I (chain G) NuoG (NADH-ubiquinone oxidoreductase chain G)",
+          "kegg_orthology": "K00336 NADH-quinone oxidoreductase subunit G [EC:7.1.1.2]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_1478",
+          "refseq_locus_tag": "MMAR_RS07305",
+          "symbol": "nuoF",
+          "kegg_name": "NADH dehydrogenase I (chain F) NuoF (NADH-ubiquinone oxidoreductase chain F)",
+          "kegg_orthology": "K00335 NADH-quinone oxidoreductase subunit F [EC:7.1.1.2]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_1479",
+          "refseq_locus_tag": "MMAR_RS07310",
+          "symbol": "nuoE",
+          "kegg_name": "NADH dehydrogenase I (chain E) NuoE (NADH-ubiquinone oxidoreductase chain E)",
+          "kegg_orthology": "K00334 NADH-quinone oxidoreductase subunit E [EC:7.1.1.2]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_1480",
+          "refseq_locus_tag": "MMAR_RS07315",
+          "symbol": "nuoD",
+          "kegg_name": "NADH dehydrogenase I (chain D) NuoD (NADH-ubiquinone oxidoreductase chain D)",
+          "kegg_orthology": "K00333 NADH-quinone oxidoreductase subunit D [EC:7.1.1.2]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_1481",
+          "refseq_locus_tag": "MMAR_RS07320",
+          "symbol": "nuoC",
+          "kegg_name": "NADH dehydrogenase I (chain C) NuoC (NADH-ubiquinone oxidoreductase chain C)",
+          "kegg_orthology": "K00332 NADH-quinone oxidoreductase subunit C [EC:7.1.1.2]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_1482",
+          "refseq_locus_tag": "MMAR_RS07325",
+          "symbol": "nuoB",
+          "kegg_name": "NADH dehydrogenase I (chain B) NuoB (NADH-ubiquinone oxidoreductase chain B)",
+          "kegg_orthology": "K00331 NADH-quinone oxidoreductase subunit B [EC:7.1.1.2]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_1483",
+          "refseq_locus_tag": "MMAR_RS07330",
+          "symbol": "nuoA",
+          "kegg_name": "NADH dehydrogenase I (chain a) NuoA (NADH-ubiquinone oxidoreductase chain a)",
+          "kegg_orthology": "K00330 NADH-quinone oxidoreductase subunit A [EC:7.1.1.2]",
+          "position_check": "overlap_same_strand"
+        }
+      ],
+      "replaces": [
+        "R_NDH1_C",
+        "R_NDH1_D"
+      ],
+      "note": "The two old entries (subunits C and D) are one reaction, EC 7.1.1.2; merged.",
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 13,
+          "n_deg": 6,
+          "n_up": 6,
+          "n_down": 0,
+          "median_log2fc_shrunk": 1.0833,
+          "lead_gene_id": "MMAR_RS07295",
+          "lead_log2fc_shrunk": 1.68768,
+          "lead_padj": 0.003669
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 13,
+          "n_deg": 10,
+          "n_up": 10,
+          "n_down": 0,
+          "median_log2fc_shrunk": 1.62242,
+          "lead_gene_id": "MMAR_RS07295",
+          "lead_log2fc_shrunk": 2.24428,
+          "lead_padj": 0.000305116
+        }
+      }
+    },
+    {
+      "reaction_id": "R_MENJ",
+      "subsystem": "Cellular Respiration & Energy",
+      "compartment": "Plasma Membrane",
+      "reaction_name": "Menaquinone-9 beta-reductase (MenJ)",
+      "mapping_basis": "EC",
+      "kegg_queries": [
+        "ec:1.3.99.38"
+      ],
+      "ec_number": "1.3.99.38",
+      "kegg_name": "menaquinone-9 beta-reductase",
+      "equation": "menaquinone-9 + reduced acceptor = beta-dihydromenaquinone-9 + acceptor [RN:R11654]",
+      "kegg_scope": "specific",
+      "gene_reaction_rule": null,
+      "genes": [
+        {
+          "kegg_gene_id": "MMAR_0910",
+          "refseq_locus_tag": "MMAR_RS04470",
+          "symbol": "menJ",
+          "kegg_name": "FAD-linked oxidoreductase",
+          "kegg_orthology": "K21401 menaquinone-9 beta-reductase [EC:1.3.99.38]",
+          "position_check": "exact"
+        }
+      ],
+      "replaces": [
+        "R_MENJ"
+      ],
+      "note": "Old EC 1.3.5.2 is dihydroorotate dehydrogenase (quinone) in KEGG; MenJ is EC 1.3.99.38.",
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 1,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.064887,
+          "lead_gene_id": "MMAR_RS04470",
+          "lead_log2fc_shrunk": 0.064887,
+          "lead_padj": 0.932215
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 1,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": -0.130774,
+          "lead_gene_id": "MMAR_RS04470",
+          "lead_log2fc_shrunk": -0.130774,
+          "lead_padj": 0.876775
+        }
+      }
+    },
+    {
+      "reaction_id": "R_CYDA",
+      "subsystem": "Cellular Respiration & Energy",
+      "compartment": "Plasma Membrane",
+      "reaction_name": "Cytochrome bd quinol oxidase",
+      "mapping_basis": "EC",
+      "kegg_queries": [
+        "ec:7.1.1.7"
+      ],
+      "ec_number": "7.1.1.7",
+      "kegg_name": "quinol oxidase (electrogenic, proton-motive force generating)",
+      "equation": "2 quinol + O2[side 2] + 4 H+[side 2] = 2 quinone + 2 H2O[side 2] + 4 H+[side 1] (overall reaction) [RN:R11325]; (1a) 2 quinol = 2 quinone + 4 H+[side 1] + 4 e- [RN:R11885]; (1b) O2[side 2] + 4 H+[side 2] + 4 e- = 2 H2O[side 2] [RN:R11886]",
+      "kegg_scope": "complex: every subunit KEGG links to the EC",
+      "gene_reaction_rule": null,
+      "genes": [
+        {
+          "kegg_gene_id": "MMAR_2425",
+          "refseq_locus_tag": "MMAR_RS12085",
+          "symbol": "cydB",
+          "kegg_name": "integral membrane cytochrome D ubiquinol oxidase (subunit II) CydB",
+          "kegg_orthology": "K00426 cytochrome bd ubiquinol oxidase subunit II [EC:7.1.1.7]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_2426",
+          "refseq_locus_tag": "MMAR_RS12090",
+          "symbol": "cydA",
+          "kegg_name": "integral membrane cytochrome D ubiquinol oxidase (subunit I) CydA",
+          "kegg_orthology": "K00425 cytochrome bd ubiquinol oxidase subunit I [EC:7.1.1.7]",
+          "position_check": "exact"
+        }
+      ],
+      "replaces": [
+        "R_CYDA"
+      ],
+      "note": "KEGG lists old EC 1.10.3.14 as transferred to 7.1.1.7.",
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 2,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": -0.00170755,
+          "lead_gene_id": "MMAR_RS12090",
+          "lead_log2fc_shrunk": -0.311094,
+          "lead_padj": 0.515265
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 2,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": -0.37036,
+          "lead_gene_id": "MMAR_RS12090",
+          "lead_log2fc_shrunk": -0.743339,
+          "lead_padj": 0.120687
+        }
+      }
+    },
+    {
+      "reaction_id": "R_CYDD",
+      "subsystem": "Cellular Respiration & Energy",
+      "compartment": "Plasma Membrane",
+      "reaction_name": "Thiol reductant ABC exporter subunit CydD",
+      "mapping_basis": "KO",
+      "kegg_queries": [
+        "ko:K16013"
+      ],
+      "ec_number": null,
+      "kegg_name": "cydD; ATP-binding cassette, subfamily C, bacterial CydD",
+      "equation": "n/a (mapped by KO; KEGG gives no reaction equation)",
+      "kegg_scope": "specific",
+      "gene_reaction_rule": null,
+      "genes": [
+        {
+          "kegg_gene_id": "MMAR_2424",
+          "refseq_locus_tag": "MMAR_RS12080",
+          "symbol": "cydD",
+          "kegg_name": "Cytochrome transmembrane ATP-binding protein ABC transporter CydD",
+          "kegg_orthology": "K16013 ATP-binding cassette, subfamily C, bacterial CydD",
+          "position_check": "overlap_same_strand"
+        }
+      ],
+      "replaces": [
+        "R_CYDD"
+      ],
+      "note": "Old EC 7.6.2.2 (ABC-type xenobiotic transporter) links no mmi gene; CydD is KO K16013 (no EC).",
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 1,
+          "n_deg": 1,
+          "n_up": 1,
+          "n_down": 0,
+          "median_log2fc_shrunk": 1.49822,
+          "lead_gene_id": "MMAR_RS12080",
+          "lead_log2fc_shrunk": 1.49822,
+          "lead_padj": 0.0152842
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 1,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 1.12014,
+          "lead_gene_id": "MMAR_RS12080",
+          "lead_log2fc_shrunk": 1.12014,
+          "lead_padj": 0.0923152
+        }
+      }
+    },
+    {
+      "reaction_id": "R_ATPS",
+      "subsystem": "Cellular Respiration & Energy",
+      "compartment": "Plasma Membrane",
+      "reaction_name": "F1Fo ATP synthase (catalytic subunits)",
+      "mapping_basis": "EC",
+      "kegg_queries": [
+        "ec:7.1.2.2"
+      ],
+      "ec_number": "7.1.2.2",
+      "kegg_name": "H+-transporting two-sector ATPase",
+      "equation": "ATP + H2O + 4 H+[side 1] = ADP + phosphate + 4 H+[side 2] [RN:R00086]",
+      "kegg_scope": "complex: only the subunits KEGG links to the EC",
+      "gene_reaction_rule": null,
+      "genes": [
+        {
+          "kegg_gene_id": "MMAR_4087",
+          "refseq_locus_tag": "MMAR_RS20450",
+          "symbol": "atpD",
+          "kegg_name": "ATP synthase beta chain AtpD",
+          "kegg_orthology": "K02112 F-type H+/Na+-transporting ATPase subunit beta [EC:7.1.2.2 7.2.2.1]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_4089",
+          "refseq_locus_tag": "MMAR_RS20460",
+          "symbol": "atpA",
+          "kegg_name": "ATP synthase alpha chain AtpA",
+          "kegg_orthology": "K02111 F-type H+/Na+-transporting ATPase subunit alpha [EC:7.1.2.2 7.2.2.1]",
+          "position_check": "exact"
+        }
+      ],
+      "replaces": [
+        "R_ATPS"
+      ],
+      "note": "KEGG links only the catalytic alpha and beta subunits to EC 7.1.2.2.",
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 2,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.294504,
+          "lead_gene_id": "MMAR_RS20450",
+          "lead_log2fc_shrunk": 0.31913,
+          "lead_padj": 0.548522
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 2,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.394555,
+          "lead_gene_id": "MMAR_RS20450",
+          "lead_log2fc_shrunk": 0.427811,
+          "lead_padj": 0.485387
+        }
+      }
+    },
+    {
+      "reaction_id": "R_ICL",
+      "subsystem": "Central Carbon & Glyoxylate Shunt",
+      "compartment": "Cytoplasm",
+      "reaction_name": "Isocitrate lyase (glyoxylate shunt)",
+      "mapping_basis": "EC",
+      "kegg_queries": [
+        "ec:4.1.3.1"
+      ],
+      "ec_number": "4.1.3.1",
+      "kegg_name": "isocitrate lyase",
+      "equation": "isocitrate = succinate + glyoxylate [RN:R00479]",
+      "kegg_scope": "isozymes or paralogues linked to the EC",
+      "gene_reaction_rule": null,
+      "genes": [
+        {
+          "kegg_gene_id": "MMAR_0792",
+          "refseq_locus_tag": "MMAR_RS03910",
+          "symbol": "icl",
+          "kegg_name": "isocitrate lyase Icl",
+          "kegg_orthology": "K01637 isocitrate/methylisocitrate lyase [EC:4.1.3.1 4.1.3.30]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_2821",
+          "refseq_locus_tag": "MMAR_RS14045",
+          "symbol": "aceAb",
+          "kegg_name": "isocitrate lyase AceAb",
+          "kegg_orthology": "K01637 isocitrate/methylisocitrate lyase [EC:4.1.3.1 4.1.3.30]",
+          "position_check": "exact"
+        }
+      ],
+      "replaces": [
+        "R_ICL1"
+      ],
+      "note": null,
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 2,
+          "n_deg": 2,
+          "n_up": 1,
+          "n_down": 1,
+          "median_log2fc_shrunk": -0.589728,
+          "lead_gene_id": "MMAR_RS03910",
+          "lead_log2fc_shrunk": -2.02708,
+          "lead_padj": 0.0038968
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 2,
+          "n_deg": 1,
+          "n_up": 0,
+          "n_down": 1,
+          "median_log2fc_shrunk": -0.823989,
+          "lead_gene_id": "MMAR_RS03910",
+          "lead_log2fc_shrunk": -2.21105,
+          "lead_padj": 0.00412671
+        }
+      }
+    },
+    {
+      "reaction_id": "R_GLCB",
+      "subsystem": "Central Carbon & Glyoxylate Shunt",
+      "compartment": "Cytoplasm",
+      "reaction_name": "Malate synthase G",
+      "mapping_basis": "EC",
+      "kegg_queries": [
+        "ec:2.3.3.9"
+      ],
+      "ec_number": "2.3.3.9",
+      "kegg_name": "malate synthase",
+      "equation": "acetyl-CoA + glyoxylate + H2O = (S)-malate + CoA [RN:R00472]",
+      "kegg_scope": "specific",
+      "gene_reaction_rule": null,
+      "genes": [
+        {
+          "kegg_gene_id": "MMAR_2713",
+          "refseq_locus_tag": "MMAR_RS13525",
+          "symbol": "glcB",
+          "kegg_name": "malate synthase G GlcB",
+          "kegg_orthology": "K01638 malate synthase [EC:2.3.3.9]",
+          "position_check": "exact"
+        }
+      ],
+      "replaces": [
+        "R_GLCB"
+      ],
+      "note": null,
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 1,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": -0.0436539,
+          "lead_gene_id": "MMAR_RS13525",
+          "lead_log2fc_shrunk": -0.0436539,
+          "lead_padj": 0.950779
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 1,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": -0.209458,
+          "lead_gene_id": "MMAR_RS13525",
+          "lead_log2fc_shrunk": -0.209458,
+          "lead_padj": 0.738221
+        }
+      }
+    },
+    {
+      "reaction_id": "R_CS",
+      "subsystem": "Central Carbon & Glyoxylate Shunt",
+      "compartment": "Cytoplasm",
+      "reaction_name": "Citrate synthase",
+      "mapping_basis": "EC",
+      "kegg_queries": [
+        "ec:2.3.3.1"
+      ],
+      "ec_number": "2.3.3.1",
+      "kegg_name": "citrate (Si)-synthase",
+      "equation": "acetyl-CoA + H2O + oxaloacetate = citrate + CoA [RN:R00351]",
+      "kegg_scope": "isozymes or paralogues linked to the EC",
+      "gene_reaction_rule": null,
+      "genes": [
+        {
+          "kegg_gene_id": "MMAR_4640",
+          "refseq_locus_tag": "MMAR_RS23255",
+          "symbol": "gltA2",
+          "kegg_name": "citrate synthase I GltA2",
+          "kegg_orthology": "K01647 citrate synthase [EC:2.3.3.1]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_4643",
+          "refseq_locus_tag": "MMAR_RS23270",
+          "symbol": "citA",
+          "kegg_name": "citrate synthase II CitA",
+          "kegg_orthology": "K01647 citrate synthase [EC:2.3.3.1]",
+          "position_check": "exact"
+        }
+      ],
+      "replaces": [
+        "R_CS"
+      ],
+      "note": null,
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 2,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": -0.112948,
+          "lead_gene_id": "MMAR_RS23270",
+          "lead_log2fc_shrunk": -0.12818,
+          "lead_padj": 0.857578
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 2,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": -0.0434761,
+          "lead_gene_id": "MMAR_RS23270",
+          "lead_log2fc_shrunk": -0.149557,
+          "lead_padj": 0.850263
+        }
+      }
+    },
+    {
+      "reaction_id": "R_SUCD",
+      "subsystem": "Central Carbon & Glyoxylate Shunt",
+      "compartment": "Cytoplasm",
+      "reaction_name": "Succinyl-CoA synthetase (ADP-forming)",
+      "mapping_basis": "EC",
+      "kegg_queries": [
+        "ec:6.2.1.5"
+      ],
+      "ec_number": "6.2.1.5",
+      "kegg_name": "succinate---CoA ligase (ADP-forming)",
+      "equation": "ATP + succinate + CoA = ADP + phosphate + succinyl-CoA [RN:R00405]",
+      "kegg_scope": "complex: every subunit KEGG links to the EC",
+      "gene_reaction_rule": null,
+      "genes": [
+        {
+          "kegg_gene_id": "MMAR_4549",
+          "refseq_locus_tag": "MMAR_RS22795",
+          "symbol": "sucD",
+          "kegg_name": "succinyl-CoA synthetase (alpha chain) SucD",
+          "kegg_orthology": "K01902 succinyl-CoA synthetase alpha subunit [EC:6.2.1.5]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_4550",
+          "refseq_locus_tag": "MMAR_RS22800",
+          "symbol": "sucC",
+          "kegg_name": "succinyl-CoA synthetase (beta chain) SucC",
+          "kegg_orthology": "K01903 succinyl-CoA synthetase beta subunit [EC:6.2.1.5]",
+          "position_check": "exact"
+        }
+      ],
+      "replaces": [
+        "R_SUCD"
+      ],
+      "note": "The old entry named only the alpha subunit.",
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 2,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.0299094,
+          "lead_gene_id": "MMAR_RS22795",
+          "lead_log2fc_shrunk": 0.0561484,
+          "lead_padj": 0.93865
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 2,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.0814809,
+          "lead_gene_id": "MMAR_RS22800",
+          "lead_log2fc_shrunk": 0.149935,
+          "lead_padj": 0.84642
+        }
+      }
+    },
+    {
+      "reaction_id": "R_FAS",
+      "subsystem": "Mycolic Acid & FAS-II Envelope",
+      "compartment": "Cytoplasm",
+      "reaction_name": "Fatty acid synthase I (bacterial type FAS-I)",
+      "mapping_basis": "KO",
+      "kegg_queries": [
+        "ko:K11533"
+      ],
+      "ec_number": null,
+      "kegg_name": "fas; fatty acid synthase, bacteria type [EC:2.3.1.-]",
+      "equation": "n/a (mapped by KO; KEGG gives no reaction equation)",
+      "kegg_scope": "specific",
+      "gene_reaction_rule": null,
+      "genes": [
+        {
+          "kegg_gene_id": "MMAR_3962",
+          "refseq_locus_tag": "MMAR_RS19800",
+          "symbol": "fas",
+          "kegg_name": "fatty acid synthase Fas",
+          "kegg_orthology": "K11533 fatty acid synthase, bacteria type [EC:2.3.1.-]",
+          "position_check": "exact"
+        }
+      ],
+      "replaces": [
+        "R_FAS"
+      ],
+      "note": "Old EC 2.3.1.85 (animal-type FAS) links no mmi gene; bacterial FAS-I is KO K11533 (EC 2.3.1.-).",
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 1,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.252581,
+          "lead_gene_id": "MMAR_RS19800",
+          "lead_log2fc_shrunk": 0.252581,
+          "lead_padj": 0.624649
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 1,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.358878,
+          "lead_gene_id": "MMAR_RS19800",
+          "lead_log2fc_shrunk": 0.358878,
+          "lead_padj": 0.521889
+        }
+      }
+    },
+    {
+      "reaction_id": "R_ACCD",
+      "subsystem": "Mycolic Acid & FAS-II Envelope",
+      "compartment": "Cytoplasm",
+      "reaction_name": "Acetyl-CoA carboxylase (malonyl-CoA synthesis)",
+      "mapping_basis": "EC",
+      "kegg_queries": [
+        "ec:6.4.1.2"
+      ],
+      "ec_number": "6.4.1.2",
+      "kegg_name": "acetyl-CoA carboxylase",
+      "equation": "ATP + acetyl-CoA + hydrogencarbonate = ADP + phosphate + malonyl-CoA [RN:R00742]",
+      "kegg_scope": "complex: every subunit KEGG links to the EC",
+      "gene_reaction_rule": null,
+      "genes": [
+        {
+          "kegg_gene_id": "MMAR_1251",
+          "refseq_locus_tag": "MMAR_RS06195",
+          "symbol": "accA3",
+          "kegg_name": "bifunctional protein acetyl-/propionyl-coenzyme A carboxylase alpha chain AccA3",
+          "kegg_orthology": "K11263 acetyl-CoA/propionyl-CoA/long-chain acyl-CoA carboxylase, biotin carboxylase, biotin carboxyl carrier protein [EC:6.4.1.2 6.4.1.3 6.4.1.- 6.3.4.14]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_3340",
+          "refseq_locus_tag": "MMAR_RS16655",
+          "symbol": "accD6",
+          "kegg_name": "acetyl/propionyl-CoA carboxylase (beta subunit) AccD6",
+          "kegg_orthology": "K18472 acetyl-CoA/propionyl-CoA carboxylase carboxyl transferase subunit [EC:6.4.1.2 6.4.1.3 2.1.3.15]",
+          "position_check": "exact"
+        }
+      ],
+      "replaces": [
+        "R_ACCD"
+      ],
+      "note": null,
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 2,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.165133,
+          "lead_gene_id": "MMAR_RS16655",
+          "lead_log2fc_shrunk": 0.21133,
+          "lead_padj": 0.73199
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 2,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.238057,
+          "lead_gene_id": "MMAR_RS06195",
+          "lead_log2fc_shrunk": 0.358936,
+          "lead_padj": 0.535444
+        }
+      }
+    },
+    {
+      "reaction_id": "R_KASA",
+      "subsystem": "Mycolic Acid & FAS-II Envelope",
+      "compartment": "Cytoplasm",
+      "reaction_name": "Meromycolate beta-ketoacyl-ACP synthase KasA (FAS-II)",
+      "mapping_basis": "EC",
+      "kegg_queries": [
+        "ec:2.3.1.293"
+      ],
+      "ec_number": "2.3.1.293",
+      "kegg_name": "meromycolic acid 3-oxoacyl-(acyl carrier protein) synthase I",
+      "equation": "an ultra-long-chain mono-unsaturated acyl-[acyl-carrier protein] + a malonyl-[acyl-carrier protein] = an ultra-long-chain mono-unsaturated 3-oxo-fatty acyl-[acyl-carrier protein] + CO2 + a holo-[acyl-carrier protein] [RN:R13266]",
+      "kegg_scope": "specific",
+      "gene_reaction_rule": null,
+      "genes": [
+        {
+          "kegg_gene_id": "MMAR_3338",
+          "refseq_locus_tag": "MMAR_RS16645",
+          "symbol": "kasA",
+          "kegg_name": "3-oxoacyl-[acyl-carrier protein] synthase 1 KasA",
+          "kegg_orthology": "K11609 meromycolic acid 3-oxoacyl-[acyl-carrier protein] synthase I [EC:2.3.1.293]",
+          "position_check": "exact"
+        }
+      ],
+      "replaces": [
+        "R_KASA"
+      ],
+      "note": "Old EC 2.3.1.41 links no mmi gene; KEGG assigns KasA (K11609) to EC 2.3.1.293.",
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 1,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.0115768,
+          "lead_gene_id": "MMAR_RS16645",
+          "lead_log2fc_shrunk": 0.0115768,
+          "lead_padj": 0.990436
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 1,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": -0.000876301,
+          "lead_gene_id": "MMAR_RS16645",
+          "lead_log2fc_shrunk": -0.000876301,
+          "lead_padj": 0.997162
+        }
+      }
+    },
+    {
+      "reaction_id": "R_INHA",
+      "subsystem": "Mycolic Acid & FAS-II Envelope",
+      "compartment": "Cytoplasm",
+      "reaction_name": "Meromycolate enoyl-ACP reductase InhA (FAS-II)",
+      "mapping_basis": "EC",
+      "kegg_queries": [
+        "ec:1.3.1.118"
+      ],
+      "ec_number": "1.3.1.118",
+      "kegg_name": "meromycolic acid enoyl-[acyl-carrier-protein] reductase",
+      "equation": "a meromycolyl-[acyl-carrier protein] + NAD+ = a trans-Delta2-meromycolyl-[acyl-carrier protein] + NADH + H+ [RN:R12236]",
+      "kegg_scope": "specific",
+      "gene_reaction_rule": null,
+      "genes": [
+        {
+          "kegg_gene_id": "MMAR_2290",
+          "refseq_locus_tag": "MMAR_RS11405",
+          "symbol": "inhA",
+          "kegg_name": "enoyl-[acyl-carrier-protein] reductase, InhA",
+          "kegg_orthology": "K11611 meromycolic acid enoyl-[acyl-carrier protein] reductase [EC:1.3.1.118]",
+          "position_check": "exact"
+        }
+      ],
+      "replaces": [
+        "R_INHA"
+      ],
+      "note": "Old EC 1.3.1.9 links no mmi gene; KEGG assigns InhA (K11611) to EC 1.3.1.118.",
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 1,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.278425,
+          "lead_gene_id": "MMAR_RS11405",
+          "lead_log2fc_shrunk": 0.278425,
+          "lead_padj": 0.609117
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 1,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.38068,
+          "lead_gene_id": "MMAR_RS11405",
+          "lead_log2fc_shrunk": 0.38068,
+          "lead_padj": 0.535645
+        }
+      }
+    },
+    {
+      "reaction_id": "R_MMPL3",
+      "subsystem": "Mycolic Acid & FAS-II Envelope",
+      "compartment": "Plasma Membrane",
+      "reaction_name": "Trehalose monomycolate transporter MmpL3",
+      "mapping_basis": "KO",
+      "kegg_queries": [
+        "ko:K20470"
+      ],
+      "ec_number": null,
+      "kegg_name": "mmpL3; trehalose monomycolate/heme transporter",
+      "equation": "n/a (mapped by KO; KEGG gives no reaction equation)",
+      "kegg_scope": "specific",
+      "gene_reaction_rule": null,
+      "genes": [
+        {
+          "kegg_gene_id": "MMAR_0446",
+          "refseq_locus_tag": "MMAR_RS02205",
+          "symbol": "mmpL3",
+          "kegg_name": "conserved transmembrane transport protein MmpL3",
+          "kegg_orthology": "K20470 trehalose monomycolate/heme transporter",
+          "position_check": "exact"
+        }
+      ],
+      "replaces": [
+        "R_MMPL3"
+      ],
+      "note": "Old '2.A.1' is a TCDB transporter class, not an EC number; MmpL3 is KO K20470.",
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 1,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.296008,
+          "lead_gene_id": "MMAR_RS02205",
+          "lead_log2fc_shrunk": 0.296008,
+          "lead_padj": 0.563976
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 1,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.500021,
+          "lead_gene_id": "MMAR_RS02205",
+          "lead_log2fc_shrunk": 0.500021,
+          "lead_padj": 0.355788
+        }
+      }
+    },
+    {
+      "reaction_id": "R_FBPA",
+      "subsystem": "Mycolic Acid & FAS-II Envelope",
+      "compartment": "Periplasm / Cell Wall",
+      "reaction_name": "Antigen 85 trehalose mycolyltransferases",
+      "mapping_basis": "EC",
+      "kegg_queries": [
+        "ec:2.3.1.122"
+      ],
+      "ec_number": "2.3.1.122",
+      "kegg_name": "trehalose O-mycolyltransferase",
+      "equation": "2 alpha,alpha-trehalose 6-mycolate = alpha,alpha-trehalose + alpha,alpha-trehalose 6,6'-bismycolate [RN:R07248]",
+      "kegg_scope": "isozymes or paralogues linked to the EC",
+      "gene_reaction_rule": null,
+      "genes": [
+        {
+          "kegg_gene_id": "MMAR_0328",
+          "refseq_locus_tag": "MMAR_RS01615",
+          "symbol": "fbpC",
+          "kegg_name": "secreted antigen 85-C FbpC",
+          "kegg_orthology": "K18851 diacylglycerol O-acyltransferase / trehalose O-mycolyltransferase / mycolyltransferase Ag85 [EC:2.3.1.20 2.3.1.122 2.3.1.-]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_2777",
+          "refseq_locus_tag": "MMAR_RS13845",
+          "symbol": "fbpB",
+          "kegg_name": "secreted antigen 85-B FbpB",
+          "kegg_orthology": "K18851 diacylglycerol O-acyltransferase / trehalose O-mycolyltransferase / mycolyltransferase Ag85 [EC:2.3.1.20 2.3.1.122 2.3.1.-]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_4556",
+          "refseq_locus_tag": "MMAR_RS22830",
+          "symbol": "fbpC_2",
+          "kegg_name": "secreted antigen 85-C FbpC_2",
+          "kegg_orthology": "K18851 diacylglycerol O-acyltransferase / trehalose O-mycolyltransferase / mycolyltransferase Ag85 [EC:2.3.1.20 2.3.1.122 2.3.1.-]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_5368",
+          "refseq_locus_tag": "MMAR_RS26950",
+          "symbol": "fbpA",
+          "kegg_name": "secreted antigen 85-A FbpA",
+          "kegg_orthology": "K18851 diacylglycerol O-acyltransferase / trehalose O-mycolyltransferase / mycolyltransferase Ag85 [EC:2.3.1.20 2.3.1.122 2.3.1.-]",
+          "position_check": "exact"
+        }
+      ],
+      "replaces": [
+        "R_FBPA"
+      ],
+      "note": null,
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 4,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.138684,
+          "lead_gene_id": "MMAR_RS01615",
+          "lead_log2fc_shrunk": 0.486837,
+          "lead_padj": 0.352856
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 4,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.201973,
+          "lead_gene_id": "MMAR_RS13845",
+          "lead_log2fc_shrunk": 0.34384,
+          "lead_padj": 0.521889
+        }
+      }
+    },
+    {
+      "reaction_id": "R_FACL",
+      "subsystem": "Mycolic Acid & FAS-II Envelope",
+      "compartment": "Cytoplasm",
+      "reaction_name": "Long-chain-fatty-acid--CoA ligase",
+      "mapping_basis": "EC",
+      "kegg_queries": [
+        "ec:6.2.1.3"
+      ],
+      "ec_number": "6.2.1.3",
+      "kegg_name": "long-chain-fatty-acid---CoA ligase",
+      "equation": "ATP + a long-chain fatty acid + CoA = AMP + diphosphate + an acyl-CoA [RN:R00390]",
+      "kegg_scope": "isozymes or paralogues linked to the EC",
+      "gene_reaction_rule": null,
+      "genes": [
+        {
+          "kegg_gene_id": "MMAR_1606",
+          "refseq_locus_tag": "MMAR_RS07950",
+          "symbol": null,
+          "kegg_name": "fatty-acid-CoA ligase",
+          "kegg_orthology": "K01897 long-chain-fatty-acid---CoA ligase [EC:6.2.1.3]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_2071",
+          "refseq_locus_tag": "MMAR_RS10300",
+          "symbol": "fadD11_1",
+          "kegg_name": "long-chain-fatty-acid-CoA ligase, FadD11_1",
+          "kegg_orthology": "K01897 long-chain-fatty-acid---CoA ligase [EC:6.2.1.3]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_2597",
+          "refseq_locus_tag": "MMAR_RS12965",
+          "symbol": "fadD13",
+          "kegg_name": "fatty-acid-CoA ligase FadD13",
+          "kegg_orthology": "K28161 long-chain-fatty-acid---CoA ligase [EC:6.2.1.3]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_3231",
+          "refseq_locus_tag": "MMAR_RS16110",
+          "symbol": "fadD15",
+          "kegg_name": "long-chain-fatty-acid-CoA ligase FadD15",
+          "kegg_orthology": "K01897 long-chain-fatty-acid---CoA ligase [EC:6.2.1.3]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_4025",
+          "refseq_locus_tag": "MMAR_RS20115",
+          "symbol": null,
+          "kegg_name": "long-chain fatty-acid CoA ligase",
+          "kegg_orthology": "K01897 long-chain-fatty-acid---CoA ligase [EC:6.2.1.3]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_4793",
+          "refseq_locus_tag": "MMAR_RS24025",
+          "symbol": null,
+          "kegg_name": "acyl-CoA synthetase",
+          "kegg_orthology": "K01897 long-chain-fatty-acid---CoA ligase [EC:6.2.1.3]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_5275",
+          "refseq_locus_tag": "MMAR_RS26470",
+          "symbol": "fadD15_1",
+          "kegg_name": "long-chain-fatty-acid-CoA ligase FadD15_1",
+          "kegg_orthology": "K01897 long-chain-fatty-acid---CoA ligase [EC:6.2.1.3]",
+          "position_check": "exact"
+        }
+      ],
+      "replaces": [
+        "R_FADD7"
+      ],
+      "note": "KEGG gene MMAR_0319 is named fadD7 (GenBank) but has no KO and is not linked to EC 6.2.1.3, so the reaction carries the EC-linked ligases, not FadD7.",
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 5,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": -0.168276,
+          "lead_gene_id": "MMAR_RS24025",
+          "lead_log2fc_shrunk": -0.686479,
+          "lead_padj": 0.205072
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 5,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.0532941,
+          "lead_gene_id": "MMAR_RS24025",
+          "lead_log2fc_shrunk": -0.613768,
+          "lead_padj": 0.339619
+        }
+      }
+    },
+    {
+      "reaction_id": "R_MURA",
+      "subsystem": "Peptidoglycan Biosynthesis",
+      "compartment": "Cytoplasm",
+      "reaction_name": "UDP-N-acetylglucosamine 1-carboxyvinyltransferase MurA",
+      "mapping_basis": "EC",
+      "kegg_queries": [
+        "ec:2.5.1.7"
+      ],
+      "ec_number": "2.5.1.7",
+      "kegg_name": "UDP-N-acetylglucosamine 1-carboxyvinyltransferase",
+      "equation": "phosphoenolpyruvate + UDP-N-acetyl-alpha-D-glucosamine = phosphate + UDP-N-acetyl-3-O-(1-carboxyvinyl)-alpha-D-glucosamine [RN:R00660]",
+      "kegg_scope": "specific",
+      "gene_reaction_rule": null,
+      "genes": [
+        {
+          "kegg_gene_id": "MMAR_4083",
+          "refseq_locus_tag": "MMAR_RS20430",
+          "symbol": "murA",
+          "kegg_name": "UDP-N-acetylglucosamine 1-carboxyvinyltransferase MurA",
+          "kegg_orthology": "K00790 UDP-N-acetylglucosamine 1-carboxyvinyltransferase [EC:2.5.1.7]",
+          "position_check": "exact"
+        }
+      ],
+      "replaces": [
+        "R_MURA"
+      ],
+      "note": null,
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 1,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.125923,
+          "lead_gene_id": "MMAR_RS20430",
+          "lead_log2fc_shrunk": 0.125923,
+          "lead_padj": 0.838944
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 1,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.0546355,
+          "lead_gene_id": "MMAR_RS20430",
+          "lead_log2fc_shrunk": 0.0546355,
+          "lead_padj": 0.944184
+        }
+      }
+    },
+    {
+      "reaction_id": "R_ECCE",
+      "subsystem": "Type VII (ESX) Secretion",
+      "compartment": "Plasma Membrane",
+      "reaction_name": "ESX secretion system protein EccE (all ESX loci)",
+      "mapping_basis": "KO",
+      "kegg_queries": [
+        "ko:K27088"
+      ],
+      "ec_number": null,
+      "kegg_name": "eccE; ESX secretion system protein EccE",
+      "equation": "n/a (mapped by KO; KEGG gives no reaction equation)",
+      "kegg_scope": "family: KO spans the ESX paralogues; ESX-1 not resolved",
+      "gene_reaction_rule": null,
+      "genes": [
+        {
+          "kegg_gene_id": "MMAR_0551",
+          "refseq_locus_tag": "MMAR_RS02710",
+          "symbol": "eccE",
+          "kegg_name": "conserved transmembrane protein",
+          "kegg_orthology": "K27088 ESX secretion system protein EccE",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_2679",
+          "refseq_locus_tag": "MMAR_RS13360",
+          "symbol": "eccE",
+          "kegg_name": "conserved membrane protein",
+          "kegg_orthology": "K27088 ESX secretion system protein EccE",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_5458",
+          "refseq_locus_tag": "MMAR_RS27410",
+          "symbol": "eccE",
+          "kegg_name": "conserved hypothetical membrane protein",
+          "kegg_orthology": "K27088 ESX secretion system protein EccE",
+          "position_check": "exact"
+        }
+      ],
+      "replaces": [
+        "R_ECCE1"
+      ],
+      "note": "Old EC 3.6.3.- is an incomplete, obsolete class and EccE is not an ATPase; mapped by KO.",
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 3,
+          "n_deg": 1,
+          "n_up": 1,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.35498,
+          "lead_gene_id": "MMAR_RS13360",
+          "lead_log2fc_shrunk": 1.04326,
+          "lead_padj": 0.0125838
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 3,
+          "n_deg": 1,
+          "n_up": 1,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.553153,
+          "lead_gene_id": "MMAR_RS13360",
+          "lead_log2fc_shrunk": 1.10678,
+          "lead_padj": 0.0169948
+        }
+      }
+    },
+    {
+      "reaction_id": "R_ECCB",
+      "subsystem": "Type VII (ESX) Secretion",
+      "compartment": "Plasma Membrane",
+      "reaction_name": "ESX secretion system protein EccB (all ESX loci)",
+      "mapping_basis": "KO",
+      "kegg_queries": [
+        "ko:K27085"
+      ],
+      "ec_number": null,
+      "kegg_name": "eccB; ESX secretion system ATPase EccB",
+      "equation": "n/a (mapped by KO; KEGG gives no reaction equation)",
+      "kegg_scope": "family: KO spans the ESX paralogues; ESX-1 not resolved",
+      "gene_reaction_rule": null,
+      "genes": [
+        {
+          "kegg_gene_id": "MMAR_0542",
+          "refseq_locus_tag": "MMAR_RS02665",
+          "symbol": "eccB",
+          "kegg_name": "conserved membrane protein",
+          "kegg_orthology": "K27085 ESX secretion system ATPase EccB",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_1099",
+          "refseq_locus_tag": "MMAR_RS05430",
+          "symbol": "eccB",
+          "kegg_name": "conserved hypothetical membrane protein",
+          "kegg_orthology": "K27085 ESX secretion system ATPase EccB",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_2664",
+          "refseq_locus_tag": "MMAR_RS13290",
+          "symbol": "eccB",
+          "kegg_name": "conserved membrane protein",
+          "kegg_orthology": "K27085 ESX secretion system ATPase EccB",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_5444",
+          "refseq_locus_tag": "MMAR_RS27340",
+          "symbol": "eccB",
+          "kegg_name": "conserved membrane protein",
+          "kegg_orthology": "K27085 ESX secretion system ATPase EccB",
+          "position_check": "exact"
+        }
+      ],
+      "replaces": [
+        "R_ECCB1"
+      ],
+      "note": "Old EC 3.6.3.- is an incomplete, obsolete class; mapped by KO.",
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 3,
+          "n_deg": 1,
+          "n_up": 0,
+          "n_down": 1,
+          "median_log2fc_shrunk": -0.313762,
+          "lead_gene_id": "MMAR_RS02665",
+          "lead_log2fc_shrunk": -1.81551,
+          "lead_padj": 0.0052329
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 3,
+          "n_deg": 1,
+          "n_up": 0,
+          "n_down": 1,
+          "median_log2fc_shrunk": -0.418321,
+          "lead_gene_id": "MMAR_RS02665",
+          "lead_log2fc_shrunk": -2.16167,
+          "lead_padj": 0.00324098
+        }
+      }
+    },
+    {
+      "reaction_id": "R_ESXA",
+      "subsystem": "Type VII (ESX) Secretion",
+      "compartment": "Extracellular / Capsule",
+      "reaction_name": "ESAT-6 family secreted proteins (EsxA and paralogues)",
+      "mapping_basis": "KO",
+      "kegg_queries": [
+        "ko:K14956"
+      ],
+      "ec_number": null,
+      "kegg_name": "esx, esat6, cfp10; ESAT-6 family protein",
+      "equation": "n/a (mapped by KO; KEGG gives no reaction equation)",
+      "kegg_scope": "family: one KO covers every ESAT-6/CFP-10 family protein",
+      "gene_reaction_rule": null,
+      "genes": [
+        {
+          "kegg_gene_id": "MMAR_0187",
+          "refseq_locus_tag": "MMAR_RS00930",
+          "symbol": "esxB_1",
+          "kegg_name": "10 kDa culture filtrate antigen EsxB_1",
+          "kegg_orthology": "K14956 ESAT-6 family protein",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_0188",
+          "refseq_locus_tag": "MMAR_RS00935",
+          "symbol": "esxA_1",
+          "kegg_name": "6 kDa culture filtrate antigen EsxA_1 (early secreted antigenic target - Esat6)",
+          "kegg_orthology": "K14956 ESAT-6 family protein",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_0189",
+          "refseq_locus_tag": "MMAR_RS00940",
+          "symbol": "esxA_3",
+          "kegg_name": "conserved hypothetical EsxA-like protein, EsxA_3",
+          "kegg_orthology": "K14956 ESAT-6 family protein",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_0196",
+          "refseq_locus_tag": "MMAR_RS00960",
+          "symbol": "esxA_2",
+          "kegg_name": "conserved hypothetical EsxA-like protein, EsxA_2",
+          "kegg_orthology": "K14956 ESAT-6 family protein",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_0546",
+          "refseq_locus_tag": "MMAR_RS02685",
+          "symbol": "esxG",
+          "kegg_name": "EsaT-6 like protein EsxG",
+          "kegg_orthology": "K14956 ESAT-6 family protein",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_0547",
+          "refseq_locus_tag": "MMAR_RS02690",
+          "symbol": "esxH",
+          "kegg_name": "EsaT-6 like protein EsxH",
+          "kegg_orthology": "K14956 ESAT-6 family protein",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_1104",
+          "refseq_locus_tag": "MMAR_RS05455",
+          "symbol": "esxU",
+          "kegg_name": "EsaT-6 like protein, EsxU",
+          "kegg_orthology": "K14956 ESAT-6 family protein",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_1105",
+          "refseq_locus_tag": "MMAR_RS05460",
+          "symbol": "esxT",
+          "kegg_name": "EsaT-6 like protein, EsxT",
+          "kegg_orthology": "K14956 ESAT-6 family protein",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_2674",
+          "refseq_locus_tag": "MMAR_RS13335",
+          "symbol": "esxM",
+          "kegg_name": "EsaT-6 like protein EsxM",
+          "kegg_orthology": "K14956 ESAT-6 family protein",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_2675",
+          "refseq_locus_tag": "MMAR_RS13340",
+          "symbol": "esxN",
+          "kegg_name": "EsaT-6 like protein EsxN",
+          "kegg_orthology": "K14956 ESAT-6 family protein",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_3000",
+          "refseq_locus_tag": "MMAR_RS14980",
+          "symbol": "esxR",
+          "kegg_name": "EsaT-6 family EsxR",
+          "kegg_orthology": "K14956 ESAT-6 family protein",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_3001",
+          "refseq_locus_tag": "MMAR_RS14985",
+          "symbol": "esxG_1",
+          "kegg_name": "EsaT-6 like protein EsxG_1",
+          "kegg_orthology": "K14956 ESAT-6 family protein",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_3580",
+          "refseq_locus_tag": "MMAR_RS17835",
+          "symbol": "esxN_6",
+          "kegg_name": "EsaT-6 like protein EsxN_6",
+          "kegg_orthology": "K14956 ESAT-6 family protein",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_3653",
+          "refseq_locus_tag": "MMAR_RS18200",
+          "symbol": "esxN_3",
+          "kegg_name": "EsaT-6 like protein EsxN_3",
+          "kegg_orthology": "K14956 ESAT-6 family protein",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_3654",
+          "refseq_locus_tag": "MMAR_RS18205",
+          "symbol": "esxP_2",
+          "kegg_name": "EsaT-6 like protein EsxP_2",
+          "kegg_orthology": "K14956 ESAT-6 family protein",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_3659",
+          "refseq_locus_tag": "MMAR_RS18235",
+          "symbol": "esxN_4",
+          "kegg_name": "EsaT-6 like protein EsxN_4",
+          "kegg_orthology": "K14956 ESAT-6 family protein",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_3660",
+          "refseq_locus_tag": "MMAR_RS18240",
+          "symbol": "esxP_3",
+          "kegg_name": "EsaT-6 like protein EsxP_3",
+          "kegg_orthology": "K14956 ESAT-6 family protein",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_3662",
+          "refseq_locus_tag": "MMAR_RS18250",
+          "symbol": "esxN_5",
+          "kegg_name": "EsaT-6 like protein EsxN_5",
+          "kegg_orthology": "K14956 ESAT-6 family protein",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_3663",
+          "refseq_locus_tag": "MMAR_RS18255",
+          "symbol": "esxP_4",
+          "kegg_name": "EsaT-6 like protein EsxP_4",
+          "kegg_orthology": "K14956 ESAT-6 family protein",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_4453",
+          "refseq_locus_tag": "MMAR_RS22310",
+          "symbol": "esxP",
+          "kegg_name": "EsaT-6 like protein EsxP",
+          "kegg_orthology": "K14956 ESAT-6 family protein",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_4454",
+          "refseq_locus_tag": "MMAR_RS22315",
+          "symbol": "esxN_1",
+          "kegg_name": "EsaT-6 like protein EsxN_1",
+          "kegg_orthology": "K14956 ESAT-6 family protein",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_5119",
+          "refseq_locus_tag": "MMAR_RS25675",
+          "symbol": "esxN_2",
+          "kegg_name": "EsaT-6 like protein EsxN_2",
+          "kegg_orthology": "K14956 ESAT-6 family protein",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_5120",
+          "refseq_locus_tag": "MMAR_RS25680",
+          "symbol": "esxP_1",
+          "kegg_name": "EsaT-6 like protein EsxP_1",
+          "kegg_orthology": "K14956 ESAT-6 family protein",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_5449",
+          "refseq_locus_tag": "MMAR_RS27365",
+          "symbol": "esxB",
+          "kegg_name": "Esat-6 like protein EsxB",
+          "kegg_orthology": "K14956 ESAT-6 family protein",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_5450",
+          "refseq_locus_tag": "MMAR_RS27370",
+          "symbol": "esxA",
+          "kegg_name": "6 kDa early secretory antigenic target EsxA (EsaT-6)",
+          "kegg_orthology": "K14956 ESAT-6 family protein",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_5465",
+          "refseq_locus_tag": "MMAR_RS27435",
+          "symbol": "esxE",
+          "kegg_name": "EsaT-6 like protein EsxE",
+          "kegg_orthology": "K14956 ESAT-6 family protein",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_5466",
+          "refseq_locus_tag": "MMAR_RS27440",
+          "symbol": "esxF",
+          "kegg_name": "EsaT-6 like protein EsxF",
+          "kegg_orthology": "K14956 ESAT-6 family protein",
+          "position_check": "exact"
+        }
+      ],
+      "replaces": [
+        "R_ESXA"
+      ],
+      "note": "KEGG has no EsxA-specific KO; K14956 groups all ESAT-6 family proteins.",
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 18,
+          "n_deg": 3,
+          "n_up": 2,
+          "n_down": 1,
+          "median_log2fc_shrunk": 0.445785,
+          "lead_gene_id": "MMAR_RS18200",
+          "lead_log2fc_shrunk": 1.64119,
+          "lead_padj": 1.61524e-05
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 18,
+          "n_deg": 5,
+          "n_up": 4,
+          "n_down": 1,
+          "median_log2fc_shrunk": 0.503217,
+          "lead_gene_id": "MMAR_RS18200",
+          "lead_log2fc_shrunk": 1.87402,
+          "lead_padj": 4.57692e-06
+        }
+      }
+    },
+    {
+      "reaction_id": "R_ESPB",
+      "subsystem": "Type VII (ESX) Secretion",
+      "compartment": "Extracellular / Capsule",
+      "reaction_name": "ESX secretion-associated protein EspB family",
+      "mapping_basis": "KO",
+      "kegg_queries": [
+        "ko:K27099"
+      ],
+      "ec_number": null,
+      "kegg_name": "espB; ESX secretion-associated protein EspB",
+      "equation": "n/a (mapped by KO; KEGG gives no reaction equation)",
+      "kegg_scope": "family: KO spans EspB paralogues",
+      "gene_reaction_rule": null,
+      "genes": [
+        {
+          "kegg_gene_id": "MMAR_0202",
+          "refseq_locus_tag": "MMAR_RS00990",
+          "symbol": "espB",
+          "kegg_name": "conserved hypothetical alanine and glycine rich protein",
+          "kegg_orthology": "K27099 ESX secretion-associated protein EspB",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_0203",
+          "refseq_locus_tag": "MMAR_RS00995",
+          "symbol": null,
+          "kegg_name": "conserved hypothetical alanine and glycine rich protein",
+          "kegg_orthology": "K27099 ESX secretion-associated protein EspB",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_1329",
+          "refseq_locus_tag": "MMAR_RS06580",
+          "symbol": "espB",
+          "kegg_name": "conserved hypothetical alanine and glycine rich protein",
+          "kegg_orthology": "K27099 ESX secretion-associated protein EspB",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_5457",
+          "refseq_locus_tag": "MMAR_RS27405",
+          "symbol": "espB",
+          "kegg_name": "Esx-1 secreted protein, EspB",
+          "kegg_orthology": "K27099 ESX secretion-associated protein EspB",
+          "position_check": "exact"
+        }
+      ],
+      "replaces": [
+        "R_ESPB"
+      ],
+      "note": null,
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 3,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": -0.0697152,
+          "lead_gene_id": "MMAR_RS00995",
+          "lead_log2fc_shrunk": -1.01405,
+          "lead_padj": 0.117355
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 3,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.0938225,
+          "lead_gene_id": "MMAR_RS00995",
+          "lead_log2fc_shrunk": -0.83875,
+          "lead_padj": 0.219875
+        }
+      }
+    },
+    {
+      "reaction_id": "R_ARGF",
+      "subsystem": "Arginine & Branched-Chain Amino Acid Biosynthesis",
+      "compartment": "Cytoplasm",
+      "reaction_name": "Ornithine carbamoyltransferase ArgF",
+      "mapping_basis": "EC",
+      "kegg_queries": [
+        "ec:2.1.3.3"
+      ],
+      "ec_number": "2.1.3.3",
+      "kegg_name": "ornithine carbamoyltransferase",
+      "equation": "carbamoyl phosphate + L-ornithine = phosphate + L-citrulline [RN:R01398]",
+      "kegg_scope": "specific",
+      "gene_reaction_rule": null,
+      "genes": [
+        {
+          "kegg_gene_id": "MMAR_2466",
+          "refseq_locus_tag": "MMAR_RS12305",
+          "symbol": "argF",
+          "kegg_name": "ornithine carbamoyltransferase, anabolic ArgF",
+          "kegg_orthology": "K00611 ornithine carbamoyltransferase [EC:2.1.3.3]",
+          "position_check": "exact"
+        }
+      ],
+      "replaces": [
+        "R_ARGF"
+      ],
+      "note": null,
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 1,
+          "n_deg": 1,
+          "n_up": 1,
+          "n_down": 0,
+          "median_log2fc_shrunk": 2.24491,
+          "lead_gene_id": "MMAR_RS12305",
+          "lead_log2fc_shrunk": 2.24491,
+          "lead_padj": 0.00170801
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 1,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 1.41155,
+          "lead_gene_id": "MMAR_RS12305",
+          "lead_log2fc_shrunk": 1.41155,
+          "lead_padj": 0.0552196
+        }
+      }
+    },
+    {
+      "reaction_id": "R_ALS",
+      "subsystem": "Arginine & Branched-Chain Amino Acid Biosynthesis",
+      "compartment": "Cytoplasm",
+      "reaction_name": "Acetolactate synthase (branched-chain amino acids)",
+      "mapping_basis": "EC",
+      "kegg_queries": [
+        "ec:2.2.1.6"
+      ],
+      "ec_number": "2.2.1.6",
+      "kegg_name": "acetolactate synthase",
+      "equation": "2 pyruvate = 2-acetolactate + CO2 [RN:R00006]",
+      "kegg_scope": "complex or isozymes linked to the EC",
+      "gene_reaction_rule": null,
+      "genes": [
+        {
+          "kegg_gene_id": "MMAR_1508",
+          "refseq_locus_tag": "MMAR_RS07455",
+          "symbol": "ilvB1_1",
+          "kegg_name": "acetolactate synthase (large subunit) IlvB1_1",
+          "kegg_orthology": "K01652 acetolactate synthase I/II/III large subunit [EC:2.2.1.6]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_1710",
+          "refseq_locus_tag": "MMAR_RS08460",
+          "symbol": "ilvB1",
+          "kegg_name": "acetolactate synthase (large subunit) IlvB1",
+          "kegg_orthology": "K01652 acetolactate synthase I/II/III large subunit [EC:2.2.1.6]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_1711",
+          "refseq_locus_tag": "MMAR_RS08465",
+          "symbol": "ilvN",
+          "kegg_name": "acetolactate synthase (small subunit) IlvN",
+          "kegg_orthology": "K01653 acetolactate synthase I/III small subunit [EC:2.2.1.6]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_2332",
+          "refseq_locus_tag": "MMAR_RS11620",
+          "symbol": "ilvB1_3",
+          "kegg_name": "acetolactate synthase (large subunit) IlvB1_3",
+          "kegg_orthology": "K01652 acetolactate synthase I/II/III large subunit [EC:2.2.1.6]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_3281",
+          "refseq_locus_tag": "MMAR_RS16360",
+          "symbol": "ilvB1_2",
+          "kegg_name": "acetolactate synthase (large subunit) IlvB1_2",
+          "kegg_orthology": "K01652 acetolactate synthase I/II/III large subunit [EC:2.2.1.6]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_4997",
+          "refseq_locus_tag": "MMAR_RS25065",
+          "symbol": "ilvX",
+          "kegg_name": "acetohydroxyacid synthase IlvX",
+          "kegg_orthology": "K01652 acetolactate synthase I/II/III large subunit [EC:2.2.1.6]",
+          "position_check": "exact"
+        }
+      ],
+      "replaces": [
+        "R_ALS"
+      ],
+      "note": "The old locus (MMAR_2697) is named acetolactate synthase IlvG in GenBank, but KEGG gives it no KO or EC, so it is not among the EC 2.2.1.6 genes.",
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 6,
+          "n_deg": 1,
+          "n_up": 1,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.0830261,
+          "lead_gene_id": "MMAR_RS11620",
+          "lead_log2fc_shrunk": 1.02409,
+          "lead_padj": 0.0390639
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 6,
+          "n_deg": 1,
+          "n_up": 1,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.148128,
+          "lead_gene_id": "MMAR_RS11620",
+          "lead_log2fc_shrunk": 1.49162,
+          "lead_padj": 0.0064991
+        }
+      }
+    },
+    {
+      "reaction_id": "R_ADHP",
+      "subsystem": "Redox Homeostasis & Cofactors",
+      "compartment": "Cytoplasm",
+      "reaction_name": "Alcohol dehydrogenase",
+      "mapping_basis": "EC",
+      "kegg_queries": [
+        "ec:1.1.1.1"
+      ],
+      "ec_number": "1.1.1.1",
+      "kegg_name": "alcohol dehydrogenase",
+      "equation": "(1) a primary alcohol + NAD+ = an aldehyde + NADH + H+ [RN:R00623]; (2) a secondary alcohol + NAD+ = a ketone + NADH + H+ [RN:R00624]",
+      "kegg_scope": "isozymes or paralogues linked to the EC",
+      "gene_reaction_rule": null,
+      "genes": [
+        {
+          "kegg_gene_id": "MMAR_2739",
+          "refseq_locus_tag": "MMAR_RS13655",
+          "symbol": "adhA",
+          "kegg_name": "alcohol dehydrogenase AdhA",
+          "kegg_orthology": "K13953 alcohol dehydrogenase, propanol-preferring [EC:1.1.1.1]",
+          "position_check": "overlap_same_strand"
+        },
+        {
+          "kegg_gene_id": "MMAR_4110",
+          "refseq_locus_tag": "MMAR_RS20575",
+          "symbol": "adhE",
+          "kegg_name": "aldehyde dehydrogenase",
+          "kegg_orthology": "K04072 acetaldehyde dehydrogenase / alcohol dehydrogenase [EC:1.2.1.10 1.1.1.1]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_4911",
+          "refseq_locus_tag": "MMAR_RS24640",
+          "symbol": "adhX",
+          "kegg_name": "Zn-dependent alcohol dehydrogenase, AdhX",
+          "kegg_orthology": "K13953 alcohol dehydrogenase, propanol-preferring [EC:1.1.1.1]",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_4935",
+          "refseq_locus_tag": "MMAR_RS24760",
+          "symbol": "adhB",
+          "kegg_name": "zinc-containing alcohol dehydrogenase NAD-dependent AdhB",
+          "kegg_orthology": "K00121 S-(hydroxymethyl)glutathione dehydrogenase / alcohol dehydrogenase [EC:1.1.1.284 1.1.1.1]",
+          "position_check": "exact"
+        }
+      ],
+      "replaces": [
+        "R_ADHP"
+      ],
+      "note": null,
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 4,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.138258,
+          "lead_gene_id": "MMAR_RS24640",
+          "lead_log2fc_shrunk": 0.817243,
+          "lead_padj": 0.164811
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 4,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.0813562,
+          "lead_gene_id": "MMAR_RS24640",
+          "lead_log2fc_shrunk": 0.429946,
+          "lead_padj": 0.537151
+        }
+      }
+    },
+    {
+      "reaction_id": "R_RIBD",
+      "subsystem": "Redox Homeostasis & Cofactors",
+      "compartment": "Cytoplasm",
+      "reaction_name": "Bifunctional riboflavin biosynthesis deaminase/reductase (RibD/RibG)",
+      "mapping_basis": "EC",
+      "kegg_queries": [
+        "ec:3.5.4.26",
+        "ec:1.1.1.193"
+      ],
+      "ec_number": "3.5.4.26 / 1.1.1.193",
+      "kegg_name": "diaminohydroxyphosphoribosylaminopyrimidine deaminase / 5-amino-6-(5-phosphoribosylamino)uracil reductase",
+      "equation": "2,5-diamino-6-hydroxy-4-(5-phospho-D-ribosylamino)pyrimidine + H2O = 5-amino-6-(5-phospho-D-ribosylamino)uracil + NH3 [RN:R03459] | 5-amino-6-(5-phospho-D-ribitylamino)uracil + NADP+ = 5-amino-6-(5-phospho-D-ribosylamino)uracil + NADPH + H+ [RN:R03458]",
+      "kegg_scope": "specific",
+      "gene_reaction_rule": null,
+      "genes": [
+        {
+          "kegg_gene_id": "MMAR_2218",
+          "refseq_locus_tag": "MMAR_RS11045",
+          "symbol": "ribG",
+          "kegg_name": "bifunctional riboflavin biosynthesis protein RibG",
+          "kegg_orthology": "K11752 diaminohydroxyphosphoribosylaminopyrimidine deaminase / 5-amino-6-(5-phosphoribosylamino)uracil reductase [EC:3.5.4.26 1.1.1.193]",
+          "position_check": "exact"
+        }
+      ],
+      "replaces": [
+        "R_RIBD"
+      ],
+      "note": null,
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 1,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.73467,
+          "lead_gene_id": "MMAR_RS11045",
+          "lead_log2fc_shrunk": 0.73467,
+          "lead_padj": 0.121236
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 1,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.609247,
+          "lead_gene_id": "MMAR_RS11045",
+          "lead_log2fc_shrunk": 0.609247,
+          "lead_padj": 0.279161
+        }
+      }
+    },
+    {
+      "reaction_id": "R_KATG",
+      "subsystem": "Redox Homeostasis & Cofactors",
+      "compartment": "Cytoplasm / Periplasm",
+      "reaction_name": "Catalase-peroxidase KatG",
+      "mapping_basis": "EC",
+      "kegg_queries": [
+        "ec:1.11.1.21"
+      ],
+      "ec_number": "1.11.1.21",
+      "kegg_name": "catalase-peroxidase",
+      "equation": "(1) donor + H2O2 = oxidized donor + 2 H2O [RN:R03532]; (2) 2 H2O2 = O2 + 2 H2O [RN:R00009]",
+      "kegg_scope": "specific",
+      "gene_reaction_rule": null,
+      "genes": [
+        {
+          "kegg_gene_id": "MMAR_2914",
+          "refseq_locus_tag": "MMAR_RS14525",
+          "symbol": "katG",
+          "kegg_name": "catalase-peroxidase-peroxynitritase T KatG",
+          "kegg_orthology": "K03782 catalase-peroxidase [EC:1.11.1.21]",
+          "position_check": "exact"
+        }
+      ],
+      "replaces": [
+        "R_KATG"
+      ],
+      "note": null,
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 1,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.310513,
+          "lead_gene_id": "MMAR_RS14525",
+          "lead_log2fc_shrunk": 0.310513,
+          "lead_padj": 0.526722
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 1,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": 0.0322249,
+          "lead_gene_id": "MMAR_RS14525",
+          "lead_log2fc_shrunk": 0.0322249,
+          "lead_padj": 0.9721
+        }
+      }
+    },
+    {
+      "reaction_id": "R_HSPX",
+      "subsystem": "DosR Hypoxia & Dormancy",
+      "compartment": "Cytoplasm / Cell Wall",
+      "reaction_name": "HSP20 family (alpha-crystallin) small heat shock proteins",
+      "mapping_basis": "KO",
+      "kegg_queries": [
+        "ko:K13993"
+      ],
+      "ec_number": null,
+      "kegg_name": "HSP20; HSP20 family protein",
+      "equation": "n/a (mapped by KO; KEGG gives no reaction equation)",
+      "kegg_scope": "family: KO covers all HSP20 family proteins",
+      "gene_reaction_rule": null,
+      "genes": [
+        {
+          "kegg_gene_id": "MMAR_0515",
+          "refseq_locus_tag": "MMAR_RS02535",
+          "symbol": "hsp",
+          "kegg_name": "heat shock protein Hsp",
+          "kegg_orthology": "K13993 HSP20 family protein",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_2991",
+          "refseq_locus_tag": "MMAR_RS14935",
+          "symbol": null,
+          "kegg_name": "molecular chaperone (small heat shock protein)",
+          "kegg_orthology": "K13993 HSP20 family protein",
+          "position_check": "exact"
+        }
+      ],
+      "replaces": [
+        "R_HSPX"
+      ],
+      "note": "KEGG has no HspX-specific KO. GenBank-named hspX (MMAR_0912) is HtpX (K03799) in KEGG; hspX_1 (MMAR_3484) has an HSP20 domain but no KO, so it is not included.",
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 2,
+          "n_deg": 2,
+          "n_up": 0,
+          "n_down": 2,
+          "median_log2fc_shrunk": -2.17453,
+          "lead_gene_id": "MMAR_RS14935",
+          "lead_log2fc_shrunk": -1.80967,
+          "lead_padj": 0.000182186
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 2,
+          "n_deg": 2,
+          "n_up": 0,
+          "n_down": 2,
+          "median_log2fc_shrunk": -3.53723,
+          "lead_gene_id": "MMAR_RS14935",
+          "lead_log2fc_shrunk": -3.43804,
+          "lead_padj": 1.63689e-10
+        }
+      }
+    },
+    {
+      "reaction_id": "R_DOSR",
+      "subsystem": "DosR Hypoxia & Dormancy",
+      "compartment": "Cytoplasm",
+      "reaction_name": "DevR (DosR) two-component response regulator",
+      "mapping_basis": "KO",
+      "kegg_queries": [
+        "ko:K07695"
+      ],
+      "ec_number": null,
+      "kegg_name": "devR; two-component system, NarL family, response regulator DevR",
+      "equation": "n/a (mapped by KO; KEGG gives no reaction equation)",
+      "kegg_scope": "specific",
+      "gene_reaction_rule": null,
+      "genes": [
+        {
+          "kegg_gene_id": "MMAR_1516",
+          "refseq_locus_tag": "MMAR_RS07495",
+          "symbol": "devR",
+          "kegg_name": "two-component transcriptional regulatory protein DevR",
+          "kegg_orthology": "K07695 two-component system, NarL family, response regulator DevR",
+          "position_check": "exact"
+        },
+        {
+          "kegg_gene_id": "MMAR_3480",
+          "refseq_locus_tag": "MMAR_RS17350",
+          "symbol": "dosR",
+          "kegg_name": "two-component transcriptional regulatory protein",
+          "kegg_orthology": "K07695 two-component system, NarL family, response regulator DevR",
+          "position_check": "exact"
+        }
+      ],
+      "replaces": [
+        "R_DOSR"
+      ],
+      "note": null,
+      "statistics": {
+        "clinostat_vs_static1g": {
+          "n_tested": 2,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": -0.0994965,
+          "lead_gene_id": "MMAR_RS07495",
+          "lead_log2fc_shrunk": -0.137368,
+          "lead_padj": 0.841083
+        },
+        "rpm2_vs_static1g": {
+          "n_tested": 2,
+          "n_deg": 0,
+          "n_up": 0,
+          "n_down": 0,
+          "median_log2fc_shrunk": -0.385098,
+          "lead_gene_id": "MMAR_RS07495",
+          "lead_log2fc_shrunk": -0.608812,
+          "lead_padj": 0.345859
+        }
+      }
+    }
+  ],
+  "old_assignment_audit": [
+    {
+      "old_reaction_id": "R_NDH1_C",
+      "old_subsystem": "Cellular Respiration & Energy",
+      "old_reaction_name": "NADH-quinone oxidoreductase (Complex I)",
+      "old_ec": "7.1.1.2",
+      "old_ec_in_kegg": "7.1.1.2: NADH:ubiquinone reductase (H+-translocating) (mmi genes linked: 14)",
+      "old_gene_id": "MMAR_RS07320",
+      "old_gene_symbol": "nuoC",
+      "old_locus_kegg_id": "MMAR_1481",
+      "old_locus_refseq_gene": "",
+      "old_locus_refseq_product": "NADH-quinone oxidoreductase subunit C",
+      "old_locus_kegg_symbol": "nuoC",
+      "old_locus_kegg_name": "NADH dehydrogenase I (chain C) NuoC (NADH-ubiquinone oxidoreductase chain C)",
+      "old_locus_kegg_orthology": "K00332 NADH-quinone oxidoreductase subunit C [EC:7.1.1.2]",
+      "old_locus_in_kegg_gene_set": "YES",
+      "old_symbol_matches_locus": "YES",
+      "old_locus_correct": "YES",
+      "verdict": "correct",
+      "status": "kept",
+      "merged_into": "R_NDH1",
+      "new_reaction_id": "R_NDH1",
+      "kegg_queries": "ec:7.1.1.2",
+      "new_kegg_genes": "MMAR_1470;MMAR_1471;MMAR_1472;MMAR_1473;MMAR_1474;MMAR_1475;MMAR_1476;MMAR_1477;MMAR_1478;MMAR_1479;MMAR_1480;MMAR_1481;MMAR_1482;MMAR_1483",
+      "new_refseq_loci": "MMAR_RS07265;MMAR_RS07270;MMAR_RS07275;MMAR_RS07280;MMAR_RS07285;MMAR_RS07290;MMAR_RS07295;MMAR_RS07300;MMAR_RS07305;MMAR_RS07310;MMAR_RS07315;MMAR_RS07320;MMAR_RS07325;MMAR_RS07330",
+      "new_symbols": "nuoN;nuoM;nuoL;nuoK;nuoJ;nuoI;nuoH;nuoG;nuoF;nuoE;nuoD;nuoC;nuoB;nuoA",
+      "note": "The two old entries (subunits C and D) are one reaction, EC 7.1.1.2; merged."
+    },
+    {
+      "old_reaction_id": "R_NDH1_D",
+      "old_subsystem": "Cellular Respiration & Energy",
+      "old_reaction_name": "NADH dehydrogenase subunit D (Complex I)",
+      "old_ec": "7.1.1.2",
+      "old_ec_in_kegg": "7.1.1.2: NADH:ubiquinone reductase (H+-translocating) (mmi genes linked: 14)",
+      "old_gene_id": "MMAR_RS07325",
+      "old_gene_symbol": "nuoD",
+      "old_locus_kegg_id": "MMAR_1482",
+      "old_locus_refseq_gene": "",
+      "old_locus_refseq_product": "NuoB/complex I 20 kDa subunit family protein",
+      "old_locus_kegg_symbol": "nuoB",
+      "old_locus_kegg_name": "NADH dehydrogenase I (chain B) NuoB (NADH-ubiquinone oxidoreductase chain B)",
+      "old_locus_kegg_orthology": "K00331 NADH-quinone oxidoreductase subunit B [EC:7.1.1.2]",
+      "old_locus_in_kegg_gene_set": "YES",
+      "old_symbol_matches_locus": "NO",
+      "old_locus_correct": "NO",
+      "verdict": "wrong_subunit_of_same_reaction",
+      "status": "re-mapped",
+      "merged_into": "R_NDH1",
+      "new_reaction_id": "R_NDH1",
+      "kegg_queries": "ec:7.1.1.2",
+      "new_kegg_genes": "MMAR_1470;MMAR_1471;MMAR_1472;MMAR_1473;MMAR_1474;MMAR_1475;MMAR_1476;MMAR_1477;MMAR_1478;MMAR_1479;MMAR_1480;MMAR_1481;MMAR_1482;MMAR_1483",
+      "new_refseq_loci": "MMAR_RS07265;MMAR_RS07270;MMAR_RS07275;MMAR_RS07280;MMAR_RS07285;MMAR_RS07290;MMAR_RS07295;MMAR_RS07300;MMAR_RS07305;MMAR_RS07310;MMAR_RS07315;MMAR_RS07320;MMAR_RS07325;MMAR_RS07330",
+      "new_symbols": "nuoN;nuoM;nuoL;nuoK;nuoJ;nuoI;nuoH;nuoG;nuoF;nuoE;nuoD;nuoC;nuoB;nuoA",
+      "note": "The two old entries (subunits C and D) are one reaction, EC 7.1.1.2; merged."
+    },
+    {
+      "old_reaction_id": "R_MENJ",
+      "old_subsystem": "Cellular Respiration & Energy",
+      "old_reaction_name": "Menaquinone reductase",
+      "old_ec": "1.3.5.2",
+      "old_ec_in_kegg": "1.3.5.2: dihydroorotate dehydrogenase (quinone) (mmi genes linked: 1)",
+      "old_gene_id": "MMAR_RS04470",
+      "old_gene_symbol": "menJ",
+      "old_locus_kegg_id": "MMAR_0910",
+      "old_locus_refseq_gene": "menJ",
+      "old_locus_refseq_product": "menaquinone reductase",
+      "old_locus_kegg_symbol": "",
+      "old_locus_kegg_name": "FAD-linked oxidoreductase",
+      "old_locus_kegg_orthology": "K21401 menaquinone-9 beta-reductase [EC:1.3.99.38]",
+      "old_locus_in_kegg_gene_set": "YES",
+      "old_symbol_matches_locus": "YES",
+      "old_locus_correct": "YES",
+      "verdict": "correct",
+      "status": "kept",
+      "merged_into": "",
+      "new_reaction_id": "R_MENJ",
+      "kegg_queries": "ec:1.3.99.38",
+      "new_kegg_genes": "MMAR_0910",
+      "new_refseq_loci": "MMAR_RS04470",
+      "new_symbols": "menJ",
+      "note": "Old EC 1.3.5.2 is dihydroorotate dehydrogenase (quinone) in KEGG; MenJ is EC 1.3.99.38."
+    },
+    {
+      "old_reaction_id": "R_CYDA",
+      "old_subsystem": "Cellular Respiration & Energy",
+      "old_reaction_name": "Cytochrome bd microaerophilic terminal oxidase",
+      "old_ec": "1.10.3.14",
+      "old_ec_in_kegg": "1.10.3.14: Transferred to 7.1.1.7 (mmi genes linked: 0)",
+      "old_gene_id": "MMAR_RS12095",
+      "old_gene_symbol": "cydA",
+      "old_locus_kegg_id": "MMAR_2427",
+      "old_locus_refseq_gene": "",
+      "old_locus_refseq_product": "HdeD family acid-resistance protein",
+      "old_locus_kegg_symbol": "",
+      "old_locus_kegg_name": "conserved hypothetical membrane protein",
+      "old_locus_kegg_orthology": "",
+      "old_locus_in_kegg_gene_set": "NO",
+      "old_symbol_matches_locus": "NO",
+      "old_locus_correct": "NO",
+      "verdict": "not_in_kegg_gene_set",
+      "status": "re-mapped",
+      "merged_into": "",
+      "new_reaction_id": "R_CYDA",
+      "kegg_queries": "ec:7.1.1.7",
+      "new_kegg_genes": "MMAR_2425;MMAR_2426",
+      "new_refseq_loci": "MMAR_RS12085;MMAR_RS12090",
+      "new_symbols": "cydB;cydA",
+      "note": "KEGG lists old EC 1.10.3.14 as transferred to 7.1.1.7."
+    },
+    {
+      "old_reaction_id": "R_CYDD",
+      "old_subsystem": "Cellular Respiration & Energy",
+      "old_reaction_name": "Thiol reductant ABC exporter CydD (Cytochrome bd assembly)",
+      "old_ec": "7.6.2.2",
+      "old_ec_in_kegg": "7.6.2.2: ABC-type xenobiotic transporter (mmi genes linked: 0)",
+      "old_gene_id": "MMAR_RS12080",
+      "old_gene_symbol": "cydD",
+      "old_locus_kegg_id": "MMAR_2424",
+      "old_locus_refseq_gene": "cydD",
+      "old_locus_refseq_product": "thiol reductant ABC exporter subunit CydD",
+      "old_locus_kegg_symbol": "cydD",
+      "old_locus_kegg_name": "Cytochrome transmembrane ATP-binding protein ABC transporter CydD",
+      "old_locus_kegg_orthology": "K16013 ATP-binding cassette, subfamily C, bacterial CydD",
+      "old_locus_in_kegg_gene_set": "YES",
+      "old_symbol_matches_locus": "YES",
+      "old_locus_correct": "YES",
+      "verdict": "correct",
+      "status": "kept",
+      "merged_into": "",
+      "new_reaction_id": "R_CYDD",
+      "kegg_queries": "ko:K16013",
+      "new_kegg_genes": "MMAR_2424",
+      "new_refseq_loci": "MMAR_RS12080",
+      "new_symbols": "cydD",
+      "note": "Old EC 7.6.2.2 (ABC-type xenobiotic transporter) links no mmi gene; CydD is KO K16013 (no EC)."
+    },
+    {
+      "old_reaction_id": "R_ATPS",
+      "old_subsystem": "Cellular Respiration & Energy",
+      "old_reaction_name": "ATP synthase F1F0",
+      "old_ec": "7.1.2.2",
+      "old_ec_in_kegg": "7.1.2.2: H+-transporting two-sector ATPase (mmi genes linked: 2)",
+      "old_gene_id": "MMAR_RS07455",
+      "old_gene_symbol": "atpA",
+      "old_locus_kegg_id": "MMAR_1508",
+      "old_locus_refseq_gene": "alsS",
+      "old_locus_refseq_product": "acetolactate synthase AlsS",
+      "old_locus_kegg_symbol": "ilvB1_1",
+      "old_locus_kegg_name": "acetolactate synthase (large subunit) IlvB1_1",
+      "old_locus_kegg_orthology": "K01652 acetolactate synthase I/II/III large subunit [EC:2.2.1.6]",
+      "old_locus_in_kegg_gene_set": "NO",
+      "old_symbol_matches_locus": "NO",
+      "old_locus_correct": "NO",
+      "verdict": "not_in_kegg_gene_set",
+      "status": "re-mapped",
+      "merged_into": "",
+      "new_reaction_id": "R_ATPS",
+      "kegg_queries": "ec:7.1.2.2",
+      "new_kegg_genes": "MMAR_4087;MMAR_4089",
+      "new_refseq_loci": "MMAR_RS20450;MMAR_RS20460",
+      "new_symbols": "atpD;atpA",
+      "note": "KEGG links only the catalytic alpha and beta subunits to EC 7.1.2.2."
+    },
+    {
+      "old_reaction_id": "R_ICL1",
+      "old_subsystem": "Central Carbon & Glyoxylate Shunt",
+      "old_reaction_name": "Isocitrate lyase (Glyoxylate bypass)",
+      "old_ec": "4.1.3.1",
+      "old_ec_in_kegg": "4.1.3.1: isocitrate lyase (mmi genes linked: 2)",
+      "old_gene_id": "MMAR_RS05335",
+      "old_gene_symbol": "icl1",
+      "old_locus_kegg_id": "MMAR_1079",
+      "old_locus_refseq_gene": "",
+      "old_locus_refseq_product": "CoA-acylating methylmalonate-semialdehyde dehydrogenase",
+      "old_locus_kegg_symbol": "mmsA",
+      "old_locus_kegg_name": "methylmalonate semialdehyde dehydrogenase, MmsA",
+      "old_locus_kegg_orthology": "K00140 malonate-semialdehyde dehydrogenase (acetylating) / methylmalonate-semialdehyde dehydrogenase [EC:1.2.1.18 1.2.1.27]",
+      "old_locus_in_kegg_gene_set": "NO",
+      "old_symbol_matches_locus": "NO",
+      "old_locus_correct": "NO",
+      "verdict": "not_in_kegg_gene_set",
+      "status": "re-mapped",
+      "merged_into": "",
+      "new_reaction_id": "R_ICL",
+      "kegg_queries": "ec:4.1.3.1",
+      "new_kegg_genes": "MMAR_0792;MMAR_2821",
+      "new_refseq_loci": "MMAR_RS03910;MMAR_RS14045",
+      "new_symbols": "icl;aceAb",
+      "note": ""
+    },
+    {
+      "old_reaction_id": "R_GLCB",
+      "old_subsystem": "Central Carbon & Glyoxylate Shunt",
+      "old_reaction_name": "Malate synthase G",
+      "old_ec": "2.3.3.9",
+      "old_ec_in_kegg": "2.3.3.9: malate synthase (mmi genes linked: 1)",
+      "old_gene_id": "MMAR_RS13410",
+      "old_gene_symbol": "glcB",
+      "old_locus_kegg_id": "NA",
+      "old_locus_refseq_gene": "",
+      "old_locus_refseq_product": "not in RefSeq annotation",
+      "old_locus_kegg_symbol": "",
+      "old_locus_kegg_name": "",
+      "old_locus_kegg_orthology": "",
+      "old_locus_in_kegg_gene_set": "NO",
+      "old_symbol_matches_locus": "NO",
+      "old_locus_correct": "NO",
+      "verdict": "locus_absent_from_refseq_annotation",
+      "status": "re-mapped",
+      "merged_into": "",
+      "new_reaction_id": "R_GLCB",
+      "kegg_queries": "ec:2.3.3.9",
+      "new_kegg_genes": "MMAR_2713",
+      "new_refseq_loci": "MMAR_RS13525",
+      "new_symbols": "glcB",
+      "note": ""
+    },
+    {
+      "old_reaction_id": "R_CS",
+      "old_subsystem": "Central Carbon & Glyoxylate Shunt",
+      "old_reaction_name": "Citrate synthase",
+      "old_ec": "2.3.3.1",
+      "old_ec_in_kegg": "2.3.3.1: citrate (Si)-synthase (mmi genes linked: 2)",
+      "old_gene_id": "MMAR_RS04685",
+      "old_gene_symbol": "gltA",
+      "old_locus_kegg_id": "MMAR_0954",
+      "old_locus_refseq_gene": "",
+      "old_locus_refseq_product": "metal-dependent hydrolase family protein",
+      "old_locus_kegg_symbol": "",
+      "old_locus_kegg_name": "imidazolonepropionase",
+      "old_locus_kegg_orthology": "",
+      "old_locus_in_kegg_gene_set": "NO",
+      "old_symbol_matches_locus": "NO",
+      "old_locus_correct": "NO",
+      "verdict": "not_in_kegg_gene_set",
+      "status": "re-mapped",
+      "merged_into": "",
+      "new_reaction_id": "R_CS",
+      "kegg_queries": "ec:2.3.3.1",
+      "new_kegg_genes": "MMAR_4640;MMAR_4643",
+      "new_refseq_loci": "MMAR_RS23255;MMAR_RS23270",
+      "new_symbols": "gltA2;citA",
+      "note": ""
+    },
+    {
+      "old_reaction_id": "R_SUCD",
+      "old_subsystem": "Central Carbon & Glyoxylate Shunt",
+      "old_reaction_name": "Succinyl-CoA synthetase subunit alpha",
+      "old_ec": "6.2.1.5",
+      "old_ec_in_kegg": "6.2.1.5: succinate---CoA ligase (ADP-forming) (mmi genes linked: 2)",
+      "old_gene_id": "MMAR_RS13725",
+      "old_gene_symbol": "sucD",
+      "old_locus_kegg_id": "MMAR_2753",
+      "old_locus_refseq_gene": "",
+      "old_locus_refseq_product": "alpha-amylase family protein",
+      "old_locus_kegg_symbol": "treS_1",
+      "old_locus_kegg_name": "trehalose synthase TreS_1",
+      "old_locus_kegg_orthology": "K01208 cyclomaltodextrinase / maltogenic alpha-amylase / neopullulanase [EC:3.2.1.54 3.2.1.133 3.2.1.135]",
+      "old_locus_in_kegg_gene_set": "NO",
+      "old_symbol_matches_locus": "NO",
+      "old_locus_correct": "NO",
+      "verdict": "not_in_kegg_gene_set",
+      "status": "re-mapped",
+      "merged_into": "",
+      "new_reaction_id": "R_SUCD",
+      "kegg_queries": "ec:6.2.1.5",
+      "new_kegg_genes": "MMAR_4549;MMAR_4550",
+      "new_refseq_loci": "MMAR_RS22795;MMAR_RS22800",
+      "new_symbols": "sucD;sucC",
+      "note": "The old entry named only the alpha subunit."
+    },
+    {
+      "old_reaction_id": "R_FAS",
+      "old_subsystem": "Mycolic Acid & FAS-II Envelope",
+      "old_reaction_name": "Fatty acid synthase I (FAS-I de novo synthesis)",
+      "old_ec": "2.3.1.85",
+      "old_ec_in_kegg": "2.3.1.85: fatty-acid synthase system (mmi genes linked: 0)",
+      "old_gene_id": "MMAR_RS13525",
+      "old_gene_symbol": "fas",
+      "old_locus_kegg_id": "MMAR_2713",
+      "old_locus_refseq_gene": "",
+      "old_locus_refseq_product": "malate synthase G",
+      "old_locus_kegg_symbol": "glcB",
+      "old_locus_kegg_name": "malate synthase G GlcB",
+      "old_locus_kegg_orthology": "K01638 malate synthase [EC:2.3.3.9]",
+      "old_locus_in_kegg_gene_set": "NO",
+      "old_symbol_matches_locus": "NO",
+      "old_locus_correct": "NO",
+      "verdict": "not_in_kegg_gene_set",
+      "status": "re-mapped",
+      "merged_into": "",
+      "new_reaction_id": "R_FAS",
+      "kegg_queries": "ko:K11533",
+      "new_kegg_genes": "MMAR_3962",
+      "new_refseq_loci": "MMAR_RS19800",
+      "new_symbols": "fas",
+      "note": "Old EC 2.3.1.85 (animal-type FAS) links no mmi gene; bacterial FAS-I is KO K11533 (EC 2.3.1.-)."
+    },
+    {
+      "old_reaction_id": "R_ACCD",
+      "old_subsystem": "Mycolic Acid & FAS-II Envelope",
+      "old_reaction_name": "Acyl-CoA carboxylase subunit beta (Malonyl-CoA synthesis)",
+      "old_ec": "6.4.1.2",
+      "old_ec_in_kegg": "6.4.1.2: acetyl-CoA carboxylase (mmi genes linked: 2)",
+      "old_gene_id": "MMAR_RS22330",
+      "old_gene_symbol": "accD",
+      "old_locus_kegg_id": "MMAR_4457",
+      "old_locus_refseq_gene": "",
+      "old_locus_refseq_product": "aspartate/glutamate racemase family protein",
+      "old_locus_kegg_symbol": "",
+      "old_locus_kegg_name": "hydantoin racemase",
+      "old_locus_kegg_orthology": "K16841 allantoin racemase [EC:5.1.99.3]",
+      "old_locus_in_kegg_gene_set": "NO",
+      "old_symbol_matches_locus": "NO",
+      "old_locus_correct": "NO",
+      "verdict": "not_in_kegg_gene_set",
+      "status": "re-mapped",
+      "merged_into": "",
+      "new_reaction_id": "R_ACCD",
+      "kegg_queries": "ec:6.4.1.2",
+      "new_kegg_genes": "MMAR_1251;MMAR_3340",
+      "new_refseq_loci": "MMAR_RS06195;MMAR_RS16655",
+      "new_symbols": "accA3;accD6",
+      "note": ""
+    },
+    {
+      "old_reaction_id": "R_KASA",
+      "old_subsystem": "Mycolic Acid & FAS-II Envelope",
+      "old_reaction_name": "Beta-ketoacyl-ACP synthase KasA (FAS-II initiation)",
+      "old_ec": "2.3.1.41",
+      "old_ec_in_kegg": "2.3.1.41: beta-ketoacyl-[acyl-carrier-protein] synthase I (mmi genes linked: 0)",
+      "old_gene_id": "MMAR_RS10900",
+      "old_gene_symbol": "kasA",
+      "old_locus_kegg_id": "MMAR_2189",
+      "old_locus_refseq_gene": "",
+      "old_locus_refseq_product": "fatty acid desaturase",
+      "old_locus_kegg_symbol": "",
+      "old_locus_kegg_name": "conserved membrane protein",
+      "old_locus_kegg_orthology": "",
+      "old_locus_in_kegg_gene_set": "NO",
+      "old_symbol_matches_locus": "NO",
+      "old_locus_correct": "NO",
+      "verdict": "not_in_kegg_gene_set",
+      "status": "re-mapped",
+      "merged_into": "",
+      "new_reaction_id": "R_KASA",
+      "kegg_queries": "ec:2.3.1.293",
+      "new_kegg_genes": "MMAR_3338",
+      "new_refseq_loci": "MMAR_RS16645",
+      "new_symbols": "kasA",
+      "note": "Old EC 2.3.1.41 links no mmi gene; KEGG assigns KasA (K11609) to EC 2.3.1.293."
+    },
+    {
+      "old_reaction_id": "R_INHA",
+      "old_subsystem": "Mycolic Acid & FAS-II Envelope",
+      "old_reaction_name": "Enoyl-ACP reductase InhA (FAS-II elongation)",
+      "old_ec": "1.3.1.9",
+      "old_ec_in_kegg": "1.3.1.9: enoyl-[acyl-carrier-protein] reductase (NADH) (mmi genes linked: 0)",
+      "old_gene_id": "MMAR_RS14560",
+      "old_gene_symbol": "inhA",
+      "old_locus_kegg_id": "MMAR_2920",
+      "old_locus_refseq_gene": "",
+      "old_locus_refseq_product": "cyclopropane mycolic acid synthase family methyltransferase",
+      "old_locus_kegg_symbol": "mmaA2_1",
+      "old_locus_kegg_name": "methoxy mycolic acid synthase 2 MmaA2 _1",
+      "old_locus_kegg_orthology": "K00574 cyclopropane-fatty-acyl-phospholipid synthase [EC:2.1.1.79]",
+      "old_locus_in_kegg_gene_set": "NO",
+      "old_symbol_matches_locus": "NO",
+      "old_locus_correct": "NO",
+      "verdict": "not_in_kegg_gene_set",
+      "status": "re-mapped",
+      "merged_into": "",
+      "new_reaction_id": "R_INHA",
+      "kegg_queries": "ec:1.3.1.118",
+      "new_kegg_genes": "MMAR_2290",
+      "new_refseq_loci": "MMAR_RS11405",
+      "new_symbols": "inhA",
+      "note": "Old EC 1.3.1.9 links no mmi gene; KEGG assigns InhA (K11611) to EC 1.3.1.118."
+    },
+    {
+      "old_reaction_id": "R_MMPL3",
+      "old_subsystem": "Mycolic Acid & FAS-II Envelope",
+      "old_reaction_name": "Trehalose monomycolate translocase MmpL3",
+      "old_ec": "2.A.1",
+      "old_ec_in_kegg": "2.A.1: not a complete EC number",
+      "old_gene_id": "MMAR_RS01245",
+      "old_gene_symbol": "mmpL3",
+      "old_locus_kegg_id": "MMAR_0254",
+      "old_locus_refseq_gene": "",
+      "old_locus_refseq_product": "SDR family NAD(P)-dependent oxidoreductase",
+      "old_locus_kegg_symbol": "",
+      "old_locus_kegg_name": "ketoacyl reductase",
+      "old_locus_kegg_orthology": "K07124 uncharacterized protein",
+      "old_locus_in_kegg_gene_set": "NO",
+      "old_symbol_matches_locus": "NO",
+      "old_locus_correct": "NO",
+      "verdict": "not_in_kegg_gene_set",
+      "status": "re-mapped",
+      "merged_into": "",
+      "new_reaction_id": "R_MMPL3",
+      "kegg_queries": "ko:K20470",
+      "new_kegg_genes": "MMAR_0446",
+      "new_refseq_loci": "MMAR_RS02205",
+      "new_symbols": "mmpL3",
+      "note": "Old '2.A.1' is a TCDB transporter class, not an EC number; MmpL3 is KO K20470."
+    },
+    {
+      "old_reaction_id": "R_FBPA",
+      "old_subsystem": "Mycolic Acid & FAS-II Envelope",
+      "old_reaction_name": "Antigen 85A mycolyltransferase (Cord factor TDM synthesis)",
+      "old_ec": "2.3.1.122",
+      "old_ec_in_kegg": "2.3.1.122: trehalose O-mycolyltransferase (mmi genes linked: 4)",
+      "old_gene_id": "MMAR_RS00720",
+      "old_gene_symbol": "fbpA",
+      "old_locus_kegg_id": "MMAR_0145",
+      "old_locus_refseq_gene": "",
+      "old_locus_refseq_product": "MarR family winged helix-turn-helix transcriptional regulator",
+      "old_locus_kegg_symbol": "",
+      "old_locus_kegg_name": "transcriptional regulator",
+      "old_locus_kegg_orthology": "K23775 MarR family transcriptional regulator, organic hydroperoxide resistance regulator",
+      "old_locus_in_kegg_gene_set": "NO",
+      "old_symbol_matches_locus": "NO",
+      "old_locus_correct": "NO",
+      "verdict": "not_in_kegg_gene_set",
+      "status": "re-mapped",
+      "merged_into": "",
+      "new_reaction_id": "R_FBPA",
+      "kegg_queries": "ec:2.3.1.122",
+      "new_kegg_genes": "MMAR_0328;MMAR_2777;MMAR_4556;MMAR_5368",
+      "new_refseq_loci": "MMAR_RS01615;MMAR_RS13845;MMAR_RS22830;MMAR_RS26950",
+      "new_symbols": "fbpC;fbpB;fbpC_2;fbpA",
+      "note": ""
+    },
+    {
+      "old_reaction_id": "R_FADD7",
+      "old_subsystem": "Mycolic Acid & FAS-II Envelope",
+      "old_reaction_name": "Long-chain fatty-acid-CoA ligase FadD7",
+      "old_ec": "6.2.1.3",
+      "old_ec_in_kegg": "6.2.1.3: long-chain-fatty-acid---CoA ligase (mmi genes linked: 7)",
+      "old_gene_id": "MMAR_RS12495",
+      "old_gene_symbol": "fadD7",
+      "old_locus_kegg_id": "MMAR_2504",
+      "old_locus_refseq_gene": "",
+      "old_locus_refseq_product": "CTP synthase",
+      "old_locus_kegg_symbol": "pyrG",
+      "old_locus_kegg_name": "CTP synthase, PyrG",
+      "old_locus_kegg_orthology": "K01937 CTP synthase [EC:6.3.4.2]",
+      "old_locus_in_kegg_gene_set": "NO",
+      "old_symbol_matches_locus": "NO",
+      "old_locus_correct": "NO",
+      "verdict": "not_in_kegg_gene_set",
+      "status": "re-mapped",
+      "merged_into": "",
+      "new_reaction_id": "R_FACL",
+      "kegg_queries": "ec:6.2.1.3",
+      "new_kegg_genes": "MMAR_1606;MMAR_2071;MMAR_2597;MMAR_3231;MMAR_4025;MMAR_4793;MMAR_5275",
+      "new_refseq_loci": "MMAR_RS07950;MMAR_RS10300;MMAR_RS12965;MMAR_RS16110;MMAR_RS20115;MMAR_RS24025;MMAR_RS26470",
+      "new_symbols": "-;fadD11_1;fadD13;fadD15;-;-;fadD15_1",
+      "note": "KEGG gene MMAR_0319 is named fadD7 (GenBank) but has no KO and is not linked to EC 6.2.1.3, so the reaction carries the EC-linked ligases, not FadD7."
+    },
+    {
+      "old_reaction_id": "R_MPS1",
+      "old_subsystem": "GPL Biofilm & Cell Surface",
+      "old_reaction_name": "GPL core non-ribosomal peptide synthetase Mps1",
+      "old_ec": "6.3.2.-",
+      "old_ec_in_kegg": "6.3.2.-: not a complete EC number",
+      "old_gene_id": "MMAR_RS18395",
+      "old_gene_symbol": "mps1",
+      "old_locus_kegg_id": "MMAR_3691",
+      "old_locus_refseq_gene": "",
+      "old_locus_refseq_product": "non-ribosomal peptide synthetase",
+      "old_locus_kegg_symbol": "mbtE",
+      "old_locus_kegg_name": "non-ribosomal peptide synthetase MbtE",
+      "old_locus_kegg_orthology": "K04789 mycobactin peptide synthetase MbtE",
+      "old_locus_in_kegg_gene_set": "NO",
+      "old_symbol_matches_locus": "NO",
+      "old_locus_correct": "NO",
+      "verdict": "kegg_has_no_mmi_gene_for_query",
+      "status": "dropped",
+      "merged_into": "",
+      "new_reaction_id": "",
+      "kegg_queries": "ko:K16228",
+      "new_kegg_genes": "",
+      "new_refseq_loci": "",
+      "new_symbols": "",
+      "note": "Old EC 6.3.2.- is incomplete, so the entry is mapped by the mps1 KO (K16228)."
+    },
+    {
+      "old_reaction_id": "R_MPS2",
+      "old_subsystem": "GPL Biofilm & Cell Surface",
+      "old_reaction_name": "GPL lipopeptide synthetase Mps2",
+      "old_ec": "6.3.2.-",
+      "old_ec_in_kegg": "6.3.2.-: not a complete EC number",
+      "old_gene_id": "MMAR_RS18400",
+      "old_gene_symbol": "mps2",
+      "old_locus_kegg_id": "MMAR_3692",
+      "old_locus_refseq_gene": "",
+      "old_locus_refseq_product": "GNAT family N-acetyltransferase",
+      "old_locus_kegg_symbol": "",
+      "old_locus_kegg_name": "conserved hypothetical protein",
+      "old_locus_kegg_orthology": "",
+      "old_locus_in_kegg_gene_set": "NO",
+      "old_symbol_matches_locus": "NO",
+      "old_locus_correct": "NO",
+      "verdict": "kegg_has_no_mmi_gene_for_query",
+      "status": "dropped",
+      "merged_into": "",
+      "new_reaction_id": "",
+      "kegg_queries": "ko:K16229",
+      "new_kegg_genes": "",
+      "new_refseq_loci": "",
+      "new_symbols": "",
+      "note": "Old EC 6.3.2.- is incomplete, so the entry is mapped by the mps2 KO (K16229)."
+    },
+    {
+      "old_reaction_id": "R_MURA",
+      "old_subsystem": "GPL Biofilm & Cell Surface",
+      "old_reaction_name": "UDP-N-acetylglucosamine 1-carboxyvinyltransferase (Peptidoglycan)",
+      "old_ec": "2.5.1.7",
+      "old_ec_in_kegg": "2.5.1.7: UDP-N-acetylglucosamine 1-carboxyvinyltransferase (mmi genes linked: 1)",
+      "old_gene_id": "MMAR_RS06710",
+      "old_gene_symbol": "murA",
+      "old_locus_kegg_id": "MMAR_1355",
+      "old_locus_refseq_gene": "",
+      "old_locus_refseq_product": "alpha/beta fold hydrolase",
+      "old_locus_kegg_symbol": "lipV",
+      "old_locus_kegg_name": "lipase LipV",
+      "old_locus_kegg_orthology": "K19311 lipase [EC:3.1.1.-]",
+      "old_locus_in_kegg_gene_set": "NO",
+      "old_symbol_matches_locus": "NO",
+      "old_locus_correct": "NO",
+      "verdict": "not_in_kegg_gene_set",
+      "status": "re-mapped",
+      "merged_into": "",
+      "new_reaction_id": "R_MURA",
+      "kegg_queries": "ec:2.5.1.7",
+      "new_kegg_genes": "MMAR_4083",
+      "new_refseq_loci": "MMAR_RS20430",
+      "new_symbols": "murA",
+      "note": ""
+    },
+    {
+      "old_reaction_id": "R_ECCE1",
+      "old_subsystem": "Type VII Secretion & Virulence",
+      "old_reaction_name": "Type VII ESX-1 pore complex subunit EccE1",
+      "old_ec": "3.6.3.-",
+      "old_ec_in_kegg": "3.6.3.-: not a complete EC number",
+      "old_gene_id": "MMAR_RS00995",
+      "old_gene_symbol": "eccE1",
+      "old_locus_kegg_id": "MMAR_0203",
+      "old_locus_refseq_gene": "",
+      "old_locus_refseq_product": "PPE domain-containing protein",
+      "old_locus_kegg_symbol": "",
+      "old_locus_kegg_name": "conserved hypothetical alanine and glycine rich protein",
+      "old_locus_kegg_orthology": "K27099 ESX secretion-associated protein EspB",
+      "old_locus_in_kegg_gene_set": "NO",
+      "old_symbol_matches_locus": "NO",
+      "old_locus_correct": "NO",
+      "verdict": "not_in_kegg_gene_set",
+      "status": "re-mapped",
+      "merged_into": "",
+      "new_reaction_id": "R_ECCE",
+      "kegg_queries": "ko:K27088",
+      "new_kegg_genes": "MMAR_0551;MMAR_2679;MMAR_5458",
+      "new_refseq_loci": "MMAR_RS02710;MMAR_RS13360;MMAR_RS27410",
+      "new_symbols": "eccE;eccE;eccE",
+      "note": "Old EC 3.6.3.- is an incomplete, obsolete class and EccE is not an ATPase; mapped by KO."
+    },
+    {
+      "old_reaction_id": "R_ECCB1",
+      "old_subsystem": "Type VII Secretion & Virulence",
+      "old_reaction_name": "Type VII ESX-1 membrane core subunit EccB1",
+      "old_ec": "3.6.3.-",
+      "old_ec_in_kegg": "3.6.3.-: not a complete EC number",
+      "old_gene_id": "MMAR_RS00980",
+      "old_gene_symbol": "eccB1",
+      "old_locus_kegg_id": "MMAR_0200",
+      "old_locus_refseq_gene": "",
+      "old_locus_refseq_product": "hypothetical protein",
+      "old_locus_kegg_symbol": "",
+      "old_locus_kegg_name": "conserved hypothetical protein",
+      "old_locus_kegg_orthology": "",
+      "old_locus_in_kegg_gene_set": "NO",
+      "old_symbol_matches_locus": "NO",
+      "old_locus_correct": "NO",
+      "verdict": "not_in_kegg_gene_set",
+      "status": "re-mapped",
+      "merged_into": "",
+      "new_reaction_id": "R_ECCB",
+      "kegg_queries": "ko:K27085",
+      "new_kegg_genes": "MMAR_0542;MMAR_1099;MMAR_2664;MMAR_5444",
+      "new_refseq_loci": "MMAR_RS02665;MMAR_RS05430;MMAR_RS13290;MMAR_RS27340",
+      "new_symbols": "eccB;eccB;eccB;eccB",
+      "note": "Old EC 3.6.3.- is an incomplete, obsolete class; mapped by KO."
+    },
+    {
+      "old_reaction_id": "R_ESXA",
+      "old_subsystem": "Type VII Secretion & Virulence",
+      "old_reaction_name": "6 kDa early secretory antigenic target ESAT-6 (EsxA)",
+      "old_ec": "N/A",
+      "old_ec_in_kegg": "no EC given",
+      "old_gene_id": "MMAR_RS01000",
+      "old_gene_symbol": "esxA",
+      "old_locus_kegg_id": "MMAR_0204",
+      "old_locus_refseq_gene": "",
+      "old_locus_refseq_product": "TetR/AcrR family transcriptional regulator",
+      "old_locus_kegg_symbol": "",
+      "old_locus_kegg_name": "conserved hypothetical protein",
+      "old_locus_kegg_orthology": "",
+      "old_locus_in_kegg_gene_set": "NO",
+      "old_symbol_matches_locus": "NO",
+      "old_locus_correct": "NO",
+      "verdict": "not_in_kegg_gene_set",
+      "status": "re-mapped",
+      "merged_into": "",
+      "new_reaction_id": "R_ESXA",
+      "kegg_queries": "ko:K14956",
+      "new_kegg_genes": "MMAR_0187;MMAR_0188;MMAR_0189;MMAR_0196;MMAR_0546;MMAR_0547;MMAR_1104;MMAR_1105;MMAR_2674;MMAR_2675;MMAR_3000;MMAR_3001;MMAR_3580;MMAR_3653;MMAR_3654;MMAR_3659;MMAR_3660;MMAR_3662;MMAR_3663;MMAR_4453;MMAR_4454;MMAR_5119;MMAR_5120;MMAR_5449;MMAR_5450;MMAR_5465;MMAR_5466",
+      "new_refseq_loci": "MMAR_RS00930;MMAR_RS00935;MMAR_RS00940;MMAR_RS00960;MMAR_RS02685;MMAR_RS02690;MMAR_RS05455;MMAR_RS05460;MMAR_RS13335;MMAR_RS13340;MMAR_RS14980;MMAR_RS14985;MMAR_RS17835;MMAR_RS18200;MMAR_RS18205;MMAR_RS18235;MMAR_RS18240;MMAR_RS18250;MMAR_RS18255;MMAR_RS22310;MMAR_RS22315;MMAR_RS25675;MMAR_RS25680;MMAR_RS27365;MMAR_RS27370;MMAR_RS27435;MMAR_RS27440",
+      "new_symbols": "esxB_1;esxA_1;esxA_3;esxA_2;esxG;esxH;esxU;esxT;esxM;esxN;esxR;esxG_1;esxN_6;esxN_3;esxP_2;esxN_4;esxP_3;esxN_5;esxP_4;esxP;esxN_1;esxN_2;esxP_1;esxB;esxA;esxE;esxF",
+      "note": "KEGG has no EsxA-specific KO; K14956 groups all ESAT-6 family proteins."
+    },
+    {
+      "old_reaction_id": "R_ESPB",
+      "old_subsystem": "Type VII Secretion & Virulence",
+      "old_reaction_name": "ESX-1 secretion system-associated protein EspB",
+      "old_ec": "N/A",
+      "old_ec_in_kegg": "no EC given",
+      "old_gene_id": "MMAR_RS00990",
+      "old_gene_symbol": "espB",
+      "old_locus_kegg_id": "MMAR_0202",
+      "old_locus_refseq_gene": "espB",
+      "old_locus_refseq_product": "EspB family ESX-1 secretion system-associated protein",
+      "old_locus_kegg_symbol": "",
+      "old_locus_kegg_name": "conserved hypothetical alanine and glycine rich protein",
+      "old_locus_kegg_orthology": "K27099 ESX secretion-associated protein EspB",
+      "old_locus_in_kegg_gene_set": "YES",
+      "old_symbol_matches_locus": "YES",
+      "old_locus_correct": "YES",
+      "verdict": "correct",
+      "status": "kept",
+      "merged_into": "",
+      "new_reaction_id": "R_ESPB",
+      "kegg_queries": "ko:K27099",
+      "new_kegg_genes": "MMAR_0202;MMAR_0203;MMAR_1329;MMAR_5457",
+      "new_refseq_loci": "MMAR_RS00990;MMAR_RS00995;MMAR_RS06580;MMAR_RS27405",
+      "new_symbols": "espB;-;espB;espB",
+      "note": ""
+    },
+    {
+      "old_reaction_id": "R_ARGF",
+      "old_subsystem": "Nitrogen Shunts & Polyamines",
+      "old_reaction_name": "Ornithine carbamoyltransferase ArgF",
+      "old_ec": "2.1.3.3",
+      "old_ec_in_kegg": "2.1.3.3: ornithine carbamoyltransferase (mmi genes linked: 1)",
+      "old_gene_id": "MMAR_RS12305",
+      "old_gene_symbol": "argF",
+      "old_locus_kegg_id": "MMAR_2466",
+      "old_locus_refseq_gene": "argF",
+      "old_locus_refseq_product": "ornithine carbamoyltransferase",
+      "old_locus_kegg_symbol": "argF",
+      "old_locus_kegg_name": "ornithine carbamoyltransferase, anabolic ArgF",
+      "old_locus_kegg_orthology": "K00611 ornithine carbamoyltransferase [EC:2.1.3.3]",
+      "old_locus_in_kegg_gene_set": "YES",
+      "old_symbol_matches_locus": "YES",
+      "old_locus_correct": "YES",
+      "verdict": "correct",
+      "status": "kept",
+      "merged_into": "",
+      "new_reaction_id": "R_ARGF",
+      "kegg_queries": "ec:2.1.3.3",
+      "new_kegg_genes": "MMAR_2466",
+      "new_refseq_loci": "MMAR_RS12305",
+      "new_symbols": "argF",
+      "note": ""
+    },
+    {
+      "old_reaction_id": "R_ALS",
+      "old_subsystem": "Nitrogen Shunts & Polyamines",
+      "old_reaction_name": "Acetolactate synthase (Branched-chain amino acids)",
+      "old_ec": "2.2.1.6",
+      "old_ec_in_kegg": "2.2.1.6: acetolactate synthase (mmi genes linked: 6)",
+      "old_gene_id": "MMAR_RS13445",
+      "old_gene_symbol": "ilvB",
+      "old_locus_kegg_id": "MMAR_2697",
+      "old_locus_refseq_gene": "",
+      "old_locus_refseq_product": "acetolactate synthase",
+      "old_locus_kegg_symbol": "ilvG",
+      "old_locus_kegg_name": "acetolactate synthase IlvG",
+      "old_locus_kegg_orthology": "",
+      "old_locus_in_kegg_gene_set": "NO",
+      "old_symbol_matches_locus": "NO",
+      "old_locus_correct": "NO",
+      "verdict": "not_in_kegg_gene_set",
+      "status": "re-mapped",
+      "merged_into": "",
+      "new_reaction_id": "R_ALS",
+      "kegg_queries": "ec:2.2.1.6",
+      "new_kegg_genes": "MMAR_1508;MMAR_1710;MMAR_1711;MMAR_2332;MMAR_3281;MMAR_4997",
+      "new_refseq_loci": "MMAR_RS07455;MMAR_RS08460;MMAR_RS08465;MMAR_RS11620;MMAR_RS16360;MMAR_RS25065",
+      "new_symbols": "ilvB1_1;ilvB1;ilvN;ilvB1_3;ilvB1_2;ilvX",
+      "note": "The old locus (MMAR_2697) is named acetolactate synthase IlvG in GenBank, but KEGG gives it no KO or EC, so it is not among the EC 2.2.1.6 genes."
+    },
+    {
+      "old_reaction_id": "R_ADHP",
+      "old_subsystem": "Redox Homeostasis & Cofactors",
+      "old_reaction_name": "Alcohol dehydrogenase AdhP",
+      "old_ec": "1.1.1.1",
+      "old_ec_in_kegg": "1.1.1.1: alcohol dehydrogenase (mmi genes linked: 4)",
+      "old_gene_id": "MMAR_RS24640",
+      "old_gene_symbol": "adhP",
+      "old_locus_kegg_id": "MMAR_4911",
+      "old_locus_refseq_gene": "adhP",
+      "old_locus_refseq_product": "alcohol dehydrogenase AdhP",
+      "old_locus_kegg_symbol": "adhX",
+      "old_locus_kegg_name": "Zn-dependent alcohol dehydrogenase, AdhX",
+      "old_locus_kegg_orthology": "K13953 alcohol dehydrogenase, propanol-preferring [EC:1.1.1.1]",
+      "old_locus_in_kegg_gene_set": "YES",
+      "old_symbol_matches_locus": "YES",
+      "old_locus_correct": "YES",
+      "verdict": "correct",
+      "status": "kept",
+      "merged_into": "",
+      "new_reaction_id": "R_ADHP",
+      "kegg_queries": "ec:1.1.1.1",
+      "new_kegg_genes": "MMAR_2739;MMAR_4110;MMAR_4911;MMAR_4935",
+      "new_refseq_loci": "MMAR_RS13655;MMAR_RS20575;MMAR_RS24640;MMAR_RS24760",
+      "new_symbols": "adhA;adhE;adhX;adhB",
+      "note": ""
+    },
+    {
+      "old_reaction_id": "R_RIBD",
+      "old_subsystem": "Redox Homeostasis & Cofactors",
+      "old_reaction_name": "Diaminohydroxyphosphoribosylaminopyrimidine deaminase (RibD)",
+      "old_ec": "3.5.4.26 / 1.1.1.193",
+      "old_ec_in_kegg": "3.5.4.26: diaminohydroxyphosphoribosylaminopyrimidine deaminase (mmi genes linked: 1); 1.1.1.193: 5-amino-6-(5-phosphoribosylamino)uracil reductase (mmi genes linked: 1)",
+      "old_gene_id": "MMAR_RS11045",
+      "old_gene_symbol": "ribD",
+      "old_locus_kegg_id": "MMAR_2218",
+      "old_locus_refseq_gene": "ribD",
+      "old_locus_refseq_product": "bifunctional diaminohydroxyphosphoribosylaminopyrimidine deaminase/5-amino-6-(5-phosphoribosylamino)uracil reductase RibD",
+      "old_locus_kegg_symbol": "ribG",
+      "old_locus_kegg_name": "bifunctional riboflavin biosynthesis protein RibG",
+      "old_locus_kegg_orthology": "K11752 diaminohydroxyphosphoribosylaminopyrimidine deaminase / 5-amino-6-(5-phosphoribosylamino)uracil reductase [EC:3.5.4.26 1.1.1.193]",
+      "old_locus_in_kegg_gene_set": "YES",
+      "old_symbol_matches_locus": "YES",
+      "old_locus_correct": "YES",
+      "verdict": "correct",
+      "status": "kept",
+      "merged_into": "",
+      "new_reaction_id": "R_RIBD",
+      "kegg_queries": "ec:3.5.4.26,ec:1.1.1.193",
+      "new_kegg_genes": "MMAR_2218",
+      "new_refseq_loci": "MMAR_RS11045",
+      "new_symbols": "ribG",
+      "note": ""
+    },
+    {
+      "old_reaction_id": "R_F420",
+      "old_subsystem": "Redox Homeostasis & Cofactors",
+      "old_reaction_name": "F420-dependent LLM class oxidoreductase",
+      "old_ec": "1.5.-.-",
+      "old_ec_in_kegg": "1.5.-.-: not a complete EC number",
+      "old_gene_id": "MMAR_RS06790",
+      "old_gene_symbol": "f420_red",
+      "old_locus_kegg_id": "MMAR_1372",
+      "old_locus_refseq_gene": "",
+      "old_locus_refseq_product": "TIGR03617 family F420-dependent LLM class oxidoreductase",
+      "old_locus_kegg_symbol": "",
+      "old_locus_kegg_name": "conserved hypothetical protein",
+      "old_locus_kegg_orthology": "",
+      "old_locus_in_kegg_gene_set": "NO",
+      "old_symbol_matches_locus": "NO",
+      "old_locus_correct": "UNVERIFIABLE",
+      "verdict": "unverifiable_no_kegg_reaction_or_ortholog",
+      "status": "dropped",
+      "merged_into": "",
+      "new_reaction_id": "",
+      "kegg_queries": "none",
+      "new_kegg_genes": "",
+      "new_refseq_loci": "",
+      "new_symbols": "",
+      "note": "Old EC 1.5.-.- is incomplete and the old locus has no KEGG KO, so KEGG offers no reaction or ortholog group to map."
+    },
+    {
+      "old_reaction_id": "R_KATG",
+      "old_subsystem": "Redox Homeostasis & Cofactors",
+      "old_reaction_name": "Catalase-peroxidase KatG",
+      "old_ec": "1.11.1.21",
+      "old_ec_in_kegg": "1.11.1.21: catalase-peroxidase (mmi genes linked: 1)",
+      "old_gene_id": "MMAR_RS09685",
+      "old_gene_symbol": "katG",
+      "old_locus_kegg_id": "MMAR_1954",
+      "old_locus_refseq_gene": "",
+      "old_locus_refseq_product": "acyl-CoA dehydrogenase family protein",
+      "old_locus_kegg_symbol": "fadE18_1",
+      "old_locus_kegg_name": "acyl-CoA dehydrogenase FadE18_1",
+      "old_locus_kegg_orthology": "",
+      "old_locus_in_kegg_gene_set": "NO",
+      "old_symbol_matches_locus": "NO",
+      "old_locus_correct": "NO",
+      "verdict": "not_in_kegg_gene_set",
+      "status": "re-mapped",
+      "merged_into": "",
+      "new_reaction_id": "R_KATG",
+      "kegg_queries": "ec:1.11.1.21",
+      "new_kegg_genes": "MMAR_2914",
+      "new_refseq_loci": "MMAR_RS14525",
+      "new_symbols": "katG",
+      "note": ""
+    },
+    {
+      "old_reaction_id": "R_HSPX",
+      "old_subsystem": "DosR Hypoxia & Dormancy",
+      "old_reaction_name": "Alpha-crystallin family heat shock protein HspX (Acr)",
+      "old_ec": "N/A",
+      "old_ec_in_kegg": "no EC given",
+      "old_gene_id": "MMAR_RS13905",
+      "old_gene_symbol": "hspX",
+      "old_locus_kegg_id": "MMAR_2790",
+      "old_locus_refseq_gene": "",
+      "old_locus_refseq_product": "zinc-binding dehydrogenase",
+      "old_locus_kegg_symbol": "",
+      "old_locus_kegg_name": "dehydrogenase",
+      "old_locus_kegg_orthology": "",
+      "old_locus_in_kegg_gene_set": "NO",
+      "old_symbol_matches_locus": "NO",
+      "old_locus_correct": "NO",
+      "verdict": "not_in_kegg_gene_set",
+      "status": "re-mapped",
+      "merged_into": "",
+      "new_reaction_id": "R_HSPX",
+      "kegg_queries": "ko:K13993",
+      "new_kegg_genes": "MMAR_0515;MMAR_2991",
+      "new_refseq_loci": "MMAR_RS02535;MMAR_RS14935",
+      "new_symbols": "hsp;-",
+      "note": "KEGG has no HspX-specific KO. GenBank-named hspX (MMAR_0912) is HtpX (K03799) in KEGG; hspX_1 (MMAR_3484) has an HSP20 domain but no KO, so it is not included."
+    },
+    {
+      "old_reaction_id": "R_DOSR",
+      "old_subsystem": "DosR Hypoxia & Dormancy",
+      "old_reaction_name": "DosR response regulator (Hypoxic boundary layer switch)",
+      "old_ec": "N/A",
+      "old_ec_in_kegg": "no EC given",
+      "old_gene_id": "MMAR_RS03930",
+      "old_gene_symbol": "dosR",
+      "old_locus_kegg_id": "MMAR_0796",
+      "old_locus_refseq_gene": "pcaA",
+      "old_locus_refseq_product": "cyclopropane mycolic acid synthase PcaA",
+      "old_locus_kegg_symbol": "pcaA",
+      "old_locus_kegg_name": "mycolic acid synthase PcaA",
+      "old_locus_kegg_orthology": "K26591 cyclopropane mycolic acid synthase PcaA",
+      "old_locus_in_kegg_gene_set": "NO",
+      "old_symbol_matches_locus": "NO",
+      "old_locus_correct": "NO",
+      "verdict": "not_in_kegg_gene_set",
+      "status": "re-mapped",
+      "merged_into": "",
+      "new_reaction_id": "R_DOSR",
+      "kegg_queries": "ko:K07695",
+      "new_kegg_genes": "MMAR_1516;MMAR_3480",
+      "new_refseq_loci": "MMAR_RS07495;MMAR_RS17350",
+      "new_symbols": "devR;dosR",
+      "note": ""
+    }
+  ]
+}

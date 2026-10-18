@@ -1,38 +1,145 @@
 {
-  "RFP3D11": {
-    "processed_reads": 1209328,
-    "aligned_reads": 28320
+  "reference_assembly": "GCF_000018345.1_ASM1834v1",
+  "kallisto_version": "kallisto, version 0.52.0",
+  "strandedness": "rf",
+  "strandedness_test_pseudoaligned": {
+    "unstranded": 192408,
+    "fr": 615,
+    "rf": 191789
   },
-  "RFP3D39": {
-    "processed_reads": 1229541,
-    "aligned_reads": 20725
+  "index_targets": {
+    "cds": 5539,
+    "ncrna_decoys": 52
   },
-  "RFP3D47": {
-    "processed_reads": 1237476,
-    "aligned_reads": 22232
+  "rfprpm4_deposit_defect": {
+    "R1": {
+      "rpm41_prefix_bytes": 748733492,
+      "rpm41_prefix_md5_matches": true,
+      "second_library_bytes": 805054979
+    },
+    "R2": {
+      "rpm41_prefix_bytes": 391318381,
+      "rpm41_prefix_md5_matches": true,
+      "second_library_bytes": 439922560
+    }
   },
-  "RFPNG14": {
-    "processed_reads": 1181676,
-    "aligned_reads": 33588
-  },
-  "RFPNG35": {
-    "processed_reads": 1160282,
-    "aligned_reads": 57689
-  },
-  "RFPNG45": {
-    "processed_reads": 1252584,
-    "aligned_reads": 18501
-  },
-  "RFPRPM4": {
-    "processed_reads": 1237087,
-    "aligned_reads": 24025
-  },
-  "RFPRPM41": {
-    "processed_reads": 1237087,
-    "aligned_reads": 24025
-  },
-  "RFPRPM6": {
-    "processed_reads": 1217203,
-    "aligned_reads": 17581
+  "samples": {
+    "RFP3D11": {
+      "library_index": "TATGACAATC+NTACAAGCAA",
+      "fastq_r1": "GLDS-528_rna-seq_RFP3D11_R1_raw.fastq.gz",
+      "fastq_r2": "GLDS-528_rna-seq_RFP3D11_R2_raw.fastq.gz",
+      "read_pairs_processed": 14564656,
+      "read_pairs_pseudoaligned": 13998585,
+      "percent_pseudoaligned": 96.1,
+      "percent_of_pairs_assigned": {
+        "rRNA": 92.13,
+        "other_ncRNA": 1.68,
+        "CDS": 2.3
+      }
+    },
+    "RFP3D39": {
+      "library_index": "ACGGTCCAAC+NGATGTAAGA",
+      "fastq_r1": "GLDS-528_rna-seq_RFP3D39_R1_raw.fastq.gz",
+      "fastq_r2": "GLDS-528_rna-seq_RFP3D39_R2_raw.fastq.gz",
+      "read_pairs_processed": 14024505,
+      "read_pairs_pseudoaligned": 13660141,
+      "percent_pseudoaligned": 97.4,
+      "percent_of_pairs_assigned": {
+        "rRNA": 94.43,
+        "other_ncRNA": 1.35,
+        "CDS": 1.63
+      }
+    },
+    "RFP3D47": {
+      "library_index": "TTGTATCAGG+NGGCCTCTGT",
+      "fastq_r1": "GLDS-528_rna-seq_RFP3D47_R1_raw.fastq.gz",
+      "fastq_r2": "GLDS-528_rna-seq_RFP3D47_R2_raw.fastq.gz",
+      "read_pairs_processed": 15695240,
+      "read_pairs_pseudoaligned": 15117737,
+      "percent_pseudoaligned": 96.3,
+      "percent_of_pairs_assigned": {
+        "rRNA": 93.08,
+        "other_ncRNA": 1.47,
+        "CDS": 1.77
+      }
+    },
+    "RFPNG14": {
+      "library_index": "CCTTCTAACA+NGAGCTTATC",
+      "fastq_r1": "GLDS-528_rna-seq_RFPNG14_R1_raw.fastq.gz",
+      "fastq_r2": "GLDS-528_rna-seq_RFPNG14_R2_raw.fastq.gz",
+      "read_pairs_processed": 16341497,
+      "read_pairs_pseudoaligned": 15645450,
+      "percent_pseudoaligned": 95.7,
+      "percent_of_pairs_assigned": {
+        "rRNA": 91.7,
+        "other_ncRNA": 1.25,
+        "CDS": 2.79
+      }
+    },
+    "RFPNG35": {
+      "library_index": "ATCCAGGTAT+NCTGACGTTG",
+      "fastq_r1": "GLDS-528_rna-seq_RFPNG35_R1_raw.fastq.gz",
+      "fastq_r2": "GLDS-528_rna-seq_RFPNG35_R2_raw.fastq.gz",
+      "read_pairs_processed": 16082770,
+      "read_pairs_pseudoaligned": 15148530,
+      "percent_pseudoaligned": 94.2,
+      "percent_of_pairs_assigned": {
+        "rRNA": 88.22,
+        "other_ncRNA": 1.02,
+        "CDS": 4.95
+      }
+    },
+    "RFPNG45": {
+      "library_index": "GGACCAGTGG+NAGGCTCGCG",
+      "fastq_r1": "GLDS-528_rna-seq_RFPNG45_R1_raw.fastq.gz",
+      "fastq_r2": "GLDS-528_rna-seq_RFPNG45_R2_raw.fastq.gz",
+      "read_pairs_processed": 15541999,
+      "read_pairs_pseudoaligned": 14725596,
+      "percent_pseudoaligned": 94.7,
+      "percent_of_pairs_assigned": {
+        "rRNA": 92.01,
+        "other_ncRNA": 1.28,
+        "CDS": 1.46
+      }
+    },
+    "RFPRPM4": {
+      "library_index": "CACAGCGGTC+NAATAGGAAT",
+      "fastq_r1": "GLDS-528_rna-seq_RFPRPM4_R1_second_library.fastq.gz",
+      "fastq_r2": "GLDS-528_rna-seq_RFPRPM4_R2_second_library.fastq.gz",
+      "read_pairs_processed": 15304202,
+      "read_pairs_pseudoaligned": 14932089,
+      "percent_pseudoaligned": 97.6,
+      "percent_of_pairs_assigned": {
+        "rRNA": 95.04,
+        "other_ncRNA": 1.54,
+        "CDS": 0.99
+      }
+    },
+    "RFPRPM41": {
+      "library_index": "AGCCTATGAT+NTAGGTGGTG",
+      "fastq_r1": "GLDS-528_rna-seq_RFPRPM41_R1_raw.fastq.gz",
+      "fastq_r2": "GLDS-528_rna-seq_RFPRPM41_R2_raw.fastq.gz",
+      "read_pairs_processed": 14370842,
+      "read_pairs_pseudoaligned": 13874044,
+      "percent_pseudoaligned": 96.5,
+      "percent_of_pairs_assigned": {
+        "rRNA": 93.09,
+        "other_ncRNA": 1.54,
+        "CDS": 1.91
+      }
+    },
+    "RFPRPM6": {
+      "library_index": "GTGACGGAGC+NGGACCGCCA",
+      "fastq_r1": "GLDS-528_rna-seq_RFPRPM6_R1_raw.fastq.gz",
+      "fastq_r2": "GLDS-528_rna-seq_RFPRPM6_R2_raw.fastq.gz",
+      "read_pairs_processed": 15288543,
+      "read_pairs_pseudoaligned": 14924696,
+      "percent_pseudoaligned": 97.6,
+      "percent_of_pairs_assigned": {
+        "rRNA": 94.67,
+        "other_ncRNA": 1.52,
+        "CDS": 1.42
+      }
+    }
   }
 }
